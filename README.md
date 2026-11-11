@@ -1,4 +1,4 @@
-# PSI Radar V0.4 — Power Semiconductor Intelligence Radar
+# PSI Radar V0.5 — Power Semiconductor Intelligence Radar
 
 공개 자료 기반 한국어 전력반도체 주간 기술 모니터링 웹 플랫폼. GaN (40%) > SiC (30%) > IGBT (10%) = UD/UG SGT (10%) = SJ MOSFET (10%).
 
@@ -127,3 +127,13 @@ GitHub Pages는 저장소 Settings → Pages → **Source: GitHub Actions**를 �
 - 새로 발견된 논문이 과거 발행일을 가진 경우 '이번 주 발표'에 포함되지 않습니다. 학술 저널의 발행일을 기준으로 표시합니다. 주간 ID 비교는 전주 스냅샷과 비교하며 기록 누락 시 기준점에 영향을 줄 수 있습니다.
 - CI 코드 Push: **AI 호출 0회**. 보고서는 해당 실행 아티팩트에 포함되어 미리 볼 수 있지만 영구 파일 업데이트는 하지 않습니다. 매주 일정/수동 실행에서 `site/data.json`과 `site/reports/`를 함께 커밋합니다.
 - 제한: 현재 과거 보고서는 단일 주차당 한 개 JSON 요약(20건/연구 참고 12건)만 보관하며 완전한 원본 뉴스 아카이브가 아닙니다. GitHub 무료 저장소 규모·동시 실행을 고려한 초기 설계입니다.
+
+## V0.5: Competitor Intelligence (2026-11-12)
+- 제조사 14개사의 공개 뉴스 인덱스와 기존 연구/뉴스 메타데이터를 연결: **Infineon, STMicroelectronics, onsemi, ROHM, Mitsubishi Electric, Fuji Electric, Toshiba, Innoscience, Sanan, CR Micro, BASiC Semiconductor, Navitas, EPC, Wolfspeed**.
+- 영어/중국어/일본어의 구체적인 기업 이름·제품명 별칭을 이용해 기사 **제목에 등장한 기업만** 분류합니다. 재배포 뉴스 제목은 출처 검증 전으로 표시하며, 제목 언급은 제조사 공식 발표/기술 성과를 뜻하지 않습니다.
+- 일반 뉴스 검색에 더해 기업×전력반도체 키워드 RSS 14개를 검색. 최신 7일 결과가 없는 중국·일본 업체는 30일 자료를 보조 검색하며 **30일 참고**로 표시합니다.
+- Competitors 탭에서 제조사별 GaN/SiC/IGBT/SGT/SJ 언급 건수, 지역, 기술 및 뉴스/논문 필터와 원문 근거를 보여 줍니다. **0건은 수집 미발견이지 해당 기업의 기술 활동 부재를 의미하지 않습니다.**
+- `competitor_stats`는 수집된 표본 내 제목 언급 통계입니다. 경쟁사의 매출, 시장점유율, 디바이스 개발 성과를 나타내는 수치가 아닙니다.
+- 주간 기록에는 같은 주차에 수집된 기업 언급 건수도 함께 저장하되, 원문 전체를 무단 저장하거나 유료 문서 전문을 복제하지 않습니다.
+- AI 번역은 기존 실행당 **최대 12회** 및 추정 **$0.02** 예산을 유지합니다. 기존 IGBT/SGT/SJ 논문 우선 3개 슬롯 외에, 미번역된 주요 제조사·중국·일본 뉴스가 있을 경우 그 내용을 우선 요약하도록 예약합니다. 분석 내용은 제목 또는 초록 수준으로 제한합니다.
+- 새로운 API Key는 필요하지 않습니다. 현재 공개자료 이외의 재무 및 제품별 FOM 데이터는 아직 연결하지 않았습니다.
