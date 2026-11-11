@@ -27,8 +27,8 @@ def relevant(title,cat):
  t=clean(title).lower()
  if any(x in t for x in EXCLUDE):return False
  if not any(x in t for x in POWER_CONTEXT):return False
- if cat=="GaN":return bool(re.search(r"\\bgan\\b|gallium nitride|氮化镓|窒化ガリウ",t))
- if cat=="SiC":return bool(re.search(r"\\bsic\\b|silicon carbide|碳化硅|炭化ケイ素",t))
+ if cat=="GaN":return bool(re.search(r"\bgan\b|gallium nitride|氮化镓|窒化ガリウ",t))
+ if cat=="SiC":return bool(re.search(r"\bsic\b|silicon carbide|碳化硅|炭化ケイ素",t))
  return any(w in t for w in KEYS[cat])
 def clean(s): return re.sub(r"\s+"," ",html.unescape(re.sub(r"<[^>]*>"," ",str(s or "")))).strip()
 def classify(title,fallback):
