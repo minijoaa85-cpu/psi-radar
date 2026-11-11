@@ -6,7 +6,8 @@ import datetime as dt
 import hashlib
 import json
 import os
-from urllib.parse import quote
+import time
+import requests
 from scripts.collect import clean, relevant, classify_topics, score
 
 QUERIES={
@@ -36,7 +37,15 @@ def crossref_search(session,q,cat,start,today):
  params={"query.bibliographic":q,"filter":"from-pub-date:"+start+",until-pub-date:"+today+",type:journal-article",
  "rows":25,"select":"DOI,title,published,published-online,published-print,container-title,URL,abstract",
  "sort":"score","order":"desc"}
- r=session.get("https://api.crossref.org/works",params=params,timeout=24);r.raise_for_status()
+ r=session.get("https://api.crossref.org/works",params=params,timeout=24)
+ if r.status_code==429:
+  # Bounded retry; honor a small Retry-After but never keep hammering a rate-limited API.
+  value=r.headers.get("Retry-After","1")
+  try:delay=min(3,max(0,float(value)))
+  except (TypeError,ValueError):delay=1
+  time.sleep(delay)
+  r=session.get("https://api.crossref.org/works",params=params,timeout=24)
+ r.raise_for_status()
  out=[]
  for x in r.json().get("message",{}).get("items",[]):
   title=clean((x.get("title") or [""])[0])
@@ -78,15 +87,27 @@ def openalex_search(session,q,cat,start,today):
   out.append(make_record(cat,title,date,source,url,doi,abstract,"OpenAlex"))
  return out
 def collect_focused(session,now=None,days=365):
+ """One Crossref query per technology, OpenAlex for breadth; circuit-break after HTTP 429."""
  now=now or dt.datetime.now(dt.timezone.utc)
  earliest=(now-dt.timedelta(days=days)).date().isoformat();today=now.date().isoformat()
- results=[];errors=[];stats={}
+ results=[];errors=[];stats={};crossref_limited=False
  for cat,queries in QUERIES.items():
   prior=len(results)
+  if not crossref_limited:
+   try:
+    results.extend(crossref_search(session,queries[0],cat,earliest,today))
+   except requests.HTTPError as exc:
+    code=getattr(getattr(exc,"response",None),"status_code",None)
+    if code==429:
+     crossref_limited=True
+     errors.append("Crossref rate limited (429); further Crossref queries skipped for this run, OpenAlex fallback remains active")
+    else:errors.append(f"Crossref {cat} HTTP {code or 'error'}")
+   except Exception as exc:errors.append(f"Crossref {cat} {type(exc).__name__}")
   for q in queries:
-   try:results.extend(crossref_search(session,q,cat,earliest,today))
-   except Exception as exc:errors.append(f"Crossref {cat} {type(exc).__name__}: {str(exc)[:70]}")
    try:results.extend(openalex_search(session,q,cat,earliest,today))
-   except Exception as exc:errors.append(f"OpenAlex {cat} {type(exc).__name__}: {str(exc)[:70]}")
+   except requests.HTTPError as exc:
+    code=getattr(getattr(exc,"response",None),"status_code",None)
+    errors.append(f"OpenAlex {cat} HTTP {code or 'error'}")
+   except Exception as exc:errors.append(f"OpenAlex {cat} {type(exc).__name__}")
   stats[cat]=len(results)-prior
  return results,errors,stats
