@@ -112,7 +112,7 @@ const COMPANY_DIRECTORY=[
 ];
 function renderCompetitors(){
  const region=el("company-region").value,tech=el("company-tech").value,type=el("company-type").value,q=el("company-q").value.toLowerCase().trim();
- const entries=COMPANY_DIRECTORY.filter(v=>(!region||v.region===region)&&(!q||v.name.toLowerCase().includes(q)));
+ const entries=COMPANY_DIRECTORY.filter(v=>(!region||v.region===region)&&(!q||v.name.toLowerCase().includes(q)||(DB.records||[]).some(r=>(r.companies||[]).includes(v.id)&&((r.title||"")+" "+(r.title_ko||"")+" "+(r.summary_ko||"")).toLowerCase().includes(q))));
  const rows=(DB.records||[]).filter(v=>Array.isArray(v.companies)&&v.companies.length>0)
   .filter(v=>(!tech||(v.device_mentions||[]).includes(tech))&&(!type||v.kind===type))
   .filter(v=>!q||((v.title||"")+" "+(v.title_ko||"")+" "+(v.summary_ko||"")).toLowerCase().includes(q)||(v.companies||[]).some(id=>entries.some(e=>e.id===id)));
