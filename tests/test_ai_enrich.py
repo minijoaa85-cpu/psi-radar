@@ -48,3 +48,14 @@ def test_focused_paper_priority():
   {"id":"t","title":"Shielded gate trench MOSFET","kind":"paper","category":"SGT","score":30},
  ]
  assert [x["category"] for x in ai_enrich.prioritized(rows)[:3]]==["IGBT","SGT","SJ MOSFET"]
+
+def test_ai_reports_invalid_json_without_leaking_secret(monkeypatch):
+ from unittest.mock import Mock
+ monkeypatch.setattr(ai_enrich,"MAX_CALLS",1)
+ fake=Mock()
+ fake.post.return_value.json.return_value={"choices":[{"message":{"content":"incomplete"}}],"usage":{"prompt_tokens":100,"completion_tokens":100}}
+ rows=[{"id":"e","title":"IGBT trench power module","kind":"news","category":"IGBT","score":30}]
+ stats=ai_enrich.enrich(rows,fake,"private-secret")
+ assert stats["calls"]==1 and stats["failures"]==1 and stats["successes"]==0
+ assert "Invalid/short JSON" in stats["failure_reasons"]
+ assert "private-secret" not in str(stats["errors"])
