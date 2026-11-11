@@ -32,8 +32,16 @@ jobs:
       - name: Collect public research metadata
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_MODEL: gpt-4.1-mini
         run: python scripts/collect.py
+      - name: AI translation and summary (budget controlled)
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: gpt-4.1-mini
+          PSI_AI_MAX_CALLS: "12"
+          PSI_AI_INPUT_TOKEN_BUDGET: "12000"
+          PSI_AI_OUTPUT_TOKEN_BUDGET: "3600"
+          PSI_AI_MAX_ESTIMATED_USD: "0.02"
+        run: python scripts/ai_enrich.py
       - name: Persist latest successful data
         run: |
           git config user.name 'github-actions[bot]'
