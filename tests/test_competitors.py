@@ -22,12 +22,11 @@ def test_structured_tags_and_company_stats():
  stats=summarize_companies(rows)
  assert stats["mitsubishi"]["items"]==1 and stats["rohm"]["by_device"]["SiC"]==1
  assert stats["onsemi"]["items"]==0
-def test_feed_rejects_unrelated_results(monkeypatch):
+def test_feed_rejects_unrelated_results():
  import scripts.competitors as c
  xml="""<rss><channel><item><title>Infineon GaN power semiconductor</title><link>https://news.google.com/rss/articles/1</link><pubDate>Wed, 11 Nov 2026 12:00:00 GMT</pubDate><source>Example Media</source></item><item><title>Infineon quarterly earnings forecast</title><link>https://news.google.com/rss/articles/2</link><pubDate>Wed, 11 Nov 2026 12:00:00 GMT</pubDate></item></channel></rss>"""
  fake=Mock()
  fake.get.return_value.content=xml.encode()
- monkeypatch.setattr(c.dt,"datetime",type("FakeDatetime",(),{"now":staticmethod(lambda tz=None:dt.datetime(2026,11,12,tzinfo=dt.timezone.utc))}))
  rows=fetch_company_news(fake,"infineon")
  assert len(rows)==1 and rows[0]["company_source_status"]["infineon"]=="news_index_unverified"
 def test_competitor_fetch_failure_is_non_fatal():
