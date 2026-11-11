@@ -17,4 +17,5 @@ def test_igbt_classification():
  assert relevant("Reverse conducting RC-IGBT power module","IGBT")
  assert not relevant("IGBT", "SiC")
  assert classify("New 1200V IGBT for inverter","IGBT")=="IGBT"
- assert score("IGBT field stop","IGBT")>score("SJ MOSFET","SJ MOSFET")
+ assert score("IGBT","IGBT")==score("SGT","SGT")==score("SJ MOSFET","SJ MOSFET")
+ assert len(TECH["IGBT"])>=4
