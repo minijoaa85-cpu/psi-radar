@@ -59,3 +59,15 @@ def test_ai_reports_invalid_json_without_leaking_secret(monkeypatch):
  assert stats["calls"]==1 and stats["failures"]==1 and stats["successes"]==0
  assert "Invalid/short JSON" in stats["failure_reasons"]
  assert "private-secret" not in str(stats["errors"])
+
+def test_competitor_ai_priority_stays_within_existing_quota():
+ rows=[
+  {"id":"high","kind":"news","category":"GaN","title":"General GaN HEMT","score":99},
+  {"id":"in","kind":"news","category":"SiC","title":"Infineon SiC MOSFET","score":60,"companies":["infineon"]},
+  {"id":"ro","kind":"news","category":"SiC","title":"ROHM SiC MOSFET","score":55,"companies":["rohm"]},
+  {"id":"cn","kind":"news","category":"GaN","title":"Innoscience GaN HEMT","score":50,"companies":["innoscience"]},
+  {"id":"jp","kind":"news","category":"IGBT","title":"Fuji Electric IGBT","score":40,"companies":["fuji"]},
+ ]
+ selected=ai_enrich.prioritized(rows)
+ assert [r["id"] for r in selected[:4]]==["in","ro","cn","jp"]
+ assert len(selected)==len(rows) and len(set(r["id"] for r in selected))==len(rows)
