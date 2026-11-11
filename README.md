@@ -1,13 +1,13 @@
 # PSI Radar V0.2 — Power Semiconductor Intelligence Radar
 
-공개 자료 기반 한국어 전력반도체 주간 기술 모니터링 웹 플랫폼. GaN > SiC > UD/UG SGT = SJ MOSFET.
+공개 자료 기반 한국어 전력반도체 주간 기술 모니터링 웹 플랫폼. GaN (35%) > SiC (25%) > IGBT (20%) > UD/UG SGT (10%) = SJ MOSFET (10%).
 
 **Web:** https://minijoaa85-cpu.github.io/psi-radar/  
 **Workflow:** https://github.com/minijoaa85-cpu/psi-radar/actions/workflows/weekly.yml
 
 ## 기능
 
-- GaN·SiC·SGT·SJ MOSFET 뉴스와 학술지 DOI 메타데이터 수집 및 원문/DOI 연결
+- GaN·SiC·IGBT·SGT·SJ MOSFET 뉴스와 학술지 DOI 메타데이터 수집 및 원문/DOI 연결
 - 뉴스 최근 8일, 학술지 최근 45일 검색 / 관련 없는 GAN·SiC 소재 논문 최소화
 - 한국어 제목 및 기술 해설(선택적 OpenAI API)
 - 뉴스는 **제목 기반 요약**(사실 확정 금지), 학술지 논문은 **공개 초록 기반 요약**(원문 검증 전 표시)
@@ -74,3 +74,14 @@ GitHub Pages는 저장소 Settings → Pages → **Source: GitHub Actions**를 �
 - `scripts/ai_enrich.py` 사용량 통제·AI 번역·초록 요약
 - `tests/` 자동 테스트
 - `.github/workflows/weekly.yml` 주간 스케줄·테스트·배포
+
+## 주간 업데이트 및 운영 기간 (2026-11-11 기준)
+- 일정: `cron: 0 21 * * 0` — 한국시간 **매주 월요일 06:00**, UTC 일요일 21:00. 실행이 늦어지거나 건너뛰어질 수 있습니다.
+- 다음 정기 예정일: **2026년 11월 16일(월) 06:00 KST**. 자동 종료일은 설정되어 있지 않습니다.
+- GitHub 공개 저장소에서 **60일 동안 저장소 활동이 없으면** GitHub가 scheduled workflow를 비활성화할 수 있습니다. 자동 수집이 계속 성공하면서 커밋되는지 정기 확인하고, 중단 시 Actions에서 다시 활성화하세요.
+- GitHub Pages는 마지막 배포를 보여 주므로 자동 수집이 끊겨도 사이트가 정상처럼 보일 수 있습니다. 항상 데이터 갱신 일자를 확인하세요.
+- **현재는 site/data.json을 최신 수집 결과로 덮어써서 표시**하며, 과거 주차별 누적 보고서를 별도로 보관하지 않습니다. 장기 누적 히스토리 기능은 후속 단계입니다.
+- API 키, 결제 크레딧, GitHub 계정과 Actions, GitHub Pages, 외부 출처 서비스 상태에 따라 실제 업데이트가 중단될 수 있습니다.
+
+### API 비용 산정
+2026-11-11 #19 실측 `3,356 input / 1,322 output tokens`, 12회 API 호출, 추정 `$0.003458`/회(주 1회). 같은 사용량 52회 = 약 `$0.18/년`; 매회 로컬 추정 상한 `$0.02`에 도달하면 52회 = `$1.04/년`. 이는 정기 52회 가정의 **추정치**이며 수동 재실행, 서비스 확장, 실제 API 청구 차이 등은 별도입니다. 50달러 충전액은 주간으로 정해진 기간만큼 소진되는 구독료가 아니며, 향후 모델 가격·사용량·크레딧 만료/환불 정책에 따라 달라질 수 있습니다.
