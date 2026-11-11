@@ -111,4 +111,6 @@ def main():
  print("Collected",len(rows),"records, errors:",len(errors))
  print("Category counts:",json.dumps(payload["counts"],ensure_ascii=False))
  print("IGBT news records:",sum(x.get("category")=="IGBT" and x.get("kind")=="news" for x in rows),"IGBT papers:",sum(x.get("category")=="IGBT" and x.get("kind")=="paper" for x in rows))
+ for row in rows:
+  if row.get("category")=="IGBT":print("IGBT item:",row.get("date"),row.get("kind"),row.get("source"),row.get("title")[:180])
 if __name__=="__main__":main()
