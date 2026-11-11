@@ -64,7 +64,7 @@ def enrich(rows,session,key):
  for row in ordered:
   if stats["calls"]>=MAX_CALLS or stats["input_tokens"]>=MAX_INPUT_TOKENS or stats["output_tokens"]>=MAX_OUTPUT_TOKENS:break
   prompt=build_prompt(row);reserved_in=estimated_tokens(prompt);reserved_out=480
-  if stats["input_tokens"]+reserved_in>MAX_INPUT_TOKENS:break
+  if stats["input_tokens"]+reserved_in>MAX_INPUT_TOKENS or stats["output_tokens"]+reserved_out>MAX_OUTPUT_TOKENS:break
   projected=((stats["input_tokens"]+reserved_in)*input_price+(stats["output_tokens"]+reserved_out)*output_price)/1e6
   if projected>MAX_ESTIMATED_USD:break
   # Count attempted calls as calls; failed requests still cannot bypass the quota.
