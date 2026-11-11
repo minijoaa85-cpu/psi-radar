@@ -103,7 +103,13 @@ def fetch_company_news(session,key,days=7):
 def collect_competitors(session,days=7):
  items=[];errors=[]
  for key in QUERIES:
-  try:items.extend(fetch_company_news(session,key,days))
+  try:
+   found=fetch_company_news(session,key,days)
+   items.extend(found)
+   # Expand only quiet Japan/China watchlists; label older sources separately.
+   if not found and COMPANIES[key]["region"] in ("Japan","China"):
+    older=fetch_company_news(session,key,30)
+    items.extend(older)
   except Exception as e:errors.append("competitor "+key+": "+type(e).__name__)
  return items,errors
 def summarize_companies(rows):
