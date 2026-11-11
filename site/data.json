@@ -1,171 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-11T13:27:41.848679+00:00",
+  "generated_at": "2026-11-11T13:29:46.856384+00:00",
   "window_start": "2026-11-03",
   "mode": "live_metadata",
   "records": [
-    {
-      "id": "41c6fcd23cd7",
-      "kind": "paper",
-      "category": "GaN",
-      "title": "Visual Communication Design Style Recognition and Automatic Creation Technology Based on Deep Learning and Generative Adversarial Network (GAN)",
-      "date": "2028-01-01",
-      "source": "International Journal of Arts and Technology",
-      "url": "https://doi.org/10.1504/ijart.2028.10079209",
-      "doi": "10.1504/ijart.2028.10079209",
-      "topics": [
-        "일반 기술"
-      ],
-      "score": 50,
-      "abstract": "",
-      "summary_ko": "서지 정보만 확보했습니다. 연구 결론은 검증되지 않았습니다.",
-      "summary_status": "서지 기반·결론 미검증",
-      "evidence": "Crossref journal metadata"
-    },
-    {
-      "id": "86c2f15ab8d9",
-      "kind": "paper",
-      "category": "SiC",
-      "title": "Comparative performance of ZnO-functionalized SiC membranes and polymeric membranes for oil-in-water emulsion filtration",
-      "date": "2027-12-01",
-      "source": "Environmental Surfaces and Interfaces",
-      "url": "https://doi.org/10.1016/j.esi.2026.09.002",
-      "doi": "10.1016/j.esi.2026.09.002",
-      "topics": [
-        "일반 기술"
-      ],
-      "score": 40,
-      "abstract": "",
-      "summary_ko": "서지 정보만 확보했습니다. 연구 결론은 검증되지 않았습니다.",
-      "summary_status": "서지 기반·결론 미검증",
-      "evidence": "Crossref journal metadata"
-    },
-    {
-      "id": "245c2133c617",
-      "kind": "paper",
-      "category": "SiC",
-      "title": "Laser slicing of 4H-SiC wafers with different doping types: Multiscale mechanism investigation and deep learning-based processing strategy",
-      "date": "2027-05-01",
-      "source": "Journal of Materials Science & Technology",
-      "url": "https://doi.org/10.1016/j.jmst.2026.08.079",
-      "doi": "10.1016/j.jmst.2026.08.079",
-      "topics": [
-        "공정·구조"
-      ],
-      "score": 40,
-      "abstract": "",
-      "summary_ko": "서지 정보만 확보했습니다. 연구 결론은 검증되지 않았습니다.",
-      "summary_status": "서지 기반·결론 미검증",
-      "evidence": "Crossref journal metadata"
-    },
-    {
-      "id": "2c503c96cab8",
-      "kind": "paper",
-      "category": "SiC",
-      "title": "Morphology-tunable ZrO2@SiC@NiCo2O4/NiO composite fibers for integrated high-temperature electromagnetic wave absorption and multifunctional performance",
-      "date": "2027-05-01",
-      "source": "Journal of Materials Science & Technology",
-      "url": "https://doi.org/10.1016/j.jmst.2026.09.028",
-      "doi": "10.1016/j.jmst.2026.09.028",
-      "topics": [
-        "일반 기술"
-      ],
-      "score": 40,
-      "abstract": "",
-      "summary_ko": "서지 정보만 확보했습니다. 연구 결론은 검증되지 않았습니다.",
-      "summary_status": "서지 기반·결론 미검증",
-      "evidence": "Crossref journal metadata"
-    },
-    {
-      "id": "a64c06d60212",
-      "kind": "paper",
-      "category": "SiC",
-      "title": "Self-driven bidirectional redistribution of Zr species constructing a dual oxidation barrier in SiC-ZrC ultrafine fibers",
-      "date": "2027-05-01",
-      "source": "Journal of Materials Science & Technology",
-      "url": "https://doi.org/10.1016/j.jmst.2026.09.022",
-      "doi": "10.1016/j.jmst.2026.09.022",
-      "topics": [
-        "일반 기술"
-      ],
-      "score": 40,
-      "abstract": "",
-      "summary_ko": "서지 정보만 확보했습니다. 연구 결론은 검증되지 않았습니다.",
-      "summary_status": "서지 기반·결론 미검증",
-      "evidence": "Crossref journal metadata"
-    },
-    {
-      "id": "84a9201fd0dc",
-      "kind": "paper",
-      "category": "SiC",
-      "title": "High-temperature degradation mechanisms of SiC whiskers reinforcement driven by thermo-mechanical coupling effects during sintering processes",
-      "date": "2027-05-01",
-      "source": "Journal of Materials Science & Technology",
-      "url": "https://doi.org/10.1016/j.jmst.2026.08.070",
-      "doi": "10.1016/j.jmst.2026.08.070",
-      "topics": [
-        "일반 기술"
-      ],
-      "score": 40,
-      "abstract": "",
-      "summary_ko": "서지 정보만 확보했습니다. 연구 결론은 검증되지 않았습니다.",
-      "summary_status": "서지 기반·결론 미검증",
-      "evidence": "Crossref journal metadata"
-    },
-    {
-      "id": "9ea6f73c4467",
-      "kind": "paper",
-      "category": "SiC",
-      "title": "A coupled oxidation-damage model for cross-layer ablation failure in HfC/SiC bilayer coatings on C/C composites",
-      "date": "2027-05-01",
-      "source": "Journal of Materials Science & Technology",
-      "url": "https://doi.org/10.1016/j.jmst.2026.09.009",
-      "doi": "10.1016/j.jmst.2026.09.009",
-      "topics": [
-        "일반 기술"
-      ],
-      "score": 40,
-      "abstract": "",
-      "summary_ko": "서지 정보만 확보했습니다. 연구 결론은 검증되지 않았습니다.",
-      "summary_status": "서지 기반·결론 미검증",
-      "evidence": "Crossref journal metadata"
-    },
-    {
-      "id": "79f99c106dfc",
-      "kind": "paper",
-      "category": "SiC",
-      "title": "Self-healing repair mechanisms of 2D C/SiC using B4C-modified ceramizable adhesives",
-      "date": "2027-04-01",
-      "source": "Journal of the European Ceramic Society",
-      "url": "https://doi.org/10.1016/j.jeurceramsoc.2026.118994",
-      "doi": "10.1016/j.jeurceramsoc.2026.118994",
-      "topics": [
-        "일반 기술"
-      ],
-      "score": 40,
-      "abstract": "",
-      "summary_ko": "서지 정보만 확보했습니다. 연구 결론은 검증되지 않았습니다.",
-      "summary_status": "서지 기반·결론 미검증",
-      "evidence": "Crossref journal metadata"
-    },
-    {
-      "id": "d45010e57734",
-      "kind": "paper",
-      "category": "SiC",
-      "title": "Rapid preparation of polycrystalline SiC bulk materials by LPCVD: Microstructural evolution and its effects on mechanical and electrical properties",
-      "date": "2027-04-01",
-      "source": "Journal of the European Ceramic Society",
-      "url": "https://doi.org/10.1016/j.jeurceramsoc.2026.119037",
-      "doi": "10.1016/j.jeurceramsoc.2026.119037",
-      "topics": [
-        "일반 기술"
-      ],
-      "score": 40,
-      "abstract": "",
-      "summary_ko": "서지 정보만 확보했습니다. 연구 결론은 검증되지 않았습니다.",
-      "summary_status": "서지 기반·결론 미검증",
-      "evidence": "Crossref journal metadata"
-    },
     {
       "id": "b8df51856b30",
       "kind": "news",
@@ -178,39 +16,6 @@
         "공정·구조"
       ],
       "score": 50,
-      "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
-      "summary_status": "제목 기반·검증 전",
-      "evidence": "Google News RSS index"
-    },
-    {
-      "id": "8b7a6135dda1",
-      "kind": "news",
-      "category": "GaN",
-      "title": "AI Data Center Power Demand Surges, Infineon Raises Fiscal 2027 Revenue Target for Segment to €4 Billion - BigGo Finance",
-      "date": "2026-11-10",
-      "source": "BigGo Finance",
-      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBjLTdwdXVMRnlOWER1VXB6QkhxSExwbm9Qdk5tTWFoWmYxZUlXbXZ2aGdqZWRIak83dFpObmxQT0x3TlB3eHBxZDJTWGNmQUlNZ0lYVDNnSS1ZUm81d29hcVcwcGlUWmxFc2Y2a29jQ1VXaGdIRWc?oc=5",
-      "topics": [
-        "데이터센터",
-        "재무·시장"
-      ],
-      "score": 65,
-      "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
-      "summary_status": "제목 기반·검증 전",
-      "evidence": "Google News RSS index"
-    },
-    {
-      "id": "4ffcba1789ed",
-      "kind": "news",
-      "category": "SiC",
-      "title": "Vertiv partners with Infineon to scale power semiconductors for AI data centers - Data Center Dynamics",
-      "date": "2026-11-10",
-      "source": "Data Center Dynamics",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQbEFuYlF2eTdpSmxWd0NieFlrWk0tWGdNLTZzZmlWZnJiZ1hPdi1COFl4dmFMS0ZHcTBvRjhOc1REQjVqeXQtUEcyVjRxY2tBSHpkZXBFZWFHWkctZ3F3VTA4U0FrY1Nsc2Ixa2xuc0p5NUQ1ZjNhX3NfQkw0MlMyLWY0Q1E5aWpaS1M2aUFCeTVQRExlYjlqX0g2aUtRQjFPdTlSRU1OT1paMDNxLUk5eU84MXhfN1lrZUJkS3RhZC0?oc=5",
-      "topics": [
-        "데이터센터"
-      ],
-      "score": 55,
       "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
       "summary_status": "제목 기반·검증 전",
       "evidence": "Google News RSS index"
@@ -248,70 +53,6 @@
       "evidence": "Google News RSS index"
     },
     {
-      "id": "c4c0dbcb31cd",
-      "kind": "news",
-      "category": "GaN",
-      "title": "Infineon Claims a World First as It Produces Working Power Devices on a 300mm Silicon-Carbide Wafer - Hackster.io",
-      "date": "2026-11-10",
-      "source": "Hackster.io",
-      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOei1qWXpRenA2WHpIdnh2WUlIalR2QTM1QjhDQnJkMEt4QV9hVFZYejRYcWJYWDFsMHNOS3VDZTRfbGM3T29Ib09QUDl3RklnT0prWmo5dkJ2dDVNWk1kMUM2NWRCWEsxUDFUZWNHWWtrT1k5WlFQbWlzUzFyT0ZTVTc4MVZnb2lwRk05Mjl1T3dCUUJwbU5FRUdkcGJ3b2xnT0ZwRUsxdFV4YWxOVTFieGp2NE93d2M3a2lkckJvQ2tXNUdvaGg5aDZyaVd3c3NoOWVrX2NadTI?oc=5",
-      "topics": [
-        "공정·구조"
-      ],
-      "score": 50,
-      "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
-      "summary_status": "제목 기반·검증 전",
-      "evidence": "Google News RSS index"
-    },
-    {
-      "id": "b8dbe80114ad",
-      "kind": "news",
-      "category": "SiC",
-      "title": "Infineon makes working silicon carbide power chips on 300 mm wafers for the first time - MLQ.ai",
-      "date": "2026-11-10",
-      "source": "MLQ.ai",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNekRBWjBkdlNCcHBEU1hoOTRabl9sV1MyQnhOY1JKUjN0MlJ0MkZGU0ozNTlWelJoOEFabFd3OENuWW00WFhUM01kSFFMTm5FSkxlaDBHNkhxamhzYlJGV1I3RjNyVmpfUnJ0cHR3ekJlSWZYYzg4OG92ZlIzT2d2U2V1Nm5wS2o3ellpb1BDZXVuZVVweko1QnppU3BndnJXMUw0dG84cHZQNmM?oc=5",
-      "topics": [
-        "공정·구조"
-      ],
-      "score": 40,
-      "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
-      "summary_status": "제목 기반·검증 전",
-      "evidence": "Google News RSS index"
-    },
-    {
-      "id": "9541e8a0ecd5",
-      "kind": "news",
-      "category": "SiC",
-      "title": "Infineon processes 300 mm SiC wafers into functional power devices - Charged EVs",
-      "date": "2026-11-10",
-      "source": "Charged EVs",
-      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPWkMtUHp1b1ZCN3d0blVkaUQ4QmtRVHZXdnlUSlJNR3A1MzN3VDM1dnpleXNZY18zTURFOTZ5X1EzN051WVgzb2xpNXNQZTRyTUJiVFpTOUJsdmdFTVF1OEpselNBOFpMRk9ZbWNWbFgzczhDbHlFeS1nMzZqa3ZPQ2JLWnV5cjI2elI1dU14VUVhZHZURkdpQjNSMVlEOHZr?oc=5",
-      "topics": [
-        "공정·구조"
-      ],
-      "score": 40,
-      "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
-      "summary_status": "제목 기반·검증 전",
-      "evidence": "Google News RSS index"
-    },
-    {
-      "id": "eb3054aca94b",
-      "kind": "news",
-      "category": "SiC",
-      "title": "Vishay at electronica 2026: AI Power, E-Mobility and Semiconductor Solutions - Electronics Media",
-      "date": "2026-11-10",
-      "source": "Electronics Media",
-      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9haFozLTdYR0UzY0Q4TER0cmZkUGNRbVY2QVgzZ3lwNlRDOHFldC1HbHFQR2NoblVjb1AtSDRyc2hKNXZfbVFqV255QmJsaHdjWElHazBKQldfUHNUdWxYUzhHeW1jcjR0Q3dwVzI2TmF0Wkd6alNmQm5QeHU?oc=5",
-      "topics": [
-        "일반 기술"
-      ],
-      "score": 40,
-      "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
-      "summary_status": "제목 기반·검증 전",
-      "evidence": "Google News RSS index"
-    },
-    {
       "id": "93f7258740dc",
       "kind": "news",
       "category": "SiC",
@@ -328,111 +69,15 @@
       "evidence": "Google News RSS index"
     },
     {
-      "id": "c341ff41e738",
+      "id": "b8dbe80114ad",
       "kind": "news",
       "category": "SiC",
-      "title": "Onsemi Introduces Fourth-Generation EliteSiC M4 Platform With Up to 30% Higher Power Density - Yahoo Tech",
+      "title": "Infineon makes working silicon carbide power chips on 300 mm wafers for the first time - MLQ.ai",
       "date": "2026-11-10",
-      "source": "Yahoo Tech",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQN1VsZGV4RUJsSGZmNnhSWmlsY1g1ZE1lcFJFa0FQYTlYNjI3T3pXdjh3OXBod3NkOUt0WXphMjBac2xEQ1VjcTJ2dnpCcXg5bS1hd1JJMHo0RUV6OVRyRk5udnpUR2N4NGdwUHVwTURLcDRsTHhWSkVVaUNxNEhabHdEaDN0bHJ2TkxDOHdtcjV0TC02ejJLd1h6NjVJZExWUEJr?oc=5",
+      "source": "MLQ.ai",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNekRBWjBkdlNCcHBEU1hoOTRabl9sV1MyQnhOY1JKUjN0MlJ0MkZGU0ozNTlWelJoOEFabFd3OENuWW00WFhUM01kSFFMTm5FSkxlaDBHNkhxamhzYlJGV1I3RjNyVmpfUnJ0cHR3ekJlSWZYYzg4OG92ZlIzT2d2U2V1Nm5wS2o3ellpb1BDZXVuZVVweko1QnppU3BndnJXMUw0dG84cHZQNmM?oc=5",
       "topics": [
-        "일반 기술"
-      ],
-      "score": 40,
-      "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
-      "summary_status": "제목 기반·검증 전",
-      "evidence": "Google News RSS index"
-    },
-    {
-      "id": "921361e3c935",
-      "kind": "news",
-      "category": "GaN",
-      "title": "A community conversation on data centers in Michigan - Cheboygan Daily Tribune",
-      "date": "2026-11-09",
-      "source": "Cheboygan Daily Tribune",
-      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxONUU3azdGcV9HVDZqSnVyUGdRSXJucXFWb2V6S0toRXhmYzM2WHE5S0EzaDZTSE9tMXhJMzVPQmRRbnM4VlRaeFVwYVc5MlBOWjBpYVp2N19TdV9mc0ZaOHBKbldTOVkzUkdhNXlBQWUzcWtMUE5UOTFRTVUtb1ZmdUZ0UHhGbmpXU1Q1YVQyR3VnU3k4Rmx2TlY1THFacU9RRlp1V3VtRkVTY3dMLThRcUd6M19NZlZCWG9XSFJVRndvYmc4dldIRHMxTXg5MVVjZTBTRVB3bUdmemxR?oc=5",
-      "topics": [
-        "데이터센터"
-      ],
-      "score": 65,
-      "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
-      "summary_status": "제목 기반·검증 전",
-      "evidence": "Google News RSS index"
-    },
-    {
-      "id": "550e19908774",
-      "kind": "news",
-      "category": "SiC",
-      "title": "Functional Power Semiconductors on 300-mm SiC - All-About-Industries",
-      "date": "2026-11-09",
-      "source": "All-About-Industries",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNX01HbmE5ZHBPR2d0TzI3TWRTdkpycnhjQ1NLclVOSmFUeDdYdDFmeWc3VlM0X1dxdmZKc2M1VS02YU9wQmsyc3VoNHpacjhGTTl5Vms2bmFnS2RwNmVnTkdHNnVXTC1IQnVMLWhMcEF6RzRTblNjQXh5RUlGdTN0LTZEektta2FiSU9fYm5OSUJnTGhEZFlNR244ODZDdExpSGoxNW9ZMkNhc01qTmd2Ml9fS1QwT1VtX3c?oc=5",
-      "topics": [
-        "일반 기술"
-      ],
-      "score": 40,
-      "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
-      "summary_status": "제목 기반·검증 전",
-      "evidence": "Google News RSS index"
-    },
-    {
-      "id": "8deaf9b5fd55",
-      "kind": "news",
-      "category": "SiC",
-      "title": "Vishay Intertechnology to Showcase Power and Sensing Solutions for AI, E-Mobility and Industrial Applications at electronica 2026 - Quiver Quantitative",
-      "date": "2026-11-09",
-      "source": "Quiver Quantitative",
-      "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxPbWNHZkRXbmNXRFpuTlM5eTk5RWRrLTV4S1BjUFJlUTMzT1lEWkxyUVNTSDdlOTlYT2NwS0l0MHNyb3dhZlk5ZWdiVGwxOEVYajhVS285WWUwQjZlYm1vbUlBa0liU3VIZjlET2RFNlBNa093aTdZMnY3dF96MGd5T21xY01RQXpVNTR5OHdSQzQ4UXBSd29hYlJjdnp4UWtNWlVxTFVFQzhqWlMzVXJCWXFRSWMwa3dsSlRYMm1uTnhSdWlSRFk5Y0dyWkc4UzA5YTdCQlhuTFV1QUtvbXlRNHhuLWFKbEhNaEVoejgyeE1yVzcwd0FV?oc=5",
-      "topics": [
-        "일반 기술"
-      ],
-      "score": 40,
-      "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
-      "summary_status": "제목 기반·검증 전",
-      "evidence": "Google News RSS index"
-    },
-    {
-      "id": "9b8ea463279d",
-      "kind": "news",
-      "category": "SiC",
-      "title": "Vishay Intertechnology to Showcase Passive and - GlobeNewswire",
-      "date": "2026-11-09",
-      "source": "GlobeNewswire",
-      "url": "https://news.google.com/rss/articles/CBMimwJBVV95cUxNZkZsckR2WGRPMzBZUW9qc2ZXa3YwSXpQMGJlUjhQX2U4a2RhR2JtX0dhdFNja3JrVUtuaFk0SjFXRWhpalp4U3U2dy1rczJNTnFFd3lHdndvYWZZNE9ZS0o3TjlSWGpuYkhodWxfdlVpSmhmQkQ5a1VZeDA5R0lSSHdVUDl0a3NSN055VnAxU0dqTmJ6UXdWQjdWOXdrN1FLOExFX2VrTW1qaU5oTV82OE43bGJfNkRpTnhGT21mNTd4TXluVHJrdXgwdm9ia3dCU0h6WlEwa2NEUWJucFJYajl4LThWVGRqdUY4bUdfMXhuZnFfZUh6bGpHclI4U3dlTE9OVUVyMVMyOFhSaXlOc2xrRWxTSkRQVmtN?oc=5",
-      "topics": [
-        "일반 기술"
-      ],
-      "score": 40,
-      "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
-      "summary_status": "제목 기반·검증 전",
-      "evidence": "Google News RSS index"
-    },
-    {
-      "id": "a4ecccd45915",
-      "kind": "news",
-      "category": "SiC",
-      "title": "Vishay Intertechnology to Showcase Passive and Semiconductor Solutions for the All-Electric Society at electronica 2026 - Stock Titan",
-      "date": "2026-11-09",
-      "source": "Stock Titan",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPb0xwdnhSVDNtT2EyaXVraE4xdGdERWdya2ZLQzZzc19LWGgxWnZuOFV4d1dVUGtJckRJeTBmVkVDcFlJV2MwclFCd29VZzltWEh1WHVmM1kzaGwyd2sxelNDc1B3bVJoYktvNzNLbktBMGxYZ3ZxUXdrNFlvcnk1MzJ3dTQ0ckRUR0dPOHBGYVFXcng3VlRKM05Cd0RfaXNwbnd2NGw2UmZicEdmYlZOZDFsMUg?oc=5",
-      "topics": [
-        "일반 기술"
-      ],
-      "score": 40,
-      "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
-      "summary_status": "제목 기반·검증 전",
-      "evidence": "Google News RSS index"
-    },
-    {
-      "id": "6c022bbbcf2b",
-      "kind": "news",
-      "category": "SiC",
-      "title": "Vishay Intertechnology to showcase advanced sem... - Pluang",
-      "date": "2026-11-09",
-      "source": "Pluang",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOWndCRVJNOUV2eGEtZTVUaUROSFEzN0ZaTHFMZG5rMDhycWdzLUppVERUWHIzcHVvbW1jYXVZalNZcnVScnI5UU42T1YwVHBsdWRERW9OY3pBS0dZa3VmWENhYjk1NndrR2VlRjVtN3JVeHQxSDlfazI5VFgyTWw5R0IwWWUtV1ROZXRBT2FoMlA4ZnFyOC1KUllFNG52WWFuVGVTWUM5QUQySTA?oc=5",
-      "topics": [
-        "일반 기술"
+        "공정·구조"
       ],
       "score": 40,
       "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
@@ -472,6 +117,22 @@
       "evidence": "Google News RSS index"
     },
     {
+      "id": "550e19908774",
+      "kind": "news",
+      "category": "SiC",
+      "title": "Functional Power Semiconductors on 300-mm SiC - All-About-Industries",
+      "date": "2026-11-09",
+      "source": "All-About-Industries",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNX01HbmE5ZHBPR2d0TzI3TWRTdkpycnhjQ1NLclVOSmFUeDdYdDFmeWc3VlM0X1dxdmZKc2M1VS02YU9wQmsyc3VoNHpacjhGTTl5Vms2bmFnS2RwNmVnTkdHNnVXTC1IQnVMLWhMcEF6RzRTblNjQXh5RUlGdTN0LTZEektta2FiSU9fYm5OSUJnTGhEZFlNR244ODZDdExpSGoxNW9ZMkNhc01qTmd2Ml9fS1QwT1VtX3c?oc=5",
+      "topics": [
+        "일반 기술"
+      ],
+      "score": 40,
+      "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
+      "summary_status": "제목 기반·검증 전",
+      "evidence": "Google News RSS index"
+    },
+    {
       "id": "7fa739e79a7e",
       "kind": "news",
       "category": "GaN",
@@ -483,70 +144,6 @@
         "일반 기술"
       ],
       "score": 50,
-      "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
-      "summary_status": "제목 기반·검증 전",
-      "evidence": "Google News RSS index"
-    },
-    {
-      "id": "7092f086e2c7",
-      "kind": "news",
-      "category": "GaN",
-      "title": "Wolfspeed Q1 Earnings Call Highlights - TradingView",
-      "date": "2026-11-08",
-      "source": "TradingView",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPQTN6V0N6YVprRjZnTGYzRlRXR29lZHJnQWpHbHNzUVlSVzZtbWQ2ZS1Ucno3T2JyZDRpUkN0QURWVzZxTkdqNlNtaERTaDh5NmpYZDUtRzdwWWdMR2pydEpsTjBBdlN3YjZ4QVI1LWk2MDdRWmQxaDhmcHdBdEJBcWNXbzVUXzRUVmZSODJHVXE1TUQzNWV0XzVOZDlDRzQ?oc=5",
-      "topics": [
-        "재무·시장"
-      ],
-      "score": 50,
-      "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
-      "summary_status": "제목 기반·검증 전",
-      "evidence": "Google News RSS index"
-    },
-    {
-      "id": "d5d57e48851a",
-      "kind": "news",
-      "category": "SJ MOSFET",
-      "title": "Magnachip Semiconductor (NYSE:MX) - Stock Analysis - Simply Wall St",
-      "date": "2026-11-07",
-      "source": "Simply Wall St",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNNmlOMGZaZDhwY2d5ZFN3X3RER2lVdllRUTZ2TDl3dC1HaXFvc3YwU043UFVVTm9xTWR5d2RYeUY4aEJSQkJLak50b3FfbjBjdm9uZUMzLUFsUC1pQzFCQ2RDRkRlcnQxeWFrcmZBN2ExQ3JFMmliZWpZUmUtQVNPdFY4Wk0?oc=5",
-      "topics": [
-        "일반 기술"
-      ],
-      "score": 30,
-      "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
-      "summary_status": "제목 기반·검증 전",
-      "evidence": "Google News RSS index"
-    },
-    {
-      "id": "2194809d3689",
-      "kind": "news",
-      "category": "SiC",
-      "title": "What to look out for at electronica 2026 - Electronics Weekly",
-      "date": "2026-11-06",
-      "source": "Electronics Weekly",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOOWNoSFRZYTk5M3RxMEVrY0FpYWZyQ0FGczZjclB3QW9JeHRhcHJBc3pjcGJCY25RWm04R01XakFGQm5yb3RaYTZGTW4tZnZDMnBjeW9nRnR5NloxbHVZU3FteEFDQmFEUW9kdHdodXdlTVBWQUEtQ09xNFZJalFsWHFxRlY2enhPY0Rpdnh1dmNTVkx3X0l3dGlxZms0dw?oc=5",
-      "topics": [
-        "일반 기술"
-      ],
-      "score": 40,
-      "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
-      "summary_status": "제목 기반·검증 전",
-      "evidence": "Google News RSS index"
-    },
-    {
-      "id": "6474ad061cfb",
-      "kind": "news",
-      "category": "GaN",
-      "title": "SOLUM and Infineon Expand Collaboration on HVDC Power Solutions for AI Data Centers - The Malaysian Reserve",
-      "date": "2026-11-05",
-      "source": "The Malaysian Reserve",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQeDloU3lZc2dQZmJZVXRSdTNkbmFCTGhkVFNHYzlGQ09YNGNKUW9iQWowRVpjVVltQWVJNWZQMlo5d25RcDk4QW9ZYkJUTlRHUVNpVzdidjNvMUFXc2tnczZ0aG90a2s3cjUwQVdjWDFfSEM4VVNKTzdQQkpWV2V2TmQ3RGdXbm9qX0JCRzZ6emMyd3ZDNlNSMHZOWHBUa0sweWFoeXVFTGNIaXVYSkZBX2RVYWdCQjR4M1djUnVidllkQlRwY0E?oc=5",
-      "topics": [
-        "데이터센터"
-      ],
-      "score": 65,
       "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
       "summary_status": "제목 기반·검증 전",
       "evidence": "Google News RSS index"
@@ -585,55 +182,6 @@
       "evidence": "Google News RSS index"
     },
     {
-      "id": "32bcf148f7c8",
-      "kind": "news",
-      "category": "GaN",
-      "title": "【Kyocera FY2026 Q2 Earnings Call】Japan's Kyocera Posts Record First-Half Revenue of ¥1.0783 Trillion on AI Data Center Demand, Operating Profit Up 56%, Raises Full-Year Sales Forecast by ¥40 Billion - finance.biggo.com",
-      "date": "2026-11-05",
-      "source": "finance.biggo.com",
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1nZWI2a013WU9DX3BrWGFqN3Z5eHdTYTViZXd6RGQ3QmtlZC1CM0piUFJ6cE1OZG1WRVZyR2ExcU9wVkxpYXA1OTRSYk5mUVdXZ1N5VUdqQ09NcDJ2MW9KWA?oc=5",
-      "topics": [
-        "데이터센터",
-        "재무·시장"
-      ],
-      "score": 65,
-      "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
-      "summary_status": "제목 기반·검증 전",
-      "evidence": "Google News RSS index"
-    },
-    {
-      "id": "da1845b70e2f",
-      "kind": "news",
-      "category": "GaN",
-      "title": "Infineon's Gallium Nitride Bet Needs a Business Case, Not Just a Fab - ad-hoc-news.de",
-      "date": "2026-11-05",
-      "source": "ad-hoc-news.de",
-      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPNkdNdVpWRlNRczRLSzFSQW9nT1dtWjFEMUIyRDNDQTBHNWE1dk4xWlpPRVFZcmhnb2hnc2xUaG51cTdBMVlON19LZFc1UDVzUjdSRDh3a3lpbFR6M1dpTDE1OWVpb0lNNU40NDA4dWw1NkVNaWhRMHViVTRfaEsyVmJmVUg5WHFSZk4xeXM5cDA0RDQ4Tm0wN0pqclNBR2ZkSGNja2ctZXZDeUxGMDIwTXc4ZlQ2WUJkelRDNWE0cERMemZsRUNKanlVZ2FSdzRjWG9uSXN3?oc=5",
-      "topics": [
-        "일반 기술"
-      ],
-      "score": 50,
-      "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
-      "summary_status": "제목 기반·검증 전",
-      "evidence": "Google News RSS index"
-    },
-    {
-      "id": "609a1d1e838e",
-      "kind": "news",
-      "category": "GaN",
-      "title": "Power Play: Collab Focuses on Power Solution for Advanced Computing Apps - Electronic Design",
-      "date": "2026-11-05",
-      "source": "Electronic Design",
-      "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNbktOQm1MaXN2MTh5dzZiVjViamNjWjFWLTZCc2Z1blFjVnpLcjM1em04VUZvX1l5TkMtTXFPdXRzQktwelhWUmZET2VOQXhRWHhFZjRUUzVSV1NpVGl6Q2JTOVFudFJxaWZIdzRHSWIxUTU5a2VCQUoyN0JQYUJZUXo5NXlNTl9IX04tWkFjWGV0UzNDVTNwT19aZWxSOUZ5RFdlV3dXSzRVajVSakU0TFh2azBpeUlCTzkwVWtJQ0drM2VhSkktbXJVSGdMUUpYTDRHeWxOelJ5bWtDdGt3MUY5dFdMUV8xSk1OU1J0dw?oc=5",
-      "topics": [
-        "일반 기술"
-      ],
-      "score": 50,
-      "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
-      "summary_status": "제목 기반·검증 전",
-      "evidence": "Google News RSS index"
-    },
-    {
       "id": "bdc5903cb827",
       "kind": "news",
       "category": "GaN",
@@ -666,70 +214,6 @@
       "evidence": "Google News RSS index"
     },
     {
-      "id": "f576e69ce849",
-      "kind": "news",
-      "category": "SiC",
-      "title": "USB3 Extension Chipset VS6310 for Embedded Video Conferencing Devices - Electronics Media",
-      "date": "2026-11-05",
-      "source": "Electronics Media",
-      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1ObTl6ZmJOaWIzSUJmbEVldzAwRVV2M00xQWZ3ZVlMRVhLdExrZUhaSXhzQ3F0ZUNCRUs3TkRHT3FWZUZuMWVLSEp5WFV3Wnk1UllvNkxHM1doa3ktMVdCalhLZ3RSekZtaEdRMUVpdklEVERpcTk4?oc=5",
-      "topics": [
-        "일반 기술"
-      ],
-      "score": 40,
-      "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
-      "summary_status": "제목 기반·검증 전",
-      "evidence": "Google News RSS index"
-    },
-    {
-      "id": "78355180f75c",
-      "kind": "news",
-      "category": "SiC",
-      "title": "Silicon Carbide in Integrated Energy - Department of Energy (.gov)",
-      "date": "2026-11-05",
-      "source": "Department of Energy (.gov)",
-      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE44bTRnR0NEY1FmZ01PaXVHSlVQbTVMR0pVaHE0aFhuQi1rcl9ndURkZTBVNjZnNkNHRXpDTHZ0M0drdHZNRG1VenRhUXBsNVlhRS1aLU5EemdEcEpCV3NCNUFiYnlnS3B3WlljRFplVENDOUdPQ3RfSQ?oc=5",
-      "topics": [
-        "일반 기술"
-      ],
-      "score": 40,
-      "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
-      "summary_status": "제목 기반·검증 전",
-      "evidence": "Google News RSS index"
-    },
-    {
-      "id": "ac7ff6e1f92e",
-      "kind": "news",
-      "category": "SJ MOSFET",
-      "title": "Why Did Magnachip Semiconductor (NYSE:MX) Post a 14.0% Gross Margin Below Its 17% to 19% Guide? - kalkine.ca",
-      "date": "2026-11-05",
-      "source": "kalkine.ca",
-      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQOFlqbWZ2aGczM3V4enp1THpvS1B0MWdqV2VxTF90eXlwOW05LWFCaWsyMzQ2Z0xzRzNQc2ZET0hlbkw5M2oyYVhXNTdLWXI4V3F2WU02cGdrSkFNUllaOFJydzZ6eDlwUDVvenNzUzc1TlBUcU5XajFYQnRhNFg0Y0lGT2N5NjZkYm5LU0xzOTdkY0dqQUdhd2Zsb0c1VVpHYVg1dnk5SEJUQnJhcXJfQmRXdlBOUklhbVpjUDFpZw?oc=5",
-      "topics": [
-        "재무·시장"
-      ],
-      "score": 30,
-      "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
-      "summary_status": "제목 기반·검증 전",
-      "evidence": "Google News RSS index"
-    },
-    {
-      "id": "9cd1eaf8a958",
-      "kind": "news",
-      "category": "GaN",
-      "title": "Enphase Energy (ENPH) Reaches 800 VDC AI Data Center Power Milestone - Yahoo Finance",
-      "date": "2026-11-04",
-      "source": "Yahoo Finance",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNRzJ5SlFxRmVHa1dUYzN4Y1FqSzgtS2dfNlV5TXZpd3YtbU5ENDc2TTAxLWZjUzJJcHNlVU1SSkhyNDd2aWVLUlIyQndEbDNaWDdPekJTUTVUUGY5bVlOWjJxVkhQcGxrOVdHdUt6aXdIcFR3LUdwd3BWWUZvZWxTQTJyTkxpMUI2YTZIVXd6djN1dw?oc=5",
-      "topics": [
-        "데이터센터"
-      ],
-      "score": 65,
-      "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
-      "summary_status": "제목 기반·검증 전",
-      "evidence": "Google News RSS index"
-    },
-    {
       "id": "ae22387770ad",
       "kind": "news",
       "category": "GaN",
@@ -744,45 +228,13 @@
       "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
       "summary_status": "제목 기반·검증 전",
       "evidence": "Google News RSS index"
-    },
-    {
-      "id": "c06c3c6de9be",
-      "kind": "news",
-      "category": "GaN",
-      "title": "Navitas Semiconductor Q3 Earnings Beat Estimates on High-Power Demand - TradingView",
-      "date": "2026-11-04",
-      "source": "TradingView",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQS0l3d0MtWmJwQUdXUVFVSjRKbHRxNS1GWFJZbVFtMUFUS1RONWNrRmlDV2dXbXhhcmJUdGFETzdIZUlwY1JzRU5hWThRWWVuTjRWRkNHZXZLSTZ5R2JBQU13RFZOTWZJSWhxMzhaaVhDRF9kZ1Fyd05CX3k3bXR1RXJpV2h1b2VnV2RzNGlGdXJHWVA4YWZzbXJOMjhlQjczMjVoeXlWX3JjZEk3cDlFX1d1aTRYbXpBcDgtdVVpMjU0Zw?oc=5",
-      "topics": [
-        "재무·시장"
-      ],
-      "score": 50,
-      "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
-      "summary_status": "제목 기반·검증 전",
-      "evidence": "Google News RSS index"
-    },
-    {
-      "id": "9bc0107aadca",
-      "kind": "news",
-      "category": "SJ MOSFET",
-      "title": "Q3 sales at Magnachip reached $44 million, but 14% of sales was left after production costs. - Stock Titan",
-      "date": "2026-11-04",
-      "source": "Stock Titan",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNUGRJazNDVDU1djVRR254VzVSdHdoRFdONVZTTGEtVzJpV2xiUEhFZVFWbkZwWjVRTGdoRG01V0tQTmlnMGpiQmRCa0ZjQjdaR2lrSWlDSHJyZ1lYMlNBcG9RTW00MjJpMEpuc2M2UzhadTgyc1NtNU1ITkduWGZsTkliNTNSWUNhUUFRVXdDbll2ZmxqbkNiRkNFMXA?oc=5",
-      "topics": [
-        "일반 기술"
-      ],
-      "score": 30,
-      "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
-      "summary_status": "제목 기반·검증 전",
-      "evidence": "Google News RSS index"
     }
   ],
   "counts": {
-    "GaN": 19,
-    "SiC": 25,
+    "GaN": 8,
+    "SiC": 6,
     "SGT": 0,
-    "SJ MOSFET": 3
+    "SJ MOSFET": 0
   },
   "errors": [],
   "sources": [
