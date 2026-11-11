@@ -36,7 +36,7 @@ jobs:
       - name: Collect public research metadata
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        run: python scripts/collect.py
+        run: python -m scripts.collect
       - name: AI translation and summary (budget controlled)
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
