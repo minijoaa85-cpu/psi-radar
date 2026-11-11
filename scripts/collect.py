@@ -17,7 +17,7 @@ OUT=ROOT/"site"/"data.json"
 TECH={
  "GaN":['"GaN HEMT"','"gallium nitride" power','"GaN" "data center"'],
  "SiC":['"SiC MOSFET"','"silicon carbide" power semiconductor'],
- "IGBT":['"trench IGBT"','"field stop" IGBT','"RC-IGBT" power semiconductor'],
+ "IGBT":['"IGBT" power semiconductor','"IGBT" power module','"trench IGBT"','"RC-IGBT"','"field-stop IGBT"'],
  "SGT":['"shielded gate" MOSFET','"split gate" trench MOSFET'],
  "SJ MOSFET":['"superjunction MOSFET"','"super junction" power MOSFET']}
 KEYS={"GaN":("gan","gallium nitride","氮化镓","窒化ガリウ"),"SiC":("sic","silicon carbide","碳化硅","炭化ケイ素"),"IGBT":("igbt","insulated gate bipolar transistor","绝缘栅双极型晶体管","絶縁ゲートバイポーラトランジスタ"),"SGT":("shielded gate","split gate","sgt"),"SJ MOSFET":("superjunction","super junction","sj mosfet")}
@@ -41,15 +41,15 @@ def classify_topics(t):
  return [k for k,words in TOPICS.items() if any(w in t for w in words)] or ["일반 기술"]
 def score(t,c):
  t=t.lower()
- return min(100,{"GaN":50,"SiC":45,"IGBT":40,"SGT":25,"SJ MOSFET":25}.get(c,10)+15*("data center" in t or "800v" in t)+10*("reliability" in t)+10*("trench" in t))
+ return min(100,{"GaN":50,"SiC":40,"IGBT":30,"SGT":30,"SJ MOSFET":30}.get(c,10)+15*("data center" in t or "800v" in t)+10*("reliability" in t)+10*("trench" in t))
 def unique(rows):
  seen=set();out=[]
  for r in rows:
   key=(r.get("doi") or re.sub("[^a-z0-9]","",r["title"].lower())).lower()
   if key not in seen:seen.add(key);out.append(r)
  return out
-def news(session,query,category):
- u="https://news.google.com/rss/search?q="+quote(query+" when:7d",safe="")+"&hl=en-US&gl=US&ceid=US:en"
+def news(session,query,category,days=7):
+ u="https://news.google.com/rss/search?q="+quote(query+" when:"+str(days)+"d",safe="")+"&hl=en-US&gl=US&ceid=US:en"
  r=session.get(u,timeout=20);r.raise_for_status()
  result=[]
  for it in ET.fromstring(r.content).findall("./channel/item")[:9]:
@@ -58,7 +58,7 @@ def news(session,query,category):
   try:date=parsedate_to_datetime(it.findtext("pubDate")).date().isoformat()
   except (TypeError,ValueError,IndexError):date=None
   cat=classify(title,category)
-  result.append({"id":hashlib.sha1((title+url).encode()).hexdigest()[:12],"kind":"news","category":cat,"title":title,"date":date,"source":clean(it.findtext("source") or "News RSS"),"url":url,"topics":classify_topics(title),"score":score(title,cat),"summary_ko":"공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.","summary_status":"제목 기반·검증 전","evidence":"Google News RSS index"})
+  result.append({"id":hashlib.sha1((title+url).encode()).hexdigest()[:12],"kind":"news","category":cat,"title":title,"date":date,"source":clean(it.findtext("source") or "News RSS"),"url":url,"topics":classify_topics(title),"score":score(title,cat),"lookback_days":days,"summary_ko":"공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.","summary_status":"제목 기반·검증 전","evidence":"Google News RSS index"})
  return result
 def papers(session,query,category,start):
  r=session.get("https://api.crossref.org/works",params={"query.bibliographic":query,"filter":f"from-pub-date:{start},type:journal-article","sort":"published","order":"desc","rows":8,"select":"DOI,title,published,container-title,URL,abstract"},timeout=25);r.raise_for_status()
@@ -82,6 +82,12 @@ def main():
   for q in queries:
    try: rows.extend(news(session,q,cat))
    except Exception as e:errors.append(f"news {cat}: {type(e).__name__}: {str(e)[:100]}")
+  if cat=="IGBT" and not any(r.get("category")=="IGBT" for r in rows):
+   # A quiet 7-day IGBT news week must not be mistaken for a broken collector.
+   # Older context is labeled as a 30-day fallback, not as this week's news.
+   for q in ('"IGBT" power semiconductor','"IGBT" inverter'):
+    try:rows.extend(news(session,q,cat,days=30))
+    except Exception as e:errors.append(f"news fallback IGBT: {type(e).__name__}: {str(e)[:100]}")
   try:rows.extend(papers(session,queries[0].replace('"',""),cat,paper_start))
   except Exception as e:errors.append(f"paper {cat}: {type(e).__name__}: {str(e)[:100]}")
  rows=unique(rows)
