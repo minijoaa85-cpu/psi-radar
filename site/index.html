@@ -5,10 +5,11 @@
 </style></head><body>
 <header><small>POWER SEMICONDUCTOR INTELLIGENCE</small><h1>◈ PSI Radar</h1><div class="muted">GaN · SiC · IGBT · UD/UG SGT · SJ MOSFET | 글로벌 기술 · 논문 · 경쟁사 동향</div><div id="last" class="mini">데이터 상태 확인 중...</div></header>
 <main><nav id="nav" class="nav" aria-label="메뉴">
-<button data-tab="overview" class="active">Overview</button><button data-tab="technology">Technology</button><button data-tab="research">Research</button><button data-tab="competitors">Competitors</button><button data-tab="benchmark">Benchmark</button><button data-tab="market">Market & Finance</button><button data-tab="sources">Data Quality</button></nav>
+<button data-tab="overview" class="active">Overview</button><button data-tab="technology">Technology</button><button data-tab="research">Research</button><button data-tab="weekly">Weekly Reports</button><button data-tab="competitors">Competitors</button><button data-tab="benchmark">Benchmark</button><button data-tab="market">Market & Finance</button><button data-tab="sources">Data Quality</button></nav>
 <section id="overview"><div class="grid"><article class="panel stat"><span>수집된 자료 (연구 12개월 포함)</span><b id="total">0</b></article><article class="panel stat"><span>GaN</span><b id="gan">0</b></article><article class="panel stat"><span>SiC</span><b id="sic">0</b></article><article class="panel stat"><span>IGBT</span><b id="igbt">0</b></article><article class="panel stat"><span>논문</span><b id="papers">0</b></article></div><div class="two"><article class="panel"><h2>주간 핵심 업데이트</h2><div id="highlights" class="feed"></div></article><article class="panel"><h2>분석 우선순위</h2><div class="tiles"><article><b>GaN · 40%</b><p>E-mode, Dynamic R(on), 데이터센터 전원</p></article><article><b>SiC · 30%</b><p>Trench, Gate Oxide, 200mm Wafer</p></article><article><b>IGBT · 10%</b><p>Trench, Field Stop, VCE(sat), Eoff</p></article><article><b>SGT · 10%</b><p>Shield gate, Qgd, Eoss, Cell Pitch</p></article><article><b>SJ · 10%</b><p>Pillar Balance, Qrr, Softness, BV</p></article></div><p class="mini">비중은 기술 관심도 기준이며 실제 수집 비중을 보장하지 않습니다.</p></article></div></section>
 <section id="technology" class="hidden"><article class="panel"><h2>Technology Watch</h2><div class="filters"><select id="cat"><option value="">전체 기술</option><option>GaN</option><option>SiC</option><option>IGBT</option><option>SGT</option><option>SJ MOSFET</option></select><select id="kind"><option value="">뉴스 + 논문</option><option value="news">뉴스</option><option value="paper">논문</option></select><input id="search" placeholder="키워드·회사·기술 검색" aria-label="검색"></div><div id="records" class="feed"></div></article></section>
-<section id="research" class="hidden"><article class="panel"><h2>학술 논문 | Research Intelligence</h2><p class="muted">최근 45일 학술지 + IGBT·SGT·SJ MOSFET 최근 12개월 집중 검색 · Crossref / OpenAlex DOI · 원문 검토 전</p><div class="filters"><select id="research-cat" aria-label="논문 기술 선택"><option value="">전체 논문</option><option>GaN</option><option>SiC</option><option>IGBT</option><option>SGT</option><option>SJ MOSFET</option></select></div><div id="research-counts" class="mini"></div><div id="research-feed" class="feed"></div></article></section>
+<section id="research" class="hidden"><article class="panel"><h2>학술 논문 | Research Intelligence</h2><p class="muted">최근 45일 학술지 + IGBT·SGT·SJ MOSFET 최근 12개월 집중 검색 · Crossref / OpenAlex DOI · 원문 검토 전</p><div class="filters"><select id="research-cat" aria-label="논문 기술 선택"><option value="">전체 논문</option><option>GaN</option><option>SiC</option><option>IGBT</option><option>SGT</option><option>SJ MOSFET</option></select></div><select id="research-relevance" aria-label="기술 관련성 수준"><option value="0">전체 관련성</option><option value="70">높음 70점 이상</option><option value="45">보통 45점 이상</option></select><p class="mini">관련성은 제목·초록 기술 키워드 기반의 자동 추정값입니다. 전문가 검증 결과가 아닙니다.</p><div id="research-counts" class="mini"></div><div id="research-feed" class="feed"></div></article></section>
+<section id="weekly" class="hidden"><article class="panel"><h2>주간 보고서 아카이브</h2><p class="muted">매주 공개 자료를 누적 보관합니다. 동일 주차에 다시 실행하면 해당 주 보고서를 갱신합니다. 첫 주차는 비교 기준(Baseline)입니다.</p><div class="filters"><select id="weekly-select" aria-label="보고서 주차 선택"><option value="">보고서 로딩 중</option></select></div><div id="weekly-details" class="feed"><div class="empty">주간 보고서 파일을 확인 중입니다.</div></div></article></section>
 <section id="competitors" class="hidden"><article class="panel"><h2>Competitor Watch</h2><p class="muted">글로벌·일본·중국 제조사 추적. 공개 뉴스에서 수집된 자료만 표시합니다.</p><div id="company-feed" class="feed"></div></article></section>
 <section id="benchmark" class="hidden"><article class="panel"><h2>Device Benchmark</h2><p>GaN: RDS(on), Vth, Qg, Qoss, Eoss, Dynamic R(on) / SiC: Ron, Qgd, Eoss, SCWT / IGBT: VCE(sat), Eoff, Eon, Qg, SCWT / SGT·SJ: BV, Qrr, EAS, Qgd</p><div class="empty">제품별 공식 Datasheet 수집 및 측정 조건 정규화 전입니다. 검증된 제품 비교만 이곳에 표시됩니다.</div><h2>제조사 공식 기술자료 (참고 링크)</h2><div class="feed"><div class="item"><strong>ROHM · 600V Super Junction MOSFET 신제품 기술 발표 (2026)</strong><a href="https://www.rohm.com/news-detail?defaultGroupId=false&amp;news-title=2026-07-09_news_super-junction-mosfet" target="_blank" rel="noopener noreferrer">공식 ROHM 자료 ↗</a></div><div class="item"><strong>Toshiba · DTMOS VI 공식 데이터시트 및 Application Note</strong><a href="https://toshiba.semicon-storage.com/kr/semiconductor/product/mosfets/400v-900v-mosfets/detail.TK095V65Z5.html" target="_blank" rel="noopener noreferrer">공식 Toshiba 기술자료 ↗</a></div><div class="item"><strong>Infineon · TRENCHSTOP IGBT7 / EC7 구조 및 공식 제품 기술</strong><a href="https://www.infineon.com/technology/power/igbt/trenchstop-igbt7" target="_blank" rel="noopener noreferrer">공식 Infineon 기술자료 ↗</a></div></div></article></section>
 <section id="market" class="hidden"><article class="panel"><h2>Market & Financials</h2><p>Global Semiconductor → Power / Discrete → GaN / SiC / IGBT → Company Financials</p><div class="empty">공식 분기 실적·공시 기반 데이터 추출은 다음 단계입니다. 매출 및 이익 수치를 임의 생성하지 않습니다.</div></article></section>
@@ -16,7 +17,7 @@
 <footer class="foot">PSI Radar · 공개 정보만 사용 · 모든 자료의 날짜·출처·원문 링크 확인 · 내부 공정 데이터는 업로드하지 마세요.</footer></main>
 <script>
 let DB={records:[],errors:[]};const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));const el=id=>document.getElementById(id);
-function card(r){let safe=/^https:\/\//.test(r.url||"")?r.url:"#";let title=r.title_ko||r.title;let translated=r.title_ko&&r.title_ko!==r.title?'<div class="mini">원문 제목: '+esc(r.title)+'</div>':'';let age=r.kind==="paper"&&r.lookback_days>45?'<span class="tag">최근 12개월 연구</span>':'';let prior=r.stale_reused?'<span class="tag">이전 수집 정보 유지</span>':'';let physics=r.physics_ko?'<details><summary>Device Physics 참고 분석 보기</summary><p>'+esc(r.physics_ko)+'</p></details>':'';return '<article class="item"><span class="tag">'+esc(r.category)+'</span><span class="tag">'+(r.kind==="paper"?"논문":"뉴스")+'</span><span class="tag">'+(r.title_ko?"한국어 AI 요약":"원문 메타데이터")+'</span>'+age+prior+'<span class="meta">'+esc(r.date||"날짜 미확인")+' · '+esc(r.source||"출처 미확인")+'</span><strong>'+esc(title)+'</strong>'+translated+'<p>'+esc(r.summary_ko||"공개 메타데이터입니다. 원문에서 기술적 의미를 확인하세요.")+'</p>'+physics+'<div class="meta">근거: '+esc(r.summary_status||"메타데이터")+' · 중요도(임시): '+esc(r.score??"-")+'</div><a href="'+esc(safe)+'" target="_blank" rel="noopener noreferrer">원문/DOI 보기 ↗</a></article>'}
+function card(r){let safe=/^https:\/\//.test(r.url||"")?r.url:"#";let title=r.title_ko||r.title;let translated=r.title_ko&&r.title_ko!==r.title?'<div class="mini">원문 제목: '+esc(r.title)+'</div>':'';let age=r.kind==="paper"&&r.lookback_days>45?'<span class="tag">최근 12개월 연구</span>':'';let prior=r.stale_reused?'<span class="tag">이전 수집 정보 유지</span>':'';let relevance=r.relevance_score!==undefined?'<span class="tag">기술 관련성 '+esc(r.relevance_score)+'/100 · '+esc(r.relevance_level||"미분류")+'</span>':'';let physics=r.physics_ko?'<details><summary>Device Physics 참고 분석 보기</summary><p>'+esc(r.physics_ko)+'</p></details>':'';return '<article class="item"><span class="tag">'+esc(r.category)+'</span><span class="tag">'+(r.kind==="paper"?"논문":"뉴스")+'</span><span class="tag">'+(r.title_ko?"한국어 AI 요약":"원문 메타데이터")+'</span>'+age+prior+relevance+'<span class="meta">'+esc(r.date||"날짜 미확인")+' · '+esc(r.source||"출처 미확인")+'</span><strong>'+esc(title)+'</strong>'+translated+'<p>'+esc(r.summary_ko||"공개 메타데이터입니다. 원문에서 기술적 의미를 확인하세요.")+'</p>'+physics+'<div class="meta">근거: '+esc(r.summary_status||"메타데이터")+' · 중요도(임시): '+esc(r.score??"-")+'</div><a href="'+esc(safe)+'" target="_blank" rel="noopener noreferrer">원문/DOI 보기 ↗</a></article>'}
 function render(){
  const all=DB.records||[];
  el("total").textContent=all.length;
@@ -54,12 +55,45 @@ function render(){
 function renderResearch(){
  const items=(DB.records||[]).filter(r=>r.kind==="paper");
  const cat=el("research-cat").value;
- const subset=items.filter(r=>!cat||r.category===cat);
+ const minScore=Number(el("research-relevance").value)||0;
+ const subset=items.filter(r=>(!cat||r.category===cat)&&(Number(r.relevance_score||0)>=minScore)).sort((a,b)=>(b.relevance_score||0)-(a.relevance_score||0));
  const counts=["GaN","SiC","IGBT","SGT","SJ MOSFET"].map(k=>k+": "+items.filter(r=>r.category===k).length+"편").join(" · ");
  el("research-counts").textContent="학술 논문 수: "+items.length+"편 | "+counts;
  el("research-feed").innerHTML=subset.length?subset.map(card).join(""):'<div class="empty">해당 기술군에서 검증된 논문 메타데이터가 아직 수집되지 않았습니다.</div>';
 }
 el("research-cat").addEventListener("change",renderResearch);
+el("research-relevance").addEventListener("change",renderResearch);
+function weeklyCards(items){
+ const rows=items||[];
+ return rows.length?rows.map(card).join(""):'<div class="empty">선택한 조건의 신규 자료가 없습니다.</div>';
+}
+function displayWeek(report){
+ const target=el("weekly-details");
+ const baseline=report.baseline?"비교 기준 주차 (이전 주차 자료 없음)":"직전 주차 대비 신규 ID 기준";
+ target.innerHTML='<div class="tiles"><article><b>이번 주 발표: '+esc(report.published_this_week_count)+'</b><p>실제 발표일 기준</p></article><article><b>새로 확인된 자료: '+esc(report.new_items_count)+'</b><p>'+baseline+'</p></article><article><b>논문 참고: '+esc(report.research_reference_count)+'</b><p>최대 12개월 연구 보관</p></article><article><b>수집 경고: '+esc(report.collection_errors)+'</b><p>원문 확인 필요</p></article></div>'+
+ '<h2>이번 주 핵심 자료</h2>'+weeklyCards(report.weekly_items)+
+ '<h2>논문 우선 검토 목록</h2>'+weeklyCards(report.research_highlights)+
+ '<p class="mini">'+esc(report.notice||"")+'</p>';
+}
+function loadWeekly(){
+ fetch("reports/index.json?nocache="+Date.now()).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(idx=>{
+  const menu=el("weekly-select");menu.innerHTML="";
+  const items=Array.isArray(idx.reports)?idx.reports:[];
+  if(!items.length){el("weekly-details").textContent="보관된 보고서가 없습니다.";return;}
+  for(const entry of items){
+   const option=document.createElement("option");option.value=entry.file;
+   option.textContent=entry.week+" ("+entry.week_start+") · "+entry.published_this_week_count+"건";
+   menu.appendChild(option);
+  }
+  const show=()=>{
+   const file=menu.value;
+   if(!/^reports\/\d{4}-W\d{2}\.json$/.test(file)){el("weekly-details").textContent="잘못된 보고서 주소입니다.";return;}
+   fetch(file+"?nocache="+Date.now()).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(displayWeek).catch(()=>el("weekly-details").textContent="보고서 파일을 불러올 수 없습니다.");
+  };
+  menu.onchange=show;show();
+ }).catch(()=>el("weekly-details").textContent="보고서 아카이브가 아직 생성되지 않았습니다.");
+}
+loadWeekly();
 function filter(){const cat=el("cat").value,kind=el("kind").value,q=el("search").value.toLowerCase();let x=(DB.records||[]).filter(r=>(!cat||r.category===cat)&&(!kind||r.kind===kind)&&(!q||(r.title+" "+(r.title_ko||"")+" "+r.source+" "+r.summary_ko).toLowerCase().includes(q)));el("records").innerHTML=x.length?x.map(card).join(""):'<div class="empty">검색 결과가 없습니다.</div>';}
 for(let e of ["cat","kind","search"])el(e).addEventListener("input",filter);for(let b of document.querySelectorAll(".nav button"))b.addEventListener("click",()=>{document.querySelectorAll(".nav button").forEach(x=>x.classList.toggle("active",x===b));document.querySelectorAll("main>section").forEach(s=>s.classList.toggle("hidden",s.id!==b.dataset.tab));});
 fetch("data.json?nocache="+Date.now()).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{DB=d;render()}).catch(e=>{el("last").textContent="데이터 로딩 실패: "+e.message;render()});
