@@ -1,4 +1,4 @@
-# PSI Radar V0.2 — Power Semiconductor Intelligence Radar
+# PSI Radar V0.3 — Power Semiconductor Intelligence Radar
 
 공개 자료 기반 한국어 전력반도체 주간 기술 모니터링 웹 플랫폼. GaN (40%) > SiC (30%) > IGBT (10%) = UD/UG SGT (10%) = SJ MOSFET (10%).
 
@@ -49,7 +49,7 @@
 ```bash
 python -m pip install -r requirements.txt
 python -m pytest -q
-python scripts/collect.py
+python -m scripts.collect
 python scripts/ai_enrich.py
 python -m http.server 8000 --directory site
 ```
@@ -93,3 +93,16 @@ GitHub Pages는 저장소 Settings → Pages → **Source: GitHub Actions**를 �
 - 최근 7일간 IGBT 관련 뉴스가 없으면 최근 30일 검색을 추가로 수행하고, **최근 30일 참고**로 별도 표기함.
 - GitHub Actions의 코드 변경(push) 실행은 비용 방지 및 경합 회피를 위해 데이터 JSON을 저장하지 않으므로, **최신 IGBT 건수 확인 시 Actions → Run workflow를 수동 1회 실행**해야 함. 주간 예약 실행도 저장함.
 - Crossref 논문 45일 수집은 아직 커버리지가 제한되어 있으며 학술지 검색 고도화는 별도 과제.
+
+## V0.3: 학술 논문 / 제조사 기술정보 수집 고도화
+- 기존 뉴스 최근 7일 및 기존 Crossref 학술지 45일 검색 유지
+- **IGBT, SGT, SJ MOSFET**에 대해 최근 **365일 논문 메타데이터**를 Crossref 및 OpenAlex에서 다중 쿼리로 검색
+- 두 서비스의 결과는 DOI를 기준으로 통합·중복 제거하고, 원문을 열어 확인할 수 있도록 링크를 유지
+- IEEE TED, JEDS, TPEL, Solid-State Electronics 등을 관심 학술지로 기록 (특정 저널로만 검색을 제한하지 않음)
+- 논문 초록이 확보된 경우에만 AI의 초록 기반 요약을 허용하며 원문 검토 여부를 명시
+- OpenAlex 기본 조회는 추가 API 키 없이 시도하며, `OPENALEX_API_KEY`는 필요할 때만 별도 GitHub Secret으로 제공 (현재 필수 아님; 제공업체의 이용량/과금조건은 별도)
+- AI 호출 상한은 기존 실행당 12회 / 추정비용 $0.02 그대로 유지; 우선순위가 같은 IGBT·SGT·SJ 논문에 각 최대 1회씩 AI 분석 슬롯 우선 배정
+- 제조사 공식 링크 참고 섹션: Infineon IGBT7, ROHM SJ MOSFET, Toshiba DTMOS
+- **중요:** '수집된 자료'는 1년치 연구 참고자료를 포함하므로 매주 신간 건수와 다릅니다. Overview의 주간 핵심 업데이트에는 최근 8일의 자료만 표시합니다.
+- API 메타데이터는 학술지의 실제 발행일·인용·초록 등록 상황에 따라 누락되거나 부정확할 수 있습니다. 논문 원문을 자동으로 무단 다운로드하지 않습니다.
+- 현재 코드 Push 이벤트는 자료를 배포만 하고 `site/data.json` 커밋을 건너뜁니다. **새 논문 검색 결과를 저장소에도 저장하려면 Actions에서 Run workflow를 1회 실행**해야 하며, 그때 API 키가 있는 경우 제한된 AI 요약 호출이 발생할 수 있습니다.
