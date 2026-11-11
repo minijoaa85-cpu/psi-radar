@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-11T23:04:06.721295+00:00",
+  "reports": [
+    {
+      "week": "2026-W46",
+      "week_start": "2026-11-09",
+      "generated_at": "2026-11-11T23:04:06.721295+00:00",
+      "new_items_count": 8,
+      "published_this_week_count": 8,
+      "research_reference_count": 81,
+      "baseline": true,
+      "file": "reports/2026-W46.json"
+    }
+  ]
+}
