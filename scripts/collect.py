@@ -21,6 +21,15 @@ TECH={
  "SJ MOSFET":['"superjunction MOSFET"','"super junction" power MOSFET']}
 KEYS={"GaN":("gan","gallium nitride","氮化镓","窒化ガリウ"),"SiC":("sic","silicon carbide","碳化硅","炭化ケイ素"),"SGT":("shielded gate","split gate","sgt"),"SJ MOSFET":("superjunction","super junction","sj mosfet")}
 TOPICS={"데이터센터":("data center","datacenter","ai server","800vdc"),"신뢰성":("reliability","dynamic r","breakdown","oxide"),"공정·구조":("trench","epitax","wafer","vertical","implant"),"재무·시장":("revenue","margin","earnings","capex","market")}
+POWER_CONTEXT=("power","semiconductor","mosfet","hemt","transistor","switching","converter","inverter","charger","charging","gate","breakdown voltage","high voltage","voltage","650v","1200v","1700v","800v","electronic","epitax","wafer","datasheet","data center","datacenter","automotive","device","diode","drain","coolgan","gan-on-si","sicarbide","field-effect")
+EXCLUDE=("generative adversarial network","generative ai network","oil-in-water","membrane filtration","photocatalyst","water treatment","biomedical")
+def relevant(title,cat):
+ t=clean(title).lower()
+ if any(x in t for x in EXCLUDE):return False
+ if not any(x in t for x in POWER_CONTEXT):return False
+ if cat=="GaN":return bool(re.search(r"\\bgan\\b|gallium nitride|氮化镓|窒化ガリウ",t))
+ if cat=="SiC":return bool(re.search(r"\\bsic\\b|silicon carbide|碳化硅|炭化ケイ素",t))
+ return any(w in t for w in KEYS[cat])
 def clean(s): return re.sub(r"\s+"," ",html.unescape(re.sub(r"<[^>]*>"," ",str(s or "")))).strip()
 def classify(title,fallback):
  t=clean(title).lower()
@@ -43,7 +52,7 @@ def news(session,query,category):
  result=[]
  for it in ET.fromstring(r.content).findall("./channel/item")[:9]:
   title=clean(it.findtext("title"));url=clean(it.findtext("link"))
-  if not title or not url:continue
+  if not title or not url or not relevant(title,category):continue
   try:date=parsedate_to_datetime(it.findtext("pubDate")).date().isoformat()
   except (TypeError,ValueError,IndexError):date=None
   cat=classify(title,category)
@@ -54,9 +63,10 @@ def papers(session,query,category,start):
  result=[]
  for x in r.json().get("message",{}).get("items",[]):
   title=clean((x.get("title") or [""])[0])
-  if not any(w in title.lower() for w in KEYS[category]):continue
+  if not relevant(title,category):continue
   parts=x.get("published",{}).get("date-parts",[[None]])[0]
   date=f"{parts[0]:04}-{(parts[1] if len(parts)>1 else 1):02}-{(parts[2] if len(parts)>2 else 1):02}" if parts[0] else None
+  if date and (date > dt.date.today().isoformat() or date < start):continue
   abstract=clean(x.get("abstract",""))[:2000]
   doi=x.get("DOI","")
   result.append({"id":hashlib.sha1((doi or title).encode()).hexdigest()[:12],"kind":"paper","category":category,"title":title,"date":date,"source":clean((x.get("container-title") or ["Journal"])[0]),"url":x.get("URL") or "https://doi.org/"+doi,"doi":doi,"topics":classify_topics(title+" "+abstract),"score":score(title,category),"abstract":abstract,"summary_ko":"초록이 수집되었으나 원문의 연구 결론은 별도 검증이 필요합니다." if abstract else "서지 정보만 확보했습니다. 연구 결론은 검증되지 않았습니다.","summary_status":"초록 기반·결론 미검증" if abstract else "서지 기반·결론 미검증","evidence":"Crossref journal metadata"})
