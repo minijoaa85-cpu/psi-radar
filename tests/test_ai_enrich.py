@@ -38,3 +38,13 @@ def test_safeguards_default_limits():
  assert ai_enrich.MAX_CALLS<=30
  assert ai_enrich.MAX_ESTIMATED_USD<=1.0
  assert ai_enrich.MAX_OUTPUT_TOKENS<=12000
+
+def test_focused_paper_priority():
+ rows=[
+  {"id":"n","title":"GaN power device","kind":"news","category":"GaN","score":95},
+  {"id":"s","title":"SJ MOSFET charge balance","kind":"paper","category":"SJ MOSFET","score":30},
+  {"id":"i","title":"Trench IGBT short circuit","kind":"paper","category":"IGBT","score":30},
+  {"id":"g","title":"GaN journal","kind":"paper","category":"GaN","score":90},
+  {"id":"t","title":"Shielded gate trench MOSFET","kind":"paper","category":"SGT","score":30},
+ ]
+ assert [x["category"] for x in ai_enrich.prioritized(rows)[:3]]==["IGBT","SGT","SJ MOSFET"]
