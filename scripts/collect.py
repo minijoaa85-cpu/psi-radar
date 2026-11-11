@@ -106,6 +106,10 @@ def main():
   print("Focused journal candidates:",json.dumps(research_stats,ensure_ascii=False))
  except Exception as exc:
   errors.append("Focused research unavailable: "+type(exc).__name__+": "+str(exc)[:100])
+ # Company-specific news discovery supplements general searches; failures are non-fatal.
+ from scripts.competitors import collect_competitors,tag_records,summarize_companies
+ extra,company_errors=collect_competitors(session)
+ rows.extend(extra);errors.extend(company_errors)
  rows=unique(rows)
  # Preserve existing reviewed metadata when providers are degraded, without falsely labeling it new.
  previous={}
@@ -132,12 +136,14 @@ def main():
     if old.get(field):row[field]=old[field]
  from scripts.relevance import annotate
  annotate(rows)
+ tag_records(rows)
  rows.sort(key=lambda x:(x.get("date") or "",x.get("relevance_score") or 0),reverse=True)
  if not rows:raise RuntimeError("No metadata collected; retain last successful data. "+str(errors))
- payload={"schema_version":5,"generated_at":now.isoformat(),"window_start":start,"paper_window_start":paper_start,"focused_paper_window_start":(now-dt.timedelta(days=365)).date().isoformat(),"mode":"live_metadata","records":rows[:220],"counts":{c:sum(r["category"]==c for r in rows) for c in TECH},"errors":errors,"sources":["Crossref","OpenAlex","Google News RSS"],"financials":[],"product_specs":[],"notice":"서지·뉴스 메타데이터 기반. 원문 검토 전의 결론이나 금융 실적을 확정하지 않습니다."}
+ payload={"schema_version":6,"generated_at":now.isoformat(),"window_start":start,"paper_window_start":paper_start,"focused_paper_window_start":(now-dt.timedelta(days=365)).date().isoformat(),"mode":"live_metadata","records":rows[:220],"competitor_stats":summarize_companies(rows[:220]),"counts":{c:sum(r["category"]==c for r in rows) for c in TECH},"errors":errors,"sources":["Crossref","OpenAlex","Google News RSS"],"financials":[],"product_specs":[],"notice":"서지·뉴스 메타데이터 기반. 원문 검토 전의 결론이나 금융 실적을 확정하지 않습니다."}
  OUT.parent.mkdir(parents=True,exist_ok=True)
  OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2),encoding="utf-8")
  print("Collected",len(rows),"records, errors:",len(errors),"previous papers retained:",reused)
+ print("Competitor mentions:",json.dumps({k:v["items"] for k,v in payload["competitor_stats"].items() if v["items"]},ensure_ascii=False))
  print("Category counts:",json.dumps(payload["counts"],ensure_ascii=False))
  print("Paper category counts:",json.dumps({cat:sum(x["category"]==cat and x["kind"]=="paper" for x in rows) for cat in TECH},ensure_ascii=False))
  print("IGBT news records:",sum(x.get("category")=="IGBT" and x.get("kind")=="news" for x in rows),"IGBT papers:",sum(x.get("category")=="IGBT" and x.get("kind")=="paper" for x in rows))
