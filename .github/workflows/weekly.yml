@@ -29,6 +29,10 @@ jobs:
           cache: pip
       - run: pip install -r requirements.txt
       - run: python -m pytest -q
+      - name: Validate dashboard JavaScript
+        run: |
+          python -c "from pathlib import Path; s=Path('site/index.html').read_text(); Path('/tmp/psi-ui.js').write_text(s.split('<script>',1)[1].split('</script>',1)[0])"
+          node --check /tmp/psi-ui.js
       - name: Collect public research metadata
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -37,7 +41,7 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: gpt-4.1-mini
-          PSI_AI_MAX_CALLS: "12"
+          PSI_AI_MAX_CALLS: ${{ github.event_name == 'push' && '0' || '12' }}
           PSI_AI_INPUT_TOKEN_BUDGET: "12000"
           PSI_AI_OUTPUT_TOKEN_BUDGET: "3600"
           PSI_AI_MAX_ESTIMATED_USD: "0.02"
