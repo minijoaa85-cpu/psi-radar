@@ -47,11 +47,20 @@ def extract(r):
  out={k:str(data.get(k,"")).strip()[:600] for k in ("title_ko","summary_ko","physics_ko")}
  if not out["title_ko"] or not out["summary_ko"]:raise ValueError("AI missing required fields")
  return out,obj.get("usage",{})
+def prioritized(rows):
+ """Reserve up to three slots for newly found IGBT/SGT/SJ papers, then by score."""
+ eligible_rows=sorted((r for r in rows if eligible(r)),key=lambda r:(r.get("score",0),r.get("date") or ""),reverse=True)
+ selected=[];seen=set()
+ for category in ("IGBT","SGT","SJ MOSFET"):
+  found=next((r for r in eligible_rows if r.get("kind")=="paper" and r.get("category")==category),None)
+  if found:
+   selected.append(found);seen.add(found["id"])
+ return selected+[r for r in eligible_rows if r["id"] not in seen]
 def enrich(rows,session,key):
  input_price,output_price=model_prices(MODEL)
  stats={"enabled":bool(key),"model":MODEL if key else None,"calls":0,"cache_hits":sum(bool(r.get("title_ko")) for r in rows),"input_tokens":0,"output_tokens":0,"estimated_cost_usd":0.0,"errors":[],"limits":{"max_calls":MAX_CALLS,"max_input_tokens":MAX_INPUT_TOKENS,"max_output_tokens":MAX_OUTPUT_TOKENS,"max_estimated_usd":MAX_ESTIMATED_USD}}
  if not key:return stats
- ordered=sorted((r for r in rows if eligible(r)),key=lambda r:(r.get("score",0),r.get("date") or ""),reverse=True)
+ ordered=prioritized(rows)
  for row in ordered:
   if stats["calls"]>=MAX_CALLS or stats["input_tokens"]>=MAX_INPUT_TOKENS or stats["output_tokens"]>=MAX_OUTPUT_TOKENS:break
   prompt=build_prompt(row);reserved_in=estimated_tokens(prompt);reserved_out=280
