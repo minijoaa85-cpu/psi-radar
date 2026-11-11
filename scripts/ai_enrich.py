@@ -48,13 +48,19 @@ def extract(r):
  if not out["title_ko"] or not out["summary_ko"]:raise ValueError("AI missing required fields")
  return out,obj.get("usage",{})
 def prioritized(rows):
- """Reserve up to three slots for newly found IGBT/SGT/SJ papers, then by score."""
+ """Keep scientific papers first, then sample priority competitor updates without extra API calls."""
  eligible_rows=sorted((r for r in rows if eligible(r)),key=lambda r:(r.get("score",0),r.get("date") or ""),reverse=True)
  selected=[];seen=set()
+ def take(predicate):
+  found=next((r for r in eligible_rows if r["id"] not in seen and predicate(r)),None)
+  if found:selected.append(found);seen.add(found["id"])
  for category in ("IGBT","SGT","SJ MOSFET"):
-  found=next((r for r in eligible_rows if r.get("kind")=="paper" and r.get("category")==category),None)
-  if found:
-   selected.append(found);seen.add(found["id"])
+  take(lambda r,c=category:r.get("kind")=="paper" and r.get("category")==c)
+ # The four principal manufacturers are covered where fresh, relevant news exists.
+ for company in ("infineon","st","onsemi","rohm"):
+  take(lambda r,k=company:r.get("kind")=="news" and k in r.get("companies",[]))
+ for region_ids in (("innoscience","sanan","crmicro","basicsemi"),("mitsubishi","fuji","toshiba")):
+  take(lambda r,k=region_ids:r.get("kind")=="news" and any(company in r.get("companies",[]) for company in k))
  return selected+[r for r in eligible_rows if r["id"] not in seen]
 def enrich(rows,session,key):
  input_price,output_price=model_prices(MODEL)
