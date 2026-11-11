@@ -90,8 +90,13 @@ def main():
    for q in ('"IGBT" power semiconductor','"IGBT" inverter','"IGBT" Infineon','"IGBT" Mitsubishi','"IGBT" Fuji Electric'):
     try:rows.extend(news(session,q,cat,days=30))
     except Exception as e:errors.append(f"news fallback IGBT: {type(e).__name__}: {str(e)[:100]}")
-  try:rows.extend(papers(session,queries[0].replace('"',""),cat,paper_start))
-  except Exception as e:errors.append(f"paper {cat}: {type(e).__name__}: {str(e)[:100]}")
+  # Focused IGBT/SGT/SJ searches handle these later; avoid redundant Crossref calls.
+  if cat in ("GaN","SiC"):
+   try:rows.extend(papers(session,queries[0].replace('"',""),cat,paper_start))
+   except requests.HTTPError as e:
+    code=getattr(e.response,"status_code",None)
+    errors.append(f"Crossref {cat} HTTP {code}")
+   except Exception as e:errors.append(f"paper {cat}: {type(e).__name__}")
  # Focused academic research uses broader 12-month lookback, explicitly marked in records.
  try:
   from scripts.research import collect_focused
@@ -102,13 +107,24 @@ def main():
  except Exception as exc:
   errors.append("Focused research unavailable: "+type(exc).__name__+": "+str(exc)[:100])
  rows=unique(rows)
- # Preserve already reviewed translations across scheduled runs; do not spend on identical records twice.
+ # Preserve existing reviewed metadata when providers are degraded, without falsely labeling it new.
  previous={}
  if OUT.exists():
   try:
    data=json.loads(OUT.read_text(encoding="utf-8"))
    previous={x.get("id"):x for x in data.get("records",[]) if x.get("id")}
   except (ValueError,OSError,TypeError):pass
+ # Keep relevant prior journal metadata through transient provider outages for up to 365 days.
+ current_ids={row.get("id") for row in rows}
+ cutoff=(now-dt.timedelta(days=365)).date().isoformat()
+ reused=0
+ for old in previous.values():
+  if old.get("kind")!="paper" or old.get("id") in current_ids:continue
+  if not (cutoff<=str(old.get("date") or "")<=now.date().isoformat()):continue
+  if old.get("category") not in TECH:continue
+  preserved=dict(old)
+  preserved["stale_reused"]=True
+  rows.append(preserved);current_ids.add(old["id"]);reused+=1
  for row in rows:
   old=previous.get(row.get("id"),{})
   if old.get("title_ko"):
@@ -116,10 +132,10 @@ def main():
     if old.get(field):row[field]=old[field]
  rows.sort(key=lambda x:(x.get("date") or "",x.get("score") or 0),reverse=True)
  if not rows:raise RuntimeError("No metadata collected; retain last successful data. "+str(errors))
- payload={"schema_version":3,"generated_at":now.isoformat(),"window_start":start,"paper_window_start":paper_start,"focused_paper_window_start":(now-dt.timedelta(days=365)).date().isoformat(),"mode":"live_metadata","records":rows[:220],"counts":{c:sum(r["category"]==c for r in rows) for c in TECH},"errors":errors,"sources":["Crossref","OpenAlex","Google News RSS"],"financials":[],"product_specs":[],"notice":"서지·뉴스 메타데이터 기반. 원문 검토 전의 결론이나 금융 실적을 확정하지 않습니다."}
+ payload={"schema_version":4,"generated_at":now.isoformat(),"window_start":start,"paper_window_start":paper_start,"focused_paper_window_start":(now-dt.timedelta(days=365)).date().isoformat(),"mode":"live_metadata","records":rows[:220],"counts":{c:sum(r["category"]==c for r in rows) for c in TECH},"errors":errors,"sources":["Crossref","OpenAlex","Google News RSS"],"financials":[],"product_specs":[],"notice":"서지·뉴스 메타데이터 기반. 원문 검토 전의 결론이나 금융 실적을 확정하지 않습니다."}
  OUT.parent.mkdir(parents=True,exist_ok=True)
  OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2),encoding="utf-8")
- print("Collected",len(rows),"records, errors:",len(errors))
+ print("Collected",len(rows),"records, errors:",len(errors),"previous papers retained:",reused)
  print("Category counts:",json.dumps(payload["counts"],ensure_ascii=False))
  print("Paper category counts:",json.dumps({cat:sum(x["category"]==cat and x["kind"]=="paper" for x in rows) for cat in TECH},ensure_ascii=False))
  print("IGBT news records:",sum(x.get("category")=="IGBT" and x.get("kind")=="news" for x in rows),"IGBT papers:",sum(x.get("category")=="IGBT" and x.get("kind")=="paper" for x in rows))
