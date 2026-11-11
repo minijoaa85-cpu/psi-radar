@@ -1,6 +1,6 @@
 # PSI Radar V0.2 — Power Semiconductor Intelligence Radar
 
-공개 자료 기반 한국어 전력반도체 주간 기술 모니터링 웹 플랫폼. GaN (35%) > SiC (25%) > IGBT (20%) > UD/UG SGT (10%) = SJ MOSFET (10%).
+공개 자료 기반 한국어 전력반도체 주간 기술 모니터링 웹 플랫폼. GaN (40%) > SiC (30%) > IGBT (10%) = UD/UG SGT (10%) = SJ MOSFET (10%).
 
 **Web:** https://minijoaa85-cpu.github.io/psi-radar/  
 **Workflow:** https://github.com/minijoaa85-cpu/psi-radar/actions/workflows/weekly.yml
@@ -85,3 +85,11 @@ GitHub Pages는 저장소 Settings → Pages → **Source: GitHub Actions**를 �
 
 ### API 비용 산정
 2026-11-11 #19 실측 `3,356 input / 1,322 output tokens`, 12회 API 호출, 추정 `$0.003458`/회(주 1회). 같은 사용량 52회 = 약 `$0.18/년`; 매회 로컬 추정 상한 `$0.02`에 도달하면 52회 = `$1.04/년`. 이는 정기 52회 가정의 **추정치**이며 수동 재실행, 서비스 확장, 실제 API 청구 차이 등은 별도입니다. 50달러 충전액은 주간으로 정해진 기간만큼 소진되는 구독료가 아니며, 향후 모델 가격·사용량·선불 구매 크레딧은 구매일로부터 1년 후 만료됩니다(OpenAI 공식 도움말 기준). 자동 충전이 기본적으로 활성화될 수 있으므로 필요하지 않다면 끄고, 별도의 API 사용 한도와 경고를 설정하세요.
+
+## IGBT 수집 품질 점검 (2026-11-11)
+- IGBT는 뉴스 검색·Crossref 논문 검색·대시보드 카테고리에 추가됨.
+- 기존 데이터에는 IGBT 0건이었음: 카테고리 추가와 실제 자료 확보는 별개.
+- 뉴스 검색어를 IGBT Power Semiconductor, Power Module, Trench, RC-IGBT, Field-Stop로 확장함.
+- 최근 7일간 IGBT 관련 뉴스가 없으면 최근 30일 검색을 추가로 수행하고, **최근 30일 참고**로 별도 표기함.
+- GitHub Actions의 코드 변경(push) 실행은 비용 방지 및 경합 회피를 위해 데이터 JSON을 저장하지 않으므로, **최신 IGBT 건수 확인 시 Actions → Run workflow를 수동 1회 실행**해야 함. 주간 예약 실행도 저장함.
+- Crossref 논문 45일 수집은 아직 커버리지가 제한되어 있으며 학술지 검색 고도화는 별도 과제.
