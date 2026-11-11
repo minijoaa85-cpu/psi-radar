@@ -17,7 +17,7 @@ OUT=ROOT/"site"/"data.json"
 TECH={
  "GaN":['"GaN HEMT"','"gallium nitride" power','"GaN" "data center"'],
  "SiC":['"SiC MOSFET"','"silicon carbide" power semiconductor'],
- "IGBT":['"IGBT" power semiconductor','"IGBT" power module','"trench IGBT"','"RC-IGBT"','"field-stop IGBT"'],
+ "IGBT":['"IGBT" power semiconductor','"IGBT" power module','"trench IGBT"','"RC-IGBT"','"field-stop IGBT"','"IGBT" Infineon','"IGBT" Mitsubishi Electric','"IGBT" Fuji Electric'],
  "SGT":['"shielded gate" MOSFET','"split gate" trench MOSFET'],
  "SJ MOSFET":['"superjunction MOSFET"','"super junction" power MOSFET']}
 KEYS={"GaN":("gan","gallium nitride","氮化镓","窒化ガリウ"),"SiC":("sic","silicon carbide","碳化硅","炭化ケイ素"),"IGBT":("igbt","insulated gate bipolar transistor","绝缘栅双极型晶体管","絶縁ゲートバイポーラトランジスタ"),"SGT":("shielded gate","split gate","sgt"),"SJ MOSFET":("superjunction","super junction","sj mosfet")}
@@ -30,7 +30,9 @@ def relevant(title,cat):
  if not any(x in t for x in POWER_CONTEXT):return False
  if cat=="GaN":return bool(re.search(r"\bgan\b|gallium nitride|氮化镓|窒化ガリウ",t))
  if cat=="SiC":return bool(re.search(r"\bsic\b|silicon carbide|碳化硅|炭化ケイ素",t))
- if cat=="IGBT":return bool(re.search(r"\bigbt\b|insulated.gate.bipolar|绝缘栅双极型|絶縁ゲートバイポーラ",t))
+ if cat=="IGBT":
+  if any(w in t for w in ("distributor","distributors","wholesale","marketplace","top 10 suppliers","top five suppliers")):return False
+  return bool(re.search(r"\bigbt\b|insulated.gate.bipolar|绝缘栅双极型|絶縁ゲートバイポーラ",t))
  return any(w in t for w in KEYS[cat])
 def clean(s): return re.sub(r"\s+"," ",html.unescape(re.sub(r"<[^>]*>"," ",str(s or "")))).strip()
 def classify(title,fallback):
@@ -85,7 +87,7 @@ def main():
   if cat=="IGBT" and not any(r.get("category")=="IGBT" for r in rows):
    # A quiet 7-day IGBT news week must not be mistaken for a broken collector.
    # Older context is labeled as a 30-day fallback, not as this week's news.
-   for q in ('"IGBT" power semiconductor','"IGBT" inverter'):
+   for q in ('"IGBT" power semiconductor','"IGBT" inverter','"IGBT" Infineon','"IGBT" Mitsubishi','"IGBT" Fuji Electric'):
     try:rows.extend(news(session,q,cat,days=30))
     except Exception as e:errors.append(f"news fallback IGBT: {type(e).__name__}: {str(e)[:100]}")
   try:rows.extend(papers(session,queries[0].replace('"',""),cat,paper_start))
