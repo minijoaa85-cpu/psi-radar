@@ -17,7 +17,33 @@
 <script>
 let DB={records:[],errors:[]};const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));const el=id=>document.getElementById(id);
 function card(r){let safe=/^https:\/\//.test(r.url||"")?r.url:"#";let title=r.title_ko||r.title;let translated=r.title_ko&&r.title_ko!==r.title?'<div class="mini">원문 제목: '+esc(r.title)+'</div>':'';let physics=r.physics_ko?'<details><summary>Device Physics 참고 분석 보기</summary><p>'+esc(r.physics_ko)+'</p></details>':'';return '<article class="item"><span class="tag">'+esc(r.category)+'</span><span class="tag">'+(r.kind==="paper"?"논문":"뉴스")+'</span><span class="tag">'+(r.title_ko?"한국어 AI 요약":"원문 메타데이터")+'</span><span class="meta">'+esc(r.date||"날짜 미확인")+' · '+esc(r.source||"출처 미확인")+'</span><strong>'+esc(title)+'</strong>'+translated+'<p>'+esc(r.summary_ko||"공개 메타데이터입니다. 원문에서 기술적 의미를 확인하세요.")+'</p>'+physics+'<div class="meta">근거: '+esc(r.summary_status||"메타데이터")+' · 중요도(임시): '+esc(r.score??"-")+'</div><a href="'+esc(safe)+'" target="_blank" rel="noopener noreferrer">원문/DOI 보기 ↗</a></article>'}
-function render(){const all=DB.records||[];el("total").textContent=all.length;el("gan").textContent=all.filter(r=>r.category==="GaN").length;el("sic").textContent=all.filter(r=>r.category==="SiC").length;el("papers").textContent=all.filter(r=>r.kind==="paper").length;const empty='<div class="empty">수집된 자료가 없습니다. GitHub Actions의 실행 상태를 확인해 주세요.</div>';const feed=(target,items)=>el(target).innerHTML=items.length?items.map(card).join(""):empty;feed("highlights",[...all].sort((a,b)=>(b.score||0)-(a.score||0)).slice(0,7));feed("research-feed",all.filter(r=>r.kind==="paper"));let cf=all.filter(r=>/infineon|stmicro|onsemi|rohm|innoscience|navitas|epc|mitsubishi|fuji electric|toshiba|sanan|wolfspeed|中国|日本/i.test(r.title));feed("company-feed",cf);filter();el("health").innerHTML='<p>마지막 성공 수집: '+esc(DB.generated_at||"아직 없음")+'</p><p>조회 구간 시작: '+esc(DB.window_start||"-")+'</p><p>논문 검색 시작: '+esc(DB.paper_window_start||"-")+'</p><p>AI 상태: '+(DB.ai_usage?.enabled?"연결됨":"API 키 미설정")+" · 이번 실행 호출 "+esc(DB.ai_usage?.calls??0)+"회 · 추정 비용 $"+esc(DB.ai_usage?.estimated_cost_usd??0)+"</p><p>AI 캐시 재사용: "+esc(DB.ai_usage?.cache_hits??0)+"건</p><p>자료 건수: '+all.length+'</p><p>모드: '+esc(DB.mode||"-")+'</p><p>출처: '+esc((DB.sources||[]).join(", ")||"대기 중")+'</p><p class="error">'+(DB.errors||[]).map(esc).join("<br>")+'</p>';el("last").textContent=DB.generated_at?"데이터 갱신: "+new Date(DB.generated_at).toLocaleString("ko-KR",{timeZone:"Asia/Seoul"}):"첫 데이터 수집 대기 중";}
+function render(){
+ const all=DB.records||[];
+ el("total").textContent=all.length;
+ el("gan").textContent=all.filter(r=>r.category==="GaN").length;
+ el("sic").textContent=all.filter(r=>r.category==="SiC").length;
+ el("papers").textContent=all.filter(r=>r.kind==="paper").length;
+ const empty='<div class="empty">수집된 자료가 없습니다. GitHub Actions의 실행 상태를 확인해 주세요.</div>';
+ const feed=(target,items)=>el(target).innerHTML=items.length?items.map(card).join(""):empty;
+ feed("highlights",[...all].sort((a,b)=>(b.score||0)-(a.score||0)).slice(0,7));
+ feed("research-feed",all.filter(r=>r.kind==="paper"));
+ let cf=all.filter(r=>/infineon|stmicro|onsemi|rohm|innoscience|navitas|epc|mitsubishi|fuji electric|toshiba|sanan|wolfspeed|中国|日本/i.test(r.title));
+ feed("company-feed",cf);
+ filter();
+ const usage=DB.ai_usage||{};
+ el("health").innerHTML=[
+   "<p>마지막 성공 수집: "+esc(DB.generated_at||"아직 없음")+"</p>",
+   "<p>뉴스 조회 시작: "+esc(DB.window_start||"-")+"</p>",
+   "<p>논문 조회 시작: "+esc(DB.paper_window_start||"-")+"</p>",
+   "<p>자료 건수: "+all.length+"</p>",
+   "<p>AI 상태: "+(usage.enabled?"키 연결됨":"키 미설정")+" · 이번 실행 호출 "+esc(usage.calls??0)+"회</p>",
+   "<p>AI 캐시: "+esc(usage.cache_hits??0)+"건 · 예상 API 비용(이번 실행): $"+esc(usage.estimated_cost_usd??0)+"</p>",
+   "<p>수집 모드: "+esc(DB.mode||"-")+"</p>",
+   "<p>출처: "+esc((DB.sources||[]).join(", ")||"대기 중")+"</p>",
+   '<p class="error">'+(DB.errors||[]).map(esc).join("<br>")+"</p>"
+ ].join("");
+ el("last").textContent=DB.generated_at?"데이터 갱신: "+new Date(DB.generated_at).toLocaleString("ko-KR",{timeZone:"Asia/Seoul"}):"첫 데이터 수집 대기 중";
+}
 function filter(){const cat=el("cat").value,kind=el("kind").value,q=el("search").value.toLowerCase();let x=(DB.records||[]).filter(r=>(!cat||r.category===cat)&&(!kind||r.kind===kind)&&(!q||(r.title+" "+(r.title_ko||"")+" "+r.source+" "+r.summary_ko).toLowerCase().includes(q)));el("records").innerHTML=x.length?x.map(card).join(""):'<div class="empty">검색 결과가 없습니다.</div>';}
 for(let e of ["cat","kind","search"])el(e).addEventListener("input",filter);for(let b of document.querySelectorAll(".nav button"))b.addEventListener("click",()=>{document.querySelectorAll(".nav button").forEach(x=>x.classList.toggle("active",x===b));document.querySelectorAll("main>section").forEach(s=>s.classList.toggle("hidden",s.id!==b.dataset.tab));});
 fetch("data.json?nocache="+Date.now()).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{DB=d;render()}).catch(e=>{el("last").textContent="데이터 로딩 실패: "+e.message;render()});
