@@ -16,7 +16,7 @@
 <footer class="foot">PSI Radar · 공개 정보만 사용 · 모든 자료의 날짜·출처·원문 링크 확인 · 내부 공정 데이터는 업로드하지 마세요.</footer></main>
 <script>
 let DB={records:[],errors:[]};const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));const el=id=>document.getElementById(id);
-function card(r){let safe=/^https:\/\//.test(r.url||"")?r.url:"#";let title=r.title_ko||r.title;let translated=r.title_ko&&r.title_ko!==r.title?'<div class="mini">원문 제목: '+esc(r.title)+'</div>':'';let age=r.kind==="paper"&&r.lookback_days>45?'<span class="tag">최근 12개월 연구</span>':'';let physics=r.physics_ko?'<details><summary>Device Physics 참고 분석 보기</summary><p>'+esc(r.physics_ko)+'</p></details>':'';return '<article class="item"><span class="tag">'+esc(r.category)+'</span><span class="tag">'+(r.kind==="paper"?"논문":"뉴스")+'</span><span class="tag">'+(r.title_ko?"한국어 AI 요약":"원문 메타데이터")+'</span><span class="meta">'+esc(r.date||"날짜 미확인")+' · '+esc(r.source||"출처 미확인")+'</span><strong>'+esc(title)+'</strong>'+translated+'<p>'+esc(r.summary_ko||"공개 메타데이터입니다. 원문에서 기술적 의미를 확인하세요.")+'</p>'+physics+'<div class="meta">근거: '+esc(r.summary_status||"메타데이터")+' · 중요도(임시): '+esc(r.score??"-")+'</div><a href="'+esc(safe)+'" target="_blank" rel="noopener noreferrer">원문/DOI 보기 ↗</a></article>'}
+function card(r){let safe=/^https:\/\//.test(r.url||"")?r.url:"#";let title=r.title_ko||r.title;let translated=r.title_ko&&r.title_ko!==r.title?'<div class="mini">원문 제목: '+esc(r.title)+'</div>':'';let age=r.kind==="paper"&&r.lookback_days>45?'<span class="tag">최근 12개월 연구</span>':'';let prior=r.stale_reused?'<span class="tag">이전 수집 정보 유지</span>':'';let physics=r.physics_ko?'<details><summary>Device Physics 참고 분석 보기</summary><p>'+esc(r.physics_ko)+'</p></details>':'';return '<article class="item"><span class="tag">'+esc(r.category)+'</span><span class="tag">'+(r.kind==="paper"?"논문":"뉴스")+'</span><span class="tag">'+(r.title_ko?"한국어 AI 요약":"원문 메타데이터")+'</span><span class="meta">'+esc(r.date||"날짜 미확인")+' · '+esc(r.source||"출처 미확인")+'</span><strong>'+esc(title)+'</strong>'+translated+'<p>'+esc(r.summary_ko||"공개 메타데이터입니다. 원문에서 기술적 의미를 확인하세요.")+'</p>'+physics+'<div class="meta">근거: '+esc(r.summary_status||"메타데이터")+' · 중요도(임시): '+esc(r.score??"-")+'</div><a href="'+esc(safe)+'" target="_blank" rel="noopener noreferrer">원문/DOI 보기 ↗</a></article>'}
 function render(){
  const all=DB.records||[];
  el("total").textContent=all.length;
@@ -41,8 +41,11 @@ function render(){
    "<p>IGBT·SGT·SJ 집중 학술 검색 시작: "+esc(DB.focused_paper_window_start||"-")+"</p>",
    "<p>자료 건수: "+all.length+"</p>",
    "<p>AI 상태: "+(usage.enabled?"키 연결됨":"키 미설정")+" · 이번 실행 호출 "+esc(usage.calls??0)+"회</p>",
+   "<p>AI 요약 성공: "+esc(usage.successes??0)+"건 / 실패: "+esc(usage.failures??0)+"건 / 시도: "+esc(usage.calls??0)+"회</p>",
+   "<p>AI 실패 유형: "+esc(Object.entries(usage.failure_reasons||{}).map(([k,v])=>k+" "+v+"회").join(", ")||"없음")+"</p>",
    "<p>AI 캐시: "+esc(usage.cache_hits??0)+"건 · 예상 API 비용(이번 실행): $"+esc(usage.estimated_cost_usd??0)+"</p>",
    "<p>수집 모드: "+esc(DB.mode||"-")+"</p>",
+   "<p>이전 논문 메타데이터 유지: "+all.filter(r=>r.stale_reused).length+"건</p>",
    "<p>출처: "+esc((DB.sources||[]).join(", ")||"대기 중")+"</p>",
    '<p class="error">'+(DB.errors||[]).map(esc).join("<br>")+"</p>"
  ].join("");
