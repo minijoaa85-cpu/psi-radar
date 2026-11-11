@@ -1,7 +1,8 @@
 {
-  "schema_version": 1,
-  "generated_at": "2026-11-11T13:34:41.763595+00:00",
+  "schema_version": 2,
+  "generated_at": "2026-11-11T13:49:29.336735+00:00",
   "window_start": "2026-11-03",
+  "paper_window_start": "2026-09-27",
   "mode": "live_metadata",
   "records": [
     {
@@ -243,5 +244,21 @@
   ],
   "financials": [],
   "product_specs": [],
-  "notice": "서지·뉴스 메타데이터 기반. 원문 검토 전의 결론이나 금융 실적을 확정하지 않습니다."
+  "notice": "서지·뉴스 메타데이터 기반. 원문 검토 전의 결론이나 금융 실적을 확정하지 않습니다.",
+  "ai_usage": {
+    "enabled": false,
+    "model": null,
+    "calls": 0,
+    "cache_hits": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "estimated_cost_usd": 0.0,
+    "errors": [],
+    "limits": {
+      "max_calls": 0,
+      "max_input_tokens": 12000,
+      "max_output_tokens": 3600,
+      "max_estimated_usd": 0.02
+    }
+  }
 }
