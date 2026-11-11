@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-11T13:49:29.336735+00:00",
+  "generated_at": "2026-11-11T13:59:20.425985+00:00",
   "window_start": "2026-11-03",
   "paper_window_start": "2026-09-27",
   "mode": "live_metadata",
@@ -70,22 +70,6 @@
       "evidence": "Google News RSS index"
     },
     {
-      "id": "b8dbe80114ad",
-      "kind": "news",
-      "category": "SiC",
-      "title": "Infineon makes working silicon carbide power chips on 300 mm wafers for the first time - MLQ.ai",
-      "date": "2026-11-10",
-      "source": "MLQ.ai",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNekRBWjBkdlNCcHBEU1hoOTRabl9sV1MyQnhOY1JKUjN0MlJ0MkZGU0ozNTlWelJoOEFabFd3OENuWW00WFhUM01kSFFMTm5FSkxlaDBHNkhxamhzYlJGV1I3RjNyVmpfUnJ0cHR3ekJlSWZYYzg4OG92ZlIzT2d2U2V1Nm5wS2o3ellpb1BDZXVuZVVweko1QnppU3BndnJXMUw0dG84cHZQNmM?oc=5",
-      "topics": [
-        "공정·구조"
-      ],
-      "score": 40,
-      "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
-      "summary_status": "제목 기반·검증 전",
-      "evidence": "Google News RSS index"
-    },
-    {
       "id": "07a72d51f7fa",
       "kind": "news",
       "category": "SiC",
@@ -109,6 +93,22 @@
       "date": "2026-11-09",
       "source": "TechPowerUp",
       "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPZFRuWWxNMlJtNnJqVlFlMzc3aU5tMDd0RUF2VTJmajZMRy1uTTdFVVJKN19WdFI3TEo4azE0dzFBT1pVVFItamtKRWM0QVFwbkY3dVh1ZGpLTi1jd2xKQ2duS3hOZ3VNcW5kZTY0ZWJ1SDBCaXlZdjFldWdWMk1IMEJ3UV9tRGswOTFXRGZfeXc5VEk1YVZ0QWZIYkRlc1pyVm9TaEpvZXBKbjVabXg4ZWRHZEJEQ3RTTDRPbTRB0gHDAUFVX3lxTE5jeGpsMmJjNlJhZjlRTnRCQk83U2Jvb1o1ZEpMb3dIeGRJOTI2U0pjeDlsLTNLbmxQNVJyQUZRQWFxUWZnWWc1bXRiSHZQdjhpb0NQcExOSmx0dXJEb25DazhBNng5RFRyYnExZ1luamlPc0FWekdDbkpnX2JDeWdOX2VsenBjMExjMjJkaExDdUV0SWJmbmo0dXJ5a2o2MmhJQXVfc2JJMExEd2VQMWxUbFRCRUloTkV1cFNBdkZBUS1pOA?oc=5",
+      "topics": [
+        "공정·구조"
+      ],
+      "score": 40,
+      "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
+      "summary_status": "제목 기반·검증 전",
+      "evidence": "Google News RSS index"
+    },
+    {
+      "id": "a2be4fb3470e",
+      "kind": "news",
+      "category": "SiC",
+      "title": "Infineon presents first functional power devices on 300mm SiC wafers - Semiconductor Today",
+      "date": "2026-11-09",
+      "source": "Semiconductor Today",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQMFRVMkJPT0M4Unhoc2NobGFLNnBadmJwVlpZZGZDOURpRzJJTVFLTFhZM1NBQ2c5TzdvQlVlSk1CaGlJRmVIcWRrWkk0WUV2MDFPTl9PbXBjWENRRlZHY1Q3OUpkaU9TSDZuS1dCZ3VQaHZvbDNGcl9mU1RqNHlETkJGZw?oc=5",
       "topics": [
         "공정·구조"
       ],
@@ -237,7 +237,9 @@
     "SGT": 0,
     "SJ MOSFET": 0
   },
-  "errors": [],
+  "errors": [
+    "AI API request failed (HTTP 429)"
+  ],
   "sources": [
     "Crossref",
     "Google News RSS"
@@ -246,16 +248,18 @@
   "product_specs": [],
   "notice": "서지·뉴스 메타데이터 기반. 원문 검토 전의 결론이나 금융 실적을 확정하지 않습니다.",
   "ai_usage": {
-    "enabled": false,
-    "model": null,
-    "calls": 0,
+    "enabled": true,
+    "model": "gpt-4.1-mini",
+    "calls": 1,
     "cache_hits": 0,
-    "input_tokens": 0,
-    "output_tokens": 0,
-    "estimated_cost_usd": 0.0,
-    "errors": [],
+    "input_tokens": 729,
+    "output_tokens": 280,
+    "estimated_cost_usd": 0.00074,
+    "errors": [
+      "AI API request failed (HTTP 429)"
+    ],
     "limits": {
-      "max_calls": 0,
+      "max_calls": 12,
       "max_input_tokens": 12000,
       "max_output_tokens": 3600,
       "max_estimated_usd": 0.02
