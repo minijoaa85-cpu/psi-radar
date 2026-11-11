@@ -9,3 +9,12 @@ def test_unique():
  assert len(unique([r,r]))==1
 def test_score():
  assert score("GaN data center reliability","GaN")>score("GaN","GaN")
+
+def test_igbt_classification():
+ from scripts.collect import relevant, TECH, score
+ assert "IGBT" in TECH
+ assert relevant("1200V trench IGBT with field-stop structure","IGBT")
+ assert relevant("Reverse conducting RC-IGBT power module","IGBT")
+ assert not relevant("IGBT", "SiC")
+ assert classify("New 1200V IGBT for inverter","IGBT")=="IGBT"
+ assert score("IGBT field stop","IGBT")>score("SJ MOSFET","SJ MOSFET")
