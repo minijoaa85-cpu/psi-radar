@@ -20,7 +20,7 @@ def week_start(value):
  local=value.astimezone(KST)
  return (local.date()-dt.timedelta(days=local.weekday())).isoformat()
 def preview(row):
- keys=("id","kind","category","title","title_ko","summary_ko","summary_status","date","source","url","doi","relevance_score","relevance_level","relevance_reasons","relevance_topics","stale_reused")
+ keys=("id","kind","category","title","title_ko","summary_ko","summary_status","date","source","url","doi","relevance_score","relevance_level","relevance_reasons","relevance_topics","stale_reused","companies","company_attribution","company_source_status","device_mentions")
  out={k:row[k] for k in keys if k in row}
  for key in ("title","title_ko","summary_ko"):
   if key in out:out[key]=str(out[key])[:700]
@@ -38,6 +38,7 @@ def build_digest(data,when,prior=None):
          "new_items_count":len(fresh),"published_this_week_count":len(newest),"research_reference_count":len(research),
          "total_collection_count":len(data.get("records",[])),
          "by_category":{c:sum(r.get("category")==c for r in newest) for c in CATS},
+         "company_mentions":{key:sum(key in r.get("companies",[]) for r in newest) for key in data.get("competitor_stats",{})},
          "new_items":[preview(r) for r in fresh[:20]],"weekly_items":[preview(r) for r in selected[:20]],
          "research_highlights":[preview(r) for r in research[:12]],
          # Bounded all-id list for next week delta detection, not shown in UI.
