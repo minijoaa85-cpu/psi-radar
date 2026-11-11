@@ -19,3 +19,4 @@ def test_igbt_classification():
  assert classify("New 1200V IGBT for inverter","IGBT")=="IGBT"
  assert score("IGBT","IGBT")==score("SGT","SGT")==score("SJ MOSFET","SJ MOSFET")
  assert len(TECH["IGBT"])>=4
+ assert not relevant("Five reputable IGBT module distributors in China","IGBT")
