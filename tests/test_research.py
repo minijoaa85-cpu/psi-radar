@@ -36,3 +36,34 @@ def test_collection_failure_is_nonfatal():
  fake.get.side_effect=ConnectionError("unavailable")
  rows,errs,stats=collect_focused(fake,NOW)
  assert not rows and errs and set(stats)=={"IGBT","SGT","SJ MOSFET"}
+
+def test_crossref_429_backoff_once_then_success(monkeypatch):
+ from scripts import research
+ from requests import Response
+ from unittest.mock import Mock
+ pauses=[]
+ monkeypatch.setattr(research.time,"sleep",lambda seconds:pauses.append(seconds))
+ limited=Mock(status_code=429,headers={"Retry-After":"1"})
+ success=Mock(status_code=200)
+ success.json.return_value={"message":{"items":[]}}
+ fake=Mock()
+ fake.get.side_effect=[limited,success]
+ rows=research.crossref_search(fake,"IGBT","IGBT","2025-11-11","2026-11-11")
+ assert rows==[] and pauses==[1] and fake.get.call_count==2
+
+def test_crossref_circuit_breaker_does_not_repeat_429(monkeypatch):
+ from scripts import research
+ import requests
+ monkeypatch.setattr(research.time,"sleep",lambda _:None)
+ limited=Mock(status_code=429,headers={})
+ limited.raise_for_status.side_effect=requests.HTTPError(response=limited)
+ success=Mock(status_code=200)
+ success.json.return_value={"results":[]}
+ fake=Mock()
+ def get(url,**kwargs):
+  return limited if "crossref" in url else success
+ fake.get.side_effect=get
+ rows,errors,stats=research.collect_focused(fake,NOW)
+ assert rows==[] and len([x for x in errors if "Crossref" in x])==1
+ assert len([x for x in fake.get.call_args_list if "crossref" in x.args[0]])==2
+ assert set(stats)=={"IGBT","SGT","SJ MOSFET"}
