@@ -32,7 +32,7 @@ def test_saved_library_filters_only_saved_bookmarks():
 def test_bookmark_remove_after_sort_uses_filtered_item_index():
  assert "WATCH_BOOKMARK_VISIBLE=items;" in SCRIPT
  assert 'WATCH_BOOKMARK_VISIBLE[i])toggleWatchBookmark(WATCH_BOOKMARK_VISIBLE[i])' in SCRIPT
- assert 'data-remove-bookmark="'+ "'" + 'index' not in HTML or "data-remove-bookmark" in HTML
+ assert "data-remove-bookmark" in SCRIPT
  assert 'WATCH_BOOKMARKS.delete(url)' in SCRIPT
 
 def test_saved_search_updates_without_network_or_bookmark_rewrites():
@@ -40,7 +40,7 @@ def test_saved_search_updates_without_network_or_bookmark_rewrites():
  assert '"input":"change",renderWatchBookmarks' in s
  assert 'data-saved-category' in s
  assert 'fetch(' not in s and 'localStorage.setItem(' not in s
- assert "전체 "+'"'+';' not in s or "watch-saved-results" in HTML
+ assert 'renderWatchBookmarks();' in s
 
 def test_saved_library_mobile_layout_and_previous_keys_unchanged():
  assert '.watch-saved-controls' in CSS
