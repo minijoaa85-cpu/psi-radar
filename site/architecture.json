@@ -234,26 +234,6 @@
       ]
     },
     {
-      "category": "SGT",
-      "intro": "Shielded Gate Trench / Field Plate 기반 저압 MOSFET",
-      "physics": [
-        "RDS(on)",
-        "Qgd, Qoss",
-        "Shield electrode bias",
-        "Cell pitch"
-      ],
-      "watch": [
-        "Gate–shield capacitance",
-        "Split gate 구조",
-        "저압 디바이스 FOM"
-      ],
-      "count": 0,
-      "companies": [],
-      "structures": {},
-      "official_sample_ids": [],
-      "official_sources": []
-    },
-    {
       "category": "SJ MOSFET",
       "intro": "Superjunction Pillar Charge Balance 및 Body Diode",
       "physics": [
@@ -285,6 +265,26 @@
           "structure": "Superjunction MOSFET"
         }
       ]
+    },
+    {
+      "category": "SGT",
+      "intro": "Shielded Gate Trench / Field Plate 기반 저압 MOSFET",
+      "physics": [
+        "RDS(on)",
+        "Qgd, Qoss",
+        "Shield electrode bias",
+        "Cell pitch"
+      ],
+      "watch": [
+        "Gate–shield capacitance",
+        "Split gate 구조",
+        "저압 디바이스 FOM"
+      ],
+      "count": 0,
+      "companies": [],
+      "structures": {},
+      "official_sample_ids": [],
+      "official_sources": []
     }
   ],
   "method": "Curated device structure field; no cross-section microscopy or teardown verification",
