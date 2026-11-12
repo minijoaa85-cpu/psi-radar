@@ -1,4 +1,4 @@
-# PSI Radar V0.8 — Power Semiconductor Intelligence Radar
+# PSI Radar V0.9 — Power Semiconductor Intelligence Radar
 
 공개 자료 기반 한국어 전력반도체 주간 기술 모니터링 웹 플랫폼. GaN (40%) > SiC (30%) > IGBT (10%) = UD/UG SGT (10%) = SJ MOSFET (10%).
 
@@ -167,3 +167,12 @@ GitHub Pages는 저장소 Settings → Pages → **Source: GitHub Actions**를 �
 - `scripts/benchmark_history.py`는 등록된 제품 값/구조/근거 URL의 서명을 날짜별 JSON에 기록합니다. 이것은 **PSI Radar 내부 데이터 변경 기록**이며, 제조사의 진짜 Datasheet 개정 이력이 아닙니다.
 - GitHub Actions의 push 검증에서는 이력을 배포 아티팩트에 생성하고, 정기/수동 실행에서는 `site/benchmark_history/`를 GitHub에 지속 저장합니다.
 - 등록 제품은 수동 검증된 공개 제조사 제품 페이지를 기준으로 합니다. 자동 Datasheet 본문 추출 및 동일 VGS/ID/Tj 정규화 FOM은 후속 단계입니다. 현재 OpenAI API 호출 제한은 변경하지 않았습니다.
+
+## V0.9 (2026-11-12): 글로벌 소자 범위 확대 + 시험조건 증거
+- Benchmark 공식 제품 범위 **12종 → 22종**: Innoscience 60/100/650/700/900V GaN 7종, onsemi 1200V SiC MOSFET 2종, ST MASTERGAN7 1종 추가. 기존 Infineon·ROHM·Toshiba도 유지. 현재 6개 제조사, GaN/SiC/IGBT/SJ MOSFET 제품군을 커버하며 SGT는 여전히 검증된 양산 데이터시트 표본 없음.
+- 공식 제품 페이지에서 수치의 `typ/max`가 명시되지 않은 Qg/Qoss는 **unspecified**로 표시해 가상의 typical 값을 만들지 않습니다. 따라서 Innoscience 수치는 FOM 계산에 자동 사용되지 않습니다.
+- onsemi NTC020N120SC1 1200V SiC Bare Die의 공식 Rev 2 (Jan 2023) 데이터시트에서 RDS(on) 20mΩ typ.의 **VGS=20V, ID=60A, Tj=25°C** 조건을 구조화했습니다. 다른 항목의 조건이 완전하지 않으면 표기상 비교 불가입니다.
+- 화면에 **Discrete/집적형 구조 필터, Qoss 열, 출처 유형과 Datasheet Revision**을 추가했습니다. 정격 전압을 60~1200V의 LV/HV 구간에서 선택할 수 있습니다.
+- 테스트된 조건의 일치 여부는 값의 표기 문자열이 아닌 `test_conditions` 필드를 비교합니다. 단, 제품 사이 정규화 FOM 순위나 성능 비교는 모든 필드 검증 전까지 비활성화합니다.
+- 공식 자료의 전사 시점만 나타내며 모든 제품·전기적 시험 조건을 상시 자동 감시하거나 Datasheet 전체를 무단 재배포하지 않습니다.
+- 유효한 추가 API 키는 필요하지 않습니다. AI 번역 호출 제한은 실행당 최대 12회, 추정 비용 예산 $0.02 그대로입니다.
