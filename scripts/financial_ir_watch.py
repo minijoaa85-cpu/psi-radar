@@ -23,13 +23,17 @@ SITE=ROOT/"site"
 OUTPUT=SITE/"financial_ir_watch.json"
 SOURCES={
  "infineon":{"name":"Infineon","landing":"https://www.infineon.com/about/investor/news",
+             "fallback":"https://www.infineon.com/about/press",
              "keywords":("quarterly report","financial results","earnings","fiscal year","quarter results","fy 20")},
  "st":{"name":"STMicroelectronics","landing":"https://investors.st.com/",
+       "fallback":"https://newsroom.st.com/",
        "keywords":("financial results","quarterly results","earnings release","quarter 20","q1 20","q2 20","q3 20","q4 20")},
  "onsemi":{"name":"onsemi","landing":"https://investor.onsemi.com/news",
+            "fallback":"https://investor.onsemi.com/",
             "keywords":("reports first quarter","reports second quarter","reports third quarter","reports fourth quarter",
                         "reports q1","reports q2","reports q3","reports q4","financial results")},
  "rohm":{"name":"ROHM","landing":"https://www.rohm.com/ir",
+          "fallback":"https://www.rohm.com/ir/library/ir-news-releases",
           "keywords":("financial report","financial results","fact book","earnings","financial statements","results briefing")},
 }
 MAX_PER_COMPANY=12
@@ -87,7 +91,7 @@ def normalized_title(value):
  return " ".join(unescape(value or "").split())[:240]
 
 
-def candidates_from_html(html,company):
+def candidates_from_html(html,company,base_url=None):
  conf=SOURCES[company]
  parser=LinkExtractor()
  parser.feed(html)
@@ -97,7 +101,7 @@ def candidates_from_html(html,company):
   if len(title)<12:continue
   lower=title.lower()
   if not any(word in lower for word in conf["keywords"]):continue
-  url=normalize_url(urljoin(conf["landing"],href))
+  url=normalize_url(urljoin(base_url or conf["landing"],href))
   if not url or not allowed_url(url,company):continue
   # Do not treat overview/category pages, advertising links or file downloads as releases.
   path=urlsplit(url).path.lower()
@@ -126,24 +130,36 @@ def run_watch(snapshot,previous=None,session=None,now=None):
  records=[]
  diagnostics=[]
  for company,conf in SOURCES.items():
-  try:
-   response=own_session.get(conf["landing"],timeout=TIMEOUT,headers={
-     "User-Agent":"PSI-Radar-IR-Monitor/2.3 (public first-party IR announcements; low frequency)",
-     "Accept":"text/html,application/xhtml+xml"})
-   response.raise_for_status()
-   if not allowed_url(response.url,company):raise ValueError("IR landing redirected outside approved company host")
-   ctype=response.headers.get("Content-Type","")
-   if "html" not in ctype.lower():raise ValueError("not HTML")
-   if len(response.content)>3_000_000:raise ValueError("HTML larger than 3 MB")
-   observed=candidates_from_html(response.text,company)
-   diagnostics.append({"company":company,"status":"ok","observed":len(observed),
-                       "landing":conf["landing"],"checked_at":scan_time})
-  except (requests.RequestException,ValueError,UnicodeError) as exc:
-   diagnostics.append({"company":company,"status":"source_unavailable","observed":0,
-                       "landing":conf["landing"],"checked_at":scan_time,
-                       "note":str(exc)[:140]})
-   # Preserve existing unverified candidates when the source temporarily fails.
-   observed=[r for r in previous.get("candidates",[]) if isinstance(r,dict) and r.get("company")==company]
+  observed=[]
+  last_error=""
+  succeeded=False
+  used_landing=conf["landing"]
+  for landing in (conf["landing"],conf["fallback"]):
+   try:
+    response=own_session.get(landing,timeout=TIMEOUT,headers={
+      "User-Agent":"PSI-Radar-IR-Monitor/2.3 (public first-party IR announcements; low frequency)",
+      "Accept":"text/html,application/xhtml+xml"})
+    response.raise_for_status()
+    if not allowed_url(response.url,company):
+     raise ValueError("IR landing redirected outside approved company host")
+    if "html" not in response.headers.get("Content-Type","").lower():
+     raise ValueError("not HTML")
+    if len(response.content)>3_000_000:raise ValueError("HTML larger than 3 MB")
+    observed=candidates_from_html(response.text,company,base_url=response.url)
+    succeeded=True
+    used_landing=landing
+    break
+   except (requests.RequestException,ValueError,UnicodeError) as exc:
+    last_error=str(exc)[:140]
+  diagnostics.append({
+    "company":company,"status":"ok" if succeeded else "source_unavailable",
+    "observed":len(observed),"landing":used_landing,"checked_at":scan_time,
+    **({"note":last_error} if not succeeded else {})
+  })
+  if not succeeded:
+   # Preserve older unverified candidates when both official sources fail.
+   observed=[r for r in previous.get("candidates",[])
+             if isinstance(r,dict) and r.get("company")==company]
   trusted=curated_urls(snapshot,company)
   for row in observed:
    url=row["url"]
