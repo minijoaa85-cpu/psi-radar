@@ -31,6 +31,8 @@ jobs:
       - run: python -m pytest -q
       - name: Validate manufacturer benchmark evidence
         run: python -m scripts.validate_benchmark
+      - name: Validate official financial disclosures
+        run: python -m scripts.validate_financials
       - name: Build benchmark change history
         run: python -m scripts.benchmark_history
       - name: Build device architecture overview
