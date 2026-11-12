@@ -2,7 +2,7 @@
   "schema_version": 3,
   "reviewed_on": "2026-11-12",
   "method": "curated manufacturer product pages, with verification level and non-normalized illustrative FOM",
-  "note": "수치는 각 제조사 제품 페이지에서 전사했으며 원본 데이터시트 전문을 자동 추출한 것은 아닙니다. typ/max·시험 조건·세대·패키지 차이를 감안해야 합니다. V0.9: 중국 GaN 7종·미국 SiC 2종·ST GaN 1종 추가. 공식 제품페이지의 Qg/Ron은 동등 조건 보증 불가.",
+  "note": "수치는 각 제조사 제품 페이지에서 전사했으며 원본 데이터시트 전문을 자동 추출한 것은 아닙니다. typ/max·시험 조건·세대·패키지 차이를 감안해야 합니다. V0.9: 중국 GaN 7종·미국 SiC 2종·ST GaN 1종 추가. 공식 제품페이지의 Qg/Ron은 동등 조건 보증 불가. Innoscience 제품 페이지의 QG/Qoss는 typ/max 미표기로 통일해 FOM 자동산출에서 제외.",
   "devices": [
     {
       "id": "gan-infineon-igot",
@@ -443,14 +443,14 @@
         "qg": {
           "value": 6.2,
           "unit": "nC",
-          "kind": "typ",
-          "condition": "제조사 제품 페이지; VDS/게이트 구동 조건 미표기"
+          "kind": "unspecified",
+          "condition": "공식 제품 페이지 대표값; typ/max 및 VDS/구동 조건 미표기"
         },
         "qoss": {
           "value": 60,
           "unit": "nC",
-          "kind": "typ",
-          "condition": "제조사 제품 페이지; VDS 조건 미표기"
+          "kind": "unspecified",
+          "condition": "공식 제품 페이지 대표값; typ/max 및 VDS 조건 미표기"
         }
       },
       "url": "https://www.innoscience.com/products/hv-gan-hemt/501",
@@ -490,14 +490,14 @@
         "qg": {
           "value": 2.65,
           "unit": "nC",
-          "kind": "typ",
-          "condition": "제조사 제품 페이지; VDS/게이트 구동 조건 미표기"
+          "kind": "unspecified",
+          "condition": "공식 제품 페이지 대표값; typ/max 및 VDS/구동 조건 미표기"
         },
         "qoss": {
           "value": 25.5,
           "unit": "nC",
-          "kind": "typ",
-          "condition": "제조사 제품 페이지; VDS 조건 미표기"
+          "kind": "unspecified",
+          "condition": "공식 제품 페이지 대표값; typ/max 및 VDS 조건 미표기"
         }
       },
       "url": "https://www.innoscience.com/products/hv-gan-hemt/1770",
@@ -537,14 +537,14 @@
         "qg": {
           "value": 2.8,
           "unit": "nC",
-          "kind": "typ",
-          "condition": "제조사 제품 페이지; VDS/게이트 구동 조건 미표기"
+          "kind": "unspecified",
+          "condition": "공식 제품 페이지 대표값; typ/max 및 VDS/구동 조건 미표기"
         },
         "qoss": {
           "value": 24.5,
           "unit": "nC",
-          "kind": "typ",
-          "condition": "제조사 제품 페이지; VDS 조건 미표기"
+          "kind": "unspecified",
+          "condition": "공식 제품 페이지 대표값; typ/max 및 VDS 조건 미표기"
         }
       },
       "url": "https://www.innoscience.com/products/hv-gan-hemt/492",
@@ -584,14 +584,14 @@
         "qg": {
           "value": 2.2,
           "unit": "nC",
-          "kind": "typ",
-          "condition": "제조사 제품 페이지; VDS/게이트 구동 조건 미표기"
+          "kind": "unspecified",
+          "condition": "공식 제품 페이지 대표값; typ/max 및 VDS/구동 조건 미표기"
         },
         "qoss": {
           "value": 24.5,
           "unit": "nC",
-          "kind": "typ",
-          "condition": "제조사 제품 페이지; VDS 조건 미표기"
+          "kind": "unspecified",
+          "condition": "공식 제품 페이지 대표값; typ/max 및 VDS 조건 미표기"
         }
       },
       "url": "https://www.innoscience.com/products/hv-gan-hemt/7627",
@@ -631,14 +631,14 @@
         "qg": {
           "value": 0.9,
           "unit": "nC",
-          "kind": "typ",
-          "condition": "제조사 제품 페이지; VDS/게이트 구동 조건 미표기"
+          "kind": "unspecified",
+          "condition": "공식 제품 페이지 대표값; typ/max 및 VDS/구동 조건 미표기"
         },
         "qoss": {
           "value": 10.4,
           "unit": "nC",
-          "kind": "typ",
-          "condition": "제조사 제품 페이지; VDS 조건 미표기"
+          "kind": "unspecified",
+          "condition": "공식 제품 페이지 대표값; typ/max 및 VDS 조건 미표기"
         }
       },
       "url": "https://www.innoscience.com/products/hv-gan-hemt/7628",
@@ -678,14 +678,14 @@
         "qg": {
           "value": 35,
           "unit": "nC",
-          "kind": "typ",
-          "condition": "제조사 제품 페이지; VDS/게이트 구동 조건 미표기"
+          "kind": "unspecified",
+          "condition": "공식 제품 페이지 대표값; typ/max 및 VDS/구동 조건 미표기"
         },
         "qoss": {
           "value": 125,
           "unit": "nC",
-          "kind": "typ",
-          "condition": "제조사 제품 페이지; VDS 조건 미표기"
+          "kind": "unspecified",
+          "condition": "공식 제품 페이지 대표값; typ/max 및 VDS 조건 미표기"
         }
       },
       "url": "https://www.innoscience.com/products/lv-gan-hemt/17387",
@@ -725,14 +725,14 @@
         "qg": {
           "value": 7.6,
           "unit": "nC",
-          "kind": "typ",
-          "condition": "제조사 제품 페이지; VDS/게이트 구동 조건 미표기"
+          "kind": "unspecified",
+          "condition": "공식 제품 페이지 대표값; typ/max 및 VDS/구동 조건 미표기"
         },
         "qoss": {
           "value": 42,
           "unit": "nC",
-          "kind": "typ",
-          "condition": "제조사 제품 페이지; VDS 조건 미표기"
+          "kind": "unspecified",
+          "condition": "공식 제품 페이지 대표값; typ/max 및 VDS 조건 미표기"
         }
       },
       "url": "https://www.innoscience.com/products/lv-gan-hemt/516",
