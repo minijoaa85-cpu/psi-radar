@@ -432,6 +432,32 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
 .intel-mention-row:focus-visible{outline:2px solid #8bccff;outline-offset:2px}
 .intel-pulse-panel>.mini:last-child{margin-top:8px}
 @media(max-width:800px){.intel-pulse{grid-template-columns:1fr}}
+
+/* V2.2 actual audited-source financial dashboard; no misleading mixed-currency ranking */
+.finance-controls{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
+.finance-controls label{display:flex;align-items:center;gap:8px;min-width:0;color:#c4d6e8;font-size:12px}
+.finance-controls select{max-width:100%;min-height:38px;background:#152c45;color:#e7f4ff;border:1px solid #466885;border-radius:7px;padding:7px 10px;font:inherit}
+.finance-guide{border:1px solid #365778;border-radius:9px;background:#102942;color:#bed6e8;font-size:12px;line-height:1.6;padding:10px;margin:12px 0}
+.finance-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:12px 0}
+.finance-card{border:1px solid var(--border);border-radius:10px;background:#10263d;padding:12px;min-width:0}
+.finance-card-header{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:7px}
+.finance-card-header h3{margin:0;font-size:16px}
+.finance-note,.finance-card .mini{font-size:11px;line-height:1.65}
+.finance-latest{font-size:22px;font-weight:700;margin:7px 0 3px}
+.finance-period-badge{display:inline-block;border:1px solid #4b6d88;border-radius:6px;padding:3px 7px;color:#cce8fa;font-size:11px}
+.finance-bars{display:grid;gap:8px;padding:7px 0;margin:8px 0}
+.finance-bar-row{display:grid;grid-template-columns:82px minmax(0,1fr) 110px;gap:8px;align-items:center;font-size:11px}
+.finance-bar-track{height:13px;background:#213b54;border-radius:8px;overflow:hidden}
+.finance-bar-fill{display:block;height:100%;background:#5d9ac8;border-radius:8px}
+.finance-bar-value{text-align:right;font-variant-numeric:tabular-nums}
+.finance-source{display:inline-block;margin:4px 0;font-size:12px}
+.finance-segments{display:grid;gap:7px;margin-top:8px}
+.finance-segment{border:1px solid #314d69;border-radius:8px;background:#172f49;padding:9px}
+.finance-segment strong{display:block;font-size:12px;line-height:1.5}
+.finance-segment .mini{margin:5px 0}
+.finance-warning{font-size:11px;color:#bfd3e2;line-height:1.55;margin-top:10px}
+@media(max-width:900px){.finance-cards{grid-template-columns:1fr}}
+@media(max-width:550px){.finance-bar-row{grid-template-columns:75px minmax(0,1fr);gap:5px}.finance-bar-value{grid-column:2;text-align:left}.finance-card{padding:10px}.finance-controls{flex-direction:column;align-items:stretch}.finance-controls label{justify-content:space-between}}
 </style></head><body>
 <header><small>POWER SEMICONDUCTOR INTELLIGENCE</small><h1>◈ PSI Radar</h1><div class="muted">GaN · SiC · IGBT · SJ MOSFET · UD/UG SGT | 글로벌 기술 · 논문 · 경쟁사 동향</div><div id="last" class="mini">데이터 상태 확인 중...</div></header>
 <aside class="personal-tools" aria-label="개인 및 데이터 관리 보조 메뉴">
@@ -620,7 +646,19 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
 <p class="mini">이 목록은 현재 검증된 제품의 수동 스냅샷입니다. 신제품 Datasheet 자동 전수 수집·실시간 가격 비교 기능은 아직 제공되지 않습니다.</p>
 </details>
 </article></section>
-<section id="market" class="hidden"><article class="panel"><h2>Market & Financials</h2><p>Global Semiconductor → Power / Discrete → GaN / SiC / IGBT → Company Financials</p><div class="empty">공식 분기 실적·공시 기반 데이터 추출은 다음 단계입니다. 매출 및 이익 수치를 임의 생성하지 않습니다.</div></article></section>
+<section id="market" class="hidden"><article class="panel">
+<h2>Market & Finance · 공식 실적 모니터</h2>
+<p class="muted">전력반도체 주요 제조사 4개사의 <strong>공식 IR·공시 수치</strong>를 기준으로 회사 전체와 공개 사업부 실적을 구분합니다. 통화·회계 기준·사업부 범위가 달라 회사 간 매출 순위를 계산하지 않습니다.</p>
+<div class="finance-controls">
+<label>제조사 <select id="finance-company" aria-label="재무 모니터 제조사 선택"><option value="">전체 4개사</option><option value="infineon">Infineon</option><option value="st">STMicroelectronics</option><option value="onsemi">onsemi</option><option value="rohm">ROHM</option></select></label>
+<label>지표 <select id="finance-metric" aria-label="재무 차트 지표 선택"><option value="revenue">연결 매출액</option><option value="profitability">영업손익·세그먼트 성과</option></select></label>
+</div>
+<div id="finance-status" class="mini" role="status">공식 재무 자료를 불러오는 중입니다.</div>
+<div class="finance-guide">수치는 <strong>각 회사의 원래 통화 기준 백만 단위</strong>입니다. ROHM은 6개월 누적(H1), Infineon의 Segment Result는 IFRS 영업이익이 아니며, ST·onsemi는 US GAAP 기준입니다. 분기와 상반기·서로 다른 지표를 하나의 순위로 비교하지 않습니다.</div>
+<div id="finance-cards" class="finance-cards" aria-live="polite"></div>
+<details class="portal-details"><summary>데이터 출처·비교 제한·갱신 방식</summary>
+<div id="finance-disclosure" class="mini">공식 IR 자료 기반입니다. 최신 분기 공시 확인 및 기록 수정은 현재 수동 검증 방식입니다.</div></details>
+</article></section>
 <section id="sources" class="hidden"><article class="panel"><div class="watch-section-heading"><h2>Source & Data Quality</h2><button type="button" id="quality-close" aria-label="Data Quality 닫고 이전 분석 화면으로 돌아가기">분석 화면으로 돌아가기 ×</button></div><div id="health"></div><p class="muted">공개 뉴스 RSS와 Crossref 서지 정보 기반입니다. Google News 검색 링크는 원 출판사 홈페이지가 아닐 수 있습니다. AI 요약은 선택적이며 자료의 근거 범위가 표시됩니다.</p></article></section>
 <footer class="foot">PSI Radar · 공개 정보만 사용 · 모든 자료의 날짜·출처·원문 링크 확인 · 내부 공정 데이터는 업로드하지 마세요.</footer></main>
 <script>
@@ -1257,6 +1295,68 @@ el("watch-reset").addEventListener("click",()=>{
  renderWatchFeed();
 });
 
+let FINANCIALS={companies:[]};
+function financeMoney(value,currency){
+ if(typeof value!=="number")return "미공시";
+ return new Intl.NumberFormat("ko-KR",{maximumFractionDigits:1}).format(value)+" 백만 "+currency;
+}
+function renderFinance(){
+ const selected=el("finance-company").value,metric=el("finance-metric").value;
+ const rows=(FINANCIALS.companies||[]).filter(x=>!selected||x.id===selected);
+ el("finance-status").textContent="자료 검토 기준: "+(FINANCIALS.reviewed_on||"확인 중")+
+  " · 기업 4개사 · 공식 IR 기준 · 실적 숫자는 자동 수집/갱신하지 않음";
+ el("finance-disclosure").textContent=(FINANCIALS.warning||"")+
+  " "+(FINANCIALS.refresh_policy||"")+
+  " 데이터 업데이트는 제조사 IR 원문을 확인해 수동 반영하는 방식입니다.";
+ el("finance-cards").innerHTML=rows.map(company=>{
+  const ps=company.periods||[];
+  const latest=ps[ps.length-1];
+  if(!latest)return '<div class="finance-card">실적 미확인</div>';
+  const latestValue=metric==="revenue"?latest.revenue:
+   latest.operating_income!==null?latest.operating_income:latest.segment_result;
+  const metricLabel=metric==="revenue"?"연결 매출액":
+   latest.operating_income!==null?"연결 영업이익":"Segment Result (별도 정의 KPI)";
+  const amounts=ps.map(p=>metric==="revenue"?p.revenue:
+   p.operating_income!==null?p.operating_income:p.segment_result);
+  const max=Math.max(1,...amounts.filter(x=>typeof x==="number").map(Math.abs));
+  const chart=ps.map((p,i)=>{
+   const v=amounts[i],positive=typeof v==="number"?Math.max(0,Math.abs(v)):0;
+   return '<div class="finance-bar-row"><span>'+esc(p.period)+'</span><div class="finance-bar-track"><span class="finance-bar-fill" style="width:'+Math.round(100*positive/max)+'%"></span></div>'+
+    '<span class="finance-bar-value">'+(v===null?"미공시":esc(financeMoney(v,company.currency)))+'</span></div>';
+  }).join("");
+  const operating=latest.operating_income!==null?
+    "연결 영업이익 "+financeMoney(latest.operating_income,company.currency)+
+    (latest.operating_margin!==null?" · 영업이익률 "+latest.operating_margin+"%":""):
+    latest.segment_result!==null?
+    "그룹 Segment Result "+financeMoney(latest.segment_result,company.currency)+
+    (latest.segment_result_margin!==null?" · 해당 마진 "+latest.segment_result_margin+"%":""):
+    "영업이익 금액 미수록"+(latest.operating_margin!==null?" · 공시 영업이익률 "+latest.operating_margin+"%":"");
+  const segmentRows=(company.segments||[]).slice().sort((a,b)=>b.end.localeCompare(a.end)).map(seg=>{
+   return '<div class="finance-segment"><strong>'+esc(seg.name)+' · '+esc(seg.period)+'</strong>'+
+    '<div>'+esc(financeMoney(seg.revenue,company.currency))+' (공시 사업부 매출)</div>'+
+    (seg.profit!==null?'<div class="mini">'+esc(seg.profit_label)+': '+esc(financeMoney(seg.profit,company.currency))+'</div>':"")+
+    '<p class="mini">'+esc(seg.note)+'</p>'+
+    '<a class="finance-source" href="'+esc(seg.source)+'" target="_blank" rel="noopener noreferrer">사업부 IR 원문 ↗</a></div>';
+  }).join("");
+  return '<article class="finance-card"><div class="finance-card-header"><h3>'+esc(company.name)+'</h3>'+
+   '<span class="finance-period-badge">'+esc(latest.period)+ (latest.period_type==="half_year"?" · 6개월 누적":" · 분기")+'</span></div>'+
+   '<div class="mini">'+esc(company.currency)+' · '+esc(company.accounting)+' · 원문 기준 백만 단위</div>'+
+   '<div class="finance-latest">'+esc(financeMoney(latest.revenue,company.currency))+'</div>'+
+   '<div class="mini">'+esc(operating)+'</div>'+
+   '<div class="finance-bars"><strong>'+esc(metricLabel)+' · 같은 회사 기간별 비교</strong>'+chart+'</div>'+
+   '<a class="finance-source" href="'+esc(latest.source)+'" target="_blank" rel="noopener noreferrer">연결 실적 공식 IR 원문 ↗</a>'+
+   '<div class="mini">공시 발표 '+esc(latest.published)+' · 보고기간 종료 '+esc(latest.end)+'</div>'+
+   '<details class="portal-details"><summary>공개 전력·Discrete 관련 사업부 실적</summary><div class="finance-segments">'+segmentRows+'</div></details>'+
+   '<p class="finance-warning">'+esc(company.notes)+'</p></article>';
+ }).join("");
+}
+for(const id of ["finance-company","finance-metric"])el(id).addEventListener("change",renderFinance);
+fetch("financials.json?nocache="+Date.now()).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(data=>{
+ FINANCIALS=data;renderFinance();
+}).catch(err=>{
+ el("finance-status").textContent="공식 재무 자료를 불러오지 못했습니다: "+err.message;
+ el("finance-cards").innerHTML='<div class="mini">financials.json을 확인하세요. 미확인 수치는 표시하지 않습니다.</div>';
+});
 let INTEGRATED={categories:[]};
 const INTEL_TECH_ORDER=["GaN","SiC","IGBT","SJ MOSFET","SGT"];
 let INTEL_CAT="GaN";
