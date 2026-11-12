@@ -72,11 +72,11 @@ def build_briefing(records,generated):
    url=r["url"]
    if url in seen_global:continue
    # Use source URL as a single canonical source item across the briefing.
-   seen_global.add(url)
    matched=[t for t in TOPICS if t["category"]==category and news_matches(r,t)]
    type_=source_level(r)
    title=str(r.get("title_ko") or r.get("title") or "").strip()
    if not title:continue
+   seen_global.add(url)
    items.append({"id":str(r.get("id") or ""),"category":category,"title":title[:260],
     "date":date.isoformat(),"source":str(r.get("source") or "출처 미상")[:100],
     "url":url,"source_level":type_,
@@ -87,8 +87,7 @@ def build_briefing(records,generated):
     "reading_priority":reading_score(r,age),
     "priority_basis":"공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
     "evidence_status":"manufacturer_claim" if type_=="official" else "metadata_only" if type_=="research" else "title_not_verified"})
-  items.sort(key=lambda x:(-x["reading_priority"],x["date"],x["title"]),reverse=False)
-  # Ensure exact order: high priority first, recent first on ties.
+  # Reading priority is evidence provenance and recency, never a technology ranking.
   items.sort(key=lambda x:(x["reading_priority"],x["date"]),reverse=True)
   items=items[:MAX_PER_CATEGORY]
   totals={k:sum(x["source_level"]==k for x in items) for k in ("official","research","news")}
