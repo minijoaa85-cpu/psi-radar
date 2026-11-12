@@ -352,6 +352,19 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
  .personal-tools .watch-quick-access{width:125px;min-height:38px;padding:8px 11px;border:1px solid #73baff;border-radius:18px}
  .personal-tools .quality-quick-access{border-color:#54748c}
 }
+
+/* V1.9 Saved article search & categorization; secondary UI, responsive without changing main layout */
+.watch-saved-controls{display:grid;grid-template-columns:minmax(190px,2fr) minmax(125px,1fr) minmax(135px,1fr);gap:10px;margin:12px 0}
+.watch-saved-controls label{display:flex;flex-direction:column;gap:5px;min-width:0;font-size:12px;color:#bbcee3}
+.watch-saved-controls input,.watch-saved-controls select{box-sizing:border-box;width:100%;min-width:0;min-height:38px;padding:8px 10px;border:1px solid #496581;border-radius:7px;background:#152d46;color:#e8f3ff;font-size:13px}
+.watch-saved-controls input:focus-visible,.watch-saved-controls select:focus-visible{outline:2px solid #8cc7f6;outline-offset:1px}
+.watch-saved-summary{display:flex;flex-direction:column;gap:8px;margin:10px 0}
+.watch-saved-category-counts{display:flex;gap:6px;flex-wrap:wrap}
+.watch-saved-category-counts button{background:#152e49;border:1px solid #365675;border-radius:17px;padding:5px 10px;color:#d8eafa;font-size:11px;cursor:pointer}
+.watch-saved-category-counts button.selected{background:#275879;border-color:#79bcef}
+.watch-saved-category-counts button:focus-visible{outline:2px solid #9dd2fb;outline-offset:2px}
+@media(max-width:800px){.watch-saved-controls{grid-template-columns:1fr 1fr}.watch-saved-controls label:first-child{grid-column:1 / -1}}
+@media(max-width:420px){.watch-saved-controls{grid-template-columns:1fr}.watch-saved-controls label:first-child{grid-column:auto}}
 </style></head><body>
 <header><small>POWER SEMICONDUCTOR INTELLIGENCE</small><h1>◈ PSI Radar</h1><div class="muted">GaN · SiC · IGBT · SJ MOSFET · UD/UG SGT | 글로벌 기술 · 논문 · 경쟁사 동향</div><div id="last" class="mini">데이터 상태 확인 중...</div></header>
 <aside class="personal-tools" aria-label="개인 및 데이터 관리 보조 메뉴">
@@ -410,6 +423,12 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
 <details class="portal-details watch-saved-details" id="watch-bookmark-section" open>
 <summary>저장한 중요 자료 <span id="watch-bookmark-count" class="mini">0건</span></summary>
 <p class="mini">북마크한 공개 원문 링크는 최근 30일 범위를 지나도 이 브라우저에 남습니다. 파일로 백업하면 다른 기기에서 수동 복원할 수 있습니다.</p>
+<div class="watch-saved-controls">
+<label>저장 자료 검색<input type="search" id="watch-saved-search" placeholder="제목·출처·링크 검색" autocomplete="off"></label>
+<label>기술군<select id="watch-saved-category"><option value="">전체 기술</option><option>GaN</option><option>SiC</option><option>IGBT</option><option>SJ MOSFET</option><option>SGT</option><option value="unknown">기술군 미지정</option></select></label>
+<label>정렬<select id="watch-saved-sort"><option value="saved-new">최근 저장순</option><option value="published-new">최근 발표순</option><option value="published-old">오래된 발표순</option><option value="title">제목순</option></select></label>
+</div>
+<div class="watch-saved-summary"><span id="watch-saved-results" class="mini" role="status">저장 자료 준비 중</span><div id="watch-saved-category-counts" class="watch-saved-category-counts" aria-label="기술군별 북마크 현황"></div></div>
 <div id="watch-bookmark-feed" class="watch-bookmark-feed" aria-live="polite"></div>
 </details>
 <div class="brief-guide">먼저 공식 발표, 다음 논문, 일반 뉴스 순으로 보여줍니다. 관심 제조사를 선택하면 해당 제조사가 언급된 자료만 볼 수 있습니다. <strong>제조사 이름이 나온 기사가 곧 공식 발표라는 뜻은 아닙니다.</strong></div>
@@ -828,6 +847,7 @@ let WATCH_VISIBLE_ITEMS=[];
 const WATCH_BOOKMARK_KEY="psi-radar-bookmarks-v1";
 const WATCH_BOOKMARK_LIMIT=200;
 let WATCH_BOOKMARKS=new Map();
+let WATCH_BOOKMARK_VISIBLE=[];
 function watchValidUrl(value){
  if(typeof value!=="string"||value.length>2048)return false;
  try{const u=new URL(value);return u.protocol==="https:"&&Boolean(u.hostname)&&!u.username&&!u.password}
@@ -859,15 +879,38 @@ function persistWatchBookmarks(){
   el("watch-status").textContent="브라우저 저장이 차단돼 북마크가 현재 페이지에만 유지됩니다.";
  }
 }
+function watchSavedItems(){
+ const query=el("watch-saved-search").value.trim().toLocaleLowerCase();
+ const category=el("watch-saved-category").value;
+ const sort=el("watch-saved-sort").value;
+ const all=[...WATCH_BOOKMARKS.values()];
+ const filtered=all.filter(r=>(!category||(category==="unknown"?!r.category:r.category===category))&&
+  (!query||[r.title,r.source,r.url].some(x=>String(x||"").toLocaleLowerCase().includes(query))));
+ if(sort==="published-new")filtered.sort((a,b)=>(b.date||"").localeCompare(a.date||"")||(b.saved_at||"").localeCompare(a.saved_at||""));
+ else if(sort==="published-old")filtered.sort((a,b)=>(a.date||"9999").localeCompare(b.date||"9999")||(b.saved_at||"").localeCompare(a.saved_at||""));
+ else if(sort==="title")filtered.sort((a,b)=>a.title.localeCompare(b.title,"ko"));
+ else filtered.sort((a,b)=>(b.saved_at||"").localeCompare(a.saved_at||"")||all.indexOf(b)-all.indexOf(a));
+ return filtered;
+}
 function renderWatchBookmarks(){
- const items=[...WATCH_BOOKMARKS.values()].reverse();
- el("watch-bookmark-count").textContent=items.length+"건";
+ const all=[...WATCH_BOOKMARKS.values()];
+ const items=watchSavedItems();
+ WATCH_BOOKMARK_VISIBLE=items;
+ el("watch-bookmark-count").textContent=all.length+"건";
+ el("watch-saved-results").textContent="전체 "+all.length+"건 중 "+items.length+"건 표시";
+ const categories=[...WATCH_TECH_ORDER,"unknown"];
+ const categoryCurrent=el("watch-saved-category").value;
+ el("watch-saved-category-counts").innerHTML=categories.map(cat=>{
+  const count=all.filter(r=>cat==="unknown"?!r.category:r.category===cat).length;
+  if(!count)return "";
+  return '<button type="button" data-saved-category="'+esc(cat)+'" class="'+(cat===categoryCurrent?"selected":"")+'">'+esc(cat==="unknown"?"미지정":cat)+" "+count+"건</button>";
+ }).join("");
  el("watch-bookmark-feed").innerHTML=items.length?items.map((r,index)=>
- '<article class="watch-saved-card"><div class="meta">'+esc(r.category||"기술군 미지정")+(r.date?' · '+esc(r.date):"")+'</div>'+
+ '<article class="watch-saved-card"><div class="meta">'+esc(r.category||"기술군 미지정")+(r.date?' · 발표 '+esc(r.date):"")+'</div>'+
  '<a href="'+esc(r.url)+'" target="_blank" rel="noopener noreferrer">'+esc(r.title)+'</a>'+
  '<div class="meta">'+esc(r.source||"공개 원문")+'</div>'+
  '<button type="button" class="watch-bookmark-toggle" data-remove-bookmark="'+index+'">북마크 해제</button></article>'
- ).join(""):'<div class="mini">아직 저장한 자료가 없습니다. 기사 카드에서 ☆ 북마크를 누르면 이곳에 보관됩니다.</div>';
+ ).join(""):(all.length?'<div class="mini">일치하는 저장 자료가 없습니다. 검색어 또는 기술군 필터를 변경해 보세요.</div>':'<div class="mini">아직 저장한 자료가 없습니다. 기사 카드에서 ☆ 북마크를 누르면 이곳에 보관됩니다.</div>');
 }
 function toggleWatchBookmark(row){
  const url=row?.url;
@@ -1031,11 +1074,20 @@ el("watch-clear-read").addEventListener("click",()=>{
  renderWatchFeed();
 });
 
+for(const id of ["watch-saved-search","watch-saved-category","watch-saved-sort"]){
+ el(id).addEventListener(id==="watch-saved-search"?"input":"change",renderWatchBookmarks);
+}
+el("watch-saved-category-counts").addEventListener("click",e=>{
+ const btn=e.target.closest("button[data-saved-category]");
+ if(!btn)return;
+ el("watch-saved-category").value=el("watch-saved-category").value===btn.dataset.savedCategory?"":btn.dataset.savedCategory;
+ renderWatchBookmarks();
+});
 el("watch-bookmark-feed").addEventListener("click",e=>{
  const button=e.target.closest("button[data-remove-bookmark]");
  if(!button)return;
- const items=[...WATCH_BOOKMARKS.values()].reverse(),i=Number(button.dataset.removeBookmark);
- if(Number.isInteger(i)&&items[i])toggleWatchBookmark(items[i]);
+ const i=Number(button.dataset.removeBookmark);
+ if(Number.isInteger(i)&&WATCH_BOOKMARK_VISIBLE[i])toggleWatchBookmark(WATCH_BOOKMARK_VISIBLE[i]);
 });
 el("watch-backup-export").addEventListener("click",()=>{
  const payload=JSON.stringify(watchBackupObject(),null,2);
