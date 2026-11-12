@@ -63,10 +63,40 @@
 #bench-compare strong{display:block}
 #bench-compare .warning{color:#ffcf91}
 @media(max-width:600px){#bench-compare .pair{grid-template-columns:1fr}}
+
+/* V1.0 readability-first FOM coverage heatmap and architecture explorer */
+.fom-panel{margin:10px 0}
+.fom-legend{display:flex;flex-wrap:wrap;gap:7px 14px;margin:9px 0;font-size:11px;color:var(--muted)}
+.heat-dot{display:inline-block;width:12px;height:12px;vertical-align:-2px;margin-right:4px;border-radius:3px}
+.heat-dot.confirmed,.fom-cell.confirmed{background:#286e7b}
+.heat-dot.reported,.fom-cell.reported{background:#24518c}
+.heat-dot.undefined,.fom-cell.undefined{background:#77582e}
+.heat-dot.absent,.fom-cell.absent{background:#202e42}
+.fom-heat-wrap{max-height:325px;overflow:auto;border:1px solid var(--border);border-radius:8px}
+.fom-heat-grid{display:grid;grid-template-columns:minmax(145px,2fr) repeat(8,minmax(47px,.7fr));min-width:570px;gap:3px;padding:4px;font-size:11px}
+.fom-heat-grid .fom-head{position:sticky;top:0;background:#233955;color:#dceafa;z-index:2;text-align:center;font-size:10px;padding:5px 2px;border-radius:4px}
+.fom-heat-grid .fom-name{font-size:10px;padding:6px 4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fom-cell{border:1px solid transparent;color:#fff;border-radius:4px;padding:6px 1px;cursor:pointer;min-height:29px;font-size:10px}
+.fom-cell:hover,.fom-cell:focus-visible{outline:2px solid #a6d6ff;outline-offset:-2px}
+.fom-cell.selected{border:2px solid #fff}
+.fom-selected{margin-top:8px;padding:10px;border:1px solid var(--border);border-radius:8px;min-height:45px;line-height:1.65}
+.arch-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin:12px 0}
+.arch-tile{border:1px solid var(--border);background:#101e33;border-radius:9px;padding:12px;text-align:left;color:var(--text);cursor:pointer}
+.arch-tile.active{border-color:#7dc1ff;background:#21446a}
+.arch-tile strong{display:block;font-size:16px}
+.arch-tile small{display:block;color:var(--muted)}
+.arch-quick{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.arch-quick>div{padding:12px;background:#142942;border-radius:8px}
+.arch-quick h3{margin:0 0 8px;font-size:14px}
+.arch-quick ul{margin:0;padding-left:20px}
+.arch-sources{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-top:8px}
+.arch-sources a{display:block;padding:7px;border:1px solid var(--border);border-radius:6px;font-size:12px}
+@media(max-width:800px){.arch-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:600px){.arch-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.arch-quick,.arch-sources{grid-template-columns:1fr}.fom-heat-wrap{max-height:300px}}
 </style></head><body>
 <header><small>POWER SEMICONDUCTOR INTELLIGENCE</small><h1>◈ PSI Radar</h1><div class="muted">GaN · SiC · IGBT · UD/UG SGT · SJ MOSFET | 글로벌 기술 · 논문 · 경쟁사 동향</div><div id="last" class="mini">데이터 상태 확인 중...</div></header>
 <main><nav id="nav" class="nav" aria-label="메뉴">
-<button data-tab="overview" class="active">Overview</button><button data-tab="technology">Technology</button><button data-tab="research">Research</button><button data-tab="weekly">Weekly Reports</button><button data-tab="competitors">Competitors</button><button data-tab="benchmark">Benchmark</button><button data-tab="market">Market & Finance</button><button data-tab="sources">Data Quality</button></nav>
+<button data-tab="overview" class="active">Overview</button><button data-tab="technology">Technology</button><button data-tab="research">Research</button><button data-tab="weekly">Weekly Reports</button><button data-tab="competitors">Competitors</button><button data-tab="architecture">Architecture</button><button data-tab="benchmark">Benchmark</button><button data-tab="market">Market & Finance</button><button data-tab="sources">Data Quality</button></nav>
 <section id="overview"><div class="grid"><article class="panel stat"><span>수집된 자료 (연구 12개월 포함)</span><b id="total">0</b></article><article class="panel stat"><span>GaN</span><b id="gan">0</b></article><article class="panel stat"><span>SiC</span><b id="sic">0</b></article><article class="panel stat"><span>IGBT</span><b id="igbt">0</b></article><article class="panel stat"><span>논문</span><b id="papers">0</b></article></div><div class="two"><article class="panel"><h2>주간 핵심 업데이트</h2><div id="highlights" class="feed"></div></article><article class="panel"><h2>분석 우선순위</h2><div class="tiles"><article><b>GaN · 40%</b><p>E-mode, Dynamic R(on), 데이터센터 전원</p></article><article><b>SiC · 30%</b><p>Trench, Gate Oxide, 200mm Wafer</p></article><article><b>IGBT · 10%</b><p>Trench, Field Stop, VCE(sat), Eoff</p></article><article><b>SGT · 10%</b><p>Shield gate, Qgd, Eoss, Cell Pitch</p></article><article><b>SJ · 10%</b><p>Pillar Balance, Qrr, Softness, BV</p></article></div><p class="mini">비중은 기술 관심도 기준이며 실제 수집 비중을 보장하지 않습니다.</p></article></div></section>
 <section id="technology" class="hidden"><article class="panel"><h2>Technology Watch</h2><div class="filters"><select id="cat"><option value="">전체 기술</option><option>GaN</option><option>SiC</option><option>IGBT</option><option>SGT</option><option>SJ MOSFET</option></select><select id="kind"><option value="">뉴스 + 논문</option><option value="news">뉴스</option><option value="paper">논문</option></select><input id="search" placeholder="키워드·회사·기술 검색" aria-label="검색"></div><div id="records" class="feed"></div></article></section>
 <section id="research" class="hidden"><article class="panel"><h2>학술 논문 | Research Intelligence</h2><p class="muted">최근 45일 학술지 + IGBT·SGT·SJ MOSFET 최근 12개월 집중 검색 · Crossref / OpenAlex DOI · 원문 검토 전</p><div class="filters"><select id="research-cat" aria-label="논문 기술 선택"><option value="">전체 논문</option><option>GaN</option><option>SiC</option><option>IGBT</option><option>SGT</option><option>SJ MOSFET</option></select></div><select id="research-relevance" aria-label="기술 관련성 수준"><option value="0">전체 관련성</option><option value="70">높음 70점 이상</option><option value="45">보통 45점 이상</option></select><p class="mini">관련성은 제목·초록 기술 키워드 기반의 자동 추정값입니다. 전문가 검증 결과가 아닙니다.</p><div id="research-counts" class="mini"></div><div id="research-feed" class="feed"></div></article></section>
@@ -96,6 +126,14 @@
 </div><p class="mini">포털 링크는 탐색용이며 해당 사이트의 전체 자료가 자동 수집되는 것은 아닙니다.</p>
 </details>
 </article></section>
+<section id="architecture" class="hidden"><article class="panel">
+<h2>Process Architecture · 구조별 기술 지도</h2>
+<p class="muted">전력 소자 구조와 Device Physics 관점의 검토 포인트를 쉽게 연결합니다. 공식 제품 구조 표기를 바탕으로 하며, 내부 공정 단면이나 Recipe를 추정하지 않습니다.</p>
+<div class="filters"><select id="arch-category" aria-label="관심 구조 선택"><option value="">전체 기술군</option><option>GaN</option><option>SiC</option><option>IGBT</option><option>SGT</option><option>SJ MOSFET</option></select></div>
+<div id="arch-overview" class="arch-grid"></div>
+<div id="arch-detail" class="competitor-block"></div>
+<div class="mini" id="arch-warning"></div>
+</article></section>
 <section id="benchmark" class="hidden"><article class="panel">
 <h2>Device Datasheet Benchmark · 제품별 정격 및 FOM</h2>
 <p class="muted">제조사 공식 제품 페이지에서 확인한 항목만 기재합니다. 측정 조건과 typ/max가 다른 값은 직접적인 성능 우열 비교에 사용할 수 없습니다.</p>
@@ -106,7 +144,15 @@
 <input id="bench-search" placeholder="제품 번호·구조 검색" aria-label="벤치마크 검색">
 </div>
 <div id="bench-kpi" class="competitor-kpis"></div>
-<div id="bench-message" class="mini"></div><div class="competitor-block" style="margin:10px 0"><h3>FOM 검토 · RDS(on) × Qg / RDS(on) × Qgd</h3><p class="mini">제품 페이지의 typ. 값을 단순 곱한 산술 참고값이며, 서로 다른 측정 조건의 제품간 효율·기술 우열을 뜻하지 않습니다. 정규화 FOM은 상세 조건 검증 전까지 제공하지 않습니다.</p><div id="bench-fom" class="benchmark-table-wrap"></div></div>
+<div id="bench-message" class="mini"></div>
+<div class="competitor-block fom-panel">
+<h3>제품별 핵심 특성 한눈에 보기</h3>
+<p class="mini">색은 <strong>성능의 좋고 나쁨이 아닌 자료의 확보 상태</strong>입니다. 칸을 선택하면 값과 시험 조건을 볼 수 있습니다.</p>
+<div class="fom-legend"><span><i class="heat-dot confirmed"></i> 시험 조건 일부 확인</span><span><i class="heat-dot reported"></i> 제조사 수치 확인</span><span><i class="heat-dot undefined"></i> typ/max 미지정</span><span><i class="heat-dot absent"></i> 자료 없음</span></div>
+<div id="bench-fom" class="fom-heat-wrap"></div>
+<div id="bench-fom-detail" class="fom-selected mini" aria-live="polite">위 히트맵에서 제품과 항목을 선택하세요.</div>
+<details class="portal-details"><summary>RDS(on) × Qg 산술 참고값 보기 (정규화 비교 아님)</summary><div id="bench-fom-math" class="feed"></div></details>
+</div>
 <div class="competitor-block" style="margin:10px 0">
 <h3>제조사별 사양 비교 · 해당 기술에서만 비교</h3>
 <div class="benchmark-table-wrap"><table class="benchmark-table"><thead><tr><th>제조사 / 제품</th><th>구조 · 패키지</th><th>내압</th><th>RDS(on)<small>typ / max</small></th><th>Qg<small>typ / 미지정</small></th><th>Qoss<small>typ / 미지정</small></th><th>VCE(sat)<small>typ</small></th><th>Qrr<small>typ</small></th><th>공식 근거</th></tr></thead><tbody id="bench-rows"></tbody></table></div>
@@ -323,12 +369,77 @@ function compareBench(){
  target.innerHTML=info+(lines.length?lines.join(""):'<p class="mini">현재 직접 비교 가능한 공통 항목이 없습니다.</p>')+
  '<p class="mini">제품 페이지에 상세 조건이 생략된 항목은 동일 조건으로 간주하지 않습니다. 값 차이는 공정 우열이나 성능 개선율을 뜻하지 않습니다.</p>';
 }
+
+const FOM_METRICS=[["rds_on","Ron typ"],["rds_on_max","Ron max"],["qg","Qg"],["qgd","Qgd"],["qoss","Qoss"],["eoss","Eoss"],["qrr","Qrr"],["vce_sat","VCE(sat)"]];
+let FOM_SELECTED=null;
+function fomStatus(r,key){
+ const value=r.specs?.[key];
+ if(!value)return "absent";
+ if(value.kind==="unspecified")return "undefined";
+ if(r.verification==="datasheet_table_verified"&&value.test_conditions&&Object.keys(value.test_conditions).length>0)return "confirmed";
+ return "reported";
+}
+function renderFomHeatmap(rows){
+ const root=el("bench-fom");
+ const head='<div class="fom-head">제조사 / 제품</div>'+FOM_METRICS.map(([k,label])=>'<div class="fom-head">'+esc(label)+'</div>').join("");
+ const body=rows.map(r=>'<div class="fom-name" title="'+esc(r.company+" "+r.part)+'"><b>'+esc(r.company)+'</b> · '+esc(r.part)+'</div>'+FOM_METRICS.map(([k,label])=>{
+ const status=fomStatus(r,k);
+ const exists=r.specs?.[k];
+ const accessibility=r.company+" "+r.part+" "+label+" "+(exists?String(exists.value)+" "+exists.unit:"자료 없음");
+ const selected=FOM_SELECTED?.id===r.id&&FOM_SELECTED?.metric===k;
+ return '<button type="button" class="fom-cell '+status+(selected?' selected':'')+'" data-part="'+esc(r.id)+'" data-metric="'+esc(k)+'" aria-label="'+esc(accessibility)+'">'+(exists?esc(exists.value):"—")+'</button>';
+ }).join("")).join("");
+ root.innerHTML='<div class="fom-heat-grid">'+head+body+'</div>';
+ if(!rows.some(r=>r.id===FOM_SELECTED?.id)){FOM_SELECTED=null;el("bench-fom-detail").textContent="히트맵의 칸을 선택하면 수치·측정 조건·원문을 설명합니다."}
+ else if(FOM_SELECTED)showFomDetail(FOM_SELECTED.id,FOM_SELECTED.metric,false);
+ const math=rows.filter(r=>benchIndicativeFom(r,"qg")!==null);
+ el("bench-fom-math").innerHTML=math.length?math.map(r=>'<div class="item"><strong>'+esc(r.company+" · "+r.part)+'</strong><span class="tag">산술 참고값</span> Ron typ × Qg typ = '+esc(benchIndicativeFom(r,"qg"))+' mΩ·nC <div class="mini">측정 조건 미정규화 · 제품간 성능 순위 해석 금지</div></div>').join(""):'<div class="mini">현재 조건에서 산술값을 계산할 수 있는 제품이 없습니다.</div>';
+}
+function showFomDetail(id,metric,repaint=true){
+ const r=BENCH.devices.find(row=>row.id===id);
+ if(!r)return;
+ const entry=FOM_METRICS.find(([key])=>key===metric);
+ if(!entry)return;
+ FOM_SELECTED={id,metric};
+ const v=r.specs?.[metric],status=fomStatus(r,metric);
+ const meaning={confirmed:"공식 데이터시트의 일부 시험 조건 확인 · 제품간 비교 가능성을 뜻하지 않음",reported:"제조사 수치가 있으나 비교에 필요한 시험 조건은 미완전",undefined:"수치는 있지만 typ/max 구분이 명시되지 않음",absent:"공식 자료에서 해당 수치를 아직 확보하지 못함"}[status];
+ let note=v?'<strong>'+esc(v.value+" "+v.unit+" · "+v.kind)+'</strong> · '+esc(v.condition||"조건 미확인"):'<strong>미확인</strong>';
+ if(v?.test_conditions)note+=' · 확인된 조건: '+esc(Object.entries(v.test_conditions).map(([k,x])=>k+"="+x).join(", "));
+ const url=/^https:\/\//.test(r.url||"")?r.url:"#";
+ el("bench-fom-detail").innerHTML='<strong>'+esc(r.company+" · "+r.part)+" / "+esc(entry[1])+'</strong><div>'+note+'</div><div>'+esc(meaning)+'</div><a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">공식 제조사 원문 ↗</a>';
+ if(repaint)renderFomHeatmap(benchmarkOptions());
+}
+el("bench-fom").addEventListener("click",event=>{
+ const target=event.target.closest("button[data-part][data-metric]");
+ if(target)showFomDetail(target.dataset.part,target.dataset.metric);
+});
+let ARCH={categories:[]};
+function renderArchitecture(){
+ const cat=el("arch-category").value,items=ARCH.categories||[];
+ const selected=items.find(x=>x.category===cat)||items[0];
+ el("arch-overview").innerHTML=items.map(x=>'<button class="arch-tile'+(x.category===selected?.category?' active':'')+'" type="button" data-cat="'+esc(x.category)+'"><strong>'+esc(x.category)+'</strong><small>등록 '+esc(x.count)+'종 · '+esc(x.companies.length)+'개 제조사</small></button>').join("");
+ if(!selected){el("arch-detail").textContent="구조 데이터를 불러오지 못했습니다.";return;}
+ const bullets=arr=>'<ul>'+arr.map(x=>'<li>'+esc(x)+'</li>').join("")+'</ul>';
+ const groups=Object.entries(selected.structures||{}).map(([k,n])=>'<span class="tag">'+esc(k)+' · '+esc(n)+'종</span>').join("");
+ const sources=(selected.official_sources||[]).slice(0,10).map(r=>'<a href="'+esc(r.url)+'" target="_blank" rel="noopener noreferrer">'+esc(r.company+" · "+r.part)+' ↗</a>').join("");
+ el("arch-detail").innerHTML='<h2>'+esc(selected.category)+' · '+esc(selected.intro)+'</h2><div class="mini">공식 제품 등록 기준: '+groups+'</div>'+
+ '<div class="arch-quick"><div><h3>왜 중요한가? · Device Physics</h3>'+bullets(selected.physics)+'</div><div><h3>무엇을 살펴볼까? · 구조·공정</h3>'+bullets(selected.watch)+'</div></div>'+
+ '<h3>해당 제품의 공식 근거</h3><div class="arch-sources">'+(sources||'<div class="mini">등록된 공식 제품이 없습니다. 연구자료 검토 단계입니다.</div>')+'</div>';
+ el("arch-warning").textContent=ARCH.warning||"";
+}
+el("arch-category").addEventListener("change",renderArchitecture);
+el("arch-overview").addEventListener("click",e=>{
+ const btn=e.target.closest("button[data-cat]");
+ if(btn){el("arch-category").value=btn.dataset.cat;renderArchitecture();}
+});
+fetch("architecture.json?nocache="+Date.now()).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{ARCH=d;renderArchitecture()}).catch(()=>el("arch-detail").textContent="구조 지도 로딩 실패: 자동 배포 결과를 확인하세요.");
 function renderBenchmark(){
  const rows=benchmarkOptions(),cat=el("bench-category").value;
  const types=new Set(rows.map(x=>x.category));
  const companies=new Set(rows.map(x=>x.company));
  el("bench-kpi").innerHTML=[["검증 제품",rows.length+"종"],["제조사",companies.size+"개"],["선택 기술",cat||"전체"],["측정 조건","개별 확인"]].map(([a,b])=>'<div class="kpi"><span>'+esc(a)+'</span><strong>'+esc(b)+'</strong></div>').join("");
- el("bench-fom").innerHTML=rows.filter(r=>benchIndicativeFom(r,"qg")!==null||benchIndicativeFom(r,"qgd")!==null).map(r=>'<div class="item"><strong>'+esc(r.company+" · "+r.part)+'</strong><span class="tag">산술 참고값 · 미정규화</span><div class="mini">Ron(typ) × Qg(typ): '+esc(benchIndicativeFom(r,"qg")??"미확인")+' mΩ·nC / Ron(typ) × Qgd(typ): '+esc(benchIndicativeFom(r,"qgd")??"미확인")+' mΩ·nC</div></div>').join("")||'<div class="mini">현재 조건에서 산술 참고값을 만들 수 있는 부품이 없습니다. Qgd는 원문 조건 미확인으로 비워 둡니다.</div>';
+ renderFomHeatmap(rows);
+
  el("bench-message").textContent="필터 적용 "+rows.length+"종 · 빈 사양은 미확인, typ과 max는 서로 다른 기준 · 1차 출처는 공식 제조사 제품 페이지";
  el("bench-rows").innerHTML=rows.length?rows.map(r=>
   '<tr><td><strong>'+esc(r.company)+'<small>'+esc(r.part)+'</small></strong><span class="chip">'+esc(r.status||"상태 미확인")+'</span></td>'+
