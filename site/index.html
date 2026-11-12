@@ -803,13 +803,11 @@ function renderWatchFeed(){
  if(prefs.companies.length)items=items.filter(r=>(r.companies||[]).some(id=>prefs.companies.includes(id)));
  if(requireCompany)items=items.filter(r=>(r.companies||[]).length>0);
  if(official)items=items.filter(r=>r.source_level==="official");
+ const totalBeforeUnread=items.length;
  const unread=items.filter(r=>!WATCH_READ.has(r.url)).length;
  if(el("watch-unread-only").checked)items=items.filter(r=>!WATCH_READ.has(r.url));
  items.sort((a,b)=>(b.reading_priority||0)-(a.reading_priority||0)||(b.date||"").localeCompare(a.date||""));
- const currentCount=items.length;
- el("watch-kpi").innerHTML=[["현재 표시",currentCount+"건"],["안 읽음",unread+"건"],["읽음",((BRIEFING.categories||[]).length?currentCount+0:0)+"건"]].map(([name,value])=>'<div class="kpi"><span>'+esc(name)+'</span><strong>'+esc(value)+'</strong></div>').join("");
- // The read-count replaces the placeholder above with pre-filter totals.
- const totalBeforeUnread=el("watch-unread-only").checked?null:currentCount;
+ el("watch-kpi").innerHTML=[["현재 표시",items.length+"건"],["안 읽음",unread+"건"],["읽음",(totalBeforeUnread-unread)+"건"],["전체 해당 자료",totalBeforeUnread+"건"]].map(([name,value])=>'<div class="kpi"><span>'+esc(name)+'</span><strong>'+esc(value)+'</strong></div>').join("");
  const companyLabel=id=>WATCH_COMPANIES.find(x=>x[0]===id)?.[1]||id;
  WATCH_VISIBLE_ITEMS=items.slice(0,30);
  el("watch-mark-all-read").disabled=!WATCH_VISIBLE_ITEMS.length;
