@@ -458,6 +458,22 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
 .finance-warning{font-size:11px;color:#bfd3e2;line-height:1.55;margin-top:10px}
 @media(max-width:900px){.finance-cards{grid-template-columns:1fr}}
 @media(max-width:550px){.finance-bar-row{grid-template-columns:75px minmax(0,1fr);gap:5px}.finance-bar-value{grid-column:2;text-align:left}.finance-card{padding:10px}.finance-controls{flex-direction:column;align-items:stretch}.finance-controls label{justify-content:space-between}}
+
+/* V2.3: official IR discovery queue, separated from verified financial numbers */
+.finance-ir-queue{margin:14px 0 4px;padding:13px;border:1px solid #365775;background:#10273f;border-radius:11px;min-width:0}
+.finance-ir-queue .intel-section-heading{margin:0 0 7px}
+.finance-ir-queue h3{font-size:15px}
+.finance-ir-sources{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.finance-ir-source{border:1px solid #3b5c7a;border-radius:6px;padding:5px 8px;font-size:11px;white-space:normal;overflow-wrap:anywhere}
+.finance-ir-source.is-error{border-color:#9e6b5c;color:#ffd5bc}
+.finance-ir-items{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:10px}
+.finance-ir-item{border:1px solid #31516b;background:#182f49;border-radius:8px;padding:10px;min-width:0;overflow-wrap:anywhere}
+.finance-ir-item strong{display:block;font-size:12px;line-height:1.5;margin:5px 0}
+.finance-ir-item .meta{margin:6px 0}
+.finance-ir-item a{font-size:12px}
+.finance-ir-tag{display:inline-block;font-size:10px;padding:3px 6px;color:#d9eeff;background:#29516d;border-radius:4px}
+.finance-ir-tag.known{background:#2a3d50;color:#b9c9d5}
+@media(max-width:760px){.finance-ir-items{grid-template-columns:1fr}}
 </style></head><body>
 <header><small>POWER SEMICONDUCTOR INTELLIGENCE</small><h1>◈ PSI Radar</h1><div class="muted">GaN · SiC · IGBT · SJ MOSFET · UD/UG SGT | 글로벌 기술 · 논문 · 경쟁사 동향</div><div id="last" class="mini">데이터 상태 확인 중...</div></header>
 <aside class="personal-tools" aria-label="개인 및 데이터 관리 보조 메뉴">
@@ -656,6 +672,13 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
 <div id="finance-status" class="mini" role="status">공식 재무 자료를 불러오는 중입니다.</div>
 <div class="finance-guide">수치는 <strong>각 회사의 원래 통화 기준 백만 단위</strong>입니다. ROHM은 6개월 누적(H1), Infineon의 Segment Result는 IFRS 영업이익이 아니며, ST·onsemi는 US GAAP 기준입니다. 분기와 상반기·서로 다른 지표를 하나의 순위로 비교하지 않습니다.</div>
 <div id="finance-cards" class="finance-cards" aria-live="polite"></div>
+<div class="finance-ir-queue">
+<div class="intel-section-heading"><h3>공식 IR 발표 감지 · 검토 대기열</h3><label class="brief-checkbox"><input type="checkbox" id="finance-show-known"> 기존 반영 원문도 보기</label></div>
+<p class="mini">제조사 IR 목록에서 실적 관련 제목이 있는 링크만 수집합니다. <strong>최초 관측일은 발표일이 아니며, 검토 대기 상태는 새 실적 확정을 뜻하지 않습니다.</strong> 실적 금액은 자동 수정하지 않습니다.</p>
+<div id="finance-ir-status" class="mini" role="status">공식 발표 목록을 확인하는 중입니다.</div>
+<div id="finance-ir-sources" class="finance-ir-sources" aria-label="회사별 공식 IR 확인 상태"></div>
+<div id="finance-ir-items" class="finance-ir-items" aria-live="polite"></div>
+</div>
 <details class="portal-details"><summary>데이터 출처·비교 제한·갱신 방식</summary>
 <div id="finance-disclosure" class="mini">공식 IR 자료 기반입니다. 최신 분기 공시 확인 및 기록 수정은 현재 수동 검증 방식입니다.</div></details>
 </article></section>
@@ -1295,6 +1318,38 @@ el("watch-reset").addEventListener("click",()=>{
  renderWatchFeed();
 });
 
+let FINANCIAL_IR={sources:[],candidates:[]};
+function renderFinancialIr(){
+ const filter=el("finance-company").value,showKnown=el("finance-show-known").checked;
+ const sources=(FINANCIAL_IR.sources||[]).filter(r=>!filter||r.company===filter);
+ const candidates=(FINANCIAL_IR.candidates||[]).filter(r=>(!filter||r.company===filter)
+     &&(showKnown||r.review_status==="human_review_required"));
+ const unresolved=candidates.filter(r=>r.review_status==="human_review_required").length;
+ el("finance-ir-status").textContent=FINANCIAL_IR.checked_at?
+  "최근 IR 목록 점검: "+FINANCIAL_IR.checked_at+" · 화면 표시 "+candidates.length+"건 · 검토 대상 "+unresolved+
+  "건 · 수집된 링크는 보고서 공시 확정 여부를 의미하지 않습니다.":
+  "IR 목록 점검 데이터를 불러오는 중입니다.";
+ const names={infineon:"Infineon",st:"STMicroelectronics",onsemi:"onsemi",rohm:"ROHM"};
+ el("finance-ir-sources").innerHTML=sources.map(s=>
+  '<span class="finance-ir-source'+(s.status!=="ok"?" is-error":"")+'">'+esc(names[s.company]||s.company)+
+  " · "+(s.status==="ok"?"확인":"원문 연결 실패")+
+  (s.status==="ok"?" · 후보 링크 "+esc(s.observed)+"건":" · 최근 점검 실패")+"</span>").join("");
+ el("finance-ir-items").innerHTML=candidates.length?candidates.slice(0,24).map(r=>
+  '<article class="finance-ir-item"><span class="finance-ir-tag'+(r.review_status==="already_in_verified_financials"?" known":"")+'">'+
+  (r.review_status==="already_in_verified_financials"?"기존 실적 원문":"수동 검토 대상")+'</span>'+
+  '<strong>'+esc(r.title)+'</strong>'+
+  '<div class="meta">'+esc(names[r.company]||r.company)+" · 최초 관측 "+esc(r.first_observed_at||"미상")+
+  (r.listed_on_official_ir?" · IR 목록 링크 확인":" · 현재 목록 재확인 필요")+'</div>'+
+  '<a href="'+esc(r.url)+'" target="_blank" rel="noopener noreferrer">공식 사이트 원문 확인 ↗</a></article>'
+ ).join(""):'<div class="mini">표시할 후보가 없습니다. 검토 대상이 없다는 사실만으로 신규 발표가 없었다고 판단할 수 없습니다. 업체별 연결 상태를 확인하세요.</div>';
+}
+el("finance-show-known").addEventListener("change",renderFinancialIr);
+fetch("financial_ir_watch.json?nocache="+Date.now()).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(data=>{
+ FINANCIAL_IR=data;renderFinancialIr();
+}).catch(e=>{
+ el("finance-ir-status").textContent="공식 IR 목록 점검 결과를 불러오지 못했습니다: "+e.message;
+ el("finance-ir-items").innerHTML='<div class="mini">점검 자료가 없으며 신규 공시 여부를 판단할 수 없습니다.</div>';
+});
 let FINANCIALS={companies:[]};
 function financeMoney(value,currency){
  if(typeof value!=="number")return "미공시";
@@ -1308,6 +1363,7 @@ function renderFinance(){
  el("finance-disclosure").textContent=(FINANCIALS.warning||"")+
   " "+(FINANCIALS.refresh_policy||"")+
   " 데이터 업데이트는 제조사 IR 원문을 확인해 수동 반영하는 방식입니다.";
+ renderFinancialIr();
  el("finance-cards").innerHTML=rows.map(company=>{
   const ps=company.periods||[];
   const latest=ps[ps.length-1];
