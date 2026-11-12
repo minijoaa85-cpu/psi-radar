@@ -2,7 +2,7 @@
 from pathlib import Path
 import re
 PAGE=(Path(__file__).resolve().parents[1]/"site"/"index.html").read_text(encoding="utf-8")
-CODE=PAGE.split("const WATCH_TECH_ORDER=",1)[1].split("let INTEGRATED=",1)[0]
+CODE=PAGE.split("const WATCH_TECH_ORDER=",1)[1].split("let FINANCIALS=",1)[0]
 
 def test_saved_article_shelf_and_filter_controls():
  for id in ("watch-bookmark-section","watch-bookmark-feed","watch-bookmark-count",
