@@ -7,6 +7,9 @@ from __future__ import annotations
 
 import json
 from collections import Counter
+import re
+
+from scripts.competitors import COMPANIES
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -44,12 +47,43 @@ def public_specs(row):
     return result
 
 
-def make_integrated(briefing, topics, architecture, benchmark):
+def load_recent_snapshots(limit=8):
+    """Read only actual saved weekly snapshots, never invent missing weeks."""
+    index = SITE / "topic_trends" / "index.json"
+    if not index.exists():
+        return []
+    try:
+        entries = json.loads(index.read_text(encoding="utf-8")).get("weeks", [])
+    except (OSError, ValueError, AttributeError):
+        return []
+    found = {}
+    for entry in entries[:104]:
+        if not isinstance(entry, dict):
+            continue
+        week = entry.get("week")
+        name = entry.get("file")
+        if not isinstance(week, str) or not re.fullmatch(r"\d{4}-W\d{2}", week):
+            continue
+        if name != f"topic_trends/{week}.json":
+            continue
+        try:
+            snapshot = read_json(name)
+        except (OSError, ValueError):
+            continue
+        if snapshot.get("week") == week and isinstance(snapshot.get("topics"), list):
+            found[week] = snapshot
+        if len(found) >= limit:
+            break
+    return [found[k] for k in sorted(found)]
+
+
+def make_integrated(briefing, topics, architecture, benchmark, trend_snapshots=None):
     brief_by_cat = {c.get("category"): c for c in briefing.get("categories", [])}
     arch_by_cat = {c.get("category"): c for c in architecture.get("categories", [])}
     topic_rows = topics.get("topics", [])
     devices = benchmark.get("devices", [])
     categories = []
+    trend_snapshots = trend_snapshots or []
     for category in TECHNOLOGIES:
         archive = brief_by_cat.get(category, {})
         arch = arch_by_cat.get(category, {})
@@ -120,6 +154,44 @@ def make_integrated(briefing, topics, architecture, benchmark):
                 "architecture": r.get("architecture") or "unknown",
                 "specs": public_specs(r), "url": r["url"],
             })
+        # Company mentions are from the already deduplicated 30-day briefing sample.
+        # An article mentioning a company does NOT mean its source was official.
+        company_counts = Counter()
+        company_official = Counter()
+        for article in briefs:
+            for key in set(article.get("companies") or []):
+                if key not in COMPANIES:
+                    continue
+                company_counts[key] += 1
+                if article["source_level"] == "official":
+                    company_official[key] += 1
+        activity = [
+            {
+                "id": company_id,
+                "name": COMPANIES[company_id]["name"],
+                "mention_count_sample": count,
+                "official_count_sample": company_official[company_id],
+            }
+            for company_id, count in sorted(
+                company_counts.items(),
+                key=lambda item: (-item[1], COMPANIES[item[0]]["name"])
+            )[:8]
+        ]
+
+        # One actual stored week contributes one value; do not extrapolate or fill gaps.
+        weekly = []
+        for snapshot in trend_snapshots:
+            scoped = [t for t in snapshot.get("topics", []) if t.get("category") == category]
+            if not scoped:
+                continue
+            weekly.append({
+                "week": snapshot.get("week"),
+                "complete_week": bool(snapshot.get("complete_week")),
+                "week_to_date": snapshot.get("week_to_date") or "",
+                "category_sample_count": max(int(t.get("category_sample_count") or 0) for t in scoped),
+                "topic_title_matches": sum(int(t.get("count") or 0) for t in scoped),
+                "topic_official_matches": sum(int((t.get("source_kinds") or {}).get("manufacturer_announcement") or 0) for t in scoped),
+            })
         company_names = sorted({r["company"] for r in products})
         source_counts = {k: sum(r["source_level"] == k for r in briefs) for k in ("official", "research", "news")}
         categories.append({
@@ -134,13 +206,15 @@ def make_integrated(briefing, topics, architecture, benchmark):
             "products": products,
             "product_count": len(products),
             "companies": company_names,
+            "competitor_mentions": activity,
+            "weekly_observations": weekly,
             "datasheet_table_verified_count": sum(r["verification"] == "datasheet_table_verified" for r in products),
             "structured_test_conditions_count": sum(any(v.get("test_conditions") for v in r["specs"].values()) for r in products),
         })
 
     return {
         "schema_version": 1,
-        "version": "2.0",
+        "version": "2.1",
         "generated_at": briefing.get("generated_at"),
         "benchmark_reviewed_on": benchmark.get("reviewed_on"),
         "categories": categories,
@@ -149,7 +223,7 @@ def make_integrated(briefing, topics, architecture, benchmark):
             "자료는 기술군별 공개 메타데이터와 공식 제품 자료를 함께 보여주는 참고용입니다. "
             "논문/기사와 제품 사이의 인과관계, 성능 개선, 기술력 순위는 검증하지 않았습니다. "
             "FOM 숫자는 VGS/ID/Tj 및 정격·통계 기준이 동일한 경우에만 전문가가 원문을 확인한 뒤 비교해야 합니다. "
-            "자료 0건은 연구 부재를 의미하지 않습니다."
+            "자료 0건은 연구 부재를 의미하지 않습니다. 주차별 자료는 실제 보관된 주차만 표시하며, 업체 이름 언급은 기술력 순위 또는 공식 발표 수가 아닙니다."
         ),
     }
 
@@ -160,10 +234,11 @@ def main():
         read_json("topic_map.json"),
         read_json("architecture.json"),
         read_json("benchmark.json"),
+        load_recent_snapshots(),
     )
     (SITE / "integrated.json").write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
     print(
-        "Integrated V2.0:", len(out["categories"]), "technologies,",
+        "Integrated V2.1:", len(out["categories"]), "technologies,",
         sum(x["article_count_sample"] for x in out["categories"]), "source candidates,",
         sum(x["product_count"] for x in out["categories"]), "official product records"
     )
