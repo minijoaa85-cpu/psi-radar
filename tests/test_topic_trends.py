@@ -53,3 +53,7 @@ def test_dashboard_uses_only_saved_weeks_and_filters_by_topic():
  assert "기록되지 않은 주차를 0건으로 처리하지 않습니다" in page
  assert "arch-trend-companies" in page
  assert "data-week" in page
+
+def test_sunday_afternoon_is_not_mistaken_for_full_week():
+ when=dt.datetime(2026,11,15,15,0,tzinfo=KST)
+ assert kst_week(when)==("2026-W46","2026-11-09","2026-11-15",False)
