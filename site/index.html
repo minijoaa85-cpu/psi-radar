@@ -1205,6 +1205,146 @@ el("watch-reset").addEventListener("click",()=>{
  renderWatchFeed();
 });
 
+let INTEGRATED={categories:[]};
+const INTEL_TECH_ORDER=["GaN","SiC","IGBT","SJ MOSFET","SGT"];
+let INTEL_CAT="GaN";
+let INTEL_TOPIC="";
+function intelActiveCategory(){
+ return (INTEGRATED.categories||[]).find(x=>x.category===INTEL_CAT)||null;
+}
+function intelTopicEvidence(row){
+ if(!INTEL_TOPIC)return (row.articles||[]).map(x=>({title:x.title,date:x.date,source:x.source,url:x.url,source_level:x.source_level,summary:x.summary}));
+ const topic=(row.topics||[]).find(t=>t.id===INTEL_TOPIC);
+ return (topic?.evidence||[]).map(x=>({...x,source_level: x.kind==="manufacturer_announcement"?"official":x.kind==="paper_metadata"?"research":"news"}));
+}
+function intelEvidenceCard(article){
+ const label={official:"제조사 공식 발표",research:"논문 메타데이터",news:"기사·제목 후보"}[article.source_level]||"공개 자료";
+ const info=article.summary?'<small>'+esc(article.summary)+'</small>':"";
+ return '<article class="intel-evidence-item"><span class="intel-label">'+esc(label)+'</span>'+
+  '<strong>'+esc(article.title||"제목 미확인")+'</strong>'+
+  '<small>'+esc(article.date||"날짜 미확인")+' · '+esc(article.source||"출처 미확인")+'</small>'+info+
+  '<a href="'+esc(article.url)+'" target="_blank" rel="noopener noreferrer">공개 원문 확인 ↗</a></article>';
+}
+function intelProductCard(product){
+ const values=[["rds_on","RDS(on)"],["qg","Qg"],["vce_sat","VCE(sat)"],["qrr","Qrr"]];
+ const available=values.filter(([key])=>product.specs?.[key]);
+ const stats=available.map(([key,label])=>{
+  const s=product.specs[key];
+  return '<span>'+esc(label)+': '+esc(s.value+" "+s.unit+" · "+s.kind)+'</span>';
+ }).join("");
+ const conditions=available.map(([key,label])=>{
+  const s=product.specs[key];
+  return '<div>'+esc(label)+': '+esc(s.condition||"조건 미확인")+'</div>';
+ }).join("");
+ const status=product.verification==="datasheet_table_verified"?"데이터시트 표 확인":"제조사 제품 페이지";
+ return '<article class="intel-product-item"><strong>'+esc(product.company+" · "+product.part)+'</strong>'+
+ '<small>'+esc(product.structure)+' · '+esc((product.voltage?.value??"?")+" "+(product.voltage?.unit||"V"))+' · '+esc(product.package)+'</small>'+
+ '<div class="intel-product-stats">'+(stats||'<span>표시 가능한 주요 전기 사양 미확인</span>')+'</div>'+
+ '<small>근거: '+esc(status)+' · '+esc(product.datasheet_revision||"Revision 미확인")+'</small>'+
+ '<details class="portal-details"><summary>값의 측정 조건 확인</summary><div class="mini">'+(conditions||"측정 조건 데이터 미확인")+'</div></details>'+
+ '<div class="watch-card-actions"><button class="intel-jump" type="button" data-intel-product="'+esc(product.part)+'" data-intel-company="'+esc(product.company)+'">Benchmark에서 이 제품 보기</button>'+
+ '<a href="'+esc(product.url)+'" target="_blank" rel="noopener noreferrer">제조사 공식 원문 ↗</a></div></article>';
+}
+function renderIntegrated(){
+ const row=intelActiveCategory();
+ const switches=el("intel-categories");
+ switches.innerHTML=INTEL_TECH_ORDER.map(category=>
+  '<button type="button" data-intel-category="'+esc(category)+'" class="'+(category===INTEL_CAT?"selected":"")+'" aria-pressed="'+(category===INTEL_CAT)+'">'+esc(category)+'</button>'
+ ).join("");
+ if(!row){
+  el("intel-evidence").textContent="통합 분석 자료를 불러오고 있습니다.";
+  el("intel-products").textContent="제조사 제품 자료를 불러오고 있습니다.";
+  return;
+ }
+ const items=row.articles||[],products=row.products||[],topics=row.topics||[];
+ if(INTEL_TOPIC&&!topics.some(t=>t.id===INTEL_TOPIC))INTEL_TOPIC="";
+ const topic=topics.find(t=>t.id===INTEL_TOPIC);
+ const counts=row.source_counts_sample||{};
+ el("intel-kpis").innerHTML=[
+  ["최근 공개자료 후보",row.article_count_sample+"건"],
+  ["제조사 공식 발표",String(counts.official||0)+"건"],
+  ["공식 제품 표본",row.product_count+"종"],
+  ["데이터시트 표 확인",row.datasheet_table_verified_count+"종"]
+ ].map(([a,b])=>'<div class="kpi"><span>'+esc(a)+'</span><strong>'+esc(b)+'</strong></div>').join("");
+ el("intel-data-date").textContent="브리핑 생성: "+(INTEGRATED.generated_at||"미확인")+
+  " · 제품 기준일: "+(INTEGRATED.benchmark_reviewed_on||"미확인")+
+  " · 최근 자료는 수집된 표본이며 기술 발전 순위를 의미하지 않습니다.";
+ el("intel-physics-title").textContent=INTEL_CAT+" · 주요 구조와 Device Physics";
+ el("intel-intro").textContent=row.intro;
+ el("intel-physics-points").innerHTML=(row.physics||[]).map(x=>'<li>'+esc(x)+'</li>').join("");
+ el("intel-architecture-points").innerHTML=(row.watch||[]).map(x=>'<li>'+esc(x)+'</li>').join("");
+ el("intel-topics").innerHTML='<button type="button" data-intel-topic="" class="'+(!INTEL_TOPIC?"selected":"")+'" aria-pressed="'+(!INTEL_TOPIC)+'">전체 주제</button>'+
+  topics.map(t=>'<button type="button" data-intel-topic="'+esc(t.id)+'" class="'+(INTEL_TOPIC===t.id?"selected":"")+'" aria-pressed="'+(INTEL_TOPIC===t.id)+'">'+esc(t.name)+'</button>').join("");
+ el("intel-topic-explain").textContent=topic?topic.simple+" · "+topic.why:"기술 주제를 고르면 제목에서 키워드를 확인한 자료 후보만 보여줍니다.";
+ const evidence=intelTopicEvidence(row);
+ el("intel-evidence").innerHTML=evidence.length?evidence.slice(0,6).map(intelEvidenceCard).join(""):
+  '<div class="mini">선택한 주제에 연결된 공개자료 제목 후보가 없습니다. 해당 분야의 연구가 없다는 의미는 아닙니다.</div>';
+ el("intel-other-articles").innerHTML=items.length?items.slice(0,8).map(intelEvidenceCard).join(""):
+  '<div class="mini">최근 공개 브리핑 자료가 없습니다.</div>';
+ const savedCompany=el("intel-company").value;
+ el("intel-company").innerHTML='<option value="">전체 제조사</option>'+
+  (row.companies||[]).map(x=>'<option value="'+esc(x)+'">'+esc(x)+'</option>').join("");
+ if((row.companies||[]).includes(savedCompany))el("intel-company").value=savedCompany;
+ const filtered=products.filter(p=>!el("intel-company").value||p.company===el("intel-company").value);
+ el("intel-products").innerHTML=filtered.length?
+  filtered.slice(0,6).map(intelProductCard).join("")+
+  (filtered.length>6?'<div class="mini">제품 '+filtered.length+'종 중 6종 표시 · 전체 목록은 Benchmark에서 확인</div>':""):
+  '<div class="mini">검증된 양산 제품 사양 표본이 없습니다. Architecture의 기술 논문을 참고할 수 있습니다.</div>';
+ el("intel-warning").textContent=INTEGRATED.warning||"";
+}
+el("intel-categories").addEventListener("click",event=>{
+ const b=event.target.closest("button[data-intel-category]");
+ if(!b||!INTEL_TECH_ORDER.includes(b.dataset.intelCategory))return;
+ INTEL_CAT=b.dataset.intelCategory;INTEL_TOPIC="";
+ el("intel-company").value="";
+ renderIntegrated();
+});
+el("intel-topics").addEventListener("click",event=>{
+ const b=event.target.closest("button[data-intel-topic]");
+ if(!b)return;
+ INTEL_TOPIC=b.dataset.intelTopic;
+ renderIntegrated();
+});
+el("intel-company").addEventListener("change",renderIntegrated);
+el("integrated").addEventListener("click",event=>{
+ const product=event.target.closest("button[data-intel-product]");
+ if(product){
+  el("bench-category").value=INTEL_CAT;
+  el("bench-company").value=product.dataset.intelCompany;
+  el("bench-voltage").value="";
+  el("bench-architecture").value="";
+  el("bench-search").value=product.dataset.intelProduct;
+  renderBenchmark();activateRadarTab("benchmark");
+  return;
+ }
+ const jump=event.target.closest("button[data-intel-go]");
+ if(!jump)return;
+ const destination=jump.dataset.intelGo;
+ if(destination==="architecture"){
+  el("arch-category").value=INTEL_CAT;
+  if(INTEL_TOPIC)SELECTED_TOPIC=INTEL_TOPIC;
+  renderArchitecture();
+ }else if(destination==="benchmark"){
+  el("bench-category").value=INTEL_CAT;
+  el("bench-company").value="";
+  el("bench-architecture").value="";
+  el("bench-voltage").value="";
+  el("bench-search").value="";
+  renderBenchmark();
+ }else if(destination==="briefing"){
+  el("brief-category").value=INTEL_CAT;
+  el("brief-type").value="";
+  el("brief-change").checked=false;
+  renderBriefing();
+ }else return;
+ activateRadarTab(destination);
+});
+fetch("integrated.json?nocache="+Date.now()).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(data=>{
+ INTEGRATED=data;renderIntegrated();
+}).catch(err=>{
+ el("intel-evidence").textContent="통합 자료 로딩 실패: "+err.message;
+ el("intel-products").textContent="통합 데이터 생성·배포 상태를 확인하세요.";
+});
 let BRIEFING={categories:[]};
 function renderBriefing(){
  const category=el("brief-category").value,type=el("brief-type").value,changes=el("brief-change").checked;
