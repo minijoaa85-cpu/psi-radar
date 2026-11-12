@@ -823,7 +823,7 @@ function renderWatchFeed(){
    '<div class="meta">'+esc(r.date)+' · '+esc(r.source)+'</div><p>'+esc(r.summary)+'</p>'+
    '<p class="mini">'+(companyNames.length?'언급된 제조사: '+esc(companyNames.join(", ")):'확인된 제조사 언급 없음')+'</p>'+caution+
    '<a class="brief-link" href="'+esc(r.url)+'" target="_blank" rel="noopener noreferrer">공개 원문 확인 ↗</a><div>'+action+'</div></article>';
- }).join(""):'<div class="empty">현재 필터와 일치하는 안 읽은 자료가 없거나, 선택한 조건에 맞는 최근 자료가 없습니다. 미열람 0건은 신규 기사 0건을 의미하지 않습니다.</div>';
+ }).join(""):'<div class="empty">현재 필터와 일치하는 안 읽은 자료가 없거나, 선택한 조건에 맞는 최근 자료가 없습니다. 선택 자료 0건은 관련 산업 활동이 없다는 의미가 아닙니다. 미열람 0건은 신규 기사 0건을 의미하지 않습니다.</div>';
 }
 renderWatchControls();
 loadWatchRead();
