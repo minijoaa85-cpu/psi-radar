@@ -11,7 +11,7 @@ ROOT=Path(__file__).resolve().parents[1]
 REPORT=ROOT/"site"/"data.json"
 CATALOG=ROOT/"site"/"benchmark.json"
 DEST=ROOT/"site"/"topic_map.json"
-CATEGORIES=("GaN","SiC","IGBT","SGT","SJ MOSFET")
+CATEGORIES=("GaN","SiC","IGBT","SJ MOSFET","SGT")
 TOPICS=[
  {"id":"gan-dynamic-ron","category":"GaN","name":"Dynamic RDS(on)","simple":"스위칭 후 온저항이 변하는 현상","why":"트랩·버퍼 영향으로 도통 손실이 달라질 수 있습니다. 제품의 정적 Ron 값만으로 판단하지 않습니다.","terms":["dynamic ron","dynamic r(on)","dynamic rds","current collapse","frequency dispersion","동적 온저항","주파수 분산"],"metrics":["rds_on","qoss"]},
  {"id":"gan-gate","category":"GaN","name":"Gate Reliability","simple":"게이트 구동과 장기 안정성","why":"Threshold 변화와 게이트 누설은 사용 조건에 따라 달라질 수 있습니다.","terms":["gate reliability","gate leakage","gate breakdown","threshold instability","gate stress","게이트 신뢰성"],"metrics":["vth"]},
@@ -22,11 +22,11 @@ TOPICS=[
  {"id":"igbt-loss","category":"IGBT","name":"VCE(sat) · Eoff","simple":"도통 손실과 Turn-off 손실의 균형","why":"VCE(sat), Eoff는 IC·Tj·VGE·게이트 저항에 따라 달라집니다.","terms":["vce(sat)","vcesat","eoff","turn-off loss","turn off loss","conduction loss","도통 손실"],"metrics":["vce_sat"]},
  {"id":"igbt-field","category":"IGBT","name":"Field-stop / Trench","simple":"셀 및 Field-stop 구조","why":"공식 구조 표기와 실제 전기적 특성은 구분하여 읽어야 합니다.","terms":["field stop","field-stop","trench igbt","트렌치 igbt"],"metrics":["vce_sat"]},
  {"id":"igbt-short","category":"IGBT","name":"SCWT · Ruggedness","simple":"단락·파괴 내량","why":"제조사별 단락 내량 수치는 VDC·Tj·구동 조건이 맞아야 합니다.","terms":["short circuit","short-circuit","scwt","ruggedness","단락 내량"],"metrics":["tsc"]},
- {"id":"sgt-shield","category":"SGT","name":"Shield Gate / Field Plate","simple":"Shield 전극과 게이트 분리","why":"Cell Pitch와 게이트-드레인 결합 성분이 동적 특성에 영향을 줍니다.","terms":["shielded gate","shield gate","split gate","field plate","field-plate","차폐 게이트"],"metrics":["rds_on","qgd"]},
- {"id":"sgt-charge","category":"SGT","name":"Qgd · Qoss","simple":"게이트·출력 전하","why":"저압 MOSFET의 구동 손실과 스위칭 손실을 함께 살펴봅니다.","terms":["qgd","qoss","gate charge","output charge","gate-drain capacitance"],"metrics":["qgd","qoss"]},
  {"id":"sj-pillar","category":"SJ MOSFET","name":"Pillar Charge Balance","simple":"P/N 필라 전하 균형","why":"P/N 농도 불균형은 BVDSS 및 Ron 트레이드오프와 연관됩니다.","terms":["charge balance","charge imbalance","pillar","superjunction","super junction","필라"],"metrics":["rds_on","rds_on_max"]},
  {"id":"sj-recovery","category":"SJ MOSFET","name":"Qrr · Softness","simple":"바디다이오드 역회복","why":"Qrr 수치 외에 전류·dI/dt·Tj·복구 파형의 부드러움을 확인해야 합니다.","terms":["reverse recovery","qrr","softness","body diode","역회복"],"metrics":["qrr"]},
  {"id":"sj-breakdown","category":"SJ MOSFET","name":"Breakdown · Edge","simple":"항복 전압과 종단 구조","why":"Wafer Edge와 Pillar Charge Balance의 내압 경향은 구분해 검토합니다.","terms":["breakdown voltage","bv dss","bvdss","edge termination","avalanche","항복 전압"],"metrics":["rds_on_max"]},
+ {"id":"sgt-shield","category":"SGT","name":"Shield Gate / Field Plate","simple":"Shield 전극과 게이트 분리","why":"Cell Pitch와 게이트-드레인 결합 성분이 동적 특성에 영향을 줍니다.","terms":["shielded gate","shield gate","split gate","field plate","field-plate","차폐 게이트"],"metrics":["rds_on","qgd"]},
+ {"id":"sgt-charge","category":"SGT","name":"Qgd · Qoss","simple":"게이트·출력 전하","why":"저압 MOSFET의 구동 손실과 스위칭 손실을 함께 살펴봅니다.","terms":["qgd","qoss","gate charge","output charge","gate-drain capacitance"],"metrics":["qgd","qoss"]},
 ]
 def hit_title(text,term):
  text=(text or "").casefold()
