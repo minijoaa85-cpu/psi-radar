@@ -305,7 +305,7 @@ function compareBench(){
  for(const [key,label] of entries){
   const av=a.specs?.[key],bv=b.specs?.[key];
   if(!av&&!bv)continue;
-  const same=Boolean(av&&bv&&av.kind===bv.kind&&av.unit===bv.unit&&av.condition&&bv.condition&&av.condition===bv.condition);
+  const same=Boolean(av&&bv&&av.kind===bv.kind&&av.unit===bv.unit&&av.condition&&bv.condition&&av.condition===bv.condition&&!/제품 페이지|데이터시트 참조|데이터시트 확인|미상/.test(av.condition));
   lines.push('<div class="item"><strong>'+esc(label)+'</strong>'+esc(compactValue(av))+' / '+esc(compactValue(bv))+'<div class="mini">'+(same?'측정 조건 문자열 일치 · 원문 최종 검토 권장':'조건 또는 값 부재 · 정량 우열 비교 불가')+'</div></div>');
  }
  target.innerHTML=info+(lines.length?lines.join(""):'<p class="mini">현재 직접 비교 가능한 공통 항목이 없습니다.</p>')+
