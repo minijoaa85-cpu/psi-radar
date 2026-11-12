@@ -7,6 +7,7 @@ CSS=PAGE.split("<style>",1)[1].split("</style>",1)[0]
 def test_main_nav_only_contains_research_pages():
  nav=PAGE.split('<nav id="nav"',1)[1].split("</nav>",1)[0]
  assert 'data-tab="watchlist"' not in nav
+ assert 'data-tab="sources"' not in nav
  assert 'data-tab="overview"' in nav
  assert 'data-tab="briefing"' in nav
  assert 'data-tab="architecture"' in nav
@@ -21,8 +22,8 @@ def test_personal_entry_is_external_accessible_control():
  assert 'position:fixed' in CSS
 def test_return_to_previous_research_page():
  assert 'let lastResearchTab="overview"' in PAGE
- assert 'if(tab!=="watchlist")lastResearchTab=tab;' in PAGE
- assert 'showRadarSection(isOpen?lastResearchTab:"watchlist")' in PAGE
+ assert 'if(tab!=="watchlist"&&tab!=="sources")lastResearchTab=tab;' in PAGE
+ assert 'showRadarSection(isOpen?lastResearchTab:pageId)' in PAGE
  assert 'showRadarSection(lastResearchTab);' in PAGE
  assert 'classList.toggle("hidden",page.id!==tab)' in PAGE
 def test_mobile_access_does_not_require_horizontal_menu_scroll():
