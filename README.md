@@ -1,4 +1,4 @@
-# PSI Radar V0.9 — Power Semiconductor Intelligence Radar
+# PSI Radar V1.0 — Power Semiconductor Intelligence Radar
 
 공개 자료 기반 한국어 전력반도체 주간 기술 모니터링 웹 플랫폼. GaN (40%) > SiC (30%) > IGBT (10%) = UD/UG SGT (10%) = SJ MOSFET (10%).
 
@@ -176,3 +176,14 @@ GitHub Pages는 저장소 Settings → Pages → **Source: GitHub Actions**를 �
 - 테스트된 조건의 일치 여부는 값의 표기 문자열이 아닌 `test_conditions` 필드를 비교합니다. 단, 제품 사이 정규화 FOM 순위나 성능 비교는 모든 필드 검증 전까지 비활성화합니다.
 - 공식 자료의 전사 시점만 나타내며 모든 제품·전기적 시험 조건을 상시 자동 감시하거나 Datasheet 전체를 무단 재배포하지 않습니다.
 - 유효한 추가 API 키는 필요하지 않습니다. AI 번역 호출 제한은 실행당 최대 12회, 추정 비용 예산 $0.02 그대로입니다.
+
+## V1.0 — 이용 편의성 중심 FOM 히트맵 & Process Architecture (2026-11-12)
+- **핵심 판단:** 서로 다른 VGS/ID/Tj 및 자료의 통계 기준(typ/max 미지정) 때문에 FOM 숫자의 크기로 열등/우수 색상을 지정하면 오해가 발생합니다. 따라서 기존 긴 FOM 산술 나열을 **데이터 가용성·조건 확인 여부 히트맵**으로 대체했습니다. 색은 성능 평가가 아닙니다.
+- Benchmark 히트맵: 제품별 Ron typ, Ron max, Qg, Qgd, Qoss, Eoss, Qrr, VCE(sat) 8개 항목의 공식 수치를 표시하며 4가지 자료 상태(일부 시험조건 확인, 제조사 표기, typ/max 미지정, 미확인)를 색·문구로 같이 표현합니다. **수치 자체가 작을수록 좋은 녹색 같은 등급을 부여하지 않습니다.**
+- 히트맵 셀 클릭/키보드 선택: 공식 측정값, 통계 기준, 일부 시험조건 및 제조사 원문 링크를 노출합니다. 필터를 바꾸면 히트맵/목록도 함께 업데이트됩니다.
+- Ron(typ)×Qg(typ) 숫자는 하단 접이식 **'산술 참고값'**에 남겨 기존 기능을 보존합니다. 표준화된 FOM 또는 기술순위로 오해하지 않게 명확히 구분합니다.
+- **Architecture 탭**: GaN·SiC·IGBT·SGT·SJ MOSFET 다섯 소자 기술을 쉽게 선택하고, 제조사 표기 제품 구조별 데이터 표본 수·핵심 Device Physics·공정/구조 관찰 포인트·검증된 제품 원문 링크를 확인합니다.
+- `scripts/architecture.py`가 공식 제품 메타데이터에서 공개 수준의 구조 정보만 정리합니다. 추정 공정 조건, 구조 단면, 실측 성능 개선율을 생성하지 않습니다.
+- SGT에는 공식 검증 제품 데이터가 없어 0종으로 표시하며 사용자가 없는 정보를 있는 것으로 해석하지 않게 합니다.
+- `tests/test_architecture.py` 회귀 테스트를 추가했고, 주간 GitHub Actions 빌드가 `site/architecture.json`을 함께 생성합니다.
+- 기존 AI 실행 예산(최대 12회, 추정 $0.02), 연구·경쟁사·Weekly Reports, 공식 Benchmark 22종을 그대로 유지합니다.
