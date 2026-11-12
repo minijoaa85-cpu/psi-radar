@@ -534,6 +534,44 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
 @media(max-width:760px){.finance-visual-grid{grid-template-columns:1fr}.finance-visual{padding:12px}.finance-visual-card{padding:12px}}
 @media(max-width:420px){.finance-visual-bar{grid-template-columns:72px minmax(62px,1fr) 88px;gap:5px;font-size:10px}.finance-visual-segment{grid-template-columns:64px minmax(0,1fr)}.finance-visual-ring{width:64px;height:64px}.finance-visual-ring:before{inset:10px}}
 @media(prefers-reduced-motion:no-preference){.finance-visual-fill{transition:width .25s ease}}
+
+/* V2.7 — Overview & Weekly editorial data visualization */
+.pulse27{border:1px solid #325573;background:linear-gradient(142deg,#142e4c,#0d1d32);border-radius:16px;padding:20px;margin-bottom:16px}
+.pulse27-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.pulse27-head h2{font-size:21px;margin:0}.pulse27-head p{font-size:12px;color:var(--muted);margin:3px 0}
+.pulse27-time{font-size:11px;border:1px solid #416384;padding:6px 9px;border-radius:7px;color:#b4d7f3}
+.pulse27-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:14px}
+.pulse27-box{min-width:0;border:1px solid #2a4663;background:#102239;border-radius:12px;padding:15px}
+.pulse27-box h3{font-size:15px;margin:0 0 7px}
+.pulse27-note{font-size:11px;color:var(--muted);line-height:1.6;margin:8px 0 0}
+.pulse27-bars{display:grid;gap:9px}
+.pulse27-bar{display:grid;grid-template-columns:minmax(86px,1fr) minmax(0,3fr) 42px;gap:8px;align-items:center;font-size:12px}
+.pulse27-track{height:13px;background:#243b55;border-radius:4px;overflow:hidden}
+.pulse27-fill{height:100%;display:block;border-radius:4px;background:#4b9dd8}
+.pulse27-bar:nth-child(2) .pulse27-fill{background:#43c0b7}
+.pulse27-bar:nth-child(3) .pulse27-fill{background:#a78bfa}
+.pulse27-bar:nth-child(4) .pulse27-fill{background:#eca86a}
+.pulse27-bar:nth-child(5) .pulse27-fill{background:#9ab1c6}
+.pulse27-bar b{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+.pulse27-pills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.pulse27-pill{border:1px solid #345676;background:#18314d;border-radius:9px;padding:11px}
+.pulse27-pill span{font-size:11px;color:var(--muted);display:block}
+.pulse27-pill b{font-size:24px;line-height:1.3;font-variant-numeric:tabular-nums}
+.pulse27-archive{display:grid;gap:8px}
+.pulse27-week{display:grid;grid-template-columns:95px minmax(0,1fr) 35px;align-items:center;gap:8px;font-size:12px}
+.pulse27-week-track{background:#253b54;border-radius:6px;height:16px;overflow:hidden}
+.pulse27-week-track span{display:block;height:100%;background:linear-gradient(90deg,#4389d7,#58c1eb)}
+.pulse27-week.current{color:#c7efff}
+.pulse27-hint{font-size:11px;color:#bed0e1;margin:10px 0 0}
+.pulse27-link{background:#1a4b73;color:#edf7ff;border:1px solid #5b9fce;border-radius:8px;padding:8px 12px;cursor:pointer;font-size:12px}
+.pulse27-link:hover,.pulse27-link:focus-visible{background:#28678e}
+.pulse27-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:12px 0}
+.pulse27-summary>div{border:1px solid #365673;background:#172d46;border-radius:9px;padding:11px}
+.pulse27-summary span{display:block;color:var(--muted);font-size:11px}
+.pulse27-summary strong{font-size:22px}
+@media(max-width:820px){.pulse27-grid{grid-template-columns:1fr}.pulse27{padding:14px}}
+@media(max-width:500px){.pulse27-summary{grid-template-columns:1fr 1fr}.pulse27-pills{grid-template-columns:1fr 1fr}.pulse27-bar{grid-template-columns:84px minmax(0,1fr) 32px;gap:5px}}
+
 </style></head><body>
 <header><small>POWER SEMICONDUCTOR INTELLIGENCE</small><h1>◈ PSI Radar</h1><div class="muted">GaN · SiC · IGBT · SJ MOSFET · UD/UG SGT | 글로벌 기술 · 논문 · 경쟁사 동향</div><div id="last" class="mini">데이터 상태 확인 중...</div></header>
 <aside class="personal-tools" aria-label="개인 및 데이터 관리 보조 메뉴">
@@ -546,7 +584,12 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
 <div class="nav-group" role="group" aria-label="기술 분석"><span class="nav-group-label">③ 기술 분석</span><div class="nav-links"><button data-tab="integrated">Integrated 2.0</button><button data-tab="technology">Technology</button><button data-tab="research">Research</button><button data-tab="architecture">Architecture</button></div></div>
 <div class="nav-group" role="group" aria-label="경쟁사 및 제품 분석"><span class="nav-group-label">④ 경쟁사·제품</span><div class="nav-links"><button data-tab="competitors">Competitors</button><button data-tab="benchmark">Benchmark</button></div></div>
 </nav>
-<section id="overview"><div class="grid"><article class="panel stat"><span>수집된 자료 (연구 12개월 포함)</span><b id="total">0</b></article><article class="panel stat"><span>GaN</span><b id="gan">0</b></article><article class="panel stat"><span>SiC</span><b id="sic">0</b></article><article class="panel stat"><span>IGBT</span><b id="igbt">0</b></article><article class="panel stat"><span>논문</span><b id="papers">0</b></article></div><div class="two"><article class="panel"><h2>주간 핵심 업데이트</h2><div id="highlights" class="feed"></div></article><article class="panel"><h2>분석 우선순위</h2><div class="tiles"><article><b>GaN · 40%</b><p>E-mode, Dynamic R(on), 데이터센터 전원</p></article><article><b>SiC · 30%</b><p>Trench, Gate Oxide, 200mm Wafer</p></article><article><b>IGBT · 10%</b><p>Trench, Field Stop, VCE(sat), Eoff</p></article><article><b>SJ · 10%</b><p>Pillar Balance, Qrr, Softness, BV</p></article><article><b>SGT · 10%</b><p>Shield gate, Qgd, Eoss, Cell Pitch</p></article></div><p class="mini">비중은 기술 관심도 기준이며 실제 수집 비중을 보장하지 않습니다.</p></article></div></section>
+<section id="overview"><section class="pulse27" aria-labelledby="pulse27-overview-title">
+<div class="pulse27-head"><div><h2 id="pulse27-overview-title">Technology Pulse · 수집 현황</h2><p>누적 자료의 구성과 이번 주 공개자료를 분리해 보여줍니다</p></div><span id="pulse27-updated" class="pulse27-time">수집 시각 확인 중</span></div>
+<div class="pulse27-grid">
+<div class="pulse27-box"><h3>기술별 수집 표본 분포</h3><div id="pulse27-overview-bars" class="pulse27-bars" aria-label="기술별 공개 자료 수"></div><p class="pulse27-note">논문 12개월 참고 자료를 포함한 누적 수집 표본입니다. 기업 기술력·시장점유율을 의미하지 않습니다.</p></div>
+<div class="pulse27-box"><h3>데이터 구성</h3><div id="pulse27-overview-stats" class="pulse27-pills"></div><p class="pulse27-note">신규 발표일 기준 주간 표본과 누적 문헌 보관 건수는 서로 다른 집계입니다.</p><button type="button" id="pulse27-go-weekly" class="pulse27-link">Weekly Reports 자세히 보기 →</button></div>
+</div></section><div class="grid"><article class="panel stat"><span>수집된 자료 (연구 12개월 포함)</span><b id="total">0</b></article><article class="panel stat"><span>GaN</span><b id="gan">0</b></article><article class="panel stat"><span>SiC</span><b id="sic">0</b></article><article class="panel stat"><span>IGBT</span><b id="igbt">0</b></article><article class="panel stat"><span>논문</span><b id="papers">0</b></article></div><div class="two"><article class="panel"><h2>주간 핵심 업데이트</h2><div id="highlights" class="feed"></div></article><article class="panel"><h2>분석 우선순위</h2><div class="tiles"><article><b>GaN · 40%</b><p>E-mode, Dynamic R(on), 데이터센터 전원</p></article><article><b>SiC · 30%</b><p>Trench, Gate Oxide, 200mm Wafer</p></article><article><b>IGBT · 10%</b><p>Trench, Field Stop, VCE(sat), Eoff</p></article><article><b>SJ · 10%</b><p>Pillar Balance, Qrr, Softness, BV</p></article><article><b>SGT · 10%</b><p>Shield gate, Qgd, Eoss, Cell Pitch</p></article></div><p class="mini">비중은 기술 관심도 기준이며 실제 수집 비중을 보장하지 않습니다.</p></article></div></section>
 <section id="integrated" class="hidden"><article class="panel">
 <h2>Integrated Intelligence · 기술부터 제품까지 한눈에</h2>
 <p class="muted">관심 기술을 고르면 <strong>중요한 기술 현상 → 공개자료 → 제조사 제품</strong>을 한곳에서 살펴볼 수 있습니다. 기술 관련 기사와 제품은 같은 분야의 참고자료이지, 해당 제품이 그 문제를 해결했다는 증거는 아닙니다.</p>
@@ -593,7 +636,9 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
 </article></section>
 <section id="technology" class="hidden"><article class="panel"><h2>Technology Watch</h2><div class="filters"><select id="cat"><option value="">전체 기술</option><option>GaN</option><option>SiC</option><option>IGBT</option><option>SJ MOSFET</option><option>SGT</option></select><select id="kind"><option value="">뉴스 + 논문</option><option value="news">뉴스</option><option value="paper">논문</option></select><input id="search" placeholder="키워드·회사·기술 검색" aria-label="검색"></div><div id="records" class="feed"></div></article></section>
 <section id="research" class="hidden"><article class="panel"><h2>학술 논문 | Research Intelligence</h2><p class="muted">최근 45일 학술지 + IGBT·SJ MOSFET·SGT 최근 12개월 집중 검색 · Crossref / OpenAlex DOI · 원문 검토 전</p><div class="filters"><select id="research-cat" aria-label="논문 기술 선택"><option value="">전체 논문</option><option>GaN</option><option>SiC</option><option>IGBT</option><option>SJ MOSFET</option><option>SGT</option></select></div><select id="research-relevance" aria-label="기술 관련성 수준"><option value="0">전체 관련성</option><option value="70">높음 70점 이상</option><option value="45">보통 45점 이상</option></select><p class="mini">관련성은 제목·초록 기술 키워드 기반의 자동 추정값입니다. 전문가 검증 결과가 아닙니다.</p><div id="research-counts" class="mini"></div><div id="research-feed" class="feed"></div></article></section>
-<section id="weekly" class="hidden"><article class="panel"><h2>주간 보고서 아카이브</h2><p class="muted">매주 공개 자료를 누적 보관합니다. 동일 주차에 다시 실행하면 해당 주 보고서를 갱신합니다. 첫 주차는 비교 기준(Baseline)입니다.</p><div class="filters"><select id="weekly-select" aria-label="보고서 주차 선택"><option value="">보고서 로딩 중</option></select></div><div id="weekly-details" class="feed"><div class="empty">주간 보고서 파일을 확인 중입니다.</div></div></article></section>
+<section id="weekly" class="hidden"><article class="panel"><h2>주간 보고서 아카이브</h2><p class="muted">매주 공개 자료를 누적 보관합니다. 동일 주차에 다시 실행하면 해당 주 보고서를 갱신합니다. 첫 주차는 비교 기준(Baseline)입니다.</p><div class="filters"><select id="weekly-select" aria-label="보고서 주차 선택"><option value="">보고서 로딩 중</option></select></div><div class="pulse27" aria-labelledby="pulse27-weekly-title"><div class="pulse27-head"><div><h2 id="pulse27-weekly-title">Weekly Intelligence · 발표 동향</h2><p>실제 보관된 보고서만 시각화합니다. 이전 이력이 없으면 비교할 수 없습니다.</p></div><span id="pulse27-weekly-updated" class="pulse27-time">주간 보고서 확인 중</span></div>
+<div class="pulse27-grid"><div class="pulse27-box"><h3>선택 주차 기술별 신규 발표 자료</h3><div class="pulse27-bars" id="pulse27-weekly-bars"></div><p class="pulse27-note">공식 발표·뉴스·논문을 수집한 표본입니다. 기술 분야 전체의 실제 발표량을 뜻하지 않습니다.</p></div>
+<div class="pulse27-box"><h3>보관된 주차 추이</h3><div class="pulse27-archive" id="pulse27-weekly-history"></div><p id="pulse27-weekly-message" class="pulse27-hint"></p></div></div><div id="pulse27-weekly-kpis" class="pulse27-summary"></div></div><div id="weekly-details" class="feed"><div class="empty">주간 보고서 파일을 확인 중입니다.</div></div></article></section>
 <section id="competitors" class="hidden"><article class="panel">
 <h2>Competitor Intelligence · 기업별 기술 동향</h2>
 <p class="competitor-intro">Infineon · ST · onsemi · ROHM 및 일본·중국 업체 | 자료 건수는 시장점유율이 아니며, 뉴스 색인과 제조사 공식 발표를 구분합니다.</p>
@@ -764,6 +809,36 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
 <script>
 let DB={records:[],errors:[]};const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));const el=id=>document.getElementById(id);
 function card(r){let safe=/^https:\/\//.test(r.url||"")?r.url:"#";let title=r.title_ko||r.title;let translated=r.title_ko&&r.title_ko!==r.title?'<div class="mini">원문 제목: '+esc(r.title)+'</div>':'';let age=r.kind==="paper"&&r.lookback_days>45?'<span class="tag">최근 12개월 연구</span>':'';let prior=r.stale_reused?'<span class="tag">이전 수집 정보 유지</span>':'';let fallback=r.kind==="news"&&r.lookback_days>7?'<span class="tag">최근 30일 참고 · 주간 신규 아님</span>':'';let relevance=r.relevance_score!==undefined?'<span class="tag">기술 관련성 '+esc(r.relevance_score)+'/100 · '+esc(r.relevance_level||"미분류")+'</span>':'';let physics=r.physics_ko?'<details><summary>Device Physics 참고 분석 보기</summary><p>'+esc(r.physics_ko)+'</p></details>':'';return '<article class="item"><span class="tag">'+esc(r.category)+'</span><span class="tag">'+(r.kind==="paper"?"논문":r.kind==="official"?"제조사 공식":"뉴스")+'</span><span class="tag">'+(r.source_type==="manufacturer_official"?"제조사 원문 기반 한국어 정리":r.title_ko?"한국어 AI 요약":"원문 메타데이터")+'</span>'+age+prior+fallback+relevance+'<span class="meta">'+esc(r.date||"날짜 미확인")+' · '+esc(r.source||"출처 미확인")+'</span><strong>'+esc(title)+'</strong>'+translated+'<p>'+esc(r.summary_ko||"공개 메타데이터입니다. 원문에서 기술적 의미를 확인하세요.")+'</p>'+physics+'<div class="meta">근거: '+esc(r.summary_status||"메타데이터")+' · 중요도(임시): '+esc(r.score??"-")+'</div><a href="'+esc(safe)+'" target="_blank" rel="noopener noreferrer">원문/DOI 보기 ↗</a></article>'}
+
+/* V2.7 verified-source overview and existing-archive visualization */
+const PULSE27_TECH=["GaN","SiC","IGBT","SJ MOSFET","SGT"];
+function pulse27Bars(target,counts){
+ const values=PULSE27_TECH.map(x=>Math.max(0,Number(counts[x])||0)),max=Math.max(1,...values);
+ el(target).innerHTML=PULSE27_TECH.map((tech,i)=>'<div class="pulse27-bar" title="'+esc(tech)+': '+values[i]+'건"><span>'+esc(tech)+'</span><div class="pulse27-track"><span class="pulse27-fill" style="width:'+(values[i]/max*100).toFixed(2)+'%"></span></div><b>'+values[i]+'</b></div>').join("");
+}
+function pulse27Overview(){
+ const records=DB.records||[];
+ const counts=Object.fromEntries(PULSE27_TECH.map(t=>[t,records.filter(r=>r.category===t).length]));
+ pulse27Bars("pulse27-overview-bars",counts);
+ const papers=records.filter(r=>r.kind==="paper").length,news=records.filter(r=>r.kind==="news").length,official=records.filter(r=>r.kind==="official").length;
+ el("pulse27-overview-stats").innerHTML=[["누적 공개 자료",records.length],["논문 메타데이터",papers],["일반 뉴스",news],["제조사 공식 분류",official]].map(x=>'<div class="pulse27-pill"><span>'+esc(x[0])+'</span><b>'+x[1]+'</b></div>').join("");
+ el("pulse27-updated").textContent=DB.generated_at?"수집 "+new Date(DB.generated_at).toLocaleString("ko-KR",{timeZone:"Asia/Seoul"}):"수집 일자 미확인";
+}
+el("pulse27-go-weekly").addEventListener("click",()=>document.querySelector('[data-tab="weekly"]').click());
+let PULSE27_ARCHIVE=[];
+function pulse27History(){
+ const rows=PULSE27_ARCHIVE,max=Math.max(1,...rows.map(r=>Number(r.published_this_week_count)||0));
+ el("pulse27-weekly-history").innerHTML=rows.length?rows.slice(0,8).map(r=>'<div class="pulse27-week'+(el("weekly-select").value===r.file?' current':'')+'"><span>'+esc(r.week)+'</span><div class="pulse27-week-track"><span style="width:'+((Number(r.published_this_week_count)||0)/max*100).toFixed(2)+'%"></span></div><b>'+(Number(r.published_this_week_count)||0)+'</b></div>').join(""):'<p class="mini">아직 저장된 주차가 없습니다.</p>';
+ el("pulse27-weekly-message").textContent=rows.length<2?"보관된 주차가 "+rows.length+"개뿐이므로 증감 추세를 아직 판단하지 않습니다.": "저장된 "+rows.length+"개 주차 기준 · 신규 발표일 표본(연구 12개월 보관 수와 별개)";
+}
+function pulse27Week(report){
+ const counts=report.by_category||{};
+ pulse27Bars("pulse27-weekly-bars",counts);
+ el("pulse27-weekly-updated").textContent=report.week+" · "+(report.baseline?"기준 주차":"저장된 이력");
+ el("pulse27-weekly-kpis").innerHTML=[["해당 주 발표",report.published_this_week_count],["처음 확인한 자료",report.new_items_count],["참고 논문 보관",report.research_reference_count]].map(x=>'<div><span>'+esc(x[0])+'</span><strong>'+esc(x[1]??"미확인")+'</strong></div>').join("");
+ pulse27History();
+}
+
 function render(){
  const all=DB.records||[];
  el("total").textContent=all.length;
@@ -771,6 +846,7 @@ function render(){
  el("sic").textContent=all.filter(r=>r.category==="SiC").length;
  el("igbt").textContent=all.filter(r=>r.category==="IGBT").length;
  el("papers").textContent=all.filter(r=>r.kind==="paper").length;
+ pulse27Overview();
  const empty='<div class="empty">수집된 자료가 없습니다. GitHub Actions의 실행 상태를 확인해 주세요.</div>';
  const feed=(target,items)=>el(target).innerHTML=items.length?items.map(card).join(""):empty;
  const weekStart=new Date(Date.now()-8*86400000).toISOString().slice(0,10);
@@ -813,6 +889,7 @@ function weeklyCards(items){
  return rows.length?rows.map(card).join(""):'<div class="empty">선택한 조건의 신규 자료가 없습니다.</div>';
 }
 function displayWeek(report){
+ pulse27Week(report);
  const target=el("weekly-details");
  const baseline=report.baseline?"비교 기준 주차 (이전 주차 자료 없음)":"직전 주차 대비 신규 ID 기준";
  target.innerHTML='<div class="tiles"><article><b>이번 주 발표: '+esc(report.published_this_week_count)+'</b><p>실제 발표일 기준</p></article><article><b>새로 확인된 자료: '+esc(report.new_items_count)+'</b><p>'+baseline+'</p></article><article><b>논문 참고: '+esc(report.research_reference_count)+'</b><p>최대 12개월 연구 보관</p></article><article><b>수집 경고: '+esc(report.collection_errors)+'</b><p>원문 확인 필요</p></article></div>'+
@@ -824,6 +901,8 @@ function loadWeekly(){
  fetch("reports/index.json?nocache="+Date.now()).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(idx=>{
   const menu=el("weekly-select");menu.innerHTML="";
   const items=Array.isArray(idx.reports)?idx.reports:[];
+  PULSE27_ARCHIVE=items.filter(r=>/^\d{4}-W\d{2}$/.test(r.week||"")&&/^reports\/\d{4}-W\d{2}\.json$/.test(r.file||""));
+  pulse27History();
   if(!items.length){el("weekly-details").textContent="보관된 보고서가 없습니다.";return;}
   for(const entry of items){
    const option=document.createElement("option");option.value=entry.file;
