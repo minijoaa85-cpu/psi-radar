@@ -1,4 +1,4 @@
-# PSI Radar V1.9 — Power Semiconductor Intelligence Radar
+# PSI Radar V2.0 — Power Semiconductor Intelligence Radar
 
 공개 자료 기반 한국어 전력반도체 주간 기술 모니터링 웹 플랫폼. GaN (40%) > SiC (30%) > IGBT (10%) = UD/UG SGT (10%) = SJ MOSFET (10%).
 
@@ -287,3 +287,13 @@ GitHub Pages는 저장소 Settings → Pages → **Source: GitHub Actions**를 �
 - 필터를 적용한 상태에서 **북마크 해제** 버튼은 화면에 보이는 항목의 정확한 원문 URL에 적용합니다. 삭제 후 결과 개수와 기술별 건수가 즉시 갱신됩니다.
 - V1.8 백업 JSON schema v1, 관심 설정·읽음·북마크 로컬 저장 키 및 복원 로직은 **변경하지 않아 이전 백업 파일을 계속 사용할 수 있습니다**. 별도 클라우드 데이터 저장/동기화는 없습니다.
 - My Watch와 Data Quality는 우측 보조 메뉴로 유지됩니다. PC·모바일 반응형 구성과 주간 수집·기존 AI 비용 제한도 유지됩니다.
+
+## V2.0 — Integrated Intelligence, 기술·연구·제조사·제품 원스톱 분석 (2026-11-12)
+- 기존 **Overview 다음의 Integrated 2.0** 메뉴를 추가해 GaN → SiC → IGBT → SJ MOSFET → SGT 순서로 관심 기술을 선택하고, 한 화면에서 기술 현상·Device Physics·공정 관찰 포인트 → 공개 연구·제조사 발표·뉴스 → 공식 제품 Datasheet 참고자료로 이어집니다.
+- 기술 선택 후 **주제 칩**을 누르면 관련 자료만 표시합니다. 기본 전체 주제는 최근 브리핑, 특정 주제는 기술군과 제목 키워드가 일치하는 원문 후보입니다. 제목 일치가 실제 논문의 실험 성과 검증은 아닙니다.
+- 통합 화면에서 기술별 공개자료 수(수집된 표본), 제조사 공식 발표/학술 논문 메타데이터 수, 제조사 공식 제품 표본 수, PDF 데이터시트 표에서 확인한 제품 수를 구분합니다.
+- 제품 카드에 제조사·품번·구조·정격, RDS(on)·Qg·VCE(sat)·Qrr 등 **원래의 typ/max/unspecified 기준**을 유지한 조건부 수치를 표기합니다. 시험 조건은 각 제품 카드에서 펼쳐 확인하고 제조사 원문을 방문할 수 있습니다.
+- **교차 이동**: Architecture/Briefing/Research/Competitors/Benchmark 상세 화면으로 선택 기술군 필터를 가지고 이동하며, 제품 카드는 Benchmark에서 해당 품번만 검색되도록 연결합니다. 기존 비교 차트·FOM 신뢰도 경고는 유지합니다.
+- `scripts/integrated.py`는 `site/briefing.json`, `site/topic_map.json`, `site/architecture.json`, `site/benchmark.json`을 **기존 수집 종료 후 결합**해 `site/integrated.json`을 생성합니다. 코드를 갱신한 경우에도 CI가 생성해 Pages에 포함하고, 정기 수집 시에는 JSON 스냅샷이 커밋됩니다. 별도의 AI API 요청은 하지 않습니다.
+- **인과관계 제한**: 같은 기술군의 논문과 제품을 나란히 보여주는 것으로 제품 내부 구조·신뢰성 결과·성능 향상·연구 성과 이전을 입증하지 않습니다. FOM이 같은 조건으로 검증되지 않으면 수치 순위/승자 판정을 표시하지 않습니다. 공식 샘플이 없는 SGT 등은 0종으로 안내합니다.
+- 반응형으로 모바일은 기술·근거·제품 영역을 한 열로 보여줍니다. My Watch·Data Quality의 우측 보조 메뉴, 기존 북마크/개인 설정/백업, 주간 자동수집, 실행당 AI 최대 12회·추정 $0.02 제한은 그대로 유지합니다.
