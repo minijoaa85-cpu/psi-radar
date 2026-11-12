@@ -413,6 +413,25 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
  .nav.nav-journey .nav-links{display:flex;flex-wrap:wrap;gap:5px}
  .nav.nav-journey .nav-group button{width:auto;min-height:34px;flex:0 1 auto;font-size:12px;padding:7px 9px}
 }
+
+/* Integrated V2.1: concise grounded weekly and competitor activity; no synthetic trends */
+.intel-pulse{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin:13px 0}
+.intel-pulse-panel{background:#10263d;border:1px solid #2b4865;border-radius:10px;padding:12px;min-width:0}
+.intel-pulse-panel .intel-section-heading{margin:0 0 6px}
+.intel-pulse-panel h3{font-size:14px}
+.intel-weekly-bars{display:flex;gap:9px;align-items:flex-end;padding:11px 4px 5px;min-height:102px;overflow-x:auto}
+.intel-weekly-item{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:4px;min-width:55px;flex:1;max-width:95px}
+.intel-weekly-item b{font-size:12px}
+.intel-weekly-item .intel-weekly-fill{display:block;background:#4a91bd;width:100%;min-height:5px;border-radius:5px 5px 0 0}
+.intel-weekly-item small{font-size:10px;color:#acc8df;white-space:nowrap}
+.intel-competitor-pulse{display:grid;gap:7px;margin-top:10px}
+.intel-mention-row{display:grid;grid-template-columns:minmax(85px,1fr) minmax(70px,1.5fr) 25px;gap:7px;align-items:center;width:100%;border:0;background:transparent;color:#dceafa;cursor:pointer;text-align:left;padding:3px;font-size:11px}
+.intel-mention-row span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.intel-mention-row .intel-mention-track{height:9px;background:#233b53;border-radius:12px;overflow:hidden}
+.intel-mention-row .intel-mention-fill{display:block;background:#61a5d0;height:100%}
+.intel-mention-row:focus-visible{outline:2px solid #8bccff;outline-offset:2px}
+.intel-pulse-panel>.mini:last-child{margin-top:8px}
+@media(max-width:800px){.intel-pulse{grid-template-columns:1fr}}
 </style></head><body>
 <header><small>POWER SEMICONDUCTOR INTELLIGENCE</small><h1>◈ PSI Radar</h1><div class="muted">GaN · SiC · IGBT · SJ MOSFET · UD/UG SGT | 글로벌 기술 · 논문 · 경쟁사 동향</div><div id="last" class="mini">데이터 상태 확인 중...</div></header>
 <aside class="personal-tools" aria-label="개인 및 데이터 관리 보조 메뉴">
@@ -432,6 +451,19 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
 <div class="intel-switches" id="intel-categories" aria-label="통합 분석 기술 선택"></div>
 <div class="competitor-kpis" id="intel-kpis" aria-live="polite"></div>
 <div id="intel-data-date" class="mini"></div>
+<div class="intel-pulse">
+<div class="intel-pulse-panel">
+<div class="intel-section-heading"><h3>실제 주간 동향</h3><button type="button" data-intel-go="weekly">주간 보고서 보기</button></div>
+<p class="mini">저장된 주차별 해당 기술군의 수집 자료 표본입니다. 없는 주차는 채우지 않습니다.</p>
+<div id="intel-weekly-bars" class="intel-weekly-bars" aria-label="실제 저장된 주차별 기술 자료 수"></div>
+<div id="intel-weekly-note" class="mini"></div>
+</div>
+<div class="intel-pulse-panel">
+<div class="intel-section-heading"><h3>최근 경쟁사 언급</h3><button type="button" data-intel-go="competitors">기업별 상세 보기</button></div>
+<p class="mini">최근 30일 수집 브리핑의 제조사명 등장 횟수입니다. 기술력 순위가 아닙니다.</p>
+<div id="intel-competitor-pulse" class="intel-competitor-pulse"></div>
+</div>
+</div>
 <div class="intel-physics">
 <div class="intel-section-heading"><h3 id="intel-physics-title">기술·구조 관찰 포인트</h3><button type="button" data-intel-go="architecture">Architecture에서 자세히 보기</button></div>
 <div id="intel-intro" class="mini"></div>
@@ -1290,6 +1322,31 @@ function renderIntegrated(){
  el("intel-data-date").textContent="브리핑 생성: "+(INTEGRATED.generated_at||"미확인")+
   " · 제품 기준일: "+(INTEGRATED.benchmark_reviewed_on||"미확인")+
   " · 최근 자료는 수집된 표본이며 기술 발전 순위를 의미하지 않습니다.";
+ const weeks=row.weekly_observations||[];
+ const weeklyRoot=el("intel-weekly-bars");
+ const weeklyNote=el("intel-weekly-note");
+ if(weeks.length){
+  const recent=weeks.slice(-8),max=Math.max(1,...recent.map(w=>w.category_sample_count||0));
+  weeklyRoot.innerHTML=recent.map(w=>{
+   const count=Number(w.category_sample_count)||0;
+   const height=Math.round(6+63*count/max);
+   return '<div class="intel-weekly-item" title="'+esc(w.week+" · 수집 표본 "+count+"건")+'"><b>'+count+'</b>'+
+    '<span class="intel-weekly-fill" style="height:'+height+'px"></span><small>'+esc(w.week)+'</small></div>';
+  }).join("");
+  const last=recent[recent.length-1];
+  weeklyNote.textContent="실제 기록 "+recent.length+"주차 · "+last.week+
+   (last.complete_week?" (완료 주차)":" (진행 중)")+
+   " · "+(recent.length<2?"현재 비교할 주차가 부족합니다.":"표본 수의 변화이며 업계 성장률이 아닙니다.");
+ }else{
+  weeklyRoot.innerHTML='<div class="mini">저장된 주차별 자료가 없습니다.</div>';
+  weeklyNote.textContent="빈 주차를 0건으로 추정하지 않습니다.";
+ }
+ const activity=row.competitor_mentions||[];
+ const maxMentions=Math.max(1,...activity.map(x=>x.mention_count_sample||0));
+ el("intel-competitor-pulse").innerHTML=activity.length?activity.slice(0,6).map(x=>
+  '<button class="intel-mention-row" type="button" data-intel-company-id="'+esc(x.id)+'" aria-label="'+esc(x.name+" 언급 "+x.mention_count_sample+"건, Competitors에서 보기")+'"><span title="'+esc(x.name)+'">'+esc(x.name)+'</span>'+
+  '<span class="intel-mention-track"><span class="intel-mention-fill" style="width:'+Math.round(100*x.mention_count_sample/maxMentions)+'%"></span></span><b>'+x.mention_count_sample+'</b></button>'
+ ).join(""):'<div class="mini">최근 공개자료에서 식별된 회사 언급이 없습니다. 공식 발표가 없다는 뜻은 아닙니다.</div>';
  el("intel-physics-title").textContent=INTEL_CAT+" · 주요 구조와 Device Physics";
  el("intel-intro").textContent=row.intro;
  el("intel-physics-points").innerHTML=(row.physics||[]).map(x=>'<li>'+esc(x)+'</li>').join("");
@@ -1328,6 +1385,17 @@ el("intel-topics").addEventListener("click",event=>{
 });
 el("intel-company").addEventListener("change",renderIntegrated);
 el("integrated").addEventListener("click",event=>{
+ const mention=event.target.closest("button[data-intel-company-id]");
+ if(mention){
+  const company=WATCH_COMPANIES.find(([id])=>id===mention.dataset.intelCompanyId);
+  el("company-tech").value=INTEL_CAT;
+  el("company-region").value="";
+  el("company-type").value="";
+  el("company-q").value=company?company[1]:"";
+  renderCompetitors();
+  activateRadarTab("competitors");
+  return;
+ }
  const product=event.target.closest("button[data-intel-product]");
  if(product){
   el("bench-category").value=INTEL_CAT;
@@ -1357,6 +1425,8 @@ el("integrated").addEventListener("click",event=>{
   el("brief-type").value="";
   el("brief-change").checked=false;
   renderBriefing();
+ }else if(destination==="weekly"){
+  // Weekly archive retains actual saved report dates; no generated weekly rows.
  }else if(destination==="research"){
   el("research-cat").value=INTEL_CAT;
   el("research-relevance").value="0";
