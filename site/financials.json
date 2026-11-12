@@ -203,6 +203,21 @@
       "source_scope": "Consolidated group",
       "periods": [
         {
+          "period": "FY2026-H1",
+          "period_type": "half_year",
+          "start": "2025-04-01",
+          "end": "2025-09-30",
+          "revenue": 244228,
+          "operating_income": 7653,
+          "operating_margin": null,
+          "segment_result": null,
+          "segment_result_margin": null,
+          "source": "https://fscdn.rohm.com/en/financial/financial-report/2609_financialresults_en.pdf",
+          "published": "2026-11-05",
+          "reviewed_on": "2026-11-12",
+          "note": "2026년 공시의 전년 동기 6개월 누적 비교 열"
+        },
+        {
           "period": "FY2027-H1",
           "period_type": "half_year",
           "start": "2026-04-01",
