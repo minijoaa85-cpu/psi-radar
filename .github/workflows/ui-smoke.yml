@@ -1,0 +1,40 @@
+name: PSI Radar - Cross-Browser UI Smoke
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - site/index.html
+      - site/integrated.json
+      - tests/browser_smoke.py
+      - .github/workflows/ui-smoke.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: psi-radar-ui-smoke
+  cancel-in-progress: true
+
+jobs:
+  ui-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Playwright and Chromium / Firefox / WebKit
+        run: |
+          pip install playwright==1.56.0
+          python -m playwright install --with-deps chromium firefox webkit
+      - name: Check PC tablet and mobile navigation with real browser engines
+        run: python tests/browser_smoke.py
+      - name: Save screenshots if any browser check fails
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ui-smoke-failure-screenshots
+          path: ui-smoke-screenshots/
+          if-no-files-found: ignore
