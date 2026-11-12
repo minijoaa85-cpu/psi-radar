@@ -1,4 +1,4 @@
-# PSI Radar V0.7 — Power Semiconductor Intelligence Radar
+# PSI Radar V0.8 — Power Semiconductor Intelligence Radar
 
 공개 자료 기반 한국어 전력반도체 주간 기술 모니터링 웹 플랫폼. GaN (40%) > SiC (30%) > IGBT (10%) = UD/UG SGT (10%) = SJ MOSFET (10%).
 
@@ -157,3 +157,13 @@ GitHub Pages는 저장소 Settings → Pages → **Source: GitHub Actions**를 �
 - `scripts/validate_benchmark.py`가 공식 URL 호스트, 필수 데이터, 단위, typ/max, 조건 메모를 검증합니다. CI 및 자동 테스트에 연결되어 있습니다.
 - 지금은 **수동 검증 스냅샷**으로 매주 가격이나 사양이 자동 갱신되는 제품 검색기가 아닙니다. 연도별 제품 상태/데이터시트 개정일은 공식 제조사에서 재확인하세요.
 - 기존 뉴스·논문·기업별 검색, 월요일 오전 6시 주간 실행, 주간 리포트 보존 및 OpenAI API 추정 실행비용 상한 $0.02는 유지합니다. Benchmark는 API 사용량을 늘리지 않습니다.
+
+## V0.8: Benchmark 확장 및 변경 이력 (2026-11-12)
+- 공식 제조사 제품 페이지 기반 등록 품번을 7종에서 **12종**으로 확대했습니다. 추가: Infineon IGLT65R055D2, ROHM RGTV60TS65GC11 / RGWS00TS65DGC13 / RGW60TS65HRC11, ST MASTERGAN6.
+- **MASTERGAN6는 2개 GaN HEMT와 구동회로가 통합된 System-in-Package**로, discrete GaN과 별도의 architecture 상태로 분리했습니다.
+- RDS(on)(typ)×Qg(typ)를 참고용 산술값(mΩ·nC)으로 계산합니다. **측정 조건·온도·전압·게이트 구동 등이 정규화되지 않았으므로 제품 간 기술 우열/순위/효율 비교에 사용할 수 없습니다.** 조건을 확인한 RDS(on)/Qg/Qgd 값이 없으면 계산 결과를 비워 둡니다.
+- RDS(on)×Qgd 항목도 UI에 마련했지만, 현재 검증된 Qgd 데이터는 없어서 해당 값은 미확인으로 표시합니다. IGBT에는 해당 RDS 기반 FOM을 계산하지 않습니다.
+- 공식 제품 페이지의 정격/typ/max/패키지뿐 아니라 `architecture`, `verification`, `datasheet_revision`(미확인 시 null)을 보관합니다. PDF revision 미확인은 제조사 Datasheet 최신 개정 확인으로 해석하지 않습니다.
+- `scripts/benchmark_history.py`는 등록된 제품 값/구조/근거 URL의 서명을 날짜별 JSON에 기록합니다. 이것은 **PSI Radar 내부 데이터 변경 기록**이며, 제조사의 진짜 Datasheet 개정 이력이 아닙니다.
+- GitHub Actions의 push 검증에서는 이력을 배포 아티팩트에 생성하고, 정기/수동 실행에서는 `site/benchmark_history/`를 GitHub에 지속 저장합니다.
+- 등록 제품은 수동 검증된 공개 제조사 제품 페이지를 기준으로 합니다. 자동 Datasheet 본문 추출 및 동일 VGS/ID/Tj 정규화 FOM은 후속 단계입니다. 현재 OpenAI API 호출 제한은 변경하지 않았습니다.
