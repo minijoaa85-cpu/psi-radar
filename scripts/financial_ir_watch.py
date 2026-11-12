@@ -38,13 +38,15 @@ TIMEOUT=(6,14)
 
 def normalize_url(value):
  if not isinstance(value,str):return None
- parts=urlsplit(value.strip())
- if parts.scheme!="https" or not parts.hostname or parts.username or parts.password:return None
- # drop tracking query/fragment; maintain case-sensitive paths and queryless canonical links
- host=parts.hostname.lower()
- if parts.port not in (None,443):return None
- path=parts.path.rstrip("/") or "/"
- return urlunsplit(("https",host,path,"",""))
+ try:
+  parts=urlsplit(value.strip())
+  if parts.scheme!="https" or not parts.hostname or parts.username or parts.password:return None
+  # Drop tracking query/fragment. Keep case-sensitive path.
+  host=parts.hostname.lower()
+  if parts.port not in (None,443):return None
+  path=parts.path.rstrip("/") or "/"
+  return urlunsplit(("https",host,path,"",""))
+ except ValueError:return None
 
 
 def allowed_url(url,company):
@@ -129,6 +131,7 @@ def run_watch(snapshot,previous=None,session=None,now=None):
      "User-Agent":"PSI-Radar-IR-Monitor/2.3 (public first-party IR announcements; low frequency)",
      "Accept":"text/html,application/xhtml+xml"})
    response.raise_for_status()
+   if not allowed_url(response.url,company):raise ValueError("IR landing redirected outside approved company host")
    ctype=response.headers.get("Content-Type","")
    if "html" not in ctype.lower():raise ValueError("not HTML")
    if len(response.content)>3_000_000:raise ValueError("HTML larger than 3 MB")
