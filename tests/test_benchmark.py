@@ -29,3 +29,36 @@ def test_invalid_source_and_spec_are_rejected():
  data["devices"][0]["specs"]["qg"]["kind"]="unknown"
  errors=validate(data)
  assert len(errors)>=2
+
+def test_indicative_fom_math_is_not_normalized():
+ from scripts.validate_benchmark import illustrative_fom,normalized_fom
+ products=load()["devices"]
+ gan=next(r for r in products if r["part"]=="IGT65R055D2")
+ assert illustrative_fom(gan,"qg")==258.5
+ assert normalized_fom(gan,"qg") is None
+ assert illustrative_fom(gan,"qgd") is None
+def test_integrated_gan_not_discrete_fom():
+ from scripts.validate_benchmark import illustrative_fom,strictly_comparable
+ rows=load()["devices"]
+ integrated=next(r for r in rows if r["part"]=="MASTERGAN6")
+ discrete=next(r for r in rows if r["part"]=="IGT65R055D2")
+ assert illustrative_fom(integrated,"qg") is None
+ assert not strictly_comparable(integrated,discrete,"rds_on")
+def test_expanded_parts_come_from_manufacturer_pages():
+ rows=load()["devices"]
+ assert len(rows)>=12
+ assert {"STMicroelectronics","Toshiba","ROHM","Infineon"}<=set(r["company"] for r in rows)
+def test_snapshot_change_tracking():
+ import datetime as dt
+ from scripts.benchmark_history import create_snapshot
+ data=load()
+ when=dt.datetime(2026,11,12,tzinfo=dt.timezone.utc)
+ first=create_snapshot(data,when)
+ assert len(first["added_ids"])==len(data["devices"])
+ assert not first["changed_ids"]
+ same=create_snapshot(data,when,first)
+ assert not same["added_ids"] and not same["changed_ids"]
+ changed=__import__("copy").deepcopy(data)
+ changed["devices"][0]["specs"]["qg"]["value"]+=0.1
+ second=create_snapshot(changed,when,first)
+ assert second["changed_ids"]==[data["devices"][0]["id"]]
