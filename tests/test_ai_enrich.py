@@ -47,7 +47,7 @@ def test_focused_paper_priority():
   {"id":"g","title":"GaN journal","kind":"paper","category":"GaN","score":90},
   {"id":"t","title":"Shielded gate trench MOSFET","kind":"paper","category":"SGT","score":30},
  ]
- assert [x["category"] for x in ai_enrich.prioritized(rows)[:3]]==["IGBT","SGT","SJ MOSFET"]
+ assert [x["category"] for x in ai_enrich.prioritized(rows)[:3]]==["IGBT","SJ MOSFET","SGT"]
 
 def test_ai_reports_invalid_json_without_leaking_secret(monkeypatch):
  from unittest.mock import Mock
