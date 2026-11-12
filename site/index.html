@@ -326,11 +326,40 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
  .watch-section-heading{align-items:flex-start}
  #watch-close{margin-left:auto}
 }
+
+/* V1.8.2: personal tools outside the primary technical-navigation hierarchy. */
+.personal-tools{
+ position:fixed;right:0;top:48%;transform:translateY(-50%);z-index:30;
+ display:flex;flex-direction:column;align-items:flex-end;gap:7px;
+ max-width:min(150px,40vw);
+}
+.personal-tools .watch-quick-access{
+ position:static;top:auto;right:auto;bottom:auto;transform:none;
+ display:flex;align-items:center;justify-content:flex-start;
+ width:130px;max-width:100%;min-height:43px;
+ padding:10px 11px;border:1px solid #73baff;border-right:0;
+ border-radius:11px 0 0 11px;font-size:12px;
+}
+.personal-tools .quality-quick-access{
+ width:130px;background:#243750;border-color:#54748c;
+}
+.personal-tools .quality-quick-access:hover,.personal-tools .quality-quick-access.is-active{background:#365a76}
+#quality-close{min-height:36px;padding:7px 11px;border:1px solid #477da6;border-radius:8px;background:#173954;color:#eaf4fe;cursor:pointer;font-size:12px}
+#quality-close:focus-visible,.personal-tools button:focus-visible{outline:3px solid #a2d2ff;outline-offset:3px}
+@media(max-width:700px){
+ main{padding-bottom:calc(117px + env(safe-area-inset-bottom,0px))}
+ .personal-tools{top:auto;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));transform:none;gap:6px;max-width:125px}
+ .personal-tools .watch-quick-access{width:125px;min-height:38px;padding:8px 11px;border:1px solid #73baff;border-radius:18px}
+ .personal-tools .quality-quick-access{border-color:#54748c}
+}
 </style></head><body>
 <header><small>POWER SEMICONDUCTOR INTELLIGENCE</small><h1>◈ PSI Radar</h1><div class="muted">GaN · SiC · IGBT · SJ MOSFET · UD/UG SGT | 글로벌 기술 · 논문 · 경쟁사 동향</div><div id="last" class="mini">데이터 상태 확인 중...</div></header>
+<aside class="personal-tools" aria-label="개인 및 데이터 관리 보조 메뉴">
 <button type="button" id="watch-quick-access" class="watch-quick-access" aria-controls="watchlist" aria-expanded="false" title="나의 관심 자료함 열기"><span aria-hidden="true">☆</span><span>My Watch</span></button>
+<button type="button" id="quality-quick-access" class="watch-quick-access quality-quick-access" aria-controls="sources" aria-expanded="false" title="공개 데이터 출처 및 품질 확인"><span aria-hidden="true">ⓘ</span><span>Data Quality</span></button>
+</aside>
 <main><nav id="nav" class="nav" aria-label="핵심 기술 분석 메뉴">
-<button data-tab="overview" class="active">Overview</button><button data-tab="briefing">Briefing</button><button data-tab="technology">Technology</button><button data-tab="research">Research</button><button data-tab="weekly">Weekly Reports</button><button data-tab="competitors">Competitors</button><button data-tab="architecture">Architecture</button><button data-tab="benchmark">Benchmark</button><button data-tab="market">Market & Finance</button><button data-tab="sources">Data Quality</button></nav>
+<button data-tab="overview" class="active">Overview</button><button data-tab="briefing">Briefing</button><button data-tab="technology">Technology</button><button data-tab="research">Research</button><button data-tab="weekly">Weekly Reports</button><button data-tab="competitors">Competitors</button><button data-tab="architecture">Architecture</button><button data-tab="benchmark">Benchmark</button><button data-tab="market">Market & Finance</button></nav>
 <section id="overview"><div class="grid"><article class="panel stat"><span>수집된 자료 (연구 12개월 포함)</span><b id="total">0</b></article><article class="panel stat"><span>GaN</span><b id="gan">0</b></article><article class="panel stat"><span>SiC</span><b id="sic">0</b></article><article class="panel stat"><span>IGBT</span><b id="igbt">0</b></article><article class="panel stat"><span>논문</span><b id="papers">0</b></article></div><div class="two"><article class="panel"><h2>주간 핵심 업데이트</h2><div id="highlights" class="feed"></div></article><article class="panel"><h2>분석 우선순위</h2><div class="tiles"><article><b>GaN · 40%</b><p>E-mode, Dynamic R(on), 데이터센터 전원</p></article><article><b>SiC · 30%</b><p>Trench, Gate Oxide, 200mm Wafer</p></article><article><b>IGBT · 10%</b><p>Trench, Field Stop, VCE(sat), Eoff</p></article><article><b>SJ · 10%</b><p>Pillar Balance, Qrr, Softness, BV</p></article><article><b>SGT · 10%</b><p>Shield gate, Qgd, Eoss, Cell Pitch</p></article></div><p class="mini">비중은 기술 관심도 기준이며 실제 수집 비중을 보장하지 않습니다.</p></article></div></section>
 <section id="technology" class="hidden"><article class="panel"><h2>Technology Watch</h2><div class="filters"><select id="cat"><option value="">전체 기술</option><option>GaN</option><option>SiC</option><option>IGBT</option><option>SJ MOSFET</option><option>SGT</option></select><select id="kind"><option value="">뉴스 + 논문</option><option value="news">뉴스</option><option value="paper">논문</option></select><input id="search" placeholder="키워드·회사·기술 검색" aria-label="검색"></div><div id="records" class="feed"></div></article></section>
 <section id="research" class="hidden"><article class="panel"><h2>학술 논문 | Research Intelligence</h2><p class="muted">최근 45일 학술지 + IGBT·SJ MOSFET·SGT 최근 12개월 집중 검색 · Crossref / OpenAlex DOI · 원문 검토 전</p><div class="filters"><select id="research-cat" aria-label="논문 기술 선택"><option value="">전체 논문</option><option>GaN</option><option>SiC</option><option>IGBT</option><option>SJ MOSFET</option><option>SGT</option></select></div><select id="research-relevance" aria-label="기술 관련성 수준"><option value="0">전체 관련성</option><option value="70">높음 70점 이상</option><option value="45">보통 45점 이상</option></select><p class="mini">관련성은 제목·초록 기술 키워드 기반의 자동 추정값입니다. 전문가 검증 결과가 아닙니다.</p><div id="research-counts" class="mini"></div><div id="research-feed" class="feed"></div></article></section>
@@ -458,7 +487,7 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
 </details>
 </article></section>
 <section id="market" class="hidden"><article class="panel"><h2>Market & Financials</h2><p>Global Semiconductor → Power / Discrete → GaN / SiC / IGBT → Company Financials</p><div class="empty">공식 분기 실적·공시 기반 데이터 추출은 다음 단계입니다. 매출 및 이익 수치를 임의 생성하지 않습니다.</div></article></section>
-<section id="sources" class="hidden"><article class="panel"><h2>Source & Data Quality</h2><div id="health"></div><p class="muted">공개 뉴스 RSS와 Crossref 서지 정보 기반입니다. Google News 검색 링크는 원 출판사 홈페이지가 아닐 수 있습니다. AI 요약은 선택적이며 자료의 근거 범위가 표시됩니다.</p></article></section>
+<section id="sources" class="hidden"><article class="panel"><div class="watch-section-heading"><h2>Source & Data Quality</h2><button type="button" id="quality-close" aria-label="Data Quality 닫고 이전 분석 화면으로 돌아가기">분석 화면으로 돌아가기 ×</button></div><div id="health"></div><p class="muted">공개 뉴스 RSS와 Crossref 서지 정보 기반입니다. Google News 검색 링크는 원 출판사 홈페이지가 아닐 수 있습니다. AI 요약은 선택적이며 자료의 근거 범위가 표시됩니다.</p></article></section>
 <footer class="foot">PSI Radar · 공개 정보만 사용 · 모든 자료의 날짜·출처·원문 링크 확인 · 내부 공정 데이터는 업로드하지 마세요.</footer></main>
 <script>
 let DB={records:[],errors:[]};const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));const el=id=>document.getElementById(id);
@@ -1201,23 +1230,29 @@ let lastResearchTab="overview";
 function showRadarSection(tab){
  const pages=[...document.querySelectorAll("main>section")];
  if(!pages.some(page=>page.id===tab))return;
- if(tab!=="watchlist")lastResearchTab=tab;
+ // Both helper screens preserve the last active technology-analysis view.
+ if(tab!=="watchlist"&&tab!=="sources")lastResearchTab=tab;
  document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.tab===tab));
  pages.forEach(page=>page.classList.toggle("hidden",page.id!==tab));
- const isWatch=tab==="watchlist";
- el("watch-quick-access").classList.toggle("is-active",isWatch);
- el("watch-quick-access").setAttribute("aria-expanded",String(isWatch));
- if(isWatch)el("watch-close").focus({preventScroll:true});
+ for(const [buttonId,pageId] of [["watch-quick-access","watchlist"],["quality-quick-access","sources"]]){
+  const active=tab===pageId;
+  el(buttonId).classList.toggle("is-active",active);
+  el(buttonId).setAttribute("aria-expanded",String(active));
+ }
+ if(tab==="watchlist")el("watch-close").focus({preventScroll:true});
+ if(tab==="sources")el("quality-close").focus({preventScroll:true});
  window.scrollTo?.({top:0,behavior:"smooth"});
 }
 for(const b of document.querySelectorAll(".nav button"))b.addEventListener("click",()=>showRadarSection(b.dataset.tab));
-el("watch-quick-access").addEventListener("click",()=>{
- const isOpen=!el("watchlist").classList.contains("hidden");
- showRadarSection(isOpen?lastResearchTab:"watchlist");
-});
-el("watch-close").addEventListener("click",()=>{
- showRadarSection(lastResearchTab);
- el("watch-quick-access").focus({preventScroll:true});
-});
+for(const [buttonId,pageId,closeId] of [["watch-quick-access","watchlist","watch-close"],["quality-quick-access","sources","quality-close"]]){
+ el(buttonId).addEventListener("click",()=>{
+  const isOpen=!el(pageId).classList.contains("hidden");
+  showRadarSection(isOpen?lastResearchTab:pageId);
+ });
+ el(closeId).addEventListener("click",()=>{
+  showRadarSection(lastResearchTab);
+  el(buttonId).focus({preventScroll:true});
+ });
+}
 fetch("data.json?nocache="+Date.now()).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{DB=d;render()}).catch(e=>{el("last").textContent="데이터 로딩 실패: "+e.message;render()});
 </script></body></html>
