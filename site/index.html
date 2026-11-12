@@ -483,6 +483,20 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
 .finance-review-control label{font-size:12px;color:var(--muted)}
 .finance-review-summary{font-size:12px;color:#bbd8f3}
 @media(max-width:560px){.finance-review-toolbar{align-items:stretch}.finance-review-toolbar button,.finance-review-toolbar select{flex:1 1 135px}.finance-review-control select{max-width:100%}}
+
+/* V2.5 reviewed financial trends and audit queue */
+.finance-v25{border:1px solid var(--border);border-radius:12px;padding:14px;margin:16px 0;background:#101e33}
+.finance-v25 h3{font-size:17px;margin:0 0 7px}
+.finance-v25-note{font-size:12px;color:var(--muted);line-height:1.6}
+.finance-v25-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0}
+.finance-v25-row{border:1px solid #31516d;background:#172a44;padding:12px;border-radius:9px;min-width:0}
+.finance-v25-row strong{display:block;font-size:13px}
+.finance-v25-row .value{font-size:18px;font-weight:650;margin:5px 0}
+.finance-v25-row .meta{font-size:11px}
+.finance-v25-row a{font-size:12px}
+.finance-v25-audit{border-top:1px solid var(--border);margin-top:12px;padding-top:10px}
+.finance-v25-change{padding:9px;border:1px solid #765532;background:#352919;border-radius:7px;margin:8px 0}
+@media(max-width:700px){.finance-v25-grid{grid-template-columns:1fr}.finance-v25{padding:11px}}
 </style></head><body>
 <header><small>POWER SEMICONDUCTOR INTELLIGENCE</small><h1>◈ PSI Radar</h1><div class="muted">GaN · SiC · IGBT · SJ MOSFET · UD/UG SGT | 글로벌 기술 · 논문 · 경쟁사 동향</div><div id="last" class="mini">데이터 상태 확인 중...</div></header>
 <aside class="personal-tools" aria-label="개인 및 데이터 관리 보조 메뉴">
@@ -681,6 +695,15 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
 <div id="finance-status" class="mini" role="status">공식 재무 자료를 불러오는 중입니다.</div>
 <div class="finance-guide">수치는 <strong>각 회사의 원래 통화 기준 백만 단위</strong>입니다. ROHM은 6개월 누적(H1), Infineon의 Segment Result는 IFRS 영업이익이 아니며, ST·onsemi는 US GAAP 기준입니다. 분기와 상반기·서로 다른 지표를 하나의 순위로 비교하지 않습니다.</div>
 <div id="finance-cards" class="finance-cards" aria-live="polite"></div>
+<div id="finance-v25" class="finance-v25">
+<h3>V2.5 · 연결·전력 사업부 실적 변화 분석</h3>
+<p class="finance-v25-note">같은 회사·같은 통화·같은 기간 유형에 한해 공식 발표값을 비교합니다. 분기 대비 분기와 반기 전년 동기는 명확히 구분하며, 영업이익과 Segment Result는 같은 지표로 합치지 않습니다.</p>
+<div id="finance-v25-status" class="mini" role="status">비교 분석 자료 확인 중</div>
+<div id="finance-v25-trends" class="finance-v25-grid" aria-live="polite"></div>
+<div class="finance-v25-audit"><h3>검증 기준본 대비 수치·출처 변경 점검</h3>
+<p class="finance-v25-note">2026-11-12에 검토한 기준본과 현재 공개 재무 자료를 비교한 변경 후보입니다. 이 목록은 수동 검토를 지원하며 숫자 변경을 자동 승인하지 않습니다.</p>
+<div id="finance-v25-audit-items" aria-live="polite">변경 비교 자료 확인 중</div></div>
+</div>
 <div class="finance-ir-queue">
 <div class="intel-section-heading"><h3>공식 IR 발표 감지 · 검토 대기열</h3><label class="brief-checkbox"><input type="checkbox" id="finance-show-known"> 기존 반영 원문도 보기</label></div>
 <p class="mini">제조사 IR 목록에서 실적 관련 제목이 있는 링크만 수집합니다. <strong>최초 관측일은 발표일이 아니며, 검토 대기 상태는 새 실적 확정을 뜻하지 않습니다.</strong> 실적 금액은 자동 수정하지 않습니다.</p>
@@ -1375,6 +1398,43 @@ fetch("financial_ir_watch.json?nocache="+Date.now()).then(r=>{if(!r.ok)throw Err
  el("finance-ir-status").textContent="공식 IR 목록 점검 결과를 불러오지 못했습니다: "+e.message;
  el("finance-ir-items").innerHTML='<div class="mini">점검 자료가 없으며 신규 공시 여부를 판단할 수 없습니다.</div>';
 });
+
+let FINANCE_V25={trends:[],changes:[]};
+function renderFinanceV25(){
+ const company=el("finance-company").value;
+ const rows=(FINANCE_V25.trends||[]).filter(x=>!company||x.company===company);
+ const pending=(FINANCE_V25.changes||[]).filter(x=>!company||x.company===company);
+ const names={infineon:"Infineon",st:"STMicroelectronics",onsemi:"onsemi",rohm:"ROHM"};
+ const metricNames={revenue:"매출액",operating_income:"연결 영업이익",segment_result:"Group Segment Result",operating_margin:"영업이익률",segment_result_margin:"Segment Result 마진",profit:"사업부 손익",profit_margin:"사업부 손익률"};
+ el("finance-v25-status").textContent=FINANCE_V25.version?
+  "공식 검증 재무자료 비교 · "+rows.length+"개 동일 지표 변화 · 변경 검토 후보 "+pending.length+"건 · 기준본 "+esc(FINANCE_V25.baseline_reviewed_on||"미확인"):
+  "재무 비교 파일을 불러오는 중입니다.";
+ el("finance-v25-trends").innerHTML=rows.length?rows.map(r=>{
+  const pct=typeof r.change_pct==="number"?(r.change_pct>0?"+":"")+r.change_pct.toFixed(2)+"%":"변화율 미산정";
+  const kind=r.comparison==="YoY H1"?"반기 전년 동기 비교":"연속 분기 비교";
+  const money=v=>new Intl.NumberFormat("ko-KR",{maximumFractionDigits:1}).format(v)+" 백만 "+esc(r.currency);
+  const safe=url=>/^https:\/\//.test(url||"")?esc(url):"#";
+  return '<article class="finance-v25-row"><strong>'+esc(names[r.company]||r.company)+' · '+esc(r.scope==="segment"?r.name:"연결")+'</strong>'+
+    '<div class="mini">'+esc(metricNames[r.metric]||r.metric)+' · '+kind+'</div>'+
+    '<div class="value">'+esc(pct)+'</div>'+
+    '<div class="mini">'+esc(r.period_from)+': '+money(r.previous)+' → '+esc(r.period_to)+': '+money(r.current)+'</div>'+
+    '<div class="meta">동일 회사·원통화 공시 기준 · 추세 참고 자료</div>'+
+    '<a href="'+safe(r.source_to)+'" target="_blank" rel="noopener noreferrer">최신 원문 확인 ↗</a></article>';
+ }).join(""):'<p class="mini">선택한 회사에서 동일 지표로 비교 가능한 공시 기간 2개가 아직 없습니다. 값은 추정하지 않습니다.</p>';
+ el("finance-v25-audit-items").innerHTML=pending.length?pending.slice(0,40).map(r=>{
+  const safe=/^https:\/\//.test(r.source||"")?esc(r.source):"#";
+  return '<article class="finance-v25-change"><strong>'+esc(names[r.company]||r.company)+' · '+esc(r.period)+' · '+esc(r.field)+'</strong>'+
+    '<div class="mini">기준본: '+esc(r.before===null?"없음":r.before)+' → 현재: '+esc(r.after===null?"없음":r.after)+'</div>'+
+    '<div class="mini">수동 출처/기간/지표 검토 필요 · 자동 승인되지 않음</div>'+
+    '<a href="'+safe+'" target="_blank" rel="noopener noreferrer">공식 원문 확인 ↗</a></article>';
+ }).join(""):'<p class="mini">기준본 대비 변경된 수치·원문·기간 기록이 없습니다. 새로운 공식 발표가 없다는 의미는 아닙니다.</p>';
+}
+el("finance-company").addEventListener("change",renderFinanceV25);
+fetch("financial_review_diff.json?nocache="+Date.now()).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(data=>{
+ if(data.schema_version!==1||!Array.isArray(data.trends)||!Array.isArray(data.changes))throw Error("지원하지 않는 재무 비교 데이터");
+ FINANCE_V25=data;renderFinanceV25();
+}).catch(err=>{el("finance-v25-status").textContent="비교 분석 파일을 불러오지 못했습니다: "+err.message;el("finance-v25-trends").textContent="분석 결과 없음 · 기존 공식 재무 수치는 그대로 유지됩니다.";el("finance-v25-audit-items").textContent="변경 검토 대기열을 확인할 수 없습니다.";});
+
 let FINANCIALS={companies:[]};
 function financeMoney(value,currency){
  if(typeof value!=="number")return "미공시";
