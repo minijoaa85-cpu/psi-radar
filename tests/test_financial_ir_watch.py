@@ -27,7 +27,8 @@ class StubSession:
     def __init__(self,by_url):
         self.by_url=by_url
     def get(self,url,**kwargs):
-        value=self.by_url[url]
+        import requests
+        value=self.by_url.get(url,requests.ConnectionError("Official fallback temporarily unavailable"))
         if isinstance(value,Exception):
             raise value
         return Response(url,value)
