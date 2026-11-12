@@ -1,0 +1,242 @@
+{
+  "schema_version": 1,
+  "version": "2.2",
+  "reviewed_on": "2026-11-12",
+  "currency_unit": "million_original_currency",
+  "basis": "Manually transcribed and verified official investor releases; no currency conversions or extrapolation.",
+  "companies": [
+    {
+      "id": "infineon",
+      "name": "Infineon",
+      "currency": "EUR",
+      "accounting": "IFRS",
+      "source_scope": "Consolidated group",
+      "periods": [
+        {
+          "period": "FY2026-Q3",
+          "period_type": "quarter",
+          "start": "2026-04-01",
+          "end": "2026-06-30",
+          "revenue": 4172,
+          "operating_income": null,
+          "operating_margin": null,
+          "segment_result": 797,
+          "segment_result_margin": 19.1,
+          "source": "https://www.infineon.com/press-release/2026/infpr202608-125",
+          "published": "2026-08-05",
+          "reviewed_on": "2026-11-12"
+        },
+        {
+          "period": "FY2026-Q4",
+          "period_type": "quarter",
+          "start": "2026-07-01",
+          "end": "2026-09-30",
+          "revenue": 4706,
+          "operating_income": null,
+          "operating_margin": null,
+          "segment_result": 1119,
+          "segment_result_margin": 23.8,
+          "source": "https://www.infineon.com/press-release/2026/infpr202611-025",
+          "published": "2026-11-10",
+          "reviewed_on": "2026-11-12"
+        }
+      ],
+      "segments": [
+        {
+          "name": "Power & Sensor Systems (PSS)",
+          "period": "FY2026-Q4",
+          "period_type": "quarter",
+          "start": "2026-07-01",
+          "end": "2026-09-30",
+          "revenue": 1796,
+          "profit": 554,
+          "profit_label": "Segment Result",
+          "profit_margin": 30.8,
+          "source": "https://www.infineon.com/assets/row/public/documents/corporate/investors/presentations/2026/2026-11-10-q4-fy26-intro-statement-analyst-call-v01-00-en.pdf",
+          "published": "2026-11-10",
+          "note": "PSS에는 데이터센터 전력 솔루션 외에도 다양한 전력·센서 제품이 포함됩니다. GaN/SiC 전용 매출이 아닙니다."
+        }
+      ],
+      "notes": "Group Segment Result는 IFRS 연결 영업이익과 다른 기업 정의 KPI입니다. 영업이익 대신 사용하거나 타 기업의 GAAP 영업이익과 직접 비교하지 않습니다."
+    },
+    {
+      "id": "st",
+      "name": "STMicroelectronics",
+      "currency": "USD",
+      "accounting": "US GAAP",
+      "source_scope": "Consolidated group",
+      "periods": [
+        {
+          "period": "2026-Q2",
+          "period_type": "quarter",
+          "start": "2026-03-29",
+          "end": "2026-06-27",
+          "revenue": 3487,
+          "operating_income": 187,
+          "operating_margin": 5.4,
+          "segment_result": null,
+          "segment_result_margin": null,
+          "source": "https://newsroom.st.com/media-center/press-item.html/c3403.html",
+          "published": "2026-07-23",
+          "reviewed_on": "2026-11-12"
+        },
+        {
+          "period": "2026-Q3",
+          "period_type": "quarter",
+          "start": "2026-06-28",
+          "end": "2026-09-26",
+          "revenue": 3757,
+          "operating_income": 367,
+          "operating_margin": 9.8,
+          "segment_result": null,
+          "segment_result_margin": null,
+          "source": "https://newsroom.st.com/media-center/press-item.html/stmicroelectronics-reports-q3-2026-financial-results.html",
+          "published": "2026-10-29",
+          "reviewed_on": "2026-11-12"
+        }
+      ],
+      "segments": [
+        {
+          "name": "Power & Discrete (P&D)",
+          "period": "2026-Q2",
+          "period_type": "quarter",
+          "start": "2026-03-29",
+          "end": "2026-06-27",
+          "revenue": 464,
+          "profit": null,
+          "profit_label": null,
+          "profit_margin": null,
+          "source": "https://www.sec.gov/Archives/edgar/data/932787/000093278726000086/c3419c-q326earningspressre.htm",
+          "published": "2026-10-29",
+          "note": "ST 공식 Q3 공시의 비교 분기 열에 수록된 P&D 매출입니다."
+        },
+        {
+          "name": "Power & Discrete (P&D)",
+          "period": "2026-Q3",
+          "period_type": "quarter",
+          "start": "2026-06-28",
+          "end": "2026-09-26",
+          "revenue": 477,
+          "profit": null,
+          "profit_label": null,
+          "profit_margin": null,
+          "source": "https://www.sec.gov/Archives/edgar/data/932787/000093278726000086/c3419c-q326earningspressre.htm",
+          "published": "2026-10-29",
+          "note": "P&D는 전력 및 Discrete 묶음이며 SiC/GaN만의 매출은 아닙니다."
+        }
+      ],
+      "notes": "US GAAP 영업이익을 사용합니다. Power & Discrete에는 복수 제품군이 포함됩니다."
+    },
+    {
+      "id": "onsemi",
+      "name": "onsemi",
+      "currency": "USD",
+      "accounting": "US GAAP",
+      "source_scope": "Consolidated group",
+      "periods": [
+        {
+          "period": "2026-Q2",
+          "period_type": "quarter",
+          "start": "2026-04-04",
+          "end": "2026-07-03",
+          "revenue": 1603.5,
+          "operating_income": null,
+          "operating_margin": 16.1,
+          "segment_result": null,
+          "segment_result_margin": null,
+          "source": "https://investor.onsemi.com/news-releases/news-release-details/onsemi-reports-third-quarter-2026-results",
+          "published": "2026-11-02",
+          "reviewed_on": "2026-11-12"
+        },
+        {
+          "period": "2026-Q3",
+          "period_type": "quarter",
+          "start": "2026-07-04",
+          "end": "2026-10-02",
+          "revenue": 1722.3,
+          "operating_income": null,
+          "operating_margin": 22,
+          "segment_result": null,
+          "segment_result_margin": null,
+          "source": "https://investor.onsemi.com/news-releases/news-release-details/onsemi-reports-third-quarter-2026-results",
+          "published": "2026-11-02",
+          "reviewed_on": "2026-11-12"
+        }
+      ],
+      "segments": [
+        {
+          "name": "Power Solutions Group (PSG)",
+          "period": "2026-Q2",
+          "period_type": "quarter",
+          "start": "2026-04-04",
+          "end": "2026-07-03",
+          "revenue": 829,
+          "profit": null,
+          "profit_label": null,
+          "profit_margin": null,
+          "source": "https://investor.onsemi.com/news-releases/news-release-details/onsemi-reports-third-quarter-2026-results",
+          "published": "2026-11-02",
+          "note": "Q3 공식 실적 발표의 비교 분기 PSG 매출입니다."
+        },
+        {
+          "name": "Power Solutions Group (PSG)",
+          "period": "2026-Q3",
+          "period_type": "quarter",
+          "start": "2026-07-04",
+          "end": "2026-10-02",
+          "revenue": 889.9,
+          "profit": null,
+          "profit_label": null,
+          "profit_margin": null,
+          "source": "https://investor.onsemi.com/news-releases/news-release-details/onsemi-reports-third-quarter-2026-results",
+          "published": "2026-11-02",
+          "note": "PSG는 SiC/GaN만의 사업부가 아니며 전력 솔루션 제품군을 포함합니다."
+        }
+      ],
+      "notes": "US GAAP 영업이익률은 발표값이며 표에서 영업이익 금액을 역산하지 않습니다."
+    },
+    {
+      "id": "rohm",
+      "name": "ROHM",
+      "currency": "JPY",
+      "accounting": "Japanese GAAP",
+      "source_scope": "Consolidated group",
+      "periods": [
+        {
+          "period": "FY2027-H1",
+          "period_type": "half_year",
+          "start": "2026-04-01",
+          "end": "2026-09-30",
+          "revenue": 279483,
+          "operating_income": 17487,
+          "operating_margin": null,
+          "segment_result": null,
+          "segment_result_margin": null,
+          "source": "https://fscdn.rohm.com/en/financial/financial-report/2609_financialresults_en.pdf",
+          "published": "2026-11-05",
+          "reviewed_on": "2026-11-12"
+        }
+      ],
+      "segments": [
+        {
+          "name": "Discrete Semiconductor Devices",
+          "period": "FY2027-H1",
+          "period_type": "half_year",
+          "start": "2026-04-01",
+          "end": "2026-09-30",
+          "revenue": 120720,
+          "profit": -4393,
+          "profit_label": "Segment Profit/Loss",
+          "profit_margin": null,
+          "source": "https://fscdn.rohm.com/en/financial/financial-report/2609_financialresults_en.pdf",
+          "published": "2026-11-05",
+          "note": "6개월 누적 실적입니다. 사업부에는 Si/SiC power, 일반 Discrete, LED, 레이저 등이 포함되며 전력소자만의 매출은 아닙니다."
+        }
+      ],
+      "notes": "연결·사업부 실적 모두 2026-04-01~2026-09-30의 6개월 누적(H1)입니다. 분기 값이나 USD/EUR 비교 값으로 환산하지 않습니다."
+    }
+  ],
+  "warning": "회계 기준(US GAAP/IFRS/Japanese GAAP), 통화, 분기 기간이 서로 다릅니다. Infineon Segment Result는 GAAP 영업이익이 아닙니다. ROHM은 6개월 누적 H1입니다. 사업부별 매출은 SiC/GaN 전용 매출이 아니므로 시장점유율 산정이나 기술 경쟁력 순위로 사용하지 마세요.",
+  "auto_refresh": false,
+  "refresh_policy": "Official IR releases manually curated. CI validates integrity weekly but does not scrape or update reported monetary amounts automatically."
+}
