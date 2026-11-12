@@ -18,9 +18,9 @@ TECH={
  "GaN":['"GaN HEMT"','"gallium nitride" power','"GaN" "data center"'],
  "SiC":['"SiC MOSFET"','"silicon carbide" power semiconductor'],
  "IGBT":['"IGBT" power semiconductor','"IGBT" power module','"trench IGBT"','"RC-IGBT"','"field-stop IGBT"','"IGBT" Infineon','"IGBT" Mitsubishi Electric','"IGBT" Fuji Electric'],
- "SGT":['"shielded gate" MOSFET','"split gate" trench MOSFET'],
  "SJ MOSFET":['"superjunction MOSFET"','"super junction" power MOSFET']}
-KEYS={"GaN":("gan","gallium nitride","氮化镓","窒化ガリウ"),"SiC":("sic","silicon carbide","碳化硅","炭化ケイ素"),"IGBT":("igbt","insulated gate bipolar transistor","绝缘栅双极型晶体管","絶縁ゲートバイポーラトランジスタ"),"SGT":("shielded gate","split gate","sgt"),"SJ MOSFET":("superjunction","super junction","sj mosfet")}
+ "SGT":['"shielded gate" MOSFET','"split gate" trench MOSFET'],
+KEYS={"GaN":("gan","gallium nitride","氮化镓","窒化ガリウ"),"SiC":("sic","silicon carbide","碳化硅","炭化ケイ素"),"IGBT":("igbt","insulated gate bipolar transistor","绝缘栅双极型晶体管","絶縁ゲートバイポーラトランジスタ"),"SJ MOSFET":("superjunction","super junction","sj mosfet"),"SGT":("shielded gate","split gate","sgt")}
 TOPICS={"데이터센터":("data center","datacenter","ai server","800vdc"),"신뢰성":("reliability","dynamic r","breakdown","oxide"),"공정·구조":("trench","epitax","wafer","vertical","implant","field stop","lifetime control","reverse conducting","rc-igbt"),"재무·시장":("revenue","margin","earnings","capex","market")}
 POWER_CONTEXT=("power","semiconductor","mosfet","hemt","transistor","switching","converter","inverter","charger","charging","gate","breakdown voltage","high voltage","voltage","650v","1200v","1700v","800v","electronic","epitax","wafer","datasheet","data center","datacenter","automotive","device","diode","drain","coolgan","gan-on-si","sicarbide","field-effect","igbt","bipolar transistor","field stop","field-stop","vce(sat)","short-circuit withstand")
 EXCLUDE=("generative adversarial network","generative ai network","oil-in-water","membrane filtration","photocatalyst","water treatment","biomedical")
@@ -43,7 +43,7 @@ def classify_topics(t):
  return [k for k,words in TOPICS.items() if any(w in t for w in words)] or ["일반 기술"]
 def score(t,c):
  t=t.lower()
- return min(100,{"GaN":50,"SiC":40,"IGBT":30,"SGT":30,"SJ MOSFET":30}.get(c,10)+15*("data center" in t or "800v" in t)+10*("reliability" in t)+10*("trench" in t))
+ return min(100,{"GaN":50,"SiC":40,"IGBT":30,"SJ MOSFET":30,"SGT":30}.get(c,10)+15*("data center" in t or "800v" in t)+10*("reliability" in t)+10*("trench" in t))
 def unique(rows):
  seen=set();out=[]
  for r in rows:
