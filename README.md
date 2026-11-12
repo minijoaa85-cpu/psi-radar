@@ -7,7 +7,7 @@
 
 ## 기능
 
-- GaN·SiC·IGBT·SGT·SJ MOSFET 뉴스와 학술지 DOI 메타데이터 수집 및 원문/DOI 연결
+- GaN·SiC·IGBT·SJ MOSFET·SGT 뉴스와 학술지 DOI 메타데이터 수집 및 원문/DOI 연결
 - 뉴스 최근 8일, 학술지 최근 45일 검색 / 관련 없는 GAN·SiC 소재 논문 최소화
 - 한국어 제목 및 기술 해설(선택적 OpenAI API)
 - 뉴스는 **제목 기반 요약**(사실 확정 금지), 학술지 논문은 **공개 초록 기반 요약**(원문 검증 전 표시)
@@ -96,12 +96,12 @@ GitHub Pages는 저장소 Settings → Pages → **Source: GitHub Actions**를 �
 
 ## V0.3: 학술 논문 / 제조사 기술정보 수집 고도화
 - 기존 뉴스 최근 7일 및 기존 Crossref 학술지 45일 검색 유지
-- **IGBT, SGT, SJ MOSFET**에 대해 최근 **365일 논문 메타데이터**를 Crossref 및 OpenAlex에서 다중 쿼리로 검색
+- **IGBT, SJ MOSFET, SGT**에 대해 최근 **365일 논문 메타데이터**를 Crossref 및 OpenAlex에서 다중 쿼리로 검색
 - 두 서비스의 결과는 DOI를 기준으로 통합·중복 제거하고, 원문을 열어 확인할 수 있도록 링크를 유지
 - IEEE TED, JEDS, TPEL, Solid-State Electronics 등을 관심 학술지로 기록 (특정 저널로만 검색을 제한하지 않음)
 - 논문 초록이 확보된 경우에만 AI의 초록 기반 요약을 허용하며 원문 검토 여부를 명시
 - OpenAlex 기본 조회는 추가 API 키 없이 시도하며, `OPENALEX_API_KEY`는 필요할 때만 별도 GitHub Secret으로 제공 (현재 필수 아님; 제공업체의 이용량/과금조건은 별도)
-- AI 호출 상한은 기존 실행당 12회 / 추정비용 $0.02 그대로 유지; 우선순위가 같은 IGBT·SGT·SJ 논문에 각 최대 1회씩 AI 분석 슬롯 우선 배정
+- AI 호출 상한은 기존 실행당 12회 / 추정비용 $0.02 그대로 유지; 우선순위가 같은 IGBT·SJ·SGT 논문에 각 최대 1회씩 AI 분석 슬롯 우선 배정
 - 제조사 공식 링크 참고 섹션: Infineon IGBT7, ROHM SJ MOSFET, Toshiba DTMOS
 - **중요:** '수집된 자료'는 1년치 연구 참고자료를 포함하므로 매주 신간 건수와 다릅니다. Overview의 주간 핵심 업데이트에는 최근 8일의 자료만 표시합니다.
 - API 메타데이터는 학술지의 실제 발행일·인용·초록 등록 상황에 따라 누락되거나 부정확할 수 있습니다. 논문 원문을 자동으로 무단 다운로드하지 않습니다.
@@ -109,7 +109,7 @@ GitHub Pages는 저장소 Settings → Pages → **Source: GitHub Actions**를 �
 
 ## V0.3.1: 2026-11-12 수집·분석 안정성 개선
 - Crossref 집중 검색 9회에서 기술군별 1회(최대 3회)로 줄이고, 429 응답 시 최대 3초를 기다려 한 번 재시도합니다. 다시 429가 발생하면 해당 실행의 나머지 Crossref 집중 검색을 중단하고 OpenAlex 결과를 활용합니다.
-- 45일짜리 기본 Crossref 검색은 GaN / SiC에만 유지하고, IGBT / SGT / SJ는 집중 학술 검색으로 처리합니다.
+- 45일짜리 기본 Crossref 검색은 GaN / SiC에만 유지하고, IGBT / SJ / SGT는 집중 학술 검색으로 처리합니다.
 - 신규 검색이 일부 실패해도 기존 365일 이내의 논문 메타데이터를 가능한 한 유지하고, 화면에는 **이전 수집 정보 유지**로 표시합니다. 해당 표시는 최신 검증 완료를 의미하지 않습니다.
 - OpenAI 응답에 JSON 생성 여유를 주도록 최대 출력 토큰을 480으로 설정하고, 답변은 간결한 3필드 JSON으로 제한했습니다.
 - 실패한 AI 응답은 HTTP 코드 / 잘린 JSON 등 안전한 오류 유형별로 집계하며 원문, API 키, 비밀 값은 로그에 기록하지 않습니다.
@@ -132,10 +132,10 @@ GitHub Pages는 저장소 Settings → Pages → **Source: GitHub Actions**를 �
 - 제조사 14개사의 공개 뉴스 인덱스와 기존 연구/뉴스 메타데이터를 연결: **Infineon, STMicroelectronics, onsemi, ROHM, Mitsubishi Electric, Fuji Electric, Toshiba, Innoscience, Sanan, CR Micro, BASiC Semiconductor, Navitas, EPC, Wolfspeed**.
 - 영어/중국어/일본어의 구체적인 기업 이름·제품명 별칭을 이용해 기사 **제목에 등장한 기업만** 분류합니다. 재배포 뉴스 제목은 출처 검증 전으로 표시하며, 제목 언급은 제조사 공식 발표/기술 성과를 뜻하지 않습니다.
 - 일반 뉴스 검색에 더해 기업×전력반도체 키워드 RSS 14개를 검색. 최신 7일 결과가 없는 중국·일본 업체는 30일 자료를 보조 검색하며 **30일 참고**로 표시합니다.
-- Competitors 탭에서 제조사별 GaN/SiC/IGBT/SGT/SJ 언급 건수, 지역, 기술 및 뉴스/논문 필터와 원문 근거를 보여 줍니다. **0건은 수집 미발견이지 해당 기업의 기술 활동 부재를 의미하지 않습니다.**
+- Competitors 탭에서 제조사별 GaN/SiC/IGBT/SJ/SGT 언급 건수, 지역, 기술 및 뉴스/논문 필터와 원문 근거를 보여 줍니다. **0건은 수집 미발견이지 해당 기업의 기술 활동 부재를 의미하지 않습니다.**
 - `competitor_stats`는 수집된 표본 내 제목 언급 통계입니다. 경쟁사의 매출, 시장점유율, 디바이스 개발 성과를 나타내는 수치가 아닙니다.
 - 주간 기록에는 같은 주차에 수집된 기업 언급 건수도 함께 저장하되, 원문 전체를 무단 저장하거나 유료 문서 전문을 복제하지 않습니다.
-- AI 번역은 기존 실행당 **최대 12회** 및 추정 **$0.02** 예산을 유지합니다. 기존 IGBT/SGT/SJ 논문 우선 3개 슬롯 외에, 미번역된 주요 제조사·중국·일본 뉴스가 있을 경우 그 내용을 우선 요약하도록 예약합니다. 분석 내용은 제목 또는 초록 수준으로 제한합니다.
+- AI 번역은 기존 실행당 **최대 12회** 및 추정 **$0.02** 예산을 유지합니다. 기존 IGBT/SJ/SGT 논문 우선 3개 슬롯 외에, 미번역된 주요 제조사·중국·일본 뉴스가 있을 경우 그 내용을 우선 요약하도록 예약합니다. 분석 내용은 제목 또는 초록 수준으로 제한합니다.
 - 새로운 API Key는 필요하지 않습니다. 현재 공개자료 이외의 재무 및 제품별 FOM 데이터는 아직 연결하지 않았습니다.
 
 ## V0.6 (2026-11-12): 공식 제조사 자료 근거 강화
@@ -145,7 +145,7 @@ GitHub Pages는 저장소 Settings → Pages → **Source: GitHub Actions**를 �
 - ST Newsroom, ROHM 공식 홈페이지, Innoscience 공식 보도자료, BASiC Semiconductor 공식 중국어 사이트를 출처 탐색용 링크로 표시합니다.
 - 공식 기사 데이터는 `scripts/official_sources.py`의 **수동 검증 출처 목록**에 있습니다. 매주 자동으로 새 공식 보도자료 전체를 크롤링하거나 발표 여부를 전수 조사하는 기능이 아닙니다. 최신 공시는 제조사 링크를 별도로 확인해야 합니다.
 - 신규 수집 중 공식 원문 URL을 임의 생성하지 않고, 동일한 제조사 링크가 반복돼도 자료를 중복 추가하지 않습니다.
-- 기존 비용 예산(실행당 AI 최대 12회 및 추정 $0.02), GaN 40% / SiC 30% / IGBT·SGT·SJ 10% 우선순위, 매주 월요일 06:00 KST 자동화는 유지합니다. 검증된 공식 기사는 API 추가 호출 없이 재사용합니다.
+- 기존 비용 예산(실행당 AI 최대 12회 및 추정 $0.02), GaN 40% / SiC 30% / IGBT·SJ·SGT 10% 우선순위, 매주 월요일 06:00 KST 자동화는 유지합니다. 검증된 공식 기사는 API 추가 호출 없이 재사용합니다.
 
 ## V0.7 — Device Datasheet Benchmark (2026-11-12)
 - Benchmark 탭을 실제 기업 제품별 사양 비교 화면으로 변경했습니다.
@@ -182,7 +182,7 @@ GitHub Pages는 저장소 Settings → Pages → **Source: GitHub Actions**를 �
 - Benchmark 히트맵: 제품별 Ron typ, Ron max, Qg, Qgd, Qoss, Eoss, Qrr, VCE(sat) 8개 항목의 공식 수치를 표시하며 4가지 자료 상태(일부 시험조건 확인, 제조사 표기, typ/max 미지정, 미확인)를 색·문구로 같이 표현합니다. **수치 자체가 작을수록 좋은 녹색 같은 등급을 부여하지 않습니다.**
 - 히트맵 셀 클릭/키보드 선택: 공식 측정값, 통계 기준, 일부 시험조건 및 제조사 원문 링크를 노출합니다. 필터를 바꾸면 히트맵/목록도 함께 업데이트됩니다.
 - Ron(typ)×Qg(typ) 숫자는 하단 접이식 **'산술 참고값'**에 남겨 기존 기능을 보존합니다. 표준화된 FOM 또는 기술순위로 오해하지 않게 명확히 구분합니다.
-- **Architecture 탭**: GaN·SiC·IGBT·SGT·SJ MOSFET 다섯 소자 기술을 쉽게 선택하고, 제조사 표기 제품 구조별 데이터 표본 수·핵심 Device Physics·공정/구조 관찰 포인트·검증된 제품 원문 링크를 확인합니다.
+- **Architecture 탭**: GaN·SiC·IGBT·SJ MOSFET·SGT 다섯 소자 기술을 쉽게 선택하고, 제조사 표기 제품 구조별 데이터 표본 수·핵심 Device Physics·공정/구조 관찰 포인트·검증된 제품 원문 링크를 확인합니다.
 - `scripts/architecture.py`가 공식 제품 메타데이터에서 공개 수준의 구조 정보만 정리합니다. 추정 공정 조건, 구조 단면, 실측 성능 개선율을 생성하지 않습니다.
 - SGT에는 공식 검증 제품 데이터가 없어 0종으로 표시하며 사용자가 없는 정보를 있는 것으로 해석하지 않게 합니다.
 - `tests/test_architecture.py` 회귀 테스트를 추가했고, 주간 GitHub Actions 빌드가 `site/architecture.json`을 함께 생성합니다.
@@ -199,7 +199,7 @@ GitHub Pages는 저장소 Settings → Pages → **Source: GitHub Actions**를 �
 - 기존 주간 수집, GitHub Pages, API 비용 상한, 22종 데이터셋, V1.0 Architecture와 FOM 근거표는 유지합니다.
 
 ## V1.2 — Device Physics → Evidence → Product 탐색 (2026-11-12)
-- **Architecture 기술 주제 선택**을 추가했습니다. 예: GaN Dynamic RDS(on), Gate Reliability, Qg/Qoss, SiC Gate Oxide, IGBT VCE(sat)/Eoff, SGT Shield Gate, SJ Pillar Balance/Qrr. 5개 기술군에 걸친 14개 주제를 제공합니다.
+- **Architecture 기술 주제 선택**을 추가했습니다. 예: GaN Dynamic RDS(on), Gate Reliability, Qg/Qoss, SiC Gate Oxide, IGBT VCE(sat)/Eoff, SJ Pillar, SGT Shield Gate Balance/Qrr. 5개 기술군에 걸친 14개 주제를 제공합니다.
 - `scripts/tech_topics.py`는 **해당 기술군 + 제목의 명시적인 기술 키워드**만으로 뉴스·논문·공식 제조사 발표의 공개 자료를 찾아 후보로 연결합니다. 이것은 전문全文 검증이나 과학적 인과관계 판정이 아닙니다.
 - 후보 자료는 **논문 메타데이터 / 공식 제조사 발표 / 제목 기반 일반 뉴스**로 출처 구분을 유지합니다. 제목·발행일·근거 URL을 표시하며 허구의 연구 성과·공정 Recipe를 생성하지 않습니다.
 - 함께 표시되는 실제 제품은 **같은 전력 소자 기술군의 제조사 제품 참고자료**로 한정됩니다. 제품의 실제 결함 원인, 특정 현상의 해결 성능, 논문과 제품 간 기술 이전 관계를 입증한다는 의미가 아닙니다.
@@ -229,7 +229,7 @@ GitHub Pages는 저장소 Settings → Pages → **Source: GitHub Actions**를 �
 - 기존 14개 기술 주제, 22종 공식 Benchmark 제품, Architecture 사용자 경험, 월요일 오전 6시 KST 자동 실행, 실행당 AI 최대 12회 및 추정 비용 제한 $0.02를 유지합니다.
 
 ## V1.5 — Technology Briefing: 근거 중심 우선 열람 (2026-11-12)
-- **Briefing 메뉴**에서 최근 30일에 발행된 공개 자료를 GaN·SiC·IGBT·SGT·SJ MOSFET 기술군과 출처 유형(제조사 공식 / 학술 논문 / 일반 뉴스)으로 선택할 수 있습니다.
+- **Briefing 메뉴**에서 최근 30일에 발행된 공개 자료를 GaN·SiC·IGBT·SJ MOSFET·SGT 기술군과 출처 유형(제조사 공식 / 학술 논문 / 일반 뉴스)으로 선택할 수 있습니다.
 - 읽기 우선순위는 **출처 투명성 → 발행일 최신성 → 제목의 변화 관련 표현**만 반영하며, 우수 기술·시장점유율·실제 혁신 영향력 순위로 사용하지 않습니다.
 - 각 카드에는 발표 제목(한국어 제공 시), 날짜, 원문 링크와 **근거 수준 표시**를 넣습니다. 제조사 공식 발표는 제조사 주장, 논문은 메타데이터 수준, 일반 뉴스는 원문 미검증 제목 후보로 구분합니다.
 - '발표·출시 등 제목 후보만' 필터는 제목에 해당 표현이 있는 자료를 찾을 뿐, 실제 최초 발표·양산·성능 개선을 확인했다는 뜻이 아닙니다.
