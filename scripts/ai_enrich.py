@@ -54,7 +54,7 @@ def prioritized(rows):
  def take(predicate):
   found=next((r for r in eligible_rows if r["id"] not in seen and predicate(r)),None)
   if found:selected.append(found);seen.add(found["id"])
- for category in ("IGBT","SGT","SJ MOSFET"):
+ for category in ("IGBT","SJ MOSFET","SGT"):
   take(lambda r,c=category:r.get("kind")=="paper" and r.get("category")==c)
  # The four principal manufacturers are covered where fresh, relevant news exists.
  for company in ("infineon","st","onsemi","rohm"):
