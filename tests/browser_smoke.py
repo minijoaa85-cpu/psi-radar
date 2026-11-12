@@ -48,6 +48,19 @@ def check_page(browser,engine,screen,width,height,url):
         assert sizes["overflow"]<=4,f"Horizontal document overflow: {sizes}"
         nav.locator('button[data-tab="weekly"]').click()
         assert page.locator("#weekly").is_visible()
+        nav.locator('button[data-tab="market"]').click()
+        assert page.locator("#market").is_visible()
+        page.locator(".finance-card").first.wait_for(timeout=12000)
+        assert page.locator(".finance-card").count()==4
+        page.locator("#finance-company").select_option("st")
+        assert page.locator(".finance-card").count()==1
+        assert "STMicroelectronics" in page.locator(".finance-card h3").first.inner_text()
+        page.locator("#finance-company").select_option("rohm")
+        assert "6개월 누적" in page.locator(".finance-card").first.inner_text()
+        page.locator("#finance-metric").select_option("profitability")
+        assert page.locator(".finance-bars").is_visible()
+        page.locator("#finance-company").select_option("")
+        assert page.locator(".finance-card").count()==4
         nav.locator('button[data-tab="integrated"]').click()
         assert page.locator("#integrated").is_visible()
         page.locator("#intel-categories button").first.wait_for(timeout=12000)
