@@ -178,10 +178,26 @@
 .brief-card .brief-caution{font-size:11px;color:#e4ca9f}
 .brief-card .brief-link{display:inline-block;margin-top:4px;font-size:12px}
 @media(max-width:720px){.brief-feed{grid-template-columns:1fr}}
+
+/* V1.6 Local-only personal watchlist */
+.mywatch-config{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0}
+.mywatch-config>div{min-width:0;border:1px solid var(--border);background:#10243c;border-radius:9px;padding:11px}
+.mywatch-config h3{font-size:14px;margin:0 0 6px}
+.mywatch-toggles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-top:10px}
+.mywatch-toggles label{display:flex;align-items:center;gap:7px;border:1px solid #31516d;border-radius:7px;padding:8px;background:#193452;font-size:12px;cursor:pointer;min-width:0}
+.mywatch-toggles label:has(input:checked){background:#255d7e;border-color:#79bcec}
+.mywatch-toggles input{accent-color:#73c6fb}
+.mywatch-actions,.mywatch-filter{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin:10px 0}
+.mywatch-actions button{padding:8px 12px;border:1px solid #5c92bf;border-radius:7px;background:#1d5a88;color:#f0f8ff;cursor:pointer;font-size:12px}
+.mywatch-actions button.quiet{background:#162e47;border-color:#36546e}
+.mywatch-filter{padding:6px 0}
+#watch-status{line-height:1.45}
+@media(max-width:750px){.mywatch-config{grid-template-columns:1fr}}
+@media(max-width:480px){.mywatch-toggles{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style></head><body>
 <header><small>POWER SEMICONDUCTOR INTELLIGENCE</small><h1>◈ PSI Radar</h1><div class="muted">GaN · SiC · IGBT · SJ MOSFET · UD/UG SGT | 글로벌 기술 · 논문 · 경쟁사 동향</div><div id="last" class="mini">데이터 상태 확인 중...</div></header>
 <main><nav id="nav" class="nav" aria-label="메뉴">
-<button data-tab="overview" class="active">Overview</button><button data-tab="briefing">Briefing</button><button data-tab="technology">Technology</button><button data-tab="research">Research</button><button data-tab="weekly">Weekly Reports</button><button data-tab="competitors">Competitors</button><button data-tab="architecture">Architecture</button><button data-tab="benchmark">Benchmark</button><button data-tab="market">Market & Finance</button><button data-tab="sources">Data Quality</button></nav>
+<button data-tab="overview" class="active">Overview</button><button data-tab="watchlist">My Watch</button><button data-tab="briefing">Briefing</button><button data-tab="technology">Technology</button><button data-tab="research">Research</button><button data-tab="weekly">Weekly Reports</button><button data-tab="competitors">Competitors</button><button data-tab="architecture">Architecture</button><button data-tab="benchmark">Benchmark</button><button data-tab="market">Market & Finance</button><button data-tab="sources">Data Quality</button></nav>
 <section id="overview"><div class="grid"><article class="panel stat"><span>수집된 자료 (연구 12개월 포함)</span><b id="total">0</b></article><article class="panel stat"><span>GaN</span><b id="gan">0</b></article><article class="panel stat"><span>SiC</span><b id="sic">0</b></article><article class="panel stat"><span>IGBT</span><b id="igbt">0</b></article><article class="panel stat"><span>논문</span><b id="papers">0</b></article></div><div class="two"><article class="panel"><h2>주간 핵심 업데이트</h2><div id="highlights" class="feed"></div></article><article class="panel"><h2>분석 우선순위</h2><div class="tiles"><article><b>GaN · 40%</b><p>E-mode, Dynamic R(on), 데이터센터 전원</p></article><article><b>SiC · 30%</b><p>Trench, Gate Oxide, 200mm Wafer</p></article><article><b>IGBT · 10%</b><p>Trench, Field Stop, VCE(sat), Eoff</p></article><article><b>SJ · 10%</b><p>Pillar Balance, Qrr, Softness, BV</p></article><article><b>SGT · 10%</b><p>Shield gate, Qgd, Eoss, Cell Pitch</p></article></div><p class="mini">비중은 기술 관심도 기준이며 실제 수집 비중을 보장하지 않습니다.</p></article></div></section>
 <section id="technology" class="hidden"><article class="panel"><h2>Technology Watch</h2><div class="filters"><select id="cat"><option value="">전체 기술</option><option>GaN</option><option>SiC</option><option>IGBT</option><option>SJ MOSFET</option><option>SGT</option></select><select id="kind"><option value="">뉴스 + 논문</option><option value="news">뉴스</option><option value="paper">논문</option></select><input id="search" placeholder="키워드·회사·기술 검색" aria-label="검색"></div><div id="records" class="feed"></div></article></section>
 <section id="research" class="hidden"><article class="panel"><h2>학술 논문 | Research Intelligence</h2><p class="muted">최근 45일 학술지 + IGBT·SJ MOSFET·SGT 최근 12개월 집중 검색 · Crossref / OpenAlex DOI · 원문 검토 전</p><div class="filters"><select id="research-cat" aria-label="논문 기술 선택"><option value="">전체 논문</option><option>GaN</option><option>SiC</option><option>IGBT</option><option>SJ MOSFET</option><option>SGT</option></select></div><select id="research-relevance" aria-label="기술 관련성 수준"><option value="0">전체 관련성</option><option value="70">높음 70점 이상</option><option value="45">보통 45점 이상</option></select><p class="mini">관련성은 제목·초록 기술 키워드 기반의 자동 추정값입니다. 전문가 검증 결과가 아닙니다.</p><div id="research-counts" class="mini"></div><div id="research-feed" class="feed"></div></article></section>
@@ -210,6 +226,22 @@
 <div class="portal-card" data-company="basicsemi"><strong>BASiC Semiconductor</strong><small class="portal-count">공식 원문 0건</small><a href="https://www.basicsemi.com/" target="_blank" rel="noopener noreferrer">공식 중국어 자료 ↗</a></div>
 </div><p class="mini">포털 링크는 탐색용이며 해당 사이트의 전체 자료가 자동 수집되는 것은 아닙니다.</p>
 </details>
+</article></section>
+<section id="watchlist" class="hidden"><article class="panel">
+<h2>My Watch · 내 관심 기술 모니터링</h2>
+<p class="muted">관심 기술과 제조사를 선택하면 최근 30일의 관련 브리핑만 볼 수 있습니다. 선택 내용은 <strong>이 브라우저에만 저장</strong>되며 계정·클라우드 동기화 또는 알림 전송은 제공하지 않습니다.</p>
+<div class="mywatch-config">
+<div><h3>관심 기술</h3><p class="mini">여러 기술을 선택할 수 있습니다. SJ MOSFET 다음은 SGT입니다.</p>
+<div id="watch-techs" class="mywatch-toggles"></div></div>
+<div><h3>관심 제조사</h3><p class="mini">제목 또는 출처 메타데이터에서 기업명이 확인된 자료만 제조사 기준으로 분류됩니다.</p>
+<div id="watch-companies" class="mywatch-toggles"></div></div>
+</div>
+<div class="mywatch-actions"><button id="watch-save" type="button">이 브라우저에 저장</button><button id="watch-reset" type="button" class="quiet">선택 초기화</button><span id="watch-status" class="mini" role="status">선택한 항목은 저장하기 전까지 현재 페이지에만 적용됩니다.</span></div>
+<div class="mywatch-filter"><label class="brief-checkbox"><input type="checkbox" id="watch-official-only"> 제조사 공식 발표만 보기</label><label class="brief-checkbox"><input type="checkbox" id="watch-require-company"> 제조사명이 확인된 자료만 보기</label></div>
+<div id="watch-kpi" class="competitor-kpis"></div>
+<div class="brief-guide">먼저 공식 발표, 다음 논문, 일반 뉴스 순으로 보여줍니다. 관심 제조사를 선택하면 해당 제조사가 언급된 자료만 볼 수 있습니다. <strong>제조사 이름이 나온 기사가 곧 공식 발표라는 뜻은 아닙니다.</strong></div>
+<div id="watch-feed" class="brief-feed" aria-live="polite">브리핑 자료와 사용자 선택을 불러오는 중입니다.</div>
+<details class="portal-details"><summary>선택·개인정보·알림 동작 안내</summary><p class="mini">이 화면은 브라우저의 localStorage만 사용하며 서버로 개인 설정을 보내지 않습니다. 시크릿 모드, 브라우저 데이터 삭제 또는 다른 기기에서는 설정이 유지되지 않을 수 있습니다. 현재 실시간 푸시 알림·메일·클라우드 계정 저장 기능은 없습니다. 공개 자료의 제목 기반 분류이므로 관련 기업 자료가 누락될 수 있습니다.</p></details>
 </article></section>
 <section id="briefing" class="hidden"><article class="panel">
 <h2>Technology Briefing · 지금 읽어볼 기술 변화</h2>
@@ -606,6 +638,82 @@ fetch("topic_trends/index.json?nocache="+Date.now()).then(r=>{if(!r.ok)throw Err
  TREND_SNAPSHOTS=entries;
  if(SELECTED_TOPIC)renderTopicTrends(SELECTED_TOPIC);
 }).catch(()=>{el("arch-trend-coverage").textContent="동향 기록 없음";el("arch-trend-chart").textContent="아직 보관된 동향 기록이 없거나 불러오지 못했습니다.";});
+const WATCH_TECH_ORDER=["GaN","SiC","IGBT","SJ MOSFET","SGT"];
+const WATCH_STORAGE_KEY="psi-radar-watch-v1";
+const WATCH_COMPANIES=[
+["infineon","Infineon"],["st","STMicroelectronics"],["onsemi","onsemi"],["rohm","ROHM"],
+["mitsubishi","Mitsubishi Electric"],["fuji","Fuji Electric"],["toshiba","Toshiba"],["innoscience","Innoscience"],
+["sanan","Sanan"],["crmicro","CR Micro"],["basicsemi","BASiC Semiconductor"],["navitas","Navitas"],
+["epc","EPC"],["wolfspeed","Wolfspeed"]
+];
+const WATCH_COMPANY_IDS=new Set(WATCH_COMPANIES.map(([id])=>id));
+let WATCH_SAVED={techs:[],companies:[]};
+function normalizeWatchPrefs(obj){
+ const techs=Array.isArray(obj?.techs)?obj.techs:[];
+ const companies=Array.isArray(obj?.companies)?obj.companies:[];
+ return {techs:WATCH_TECH_ORDER.filter(id=>techs.includes(id)),
+         companies:WATCH_COMPANIES.map(([id])=>id).filter(id=>companies.includes(id))};
+}
+function renderWatchControls(){
+ const watchlabel=(group,id,name)=>'<label><input type="checkbox" data-watch-group="'+group+'" value="'+esc(id)+'"> '+esc(name)+'</label>';
+ el("watch-techs").innerHTML=WATCH_TECH_ORDER.map(k=>watchlabel("tech",k,k)).join("");
+ el("watch-companies").innerHTML=WATCH_COMPANIES.map(([id,name])=>watchlabel("company",id,name)).join("");
+ let saved;
+ try{saved=JSON.parse(localStorage.getItem(WATCH_STORAGE_KEY)||"null")}catch{saved=null;}
+ WATCH_SAVED=normalizeWatchPrefs(saved);
+ for(const input of document.querySelectorAll('[data-watch-group]')){
+  const key=input.dataset.watchGroup==="tech"?"techs":"companies";
+  input.checked=WATCH_SAVED[key].includes(input.value);
+ }
+}
+function watchSelections(){
+ const collect=group=>[...document.querySelectorAll('[data-watch-group="'+group+'"]:checked')].map(i=>i.value);
+ return normalizeWatchPrefs({techs:collect("tech"),companies:collect("company")});
+}
+function renderWatchFeed(){
+ const prefs=watchSelections();
+ const official=el("watch-official-only").checked,requireCompany=el("watch-require-company").checked;
+ let items=(BRIEFING.categories||[]).flatMap(cat=>cat.items||[]);
+ if(prefs.techs.length)items=items.filter(r=>prefs.techs.includes(r.category));
+ if(prefs.companies.length)items=items.filter(r=>(r.companies||[]).some(id=>prefs.companies.includes(id)));
+ if(requireCompany)items=items.filter(r=>(r.companies||[]).length>0);
+ if(official)items=items.filter(r=>r.source_level==="official");
+ items.sort((a,b)=>(b.reading_priority||0)-(a.reading_priority||0)||(b.date||"").localeCompare(a.date||""));
+ const count=key=>items.filter(r=>r.source_level===key).length;
+ el("watch-kpi").innerHTML=[["맞춤 자료",items.length+"건"],["공식 발표",count("official")+"건"],["논문",count("research")+"건"],["뉴스",count("news")+"건"]].map(([name,value])=>'<div class="kpi"><span>'+esc(name)+'</span><strong>'+esc(value)+'</strong></div>').join("");
+ const companyLabel=id=>WATCH_COMPANIES.find(x=>x[0]===id)?.[1]||id;
+ el("watch-feed").innerHTML=items.length?items.slice(0,30).map(r=>{
+  const companyNames=(r.companies||[]).filter(id=>WATCH_COMPANY_IDS.has(id)).map(companyLabel);
+  const caution=r.change_candidate?'<p class="brief-caution">제목에 발표·출시 관련 표현이 있습니다. 실제 신규성은 원문 미검증입니다.</p>':'';
+  return '<article class="brief-card"><span class="brief-tag '+esc(r.source_level)+'">'+esc(r.evidence_label)+'</span><span class="brief-tag">'+esc(r.category)+'</span>'+
+   '<h3><a href="'+esc(r.url)+'" target="_blank" rel="noopener noreferrer">'+esc(r.title)+'</a></h3>'+
+   '<div class="meta">'+esc(r.date)+' · '+esc(r.source)+'</div><p>'+esc(r.summary)+'</p>'+
+   '<p class="mini">'+(companyNames.length?'언급된 제조사: '+esc(companyNames.join(", ")):'확인된 제조사 언급 없음')+'</p>'+caution+
+   '<a class="brief-link" href="'+esc(r.url)+'" target="_blank" rel="noopener noreferrer">공개 원문 확인 ↗</a></article>';
+ }).join(""):'<div class="empty">현재 관심 조건과 일치하는 최근 30일 자료가 없습니다. 기술·제조사 선택을 넓혀 보세요. 선택 자료 0건은 관련 산업 활동이 없다는 의미가 아닙니다.</div>';
+}
+renderWatchControls();
+el("watch-techs").addEventListener("change",renderWatchFeed);
+el("watch-companies").addEventListener("change",renderWatchFeed);
+for(const id of ["watch-official-only","watch-require-company"])el(id).addEventListener("change",renderWatchFeed);
+el("watch-save").addEventListener("click",()=>{
+ const prefs=watchSelections();
+ try{
+  localStorage.setItem(WATCH_STORAGE_KEY,JSON.stringify(prefs));
+  WATCH_SAVED=prefs;
+  el("watch-status").textContent="이 브라우저에 저장했습니다. 다른 기기에는 동기화되지 않습니다.";
+ }catch{
+  el("watch-status").textContent="브라우저 저장소에 접근할 수 없어 저장하지 못했습니다. 현재 선택은 페이지가 열려 있는 동안만 적용됩니다.";
+ }
+});
+el("watch-reset").addEventListener("click",()=>{
+ for(const input of document.querySelectorAll('[data-watch-group]'))input.checked=false;
+ try{localStorage.removeItem(WATCH_STORAGE_KEY);el("watch-status").textContent="이 브라우저의 관심 선택을 초기화했습니다.";}catch{
+  el("watch-status").textContent="브라우저 저장소를 변경하지 못했습니다. 현재 화면의 선택만 초기화했습니다.";
+ }
+ WATCH_SAVED={techs:[],companies:[]};
+ renderWatchFeed();
+});
 let BRIEFING={categories:[]};
 function renderBriefing(){
  const category=el("brief-category").value,type=el("brief-type").value,changes=el("brief-change").checked;
@@ -627,8 +735,10 @@ for(const id of ["brief-category","brief-type","brief-change"])el(id).addEventLi
 fetch("briefing.json?nocache="+Date.now()).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(data=>{
  BRIEFING=data;
  renderBriefing();
+ renderWatchFeed();
 }).catch(e=>{
  el("brief-feed").textContent="브리핑 데이터 불러오기 실패: "+e.message;
+ el("watch-feed").textContent="맞춤 브리핑 자료를 불러오지 못했습니다: "+e.message;
 });
 let TECHMAP={topics:[]};let SELECTED_TOPIC=null;
 function renderTopicExplorer(category){
