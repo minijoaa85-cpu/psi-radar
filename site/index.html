@@ -784,7 +784,7 @@ function watchValidUrl(value){
 function normalizeWatchBookmark(b){
  if(!b||typeof b!=="object"||!watchValidUrl(b.url)||typeof b.title!=="string"||!b.title.trim()||b.title.length>260)return null;
  const category=WATCH_TECH_ORDER.includes(b.category)?b.category:"";
- const date=typeof b.date==="string"&&/^\\d{4}-\\d{2}-\\d{2}$/.test(b.date)?b.date:"";
+ const date=typeof b.date==="string"&&/^\d{4}-\d{2}-\d{2}$/.test(b.date)?b.date:"";
  const source=typeof b.source==="string"?b.source.slice(0,120):"";
  const savedAt=typeof b.saved_at==="string"&&b.saved_at.length<=36?b.saved_at:"";
  return {url:b.url,title:b.title.slice(0,260),category,date,source,saved_at:savedAt};
