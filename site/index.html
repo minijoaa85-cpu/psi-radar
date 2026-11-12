@@ -106,7 +106,7 @@
 <input id="bench-search" placeholder="제품 번호·구조 검색" aria-label="벤치마크 검색">
 </div>
 <div id="bench-kpi" class="competitor-kpis"></div>
-<div id="bench-message" class="mini"></div>
+<div id="bench-message" class="mini"></div><div class="competitor-block" style="margin:10px 0"><h3>FOM 검토 · RDS(on) × Qg / RDS(on) × Qgd</h3><p class="mini">제품 페이지의 typ. 값을 단순 곱한 산술 참고값이며, 서로 다른 측정 조건의 제품간 효율·기술 우열을 뜻하지 않습니다. 정규화 FOM은 상세 조건 검증 전까지 제공하지 않습니다.</p><div id="bench-fom" class="benchmark-table-wrap"></div></div>
 <div class="competitor-block" style="margin:10px 0">
 <h3>제조사별 사양 비교 · 해당 기술에서만 비교</h3>
 <div class="benchmark-table-wrap"><table class="benchmark-table"><thead><tr><th>제조사 / 제품</th><th>구조 · 패키지</th><th>내압</th><th>RDS(on)<small>typ / max</small></th><th>Qg<small>typ</small></th><th>VCE(sat)<small>typ</small></th><th>Qrr<small>typ</small></th><th>공식 근거</th></tr></thead><tbody id="bench-rows"></tbody></table></div>
@@ -114,7 +114,7 @@
 <h2>제품 선택 비교</h2><p class="mini">같은 기술·정격·측정 조건에서만 FOM을 비교합니다. 비교할 수 없으면 이유를 표시합니다.</p>
 <div class="filters"><select id="bench-a" aria-label="제품 A 선택"></select><select id="bench-b" aria-label="제품 B 선택"></select></div>
 <div class="competitor-block" id="bench-compare"></div>
-<details class="portal-details"><summary>추가 검토 자료 · SGT/Field-Plate 기술 및 출처 정책</summary>
+<details class="portal-details"><summary>제품 등록·사양 변경 이력 보기</summary><div id="bench-history" class="mini">변경 이력 확인 중</div></details><details class="portal-details"><summary>추가 검토 자료 · SGT/Field-Plate 기술 및 출처 정책</summary>
 <p class="mini">양산형 SGT 제품의 공식 데이터시트에서 전기적 정격과 측정 조건을 모두 확인하기 전까지 SGT 수치는 임의 생성하지 않습니다.</p>
 <div id="bench-references"></div>
 <p class="mini">이 목록은 현재 검증된 제품의 수동 스냅샷입니다. 신제품 Datasheet 자동 전수 수집·실시간 가격 비교 기능은 아직 제공되지 않습니다.</p>
@@ -276,6 +276,18 @@ function benchmarkSpec(r,key){
  const v=r.specs?.[key];
  return v?esc(v.value+" "+v.unit)+'<small>'+esc(v.kind)+" · "+esc(v.condition||"시험 조건 미상")+'</small>':'<span class="mini">미확인</span>';
 }
+function benchIndicativeFom(r,key){
+ if(r.architecture!=="discrete"||!["GaN","SiC","SGT","SJ MOSFET"].includes(r.category))return null;
+ const a=r.specs?.rds_on,b=r.specs?.[key];
+ if(!a||!b||a.kind!=="typ"||b.kind!=="typ"||a.unit!=="mΩ"||b.unit!=="nC")return null;
+ return Math.round(a.value*b.value*100)/100;
+}
+function loadBenchHistory(){
+ fetch("benchmark_history/index.json?nocache="+Date.now()).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{
+  const x=d.entries||[];
+  el("bench-history").innerHTML=x.length?x.slice(0,12).map(v=>'<div class="item">'+esc(v.date)+' · 등록 '+esc(v.count)+'종 / 추가 '+esc(v.added)+'종 / 값 변경 '+esc(v.changed)+'종 / 제외 '+esc(v.removed)+'종 <a target="_blank" rel="noopener noreferrer" href="'+esc(v.file)+'">스냅샷 JSON ↗</a></div>').join(""):'<p>등록된 이력이 없습니다.</p>';
+ }).catch(()=>el("bench-history").textContent="이력 생성 전입니다. 다음 자동 실행에서 기록됩니다.");
+}
 function benchmarkOptions(){
  const cat=el("bench-category").value,company=el("bench-company").value,band=el("bench-voltage").value;
  const q=el("bench-search").value.trim().toLowerCase();
@@ -297,15 +309,15 @@ function compareBench(){
  if(!a||!b){target.innerHTML='<div class="mini">동일 기술의 비교 제품 2개를 선택해 주세요.</div>';return;}
  if(a.id===b.id){target.textContent="서로 다른 제품을 선택해 주세요.";return;}
  let info='<div class="pair"><div><strong>'+esc(a.company+" · "+a.part)+'</strong>'+esc(a.category+" / "+a.voltage.value+"V / "+a.package)+'</div><div><strong>'+esc(b.company+" · "+b.part)+'</strong>'+esc(b.category+" / "+b.voltage.value+"V / "+b.package)+'</div></div>';
- if(a.category!==b.category||a.voltage.value!==b.voltage.value){
-  target.innerHTML=info+'<p class="warning">기술군 또는 정격 전압이 다릅니다. FOM 직접 비교를 제공하지 않습니다.</p>';return;
+ if(a.category!==b.category||a.voltage.value!==b.voltage.value||a.architecture!==b.architecture){
+  target.innerHTML=info+'<p class="warning">기술군·정격 전압·단일 소자와 집적형 아키텍처가 일치하지 않아 FOM 직접 비교를 제공하지 않습니다.</p>';return;
  }
  const entries=[["rds_on","RDS(on) typ."],["rds_on_max","RDS(on) max."],["qg","Qg typ."],["vce_sat","VCE(sat) typ."],["qrr","Qrr typ."],["tsc","단락 내량"]];
  let lines=[];
  for(const [key,label] of entries){
   const av=a.specs?.[key],bv=b.specs?.[key];
   if(!av&&!bv)continue;
-  const same=Boolean(av&&bv&&av.kind===bv.kind&&av.unit===bv.unit&&av.condition&&bv.condition&&av.condition===bv.condition&&!/제품 페이지|데이터시트 참조|데이터시트 확인|미상/.test(av.condition));
+  const same=Boolean(av&&bv&&a.verification==="datasheet_table_verified"&&b.verification==="datasheet_table_verified"&&a.normalization_group&&a.normalization_group===b.normalization_group&&av.kind===bv.kind&&av.unit===bv.unit&&av.condition&&bv.condition&&av.condition===bv.condition&&!/제품 페이지|데이터시트 참조|데이터시트 확인|미상|미확인|확인 필요/.test(av.condition));
   lines.push('<div class="item"><strong>'+esc(label)+'</strong>'+esc(compactValue(av))+' / '+esc(compactValue(bv))+'<div class="mini">'+(same?'측정 조건 문자열 일치 · 원문 최종 검토 권장':'조건 또는 값 부재 · 정량 우열 비교 불가')+'</div></div>');
  }
  target.innerHTML=info+(lines.length?lines.join(""):'<p class="mini">현재 직접 비교 가능한 공통 항목이 없습니다.</p>')+
@@ -316,6 +328,7 @@ function renderBenchmark(){
  const types=new Set(rows.map(x=>x.category));
  const companies=new Set(rows.map(x=>x.company));
  el("bench-kpi").innerHTML=[["검증 제품",rows.length+"종"],["제조사",companies.size+"개"],["선택 기술",cat||"전체"],["측정 조건","개별 확인"]].map(([a,b])=>'<div class="kpi"><span>'+esc(a)+'</span><strong>'+esc(b)+'</strong></div>').join("");
+ el("bench-fom").innerHTML=rows.filter(r=>benchIndicativeFom(r,"qg")!==null||benchIndicativeFom(r,"qgd")!==null).map(r=>'<div class="item"><strong>'+esc(r.company+" · "+r.part)+'</strong><span class="tag">산술 참고값 · 미정규화</span><div class="mini">Ron(typ) × Qg(typ): '+esc(benchIndicativeFom(r,"qg")??"미확인")+' mΩ·nC / Ron(typ) × Qgd(typ): '+esc(benchIndicativeFom(r,"qgd")??"미확인")+' mΩ·nC</div></div>').join("")||'<div class="mini">현재 조건에서 산술 참고값을 만들 수 있는 부품이 없습니다. Qgd는 원문 조건 미확인으로 비워 둡니다.</div>';
  el("bench-message").textContent="필터 적용 "+rows.length+"종 · 빈 사양은 미확인, typ과 max는 서로 다른 기준 · 1차 출처는 공식 제조사 제품 페이지";
  el("bench-rows").innerHTML=rows.length?rows.map(r=>
   '<tr><td><strong>'+esc(r.company)+'<small>'+esc(r.part)+'</small></strong><span class="chip">'+esc(r.status||"상태 미확인")+'</span></td>'+
@@ -334,7 +347,7 @@ function loadBenchmark(){
   const companyNames=[...new Set(data.devices.map(r=>r.company))].sort();
   el("bench-company").innerHTML='<option value="">전체 제조사</option>'+companyNames.map(name=>'<option>'+esc(name)+'</option>').join("");
   el("bench-references").innerHTML=(data.research_references||[]).map(r=>'<p><strong>'+esc(r.category)+" · "+esc(r.name)+'</strong> <a target="_blank" rel="noopener noreferrer" href="'+esc(r.url)+'">연구 원문 보기 ↗</a><span class="mini"> · '+esc(r.note)+'</span></p>').join("");
-  renderBenchmark();
+  renderBenchmark();loadBenchHistory();
  }).catch(e=>{el("bench-message").textContent="벤치마크 데이터 불러오기 실패: "+e.message;});
 }
 for(const id of ["bench-category","bench-company","bench-voltage","bench-search"])el(id).addEventListener("input",renderBenchmark);
