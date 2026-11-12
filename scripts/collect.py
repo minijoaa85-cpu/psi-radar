@@ -110,6 +110,12 @@ def main():
  from scripts.competitors import collect_competitors,tag_records,summarize_companies
  extra,company_errors=collect_competitors(session)
  rows.extend(extra);errors.extend(company_errors)
+ # Verified, dated manufacturer original articles are maintained reference records,
+ # not dynamically discovered releases. Do not conflate with 7-day news.
+ from scripts.official_sources import build_official_records
+ official=build_official_records(now.date())
+ rows.extend(official)
+ print("Verified official reference records:",len(official))
  rows=unique(rows)
  # Preserve existing reviewed metadata when providers are degraded, without falsely labeling it new.
  previous={}
@@ -139,7 +145,7 @@ def main():
  tag_records(rows)
  rows.sort(key=lambda x:(x.get("date") or "",x.get("relevance_score") or 0),reverse=True)
  if not rows:raise RuntimeError("No metadata collected; retain last successful data. "+str(errors))
- payload={"schema_version":6,"generated_at":now.isoformat(),"window_start":start,"paper_window_start":paper_start,"focused_paper_window_start":(now-dt.timedelta(days=365)).date().isoformat(),"mode":"live_metadata","records":rows[:220],"competitor_stats":summarize_companies(rows[:220]),"counts":{c:sum(r["category"]==c for r in rows) for c in TECH},"errors":errors,"sources":["Crossref","OpenAlex","Google News RSS"],"financials":[],"product_specs":[],"notice":"서지·뉴스 메타데이터 기반. 원문 검토 전의 결론이나 금융 실적을 확정하지 않습니다."}
+ payload={"schema_version":7,"generated_at":now.isoformat(),"window_start":start,"paper_window_start":paper_start,"focused_paper_window_start":(now-dt.timedelta(days=365)).date().isoformat(),"mode":"live_metadata","records":rows[:220],"competitor_stats":summarize_companies(rows[:220]),"counts":{c:sum(r["category"]==c for r in rows) for c in TECH},"errors":errors,"sources":["Crossref","OpenAlex","Google News RSS","Verified Manufacturer Official Articles"],"financials":[],"product_specs":[],"notice":"서지·뉴스 메타데이터 기반. 원문 검토 전의 결론이나 금융 실적을 확정하지 않습니다."}
  OUT.parent.mkdir(parents=True,exist_ok=True)
  OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2),encoding="utf-8")
  print("Collected",len(rows),"records, errors:",len(errors),"previous papers retained:",reused)
