@@ -61,6 +61,12 @@ def check_page(browser,engine,screen,width,height,url):
         assert page.locator(".finance-bars").is_visible()
         page.locator("#finance-company").select_option("")
         assert page.locator(".finance-card").count()==4
+        # IR observations are separate from verified financial metrics.
+        page.locator("#finance-ir-status").wait_for(timeout=15000)
+        assert "최근 IR 목록 점검" in page.locator("#finance-ir-status").inner_text()
+        assert page.locator("#finance-ir-sources .finance-ir-source").count()==4
+        page.locator("#finance-show-known").check()
+        page.locator("#finance-show-known").uncheck()
         nav.locator('button[data-tab="integrated"]').click()
         assert page.locator("#integrated").is_visible()
         page.locator("#intel-categories button").first.wait_for(timeout=12000)
