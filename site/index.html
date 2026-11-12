@@ -102,14 +102,14 @@
 <div class="filters">
 <select id="bench-category" aria-label="기술 선택"><option value="">전체 기술</option><option>GaN</option><option>SiC</option><option>IGBT</option><option>SGT</option><option>SJ MOSFET</option></select>
 <select id="bench-company" aria-label="제조사 선택"><option value="">전체 제조사</option></select>
-<select id="bench-voltage" aria-label="전압 등급 선택"><option value="">전체 전압</option><option value="LV">LV (≤100V)</option><option value="MV">MV (101~400V)</option><option value="HV">HV (>400V)</option></select>
+<select id="bench-architecture" aria-label="소자 구성 선택"><option value="">전체 구성</option><option value="discrete">Discrete / Bare die</option><option value="integrated_half_bridge">집적형 GaN</option></select><select id="bench-voltage" aria-label="전압 등급 선택"><option value="">전체 전압</option><option value="LV">LV (≤100V)</option><option value="MV">MV (101~400V)</option><option value="HV">HV (>400V)</option></select>
 <input id="bench-search" placeholder="제품 번호·구조 검색" aria-label="벤치마크 검색">
 </div>
 <div id="bench-kpi" class="competitor-kpis"></div>
 <div id="bench-message" class="mini"></div><div class="competitor-block" style="margin:10px 0"><h3>FOM 검토 · RDS(on) × Qg / RDS(on) × Qgd</h3><p class="mini">제품 페이지의 typ. 값을 단순 곱한 산술 참고값이며, 서로 다른 측정 조건의 제품간 효율·기술 우열을 뜻하지 않습니다. 정규화 FOM은 상세 조건 검증 전까지 제공하지 않습니다.</p><div id="bench-fom" class="benchmark-table-wrap"></div></div>
 <div class="competitor-block" style="margin:10px 0">
 <h3>제조사별 사양 비교 · 해당 기술에서만 비교</h3>
-<div class="benchmark-table-wrap"><table class="benchmark-table"><thead><tr><th>제조사 / 제품</th><th>구조 · 패키지</th><th>내압</th><th>RDS(on)<small>typ / max</small></th><th>Qg<small>typ</small></th><th>VCE(sat)<small>typ</small></th><th>Qrr<small>typ</small></th><th>공식 근거</th></tr></thead><tbody id="bench-rows"></tbody></table></div>
+<div class="benchmark-table-wrap"><table class="benchmark-table"><thead><tr><th>제조사 / 제품</th><th>구조 · 패키지</th><th>내압</th><th>RDS(on)<small>typ / max</small></th><th>Qg<small>typ / 미지정</small></th><th>Qoss<small>typ / 미지정</small></th><th>VCE(sat)<small>typ</small></th><th>Qrr<small>typ</small></th><th>공식 근거</th></tr></thead><tbody id="bench-rows"></tbody></table></div>
 </div>
 <h2>제품 선택 비교</h2><p class="mini">같은 기술·정격·측정 조건에서만 FOM을 비교합니다. 비교할 수 없으면 이유를 표시합니다.</p>
 <div class="filters"><select id="bench-a" aria-label="제품 A 선택"></select><select id="bench-b" aria-label="제품 B 선택"></select></div>
@@ -289,9 +289,9 @@ function loadBenchHistory(){
  }).catch(()=>el("bench-history").textContent="이력 생성 전입니다. 다음 자동 실행에서 기록됩니다.");
 }
 function benchmarkOptions(){
- const cat=el("bench-category").value,company=el("bench-company").value,band=el("bench-voltage").value;
+ const cat=el("bench-category").value,company=el("bench-company").value,band=el("bench-voltage").value,architecture=el("bench-architecture").value;
  const q=el("bench-search").value.trim().toLowerCase();
- return (BENCH.devices||[]).filter(r=>(!cat||r.category===cat)&&(!company||r.company===company)&&(!band||benchmarkVoltageBand(r.voltage?.value)===band)&&(!q||(r.part+" "+r.generation+" "+r.structure+" "+r.company).toLowerCase().includes(q)));
+ return (BENCH.devices||[]).filter(r=>(!cat||r.category===cat)&&(!company||r.company===company)&&(!band||benchmarkVoltageBand(r.voltage?.value)===band)&&(!architecture||r.architecture===architecture)&&(!q||(r.part+" "+r.generation+" "+r.structure+" "+r.company).toLowerCase().includes(q)));
 }
 function preserveCompareChoices(rows){
  for(const id of ["bench-a","bench-b"]){
@@ -312,12 +312,12 @@ function compareBench(){
  if(a.category!==b.category||a.voltage.value!==b.voltage.value||a.architecture!==b.architecture){
   target.innerHTML=info+'<p class="warning">기술군·정격 전압·단일 소자와 집적형 아키텍처가 일치하지 않아 FOM 직접 비교를 제공하지 않습니다.</p>';return;
  }
- const entries=[["rds_on","RDS(on) typ."],["rds_on_max","RDS(on) max."],["qg","Qg typ."],["vce_sat","VCE(sat) typ."],["qrr","Qrr typ."],["tsc","단락 내량"]];
+ const entries=[["rds_on","RDS(on) typ."],["rds_on_max","RDS(on) max."],["qg","Qg"],["qoss","Qoss"],["vce_sat","VCE(sat) typ."],["qrr","Qrr typ."],["tsc","단락 내량"]];
  let lines=[];
  for(const [key,label] of entries){
   const av=a.specs?.[key],bv=b.specs?.[key];
   if(!av&&!bv)continue;
-  const same=Boolean(av&&bv&&a.verification==="datasheet_table_verified"&&b.verification==="datasheet_table_verified"&&a.normalization_group&&a.normalization_group===b.normalization_group&&av.kind===bv.kind&&av.unit===bv.unit&&av.condition&&bv.condition&&av.condition===bv.condition&&!/제품 페이지|데이터시트 참조|데이터시트 확인|미상|미확인|확인 필요/.test(av.condition));
+  const same=Boolean(av&&bv&&av.kind!=="unspecified"&&av.kind===bv.kind&&av.unit===bv.unit&&a.verification==="datasheet_table_verified"&&b.verification==="datasheet_table_verified"&&av.test_conditions&&bv.test_conditions&&JSON.stringify(av.test_conditions)===JSON.stringify(bv.test_conditions));
   lines.push('<div class="item"><strong>'+esc(label)+'</strong>'+esc(compactValue(av))+' / '+esc(compactValue(bv))+'<div class="mini">'+(same?'측정 조건 문자열 일치 · 원문 최종 검토 권장':'조건 또는 값 부재 · 정량 우열 비교 불가')+'</div></div>');
  }
  target.innerHTML=info+(lines.length?lines.join(""):'<p class="mini">현재 직접 비교 가능한 공통 항목이 없습니다.</p>')+
@@ -335,9 +335,9 @@ function renderBenchmark(){
   '<td>'+esc(r.structure)+'<small>'+esc(r.package)+'</small></td>'+
   '<td>'+esc(r.voltage.value+" "+r.voltage.unit)+'<small>'+esc(r.voltage.kind+" · "+r.voltage.condition)+'</small></td>'+
   '<td>'+benchmarkSpec(r,"rds_on")+'<small>MAX:</small>'+benchmarkSpec(r,"rds_on_max")+'</td>'+
-  '<td>'+benchmarkSpec(r,"qg")+'</td><td>'+benchmarkSpec(r,"vce_sat")+'</td><td>'+benchmarkSpec(r,"qrr")+'</td>'+
-  '<td><a href="'+esc(r.url)+'" target="_blank" rel="noopener noreferrer">공식 제품 ↗</a></td></tr>'
- ).join(""):'<tr><td colspan="8">현재 선택 조건에서 사양을 검증한 양산 제품이 없습니다. 다른 조건을 선택하거나 아래 연구 참고자료를 확인하세요.</td></tr>';
+  '<td>'+benchmarkSpec(r,"qg")+'</td><td>'+benchmarkSpec(r,"qoss")+'</td><td>'+benchmarkSpec(r,"vce_sat")+'</td><td>'+benchmarkSpec(r,"qrr")+'</td>'+
+  '<td><a href="'+esc(r.url)+'" target="_blank" rel="noopener noreferrer">원문 ↗</a><small>'+esc(r.verification==="datasheet_table_verified"?"PDF 표 확인":"제품 페이지")+' · '+esc(r.datasheet_revision||"Revision 미확인")+'</small></td></tr>'
+ ).join(""):'<tr><td colspan="9">현재 선택 조건에서 사양을 검증한 양산 제품이 없습니다. 다른 조건을 선택하거나 아래 연구 참고자료를 확인하세요.</td></tr>';
  preserveCompareChoices(rows);
  compareBench();
 }
@@ -350,7 +350,7 @@ function loadBenchmark(){
   renderBenchmark();loadBenchHistory();
  }).catch(e=>{el("bench-message").textContent="벤치마크 데이터 불러오기 실패: "+e.message;});
 }
-for(const id of ["bench-category","bench-company","bench-voltage","bench-search"])el(id).addEventListener("input",renderBenchmark);
+for(const id of ["bench-category","bench-company","bench-architecture","bench-voltage","bench-search"])el(id).addEventListener("input",renderBenchmark);
 for(const id of ["bench-a","bench-b"])el(id).addEventListener("change",compareBench);
 loadBenchmark();
 
