@@ -9,13 +9,13 @@ from collections import Counter
 ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/"site"/"benchmark.json"
 DEST=ROOT/"site"/"architecture.json"
-CATS=("GaN","SiC","IGBT","SGT","SJ MOSFET")
+CATS=("GaN","SiC","IGBT","SJ MOSFET","SGT")
 OVERVIEW={
  "GaN":{"intro":"E-mode HEMT 및 집적형 GaN 전력 스테이지","physics":["Dynamic RDS(on)","Gate reliability","Qg, Qoss / Eoss","기생 인덕턴스"],"watch":["Gate stack·2DEG 안정성","Buffer 및 Trapping","Package 및 구동 통합"]},
  "SiC":{"intro":"Trench·Planar SiC MOSFET 구조와 전력 손실","physics":["RDS(on) vs Tj","Gate oxide","Short-circuit withstand","Body diode"],"watch":["채널 이동도 / JFET","Oxide 신뢰성","Trench corner 전계"]},
  "IGBT":{"intro":"Field-stop·Trench 셀, 양극성 캐리어 손실 특성","physics":["VCE(sat) vs Eoff","SCWT","Turn-off tail","FRD"],"watch":["Field-stop profile","Lifetime control","Trench cell 설계"]},
- "SGT":{"intro":"Shielded Gate Trench / Field Plate 기반 저압 MOSFET","physics":["RDS(on)","Qgd, Qoss","Shield electrode bias","Cell pitch"],"watch":["Gate–shield capacitance","Split gate 구조","저압 디바이스 FOM"]},
  "SJ MOSFET":{"intro":"Superjunction Pillar Charge Balance 및 Body Diode","physics":["P/N pillar balance","BVDSS / Ron","Qrr 및 Softness","EAS"],"watch":["Pillar 농도 경사","Edge termination","Reverse recovery"]},
+ "SGT":{"intro":"Shielded Gate Trench / Field Plate 기반 저압 MOSFET","physics":["RDS(on)","Qgd, Qoss","Shield electrode bias","Cell pitch"],"watch":["Gate–shield capacitance","Split gate 구조","저압 디바이스 FOM"]},
 }
 def structure(row):
  cat=row.get("category");title=str(row.get("structure") or "").lower()
