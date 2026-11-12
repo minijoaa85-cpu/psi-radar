@@ -1,0 +1,292 @@
+{
+  "schema_version": 1,
+  "benchmark_reviewed_on": "2026-11-12",
+  "categories": [
+    {
+      "category": "GaN",
+      "intro": "E-mode HEMT 및 집적형 GaN 전력 스테이지",
+      "physics": [
+        "Dynamic RDS(on)",
+        "Gate reliability",
+        "Qg, Qoss / Eoss",
+        "기생 인덕턴스"
+      ],
+      "watch": [
+        "Gate stack·2DEG 안정성",
+        "Buffer 및 Trapping",
+        "Package 및 구동 통합"
+      ],
+      "count": 12,
+      "companies": [
+        "Infineon",
+        "Innoscience",
+        "STMicroelectronics"
+      ],
+      "structures": {
+        "E-mode HEMT": 10,
+        "드라이버 통합형": 2
+      },
+      "official_sample_ids": [
+        "gan-infineon-igot",
+        "gan-infineon-igt",
+        "gan-infineon-iglt",
+        "gan-st-mastergan6",
+        "gan-inno-650d080",
+        "gan-inno-700tk130",
+        "gan-inno-700da190",
+        "gan-inno-900d240",
+        "gan-inno-900d600",
+        "gan-inno-060eb009",
+        "gan-inno-100ea035",
+        "gan-st-mastergan7"
+      ],
+      "official_sources": [
+        {
+          "company": "Infineon",
+          "part": "IGOT65R055D2",
+          "url": "https://www.infineon.com/part/IGOT65R055D2",
+          "structure": "E-mode HEMT"
+        },
+        {
+          "company": "Infineon",
+          "part": "IGT65R055D2",
+          "url": "https://www.infineon.com/part/IGT65R055D2",
+          "structure": "E-mode HEMT"
+        },
+        {
+          "company": "Infineon",
+          "part": "IGLT65R055D2",
+          "url": "https://www.infineon.com/part/IGLT65R055D2",
+          "structure": "E-mode HEMT"
+        },
+        {
+          "company": "STMicroelectronics",
+          "part": "MASTERGAN6",
+          "url": "https://www.st.com/en/power-management/mastergan6.html",
+          "structure": "드라이버 통합형"
+        },
+        {
+          "company": "Innoscience",
+          "part": "INN650D080BS",
+          "url": "https://www.innoscience.com/products/hv-gan-hemt/501",
+          "structure": "E-mode HEMT"
+        },
+        {
+          "company": "Innoscience",
+          "part": "INN700TK130E",
+          "url": "https://www.innoscience.com/products/hv-gan-hemt/1770",
+          "structure": "E-mode HEMT"
+        },
+        {
+          "company": "Innoscience",
+          "part": "INN700DA190B",
+          "url": "https://www.innoscience.com/products/hv-gan-hemt/492",
+          "structure": "E-mode HEMT"
+        },
+        {
+          "company": "Innoscience",
+          "part": "INN900D240B",
+          "url": "https://www.innoscience.com/products/hv-gan-hemt/7627",
+          "structure": "E-mode HEMT"
+        },
+        {
+          "company": "Innoscience",
+          "part": "INN900D600B",
+          "url": "https://www.innoscience.com/products/hv-gan-hemt/7628",
+          "structure": "E-mode HEMT"
+        },
+        {
+          "company": "Innoscience",
+          "part": "INN060EB009DAD",
+          "url": "https://www.innoscience.com/products/lv-gan-hemt/17387",
+          "structure": "E-mode HEMT"
+        },
+        {
+          "company": "Innoscience",
+          "part": "INN100EA035A",
+          "url": "https://www.innoscience.com/products/lv-gan-hemt/516",
+          "structure": "E-mode HEMT"
+        },
+        {
+          "company": "STMicroelectronics",
+          "part": "MASTERGAN7",
+          "url": "https://www.st.com/en/power-management/mastergan7.html",
+          "structure": "드라이버 통합형"
+        }
+      ]
+    },
+    {
+      "category": "SiC",
+      "intro": "Trench·Planar SiC MOSFET 구조와 전력 손실",
+      "physics": [
+        "RDS(on) vs Tj",
+        "Gate oxide",
+        "Short-circuit withstand",
+        "Body diode"
+      ],
+      "watch": [
+        "채널 이동도 / JFET",
+        "Oxide 신뢰성",
+        "Trench corner 전계"
+      ],
+      "count": 4,
+      "companies": [
+        "ROHM",
+        "onsemi"
+      ],
+      "structures": {
+        "Trench SiC MOSFET": 1,
+        "Planar SiC MOSFET": 1,
+        "SiC MOSFET (구조 미상)": 2
+      },
+      "official_sample_ids": [
+        "sic-rohm-4036",
+        "sic-rohm-2080",
+        "sic-onsemi-ntc020",
+        "sic-onsemi-nvbg160"
+      ],
+      "official_sources": [
+        {
+          "company": "ROHM",
+          "part": "SCT4036KWATL",
+          "url": "https://www.rohm.com/products/sic-power-devices/sic-mosfet/sct4036kwa-product",
+          "structure": "Trench SiC MOSFET"
+        },
+        {
+          "company": "ROHM",
+          "part": "SCT2080KEGC11",
+          "url": "https://www.rohm.com/products/sic-power-devices/sic-mosfet/sct2080ke-product",
+          "structure": "Planar SiC MOSFET"
+        },
+        {
+          "company": "onsemi",
+          "part": "NTC020N120SC1",
+          "url": "https://www.onsemi.com/download/data-sheet/pdf/ntc020n120sc1-d.pdf",
+          "structure": "SiC MOSFET (구조 미상)"
+        },
+        {
+          "company": "onsemi",
+          "part": "NVBG160N120SC1",
+          "url": "https://www.onsemi.com/pdf/datasheet/nvbg160n120sc1-d.pdf",
+          "structure": "SiC MOSFET (구조 미상)"
+        }
+      ]
+    },
+    {
+      "category": "IGBT",
+      "intro": "Field-stop·Trench 셀, 양극성 캐리어 손실 특성",
+      "physics": [
+        "VCE(sat) vs Eoff",
+        "SCWT",
+        "Turn-off tail",
+        "FRD"
+      ],
+      "watch": [
+        "Field-stop profile",
+        "Lifetime control",
+        "Trench cell 설계"
+      ],
+      "count": 5,
+      "companies": [
+        "ROHM"
+      ],
+      "structures": {
+        "Field-stop Trench IGBT": 5
+      },
+      "official_sample_ids": [
+        "igbt-rohm-rgax",
+        "igbt-rohm-rgw",
+        "igbt-rohm-rgtv60",
+        "igbt-rohm-rgws00",
+        "igbt-rohm-rgw60auto"
+      ],
+      "official_sources": [
+        {
+          "company": "ROHM",
+          "part": "RGAX2TS65EHRC11",
+          "url": "https://www.rohm.com/products/igbt/field-stop-trench-igbt/rgax2ts65ehr-product",
+          "structure": "Field-stop Trench IGBT"
+        },
+        {
+          "company": "ROHM",
+          "part": "RGW50TS65GC11",
+          "url": "https://www.rohm.com/products/igbt/field-stop-trench-igbt/rgw50ts65-product",
+          "structure": "Field-stop Trench IGBT"
+        },
+        {
+          "company": "ROHM",
+          "part": "RGTV60TS65GC11",
+          "url": "https://www.rohm.com/products/igbt/field-stop-trench-igbt/rgtv60ts65-product",
+          "structure": "Field-stop Trench IGBT"
+        },
+        {
+          "company": "ROHM",
+          "part": "RGWS00TS65DGC13",
+          "url": "https://www.rohm.com/products/igbt/field-stop-trench-igbt/rgws00ts65-product",
+          "structure": "Field-stop Trench IGBT"
+        },
+        {
+          "company": "ROHM",
+          "part": "RGW60TS65HRC11",
+          "url": "https://www.rohm.com/products/igbt/field-stop-trench-igbt/rgw60ts65hr-product",
+          "structure": "Field-stop Trench IGBT"
+        }
+      ]
+    },
+    {
+      "category": "SGT",
+      "intro": "Shielded Gate Trench / Field Plate 기반 저압 MOSFET",
+      "physics": [
+        "RDS(on)",
+        "Qgd, Qoss",
+        "Shield electrode bias",
+        "Cell pitch"
+      ],
+      "watch": [
+        "Gate–shield capacitance",
+        "Split gate 구조",
+        "저압 디바이스 FOM"
+      ],
+      "count": 0,
+      "companies": [],
+      "structures": {},
+      "official_sample_ids": [],
+      "official_sources": []
+    },
+    {
+      "category": "SJ MOSFET",
+      "intro": "Superjunction Pillar Charge Balance 및 Body Diode",
+      "physics": [
+        "P/N pillar balance",
+        "BVDSS / Ron",
+        "Qrr 및 Softness",
+        "EAS"
+      ],
+      "watch": [
+        "Pillar 농도 경사",
+        "Edge termination",
+        "Reverse recovery"
+      ],
+      "count": 1,
+      "companies": [
+        "Toshiba"
+      ],
+      "structures": {
+        "Superjunction MOSFET": 1
+      },
+      "official_sample_ids": [
+        "sj-toshiba-095"
+      ],
+      "official_sources": [
+        {
+          "company": "Toshiba",
+          "part": "TK095V65Z5",
+          "url": "https://toshiba.semicon-storage.com/ap-en/semiconductor/product/mosfets/400v-900v-mosfets/detail.TK095V65Z5.html",
+          "structure": "Superjunction MOSFET"
+        }
+      ]
+    }
+  ],
+  "method": "Curated device structure field; no cross-section microscopy or teardown verification",
+  "warning": "등록 제품 구성·공식 제조사 표기 기반입니다. 소자 내부 Pillar 농도, 공정 Recipe, 구조 성능 순위, 세대간 수율·면적 개선율은 검증하지 않았습니다."
+}
