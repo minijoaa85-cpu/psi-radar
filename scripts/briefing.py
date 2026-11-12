@@ -10,6 +10,7 @@ import re
 from pathlib import Path
 from urllib.parse import urlparse
 from scripts.tech_topics import TOPICS, news_matches, evidence_kind
+from scripts.competitors import COMPANIES
 
 ROOT=Path(__file__).resolve().parents[1]
 DATA=ROOT/"site"/"data.json"
@@ -84,6 +85,7 @@ def build_briefing(records,generated):
     "change_candidate":candidate_change(str(r.get("title") or "")+" "+title),
     "change_caution":"신제품·변화 관련 표현이 제목에 있음. 신규성·성과는 원문 검토 전 미확인." if candidate_change(str(r.get("title") or "")+" "+title) else None,
     "summary":brief_summary(r),"topic_ids":[t["id"] for t in matched],
+    "companies":sorted({id for id in r.get("companies",[]) if isinstance(id,str) and id in COMPANIES}),
     "reading_priority":reading_score(r,age),
     "priority_basis":"공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
     "evidence_status":"manufacturer_claim" if type_=="official" else "metadata_only" if type_=="research" else "title_not_verified"})
