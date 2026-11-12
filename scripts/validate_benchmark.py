@@ -8,7 +8,7 @@ PATH=Path(__file__).resolve().parents[1]/"site"/"benchmark.json"
 CATEGORIES={"GaN","SiC","IGBT","SGT","SJ MOSFET"}
 METRICS={"rds_on","rds_on_max","qg","qrr","vce_sat","tsc","qgd","qoss","eoss","vth"}
 UNITS={"rds_on":"mΩ","rds_on_max":"mΩ","qg":"nC","qgd":"nC","qrr":"nC","qoss":"nC","vce_sat":"V","vth":"V","tsc":"µs","eoss":"µJ"}
-ALLOWED={"www.infineon.com","infineon.com","www.rohm.com","rohm.com","toshiba.semicon-storage.com","www.st.com","st.com"}
+ALLOWED={"www.infineon.com","infineon.com","www.rohm.com","rohm.com","toshiba.semicon-storage.com","www.st.com","st.com","www.innoscience.com","innoscience.com","www.onsemi.com","onsemi.com"}
 def load():
  return json.loads(PATH.read_text(encoding="utf-8"))
 def validate(data):
@@ -29,17 +29,28 @@ def validate(data):
    if key not in METRICS:errors.append("unrecognized metric: "+key)
    if not isinstance(v.get("value"),(int,float)) or v["value"]<0:errors.append("invalid metric value "+rid+" "+key)
    if v.get("unit")!=UNITS.get(key):errors.append("wrong unit "+rid+" "+key)
-   if v.get("kind") not in ("typ","max","min"):errors.append("missing typ/max/min "+rid+" "+key)
+   if v.get("kind") not in ("typ","max","min","unspecified"):errors.append("missing typ/max/min "+rid+" "+key)
    if not v.get("condition"):errors.append("missing measurement note "+rid+" "+key)
+   tc=v.get("test_conditions")
+   if tc is not None:
+    if not isinstance(tc,dict) or not tc:errors.append("empty test_conditions "+rid+" "+key)
+    else:
+     for field,value in tc.items():
+      if field not in ("vgs_v","vds_v","id_a","tj_c","rg_ohm","pulse_us"):errors.append("unknown test condition "+rid+" "+field)
+      if not isinstance(value,(int,float)):errors.append("non-numeric test condition "+rid+" "+field)
+   if v.get("evidence_page") is not None and (not isinstance(v["evidence_page"],int) or v["evidence_page"]<1):errors.append("invalid evidence page "+rid+" "+key)
  return errors
 def strictly_comparable(a,b,key):
  if a.get("category")!=b.get("category") or a.get("voltage",{}).get("value")!=b.get("voltage",{}).get("value") or a.get("architecture")!=b.get("architecture"):return False
  va=a.get("specs",{}).get(key);vb=b.get("specs",{}).get(key)
  if not va or not vb:return False
  if (va.get("kind"),va.get("unit"))!=(vb.get("kind"),vb.get("unit")):return False
+ if va.get("kind")=="unspecified":return False
+ if a.get("verification")!="datasheet_table_verified" or b.get("verification")!="datasheet_table_verified":return False
+ if not va.get("test_conditions") or va.get("test_conditions")!=vb.get("test_conditions"):return False
  # Product page partial/test-not-published conditions cannot establish equivalence.
  bad=("제품 페이지","데이터시트 참조","데이터시트 확인","미상","확인 필요","미확인")
- return va.get("condition")==vb.get("condition") and not any(word in str(va.get("condition","")) for word in bad)
+ return not any(word in str(va.get("condition",""))+str(vb.get("condition","")) for word in bad)
 
 def illustrative_fom(record,metric="qg"):
  """Arithmetic only: mOhm*nC; not temperature-normalized or comparable."""
