@@ -16,9 +16,17 @@ KST=ZoneInfo("Asia/Seoul")
 MAX_CARDS=5
 def kst_week(now):
  local=now.astimezone(KST)
- year,week,_=local.isocalendar()
- start=local.date()-dt.timedelta(days=local.weekday())
- return f"{year}-W{week:02d}",start.isoformat(),local.date().isoformat()
+ # Scheduled 06:00 Monday run covers the fully completed previous Mon-Sun.
+ # Manual and push builds on other days show an explicitly incomplete current week.
+ if local.weekday()==0 and local.hour<12:
+  end=local.date()-dt.timedelta(days=1)
+  complete=True
+ else:
+  end=local.date()
+  complete=local.weekday()==6
+ year,week,_=end.isocalendar()
+ start=end-dt.timedelta(days=end.weekday())
+ return f"{year}-W{week:02d}",start.isoformat(),end.isoformat(),complete
 def company_ids(row):
  # Use conservative title/official attribution from the collector; never infer an owner from keywords.
  return sorted({k for k in row.get("companies",[]) if isinstance(k,str) and k})
@@ -26,7 +34,7 @@ def build_snapshot(data,now=None):
  if now is None:
   now=dt.datetime.fromisoformat(data["generated_at"])
  if now.tzinfo is None:now=now.replace(tzinfo=dt.timezone.utc)
- wid,start,end=kst_week(now)
+ wid,start,end,complete=kst_week(now)
  entries=[]
  for topic in TOPICS:
   matched=[]
@@ -52,8 +60,8 @@ def build_snapshot(data,now=None):
                   "count":len(found),"source_kinds":dict(kinds),
                   "company_mentions":dict(sorted(counts.items(),key=lambda x:(-x[1],x[0]))),
                   "evidence":cards})
- return {"schema_version":1,"week":wid,"week_start":start,"week_to_date":end,
-         "generated_at":data.get("generated_at"),"coverage":"current_collection_publication_dates_only",
+ return {"schema_version":1,"week":wid,"week_start":start,"week_to_date":end,"complete_week":complete,
+         "generated_at":data.get("generated_at"),"coverage":"saved_collection_publication_date_snapshot",
          "topics":entries,"warning":"현재 주차에 발행일이 속하는 수집 표본만 집계합니다. 과거 주차 0건을 자동 생성하지 않으며, 기사 검색·재수집 범위가 달라질 수 있어 절대적인 업계 성장률이 아닙니다. 기업 집계는 제목에서 확인된 기업명 언급 횟수입니다."}
 def main():
  data=json.loads(SOURCE.read_text(encoding="utf-8"))
