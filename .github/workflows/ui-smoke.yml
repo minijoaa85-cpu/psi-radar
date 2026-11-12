@@ -8,6 +8,8 @@ on:
       - site/integrated.json
       - site/financials.json
       - scripts/validate_financials.py
+      - scripts/financial_ir_watch.py
+      - site/financial_ir_watch.json
       - tests/browser_smoke.py
       - .github/workflows/ui-smoke.yml
 
@@ -31,6 +33,7 @@ jobs:
         run: |
           pip install -r requirements.txt
           python -m scripts.validate_financials
+          python -m scripts.financial_ir_watch
           python -m scripts.architecture
           python -m scripts.tech_topics
           python -m scripts.briefing
