@@ -5,6 +5,17 @@ from scripts.integrated import TECHNOLOGIES, make_integrated
 ROOT=Path(__file__).resolve().parents[1]
 HTML=(ROOT/"site"/"index.html").read_text(encoding="utf-8")
 
+def fixtures():
+    briefing={"generated_at":"2026-11-12T06:00:00+00:00","categories":[{"category":"GaN","items":[
+        {"title":"Research metadata","date":"2026-11-10","source_level":"research",
+         "url":"https://example.com/research","companies":[]}
+    ]}]}
+    topics={"topics":[]}
+    architecture={"categories":[{"category":"GaN","intro":"GaN devices","physics":[],"watch":[]}]}
+    benchmark={"reviewed_on":"2026-11-12","devices":[]}
+    return briefing,topics,architecture,benchmark
+
+
 
 def test_navigation_follows_user_workflow_in_four_visible_groups():
     nav=HTML.split('<nav id="nav"',1)[1].split("</nav>",1)[0]
@@ -29,7 +40,6 @@ def test_mobile_grouped_menu_does_not_hide_subpages():
 
 
 def test_integrated_weekly_sample_is_archived_not_fabricated():
-    from tests.test_integrated import fixtures
     b,t,a,p=fixtures()
     snapshots=[
         {"week":"2026-W45","complete_week":True,"week_to_date":"2026-11-08",
@@ -52,7 +62,6 @@ def test_integrated_weekly_sample_is_archived_not_fabricated():
 
 
 def test_integrated_company_counts_are_briefing_mentions_not_rankings():
-    from tests.test_integrated import fixtures
     b,t,a,p=fixtures()
     b["categories"][0]["items"] += [
         {"title":"Company article","url":"https://example.com/co",
