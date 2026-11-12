@@ -44,7 +44,8 @@ def test_onsemi_segment_revenue_and_operating_margin_not_backfilled():
 def test_rohm_h1_not_computed_as_quarter_and_segment_loss_preserved():
     d=finance();company=d["companies"][-1]
     assert company["periods"][0]["period_type"]=="half_year"
-    assert company["periods"][0]["revenue"]==279483
+    assert company["periods"][-1]["revenue"]==279483
+    assert company["periods"][0]["revenue"]==244228
     assert company["segments"][0]["revenue"]==120720
     assert company["segments"][0]["profit"]==-4393
 
