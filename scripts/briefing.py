@@ -14,7 +14,7 @@ from scripts.tech_topics import TOPICS, news_matches, evidence_kind
 ROOT=Path(__file__).resolve().parents[1]
 DATA=ROOT/"site"/"data.json"
 OUT=ROOT/"site"/"briefing.json"
-CATEGORIES=("GaN","SiC","IGBT","SGT","SJ MOSFET")
+CATEGORIES=("GaN","SiC","IGBT","SJ MOSFET","SGT")
 WINDOW_DAYS=30
 MAX_PER_CATEGORY=16
 MAX_SUMMARY_CHARS=220
