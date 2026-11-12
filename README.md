@@ -1,4 +1,4 @@
-# PSI Radar V1.1 — Power Semiconductor Intelligence Radar
+# PSI Radar V1.2 — Power Semiconductor Intelligence Radar
 
 공개 자료 기반 한국어 전력반도체 주간 기술 모니터링 웹 플랫폼. GaN (40%) > SiC (30%) > IGBT (10%) = UD/UG SGT (10%) = SJ MOSFET (10%).
 
@@ -197,3 +197,13 @@ GitHub Pages는 저장소 Settings → Pages → **Source: GitHub Actions**를 �
 - 긴 사양표는 **'전체 제품 상세 사양표 펼쳐 보기'** 아래로 이동하여 상단의 중요 정보와 히트맵을 먼저 볼 수 있습니다. 전문가는 필요할 때 전체 표를 열람할 수 있습니다.
 - SGT는 여전히 검증된 제품 0종이며, 자료가 없는 항목의 색상은 **성능이 낮다는 뜻이 아니라 미확인**이라는 의미입니다. 실제 제품/문헌 근거 없는 수치나 공정 Recipe는 생성하지 않습니다.
 - 기존 주간 수집, GitHub Pages, API 비용 상한, 22종 데이터셋, V1.0 Architecture와 FOM 근거표는 유지합니다.
+
+## V1.2 — Device Physics → Evidence → Product 탐색 (2026-11-12)
+- **Architecture 기술 주제 선택**을 추가했습니다. 예: GaN Dynamic RDS(on), Gate Reliability, Qg/Qoss, SiC Gate Oxide, IGBT VCE(sat)/Eoff, SGT Shield Gate, SJ Pillar Balance/Qrr. 5개 기술군에 걸친 14개 주제를 제공합니다.
+- `scripts/tech_topics.py`는 **해당 기술군 + 제목의 명시적인 기술 키워드**만으로 뉴스·논문·공식 제조사 발표의 공개 자료를 찾아 후보로 연결합니다. 이것은 전문全文 검증이나 과학적 인과관계 판정이 아닙니다.
+- 후보 자료는 **논문 메타데이터 / 공식 제조사 발표 / 제목 기반 일반 뉴스**로 출처 구분을 유지합니다. 제목·발행일·근거 URL을 표시하며 허구의 연구 성과·공정 Recipe를 생성하지 않습니다.
+- 함께 표시되는 실제 제품은 **같은 전력 소자 기술군의 제조사 제품 참고자료**로 한정됩니다. 제품의 실제 결함 원인, 특정 현상의 해결 성능, 논문과 제품 간 기술 이전 관계를 입증한다는 의미가 아닙니다.
+- 한 화면에 **주제 한 줄 해설 → 관련 근거 최대 6건 → 공식 제품 자료 최대 6건**을 표시합니다. 주제를 바꾸면 즉시 업데이트됩니다.
+- `site/topic_map.json`은 기존 공개 뉴스·논문 수집이 완료된 이후 새로 생성되며, 정기·수동 실행 시 기존 주간 이력과 함께 저장됩니다. 코드 push 실행에서는 최신 데이터로 사이트 아티팩트만 업데이트하며 AI 추가 사용을 하지 않습니다.
+- 주제 매칭의 제목 중심 방식·주간 뉴스 검색 범위는 탐색의 출발점이지 전수 검색이 아닙니다. 관련자료 0건도 해당 기술의 연구 부재를 의미하지 않습니다.
+- 기존 22종 Benchmark, V1.1 접근성, 매주 월요일 06:00 KST, OpenAI 호출 최대 12회·추정 $0.02 실행 예산은 그대로 유지합니다.
