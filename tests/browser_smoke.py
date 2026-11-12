@@ -23,6 +23,7 @@ class QuietHandler(SimpleHTTPRequestHandler):
 def check_page(browser,engine,screen,width,height,url):
     context=browser.new_context(viewport={"width":width,"height":height},locale="ko-KR")
     page=context.new_page()
+    page.set_default_timeout(9000)
     errors=[]
     page.on("pageerror",lambda err:errors.append(str(err)))
     try:
@@ -49,7 +50,7 @@ def check_page(browser,engine,screen,width,height,url):
         assert page.locator("#weekly").is_visible()
         nav.locator('button[data-tab="integrated"]').click()
         assert page.locator("#integrated").is_visible()
-        page.locator("#intel-categories button").first.wait_for(timeout=30000)
+        page.locator("#intel-categories button").first.wait_for(timeout=12000)
         page.locator("#intel-categories button").filter(has_text="SJ MOSFET").click()
         assert page.locator("#intel-physics-title").inner_text().startswith("SJ MOSFET")
         nav.locator('button[data-tab="competitors"]').click()
