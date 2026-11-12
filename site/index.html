@@ -423,13 +423,13 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
 <p id="intel-topic-explain" class="mini"></p>
 <div class="intel-evidence-grid">
 <div class="intel-column">
-<div class="intel-section-heading"><h3>② 관련 논문·공식 발표·뉴스</h3><button type="button" data-intel-go="briefing">전체 Briefing 보기</button></div>
+<div class="intel-section-heading"><h3>② 관련 논문·공식 발표·뉴스</h3><div class="watch-card-actions"><button type="button" data-intel-go="briefing">전체 Briefing</button><button type="button" data-intel-go="research">논문 전체</button></div></div>
 <p class="mini">기사와 논문은 제목·메타데이터 기준 후보입니다. 상세 기술 성과는 원문 검토가 필요합니다.</p>
 <div id="intel-evidence" class="intel-evidence-list"></div>
 <details class="portal-details"><summary>최근 30일 다른 공개자료 펼쳐 보기</summary><div id="intel-other-articles" class="intel-evidence-list"></div></details>
 </div>
 <div class="intel-column">
-<div class="intel-section-heading"><h3>③ 해당 기술군 제조사 제품</h3><button type="button" data-intel-go="benchmark">Benchmark 전체 보기</button></div>
+<div class="intel-section-heading"><h3>③ 해당 기술군 제조사 제품</h3><div class="watch-card-actions"><button type="button" data-intel-go="competitors">경쟁사 동향</button><button type="button" data-intel-go="benchmark">Benchmark 전체</button></div></div>
 <p class="mini">공식 제품 사양의 샘플입니다. 성능 우열이나 논문 결과와의 인과관계는 표시하지 않습니다.</p>
 <label class="intel-company-label">제조사 <select id="intel-company" aria-label="통합 분석 제품 제조사 선택"><option value="">전체 제조사</option></select></label>
 <div id="intel-products" class="intel-product-list"></div>
@@ -1263,6 +1263,7 @@ function renderIntegrated(){
  el("intel-kpis").innerHTML=[
   ["최근 공개자료 후보",row.article_count_sample+"건"],
   ["제조사 공식 발표",String(counts.official||0)+"건"],
+  ["학술 논문 메타데이터",String(counts.research||0)+"건"],
   ["공식 제품 표본",row.product_count+"종"],
   ["데이터시트 표 확인",row.datasheet_table_verified_count+"종"]
  ].map(([a,b])=>'<div class="kpi"><span>'+esc(a)+'</span><strong>'+esc(b)+'</strong></div>').join("");
@@ -1336,6 +1337,16 @@ el("integrated").addEventListener("click",event=>{
   el("brief-type").value="";
   el("brief-change").checked=false;
   renderBriefing();
+ }else if(destination==="research"){
+  el("research-cat").value=INTEL_CAT;
+  el("research-relevance").value="0";
+  renderResearch();
+ }else if(destination==="competitors"){
+  el("company-tech").value=INTEL_CAT;
+  el("company-region").value="";
+  el("company-type").value="";
+  el("company-q").value="";
+  renderCompetitors();
  }else return;
  activateRadarTab(destination);
 });
