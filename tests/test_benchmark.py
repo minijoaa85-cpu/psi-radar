@@ -62,3 +62,25 @@ def test_snapshot_change_tracking():
  changed["devices"][0]["specs"]["qg"]["value"]+=0.1
  second=create_snapshot(changed,when,first)
  assert second["changed_ids"]==[data["devices"][0]["id"]]
+
+def test_v09_vendor_and_voltage_expansion():
+ products=load()["devices"]
+ assert len(products)>=22
+ assert {"Infineon","ROHM","Toshiba","STMicroelectronics","Innoscience","onsemi"}<=set(r["company"] for r in products)
+ assert {60,100,650,700,900,1200}<=set(r["voltage"]["value"] for r in products)
+def test_official_page_without_typ_label_does_not_create_fom():
+ from scripts.validate_benchmark import illustrative_fom
+ inn=next(r for r in load()["devices"] if r["part"]=="INN650D080BS")
+ assert inn["specs"]["qg"]["kind"]=="unspecified"
+ assert illustrative_fom(inn) is None
+def test_datasheet_condition_structured_and_not_overclaimed():
+ from scripts.validate_benchmark import strictly_comparable
+ product=next(r for r in load()["devices"] if r["part"]=="NTC020N120SC1")
+ assert product["specs"]["rds_on"]["test_conditions"]=={"vgs_v":20,"id_a":60,"tj_c":25}
+ assert product["datasheet_revision"]=="Rev 2 · Jan 2023"
+ assert not strictly_comparable(product,product,"qg")
+def test_reject_unknown_test_condition_field():
+ from copy import deepcopy
+ sample=deepcopy(load())
+ sample["devices"][0]["specs"]["qg"]["test_conditions"]={"bogus":20}
+ assert any("unknown test condition" in v for v in validate(sample))
