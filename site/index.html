@@ -365,6 +365,38 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
 .watch-saved-category-counts button:focus-visible{outline:2px solid #9dd2fb;outline-offset:2px}
 @media(max-width:800px){.watch-saved-controls{grid-template-columns:1fr 1fr}.watch-saved-controls label:first-child{grid-column:1 / -1}}
 @media(max-width:420px){.watch-saved-controls{grid-template-columns:1fr}.watch-saved-controls label:first-child{grid-column:auto}}
+
+/* V2.0 Integrated Intelligence: simple first, detailed evidence on demand */
+.intel-switches,.intel-topics{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.intel-switches button,.intel-topics button{
+ font:inherit;background:#142d49;border:1px solid #385a7a;color:#dfedff;
+ border-radius:18px;padding:8px 13px;cursor:pointer;font-size:12px;min-height:35px;
+}
+.intel-switches button.selected,.intel-topics button.selected{background:#235f87;border-color:#92c9ef}
+.intel-switches button:focus-visible,.intel-topics button:focus-visible,.intel-section-heading button:focus-visible,.intel-jump:focus-visible{outline:2px solid #9bd5ff;outline-offset:2px}
+.intel-physics{padding:12px;border:1px solid var(--border);border-radius:10px;background:#10283f;margin:12px 0}
+.intel-physics-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:9px}
+.intel-physics-grid>div{min-width:0;background:#152e49;border-radius:8px;padding:10px}
+.intel-physics-grid h4{font-size:13px;margin:0 0 7px}
+.intel-physics-grid ul{padding-left:20px;margin:0;color:#c9daeb;font-size:12px;line-height:1.65}
+.intel-section-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin:13px 0 7px}
+.intel-section-heading h3{font-size:15px;margin:0}
+.intel-section-heading button,.intel-jump{padding:6px 9px;background:#1a4263;border:1px solid #477da6;border-radius:7px;color:#d8eeff;font-size:11px;cursor:pointer}
+.intel-evidence-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:11px;margin-top:11px}
+.intel-column{border:1px solid var(--border);border-radius:10px;background:#0f2239;padding:12px;min-width:0}
+.intel-evidence-list,.intel-product-list{display:grid;gap:8px;margin-top:9px}
+.intel-evidence-item,.intel-product-item{border:1px solid #2b4a65;background:#172e48;border-radius:8px;padding:10px;min-width:0;overflow-wrap:anywhere}
+.intel-evidence-item strong,.intel-product-item strong{display:block;color:#dceeff;font-size:12px;margin:5px 0;line-height:1.5}
+.intel-evidence-item small,.intel-product-item small{display:block;color:#b0c5d7;font-size:11px;line-height:1.55}
+.intel-label{display:inline-block;padding:3px 7px;border-radius:5px;background:#263f5f;color:#c9e4ff;font-size:10px}
+.intel-evidence-item a,.intel-product-item a{font-size:11px}
+.intel-company-label{display:flex;align-items:center;gap:9px;font-size:12px;color:#c3d7e8}
+.intel-company-label select{max-width:100%;min-width:0;flex:1;min-height:36px;padding:5px 8px;background:#152e49;color:#e9f6ff;border:1px solid #44627e;border-radius:7px}
+.intel-product-stats{display:flex;gap:5px;flex-wrap:wrap;margin:7px 0}
+.intel-product-stats span{font-size:10px;padding:3px 6px;border:1px solid #345774;border-radius:5px}
+#intel-data-date{margin:6px 0 10px}
+@media(max-width:800px){.intel-evidence-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.intel-switches button{flex:1 1 calc(50% - 8px)}.intel-column{padding:10px}.intel-physics-grid{grid-template-columns:1fr}.intel-section-heading button{min-height:35px}}
 </style></head><body>
 <header><small>POWER SEMICONDUCTOR INTELLIGENCE</small><h1>◈ PSI Radar</h1><div class="muted">GaN · SiC · IGBT · SJ MOSFET · UD/UG SGT | 글로벌 기술 · 논문 · 경쟁사 동향</div><div id="last" class="mini">데이터 상태 확인 중...</div></header>
 <aside class="personal-tools" aria-label="개인 및 데이터 관리 보조 메뉴">
@@ -372,8 +404,39 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
 <button type="button" id="quality-quick-access" class="watch-quick-access quality-quick-access" aria-controls="sources" aria-expanded="false" title="공개 데이터 출처 및 품질 확인"><span aria-hidden="true">ⓘ</span><span>Data Quality</span></button>
 </aside>
 <main><nav id="nav" class="nav" aria-label="핵심 기술 분석 메뉴">
-<button data-tab="overview" class="active">Overview</button><button data-tab="briefing">Briefing</button><button data-tab="technology">Technology</button><button data-tab="research">Research</button><button data-tab="weekly">Weekly Reports</button><button data-tab="competitors">Competitors</button><button data-tab="architecture">Architecture</button><button data-tab="benchmark">Benchmark</button><button data-tab="market">Market & Finance</button></nav>
+<button data-tab="overview" class="active">Overview</button><button data-tab="integrated">Integrated 2.0</button><button data-tab="briefing">Briefing</button><button data-tab="technology">Technology</button><button data-tab="research">Research</button><button data-tab="weekly">Weekly Reports</button><button data-tab="competitors">Competitors</button><button data-tab="architecture">Architecture</button><button data-tab="benchmark">Benchmark</button><button data-tab="market">Market & Finance</button></nav>
 <section id="overview"><div class="grid"><article class="panel stat"><span>수집된 자료 (연구 12개월 포함)</span><b id="total">0</b></article><article class="panel stat"><span>GaN</span><b id="gan">0</b></article><article class="panel stat"><span>SiC</span><b id="sic">0</b></article><article class="panel stat"><span>IGBT</span><b id="igbt">0</b></article><article class="panel stat"><span>논문</span><b id="papers">0</b></article></div><div class="two"><article class="panel"><h2>주간 핵심 업데이트</h2><div id="highlights" class="feed"></div></article><article class="panel"><h2>분석 우선순위</h2><div class="tiles"><article><b>GaN · 40%</b><p>E-mode, Dynamic R(on), 데이터센터 전원</p></article><article><b>SiC · 30%</b><p>Trench, Gate Oxide, 200mm Wafer</p></article><article><b>IGBT · 10%</b><p>Trench, Field Stop, VCE(sat), Eoff</p></article><article><b>SJ · 10%</b><p>Pillar Balance, Qrr, Softness, BV</p></article><article><b>SGT · 10%</b><p>Shield gate, Qgd, Eoss, Cell Pitch</p></article></div><p class="mini">비중은 기술 관심도 기준이며 실제 수집 비중을 보장하지 않습니다.</p></article></div></section>
+<section id="integrated" class="hidden"><article class="panel">
+<h2>Integrated Intelligence · 기술부터 제품까지 한눈에</h2>
+<p class="muted">관심 기술을 고르면 <strong>중요한 기술 현상 → 공개자료 → 제조사 제품</strong>을 한곳에서 살펴볼 수 있습니다. 기술 관련 기사와 제품은 같은 분야의 참고자료이지, 해당 제품이 그 문제를 해결했다는 증거는 아닙니다.</p>
+<div class="intel-switches" id="intel-categories" aria-label="통합 분석 기술 선택"></div>
+<div class="competitor-kpis" id="intel-kpis" aria-live="polite"></div>
+<div id="intel-data-date" class="mini"></div>
+<div class="intel-physics">
+<div class="intel-section-heading"><h3 id="intel-physics-title">기술·구조 관찰 포인트</h3><button type="button" data-intel-go="architecture">Architecture에서 자세히 보기</button></div>
+<div id="intel-intro" class="mini"></div>
+<div class="intel-physics-grid"><div><h4>중요한 Device Physics</h4><ul id="intel-physics-points"></ul></div>
+<div><h4>구조·공정 관찰 포인트</h4><ul id="intel-architecture-points"></ul></div></div>
+</div>
+<div class="intel-section-heading"><h3>① 관심 기술 주제</h3><span class="mini">주제 선택 → 관련 공개자료 변경</span></div>
+<div id="intel-topics" class="intel-topics" role="group" aria-label="관심 Device Physics 주제"></div>
+<p id="intel-topic-explain" class="mini"></p>
+<div class="intel-evidence-grid">
+<div class="intel-column">
+<div class="intel-section-heading"><h3>② 관련 논문·공식 발표·뉴스</h3><button type="button" data-intel-go="briefing">전체 Briefing 보기</button></div>
+<p class="mini">기사와 논문은 제목·메타데이터 기준 후보입니다. 상세 기술 성과는 원문 검토가 필요합니다.</p>
+<div id="intel-evidence" class="intel-evidence-list"></div>
+<details class="portal-details"><summary>최근 30일 다른 공개자료 펼쳐 보기</summary><div id="intel-other-articles" class="intel-evidence-list"></div></details>
+</div>
+<div class="intel-column">
+<div class="intel-section-heading"><h3>③ 해당 기술군 제조사 제품</h3><button type="button" data-intel-go="benchmark">Benchmark 전체 보기</button></div>
+<p class="mini">공식 제품 사양의 샘플입니다. 성능 우열이나 논문 결과와의 인과관계는 표시하지 않습니다.</p>
+<label class="intel-company-label">제조사 <select id="intel-company" aria-label="통합 분석 제품 제조사 선택"><option value="">전체 제조사</option></select></label>
+<div id="intel-products" class="intel-product-list"></div>
+</div>
+</div>
+<details class="portal-details"><summary>분석 기준과 주의사항 확인</summary><p id="intel-warning" class="mini"></p></details>
+</article></section>
 <section id="technology" class="hidden"><article class="panel"><h2>Technology Watch</h2><div class="filters"><select id="cat"><option value="">전체 기술</option><option>GaN</option><option>SiC</option><option>IGBT</option><option>SJ MOSFET</option><option>SGT</option></select><select id="kind"><option value="">뉴스 + 논문</option><option value="news">뉴스</option><option value="paper">논문</option></select><input id="search" placeholder="키워드·회사·기술 검색" aria-label="검색"></div><div id="records" class="feed"></div></article></section>
 <section id="research" class="hidden"><article class="panel"><h2>학술 논문 | Research Intelligence</h2><p class="muted">최근 45일 학술지 + IGBT·SJ MOSFET·SGT 최근 12개월 집중 검색 · Crossref / OpenAlex DOI · 원문 검토 전</p><div class="filters"><select id="research-cat" aria-label="논문 기술 선택"><option value="">전체 논문</option><option>GaN</option><option>SiC</option><option>IGBT</option><option>SJ MOSFET</option><option>SGT</option></select></div><select id="research-relevance" aria-label="기술 관련성 수준"><option value="0">전체 관련성</option><option value="70">높음 70점 이상</option><option value="45">보통 45점 이상</option></select><p class="mini">관련성은 제목·초록 기술 키워드 기반의 자동 추정값입니다. 전문가 검증 결과가 아닙니다.</p><div id="research-counts" class="mini"></div><div id="research-feed" class="feed"></div></article></section>
 <section id="weekly" class="hidden"><article class="panel"><h2>주간 보고서 아카이브</h2><p class="muted">매주 공개 자료를 누적 보관합니다. 동일 주차에 다시 실행하면 해당 주 보고서를 갱신합니다. 첫 주차는 비교 기준(Baseline)입니다.</p><div class="filters"><select id="weekly-select" aria-label="보고서 주차 선택"><option value="">보고서 로딩 중</option></select></div><div id="weekly-details" class="feed"><div class="empty">주간 보고서 파일을 확인 중입니다.</div></div></article></section>
