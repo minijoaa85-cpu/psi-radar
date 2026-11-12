@@ -22,8 +22,10 @@ def test_briefing_carries_known_company_ids_only():
 def test_company_name_in_source_without_attribution_not_assumed():
  data=build_briefing([sample("one","news","Power GaN HEMT breakthrough","GaN",source="Infineon")],"2026-11-12T04:00:00+00:00")
  assert data["categories"][0]["items"][0]["companies"]==[]
-def test_all_watch_controls_exist_and_nav_route():
- assert 'data-tab="watchlist"' in HTML
+def test_all_watch_controls_exist_and_personal_access():
+ assert 'data-tab="watchlist"' not in HTML
+ assert 'id="watch-quick-access"' in HTML
+ assert 'id="watch-close"' in HTML
  for id in ("watchlist","watch-techs","watch-companies","watch-save","watch-reset","watch-status",
             "watch-official-only","watch-require-company","watch-kpi","watch-feed"):
   assert f'id="{id}"' in HTML
