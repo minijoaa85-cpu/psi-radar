@@ -731,6 +731,8 @@ fetch("topic_trends/index.json?nocache="+Date.now()).then(r=>{if(!r.ok)throw Err
 }).catch(()=>{el("arch-trend-coverage").textContent="동향 기록 없음";el("arch-trend-chart").textContent="아직 보관된 동향 기록이 없거나 불러오지 못했습니다.";});
 const WATCH_TECH_ORDER=["GaN","SiC","IGBT","SJ MOSFET","SGT"];
 const WATCH_STORAGE_KEY="psi-radar-watch-v1";
+const WATCH_READ_STORAGE_KEY="psi-radar-read-v1";
+const WATCH_READ_LIMIT=500;
 const WATCH_COMPANIES=[
 ["infineon","Infineon"],["st","STMicroelectronics"],["onsemi","onsemi"],["rohm","ROHM"],
 ["mitsubishi","Mitsubishi Electric"],["fuji","Fuji Electric"],["toshiba","Toshiba"],["innoscience","Innoscience"],
@@ -739,11 +741,20 @@ const WATCH_COMPANIES=[
 ];
 const WATCH_COMPANY_IDS=new Set(WATCH_COMPANIES.map(([id])=>id));
 let WATCH_SAVED={techs:[],companies:[]};
+let WATCH_READ=new Set();
+let WATCH_VISIBLE_ITEMS=[];
 function normalizeWatchPrefs(obj){
  const techs=Array.isArray(obj?.techs)?obj.techs:[];
  const companies=Array.isArray(obj?.companies)?obj.companies:[];
  return {techs:WATCH_TECH_ORDER.filter(id=>techs.includes(id)),
          companies:WATCH_COMPANIES.map(([id])=>id).filter(id=>companies.includes(id))};
+}
+function updateWatchSelectionCounts(){
+ for(const [group,id] of [["tech","watch-tech-count"],["company","watch-company-count"]]){
+  const all=document.querySelectorAll('[data-watch-group="'+group+'"]');
+  const checked=document.querySelectorAll('[data-watch-group="'+group+'"]:checked');
+  el(id).textContent=checked.length+" / "+all.length+" 선택"+(checked.length===0?" · 미선택=전체":"");
+ }
 }
 function renderWatchControls(){
  const watchlabel=(group,id,name)=>'<label><input type="checkbox" data-watch-group="'+group+'" value="'+esc(id)+'"><span class="watch-choice-text">'+esc(name)+'</span></label>';
@@ -756,10 +767,33 @@ function renderWatchControls(){
   const key=input.dataset.watchGroup==="tech"?"techs":"companies";
   input.checked=WATCH_SAVED[key].includes(input.value);
  }
+ updateWatchSelectionCounts();
 }
 function watchSelections(){
  const collect=group=>[...document.querySelectorAll('[data-watch-group="'+group+'"]:checked')].map(i=>i.value);
  return normalizeWatchPrefs({techs:collect("tech"),companies:collect("company")});
+}
+function loadWatchRead(){
+ try{
+  const array=JSON.parse(localStorage.getItem(WATCH_READ_STORAGE_KEY)||"[]");
+  WATCH_READ=new Set(Array.isArray(array)?array.filter(x=>typeof x==="string"&&x.startsWith("https://")).slice(-WATCH_READ_LIMIT):[]);
+ }catch{WATCH_READ=new Set();}
+}
+function persistWatchRead(){
+ try{
+  localStorage.setItem(WATCH_READ_STORAGE_KEY,JSON.stringify([...WATCH_READ].slice(-WATCH_READ_LIMIT)));
+  el("watch-status").textContent="읽음 기록을 이 브라우저에 저장했습니다.";
+ }catch{
+  el("watch-status").textContent="저장이 차단되어 읽음 상태가 현재 페이지에서만 유지됩니다.";
+ }
+}
+function setWatchRead(url,read){
+ if(typeof url!=="string"||!url.startsWith("https://"))return;
+ WATCH_READ.delete(url);
+ if(read)WATCH_READ.add(url);
+ while(WATCH_READ.size>WATCH_READ_LIMIT)WATCH_READ.delete(WATCH_READ.values().next().value);
+ persistWatchRead();
+ renderWatchFeed();
 }
 function renderWatchFeed(){
  const prefs=watchSelections();
@@ -769,24 +803,63 @@ function renderWatchFeed(){
  if(prefs.companies.length)items=items.filter(r=>(r.companies||[]).some(id=>prefs.companies.includes(id)));
  if(requireCompany)items=items.filter(r=>(r.companies||[]).length>0);
  if(official)items=items.filter(r=>r.source_level==="official");
+ const unread=items.filter(r=>!WATCH_READ.has(r.url)).length;
+ if(el("watch-unread-only").checked)items=items.filter(r=>!WATCH_READ.has(r.url));
  items.sort((a,b)=>(b.reading_priority||0)-(a.reading_priority||0)||(b.date||"").localeCompare(a.date||""));
- const count=key=>items.filter(r=>r.source_level===key).length;
- el("watch-kpi").innerHTML=[["맞춤 자료",items.length+"건"],["공식 발표",count("official")+"건"],["논문",count("research")+"건"],["뉴스",count("news")+"건"]].map(([name,value])=>'<div class="kpi"><span>'+esc(name)+'</span><strong>'+esc(value)+'</strong></div>').join("");
+ const currentCount=items.length;
+ el("watch-kpi").innerHTML=[["현재 표시",currentCount+"건"],["안 읽음",unread+"건"],["읽음",((BRIEFING.categories||[]).length?currentCount+0:0)+"건"]].map(([name,value])=>'<div class="kpi"><span>'+esc(name)+'</span><strong>'+esc(value)+'</strong></div>').join("");
+ // The read-count replaces the placeholder above with pre-filter totals.
+ const totalBeforeUnread=el("watch-unread-only").checked?null:currentCount;
  const companyLabel=id=>WATCH_COMPANIES.find(x=>x[0]===id)?.[1]||id;
- el("watch-feed").innerHTML=items.length?items.slice(0,30).map(r=>{
+ WATCH_VISIBLE_ITEMS=items.slice(0,30);
+ el("watch-mark-all-read").disabled=!WATCH_VISIBLE_ITEMS.length;
+ el("watch-feed").innerHTML=items.length?WATCH_VISIBLE_ITEMS.map((r,index)=>{
   const companyNames=(r.companies||[]).filter(id=>WATCH_COMPANY_IDS.has(id)).map(companyLabel);
+  const isRead=WATCH_READ.has(r.url);
+  const state='<span class="watch-read-state'+(isRead?' read':'')+'">'+(isRead?'✓ 읽음':'● 안 읽음')+'</span>';
+  const action='<button type="button" class="watch-read-toggle" data-read-index="'+index+'">'+(isRead?'안 읽음으로 변경':'읽음 표시')+'</button>';
   const caution=r.change_candidate?'<p class="brief-caution">제목에 발표·출시 관련 표현이 있습니다. 실제 신규성은 원문 미검증입니다.</p>':'';
-  return '<article class="brief-card"><span class="brief-tag '+esc(r.source_level)+'">'+esc(r.evidence_label)+'</span><span class="brief-tag">'+esc(r.category)+'</span>'+
+  return '<article class="brief-card'+(isRead?' is-read':'')+'">'+state+
+   '<span class="brief-tag '+esc(r.source_level)+'">'+esc(r.evidence_label)+'</span><span class="brief-tag">'+esc(r.category)+'</span>'+
    '<h3><a href="'+esc(r.url)+'" target="_blank" rel="noopener noreferrer">'+esc(r.title)+'</a></h3>'+
    '<div class="meta">'+esc(r.date)+' · '+esc(r.source)+'</div><p>'+esc(r.summary)+'</p>'+
    '<p class="mini">'+(companyNames.length?'언급된 제조사: '+esc(companyNames.join(", ")):'확인된 제조사 언급 없음')+'</p>'+caution+
-   '<a class="brief-link" href="'+esc(r.url)+'" target="_blank" rel="noopener noreferrer">공개 원문 확인 ↗</a></article>';
- }).join(""):'<div class="empty">현재 관심 조건과 일치하는 최근 30일 자료가 없습니다. 기술·제조사 선택을 넓혀 보세요. 선택 자료 0건은 관련 산업 활동이 없다는 의미가 아닙니다.</div>';
+   '<a class="brief-link" href="'+esc(r.url)+'" target="_blank" rel="noopener noreferrer">공개 원문 확인 ↗</a><div>'+action+'</div></article>';
+ }).join(""):'<div class="empty">현재 필터와 일치하는 안 읽은 자료가 없거나, 선택한 조건에 맞는 최근 자료가 없습니다. 미열람 0건은 신규 기사 0건을 의미하지 않습니다.</div>';
 }
 renderWatchControls();
-el("watch-techs").addEventListener("change",renderWatchFeed);
-el("watch-companies").addEventListener("change",renderWatchFeed);
-for(const id of ["watch-official-only","watch-require-company"])el(id).addEventListener("change",renderWatchFeed);
+loadWatchRead();
+el("watch-techs").addEventListener("change",()=>{updateWatchSelectionCounts();renderWatchFeed()});
+el("watch-companies").addEventListener("change",()=>{updateWatchSelectionCounts();renderWatchFeed()});
+for(const id of ["watch-official-only","watch-require-company","watch-unread-only"])el(id).addEventListener("change",renderWatchFeed);
+document.querySelectorAll("[data-watch-select]").forEach(btn=>btn.addEventListener("click",()=>{
+ const group=btn.dataset.watchSelect;
+ const checked=btn.dataset.action==="all";
+ for(const input of document.querySelectorAll('[data-watch-group="'+group+'"]'))input.checked=checked;
+ updateWatchSelectionCounts();
+ renderWatchFeed();
+}));
+el("watch-feed").addEventListener("click",e=>{
+ const button=e.target.closest("button[data-read-index]");
+ if(!button)return;
+ const index=Number(button.dataset.readIndex),row=WATCH_VISIBLE_ITEMS[index];
+ if(!Number.isInteger(index)||!row)return;
+ setWatchRead(row.url,!WATCH_READ.has(row.url));
+});
+el("watch-mark-all-read").addEventListener("click",()=>{
+ for(const row of WATCH_VISIBLE_ITEMS){
+  if(typeof row.url==="string"&&row.url.startsWith("https://"))WATCH_READ.add(row.url);
+ }
+ while(WATCH_READ.size>WATCH_READ_LIMIT)WATCH_READ.delete(WATCH_READ.values().next().value);
+ persistWatchRead();
+ renderWatchFeed();
+});
+el("watch-clear-read").addEventListener("click",()=>{
+ WATCH_READ.clear();
+ try{localStorage.removeItem(WATCH_READ_STORAGE_KEY);el("watch-status").textContent="읽음 기록을 초기화했습니다."}
+ catch{el("watch-status").textContent="현재 화면의 읽음 기록만 초기화했습니다."}
+ renderWatchFeed();
+});
 el("watch-save").addEventListener("click",()=>{
  const prefs=watchSelections();
  try{
@@ -803,8 +876,10 @@ el("watch-reset").addEventListener("click",()=>{
   el("watch-status").textContent="브라우저 저장소를 변경하지 못했습니다. 현재 화면의 선택만 초기화했습니다.";
  }
  WATCH_SAVED={techs:[],companies:[]};
+ updateWatchSelectionCounts();
  renderWatchFeed();
 });
+
 let BRIEFING={categories:[]};
 function renderBriefing(){
  const category=el("brief-category").value,type=el("brief-type").value,changes=el("brief-change").checked;
