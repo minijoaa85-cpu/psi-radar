@@ -1,4 +1,4 @@
-# PSI Radar V0.6 — Power Semiconductor Intelligence Radar
+# PSI Radar V0.7 — Power Semiconductor Intelligence Radar
 
 공개 자료 기반 한국어 전력반도체 주간 기술 모니터링 웹 플랫폼. GaN (40%) > SiC (30%) > IGBT (10%) = UD/UG SGT (10%) = SJ MOSFET (10%).
 
@@ -146,3 +146,14 @@ GitHub Pages는 저장소 Settings → Pages → **Source: GitHub Actions**를 �
 - 공식 기사 데이터는 `scripts/official_sources.py`의 **수동 검증 출처 목록**에 있습니다. 매주 자동으로 새 공식 보도자료 전체를 크롤링하거나 발표 여부를 전수 조사하는 기능이 아닙니다. 최신 공시는 제조사 링크를 별도로 확인해야 합니다.
 - 신규 수집 중 공식 원문 URL을 임의 생성하지 않고, 동일한 제조사 링크가 반복돼도 자료를 중복 추가하지 않습니다.
 - 기존 비용 예산(실행당 AI 최대 12회 및 추정 $0.02), GaN 40% / SiC 30% / IGBT·SGT·SJ 10% 우선순위, 매주 월요일 06:00 KST 자동화는 유지합니다. 검증된 공식 기사는 API 추가 호출 없이 재사용합니다.
+
+## V0.7 — Device Datasheet Benchmark (2026-11-12)
+- Benchmark 탭을 실제 기업 제품별 사양 비교 화면으로 변경했습니다.
+- 공식 제조사 **제품 페이지에서 직접 확인된 7개 품번**을 `site/benchmark.json`에 등록: Infineon CoolGaN 2개, ROHM SiC 2개, ROHM IGBT 2개, Toshiba SJ MOSFET 1개.
+- 제품별 정격 전압, 구조·세대, 패키지, 제품 상태, RDS(on) typ/max, Qg, VCE(sat), Qrr 등 **검증된 필드만** 입력합니다. 없는 항목을 0으로 채우거나 제품 번호를 보고 추정하지 않습니다.
+- 기술/제조사/전압 등급(LV ≤100V, MV 101~400V, HV >400V) 필터와 품번 검색, 두 제품 선택 비교 기능을 제공합니다. 해당 전압 구간은 대시보드 운영 분류이며 국제 공통 규격을 주장하지 않습니다.
+- **측정 조건 불명, typ/max 혼동, 상이한 기술/전압 간 FOM 수치 우열 비교를 금지**합니다. 동일 제조사 제품군도 제품 페이지의 일부 조건만 표시되면 '비교 불가'를 안내합니다.
+- SGT/field-plate 관련 공식 Toshiba 기술문헌은 **참고 논문**으로 연결하되 제품 Datasheet 값으로 사용하지 않습니다. 공식 양산형 SGT 부품 자료 검증 후 확장할 예정입니다.
+- `scripts/validate_benchmark.py`가 공식 URL 호스트, 필수 데이터, 단위, typ/max, 조건 메모를 검증합니다. CI 및 자동 테스트에 연결되어 있습니다.
+- 지금은 **수동 검증 스냅샷**으로 매주 가격이나 사양이 자동 갱신되는 제품 검색기가 아닙니다. 연도별 제품 상태/데이터시트 개정일은 공식 제조사에서 재확인하세요.
+- 기존 뉴스·논문·기업별 검색, 월요일 오전 6시 주간 실행, 주간 리포트 보존 및 OpenAI API 추정 실행비용 상한 $0.02는 유지합니다. Benchmark는 API 사용량을 늘리지 않습니다.
