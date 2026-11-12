@@ -33,6 +33,8 @@ jobs:
         run: python -m scripts.validate_benchmark
       - name: Build benchmark change history
         run: python -m scripts.benchmark_history
+      - name: Build device architecture overview
+        run: python -m scripts.architecture
       - name: Validate dashboard JavaScript
         run: |
           python -c "from pathlib import Path; s=Path('site/index.html').read_text(); Path('/tmp/psi-ui.js').write_text(s.split('<script>',1)[1].split('</script>',1)[0])"
