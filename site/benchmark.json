@@ -1,0 +1,241 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-11-12",
+  "method": "curated manufacturer product pages; do not infer absent parameters",
+  "note": "수치는 각 제조사 제품 페이지에서 전사했으며 원본 데이터시트 전문을 자동 추출한 것은 아닙니다. typ/max·시험 조건·세대·패키지 차이를 감안해야 합니다.",
+  "devices": [
+    {
+      "id": "gan-infineon-igot",
+      "category": "GaN",
+      "company": "Infineon",
+      "part": "IGOT65R055D2",
+      "generation": "CoolGaN G5",
+      "structure": "E-mode GaN HEMT",
+      "package": "PG-DSO-20 (top-side cooling)",
+      "status": "active",
+      "voltage": {
+        "value": 650,
+        "unit": "V",
+        "kind": "max",
+        "condition": "VDS max"
+      },
+      "specs": {
+        "rds_on": {
+          "value": 55,
+          "unit": "mΩ",
+          "kind": "typ",
+          "condition": "제품 페이지; VGS 구동은 데이터시트 참조"
+        },
+        "rds_on_max": {
+          "value": 66,
+          "unit": "mΩ",
+          "kind": "max",
+          "condition": "제품 페이지"
+        },
+        "qg": {
+          "value": 4.7,
+          "unit": "nC",
+          "kind": "typ",
+          "condition": "제품 페이지 QG; VGS 구동 조건은 데이터시트 참조"
+        }
+      },
+      "url": "https://www.infineon.com/part/IGOT65R055D2",
+      "source_type": "manufacturer_product_page"
+    },
+    {
+      "id": "gan-infineon-igt",
+      "category": "GaN",
+      "company": "Infineon",
+      "part": "IGT65R055D2",
+      "generation": "CoolGaN G5",
+      "structure": "E-mode GaN HEMT",
+      "package": "TOLL (bottom-side cooling)",
+      "status": "active",
+      "voltage": {
+        "value": 650,
+        "unit": "V",
+        "kind": "max",
+        "condition": "VDS max"
+      },
+      "specs": {
+        "rds_on": {
+          "value": 55,
+          "unit": "mΩ",
+          "kind": "typ",
+          "condition": "제품 페이지"
+        },
+        "rds_on_max": {
+          "value": 66,
+          "unit": "mΩ",
+          "kind": "max",
+          "condition": "제품 페이지"
+        },
+        "qg": {
+          "value": 4.7,
+          "unit": "nC",
+          "kind": "typ",
+          "condition": "제품 페이지"
+        }
+      },
+      "url": "https://www.infineon.com/part/IGT65R055D2",
+      "source_type": "manufacturer_product_page"
+    },
+    {
+      "id": "sic-rohm-4036",
+      "category": "SiC",
+      "company": "ROHM",
+      "part": "SCT4036KWATL",
+      "generation": "4th Gen",
+      "structure": "Trench SiC MOSFET",
+      "package": "TO-263-7LA",
+      "status": "recommended",
+      "voltage": {
+        "value": 1200,
+        "unit": "V",
+        "kind": "rating",
+        "condition": "VDS"
+      },
+      "specs": {
+        "rds_on": {
+          "value": 36,
+          "unit": "mΩ",
+          "kind": "typ",
+          "condition": "제품 페이지; VGS/ID 조건은 개별 데이터시트 참조"
+        }
+      },
+      "url": "https://www.rohm.com/products/sic-power-devices/sic-mosfet/sct4036kwa-product",
+      "source_type": "manufacturer_product_page"
+    },
+    {
+      "id": "sic-rohm-2080",
+      "category": "SiC",
+      "company": "ROHM",
+      "part": "SCT2080KEGC11",
+      "generation": "2nd Gen",
+      "structure": "Planar SiC MOSFET",
+      "package": "TO-247N",
+      "status": "active",
+      "voltage": {
+        "value": 1200,
+        "unit": "V",
+        "kind": "rating",
+        "condition": "VDS"
+      },
+      "specs": {
+        "rds_on": {
+          "value": 80,
+          "unit": "mΩ",
+          "kind": "typ",
+          "condition": "제품 페이지; VGS/ID 조건은 개별 데이터시트 참조"
+        }
+      },
+      "url": "https://www.rohm.com/products/sic-power-devices/sic-mosfet/sct2080ke-product",
+      "source_type": "manufacturer_product_page"
+    },
+    {
+      "id": "igbt-rohm-rgax",
+      "category": "IGBT",
+      "company": "ROHM",
+      "part": "RGAX2TS65EHRC11",
+      "generation": "4th Gen",
+      "structure": "Field-stop trench IGBT with FRD",
+      "package": "TO-247N",
+      "status": "recommended",
+      "voltage": {
+        "value": 650,
+        "unit": "V",
+        "kind": "rating",
+        "condition": "VCES"
+      },
+      "specs": {
+        "vce_sat": {
+          "value": 1.55,
+          "unit": "V",
+          "kind": "typ",
+          "condition": "제품 페이지; IC/Tj 조건은 개별 데이터시트 확인"
+        },
+        "tsc": {
+          "value": 7,
+          "unit": "µs",
+          "kind": "min",
+          "condition": "Tj=25°C, 제조사 제품 설명"
+        }
+      },
+      "url": "https://www.rohm.com/products/igbt/field-stop-trench-igbt/rgax2ts65ehr-product",
+      "source_type": "manufacturer_product_page"
+    },
+    {
+      "id": "igbt-rohm-rgw",
+      "category": "IGBT",
+      "company": "ROHM",
+      "part": "RGW50TS65GC11",
+      "generation": "High-speed series",
+      "structure": "Field-stop trench IGBT",
+      "package": "TO-247N",
+      "status": "recommended",
+      "voltage": {
+        "value": 650,
+        "unit": "V",
+        "kind": "rating",
+        "condition": "VCES"
+      },
+      "specs": {
+        "vce_sat": {
+          "value": 1.5,
+          "unit": "V",
+          "kind": "typ",
+          "condition": "제품 페이지; IC/Tj 조건은 개별 데이터시트 확인"
+        }
+      },
+      "url": "https://www.rohm.com/products/igbt/field-stop-trench-igbt/rgw50ts65-product",
+      "source_type": "manufacturer_product_page"
+    },
+    {
+      "id": "sj-toshiba-095",
+      "category": "SJ MOSFET",
+      "company": "Toshiba",
+      "part": "TK095V65Z5",
+      "generation": "DTMOS VI",
+      "structure": "Superjunction MOSFET",
+      "package": "DFN 8×8",
+      "status": "listed",
+      "voltage": {
+        "value": 650,
+        "unit": "V",
+        "kind": "rating",
+        "condition": "VDSS"
+      },
+      "specs": {
+        "rds_on_max": {
+          "value": 95,
+          "unit": "mΩ",
+          "kind": "max",
+          "condition": "VGS=10V"
+        },
+        "qg": {
+          "value": 50,
+          "unit": "nC",
+          "kind": "typ",
+          "condition": "VGS=10V"
+        },
+        "qrr": {
+          "value": 580,
+          "unit": "nC",
+          "kind": "typ",
+          "condition": "제품 페이지; 역회복 시험 조건은 데이터시트 확인"
+        }
+      },
+      "url": "https://toshiba.semicon-storage.com/ap-en/semiconductor/product/mosfets/400v-900v-mosfets/detail.TK095V65Z5.html",
+      "source_type": "manufacturer_product_page"
+    }
+  ],
+  "research_references": [
+    {
+      "category": "SGT",
+      "name": "Toshiba 100V class two-step field-plate trench MOSFET",
+      "type": "technical_paper_not_product_datasheet",
+      "url": "https://toshiba.semicon-storage.com/content/dam/toshiba-ss-v3/master/en/company/technical-review/pdf/technical-review-32.pdf",
+      "note": "Shielded-gate/field-plate 구조 연구자료. 양산 제품 데이터시트 사양으로 사용하지 않음."
+    }
+  ]
+}
