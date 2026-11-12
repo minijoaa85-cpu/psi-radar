@@ -2,6 +2,51 @@
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="전력반도체 주간 기술 인텔리전스 대시보드"><title>PSI Radar | Power Semiconductor Intelligence</title>
 <style>
 :root{color-scheme:dark;--bg:#0b1423;--panel:#132239;--border:#29405b;--muted:#a5b8ca;--text:#eaf3fe;--accent:#4aa7ff}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.6 system-ui,-apple-system,"Malgun Gothic",sans-serif}a{color:#7dc1ff}button,select,input{font:inherit}header{padding:26px max(20px,calc((100vw - 1220px)/2));background:linear-gradient(110deg,#16315b,#0f2038);border-bottom:1px solid var(--border)}h1{margin:0;font-size:30px;letter-spacing:-.5px}h2{font-size:21px;margin:0 0 16px}small,.muted{color:var(--muted)}main{max-width:1220px;margin:auto;padding:24px 20px}.nav{display:flex;gap:8px;overflow:auto;padding:0 0 16px;margin-bottom:12px}.nav button{white-space:nowrap;padding:10px 15px;background:var(--panel);color:var(--text);border:1px solid var(--border);border-radius:9px;cursor:pointer}.nav button.active{background:#1c4775;border-color:var(--accent)}.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:13px}.panel{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:20px;margin:0 0 16px}.stat b{display:block;font-size:30px}.stat span{color:var(--muted)}.two{display:grid;grid-template-columns:1.5fr 1fr;gap:16px}.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}select,input{padding:10px;background:#0e1b30;border:1px solid var(--border);border-radius:8px;color:var(--text)}input{min-width:260px;flex:1}.feed{display:grid;gap:10px}.item{padding:14px;border:1px solid var(--border);border-radius:10px;background:#101e33}.item strong{display:block;font-size:15px;margin:6px 0}.item p{margin:8px 0;color:#c3d1e1}.tag{display:inline-block;background:#193c64;color:#9bd0ff;padding:2px 9px;border-radius:20px;font-size:12px;margin-right:6px}.meta{font-size:12px;color:var(--muted)}.empty{padding:30px 12px;color:var(--muted);text-align:center}.error{color:#ffbf93}.hidden{display:none}.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.tiles article{padding:15px;border:1px solid var(--border);border-radius:10px}.tiles p{color:var(--muted);margin:4px 0}.foot{font-size:12px;color:var(--muted);padding:28px 0 10px}.mini{font-size:12px;color:var(--muted)}details{margin:8px 0;padding:8px 10px;background:#192d48;border-radius:8px}summary{cursor:pointer;color:#9bd0ff}details p{margin:8px 0}@media(max-width:800px){.grid{grid-template-columns:repeat(2,1fr)}.two,.tiles{grid-template-columns:1fr}header{padding:24px 20px}h1{font-size:25px}main{padding:18px 14px}}@media(max-width:380px){.grid{grid-template-columns:1fr}}
+
+/* Compact Competitor Intelligence */
+#competitors .panel{padding:16px}
+#competitors h2{font-size:18px;margin:0 0 8px}
+#competitors .competitor-intro{font-size:12px;margin:0 0 10px;color:var(--muted)}
+#competitors .filters{gap:7px;margin-bottom:10px;align-items:center}
+#competitors .filters select,#competitors .filters input{padding:7px 9px;font-size:13px}
+#competitors .filters input{min-width:165px}
+.competitor-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-bottom:10px}
+.competitor-kpis .kpi{border:1px solid var(--border);background:#101e33;border-radius:9px;padding:9px 11px}
+.competitor-kpis .kpi strong{display:block;font-size:20px;line-height:1.25}
+.competitor-kpis .kpi span{color:var(--muted);font-size:11px}
+.competitor-visuals{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.65fr);gap:10px;margin-bottom:12px}
+.competitor-block{border:1px solid var(--border);background:#101e33;border-radius:10px;padding:10px;min-width:0}
+.competitor-block h3{font-size:13px;margin:0 0 7px}
+.competitor-bars{display:grid;gap:5px;max-height:194px;overflow:auto}
+.company-bar{display:grid;grid-template-columns:84px minmax(0,1fr) 24px;align-items:center;gap:6px;font-size:11px}
+.company-bar .bar-track{height:9px;background:#1c3049;border-radius:20px;overflow:hidden}
+.company-bar .bar-fill{display:block;height:100%;background:var(--accent);border-radius:20px}
+.company-bar .bar-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.competitor-heat-wrap{overflow:auto;max-height:194px}
+.heat-grid{display:grid;grid-template-columns:minmax(95px,1.5fr) repeat(5,minmax(44px,.7fr));gap:3px;min-width:390px;font-size:11px}
+.heat-grid>div{padding:4px 3px;min-height:24px;text-align:center;border-radius:4px;background:#172940}
+.heat-grid .heat-name{text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.heat-grid .heat-head{font-weight:600;background:#233955;position:sticky;top:0;z-index:1}
+.heat-grid .heat-cell{font-variant-numeric:tabular-nums}
+.competitor-article-title{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin:4px 0 8px}
+.competitor-article-title .mini{white-space:nowrap}
+#company-feed{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+#company-feed .item{padding:11px;min-width:0}
+#company-feed .item>.item{border:0;background:transparent;padding:6px 0 0}
+#company-feed .item strong{font-size:13px}
+#company-feed .item p{font-size:12px;line-height:1.45;margin:5px 0}
+#company-feed .item .meta{font-size:11px}
+#company-feed .tag{font-size:10px;padding:2px 6px}
+.portal-details{border:1px solid var(--border);border-radius:9px;padding:9px 12px;margin-top:12px;background:#101e33}
+.portal-details summary{font-size:12px;font-weight:600;cursor:pointer}
+.portal-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin-top:9px}
+.portal-card{background:#172a44;border:1px solid var(--border);border-radius:8px;padding:9px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.portal-card strong{font-size:12px}
+.portal-card small{font-size:11px}
+.portal-card a{font-size:11px}
+@media(max-width:900px){.competitor-visuals{grid-template-columns:1fr}.competitor-bars{max-height:132px}.competitor-heat-wrap{max-height:170px}}
+@media(max-width:650px){.competitor-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}#company-feed{grid-template-columns:1fr}.portal-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#competitors .filters input{width:100%}}
+
 </style></head><body>
 <header><small>POWER SEMICONDUCTOR INTELLIGENCE</small><h1>◈ PSI Radar</h1><div class="muted">GaN · SiC · IGBT · UD/UG SGT · SJ MOSFET | 글로벌 기술 · 논문 · 경쟁사 동향</div><div id="last" class="mini">데이터 상태 확인 중...</div></header>
 <main><nav id="nav" class="nav" aria-label="메뉴">
@@ -10,13 +55,31 @@
 <section id="technology" class="hidden"><article class="panel"><h2>Technology Watch</h2><div class="filters"><select id="cat"><option value="">전체 기술</option><option>GaN</option><option>SiC</option><option>IGBT</option><option>SGT</option><option>SJ MOSFET</option></select><select id="kind"><option value="">뉴스 + 논문</option><option value="news">뉴스</option><option value="paper">논문</option></select><input id="search" placeholder="키워드·회사·기술 검색" aria-label="검색"></div><div id="records" class="feed"></div></article></section>
 <section id="research" class="hidden"><article class="panel"><h2>학술 논문 | Research Intelligence</h2><p class="muted">최근 45일 학술지 + IGBT·SGT·SJ MOSFET 최근 12개월 집중 검색 · Crossref / OpenAlex DOI · 원문 검토 전</p><div class="filters"><select id="research-cat" aria-label="논문 기술 선택"><option value="">전체 논문</option><option>GaN</option><option>SiC</option><option>IGBT</option><option>SGT</option><option>SJ MOSFET</option></select></div><select id="research-relevance" aria-label="기술 관련성 수준"><option value="0">전체 관련성</option><option value="70">높음 70점 이상</option><option value="45">보통 45점 이상</option></select><p class="mini">관련성은 제목·초록 기술 키워드 기반의 자동 추정값입니다. 전문가 검증 결과가 아닙니다.</p><div id="research-counts" class="mini"></div><div id="research-feed" class="feed"></div></article></section>
 <section id="weekly" class="hidden"><article class="panel"><h2>주간 보고서 아카이브</h2><p class="muted">매주 공개 자료를 누적 보관합니다. 동일 주차에 다시 실행하면 해당 주 보고서를 갱신합니다. 첫 주차는 비교 기준(Baseline)입니다.</p><div class="filters"><select id="weekly-select" aria-label="보고서 주차 선택"><option value="">보고서 로딩 중</option></select></div><div id="weekly-details" class="feed"><div class="empty">주간 보고서 파일을 확인 중입니다.</div></div></article></section>
-<section id="competitors" class="hidden"><article class="panel"><h2>Competitor Intelligence · 기업별 기술 동향</h2><p class="muted">Infineon, ST, onsemi, ROHM 중심 · 일본·중국 업체 확대. 제목에 등장한 기업을 추적하며 회사 공식 발표 여부는 출처 링크로 별도 검증합니다. 기업별 건수는 시장점유율이나 기술 순위가 아닙니다.</p><div class="filters"><select id="company-region" aria-label="지역"><option value="">전체 지역</option><option value="Europe">유럽</option><option value="US">미국</option><option value="Japan">일본</option><option value="China">중국</option></select><select id="company-tech" aria-label="관심 소자"><option value="">전체 기술</option><option>GaN</option><option>SiC</option><option>IGBT</option><option>SGT</option><option>SJ MOSFET</option></select><select id="company-type" aria-label="자료 유형"><option value="">전체 자료</option><option value="news">뉴스</option><option value="paper">논문</option><option value="official">제조사 공식</option></select><input id="company-q" placeholder="회사명 / 기술 키워드" aria-label="기업 검색"></div><div class="tiles" id="company-summary"></div><h2>검증된 제조사 원문·포털</h2><div class="feed" id="manufacturer-sources">
-<div class="item"><strong>STMicroelectronics · 공식 기술 발표</strong><a href="https://newsroom.st.com/all-news/product-technology" target="_blank" rel="noopener noreferrer">ST 공식 기술 뉴스 보기</a></div>
-<div class="item"><strong>ROHM · 공식 제품 및 기술 발표</strong><a href="https://www.rohm.com/" target="_blank" rel="noopener noreferrer">ROHM 공식 자료 보기</a></div>
-<div class="item"><strong>Innoscience · 공식 보도자료</strong><a href="https://www.innoscience.com/news/press-releases" target="_blank" rel="noopener noreferrer">Innoscience 원문 보기</a></div>
-<div class="item"><strong>BASiC Semiconductor · 중국어 공식 제품·뉴스</strong><a href="https://www.basicsemi.com/" target="_blank" rel="noopener noreferrer">基本半导体 공식 자료 보기</a></div>
-</div><p class="mini">공식 사이트 링크는 검증된 출처 안내입니다. 사이트 전체 내용이 자동 수집되는 것은 아닙니다.</p>
-<h2>기업별 공개자료 비교</h2><p class="mini">제품군에 대한 직접적인 언급만 집계 · 관련 자료가 없으면 0건으로 표시 · 공식 확인 여부 별도 안내</p><div id="company-matrix" class="feed"></div><h2>관련 뉴스·논문 근거</h2><div id="company-feed" class="feed"></div></article></section>
+<section id="competitors" class="hidden"><article class="panel">
+<h2>Competitor Intelligence · 기업별 기술 동향</h2>
+<p class="competitor-intro">Infineon · ST · onsemi · ROHM 및 일본·중국 업체 | 자료 건수는 시장점유율이 아니며, 뉴스 색인과 제조사 공식 발표를 구분합니다.</p>
+<div class="filters">
+<select id="company-region" aria-label="지역"><option value="">전체 지역</option><option value="Europe">유럽</option><option value="US">미국</option><option value="Japan">일본</option><option value="China">중국</option></select>
+<select id="company-tech" aria-label="관심 소자"><option value="">전체 기술</option><option>GaN</option><option>SiC</option><option>IGBT</option><option>SGT</option><option>SJ MOSFET</option></select>
+<select id="company-type" aria-label="자료 유형"><option value="">전체 자료</option><option value="news">뉴스</option><option value="paper">논문</option><option value="official">제조사 공식</option></select>
+<input id="company-q" placeholder="회사명 / 기술 키워드" aria-label="기업 검색">
+</div>
+<div class="competitor-kpis" id="company-summary" aria-live="polite"></div>
+<div class="competitor-visuals">
+<div class="competitor-block"><h3>회사별 자료 건수</h3><div id="company-bars" class="competitor-bars"></div></div>
+<div class="competitor-block"><h3>기술별 언급 히트맵</h3><div id="company-matrix" class="competitor-heat-wrap"></div></div>
+</div>
+<div class="competitor-article-title"><h2>관련 기사·논문·공식 원문</h2><span class="mini" id="company-list-count"></span></div>
+<div id="company-feed" class="feed"></div>
+<details class="portal-details"><summary>제조사 공식 포털 바로가기 · 펼쳐 보기</summary>
+<div class="portal-grid" id="manufacturer-sources">
+<div class="portal-card" data-company="st"><strong>STMicroelectronics</strong><small class="portal-count">공식 원문 0건</small><a href="https://newsroom.st.com/all-news/product-technology" target="_blank" rel="noopener noreferrer">기술 뉴스 포털 ↗</a></div>
+<div class="portal-card" data-company="rohm"><strong>ROHM</strong><small class="portal-count">공식 원문 0건</small><a href="https://www.rohm.com/" target="_blank" rel="noopener noreferrer">공식 제품·뉴스 ↗</a></div>
+<div class="portal-card" data-company="innoscience"><strong>Innoscience</strong><small class="portal-count">공식 원문 0건</small><a href="https://www.innoscience.com/news/press-releases" target="_blank" rel="noopener noreferrer">보도자료 ↗</a></div>
+<div class="portal-card" data-company="basicsemi"><strong>BASiC Semiconductor</strong><small class="portal-count">공식 원문 0건</small><a href="https://www.basicsemi.com/" target="_blank" rel="noopener noreferrer">공식 중국어 자료 ↗</a></div>
+</div><p class="mini">포털 링크는 탐색용이며 해당 사이트의 전체 자료가 자동 수집되는 것은 아닙니다.</p>
+</details>
+</article></section>
 <section id="benchmark" class="hidden"><article class="panel"><h2>Device Benchmark</h2><p>GaN: RDS(on), Vth, Qg, Qoss, Eoss, Dynamic R(on) / SiC: Ron, Qgd, Eoss, SCWT / IGBT: VCE(sat), Eoff, Eon, Qg, SCWT / SGT·SJ: BV, Qrr, EAS, Qgd</p><div class="empty">제품별 공식 Datasheet 수집 및 측정 조건 정규화 전입니다. 검증된 제품 비교만 이곳에 표시됩니다.</div><h2>제조사 공식 기술자료 (참고 링크)</h2><div class="feed"><div class="item"><strong>ROHM · 600V Super Junction MOSFET 신제품 기술 발표 (2026)</strong><a href="https://www.rohm.com/news-detail?defaultGroupId=false&amp;news-title=2026-07-09_news_super-junction-mosfet" target="_blank" rel="noopener noreferrer">공식 ROHM 자료 ↗</a></div><div class="item"><strong>Toshiba · DTMOS VI 공식 데이터시트 및 Application Note</strong><a href="https://toshiba.semicon-storage.com/kr/semiconductor/product/mosfets/400v-900v-mosfets/detail.TK095V65Z5.html" target="_blank" rel="noopener noreferrer">공식 Toshiba 기술자료 ↗</a></div><div class="item"><strong>Infineon · TRENCHSTOP IGBT7 / EC7 구조 및 공식 제품 기술</strong><a href="https://www.infineon.com/technology/power/igbt/trenchstop-igbt7" target="_blank" rel="noopener noreferrer">공식 Infineon 기술자료 ↗</a></div></div></article></section>
 <section id="market" class="hidden"><article class="panel"><h2>Market & Financials</h2><p>Global Semiconductor → Power / Discrete → GaN / SiC / IGBT → Company Financials</p><div class="empty">공식 분기 실적·공시 기반 데이터 추출은 다음 단계입니다. 매출 및 이익 수치를 임의 생성하지 않습니다.</div></article></section>
 <section id="sources" class="hidden"><article class="panel"><h2>Source & Data Quality</h2><div id="health"></div><p class="muted">공개 뉴스 RSS와 Crossref 서지 정보 기반입니다. Google News 검색 링크는 원 출판사 홈페이지가 아닐 수 있습니다. AI 요약은 선택적이며 자료의 근거 범위가 표시됩니다.</p></article></section>
@@ -117,36 +180,51 @@ const COMPANY_DIRECTORY=[
  {id:"wolfspeed",name:"Wolfspeed",region:"US",tier:"priority"}
 ];
 function renderCompetitors(){
- const region=el("company-region").value,tech=el("company-tech").value,type=el("company-type").value,q=el("company-q").value.toLowerCase().trim();
- const entries=COMPANY_DIRECTORY.filter(v=>(!region||v.region===region)&&(!q||v.name.toLowerCase().includes(q)||(DB.records||[]).some(r=>(r.companies||[]).includes(v.id)&&((r.title||"")+" "+(r.title_ko||"")+" "+(r.summary_ko||"")).toLowerCase().includes(q))));
- const rows=(DB.records||[]).filter(v=>Array.isArray(v.companies)&&v.companies.length>0)
-  .filter(v=>(!tech||(v.device_mentions||[]).includes(tech))&&(!type||v.kind===type))
-  .filter(v=>!q||((v.title||"")+" "+(v.title_ko||"")+" "+(v.summary_ko||"")).toLowerCase().includes(q)||(v.companies||[]).some(id=>entries.some(e=>e.id===id)));
- const companyHits=new Map(entries.map(e=>[e.id,rows.filter(r=>r.companies.includes(e.id))]));
- const matched=entries.filter(e=>(companyHits.get(e.id)||[]).length>0).length;
- const uniqueIDs=new Set(rows.filter(r=>r.companies.some(id=>companyHits.has(id))).map(r=>r.id));
- el("company-summary").innerHTML=
- '<article><b>등록된 추적 기업 '+COMPANY_DIRECTORY.length+'개</b><p>글로벌 / 일본 / 중국</p></article>'+
- '<article><b>현재 조건 자료 '+uniqueIDs.size+'건</b><p>기업 관련 원문 후보 수</p></article>'+
- '<article><b>자료 확인 기업 '+matched+'개</b><p>제목에 기업명 등장</p></article>'+
- '<article><b>출처 검증은 별도</b><p>뉴스 색인 ≠ 회사 공식 발표</p></article>';
+ const region=el("company-region").value,tech=el("company-tech").value,type=el("company-type").value,q=el("company-q").value.trim().toLowerCase();
+ const records=(DB.records||[]).filter(r=>Array.isArray(r.companies)&&r.companies.length>0);
+ const queryText=r=>((r.title||"")+" "+(r.title_ko||"")+" "+(r.summary_ko||"")).toLowerCase();
+ const regionCompanies=COMPANY_DIRECTORY.filter(c=>!region||c.region===region);
+ const entries=regionCompanies.filter(c=>!q||c.name.toLowerCase().includes(q)||records.some(r=>r.companies.includes(c.id)&&queryText(r).includes(q)));
+ const matching=records.filter(r=>(!tech||(r.device_mentions||[]).includes(tech))&&(!type||r.kind===type)&&(!q||queryText(r).includes(q)||r.companies.some(id=>entries.some(e=>e.id===id))));
+ const hits=new Map(entries.map(c=>[c.id,matching.filter(r=>r.companies.includes(c.id))]));
+ const inView=matching.filter(r=>r.companies.some(id=>hits.has(id)));
+ const seen=new Set(inView.map(r=>r.id));
+ const active=entries.filter(c=>hits.get(c.id).length>0).length;
+ const official=inView.filter(r=>r.source_type==="manufacturer_official").length;
+ const kpis=[["자료",seen.size+"건"],["관련 기업",active+" / "+entries.length],["공식 원문",official+"건"],["추적 업체",entries.length+"개"]];
+ el("company-summary").innerHTML=kpis.map(k=>'<div class="kpi"><span>'+esc(k[0])+'</span><strong>'+esc(k[1])+'</strong></div>').join("");
+ const sorted=[...entries].sort((a,b)=>hits.get(b.id).length-hits.get(a.id).length||a.name.localeCompare(b.name));
+ const max=Math.max(1,...sorted.map(c=>hits.get(c.id).length));
+ el("company-bars").innerHTML=sorted.length?sorted.map(c=>{
+  const n=hits.get(c.id).length;
+  return '<div class="company-bar" title="'+esc(c.name)+': '+n+'건"><span class="bar-name">'+esc(c.name)+'</span><div class="bar-track"><span class="bar-fill" style="width:'+Math.round(100*n/max)+'%"></span></div><b>'+n+'</b></div>';
+ }).join(""):'<div class="mini">일치하는 기업이 없습니다.</div>';
  const devices=["GaN","SiC","IGBT","SGT","SJ MOSFET"];
- const hdr='<div class="item"><strong>기업 / 자료 수 / 기술별 언급</strong><div class="mini">GaN · SiC · IGBT · SGT · SJ MOSFET</div></div>';
- el("company-matrix").innerHTML=hdr+entries.map(e=>{
-  const hits=companyHits.get(e.id)||[];
-  const slices=devices.map(d=>d+': '+hits.filter(r=>(r.device_mentions||[]).includes(d)).length).join(" · ");
-  const official=hits.filter(r=>r.source_type==="manufacturer_official" && r.company_source_status?.[e.id]==="official_verified_url").length;
-  return '<div class="item"><strong>'+esc(e.name)+' <span class="tag">'+esc(e.region)+'</span> <span class="tag">'+(e.tier==="core"?"핵심 추적":"확장 추적")+'</span></strong>'+
-   '<div class="mini">관련 '+hits.length+'건 · 직접 공식 링크 '+official+'건</div><p>'+esc(slices)+'</p></div>';
+ const headers=['기업',...devices];
+ const top=headers.map(t=>'<div class="heat-head">'+esc(t)+'</div>').join("");
+ const cells=sorted.map(c=>{
+  const h=hits.get(c.id);
+  return '<div class="heat-name" title="'+esc(c.name)+'">'+esc(c.name)+'</div>'+devices.map(d=>{
+    const value=h.filter(r=>(r.device_mentions||[]).includes(d)).length;
+    const shade=value?Math.min(.14+value/Math.max(2,h.length)*.55,.72):0;
+    const bg=value?'style="background:rgba(74,167,255,'+shade.toFixed(2)+')"':'';
+    return '<div class="heat-cell" '+bg+' title="'+esc(c.name)+' / '+esc(d)+': '+value+'건">'+value+'</div>';
+  }).join("");
  }).join("");
- const shown=rows.filter(r=>r.companies.some(id=>companyHits.has(id)))
- .sort((a,b)=>(b.date||"").localeCompare(a.date||"")||(b.relevance_score||0)-(a.relevance_score||0)).slice(0,70);
+ el("company-matrix").innerHTML='<div class="heat-grid">'+top+cells+'</div>';
+ const shown=[...inView].sort((a,b)=>(b.date||"").localeCompare(a.date||"")||(b.relevance_score||0)-(a.relevance_score||0)).slice(0,70);
+ el("company-list-count").textContent=seen.size+"건 중 "+shown.length+"건 표시";
  el("company-feed").innerHTML=shown.length?shown.map(r=>{
- const names=(r.companies||[]).filter(id=>companyHits.has(id)).map(id=>COMPANY_DIRECTORY.find(c=>c.id===id)?.name||id).join(", ");
- const statuses=(r.companies||[]).filter(id=>companyHits.has(id)).map(id=>r.company_source_status?.[id]||"news_index_unverified");
- const official=statuses.length>0&&statuses.every(s=>s==="official_verified_url");
- return '<div class="item"><span class="tag">'+esc(names)+'</span><span class="tag">'+(official?"공식 URL 확인":"제목 언급·공식 미확인")+'</span>'+card(r)+'</div>';
- }).join(""):'<div class="empty">현재 검색 조건에서 확인된 기업 관련 기술 자료가 없습니다. 수집 범위·기간의 제한일 수 있습니다.</div>';
+  const names=(r.companies||[]).filter(id=>hits.has(id)).map(id=>COMPANY_DIRECTORY.find(c=>c.id===id)?.name||id).join(", ");
+  const exactOfficial=r.source_type==="manufacturer_official"&&(r.companies||[]).some(id=>hits.has(id)&&r.company_source_status?.[id]==="official_verified_url");
+  return '<div class="item"><span class="tag">'+esc(names)+'</span><span class="tag">'+(exactOfficial?"제조사 공식 원문":"제목 언급·공식 미확인")+'</span>'+card(r)+'</div>';
+ }).join(""):'<div class="empty">현재 필터 조건의 자료가 없습니다. 다른 기술·지역을 선택해 보세요.</div>';
+ for(const portal of document.querySelectorAll("#manufacturer-sources .portal-card")){
+  const key=portal.dataset.company;
+  const count=(hits.get(key)||[]).filter(r=>r.source_type==="manufacturer_official").length;
+  portal.querySelector(".portal-count").textContent="현재 조건 공식 원문 "+count+"건";
+  portal.hidden=Boolean(region&&!regionCompanies.some(c=>c.id===key));
+ }
 }
 for(const name of ["company-region","company-tech","company-type","company-q"])el(name).addEventListener("input",renderCompetitors);
 function filter(){const cat=el("cat").value,kind=el("kind").value,q=el("search").value.toLowerCase();let x=(DB.records||[]).filter(r=>(!cat||r.category===cat)&&(!kind||r.kind===kind)&&(!q||(r.title+" "+(r.title_ko||"")+" "+r.source+" "+r.summary_ko).toLowerCase().includes(q)));el("records").innerHTML=x.length?x.map(card).join(""):'<div class="empty">검색 결과가 없습니다.</div>';}
