@@ -12,8 +12,8 @@ from scripts.collect import clean, relevant, classify_topics, score
 
 QUERIES={
  "IGBT": ["IGBT trench field stop", "reverse conducting IGBT", "IGBT short circuit reliability"],
- "SGT": ["shielded gate trench MOSFET", "split gate trench power MOSFET", "shielded gate MOSFET"],
  "SJ MOSFET": ["superjunction MOSFET reverse recovery", "superjunction MOSFET charge balance", "super junction power MOSFET"]
+ "SGT": ["shielded gate trench MOSFET", "split gate trench power MOSFET", "shielded gate MOSFET"],
 }
 FOCUSED=("IEEE Transactions on Electron Devices","IEEE Journal of the Electron Devices Society",
  "IEEE Transactions on Power Electronics","Microelectronics Reliability",
