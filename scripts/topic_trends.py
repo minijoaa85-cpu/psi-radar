@@ -23,7 +23,7 @@ def kst_week(now):
   complete=True
  else:
   end=local.date()
-  complete=local.weekday()==6
+  complete=False
  year,week,_=end.isocalendar()
  start=end-dt.timedelta(days=end.weekday())
  return f"{year}-W{week:02d}",start.isoformat(),end.isoformat(),complete
