@@ -150,6 +150,16 @@
 .arch-trend-articles .arch-evidence-item{padding:7px}
 .arch-trend-articles .arch-evidence-item strong{font-size:11px}
 @media(max-width:690px){.arch-trend-split{grid-template-columns:1fr}}
+
+/* V1.4 source-composition pills: descriptive counts only */
+.arch-source-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin:8px 0}
+.arch-source-box{border:1px solid var(--border);background:#152d48;border-radius:8px;padding:9px}
+.arch-source-box b{display:block;font-size:19px;line-height:1.3}
+.arch-source-box span{font-size:11px;color:#b8cbde}
+.arch-research-focus{border:1px solid var(--border);border-radius:8px;padding:10px;margin:6px 0;background:#0f2740;line-height:1.6}
+.arch-release-stack{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
+.arch-release-stack h4{font-size:12px;margin:0 0 8px}
+@media(max-width:620px){.arch-release-stack{grid-template-columns:1fr}}
 </style></head><body>
 <header><small>POWER SEMICONDUCTOR INTELLIGENCE</small><h1>◈ PSI Radar</h1><div class="muted">GaN · SiC · IGBT · UD/UG SGT · SJ MOSFET | 글로벌 기술 · 논문 · 경쟁사 동향</div><div id="last" class="mini">데이터 상태 확인 중...</div></header>
 <main><nav id="nav" class="nav" aria-label="메뉴">
@@ -199,6 +209,9 @@
 <div class="arch-trend-head"><h4>주차별 기술 동향</h4><span id="arch-trend-coverage" class="mini">주차별 기록 확인 중</span></div>
 <p class="mini">수집된 자료 중 <strong>발행일이 해당 주차인 기술 제목 후보</strong>의 건수입니다. 추세는 실제 보관된 주차만 보여줍니다.</p>
 <div id="arch-trend-chart" class="arch-trend-chart" aria-label="주차별 확인 자료 수" role="group"></div>
+<div id="arch-source-summary" class="arch-source-summary"></div>
+<div id="arch-research-focus" class="arch-research-focus mini" aria-live="polite"></div>
+<details class="portal-details" id="arch-official-details"><summary>이번 주 공식 제조사 발표 · 논문 근거 확인</summary><div id="arch-official-evidence"></div></details>
 <div class="arch-trend-split"><div><h4>해당 주차 제조사 언급</h4><div id="arch-trend-companies" class="arch-company-bars"></div></div>
 <div><h4>해당 주차 근거 기사</h4><div id="arch-trend-evidence" class="arch-trend-articles"></div></div></div>
 <p class="mini" id="arch-trend-warning">기사 제목과 등록된 회사명 언급만 집계하므로 제품 성능이나 산업 성장률을 나타내지 않습니다.</p>
@@ -509,6 +522,9 @@ function renderTopicTrends(topicId){
   coverage.textContent="보관된 주차 자료 0개";
   barRoot.innerHTML='<div class="mini">아직 저장된 기술 동향 기록이 없습니다. 자동 수집 후 첫 주차부터 표시합니다.</div>';
   companyRoot.innerHTML=evidenceRoot.innerHTML='<div class="mini">자료 없음</div>';
+  el("arch-source-summary").innerHTML="";
+  el("arch-research-focus").textContent="기록된 주차가 없어 연구 집중도를 계산할 수 없습니다.";
+  el("arch-official-evidence").textContent="공식 발표 및 논문 기록 없음.";
   warning.textContent="기록되지 않은 주차를 0건으로 처리하지 않습니다.";
   return;
  }
@@ -523,12 +539,28 @@ function renderTopicTrends(topicId){
   return '<button class="arch-trend-bar'+(s.week===TREND_SELECTED_WEEK?" selected":"")+'" type="button" data-week="'+esc(s.week)+'" aria-label="'+esc(s.week+" 발행 후보 "+count+"건")+'"><span class="arch-bar-count">'+count+'</span><span class="arch-bar-fill" style="height:'+height+'px"></span><span class="arch-bar-week">'+esc(s.week)+'</span></button>';
  }).join("");
  const record=selected.topics.find(t=>t.topic_id===topicId);
+ const breakdown=record.source_kinds||{};
+ const official=breakdown.manufacturer_announcement||0,papers=breakdown.paper_metadata||0,news=breakdown.news_title_candidate||0;
+ el("arch-source-summary").innerHTML=[["제조사 공식 발표",official],["논문 메타데이터",papers],["일반 뉴스 제목",news]].map(([label,n])=>
+  '<div class="arch-source-box"><b>'+n+'건</b><span>'+esc(label)+'</span></div>').join("");
+ const paperTotal=record.research_sample_count;
+ const paperMatches=record.research_topic_count;
+ const share=record.research_share_of_sample_pct;
+ el("arch-research-focus").innerHTML='<strong>연구 주제 집중도 · 표본 관측치</strong> · 같은 기술군의 해당 주차 수집 논문 '+(paperTotal??"미집계")+
+ '건 중 주제 제목 일치 '+(paperMatches??"미집계")+'건'+
+ (share===null||share===undefined?' <strong>· 표본 부족으로 비율 숨김</strong>':' · 표본 내 '+share+'%')+
+ '<div class="mini">논문 표본이 5건 미만이면 백분율을 표시하지 않습니다. 전체 산업 연구 비중이 아닙니다.</div>';
+ const releaseRows=record.new_official_announcements||[],paperRows=record.research_evidence||[];
+ const refs=(rows,empty)=>rows.length?rows.map(x=>'<a class="arch-evidence-item" href="'+esc(x.url)+'" target="_blank" rel="noopener noreferrer"><strong>'+esc(x.title)+'</strong><small>'+esc(x.date)+" · "+esc(x.source)+'</small></a>').join(""):'<div class="mini">'+empty+'</div>';
+ el("arch-official-evidence").innerHTML='<div class="arch-release-stack"><div><h4>이 주차에 발행된 공식 발표 ('+official+'건)</h4>'+refs(releaseRows,"확인된 공식 발표 없음")+'</div>'+
+ '<div><h4>관련 논문 제목 후보 ('+papers+'건)</h4>'+refs(paperRows,"일치하는 논문 제목 없음")+'</div></div>'+
+ '<p class="mini">공식 원문 URL과 발행일을 기준으로 구분합니다. 오래된 제조사 기술 자료는 이번 주 신규 발표로 세지 않습니다.</p>';
  const mentions=Object.entries(record.company_mentions||{}).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0])).slice(0,7);
  const maxCompany=Math.max(1,...mentions.map(([,n])=>n));
  companyRoot.innerHTML=mentions.length?mentions.map(([id,n])=>'<div class="arch-company-line"><span class="arch-company-name" title="'+esc(COMPANY_LABELS[id]||id)+'">'+esc(COMPANY_LABELS[id]||id)+'</span><span class="arch-company-track"><span class="arch-company-fill" style="width:'+Math.round(100*n/maxCompany)+'%"></span></span><b>'+n+'</b></div>').join(""):'<div class="mini">선택 주차에 제목으로 확인된 제조사 언급이 없습니다.</div>';
  const ev=record.evidence||[];
  evidenceRoot.innerHTML=ev.length?ev.slice(0,4).map(r=>'<a class="arch-evidence-item" href="'+esc(r.url)+'" target="_blank" rel="noopener noreferrer"><strong>'+esc(r.title)+'</strong><small>'+esc(r.date)+" · "+esc(r.source||"공개 자료")+'</small></a>').join(""):'<div class="mini">선택 주차에 기술 제목 후보가 없습니다.</div>';
- warning.textContent="선택: "+selected.week+" ("+selected.week_start+"~"+selected.week_to_date+") · 발행일 기준 "+record.count+"건. 기사 제목 매칭이며 연구 성과나 제조사 성능 순위가 아닙니다. 주차별 수집 범위가 달라 절대적 성장률 비교는 어렵습니다.";
+ warning.textContent=(selected.complete_week?"완료 주차 · ":"진행 중 주차 · ")+"선택: "+selected.week+" ("+selected.week_start+"~"+selected.week_to_date+") · 발행일 기준 "+record.count+"건. 기사 제목 매칭이며 연구 성과나 제조사 성능 순위가 아닙니다. 주차별 수집 범위가 달라 절대적 성장률 비교는 어렵습니다.";
 }
 el("arch-trend-chart").addEventListener("click",event=>{
  const button=event.target.closest("button[data-week]");
