@@ -1,4 +1,4 @@
-# PSI Radar V2.2 — Power Semiconductor Intelligence Radar
+# PSI Radar V2.3 — Power Semiconductor Intelligence Radar
 
 공개 자료 기반 한국어 전력반도체 주간 기술 모니터링 웹 플랫폼. GaN (40%) > SiC (30%) > IGBT (10%) = UD/UG SGT (10%) = SJ MOSFET (10%).
 
@@ -327,3 +327,20 @@ GitHub Pages는 저장소 Settings → Pages → **Source: GitHub Actions**를 �
 - ST P&D segment: https://www.sec.gov/Archives/edgar/data/932787/000093278726000086/c3419c-q326earningspressre.htm
 - onsemi Q3: https://investor.onsemi.com/news-releases/news-release-details/onsemi-reports-third-quarter-2026-results
 - ROHM FY2027 H1: https://fscdn.rohm.com/en/financial/financial-report/2609_financialresults_en.pdf
+
+## V2.3 — 공식 IR 신규 발표 감시 및 검토 대기열 (2026-11-12)
+
+- **확인 가능한 범위**: Infineon, STMicroelectronics, onsemi, ROHM 공식 IR·뉴스 게시판을 **매일 오전 8:30 KST**와 기존 주간 배포 실행 시 확인합니다. 공식 사이트에서 수집한 공개 링크 제목이 실적 발표·Financial Report 등 관련 표현과 일치하면 검토 후보로 남깁니다. 공식 사이트가 접속 불가인 경우 공식 대체 목록을 순차 확인하며, 실패 시 회사별 점검 실패 상태를 노출합니다.
+- **데이터 무결성 최우선**: 기존 `site/financials.json`의 검증된 금액·사업부 손익·회계 기간은 **자동으로 수정하지 않습니다**. 관측 결과는 완전히 별개인 `site/financial_ir_watch.json`에 기록하고, `human_review_required`와 `already_in_verified_financials`을 구분합니다.
+- **의미 제한**: `first_observed_at`은 **사이트가 처음 링크를 발견한 시간**이지 회사의 실제 발표일이 아닙니다. 검색 후보 수는 실제 신규 발표 수가 아니며, 접근 실패·HTML 개편·공식 링크 색인 누락이 있을 수 있습니다. 원문 제목을 통한 후보 발견은 실적 숫자 검증이 아닙니다.
+- **화면**: Market & Finance 하단에 '공식 IR 발표 감지 · 검토 대기열'을 추가합니다. 회사 필터와 연동되며, 공식 URL, 관측일, 수동 검토 여부, 회사별 최근 사이트 연결 상태를 표시합니다. '기존 반영 원문도 보기' 토글은 이미 검증된 실적 원문도 보여줍니다.
+- **자동화**: `.github/workflows/finance-ir.yml` 일간 스캔은 검증된 수치 데이터를 건드리지 않고 공식 링크 관측 스냅샷만 커밋합니다. 이 커밋이 기존 Pages 배포를 트리거합니다. 기존 `weekly.yml`도 공식 링크를 스캔하고 비-push 실행 시 목록을 함께 보관합니다.
+- **검증**: 자동 데이터 검증과 Chromium, Firefox, WebKit 실제 브라우저 엔진·PC/태블릿/스마트폰 12개 조합에서 IR 검토 대기열이 표시되는지 확인합니다.
+- **수동 반영 프로세스**: 새 공식 문서가 발견되면 (1) IR 원문에서 발표일/보고 기간 확인, (2) 영업손익과 기업별 Segment Result 정의 확인, (3) 통화/누적 기간/사업부 범위 확인, (4) `site/financials.json`을 검토 후 변경, (5) `python -m scripts.validate_financials` 및 3개 엔진 브라우저 테스트 통과를 거쳐 공개합니다. 자동 추정 매출이나 분기 금액 산출은 금지합니다.
+- **변경 없음**: My Watch 개인 설정·읽음 기록·북마크·백업, 상단 4단계 메뉴, 22종 제조사 Benchmark, 기술군 순서(GaN → SiC → IGBT → SJ MOSFET → SGT), AI 비용 상한은 유지합니다.
+
+**공식 IR 모니터 원본**
+- https://www.infineon.com/about/investor/news
+- https://investors.st.com/
+- https://investor.onsemi.com/news
+- https://www.rohm.com/ir
