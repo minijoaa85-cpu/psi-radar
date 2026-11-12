@@ -70,6 +70,10 @@ def assess_source(url,source,company_key):
  return "official_verified_url" if official else "news_index_unverified"
 def tag_records(rows):
  for row in rows:
+  if row.get("source_type")=="manufacturer_official":
+   # Official registry has a verified publisher URL and explicit device mentions.
+   # Do not overwrite curated provenance with title-mention heuristics.
+   continue
   found=mentions(row.get("title",""))
   row["companies"]=found
   row["company_attribution"]="title_mention_only" if found else "not_attributed"
@@ -119,6 +123,7 @@ def summarize_companies(rows):
   data[key]={"id":key,"name":meta["name"],"region":meta["region"],"tier":meta["tier"],
      "items":len(matches),"news":sum(r.get("kind")=="news" for r in matches),
      "papers":sum(r.get("kind")=="paper" for r in matches),
+     "official":sum(r.get("source_type")=="manufacturer_official" for r in matches),
      "by_device":{d:sum(d in r.get("device_mentions",[]) for r in matches) for d in TECH_MARKERS},
      "last_date":max((r.get("date") or "" for r in matches),default="")}
  return data
