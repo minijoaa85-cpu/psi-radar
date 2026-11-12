@@ -21,7 +21,7 @@ def test_v24_review_local_only_and_no_financial_mutation():
     assert 'FINANCE_REVIEWS[r.url]' in HTML
     assert 'financials.json?nocache=' in HTML
     assert 'FINANCE_REVIEWS=' in HTML
-    assert 'fetch("financials.json"' in HTML
+    assert 'fetch("financials.json?nocache=' in HTML
     assert 'fetch("financial_ir_watch.json' in HTML
     assert 'fetch("financials.json",{' not in HTML
 
