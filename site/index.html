@@ -773,6 +773,85 @@ const WATCH_COMPANY_IDS=new Set(WATCH_COMPANIES.map(([id])=>id));
 let WATCH_SAVED={techs:[],companies:[]};
 let WATCH_READ=new Set();
 let WATCH_VISIBLE_ITEMS=[];
+const WATCH_BOOKMARK_KEY="psi-radar-bookmarks-v1";
+const WATCH_BOOKMARK_LIMIT=200;
+let WATCH_BOOKMARKS=new Map();
+function watchValidUrl(value){
+ if(typeof value!=="string"||value.length>2048)return false;
+ try{const u=new URL(value);return u.protocol==="https:"&&Boolean(u.hostname)&&!u.username&&!u.password}
+ catch{return false}
+}
+function normalizeWatchBookmark(b){
+ if(!b||typeof b!=="object"||!watchValidUrl(b.url)||typeof b.title!=="string"||!b.title.trim()||b.title.length>260)return null;
+ const category=WATCH_TECH_ORDER.includes(b.category)?b.category:"";
+ const date=typeof b.date==="string"&&/^\\d{4}-\\d{2}-\\d{2}$/.test(b.date)?b.date:"";
+ const source=typeof b.source==="string"?b.source.slice(0,120):"";
+ const savedAt=typeof b.saved_at==="string"&&b.saved_at.length<=36?b.saved_at:"";
+ return {url:b.url,title:b.title.slice(0,260),category,date,source,saved_at:savedAt};
+}
+function loadWatchBookmarks(){
+ try{
+  const value=JSON.parse(localStorage.getItem(WATCH_BOOKMARK_KEY)||"[]");
+  WATCH_BOOKMARKS=new Map();
+  if(Array.isArray(value))for(const raw of value.slice(-WATCH_BOOKMARK_LIMIT)){
+   const b=normalizeWatchBookmark(raw);
+   if(b)WATCH_BOOKMARKS.set(b.url,b);
+  }
+ }catch{WATCH_BOOKMARKS=new Map();}
+}
+function persistWatchBookmarks(){
+ try{
+  localStorage.setItem(WATCH_BOOKMARK_KEY,JSON.stringify([...WATCH_BOOKMARKS.values()].slice(-WATCH_BOOKMARK_LIMIT)));
+  el("watch-status").textContent="북마크를 이 브라우저에 저장했습니다.";
+ }catch{
+  el("watch-status").textContent="브라우저 저장이 차단돼 북마크가 현재 페이지에만 유지됩니다.";
+ }
+}
+function renderWatchBookmarks(){
+ const items=[...WATCH_BOOKMARKS.values()].reverse();
+ el("watch-bookmark-count").textContent=items.length+"건";
+ el("watch-bookmark-feed").innerHTML=items.length?items.map((r,index)=>
+ '<article class="watch-saved-card"><div class="meta">'+esc(r.category||"기술군 미지정")+(r.date?' · '+esc(r.date):"")+'</div>'+
+ '<a href="'+esc(r.url)+'" target="_blank" rel="noopener noreferrer">'+esc(r.title)+'</a>'+
+ '<div class="meta">'+esc(r.source||"공개 원문")+'</div>'+
+ '<button type="button" class="watch-bookmark-toggle" data-remove-bookmark="'+index+'">북마크 해제</button></article>'
+ ).join(""):'<div class="mini">아직 저장한 자료가 없습니다. 기사 카드에서 ☆ 북마크를 누르면 이곳에 보관됩니다.</div>';
+}
+function toggleWatchBookmark(row){
+ const url=row?.url;
+ if(!watchValidUrl(url))return;
+ if(WATCH_BOOKMARKS.has(url)){WATCH_BOOKMARKS.delete(url)}
+ else{
+  const safe=normalizeWatchBookmark({url,title:row.title,category:row.category,date:row.date,
+    source:row.source,saved_at:new Date().toISOString()});
+  if(!safe)return;
+  WATCH_BOOKMARKS.set(url,safe);
+  while(WATCH_BOOKMARKS.size>WATCH_BOOKMARK_LIMIT)WATCH_BOOKMARKS.delete(WATCH_BOOKMARKS.keys().next().value);
+ }
+ persistWatchBookmarks();
+ renderWatchBookmarks();
+ renderWatchFeed();
+}
+function watchBackupObject(){
+ return {app:"PSI Radar My Watch",schema_version:1,exported_at:new Date().toISOString(),
+   preferences:watchSelections(),read_urls:[...WATCH_READ].slice(-WATCH_READ_LIMIT),
+   bookmarks:[...WATCH_BOOKMARKS.values()].slice(-WATCH_BOOKMARK_LIMIT)};
+}
+function validatedWatchBackup(value){
+ if(!value||typeof value!=="object"||Array.isArray(value)||value.app!=="PSI Radar My Watch"||value.schema_version!==1)throw Error("PSI Radar V1 백업 파일이 아닙니다.");
+ if(!value.preferences||typeof value.preferences!=="object"||!Array.isArray(value.preferences.techs)||!Array.isArray(value.preferences.companies))throw Error("관심 기술·제조사 형식이 올바르지 않습니다.");
+ if(!Array.isArray(value.read_urls)||value.read_urls.length>WATCH_READ_LIMIT||!value.read_urls.every(watchValidUrl))throw Error("읽음 기록이 올바르지 않거나 500건을 초과합니다.");
+ if(!Array.isArray(value.bookmarks)||value.bookmarks.length>WATCH_BOOKMARK_LIMIT)throw Error("북마크는 200건까지만 복원할 수 있습니다.");
+ const bookmarks=[];
+ for(const item of value.bookmarks){
+  const b=normalizeWatchBookmark(item);
+  if(!b)throw Error("유효하지 않은 북마크가 포함되어 있습니다.");
+  bookmarks.push(b);
+ }
+ return {prefs:normalizeWatchPrefs(value.preferences),read:[...new Set(value.read_urls)],
+  bookmarks:[...new Map(bookmarks.map(b=>[b.url,b])).values()]};
+}
+
 function normalizeWatchPrefs(obj){
  const techs=Array.isArray(obj?.techs)?obj.techs:[];
  const companies=Array.isArray(obj?.companies)?obj.companies:[];
@@ -833,6 +912,7 @@ function renderWatchFeed(){
  if(prefs.companies.length)items=items.filter(r=>(r.companies||[]).some(id=>prefs.companies.includes(id)));
  if(requireCompany)items=items.filter(r=>(r.companies||[]).length>0);
  if(official)items=items.filter(r=>r.source_level==="official");
+ if(el("watch-bookmarked-only").checked)items=items.filter(r=>WATCH_BOOKMARKS.has(r.url));
  const totalBeforeUnread=items.length;
  const unread=items.filter(r=>!WATCH_READ.has(r.url)).length;
  if(el("watch-unread-only").checked)items=items.filter(r=>!WATCH_READ.has(r.url));
@@ -846,20 +926,24 @@ function renderWatchFeed(){
   const isRead=WATCH_READ.has(r.url);
   const state='<span class="watch-read-state'+(isRead?' read':'')+'">'+(isRead?'✓ 읽음':'● 안 읽음')+'</span>';
   const action='<button type="button" class="watch-read-toggle" data-read-index="'+index+'">'+(isRead?'안 읽음으로 변경':'읽음 표시')+'</button>';
+  const saved=WATCH_BOOKMARKS.has(r.url);
+  const bookmark='<button type="button" class="watch-bookmark-toggle'+(saved?' is-saved':'')+'" data-bookmark-index="'+index+'" aria-pressed="'+saved+'">'+(saved?'★ 북마크 해제':'☆ 북마크')+'</button>';
   const caution=r.change_candidate?'<p class="brief-caution">제목에 발표·출시 관련 표현이 있습니다. 실제 신규성은 원문 미검증입니다.</p>':'';
   return '<article class="brief-card'+(isRead?' is-read':'')+'">'+state+
    '<span class="brief-tag '+esc(r.source_level)+'">'+esc(r.evidence_label)+'</span><span class="brief-tag">'+esc(r.category)+'</span>'+
    '<h3><a href="'+esc(r.url)+'" target="_blank" rel="noopener noreferrer">'+esc(r.title)+'</a></h3>'+
    '<div class="meta">'+esc(r.date)+' · '+esc(r.source)+'</div><p>'+esc(r.summary)+'</p>'+
    '<p class="mini">'+(companyNames.length?'언급된 제조사: '+esc(companyNames.join(", ")):'확인된 제조사 언급 없음')+'</p>'+caution+
-   '<a class="brief-link" href="'+esc(r.url)+'" target="_blank" rel="noopener noreferrer">공개 원문 확인 ↗</a><div>'+action+'</div></article>';
+   '<a class="brief-link" href="'+esc(r.url)+'" target="_blank" rel="noopener noreferrer">공개 원문 확인 ↗</a><div class="watch-card-actions">'+action+bookmark+'</div></article>';
  }).join(""):'<div class="empty">현재 필터와 일치하는 안 읽은 자료가 없거나, 선택한 조건에 맞는 최근 자료가 없습니다. 선택 자료 0건은 관련 산업 활동이 없다는 의미가 아닙니다. 미열람 0건은 신규 기사 0건을 의미하지 않습니다.</div>';
 }
 renderWatchControls();
 loadWatchRead();
+loadWatchBookmarks();
+renderWatchBookmarks();
 el("watch-techs").addEventListener("change",()=>{updateWatchSelectionCounts();renderWatchFeed()});
 el("watch-companies").addEventListener("change",()=>{updateWatchSelectionCounts();renderWatchFeed()});
-for(const id of ["watch-official-only","watch-require-company","watch-unread-only"])el(id).addEventListener("change",renderWatchFeed);
+for(const id of ["watch-official-only","watch-require-company","watch-unread-only","watch-bookmarked-only"])el(id).addEventListener("change",renderWatchFeed);
 document.querySelectorAll("[data-watch-select]").forEach(btn=>btn.addEventListener("click",()=>{
  const group=btn.dataset.watchSelect;
  const checked=btn.dataset.action==="all";
@@ -868,6 +952,12 @@ document.querySelectorAll("[data-watch-select]").forEach(btn=>btn.addEventListen
  renderWatchFeed();
 }));
 el("watch-feed").addEventListener("click",e=>{
+ const bookmarkButton=e.target.closest("button[data-bookmark-index]");
+ if(bookmarkButton){
+  const index=Number(bookmarkButton.dataset.bookmarkIndex);
+  if(Number.isInteger(index)&&WATCH_VISIBLE_ITEMS[index])toggleWatchBookmark(WATCH_VISIBLE_ITEMS[index]);
+  return;
+ }
  const button=e.target.closest("button[data-read-index]");
  if(!button)return;
  const index=Number(button.dataset.readIndex),row=WATCH_VISIBLE_ITEMS[index];
@@ -887,6 +977,46 @@ el("watch-clear-read").addEventListener("click",()=>{
  try{localStorage.removeItem(WATCH_READ_STORAGE_KEY);el("watch-status").textContent="읽음 기록을 초기화했습니다."}
  catch{el("watch-status").textContent="현재 화면의 읽음 기록만 초기화했습니다."}
  renderWatchFeed();
+});
+
+el("watch-bookmark-feed").addEventListener("click",e=>{
+ const button=e.target.closest("button[data-remove-bookmark]");
+ if(!button)return;
+ const items=[...WATCH_BOOKMARKS.values()].reverse(),i=Number(button.dataset.removeBookmark);
+ if(Number.isInteger(i)&&items[i])toggleWatchBookmark(items[i]);
+});
+el("watch-backup-export").addEventListener("click",()=>{
+ const payload=JSON.stringify(watchBackupObject(),null,2);
+ const blob=new Blob([payload],{type:"application/json;charset=utf-8"});
+ const objectUrl=URL.createObjectURL(blob);
+ const link=document.createElement("a");
+ link.href=objectUrl;link.download="psi-radar-my-watch-backup.json";
+ document.body.appendChild(link);link.click();link.remove();
+ setTimeout(()=>URL.revokeObjectURL(objectUrl),1000);
+ el("watch-status").textContent="현재 설정·읽음·북마크의 백업 파일을 만들었습니다. 파일은 직접 보관해 주세요.";
+});
+el("watch-backup-file").addEventListener("change",async e=>{
+ const file=e.target.files?.[0];
+ e.target.value="";
+ if(!file)return;
+ if(file.size>512*1024){el("watch-status").textContent="512KB 이하의 JSON 백업 파일만 복원할 수 있습니다.";return}
+ let backup;
+ try{backup=validatedWatchBackup(JSON.parse(await file.text()))}
+ catch(err){el("watch-status").textContent="복원 중단: "+err.message;return}
+ if(!window.confirm("현재 브라우저의 관심 선택, 읽음 기록, 북마크를 백업 파일 내용으로 덮어쓸까요?"))return;
+ try{
+  localStorage.setItem(WATCH_STORAGE_KEY,JSON.stringify(backup.prefs));
+  localStorage.setItem(WATCH_READ_STORAGE_KEY,JSON.stringify(backup.read));
+  localStorage.setItem(WATCH_BOOKMARK_KEY,JSON.stringify(backup.bookmarks));
+ }catch{el("watch-status").textContent="브라우저 저장소에 복원할 수 없습니다. 저장 공간 또는 브라우저 권한을 확인하세요.";return}
+ WATCH_SAVED=backup.prefs;WATCH_READ=new Set(backup.read);
+ WATCH_BOOKMARKS=new Map(backup.bookmarks.map(b=>[b.url,b]));
+ for(const input of document.querySelectorAll("[data-watch-group]")){
+  const key=input.dataset.watchGroup==="tech"?"techs":"companies";
+  input.checked=WATCH_SAVED[key].includes(input.value);
+ }
+ updateWatchSelectionCounts();renderWatchBookmarks();renderWatchFeed();
+ el("watch-status").textContent="백업 복원을 완료했습니다. 현재 브라우저에만 저장됩니다.";
 });
 el("watch-save").addEventListener("click",()=>{
  const prefs=watchSelections();
