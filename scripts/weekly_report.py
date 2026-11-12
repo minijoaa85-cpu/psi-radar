@@ -11,7 +11,7 @@ ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/"site"/"data.json"
 REPORTS=ROOT/"site"/"reports"
 KST=ZoneInfo("Asia/Seoul")
-CATS=("GaN","SiC","IGBT","SGT","SJ MOSFET")
+CATS=("GaN","SiC","IGBT","SJ MOSFET","SGT")
 def week_id(value):
  local=value.astimezone(KST) if value.tzinfo else value.replace(tzinfo=KST)
  y,w,_=local.isocalendar()
