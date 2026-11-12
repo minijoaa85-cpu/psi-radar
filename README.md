@@ -1,4 +1,4 @@
-# PSI Radar V2.1 — Power Semiconductor Intelligence Radar
+# PSI Radar V2.2 — Power Semiconductor Intelligence Radar
 
 공개 자료 기반 한국어 전력반도체 주간 기술 모니터링 웹 플랫폼. GaN (40%) > SiC (30%) > IGBT (10%) = UD/UG SGT (10%) = SJ MOSFET (10%).
 
@@ -306,3 +306,24 @@ GitHub Pages는 저장소 Settings → Pages → **Source: GitHub Actions**를 �
 - 기업 언급은 각 기술군의 최근 30일 공개 브리핑을 고유 URL 단위로 집계하며, 수집기의 명시적 회사 식별 ID로 확인한 것만 사용합니다. **언급 횟수를 기술력·시장 점유율·공식 제조사 발표 횟수로 해석하지 않습니다.**
 - Integrated에서 Weekly Reports, Research, Competitors, Architecture, Briefing 및 Benchmark까지 이동할 수 있습니다. 기술 선택값이 적용 가능한 상세 페이지에서 유지됩니다.
 - V2.0까지 사용한 공식 제품 사양, 데이터시트 시험조건 구분, 논문·제품의 인과관계 비검증 경고, 기존 22종 Benchmark, My Watch 로컬 설정·백업, 주간 수집 및 AI 비용 한도는 유지됩니다.
+
+## V2.2 — Market & Finance: official IR and disclosed power/discrete segment tracking (2026-11-12)
+
+- Market & Finance는 더 이상 빈 안내 페이지가 아닙니다. **Infineon, STMicroelectronics, onsemi, ROHM** 4개사의 최신 공식 IR·공시 자료를 `site/financials.json` 스냅샷으로 제공합니다. 모든 금액은 **원래 통화의 백만 단위**이며, 통화 간 환산이나 회사별 매출 순위는 만들지 않습니다.
+- **Infineon (EUR, IFRS)**: FY2026 Q3/Q4 연결 매출과 그룹의 *Segment Result* (IFRS GAAP 영업이익과 다른 정의), Q4 Power & Sensor Systems 매출 및 Segment Result. 공식 발표일 2026-08-05 / 2026-11-10.
+- **STMicroelectronics (USD, US GAAP)**: Q2/Q3 2026 연결 매출/영업이익과 *Power & Discrete (P&D)* Q2/Q3 매출. 공식 발표 및 SEC 자료. 출처: `newsroom.st.com`, `sec.gov`.
+- **onsemi (USD, US GAAP)**: Q2/Q3 2026 연결 매출, 공시 GAAP 영업이익률 및 Power Solutions Group(PSG) 매출. 영업이익 금액을 이익률에서 역산하지 않습니다.
+- **ROHM (JPY, Japanese GAAP)**: FY2027 H1(2026-04-01~2026-09-30) 연결 매출 및 영업이익, 전년 FY2026 H1 연결 비교, Discrete Semiconductor Devices 6개월 누적 매출/사업부 손실. **상반기 누적 H1은 분기 실적이 아닙니다.**
+- 제조사 선택, 연결 매출과 영업손익·Segment Result 지표 전환, **동일 회사·동일 통화·동일 길이 회계 기간** 내의 막대 비교, 분리된 사업부 카드, 날짜/회계 기준/공식 원문 링크를 제공합니다.
+- 업계 내 기술별 매출이나 시장점유율 추정은 하지 않습니다. ST P&D, Infineon PSS, onsemi PSG, ROHM Discrete는 구성이 서로 다르며 **전력반도체 단독 매출이나 GaN·SiC 단독 매출이 아닙니다**.
+- `scripts/validate_financials.py`는 업체/통화/회계기준, 기간(H1 vs quarter), 원문 HTTPS 공식 도메인, 출처 발표일, 손익 지표의 정확한 종류를 검사합니다. 배포 CI와 Chromium/Firefox/WebKit 자동 브라우저 점검 모두 해당 파일을 확인합니다.
+- 현재 재무 숫자는 **2026-11-12에 수동 확인한 고정 스냅샷**입니다. 매주 UI/JSON 무결성 검사는 실행되지만, **IR 사이트 신규 공시를 자동 수집하거나 금액을 갱신하지 않습니다**. 자동 신규 공시 감지와 자료 갱신은 별도 검증이 필요한 후속 단계입니다.
+- 4개 그룹 상단 메뉴, My Watch와 Data Quality 보조 메뉴, 개인 북마크·백업, 22종 Benchmark, 기존 AI 비용 제한과 주간 자료 수집은 유지합니다.
+
+**Official finance disclosures:**
+- Infineon FY2026 Q4: https://www.infineon.com/press-release/2026/infpr202611-025
+- Infineon PSS (analyst statement): https://www.infineon.com/assets/row/public/documents/corporate/investors/presentations/2026/2026-11-10-q4-fy26-intro-statement-analyst-call-v01-00-en.pdf
+- ST Q3: https://newsroom.st.com/media-center/press-item.html/stmicroelectronics-reports-q3-2026-financial-results.html
+- ST P&D segment: https://www.sec.gov/Archives/edgar/data/932787/000093278726000086/c3419c-q326earningspressre.htm
+- onsemi Q3: https://investor.onsemi.com/news-releases/news-release-details/onsemi-reports-third-quarter-2026-results
+- ROHM FY2027 H1: https://fscdn.rohm.com/en/financial/financial-report/2609_financialresults_en.pdf
