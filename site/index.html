@@ -1513,7 +1513,7 @@ function renderFinanceVisual(){
    const width=isNumber?Math.round(Math.abs(value)/axisMax*100):0;
    return '<div class="finance-visual-bar"><span>'+esc(p.period)+'</span><div class="finance-visual-track"><span class="finance-visual-fill" style="width:'+width+'%"></span></div><span class="finance-visual-value">'+(isNumber?format(value)+esc(unit):"미공시")+'</span></div>';
   }).join("");
-  const delta=growth===null?"변화율 미산정":(growth>0?"+":"")+growth.toFixed(1)+"%";
+  const delta=field==="operating_margin"&&comparable?(b-a>0?"+":"")+(b-a).toFixed(1)+"%p":growth===null?"변화율 미산정":(growth>0?"+":"")+growth.toFixed(1)+"%";
   const compareType=latest.period_type==="half_year"?"반기 누적 · 전년 동기":"연속 분기";
   const seg=(c.segments||[]).filter(x=>x.period===latest.period&&x.period_type===latest.period_type&&x.start===latest.start&&x.end===latest.end&&typeof x.revenue==="number")[0];
   const validShare=seg&&typeof latest.revenue==="number"&&latest.revenue>0&&seg.revenue>=0&&seg.revenue<=latest.revenue;
@@ -1521,8 +1521,8 @@ function renderFinanceVisual(){
   const shareText=share===null?"미확인":share.toFixed(1)+"%";
   const segment=share===null?'<div class="finance-visual-segment"><div class="finance-visual-ring empty"><b>—</b></div><div><strong>동일 기간 사업부 비중 미확인</strong><p>공시 기간이 일치하는 실적만 산정합니다.</p></div></div>':
    '<div class="finance-visual-segment"><div class="finance-visual-ring" style="--pct:'+share.toFixed(2)+'%"><b>'+esc(shareText)+'</b></div><div><strong>'+esc(seg.name)+'</strong><p>사업부 매출 '+format(seg.revenue)+' 백만 '+esc(c.currency)+'</p><p>해당 기간 연결 매출 대비 비율 · 기술별 점유율 아님</p></div></div>';
-  const caveat=field==="operating_margin"?"영업이익률 변화율은 비율의 상대 변화이며 %p가 아닙니다.":field==="segment_result"?"Segment Result는 공시 정의에 따른 KPI이며 GAAP 영업이익과 다릅니다.":"";
-  return '<article class="finance-visual-card"><div class="finance-visual-top"><div><h4>'+esc(c.name)+'</h4><div class="finance-visual-meta">'+esc(c.currency)+' · '+esc(c.accounting)+' · '+compareType+'</div></div><div class="finance-visual-delta'+(growth!==null&&growth<0?" negative":"")+'">'+esc(delta)+'</div></div>'+
+  const caveat=field==="operating_margin"?"영업이익률 증감은 퍼센트포인트(%p)로 표시합니다.":field==="segment_result"?"Segment Result는 공시 정의에 따른 KPI이며 GAAP 영업이익과 다릅니다.":"";
+  return '<article class="finance-visual-card"><div class="finance-visual-top"><div><h4>'+esc(c.name)+'</h4><div class="finance-visual-meta">'+esc(c.currency)+' · '+esc(c.accounting)+' · '+compareType+'</div></div><div class="finance-visual-delta'+(((field==="operating_margin"&&comparable&&b<a)||(growth!==null&&growth<0))?" negative":"")+'">'+esc(delta)+'</div></div>'+
    '<strong class="mini">'+esc(label)+'</strong><div class="finance-visual-bars" role="img" aria-label="'+esc(c.name+" "+label+": "+(comparable?prior.period+" "+a+unit+", ":"")+latest.period+" "+(b??"미공시")+unit)+'">'+bars+'</div>'+
    segment+'<div class="finance-visual-foot">'+esc(caveat)+' <a href="'+safe(latest.source)+'" target="_blank" rel="noopener noreferrer">공식 실적 원문 확인 ↗</a><div>발표일 '+esc(latest.published||"미확인")+' · 자료 검토 '+esc(FINANCIALS.reviewed_on||"미확인")+'</div></div></article>';
  }).join(""):'<p class="finance-visual-nodata">표시할 기업이 없습니다.</p>';
