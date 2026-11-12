@@ -160,10 +160,28 @@
 .arch-release-stack{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
 .arch-release-stack h4{font-size:12px;margin:0 0 8px}
 @media(max-width:620px){.arch-release-stack{grid-template-columns:1fr}}
+
+/* V1.5: concise source-aware technology briefing */
+.brief-checkbox{display:inline-flex;align-items:center;gap:6px;padding:5px 8px;border:1px solid var(--border);border-radius:7px;font-size:12px;color:#d9eaff}
+.brief-checkbox input{accent-color:#6bb9f3}
+.brief-guide{font-size:12px;line-height:1.6;background:#10283d;border:1px solid var(--border);padding:10px 12px;border-radius:9px;margin:6px 0 12px}
+.brief-feed{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.brief-card{border:1px solid var(--border);border-radius:9px;background:#10243c;padding:12px;min-width:0}
+.brief-card h3{margin:7px 0;font-size:14px;line-height:1.5}
+.brief-card h3 a{color:#d3ebff}
+.brief-card p{font-size:12px;line-height:1.55;margin:6px 0}
+.brief-card .meta{font-size:11px;color:var(--muted)}
+.brief-card .brief-tag{display:inline-block;padding:3px 7px;border-radius:5px;background:#25466a;color:#e9f6ff;font-size:10px;margin:0 5px 4px 0}
+.brief-card .brief-tag.official{background:#215c67}
+.brief-card .brief-tag.research{background:#36527d}
+.brief-card .brief-tag.news{background:#564630}
+.brief-card .brief-caution{font-size:11px;color:#e4ca9f}
+.brief-card .brief-link{display:inline-block;margin-top:4px;font-size:12px}
+@media(max-width:720px){.brief-feed{grid-template-columns:1fr}}
 </style></head><body>
 <header><small>POWER SEMICONDUCTOR INTELLIGENCE</small><h1>◈ PSI Radar</h1><div class="muted">GaN · SiC · IGBT · UD/UG SGT · SJ MOSFET | 글로벌 기술 · 논문 · 경쟁사 동향</div><div id="last" class="mini">데이터 상태 확인 중...</div></header>
 <main><nav id="nav" class="nav" aria-label="메뉴">
-<button data-tab="overview" class="active">Overview</button><button data-tab="technology">Technology</button><button data-tab="research">Research</button><button data-tab="weekly">Weekly Reports</button><button data-tab="competitors">Competitors</button><button data-tab="architecture">Architecture</button><button data-tab="benchmark">Benchmark</button><button data-tab="market">Market & Finance</button><button data-tab="sources">Data Quality</button></nav>
+<button data-tab="overview" class="active">Overview</button><button data-tab="briefing">Briefing</button><button data-tab="technology">Technology</button><button data-tab="research">Research</button><button data-tab="weekly">Weekly Reports</button><button data-tab="competitors">Competitors</button><button data-tab="architecture">Architecture</button><button data-tab="benchmark">Benchmark</button><button data-tab="market">Market & Finance</button><button data-tab="sources">Data Quality</button></nav>
 <section id="overview"><div class="grid"><article class="panel stat"><span>수집된 자료 (연구 12개월 포함)</span><b id="total">0</b></article><article class="panel stat"><span>GaN</span><b id="gan">0</b></article><article class="panel stat"><span>SiC</span><b id="sic">0</b></article><article class="panel stat"><span>IGBT</span><b id="igbt">0</b></article><article class="panel stat"><span>논문</span><b id="papers">0</b></article></div><div class="two"><article class="panel"><h2>주간 핵심 업데이트</h2><div id="highlights" class="feed"></div></article><article class="panel"><h2>분석 우선순위</h2><div class="tiles"><article><b>GaN · 40%</b><p>E-mode, Dynamic R(on), 데이터센터 전원</p></article><article><b>SiC · 30%</b><p>Trench, Gate Oxide, 200mm Wafer</p></article><article><b>IGBT · 10%</b><p>Trench, Field Stop, VCE(sat), Eoff</p></article><article><b>SGT · 10%</b><p>Shield gate, Qgd, Eoss, Cell Pitch</p></article><article><b>SJ · 10%</b><p>Pillar Balance, Qrr, Softness, BV</p></article></div><p class="mini">비중은 기술 관심도 기준이며 실제 수집 비중을 보장하지 않습니다.</p></article></div></section>
 <section id="technology" class="hidden"><article class="panel"><h2>Technology Watch</h2><div class="filters"><select id="cat"><option value="">전체 기술</option><option>GaN</option><option>SiC</option><option>IGBT</option><option>SGT</option><option>SJ MOSFET</option></select><select id="kind"><option value="">뉴스 + 논문</option><option value="news">뉴스</option><option value="paper">논문</option></select><input id="search" placeholder="키워드·회사·기술 검색" aria-label="검색"></div><div id="records" class="feed"></div></article></section>
 <section id="research" class="hidden"><article class="panel"><h2>학술 논문 | Research Intelligence</h2><p class="muted">최근 45일 학술지 + IGBT·SGT·SJ MOSFET 최근 12개월 집중 검색 · Crossref / OpenAlex DOI · 원문 검토 전</p><div class="filters"><select id="research-cat" aria-label="논문 기술 선택"><option value="">전체 논문</option><option>GaN</option><option>SiC</option><option>IGBT</option><option>SGT</option><option>SJ MOSFET</option></select></div><select id="research-relevance" aria-label="기술 관련성 수준"><option value="0">전체 관련성</option><option value="70">높음 70점 이상</option><option value="45">보통 45점 이상</option></select><p class="mini">관련성은 제목·초록 기술 키워드 기반의 자동 추정값입니다. 전문가 검증 결과가 아닙니다.</p><div id="research-counts" class="mini"></div><div id="research-feed" class="feed"></div></article></section>
@@ -193,6 +211,18 @@
 </div><p class="mini">포털 링크는 탐색용이며 해당 사이트의 전체 자료가 자동 수집되는 것은 아닙니다.</p>
 </details>
 </article></section>
+<section id="briefing" class="hidden"><article class="panel">
+<h2>Technology Briefing · 지금 읽어볼 기술 변화</h2>
+<p class="muted">읽기 우선순위는 자료 출처와 발행일 기준이며, 기술력·제품 성능의 우열이나 신규성 검증 결과가 아닙니다.</p>
+<div class="filters"><select id="brief-category" aria-label="브리핑 기술 분야"><option value="">전체 기술</option><option>GaN</option><option>SiC</option><option>IGBT</option><option>SGT</option><option>SJ MOSFET</option></select>
+<select id="brief-type" aria-label="브리핑 출처 유형"><option value="">전체 출처</option><option value="official">제조사 공식</option><option value="research">학술 논문</option><option value="news">일반 뉴스</option></select>
+<label class="brief-checkbox"><input type="checkbox" id="brief-change"> 발표·출시 등 제목 후보만</label></div>
+<div id="brief-summary" class="competitor-kpis"></div>
+<div class="brief-guide">먼저 공식 발표, 다음 학술 자료, 그다음 일반 뉴스를 볼 수 있도록 정렬했습니다. <strong>특정 기술의 성능 개선을 검증했다는 뜻은 아닙니다.</strong></div>
+<div id="brief-feed" class="brief-feed" aria-live="polite">공개 자료를 불러오는 중입니다.</div>
+<details class="portal-details"><summary>브리핑 분류·우선순위 기준 보기</summary>
+<p class="mini">최근 30일 수집 메타데이터의 고유 원문 URL을 기준으로 합니다. 제조사 공식 발표는 제조사 주장, 논문은 공개 메타데이터, 뉴스는 원문 검증 전 제목 후보입니다. 발표·출시 등 표현이 있어도 실제 최초 공개나 양산을 확인했다는 의미가 아닙니다. 과거 발표를 이번 주 신규 발표로 재분류하지 않습니다.</p>
+</details></article></section>
 <section id="architecture" class="hidden"><article class="panel">
 <h2>Process Architecture · 구조별 기술 지도</h2>
 <p class="muted">전력 소자 구조와 Device Physics 관점의 검토 포인트를 쉽게 연결합니다. 공식 제품 구조 표기를 바탕으로 하며, 내부 공정 단면이나 Recipe를 추정하지 않습니다.</p>
@@ -576,6 +606,30 @@ fetch("topic_trends/index.json?nocache="+Date.now()).then(r=>{if(!r.ok)throw Err
  TREND_SNAPSHOTS=entries;
  if(SELECTED_TOPIC)renderTopicTrends(SELECTED_TOPIC);
 }).catch(()=>{el("arch-trend-coverage").textContent="동향 기록 없음";el("arch-trend-chart").textContent="아직 보관된 동향 기록이 없거나 불러오지 못했습니다.";});
+let BRIEFING={categories:[]};
+function renderBriefing(){
+ const category=el("brief-category").value,type=el("brief-type").value,changes=el("brief-change").checked;
+ let items=(BRIEFING.categories||[]).flatMap(cat=>cat.items||[]);
+ items=items.filter(r=>(!category||r.category===category)&&(!type||r.source_level===type)&&(!changes||r.change_candidate));
+ items.sort((a,b)=>(b.reading_priority||0)-(a.reading_priority||0)||(b.date||"").localeCompare(a.date||""));
+ const sourceCount=key=>items.filter(r=>r.source_level===key).length;
+ el("brief-summary").innerHTML=[["자료 후보",items.length+"건"],["제조사 공식",sourceCount("official")+"건"],["학술 논문",sourceCount("research")+"건"],["일반 뉴스",sourceCount("news")+"건"]].map(([name,value])=>'<div class="kpi"><span>'+esc(name)+'</span><strong>'+esc(value)+'</strong></div>').join("");
+ el("brief-feed").innerHTML=items.length?items.slice(0,32).map(r=>{
+ const source=r.source_level;
+ const caution=r.change_candidate?'<p class="brief-caution">제목에 발표·출시 등 변화 표현이 있습니다. 실제 신규성은 원문 검토 전 미확인입니다.</p>':'';
+ return '<article class="brief-card"><span class="brief-tag '+esc(source)+'">'+esc(r.evidence_label)+'</span><span class="brief-tag">'+esc(r.category)+'</span>'+
+ '<h3><a href="'+esc(r.url)+'" target="_blank" rel="noopener noreferrer">'+esc(r.title)+'</a></h3>'+
+ '<div class="meta">'+esc(r.date)+' · '+esc(r.source)+'</div><p>'+esc(r.summary)+'</p>'+caution+
+ '<a class="brief-link" href="'+esc(r.url)+'" target="_blank" rel="noopener noreferrer">근거 원문 확인 ↗</a></article>';
+ }).join(""):'<div class="empty">선택한 조건에 일치하는 최근 30일 자료가 없습니다. 필터를 변경해 보세요.</div>';
+}
+for(const id of ["brief-category","brief-type","brief-change"])el(id).addEventListener("change",renderBriefing);
+fetch("briefing.json?nocache="+Date.now()).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(data=>{
+ BRIEFING=data;
+ renderBriefing();
+}).catch(e=>{
+ el("brief-feed").textContent="브리핑 데이터 불러오기 실패: "+e.message;
+});
 let TECHMAP={topics:[]};let SELECTED_TOPIC=null;
 function renderTopicExplorer(category){
  const topics=(TECHMAP.topics||[]).filter(t=>t.category===category);
