@@ -1,4 +1,4 @@
-# PSI Radar V2.0 — Power Semiconductor Intelligence Radar
+# PSI Radar V2.1 — Power Semiconductor Intelligence Radar
 
 공개 자료 기반 한국어 전력반도체 주간 기술 모니터링 웹 플랫폼. GaN (40%) > SiC (30%) > IGBT (10%) = UD/UG SGT (10%) = SJ MOSFET (10%).
 
@@ -297,3 +297,12 @@ GitHub Pages는 저장소 Settings → Pages → **Source: GitHub Actions**를 �
 - `scripts/integrated.py`는 `site/briefing.json`, `site/topic_map.json`, `site/architecture.json`, `site/benchmark.json`을 **기존 수집 종료 후 결합**해 `site/integrated.json`을 생성합니다. 코드를 갱신한 경우에도 CI가 생성해 Pages에 포함하고, 정기 수집 시에는 JSON 스냅샷이 커밋됩니다. 별도의 AI API 요청은 하지 않습니다.
 - **인과관계 제한**: 같은 기술군의 논문과 제품을 나란히 보여주는 것으로 제품 내부 구조·신뢰성 결과·성능 향상·연구 성과 이전을 입증하지 않습니다. FOM이 같은 조건으로 검증되지 않으면 수치 순위/승자 판정을 표시하지 않습니다. 공식 샘플이 없는 SGT 등은 0종으로 안내합니다.
 - 반응형으로 모바일은 기술·근거·제품 영역을 한 열로 보여줍니다. My Watch·Data Quality의 우측 보조 메뉴, 기존 북마크/개인 설정/백업, 주간 자동수집, 실행당 AI 최대 12회·추정 $0.02 제한은 그대로 유지합니다.
+
+## V2.1 — 정보 탐색 여정 기반 메뉴 및 통합 동향 고도화 (2026-11-12)
+- 사용자 의도에 맞춰 상단 메뉴를 **① 시작(Overview) → ② 주간 동향(Weekly Reports·Briefing·Market & Finance) → ③ 기술 분석(Integrated 2.0·Technology·Research·Architecture) → ④ 경쟁사·제품(Competitors·Benchmark)**의 네 그룹으로 구성합니다. 모든 하위 페이지는 항상 보이는 버튼으로 접근하여 별도의 드롭다운 단계를 만들지 않습니다.
+- 모바일에서는 4개 그룹을 세로로 배치하고, 그룹 내부 버튼은 화면 폭에 맞춰 감쌉니다. My Watch와 Data Quality는 기존 우측 보조 메뉴에 남아 있습니다.
+- Integrated 2.0에 **저장된 실제 주차별 수집 표본 막대그래프**와 **최근 30일 브리핑에서 식별된 회사명 언급 횟수 차트**를 추가합니다. 그래프의 회사명을 선택하면 동일 기술군과 해당 회사명 필터로 Competitors 화면을 엽니다.
+- 주간 자료는 `topic_trends/index.json`에 실제 저장된 스냅샷 중 최대 8주만 로드합니다. 없는 주차를 0으로 만들어 넣지 않습니다. `category_sample_count`는 **주제별 매칭 건수 합계가 아닌 해당 주차·기술군의 고유 URL 표본 개수**입니다. 현재 주차가 미완료일 경우 명시합니다.
+- 기업 언급은 각 기술군의 최근 30일 공개 브리핑을 고유 URL 단위로 집계하며, 수집기의 명시적 회사 식별 ID로 확인한 것만 사용합니다. **언급 횟수를 기술력·시장 점유율·공식 제조사 발표 횟수로 해석하지 않습니다.**
+- Integrated에서 Weekly Reports, Research, Competitors, Architecture, Briefing 및 Benchmark까지 이동할 수 있습니다. 기술 선택값이 적용 가능한 상세 페이지에서 유지됩니다.
+- V2.0까지 사용한 공식 제품 사양, 데이터시트 시험조건 구분, 논문·제품의 인과관계 비검증 경고, 기존 22종 Benchmark, My Watch 로컬 설정·백업, 주간 수집 및 AI 비용 한도는 유지됩니다.
