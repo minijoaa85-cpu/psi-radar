@@ -48,6 +48,21 @@
 @media(max-width:900px){.competitor-visuals{grid-template-columns:1fr}.competitor-bars{max-height:132px}.competitor-heat-wrap{max-height:170px}}
 @media(max-width:650px){.competitor-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}#company-feed{grid-template-columns:1fr}.portal-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#competitors .filters input{width:100%}}
 
+
+.benchmark-table-wrap{overflow:auto;max-width:100%}
+.benchmark-table{border-collapse:collapse;width:100%;min-width:850px;font-size:12px}
+.benchmark-table th,.benchmark-table td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--border);vertical-align:top}
+.benchmark-table th{color:#dbeaff;white-space:nowrap;background:#1c3049;position:sticky;top:0;z-index:1}
+.benchmark-table th small{display:block;font-size:10px;font-weight:400;color:var(--muted)}
+.benchmark-table td small{display:block;font-size:10px;color:var(--muted);line-height:1.35}
+.benchmark-table .chip{display:inline-block;border:1px solid #365576;border-radius:5px;padding:1px 5px;margin-top:3px;color:var(--muted)}
+#bench-message{padding:3px 0 6px}
+#bench-compare{font-size:13px;line-height:1.6}
+#bench-compare .pair{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}
+#bench-compare .pair>div{background:#172a44;padding:10px;border-radius:8px}
+#bench-compare strong{display:block}
+#bench-compare .warning{color:#ffcf91}
+@media(max-width:600px){#bench-compare .pair{grid-template-columns:1fr}}
 </style></head><body>
 <header><small>POWER SEMICONDUCTOR INTELLIGENCE</small><h1>◈ PSI Radar</h1><div class="muted">GaN · SiC · IGBT · UD/UG SGT · SJ MOSFET | 글로벌 기술 · 논문 · 경쟁사 동향</div><div id="last" class="mini">데이터 상태 확인 중...</div></header>
 <main><nav id="nav" class="nav" aria-label="메뉴">
@@ -81,7 +96,30 @@
 </div><p class="mini">포털 링크는 탐색용이며 해당 사이트의 전체 자료가 자동 수집되는 것은 아닙니다.</p>
 </details>
 </article></section>
-<section id="benchmark" class="hidden"><article class="panel"><h2>Device Benchmark</h2><p>GaN: RDS(on), Vth, Qg, Qoss, Eoss, Dynamic R(on) / SiC: Ron, Qgd, Eoss, SCWT / IGBT: VCE(sat), Eoff, Eon, Qg, SCWT / SGT·SJ: BV, Qrr, EAS, Qgd</p><div class="empty">제품별 공식 Datasheet 수집 및 측정 조건 정규화 전입니다. 검증된 제품 비교만 이곳에 표시됩니다.</div><h2>제조사 공식 기술자료 (참고 링크)</h2><div class="feed"><div class="item"><strong>ROHM · 600V Super Junction MOSFET 신제품 기술 발표 (2026)</strong><a href="https://www.rohm.com/news-detail?defaultGroupId=false&amp;news-title=2026-07-09_news_super-junction-mosfet" target="_blank" rel="noopener noreferrer">공식 ROHM 자료 ↗</a></div><div class="item"><strong>Toshiba · DTMOS VI 공식 데이터시트 및 Application Note</strong><a href="https://toshiba.semicon-storage.com/kr/semiconductor/product/mosfets/400v-900v-mosfets/detail.TK095V65Z5.html" target="_blank" rel="noopener noreferrer">공식 Toshiba 기술자료 ↗</a></div><div class="item"><strong>Infineon · TRENCHSTOP IGBT7 / EC7 구조 및 공식 제품 기술</strong><a href="https://www.infineon.com/technology/power/igbt/trenchstop-igbt7" target="_blank" rel="noopener noreferrer">공식 Infineon 기술자료 ↗</a></div></div></article></section>
+<section id="benchmark" class="hidden"><article class="panel">
+<h2>Device Datasheet Benchmark · 제품별 정격 및 FOM</h2>
+<p class="muted">제조사 공식 제품 페이지에서 확인한 항목만 기재합니다. 측정 조건과 typ/max가 다른 값은 직접적인 성능 우열 비교에 사용할 수 없습니다.</p>
+<div class="filters">
+<select id="bench-category" aria-label="기술 선택"><option value="">전체 기술</option><option>GaN</option><option>SiC</option><option>IGBT</option><option>SGT</option><option>SJ MOSFET</option></select>
+<select id="bench-company" aria-label="제조사 선택"><option value="">전체 제조사</option></select>
+<select id="bench-voltage" aria-label="전압 등급 선택"><option value="">전체 전압</option><option value="LV">LV (≤100V)</option><option value="MV">MV (101~400V)</option><option value="HV">HV (>400V)</option></select>
+<input id="bench-search" placeholder="제품 번호·구조 검색" aria-label="벤치마크 검색">
+</div>
+<div id="bench-kpi" class="competitor-kpis"></div>
+<div id="bench-message" class="mini"></div>
+<div class="competitor-block" style="margin:10px 0">
+<h3>제조사별 사양 비교 · 해당 기술에서만 비교</h3>
+<div class="benchmark-table-wrap"><table class="benchmark-table"><thead><tr><th>제조사 / 제품</th><th>구조 · 패키지</th><th>내압</th><th>RDS(on)<small>typ / max</small></th><th>Qg<small>typ</small></th><th>VCE(sat)<small>typ</small></th><th>Qrr<small>typ</small></th><th>공식 근거</th></tr></thead><tbody id="bench-rows"></tbody></table></div>
+</div>
+<h2>제품 선택 비교</h2><p class="mini">같은 기술·정격·측정 조건에서만 FOM을 비교합니다. 비교할 수 없으면 이유를 표시합니다.</p>
+<div class="filters"><select id="bench-a" aria-label="제품 A 선택"></select><select id="bench-b" aria-label="제품 B 선택"></select></div>
+<div class="competitor-block" id="bench-compare"></div>
+<details class="portal-details"><summary>추가 검토 자료 · SGT/Field-Plate 기술 및 출처 정책</summary>
+<p class="mini">양산형 SGT 제품의 공식 데이터시트에서 전기적 정격과 측정 조건을 모두 확인하기 전까지 SGT 수치는 임의 생성하지 않습니다.</p>
+<div id="bench-references"></div>
+<p class="mini">이 목록은 현재 검증된 제품의 수동 스냅샷입니다. 신제품 Datasheet 자동 전수 수집·실시간 가격 비교 기능은 아직 제공되지 않습니다.</p>
+</details>
+</article></section>
 <section id="market" class="hidden"><article class="panel"><h2>Market & Financials</h2><p>Global Semiconductor → Power / Discrete → GaN / SiC / IGBT → Company Financials</p><div class="empty">공식 분기 실적·공시 기반 데이터 추출은 다음 단계입니다. 매출 및 이익 수치를 임의 생성하지 않습니다.</div></article></section>
 <section id="sources" class="hidden"><article class="panel"><h2>Source & Data Quality</h2><div id="health"></div><p class="muted">공개 뉴스 RSS와 Crossref 서지 정보 기반입니다. Google News 검색 링크는 원 출판사 홈페이지가 아닐 수 있습니다. AI 요약은 선택적이며 자료의 근거 범위가 표시됩니다.</p></article></section>
 <footer class="foot">PSI Radar · 공개 정보만 사용 · 모든 자료의 날짜·출처·원문 링크 확인 · 내부 공정 데이터는 업로드하지 마세요.</footer></main>
@@ -228,6 +266,81 @@ function renderCompetitors(){
  }
 }
 for(const name of ["company-region","company-tech","company-type","company-q"])el(name).addEventListener("input",renderCompetitors);
+
+let BENCH={devices:[],research_references:[]};
+function benchmarkVoltageBand(voltage){
+ if(!Number.isFinite(voltage))return "";
+ return voltage<=100?"LV":voltage<=400?"MV":"HV";
+}
+function benchmarkSpec(r,key){
+ const v=r.specs?.[key];
+ return v?esc(v.value+" "+v.unit)+'<small>'+esc(v.kind)+" · "+esc(v.condition||"시험 조건 미상")+'</small>':'<span class="mini">미확인</span>';
+}
+function benchmarkOptions(){
+ const cat=el("bench-category").value,company=el("bench-company").value,band=el("bench-voltage").value;
+ const q=el("bench-search").value.trim().toLowerCase();
+ return (BENCH.devices||[]).filter(r=>(!cat||r.category===cat)&&(!company||r.company===company)&&(!band||benchmarkVoltageBand(r.voltage?.value)===band)&&(!q||(r.part+" "+r.generation+" "+r.structure+" "+r.company).toLowerCase().includes(q)));
+}
+function preserveCompareChoices(rows){
+ for(const id of ["bench-a","bench-b"]){
+  const select=el(id),saved=select.value;
+  select.innerHTML='<option value="">제품 선택</option>'+rows.map(r=>'<option value="'+esc(r.id)+'">'+esc(r.company+" · "+r.part)+'</option>').join("");
+  if(rows.some(r=>r.id===saved))select.value=saved;
+ }
+}
+function compactValue(item){
+ return item?item.value+" "+item.unit+" ("+item.kind+")":"미확인";
+}
+function compareBench(){
+ const a=BENCH.devices.find(r=>r.id===el("bench-a").value),b=BENCH.devices.find(r=>r.id===el("bench-b").value);
+ const target=el("bench-compare");
+ if(!a||!b){target.innerHTML='<div class="mini">동일 기술의 비교 제품 2개를 선택해 주세요.</div>';return;}
+ if(a.id===b.id){target.textContent="서로 다른 제품을 선택해 주세요.";return;}
+ let info='<div class="pair"><div><strong>'+esc(a.company+" · "+a.part)+'</strong>'+esc(a.category+" / "+a.voltage.value+"V / "+a.package)+'</div><div><strong>'+esc(b.company+" · "+b.part)+'</strong>'+esc(b.category+" / "+b.voltage.value+"V / "+b.package)+'</div></div>';
+ if(a.category!==b.category||a.voltage.value!==b.voltage.value){
+  target.innerHTML=info+'<p class="warning">기술군 또는 정격 전압이 다릅니다. FOM 직접 비교를 제공하지 않습니다.</p>';return;
+ }
+ const entries=[["rds_on","RDS(on) typ."],["rds_on_max","RDS(on) max."],["qg","Qg typ."],["vce_sat","VCE(sat) typ."],["qrr","Qrr typ."],["tsc","단락 내량"]];
+ let lines=[];
+ for(const [key,label] of entries){
+  const av=a.specs?.[key],bv=b.specs?.[key];
+  if(!av&&!bv)continue;
+  const same=Boolean(av&&bv&&av.kind===bv.kind&&av.unit===bv.unit&&av.condition&&bv.condition&&av.condition===bv.condition);
+  lines.push('<div class="item"><strong>'+esc(label)+'</strong>'+esc(compactValue(av))+' / '+esc(compactValue(bv))+'<div class="mini">'+(same?'측정 조건 문자열 일치 · 원문 최종 검토 권장':'조건 또는 값 부재 · 정량 우열 비교 불가')+'</div></div>');
+ }
+ target.innerHTML=info+(lines.length?lines.join(""):'<p class="mini">현재 직접 비교 가능한 공통 항목이 없습니다.</p>')+
+ '<p class="mini">제품 페이지에 상세 조건이 생략된 항목은 동일 조건으로 간주하지 않습니다. 값 차이는 공정 우열이나 성능 개선율을 뜻하지 않습니다.</p>';
+}
+function renderBenchmark(){
+ const rows=benchmarkOptions(),cat=el("bench-category").value;
+ const types=new Set(rows.map(x=>x.category));
+ const companies=new Set(rows.map(x=>x.company));
+ el("bench-kpi").innerHTML=[["검증 제품",rows.length+"종"],["제조사",companies.size+"개"],["선택 기술",cat||"전체"],["측정 조건","개별 확인"]].map(([a,b])=>'<div class="kpi"><span>'+esc(a)+'</span><strong>'+esc(b)+'</strong></div>').join("");
+ el("bench-message").textContent="필터 적용 "+rows.length+"종 · 빈 사양은 미확인, typ과 max는 서로 다른 기준 · 1차 출처는 공식 제조사 제품 페이지";
+ el("bench-rows").innerHTML=rows.length?rows.map(r=>
+  '<tr><td><strong>'+esc(r.company)+'<small>'+esc(r.part)+'</small></strong><span class="chip">'+esc(r.status||"상태 미확인")+'</span></td>'+
+  '<td>'+esc(r.structure)+'<small>'+esc(r.package)+'</small></td>'+
+  '<td>'+esc(r.voltage.value+" "+r.voltage.unit)+'<small>'+esc(r.voltage.kind+" · "+r.voltage.condition)+'</small></td>'+
+  '<td>'+benchmarkSpec(r,"rds_on")+'<small>MAX:</small>'+benchmarkSpec(r,"rds_on_max")+'</td>'+
+  '<td>'+benchmarkSpec(r,"qg")+'</td><td>'+benchmarkSpec(r,"vce_sat")+'</td><td>'+benchmarkSpec(r,"qrr")+'</td>'+
+  '<td><a href="'+esc(r.url)+'" target="_blank" rel="noopener noreferrer">공식 제품 ↗</a></td></tr>'
+ ).join(""):'<tr><td colspan="8">현재 선택 조건에서 사양을 검증한 양산 제품이 없습니다. 다른 조건을 선택하거나 아래 연구 참고자료를 확인하세요.</td></tr>';
+ preserveCompareChoices(rows);
+ compareBench();
+}
+function loadBenchmark(){
+ fetch("benchmark.json?nocache="+Date.now()).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(data=>{
+  BENCH=data;
+  const companyNames=[...new Set(data.devices.map(r=>r.company))].sort();
+  el("bench-company").innerHTML='<option value="">전체 제조사</option>'+companyNames.map(name=>'<option>'+esc(name)+'</option>').join("");
+  el("bench-references").innerHTML=(data.research_references||[]).map(r=>'<p><strong>'+esc(r.category)+" · "+esc(r.name)+'</strong> <a target="_blank" rel="noopener noreferrer" href="'+esc(r.url)+'">연구 원문 보기 ↗</a><span class="mini"> · '+esc(r.note)+'</span></p>').join("");
+  renderBenchmark();
+ }).catch(e=>{el("bench-message").textContent="벤치마크 데이터 불러오기 실패: "+e.message;});
+}
+for(const id of ["bench-category","bench-company","bench-voltage","bench-search"])el(id).addEventListener("input",renderBenchmark);
+for(const id of ["bench-a","bench-b"])el(id).addEventListener("change",compareBench);
+loadBenchmark();
+
 function filter(){const cat=el("cat").value,kind=el("kind").value,q=el("search").value.toLowerCase();let x=(DB.records||[]).filter(r=>(!cat||r.category===cat)&&(!kind||r.kind===kind)&&(!q||(r.title+" "+(r.title_ko||"")+" "+r.source+" "+r.summary_ko).toLowerCase().includes(q)));el("records").innerHTML=x.length?x.map(card).join(""):'<div class="empty">검색 결과가 없습니다.</div>';}
 for(let e of ["cat","kind","search"])el(e).addEventListener("input",filter);for(let b of document.querySelectorAll(".nav button"))b.addEventListener("click",()=>{document.querySelectorAll(".nav button").forEach(x=>x.classList.toggle("active",x===b));document.querySelectorAll("main>section").forEach(s=>s.classList.toggle("hidden",s.id!==b.dataset.tab));});
 fetch("data.json?nocache="+Date.now()).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{DB=d;render()}).catch(e=>{el("last").textContent="데이터 로딩 실패: "+e.message;render()});
