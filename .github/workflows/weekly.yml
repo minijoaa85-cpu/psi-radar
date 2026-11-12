@@ -33,6 +33,8 @@ jobs:
         run: python -m scripts.validate_benchmark
       - name: Validate official financial disclosures
         run: python -m scripts.validate_financials
+      - name: Build finance V2.5 within-company trends and review-only diff
+        run: python -m scripts.financial_review_diff
       - name: Monitor official IR release links (no automatic monetary updates)
         run: python -m scripts.financial_ir_watch
       - name: Build benchmark change history
