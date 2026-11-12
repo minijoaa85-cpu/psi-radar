@@ -397,14 +397,34 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
 #intel-data-date{margin:6px 0 10px}
 @media(max-width:800px){.intel-evidence-grid{grid-template-columns:1fr}}
 @media(max-width:600px){.intel-switches button{flex:1 1 calc(50% - 8px)}.intel-column{padding:10px}.intel-physics-grid{grid-template-columns:1fr}.intel-section-heading button{min-height:35px}}
+
+/* V2.1 information hierarchy: overview -> weekly -> engineering -> competitors */
+.nav.nav-journey{display:grid;grid-template-columns:minmax(105px,.7fr) minmax(240px,1.8fr) minmax(300px,2.5fr) minmax(195px,1.5fr);gap:9px;align-items:stretch;overflow:visible;margin-bottom:16px;padding:0}
+.nav-group{min-width:0;background:#101f34;border:1px solid #2b4562;border-radius:11px;padding:10px}
+.nav-group-label{display:block;color:#9ebfda;font-size:11px;font-weight:700;margin:0 0 7px;white-space:nowrap}
+.nav-links{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.nav.nav-journey .nav-group button{padding:7px 9px;white-space:normal;min-height:34px;font-size:12px;line-height:1.35;max-width:100%;text-align:left}
+.nav.nav-journey .nav-group button:focus-visible{outline:2px solid #8bccff;outline-offset:2px}
+@media(max-width:1120px){.nav.nav-journey{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){
+ .nav.nav-journey{grid-template-columns:1fr;gap:7px}
+ .nav.nav-journey .nav-group{padding:8px 10px;display:grid;grid-template-columns:83px minmax(0,1fr);gap:7px;align-items:center}
+ .nav.nav-journey .nav-group-label{margin:0;white-space:normal}
+ .nav.nav-journey .nav-links{display:flex;flex-wrap:wrap;gap:5px}
+ .nav.nav-journey .nav-group button{width:auto;min-height:34px;flex:0 1 auto;font-size:12px;padding:7px 9px}
+}
 </style></head><body>
 <header><small>POWER SEMICONDUCTOR INTELLIGENCE</small><h1>◈ PSI Radar</h1><div class="muted">GaN · SiC · IGBT · SJ MOSFET · UD/UG SGT | 글로벌 기술 · 논문 · 경쟁사 동향</div><div id="last" class="mini">데이터 상태 확인 중...</div></header>
 <aside class="personal-tools" aria-label="개인 및 데이터 관리 보조 메뉴">
 <button type="button" id="watch-quick-access" class="watch-quick-access" aria-controls="watchlist" aria-expanded="false" title="나의 관심 자료함 열기"><span aria-hidden="true">☆</span><span>My Watch</span></button>
 <button type="button" id="quality-quick-access" class="watch-quick-access quality-quick-access" aria-controls="sources" aria-expanded="false" title="공개 데이터 출처 및 품질 확인"><span aria-hidden="true">ⓘ</span><span>Data Quality</span></button>
 </aside>
-<main><nav id="nav" class="nav" aria-label="핵심 기술 분석 메뉴">
-<button data-tab="overview" class="active">Overview</button><button data-tab="integrated">Integrated 2.0</button><button data-tab="briefing">Briefing</button><button data-tab="technology">Technology</button><button data-tab="research">Research</button><button data-tab="weekly">Weekly Reports</button><button data-tab="competitors">Competitors</button><button data-tab="architecture">Architecture</button><button data-tab="benchmark">Benchmark</button><button data-tab="market">Market & Finance</button></nav>
+<main><nav id="nav" class="nav nav-journey" aria-label="핵심 기술 분석 메뉴">
+<div class="nav-group nav-first" role="group" aria-label="시작"><span class="nav-group-label">① 시작</span><div class="nav-links"><button data-tab="overview" class="active">Overview</button></div></div>
+<div class="nav-group" role="group" aria-label="주간 동향"><span class="nav-group-label">② 주간 동향</span><div class="nav-links"><button data-tab="weekly">Weekly Reports</button><button data-tab="briefing">Briefing</button><button data-tab="market">Market & Finance</button></div></div>
+<div class="nav-group" role="group" aria-label="기술 분석"><span class="nav-group-label">③ 기술 분석</span><div class="nav-links"><button data-tab="integrated">Integrated 2.0</button><button data-tab="technology">Technology</button><button data-tab="research">Research</button><button data-tab="architecture">Architecture</button></div></div>
+<div class="nav-group" role="group" aria-label="경쟁사 및 제품 분석"><span class="nav-group-label">④ 경쟁사·제품</span><div class="nav-links"><button data-tab="competitors">Competitors</button><button data-tab="benchmark">Benchmark</button></div></div>
+</nav>
 <section id="overview"><div class="grid"><article class="panel stat"><span>수집된 자료 (연구 12개월 포함)</span><b id="total">0</b></article><article class="panel stat"><span>GaN</span><b id="gan">0</b></article><article class="panel stat"><span>SiC</span><b id="sic">0</b></article><article class="panel stat"><span>IGBT</span><b id="igbt">0</b></article><article class="panel stat"><span>논문</span><b id="papers">0</b></article></div><div class="two"><article class="panel"><h2>주간 핵심 업데이트</h2><div id="highlights" class="feed"></div></article><article class="panel"><h2>분석 우선순위</h2><div class="tiles"><article><b>GaN · 40%</b><p>E-mode, Dynamic R(on), 데이터센터 전원</p></article><article><b>SiC · 30%</b><p>Trench, Gate Oxide, 200mm Wafer</p></article><article><b>IGBT · 10%</b><p>Trench, Field Stop, VCE(sat), Eoff</p></article><article><b>SJ · 10%</b><p>Pillar Balance, Qrr, Softness, BV</p></article><article><b>SGT · 10%</b><p>Shield gate, Qgd, Eoss, Cell Pitch</p></article></div><p class="mini">비중은 기술 관심도 기준이며 실제 수집 비중을 보장하지 않습니다.</p></article></div></section>
 <section id="integrated" class="hidden"><article class="panel">
 <h2>Integrated Intelligence · 기술부터 제품까지 한눈에</h2>
