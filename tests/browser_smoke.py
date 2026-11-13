@@ -7,6 +7,7 @@ from __future__ import annotations
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
+import json
 from threading import Thread
 import sys
 
@@ -76,8 +77,27 @@ def check_page(browser,engine,screen,width,height,url):
         page.locator("#intel-categories button").first.wait_for(timeout=12000)
         page.locator("#intel-categories button").filter(has_text="SJ MOSFET").click()
         assert page.locator("#intel-physics-title").inner_text().startswith("SJ MOSFET")
+        # V2.8 source-type evidence chart reacts to the existing research filter.
+        nav.locator('button[data-tab="research"]').click()
+        assert page.locator("#research").is_visible()
+        page.locator("#evidence28-matrix .e28-tech").first.wait_for(state="visible",timeout=12000)
+        assert page.locator("#evidence28-matrix .e28-tech").count()==5
+        assert page.locator("#evidence28-kpis .e28-card").count()==3
+        page.locator('#evidence28-matrix button[data-e28-tech="IGBT"]').click()
+        assert page.locator("#research-cat").input_value()=="IGBT"
+        page.locator('#evidence28-matrix button[data-e28-tech="IGBT"]').click()
+        assert page.locator("#research-cat").input_value()==""
         nav.locator('button[data-tab="competitors"]').click()
         assert page.locator("#competitors").is_visible()
+        # Literal-title company mentions are separate from verified company tags.
+        page.locator("#mentions28-stamp").wait_for(state="visible",timeout=12000)
+        assert page.locator("#mentions28-company option").count()==16
+        assert page.locator("#mentions28-heat .m28-h-name").count()>=6
+        page.locator("#mentions28-company").select_option("infineon")
+        assert page.locator("#mentions28-company").input_value()=="infineon"
+        page.locator("#mentions28-period").select_option("all")
+        page.locator("#mentions28-company").select_option("")
+        assert page.locator("#mentions28-sources").is_visible()
         nav.locator('button[data-tab="benchmark"]').click()
         assert page.locator("#benchmark").is_visible()
         page.locator("#watch-quick-access").click()
@@ -93,8 +113,9 @@ def check_page(browser,engine,screen,width,height,url):
         page.locator("#history-quick-access").click()
         assert page.locator("#history").is_visible()
         page.locator(".history-item").first.wait_for(state="visible",timeout=12000)
-        assert page.locator(".history-item").count()>=28
-        assert page.locator("#history-current-version").inner_text()=="V2.7.1"
+        expected_release=json.loads((SITE/"version_history.json").read_text(encoding="utf-8"))
+        assert page.locator(".history-item").count()==len(expected_release["entries"])
+        assert page.locator("#history-current-version").inner_text()==expected_release["latest_version"]
         for name in ("psi-radar-version-history.pdf","psi-radar-version-history.pptx"):
             path="docs/"+name
             assert page.locator(f'#history a[href="{path}"]').count()==1
