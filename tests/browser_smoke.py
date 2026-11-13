@@ -53,7 +53,7 @@ def check_page(browser,engine,screen,width,height,url):
         # V2.6 shows visual summaries first; full cards are intentionally collapsed.
         page.locator(".finance-visual-card").first.wait_for(state="visible",timeout=12000)
         assert page.locator(".finance-visual-card").count()==4
-        page.locator("details.finance-visual-detail summary").click()
+        page.locator("details.finance-visual-detail > summary").click()
         page.locator(".finance-card").first.wait_for(state="visible",timeout=12000)
         assert page.locator(".finance-card").count()==4
         page.locator("#finance-company").select_option("st")
