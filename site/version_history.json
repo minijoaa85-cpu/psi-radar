@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "product": "PSI Radar",
-  "latest_version": "V2.8",
+  "latest_version": "V2.9",
   "updated_on": "2026-11-14",
   "source_policy": "Version summaries curated from repository README and implementation commits; no unverifiable feature claims.",
   "entries": [
@@ -265,6 +265,15 @@
       "background": "기술 논문과 최근 뉴스의 수집 기간이 달라 단순 건수 비교가 오해를 낳고, 기존 경쟁사 태그가 없는 자료에서는 회사별 추세가 공백으로 보였음",
       "changes": "Research에 논문·뉴스 유형별 독립 축의 근거 분포와 기술 선택 연동을 추가하고, Competitors에 영어 원문 제목의 제조사명 직접 언급만 계산하는 기간·제조사·기술·지역 필터, 히트맵 및 원문 드릴다운을 추가",
       "value": "증거의 출처·시간 범위를 구분하면서 실제 기사에서 제조사와 기술 연결을 확인하고 추가 조사할 자료로 바로 이동"
+    },
+    {
+      "version": "V2.9",
+      "title": "조건 검증형 Datasheet Benchmark Studio",
+      "date": "2026-11-14",
+      "summary": "측정값 분포·사양 확보율·동등 시험조건 여부를 시각화하고 그래프에서 A/B 제품 비교를 지정",
+      "background": "제품 데이터시트 숫자는 시험전압·전류·온도·typ/max·소자 구조가 다르므로 일반 순위 그래프가 기술 우열을 잘못 암시할 위험이 있었음",
+      "changes": "제품 Benchmark에 RDS(on)·Qg·Qoss·Eoss·VCE(sat)·Qrr·TSC 지표 선택, 원문값 막대, 출처·시험조건, 확보율과 동일조건 검증쌍을 표시하고 A/B 직접 선택을 추가; 기존 비교 판정도 엄격한 조건 검사와 통일",
+      "value": "제품 간 다른 시험조건을 숨기지 않고도 데이터시트 확보 현황과 수치 분포를 탐색하고, 원문 및 A/B 상세 비교로 빠르게 이동"
     }
   ]
 }
