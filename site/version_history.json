@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "product": "PSI Radar",
-  "latest_version": "V2.7.1",
-  "updated_on": "2026-11-13",
+  "latest_version": "V2.8",
+  "updated_on": "2026-11-14",
   "source_policy": "Version summaries curated from repository README and implementation commits; no unverifiable feature claims.",
   "entries": [
     {
@@ -256,6 +256,15 @@
       "background": "라이브 화면과 업데이트 시점이 달라 변경 이력 확인이 어려웠음",
       "changes": "우측 History 메뉴와 단일 JSON 기반 PDF·PPT 재생성 파이프라인 도입",
       "value": "버전별 변경 내용을 확인하고 공유용 슬라이드로 내려받기"
+    },
+    {
+      "version": "V2.8",
+      "title": "Research·Competitor Evidence Studio",
+      "date": "2026-11-14",
+      "summary": "기술별 논문·뉴스 근거 매트릭스와 제조사 제목 언급·원문 추적 시각화",
+      "background": "기술 논문과 최근 뉴스의 수집 기간이 달라 단순 건수 비교가 오해를 낳고, 기존 경쟁사 태그가 없는 자료에서는 회사별 추세가 공백으로 보였음",
+      "changes": "Research에 논문·뉴스 유형별 독립 축의 근거 분포와 기술 선택 연동을 추가하고, Competitors에 영어 원문 제목의 제조사명 직접 언급만 계산하는 기간·제조사·기술·지역 필터, 히트맵 및 원문 드릴다운을 추가",
+      "value": "증거의 출처·시간 범위를 구분하면서 실제 기사에서 제조사와 기술 연결을 확인하고 추가 조사할 자료로 바로 이동"
     }
   ]
 }
