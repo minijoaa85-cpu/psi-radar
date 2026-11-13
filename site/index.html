@@ -599,6 +599,49 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
 
 /* Build identity is separate from data refresh timestamps. */
 .ui-release-label{font-size:11px;color:#91dbff;margin-top:4px}
+
+/* V2.8 Evidence Lens and verified-text-only Competitor Mention Explorer */
+.evidence28,.mentions28{border:1px solid #3a5977;border-radius:14px;background:linear-gradient(140deg,#112c4a,#0e2036);padding:16px;margin:15px 0}
+.e28-heading{display:flex;align-items:start;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:13px}
+.e28-heading h3{font-size:18px;margin:0 0 5px}
+.e28-heading p,.e28-notice{color:#b7cada;font-size:12px;line-height:1.6;margin:0}
+.e28-stamp{font-size:11px;color:#b5dff9;border:1px solid #477796;border-radius:7px;padding:5px 9px}
+.e28-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-bottom:14px}
+.e28-card{background:#172f4b;border:1px solid #3d5877;padding:10px;border-radius:9px}
+.e28-card span{display:block;color:#a8c5df;font-size:11px}.e28-card strong{display:block;font-size:25px;font-variant-numeric:tabular-nums}
+.e28-matrix{border:1px solid #294762;border-radius:10px;padding:12px;background:#102239}
+.e28-colhead,.e28-matrix-row{display:grid;grid-template-columns:110px minmax(0,1fr) 34px minmax(0,1fr) 34px;gap:9px;align-items:center}
+.e28-colhead{font-size:11px;color:#9fbad4;margin-bottom:12px}
+.e28-matrix-row{font-size:12px;padding:5px 0}
+.e28-tech{color:#eaf5ff;background:#183451;border:1px solid #3c5e80;padding:5px;border-radius:6px;font-size:11px;cursor:pointer;text-align:left}
+.e28-tech.selected{border-color:#90d7ff;background:#215781}
+.e28-track,.m28-track{height:12px;background:#263f5b;border-radius:4px;overflow:hidden}
+.e28-fill{height:100%;display:block;background:#5aaff3;border-radius:4px}
+.e28-fill.news{background:#58cbb1}
+.e28-count{text-align:right;font-size:12px;font-variant-numeric:tabular-nums}
+.e28-footer{margin-top:10px;color:#b5cce0;font-size:11px;line-height:1.6}
+.m28-controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.m28-controls label{font-size:12px;color:#bdd4e7}
+.m28-controls select{max-width:230px;min-width:130px;font-size:12px;padding:7px}
+.m28-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:11px}
+.m28-inner{border:1px solid #33516f;background:#102239;border-radius:10px;padding:12px;min-width:0}
+.m28-inner h4{margin:0 0 10px;font-size:14px}
+.m28-row{display:grid;grid-template-columns:104px minmax(0,1fr) 25px;align-items:center;gap:8px;margin:7px 0}
+.m28-company{cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:left;font-size:11px;background:none;border:0;color:#dbeefa;padding:2px}
+.m28-company.active{color:#7fd0ff;font-weight:750}
+.m28-fill{height:100%;display:block;background:#55b6e0;border-radius:4px}
+.m28-heat{display:grid;grid-template-columns:minmax(80px,1.2fr) repeat(5,minmax(30px,1fr));gap:4px;overflow-x:auto}
+.m28-heat>*{text-align:center;font-size:10px;padding:6px 2px;border-radius:4px;min-width:0;overflow:hidden;text-overflow:ellipsis}
+.m28-h-name{text-align:left;color:#c7deef}
+.m28-cell{background:#1c344e;color:#dbeafa}
+.m28-sources{margin-top:11px;border-top:1px solid #3b5774;padding-top:11px}
+.m28-sources h4{margin:0 0 6px;font-size:14px}
+.m28-item{border-bottom:1px solid #2c4761;padding:7px 0;font-size:12px}
+.m28-item a{color:#89d1ff;text-decoration:none}.m28-item a:hover{text-decoration:underline}
+.m28-item small{color:#a7c4de;display:block;margin-top:3px}
+@media(max-width:780px){.m28-grid{grid-template-columns:1fr}.e28-colhead,.e28-matrix-row{grid-template-columns:83px minmax(0,1fr) 24px minmax(0,1fr) 24px;gap:5px}.evidence28,.mentions28{padding:11px}}
+@media(max-width:420px){.e28-cards{grid-template-columns:repeat(3,minmax(0,1fr))}.e28-card{padding:6px}.e28-card strong{font-size:21px}.e28-matrix{padding:7px}.e28-colhead,.e28-matrix-row{font-size:10px}.m28-row{grid-template-columns:90px minmax(0,1fr) 25px}}
+
 </style></head><body>
 <header><small>POWER SEMICONDUCTOR INTELLIGENCE</small><h1>◈ PSI Radar</h1><div class="muted">GaN · SiC · IGBT · SJ MOSFET · UD/UG SGT | 글로벌 기술 · 논문 · 경쟁사 동향</div><div id="last" class="mini">데이터 상태 확인 중...</div><div id="ui-release-label" class="ui-release-label">UI 코드: History 적용 · 버전 확인 중</div></header>
 <aside class="personal-tools" aria-label="개인 및 데이터 관리 보조 메뉴">
@@ -663,14 +706,25 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
 <details class="portal-details"><summary>분석 기준과 주의사항 확인</summary><p id="intel-warning" class="mini"></p></details>
 </article></section>
 <section id="technology" class="hidden"><article class="panel"><h2>Technology Watch</h2><div class="filters"><select id="cat"><option value="">전체 기술</option><option>GaN</option><option>SiC</option><option>IGBT</option><option>SJ MOSFET</option><option>SGT</option></select><select id="kind"><option value="">뉴스 + 논문</option><option value="news">뉴스</option><option value="paper">논문</option></select><input id="search" placeholder="키워드·회사·기술 검색" aria-label="검색"></div><div id="records" class="feed"></div></article></section>
-<section id="research" class="hidden"><article class="panel"><h2>학술 논문 | Research Intelligence</h2><p class="muted">최근 45일 학술지 + IGBT·SJ MOSFET·SGT 최근 12개월 집중 검색 · Crossref / OpenAlex DOI · 원문 검토 전</p><div class="filters"><select id="research-cat" aria-label="논문 기술 선택"><option value="">전체 논문</option><option>GaN</option><option>SiC</option><option>IGBT</option><option>SJ MOSFET</option><option>SGT</option></select></div><select id="research-relevance" aria-label="기술 관련성 수준"><option value="0">전체 관련성</option><option value="70">높음 70점 이상</option><option value="45">보통 45점 이상</option></select><p class="mini">관련성은 제목·초록 기술 키워드 기반의 자동 추정값입니다. 전문가 검증 결과가 아닙니다.</p><div id="research-counts" class="mini"></div><div id="research-feed" class="feed"></div></article></section>
+<section id="research" class="hidden"><article class="panel"><h2>학술 논문 | Research Intelligence</h2><p class="muted">최근 45일 학술지 + IGBT·SJ MOSFET·SGT 최근 12개월 집중 검색 · Crossref / OpenAlex DOI · 원문 검토 전</p><div id="evidence28" class="evidence28" aria-labelledby="evidence28-title">
+ <div class="e28-heading"><div><h3 id="evidence28-title">Evidence Lens · 기술별 근거 지형 V2.8</h3><p>실제 수집 문헌과 뉴스의 표본 규모를 별도 스케일로 보여줍니다.</p></div><span class="e28-stamp" id="evidence28-stamp">수집 기준 확인 중</span></div>
+ <div class="e28-cards" id="evidence28-kpis" aria-live="polite"></div>
+ <div class="e28-matrix"><div class="e28-colhead"><span>기술군 선택</span><span>학술 논문</span><span>건수</span><span>뉴스 색인</span><span>건수</span></div><div id="evidence28-matrix" aria-live="polite"></div></div>
+ <p class="e28-footer">논문 최대 12개월 집중 검색(기술별 수집 기간 상이)과 뉴스 약 8일 색인의 서로 다른 모집단입니다. 길이는 <b>각 자료 유형 내 최대값</b>을 100%로 정규화한 것입니다. 빈 값은 검증된 증거 부재가 아닌 현재 수집 표본 0건을 뜻합니다. 기술 우열·성장률·시장점유율 비교가 아닙니다.</p>
+ </div><div class="filters"><select id="research-cat" aria-label="논문 기술 선택"><option value="">전체 논문</option><option>GaN</option><option>SiC</option><option>IGBT</option><option>SJ MOSFET</option><option>SGT</option></select></div><select id="research-relevance" aria-label="기술 관련성 수준"><option value="0">전체 관련성</option><option value="70">높음 70점 이상</option><option value="45">보통 45점 이상</option></select><p class="mini">관련성은 제목·초록 기술 키워드 기반의 자동 추정값입니다. 전문가 검증 결과가 아닙니다.</p><div id="research-counts" class="mini"></div><div id="research-feed" class="feed"></div></article></section>
 <section id="weekly" class="hidden"><article class="panel"><h2>주간 보고서 아카이브</h2><p class="muted">매주 공개 자료를 누적 보관합니다. 동일 주차에 다시 실행하면 해당 주 보고서를 갱신합니다. 첫 주차는 비교 기준(Baseline)입니다.</p><div class="filters"><select id="weekly-select" aria-label="보고서 주차 선택"><option value="">보고서 로딩 중</option></select></div><div class="pulse27" aria-labelledby="pulse27-weekly-title"><div class="pulse27-head"><div><h2 id="pulse27-weekly-title">Weekly Intelligence · 발표 동향</h2><p>실제 보관된 보고서만 시각화합니다. 이전 이력이 없으면 비교할 수 없습니다.</p></div><span id="pulse27-weekly-updated" class="pulse27-time">주간 보고서 확인 중</span></div>
 <div class="pulse27-grid"><div class="pulse27-box"><h3>선택 주차 기술별 신규 발표 자료</h3><div class="pulse27-bars" id="pulse27-weekly-bars"></div><p class="pulse27-note">공식 발표·뉴스·논문을 수집한 표본입니다. 기술 분야 전체의 실제 발표량을 뜻하지 않습니다.</p></div>
 <div class="pulse27-box"><h3>보관된 주차 추이</h3><div class="pulse27-archive" id="pulse27-weekly-history"></div><p id="pulse27-weekly-message" class="pulse27-hint"></p></div></div><div id="pulse27-weekly-kpis" class="pulse27-summary"></div></div><div id="weekly-details" class="feed"><div class="empty">주간 보고서 파일을 확인 중입니다.</div></div></article></section>
 <section id="competitors" class="hidden"><article class="panel">
 <h2>Competitor Intelligence · 기업별 기술 동향</h2>
 <p class="competitor-intro">Infineon · ST · onsemi · ROHM 및 일본·중국 업체 | 자료 건수는 시장점유율이 아니며, 뉴스 색인과 제조사 공식 발표를 구분합니다.</p>
-<div class="filters">
+<div class="mentions28" id="mentions28" aria-labelledby="mentions28-title">
+ <div class="e28-heading"><div><h3 id="mentions28-title">Competitor Mention Explorer · 제목 언급 지형 V2.8</h3><p>수집된 원문 제목에 명시적으로 등장한 제조사명만 추적합니다. 기업 공식 발표·실제 기술력·성과 순위가 아닙니다.</p></div><span id="mentions28-stamp" class="e28-stamp">자료 기준 확인 중</span></div>
+ <div class="m28-controls"><label for="mentions28-period">자료 시점</label><select id="mentions28-period" aria-label="기사 제목 언급 기간"><option value="30">스냅샷 기준 최근 30일</option><option value="all">전체 보관 자료</option></select><label for="mentions28-company">제조사 선택</label><select id="mentions28-company" aria-label="기사 제목 제조사 선택"><option value="">전체 제조사</option></select></div>
+ <div class="m28-grid"><div class="m28-inner"><h4>제조사별 제목 언급 기사 수</h4><div id="mentions28-bars" aria-live="polite"></div></div><div class="m28-inner"><h4>제조사 × 기술군 언급 매트릭스</h4><div id="mentions28-heat" class="m28-heat" aria-live="polite"></div></div></div>
+ <div class="m28-sources"><h4>해당 제목 원문 근거 <span class="mini" id="mentions28-count"></span></h4><div id="mentions28-sources" aria-live="polite"></div></div>
+ <p class="e28-footer">동일 소식을 전하는 여러 매체 기사들은 각각 집계됩니다. 일반 뉴스 색인의 기업명 텍스트 매칭이며, 기업 직접 발표 검증이나 명확한 경쟁력 순위가 아닙니다. 기존 경쟁사 태그 기반 결과와 혼합하지 않습니다.</p>
+ </div><div class="filters">
 <select id="company-region" aria-label="지역"><option value="">전체 지역</option><option value="Europe">유럽</option><option value="US">미국</option><option value="Japan">일본</option><option value="China">중국</option></select>
 <select id="company-tech" aria-label="관심 소자"><option value="">전체 기술</option><option>GaN</option><option>SiC</option><option>IGBT</option><option>SJ MOSFET</option><option>SGT</option></select>
 <select id="company-type" aria-label="자료 유형"><option value="">전체 자료</option><option value="news">뉴스</option><option value="paper">논문</option><option value="official">제조사 공식</option></select>
@@ -910,6 +964,87 @@ function render(){
  ].join("");
  el("last").textContent=DB.generated_at?"데이터 갱신: "+new Date(DB.generated_at).toLocaleString("ko-KR",{timeZone:"Asia/Seoul"}):"첫 데이터 수집 대기 중";
 }
+
+/* V2.8 Research Evidence Lens: no mixing of publication windows */
+const E28_TECHS=["GaN","SiC","IGBT","SJ MOSFET","SGT"];
+function renderEvidence28(){
+ const records=DB.records||[],paper=records.filter(r=>r.kind==="paper"),news=records.filter(r=>r.kind==="news"),selected=el("research-cat").value;
+ const maxPaper=Math.max(1,...E28_TECHS.map(t=>paper.filter(r=>r.category===t).length));
+ const maxNews=Math.max(1,...E28_TECHS.map(t=>news.filter(r=>r.category===t).length));
+ el("evidence28-kpis").innerHTML=[["논문 메타데이터",paper.length],["뉴스 색인",news.length],["분석 기술군",E28_TECHS.length]].map(([name,count])=>'<div class="e28-card"><span>'+esc(name)+'</span><strong>'+count+'</strong></div>').join("");
+ el("evidence28-stamp").textContent=DB.generated_at?"수집 "+new Date(DB.generated_at).toLocaleDateString("ko-KR",{timeZone:"Asia/Seoul"}):"수집일 확인 불가";
+ el("evidence28-matrix").innerHTML=E28_TECHS.map(t=>{
+  const pc=paper.filter(r=>r.category===t).length,nc=news.filter(r=>r.category===t).length;
+  return '<div class="e28-matrix-row"><button type="button" class="e28-tech'+(selected===t?' selected':'')+'" data-e28-tech="'+esc(t)+'" aria-pressed="'+(selected===t)+'" title="'+esc(t)+' 논문 검색">'+esc(t)+'</button>'+
+   '<div class="e28-track"><span class="e28-fill" style="width:'+(pc/maxPaper*100).toFixed(1)+'%"></span></div><span class="e28-count">'+pc+'</span>'+
+   '<div class="e28-track"><span class="e28-fill news" style="width:'+(nc/maxNews*100).toFixed(1)+'%"></span></div><span class="e28-count">'+nc+'</span></div>';
+ }).join("");
+}
+el("evidence28-matrix").addEventListener("click",event=>{
+ const b=event.target.closest("button[data-e28-tech]");if(!b)return;
+ const value=b.dataset.e28Tech;
+ el("research-cat").value=el("research-cat").value===value?"":value;
+ renderResearch();
+});
+
+/* V2.8 literal-title manufacturer mentions: no inferred corporate attribution */
+const M28_COMPANIES=[
+ {id:"infineon",name:"Infineon",region:"Europe",rx:/\binfineon\b/i},
+ {id:"st",name:"STMicroelectronics",region:"Europe",rx:/\bSTMicroelectronics\b|\bSTMicro\b/i},
+ {id:"onsemi",name:"onsemi",region:"US",rx:/\bonsemi\b/i},
+ {id:"rohm",name:"ROHM",region:"Japan",rx:/\bROHM\b/i},
+ {id:"mitsubishi",name:"Mitsubishi Electric",region:"Japan",rx:/\bMitsubishi Electric\b/i},
+ {id:"fuji",name:"Fuji Electric",region:"Japan",rx:/\bFuji Electric\b/i},
+ {id:"toshiba",name:"Toshiba",region:"Japan",rx:/\bToshiba\b/i},
+ {id:"innoscience",name:"Innoscience",region:"China",rx:/\bInnoscience\b/i},
+ {id:"sanan",name:"Sanan",region:"China",rx:/\bSanan\b/i},
+ {id:"crmicro",name:"CR Micro",region:"China",rx:/\bCR Micro\b|\bChina Resources Microelectronics\b/i},
+ {id:"basicsemi",name:"BASiC Semiconductor",region:"China",rx:/\bBASiC Semiconductor\b/i},
+ {id:"navitas",name:"Navitas",region:"US",rx:/\bNavitas\b/i},
+ {id:"epc",name:"EPC",region:"US",rx:/\bEPC\b/i},
+ {id:"wolfspeed",name:"Wolfspeed",region:"US",rx:/\bWolfspeed\b/i},
+ {id:"nexperia",name:"Nexperia",region:"Europe",rx:/\bNexperia\b/i}
+];
+function renderMentions28(){
+ const region=el("company-region").value,tech=el("company-tech").value,kind=el("company-type").value,query=el("company-q").value.trim().toLowerCase();
+ const period=el("mentions28-period").value,chosen=el("mentions28-company").value;
+ const opts=el("mentions28-company");
+ if(opts.options.length===1)M28_COMPANIES.forEach(c=>{const option=document.createElement("option");option.value=c.id;option.textContent=c.name;opts.appendChild(option)});
+ const asOf=Date.parse(DB.generated_at||"");const cutoff=Number.isFinite(asOf)?new Date(asOf-30*86400000).toISOString().slice(0,10):null;
+ const companies=M28_COMPANIES.filter(c=>!region||c.region===region);
+ const records=(DB.records||[]).filter(r=>(!tech||r.category===tech)&&(!kind||r.kind===kind)&&(!query||String(r.title||"").toLowerCase().includes(query))&&
+  (period==="all"||!cutoff||(r.date&&r.date>=cutoff&&r.date<=new Date(asOf).toISOString().slice(0,10))));
+ const totals=companies.map(c=>({...c,items:records.filter(r=>c.rx.test(String(r.title||"")))})).filter(c=>c.items.length);
+ const ordered=totals.sort((a,b)=>b.items.length-a.items.length||a.name.localeCompare(b.name));
+ const selected=ordered.find(c=>c.id===chosen);
+ const max=Math.max(1,...ordered.map(c=>c.items.length));
+ el("mentions28-stamp").textContent=(DB.generated_at?new Date(DB.generated_at).toLocaleDateString("ko-KR",{timeZone:"Asia/Seoul"}):"기준일 불명")+
+  " · 제목 매칭";
+ el("mentions28-bars").innerHTML=ordered.length?ordered.slice(0,8).map(c=>
+  '<div class="m28-row"><button type="button" data-m28-company="'+esc(c.id)+'" class="m28-company'+(c.id===chosen?' active':'')+'" title="'+esc(c.name)+' 출처 표시">'+esc(c.name)+'</button>'+
+  '<div class="m28-track"><span class="m28-fill" style="width:'+(c.items.length/max*100).toFixed(1)+'%"></span></div><span class="e28-count">'+c.items.length+'</span></div>').join(""):
+  '<div class="mini">현재 조건에서 제목에 명시된 제조사 언급이 없습니다. 활동 부재를 의미하지 않습니다.</div>';
+ const visible=(selected?[selected]:ordered).slice(0,8);
+ el("mentions28-heat").innerHTML=['제조사',...E28_TECHS].map(x=>'<span class="m28-h-name">'+esc(x)+'</span>').join("")+
+ visible.map(c=>'<span class="m28-h-name" title="'+esc(c.name)+'">'+esc(c.name)+'</span>'+E28_TECHS.map(t=>{
+  const count=c.items.filter(r=>r.category===t).length;
+  return '<span class="m28-cell" style="background:rgba(77,167,224,'+(count?Math.min(.2+count/Math.max(1,c.items.length)*.65,.9).toFixed(2):".08")+')" title="'+esc(c.name+' / '+t)+'">'+count+'</span>';
+ }).join("")).join("");
+ const evidence=(selected?selected.items:ordered.flatMap(c=>c.items)).filter((r,i,a)=>a.findIndex(x=>x.id===r.id)===i).sort((a,b)=>(b.date||"").localeCompare(a.date||"")).slice(0,10);
+ el("mentions28-count").textContent="· "+evidence.length+"건 표시";
+ el("mentions28-sources").innerHTML=evidence.length?evidence.map(r=>{
+  const safe=/^https:\/\//.test(r.url||"")?esc(r.url):"";
+  return '<div class="m28-item">'+(safe?'<a href="'+safe+'" target="_blank" rel="noopener noreferrer">'+esc(r.title||"제목 미확인")+'</a>':esc(r.title||"제목 미확인"))+
+  '<small>'+esc(r.date||"날짜 미확인")+' · '+esc(r.category||"기술 미분류")+' · '+esc(r.source||"출처 미확인")+' · 제목 언급 / 원문 미검증</small></div>';
+ }).join(""):'<p class="mini">선택한 조건의 제목 언급 근거가 없습니다.</p>';
+}
+el("mentions28-bars").addEventListener("click",event=>{
+ const b=event.target.closest("button[data-m28-company]");if(!b)return;
+ el("mentions28-company").value=el("mentions28-company").value===b.dataset.m28Company?"":b.dataset.m28Company;
+ renderMentions28();
+});
+for(const id of ["mentions28-period","mentions28-company"])el(id).addEventListener("change",renderMentions28);
+
 function renderResearch(){
  const items=(DB.records||[]).filter(r=>r.kind==="paper");
  const cat=el("research-cat").value;
@@ -917,6 +1052,7 @@ function renderResearch(){
  const subset=items.filter(r=>(!cat||r.category===cat)&&(Number(r.relevance_score||0)>=minScore)).sort((a,b)=>(b.relevance_score||0)-(a.relevance_score||0));
  const counts=["GaN","SiC","IGBT","SJ MOSFET","SGT"].map(k=>k+": "+items.filter(r=>r.category===k).length+"편").join(" · ");
  el("research-counts").textContent="학술 논문 수: "+items.length+"편 | "+counts;
+ renderEvidence28();
  el("research-feed").innerHTML=subset.length?subset.map(card).join(""):'<div class="empty">해당 기술군에서 검증된 논문 메타데이터가 아직 수집되지 않았습니다.</div>';
 }
 el("research-cat").addEventListener("change",renderResearch);
@@ -973,6 +1109,7 @@ const COMPANY_DIRECTORY=[
  {id:"wolfspeed",name:"Wolfspeed",region:"US",tier:"priority"}
 ];
 function renderCompetitors(){
+ renderMentions28();
  const region=el("company-region").value,tech=el("company-tech").value,type=el("company-type").value,q=el("company-q").value.trim().toLowerCase();
  const records=(DB.records||[]).filter(r=>Array.isArray(r.companies)&&r.companies.length>0);
  const queryText=r=>((r.title||"")+" "+(r.title_ko||"")+" "+(r.summary_ko||"")).toLowerCase();
