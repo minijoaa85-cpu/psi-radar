@@ -572,10 +572,35 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
 @media(max-width:820px){.pulse27-grid{grid-template-columns:1fr}.pulse27{padding:14px}}
 @media(max-width:500px){.pulse27-summary{grid-template-columns:1fr 1fr}.pulse27-pills{grid-template-columns:1fr 1fr}.pulse27-bar{grid-template-columns:84px minmax(0,1fr) 32px;gap:5px}}
 
+
+/* Version History - personal-tools optional third rail */
+.personal-tools .history-quick-access{width:130px;background:#253957;border-color:#5e86ae}
+.personal-tools .history-quick-access:hover,.personal-tools .history-quick-access.is-active{background:#365d87}
+#history-close{min-height:36px;padding:7px 11px;border:1px solid #477da6;border-radius:8px;background:#173954;color:#eaf4fe;cursor:pointer;font-size:12px}
+#history-close:focus-visible{outline:3px solid #a2d2ff;outline-offset:3px}
+.history-head{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:14px 0}
+.history-head>div{background:#10263f;border:1px solid #355475;border-radius:10px;padding:14px}
+.history-head strong{display:block;font-size:22px;margin-top:3px;color:#f0f7ff}
+.history-downloads{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
+.history-downloads a{padding:9px 13px;color:#e3f4ff;border:1px solid #548fc1;border-radius:8px;background:#1a476b;font-size:12px;text-decoration:none}
+.history-downloads a:hover{background:#256389}
+.history-controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:12px 0}
+.history-controls label{font-size:13px;color:var(--muted)}
+.history-controls select{min-width:150px}
+.history-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.history-item{border:1px solid #31506e;border-radius:10px;background:#11243c;padding:12px;min-width:0}
+.history-item h3{margin:0 0 5px;font-size:15px}
+.history-item .history-version{color:#85caff;margin-right:7px}
+.history-item p{font-size:12px;margin:5px 0;color:#d5e3ef;line-height:1.6}
+.history-item details{margin-top:8px;font-size:12px}
+.history-item .history-when{font-size:11px;color:var(--muted)}
+@media(max-width:700px){.personal-tools .history-quick-access{width:125px}.history-list{grid-template-columns:1fr}.history-head{grid-template-columns:repeat(2,minmax(0,1fr))}.history-downloads a{flex:1 1 175px}main{padding-bottom:calc(160px + env(safe-area-inset-bottom,0px))}}
+@media(max-width:400px){.history-head{grid-template-columns:1fr}}
 </style></head><body>
 <header><small>POWER SEMICONDUCTOR INTELLIGENCE</small><h1>◈ PSI Radar</h1><div class="muted">GaN · SiC · IGBT · SJ MOSFET · UD/UG SGT | 글로벌 기술 · 논문 · 경쟁사 동향</div><div id="last" class="mini">데이터 상태 확인 중...</div></header>
 <aside class="personal-tools" aria-label="개인 및 데이터 관리 보조 메뉴">
 <button type="button" id="watch-quick-access" class="watch-quick-access" aria-controls="watchlist" aria-expanded="false" title="나의 관심 자료함 열기"><span aria-hidden="true">☆</span><span>My Watch</span></button>
+<button type="button" id="history-quick-access" class="watch-quick-access history-quick-access" aria-controls="history" aria-expanded="false" title="버전별 업데이트 이력 보기"><span aria-hidden="true">◷</span><span>History</span></button>
 <button type="button" id="quality-quick-access" class="watch-quick-access quality-quick-access" aria-controls="sources" aria-expanded="false" title="공개 데이터 출처 및 품질 확인"><span aria-hidden="true">ⓘ</span><span>Data Quality</span></button>
 </aside>
 <main><nav id="nav" class="nav nav-journey" aria-label="핵심 기술 분석 메뉴">
@@ -803,6 +828,15 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
 </div>
 <details class="portal-details"><summary>데이터 출처·비교 제한·갱신 방식</summary>
 <div id="finance-disclosure" class="mini">공식 IR 자료 기반입니다. 최신 분기 공시 확인 및 기록 수정은 현재 수동 검증 방식입니다.</div></details>
+</article></section>
+<section id="history" class="hidden"><article class="panel history-panel">
+<div class="watch-section-heading"><div><h2>Version History · 업데이트 이력</h2><p class="mini">기능별 변경 사항을 버전 순서로 확인하고 상세 개발 이력을 내려받을 수 있습니다.</p></div>
+<button type="button" id="history-close" aria-label="History 닫고 이전 분석 화면으로 돌아가기">분석 화면으로 돌아가기 ×</button></div>
+<div class="history-head"><div><span class="mini">현재 기록된 최신 버전</span><strong id="history-current-version">확인 중</strong></div><div><span class="mini">버전별 업데이트</span><strong id="history-version-count">—</strong></div><div><span class="mini">이력 기준일</span><strong id="history-updated-on">—</strong></div></div>
+<div class="history-downloads"><a href="docs/psi-radar-version-history.pdf" download>전체 개발 히스토리 PDF 다운로드 ↗</a><a href="docs/psi-radar-version-history.pptx" download>PPT 원본 다운로드 ↗</a></div>
+<div class="history-controls"><label for="history-filter">버전 그룹</label><select id="history-filter" aria-label="버전 그룹 선택"><option value="all">전체 버전</option><option value="2">V2.x</option><option value="1">V1.x</option><option value="0">V0.x</option></select><span class="mini" id="history-status">버전 이력을 불러오는 중</span></div>
+<div id="history-list" class="history-list" aria-live="polite"></div>
+<p class="mini">히스토리는 GitHub README와 실제 구현 기록을 근거로 작성합니다. 향후 개발부터 버전 이력 파일과 PDF/PPT가 같은 데이터로 생성됩니다.</p>
 </article></section>
 <section id="sources" class="hidden"><article class="panel"><div class="watch-section-heading"><h2>Source & Data Quality</h2><button type="button" id="quality-close" aria-label="Data Quality 닫고 이전 분석 화면으로 돌아가기">분석 화면으로 돌아가기 ×</button></div><div id="health"></div><p class="muted">공개 뉴스 RSS와 Crossref 서지 정보 기반입니다. Google News 검색 링크는 원 출판사 홈페이지가 아닐 수 있습니다. AI 요약은 선택적이며 자료의 근거 범위가 표시됩니다.</p></article></section>
 <footer class="foot">PSI Radar · 공개 정보만 사용 · 모든 자료의 날짜·출처·원문 링크 확인 · 내부 공정 데이터는 업로드하지 마세요.</footer></main>
@@ -1991,25 +2025,44 @@ loadBenchmark();
 
 function filter(){const cat=el("cat").value,kind=el("kind").value,q=el("search").value.toLowerCase();let x=(DB.records||[]).filter(r=>(!cat||r.category===cat)&&(!kind||r.kind===kind)&&(!q||(r.title+" "+(r.title_ko||"")+" "+r.source+" "+r.summary_ko).toLowerCase().includes(q)));el("records").innerHTML=x.length?x.map(card).join(""):'<div class="empty">검색 결과가 없습니다.</div>';}
 for(let e of ["cat","kind","search"])el(e).addEventListener("input",filter);
+
+/* Version history: shared structured source also feeds slides/PDF */
+let HISTORY_DATA={entries:[]};
+function renderVersionHistory(){
+ const major=el("history-filter").value,rows=(HISTORY_DATA.entries||[]).filter(x=>major==="all"||x.version.startsWith("V"+major+".")).slice().reverse();
+ el("history-current-version").textContent=HISTORY_DATA.latest_version||"미확인";
+ el("history-version-count").textContent=(HISTORY_DATA.entries||[]).length+"개";
+ el("history-updated-on").textContent=HISTORY_DATA.updated_on||"미확인";
+ el("history-status").textContent=rows.length+"개 버전 표시 · 최신순";
+ el("history-list").innerHTML=rows.length?rows.map(v=>'<article class="history-item"><h3><span class="history-version">'+esc(v.version)+'</span>'+esc(v.title)+'</h3><span class="history-when">'+esc(v.date||"날짜 미확인")+'</span><p>'+esc(v.summary)+'</p>'+
+ '<details><summary>배경·개선·효과 상세 보기</summary><p><b>개발 배경</b> '+esc(v.background)+'</p><p><b>핵심 변경</b> '+esc(v.changes)+'</p><p><b>사용자 가치</b> '+esc(v.value)+'</p></details></article>').join(""):'<div class="empty">표시할 버전 이력이 없습니다.</div>';
+}
+el("history-filter").addEventListener("change",renderVersionHistory);
+fetch("version_history.json?nocache="+Date.now()).then(r=>{if(!r.ok)throw Error("HTTP "+r.status);return r.json()}).then(data=>{
+ if(data.schema_version!==1||!Array.isArray(data.entries)||!data.latest_version)throw Error("지원하지 않는 버전 데이터");
+ HISTORY_DATA=data;renderVersionHistory();
+}).catch(e=>{el("history-status").textContent="업데이트 이력을 불러오지 못했습니다: "+e.message;el("history-list").textContent="version_history.json을 확인하세요.";});
+
 let lastResearchTab="overview";
 function showRadarSection(tab){
  const pages=[...document.querySelectorAll("main>section")];
  if(!pages.some(page=>page.id===tab))return;
  // Both helper screens preserve the last active technology-analysis view.
- if(tab!=="watchlist"&&tab!=="sources")lastResearchTab=tab;
+ if(tab!=="watchlist"&&tab!=="sources"&&tab!=="history")lastResearchTab=tab;
  document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.tab===tab));
  pages.forEach(page=>page.classList.toggle("hidden",page.id!==tab));
- for(const [buttonId,pageId] of [["watch-quick-access","watchlist"],["quality-quick-access","sources"]]){
+ for(const [buttonId,pageId] of [["watch-quick-access","watchlist"],["history-quick-access","history"],["quality-quick-access","sources"]]){
   const active=tab===pageId;
   el(buttonId).classList.toggle("is-active",active);
   el(buttonId).setAttribute("aria-expanded",String(active));
  }
  if(tab==="watchlist")el("watch-close").focus({preventScroll:true});
  if(tab==="sources")el("quality-close").focus({preventScroll:true});
+ if(tab==="history")el("history-close").focus({preventScroll:true});
  window.scrollTo?.({top:0,behavior:"smooth"});
 }
 for(const b of document.querySelectorAll(".nav button"))b.addEventListener("click",()=>showRadarSection(b.dataset.tab));
-for(const [buttonId,pageId,closeId] of [["watch-quick-access","watchlist","watch-close"],["quality-quick-access","sources","quality-close"]]){
+for(const [buttonId,pageId,closeId] of [["watch-quick-access","watchlist","watch-close"],["history-quick-access","history","history-close"],["quality-quick-access","sources","quality-close"]]){
  el(buttonId).addEventListener("click",()=>{
   const isOpen=!el(pageId).classList.contains("hidden");
   showRadarSection(isOpen?lastResearchTab:pageId);
