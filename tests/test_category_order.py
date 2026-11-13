@@ -29,7 +29,8 @@ def test_dashboard_selects_have_sgt_last():
   assert filtered==list(ORDER),(id,filtered)
 def test_overview_priority_cards_and_competitor_matrix_order():
  html=(BASE/"site"/"index.html").read_text(encoding="utf-8")
- overview=html.split('<section id="overview">',1)[1].split('</section>',1)[0]
+ # The V2.7 overview has nested panels; the next top-level page is its boundary.
+ overview=html.split('<section id="overview">',1)[1].split('<section id="integrated"',1)[0]
  assert overview.index('<b>SJ · 10%</b>')<overview.index('<b>SGT · 10%</b>')
  assert 'const devices=["GaN","SiC","IGBT","SJ MOSFET","SGT"]' in html
  assert 'const counts=["GaN","SiC","IGBT","SJ MOSFET","SGT"]' in html
