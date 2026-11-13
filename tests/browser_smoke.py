@@ -50,7 +50,11 @@ def check_page(browser,engine,screen,width,height,url):
         assert page.locator("#weekly").is_visible()
         nav.locator('button[data-tab="market"]').click()
         assert page.locator("#market").is_visible()
-        page.locator(".finance-card").first.wait_for(timeout=12000)
+        # V2.6 shows visual summaries first; full cards are intentionally collapsed.
+        page.locator(".finance-visual-card").first.wait_for(state="visible",timeout=12000)
+        assert page.locator(".finance-visual-card").count()==4
+        page.locator("details.finance-visual-detail summary").click()
+        page.locator(".finance-card").first.wait_for(state="visible",timeout=12000)
         assert page.locator(".finance-card").count()==4
         page.locator("#finance-company").select_option("st")
         assert page.locator(".finance-card").count()==1
@@ -84,6 +88,20 @@ def check_page(browser,engine,screen,width,height,url):
         page.locator("#quality-quick-access").click()
         assert page.locator("#sources").is_visible()
         page.locator("#quality-close").click()
+        assert page.locator("#benchmark").is_visible()
+        # History must be accessible without affecting core navigation.
+        page.locator("#history-quick-access").click()
+        assert page.locator("#history").is_visible()
+        page.locator(".history-item").first.wait_for(state="visible",timeout=12000)
+        assert page.locator(".history-item").count()>=28
+        assert page.locator("#history-current-version").inner_text()=="V2.7.1"
+        for name in ("psi-radar-version-history.pdf","psi-radar-version-history.pptx"):
+            path="docs/"+name
+            assert page.locator(f'#history a[href="{path}"]').count()==1
+            result=page.request.get(url.replace("/index.html","/")+path)
+            assert result.status==200,(path,result.status)
+            assert len(result.body())>1000,name
+        page.locator("#history-close").click()
         assert page.locator("#benchmark").is_visible()
         nav.locator('button[data-tab="overview"]').click()
         assert page.locator("#overview").is_visible()
