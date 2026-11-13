@@ -100,6 +100,26 @@ def check_page(browser,engine,screen,width,height,url):
         assert page.locator("#mentions28-sources").is_visible()
         nav.locator('button[data-tab="benchmark"]').click()
         assert page.locator("#benchmark").is_visible()
+        # V2.9: numeric values come from source and must never become invented Eoss.
+        page.locator("#bench-v29-plot").wait_for(state="visible",timeout=12000)
+        assert page.locator("#bench-v29-stats .b29-stat").count()==3
+        page.locator("#bench-v29-metric").select_option("eoss")
+        assert "공식적으로 기록된 수치가 없습니다" in page.locator("#bench-v29-plot").inner_text()
+        assert "0 / " in page.locator("#bench-v29-stats").inner_text()
+        page.locator("#bench-v29-metric").select_option("rds_on")
+        assert page.locator("#bench-v29-plot .b29-row").count()==10
+        page.locator("#bench-v29-more").click()
+        assert page.locator("#bench-v29-plot .b29-row").count()>=11
+        # Selecting source rows must populate the existing A/B panel.
+        product_ids=page.locator("#bench-v29-plot button[data-b29-slot='a']").count()
+        assert product_ids>=2
+        page.locator("#bench-v29-plot button[data-b29-slot='a']").first.click()
+        a=page.locator("#bench-a").input_value()
+        assert a
+        page.locator("#bench-v29-plot button[data-b29-slot='b']").nth(1).click()
+        b=page.locator("#bench-b").input_value()
+        assert b and a!=b
+        assert page.locator("#bench-compare").is_visible()
         page.locator("#watch-quick-access").click()
         assert page.locator("#watchlist").is_visible()
         assert page.locator("#watch-techs input").count()==5
