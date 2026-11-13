@@ -22,7 +22,9 @@ def test_personal_entry_is_external_accessible_control():
  assert 'position:fixed' in CSS
 def test_return_to_previous_research_page():
  assert 'let lastResearchTab="overview"' in PAGE
- assert 'if(tab!=="watchlist"&&tab!=="sources")lastResearchTab=tab;' in PAGE
+ assert 'if(tab!=="watchlist"&&tab!=="sources"&&tab!=="history")lastResearchTab=tab;' in PAGE
+ assert 'id="history-quick-access"' in PAGE
+ assert 'id="history-close"' in PAGE
  assert 'showRadarSection(isOpen?lastResearchTab:pageId)' in PAGE
  assert 'showRadarSection(lastResearchTab);' in PAGE
  assert 'classList.toggle("hidden",page.id!==tab)' in PAGE
