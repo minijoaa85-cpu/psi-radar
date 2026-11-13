@@ -1,4 +1,4 @@
-# PSI Radar V2.3 — Power Semiconductor Intelligence Radar
+# PSI Radar V2.7.1 — Power Semiconductor Intelligence Radar
 
 공개 자료 기반 한국어 전력반도체 주간 기술 모니터링 웹 플랫폼. GaN (40%) > SiC (30%) > IGBT (10%) = UD/UG SGT (10%) = SJ MOSFET (10%).
 
@@ -379,3 +379,13 @@ GitHub Pages는 저장소 Settings → Pages → **Source: GitHub Actions**를 �
 - 모바일에서는 1열 반응형 레이아웃, PC에서는 좌우 2열 인사이트 패널입니다. 외부 차트 라이브러리와 신규 API 사용 없이 기존 수집·배포 구조를 활용합니다.
 - 기존 주간 아카이브 상세 기사, Technical Architecture, Competitors, Benchmark, Market & Finance V2.6, My Watch, Data Quality, AI 예산 설정을 유지합니다.
 - **검증 표식:** 소스/실제 저장 데이터의 갱신 시각과 배포 시각은 동일하지 않을 수 있습니다. GitHub Pages가 최신 커밋을 반영하지 않았으면 이전 UI가 보일 수 있으므로 배포 결과를 확인하세요.
+
+## V2.7.1 — Version History · PDF/PPT 릴리스 문서 (2026-11-13)
+
+- **배경:** 라이브 사이트의 데이터 갱신 시각과 실제 UI 코드 배포 시각이 달라졌을 때, 사용자가 업그레이드를 확인하기 어려웠습니다. 2026-11-13 08:18 KST 캡처 화면은 V2.7 UI 코드 커밋(08:53 KST경)보다 앞선 화면으로 확인됩니다. 그러나 라이브 배포 완료/현재 접근 가능 여부는 GitHub Actions Pages 결과로 따로 검증해야 합니다.
+- **History 위치:** 기존 네 상위 분석 카테고리는 유지하고 우측 보조 메뉴에 **History**를 추가했습니다. 기존 My Watch·Data Quality와 나란히 표시하며, 상세 이력 확인 후 원래 분석 화면으로 돌아갑니다.
+- **버전 기록 단일 출처:** `site/version_history.json`은 README의 구현 기록을 근거로 V0.3~V2.7 및 본 히스토리 기능 V2.7.1을 정리한 **총 28개** 항목입니다. 각 항목은 버전, 제목, 한 줄 요약, 개발 배경, 핵심 변경, 사용자 가치, 일자를 담습니다. 초기 V0.1/V0.2처럼 구현 근거가 불충분한 항목은 임의 추가하지 않습니다.
+- **다운로드:** 우측 History 메뉴에서 **PDF 상세 슬라이드 및 편집 가능한 PPTX**를 받을 수 있습니다. 표지 → 전체 개발 요약 → 개발 단계 → 버전별 배경/변경/가치 → 향후 관리 규칙으로 구성됩니다.
+- **자동 생성:** `scripts/build_history_slides.py`가 **같은 JSON**에서 `site/docs/psi-radar-version-history.pdf`와 `site/docs/psi-radar-version-history.pptx`를 생성합니다. GitHub Actions 배포 전에 두 파일 존재 여부를 검사하고 새 Pages 아티팩트에 포함합니다. 생성 실패 시 이전 파일을 최신이라고 주장하지 않습니다.
+- **배포와 데이터 시각 구분:** 헤더에 `UI 코드: V2.7.1 · History` 릴리스 식별자를 추가했습니다. `데이터 갱신` 시각은 독립적으로 유지됩니다. 최신 커밋이 원격 저장소에 존재해도 Pages 배포가 실패/대기/캐시 상태라면 구 화면이 표시될 수 있습니다.
+- **앞으로의 변경 원칙:** 새 버전 개발 시 `version_history.json`에 신규 항목을 추가하고 README를 업데이트하며, 빌드에서 PDF/PPT를 재생성하고 브라우저 검사 후 배포 결과를 확인합니다. 모든 기능의 작동 여부와 라이브 검증 여부는 각각 구분해 기록합니다.
