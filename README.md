@@ -1,4 +1,4 @@
-# PSI Radar V2.7.1 — Power Semiconductor Intelligence Radar
+# PSI Radar V2.8 — Power Semiconductor Intelligence Radar
 
 공개 자료 기반 한국어 전력반도체 주간 기술 모니터링 웹 플랫폼. GaN (40%) > SiC (30%) > IGBT (10%) = UD/UG SGT (10%) = SJ MOSFET (10%).
 
@@ -389,3 +389,11 @@ GitHub Pages는 저장소 Settings → Pages → **Source: GitHub Actions**를 �
 - **자동 생성:** `scripts/build_history_slides.py`가 **같은 JSON**에서 `site/docs/psi-radar-version-history.pdf`와 `site/docs/psi-radar-version-history.pptx`를 생성합니다. GitHub Actions 배포 전에 두 파일 존재 여부를 검사하고 새 Pages 아티팩트에 포함합니다. 생성 실패 시 이전 파일을 최신이라고 주장하지 않습니다.
 - **배포와 데이터 시각 구분:** 헤더에 `UI 코드: V2.7.1 · History` 릴리스 식별자를 추가했습니다. `데이터 갱신` 시각은 독립적으로 유지됩니다. 최신 커밋이 원격 저장소에 존재해도 Pages 배포가 실패/대기/캐시 상태라면 구 화면이 표시될 수 있습니다.
 - **앞으로의 변경 원칙:** 새 버전 개발 시 `version_history.json`에 신규 항목을 추가하고 README를 업데이트하며, 빌드에서 PDF/PPT를 재생성하고 브라우저 검사 후 배포 결과를 확인합니다. 모든 기능의 작동 여부와 라이브 검증 여부는 각각 구분해 기록합니다.
+
+## V2.8 — Research Evidence Lens & Competitor Mention Explorer (2026-11-14)
+- **개발 배경:** Research의 기술별 논문 12개월 참고자료와 최신 뉴스 색인은 수집 기간·근거 성격이 다릅니다. 또한 수집 기사에 제조사 `companies` 태그가 없으면 기존 Competitor Intelligence의 제조사별 수치가 0이 될 수 있어, "언급의 존재"조차 빠르게 확인하기 어려웠습니다.
+- **Research Evidence Lens:** 기존 논문 목록 위에 GaN → SiC → IGBT → SJ MOSFET → SGT 순서로 학술 논문과 뉴스의 수집 표본 분포를 각각 표시합니다. **논문·뉴스는 서로 다른 최대값에 대해 막대 길이를 독립 정규화**하고, 뉴스와 논문 건수를 하나의 시장성장률로 계산하지 않습니다. 기술명 클릭은 기존 논문 기술 필터와 동기화합니다. 데이터 생성 시각도 표시합니다.
+- **Competitor Mention Explorer:** 기존 경쟁사 추적 데이터와 별도로 `data.json.records[].title` **영어 원문 제목에서만 명시적으로 발견된 업체명**을 보여줍니다. 회사별 제목 언급 기사 수, 제조사×소자 기술군 매트릭스, 직접 원문 링크 드릴다운을 추가했습니다. 14개 기존 제조사와 Nexperia에 대한 제한적인 정확한 업체명 별칭만 인식하며, 짧은 `ST` 같은 오탐 가능성이 높은 약어는 허용하지 않습니다.
+- **필터·검증:** 업체/기간(해당 수집 스냅샷 기준 최근 30일 또는 전체 보관)/기존 지역/기술/자료 유형/제목 키워드 선택을 반영합니다. 동일 기사에 여러 업체명이 명시되면 회사별 집계에 중복 포함할 수 있지만, 링크 목록에서는 동일 ID를 제거합니다. 단일 업체 선택 후에도 원문 확인이 가능합니다.
+- **명확한 해석 한계:** 같은 기업 발표를 보도한 여러 매체는 각각 기사 수로 카운트합니다. 언급 횟수는 기업 기술 경쟁력·공식 발표 수·시장점유율이 아닙니다. 회사명이 없는 제목, 다른 철자, 본문에만 있는 언급은 포함되지 않습니다. 0건은 *미활동*이 아니라 현재 수집된 제목의 언급이 0건이라는 뜻입니다. 등록된 `companies` 태그의 기존 근거 검증 상태를 자동 변경하지 않습니다.
+- **자동 릴리스 기록:** `site/version_history.json`에 V2.8을 추가합니다. 사이트 우측 History와 PDF/PPT는 기존 GitHub Actions의 동일 JSON 기반 `scripts/build_history_slides.py`를 통해 함께 갱신합니다. 배포 전 pytest/JavaScript 검증과 3개 브라우저×4개 화면 검사에서 추가 기능을 검사합니다.
