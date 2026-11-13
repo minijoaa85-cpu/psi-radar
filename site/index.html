@@ -718,19 +718,19 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
 <section id="competitors" class="hidden"><article class="panel">
 <h2>Competitor Intelligence · 기업별 기술 동향</h2>
 <p class="competitor-intro">Infineon · ST · onsemi · ROHM 및 일본·중국 업체 | 자료 건수는 시장점유율이 아니며, 뉴스 색인과 제조사 공식 발표를 구분합니다.</p>
+<div class="filters">
+<select id="company-region" aria-label="지역"><option value="">전체 지역</option><option value="Europe">유럽</option><option value="US">미국</option><option value="Japan">일본</option><option value="China">중국</option></select>
+<select id="company-tech" aria-label="관심 소자"><option value="">전체 기술</option><option>GaN</option><option>SiC</option><option>IGBT</option><option>SJ MOSFET</option><option>SGT</option></select>
+<select id="company-type" aria-label="자료 유형"><option value="">전체 자료</option><option value="news">뉴스</option><option value="paper">논문</option><option value="official">제조사 공식</option></select>
+<input id="company-q" placeholder="회사명 / 기술 키워드" aria-label="기업 검색">
+</div>
 <div class="mentions28" id="mentions28" aria-labelledby="mentions28-title">
  <div class="e28-heading"><div><h3 id="mentions28-title">Competitor Mention Explorer · 제목 언급 지형 V2.8</h3><p>수집된 원문 제목에 명시적으로 등장한 제조사명만 추적합니다. 기업 공식 발표·실제 기술력·성과 순위가 아닙니다.</p></div><span id="mentions28-stamp" class="e28-stamp">자료 기준 확인 중</span></div>
  <div class="m28-controls"><label for="mentions28-period">자료 시점</label><select id="mentions28-period" aria-label="기사 제목 언급 기간"><option value="30">스냅샷 기준 최근 30일</option><option value="all">전체 보관 자료</option></select><label for="mentions28-company">제조사 선택</label><select id="mentions28-company" aria-label="기사 제목 제조사 선택"><option value="">전체 제조사</option></select></div>
  <div class="m28-grid"><div class="m28-inner"><h4>제조사별 제목 언급 기사 수</h4><div id="mentions28-bars" aria-live="polite"></div></div><div class="m28-inner"><h4>제조사 × 기술군 언급 매트릭스</h4><div id="mentions28-heat" class="m28-heat" aria-live="polite"></div></div></div>
  <div class="m28-sources"><h4>해당 제목 원문 근거 <span class="mini" id="mentions28-count"></span></h4><div id="mentions28-sources" aria-live="polite"></div></div>
  <p class="e28-footer">동일 소식을 전하는 여러 매체 기사들은 각각 집계됩니다. 일반 뉴스 색인의 기업명 텍스트 매칭이며, 기업 직접 발표 검증이나 명확한 경쟁력 순위가 아닙니다. 기존 경쟁사 태그 기반 결과와 혼합하지 않습니다.</p>
- </div><div class="filters">
-<select id="company-region" aria-label="지역"><option value="">전체 지역</option><option value="Europe">유럽</option><option value="US">미국</option><option value="Japan">일본</option><option value="China">중국</option></select>
-<select id="company-tech" aria-label="관심 소자"><option value="">전체 기술</option><option>GaN</option><option>SiC</option><option>IGBT</option><option>SJ MOSFET</option><option>SGT</option></select>
-<select id="company-type" aria-label="자료 유형"><option value="">전체 자료</option><option value="news">뉴스</option><option value="paper">논문</option><option value="official">제조사 공식</option></select>
-<input id="company-q" placeholder="회사명 / 기술 키워드" aria-label="기업 검색">
-</div>
-<div class="competitor-kpis" id="company-summary" aria-live="polite"></div>
+ </div><div class="competitor-kpis" id="company-summary" aria-live="polite"></div>
 <div class="competitor-visuals">
 <div class="competitor-block"><h3>회사별 자료 건수</h3><div id="company-bars" class="competitor-bars"></div></div>
 <div class="competitor-block"><h3>기술별 언급 히트맵</h3><div id="company-matrix" class="competitor-heat-wrap"></div></div>
