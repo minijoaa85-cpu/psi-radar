@@ -34,7 +34,7 @@ def test_company_mentions_use_limited_original_title_only_and_sources():
     assert 'renderMentions28();' in HTML
     assert "const region=el(\"company-region\").value" in HTML
     assert 'region==="Europe"' not in HTML  # no invented fixed regional ranking
-    assert "기업 기술 경쟁력" in HTML
+    assert "기업 직접 발표 검증이나 명확한 경쟁력 순위가 아닙니다" in HTML
 
 def test_project_history_and_source_persistence():
     assert VERSIONS["latest_version"]=="V2.8"
