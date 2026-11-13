@@ -642,6 +642,39 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
 @media(max-width:780px){.m28-grid{grid-template-columns:1fr}.e28-colhead,.e28-matrix-row{grid-template-columns:83px minmax(0,1fr) 24px minmax(0,1fr) 24px;gap:5px}.evidence28,.mentions28{padding:11px}}
 @media(max-width:420px){.e28-cards{grid-template-columns:repeat(3,minmax(0,1fr))}.e28-card{padding:6px}.e28-card strong{font-size:21px}.e28-matrix{padding:7px}.e28-colhead,.e28-matrix-row{font-size:10px}.m28-row{grid-template-columns:90px minmax(0,1fr) 25px}}
 
+
+/* V2.9: condition-aware datasheet spec explorer */
+.b29-studio{margin:14px 0 18px;padding:18px;border:1px solid #3a6284;background:linear-gradient(145deg,#153351,#101f36);border-radius:15px}
+.b29-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.b29-header h3{font-size:19px;margin:0 0 5px}.b29-header .mini{margin:0}
+.b29-tag{font-size:11px;color:#b5e5ff;border:1px solid #4584a8;border-radius:7px;padding:6px 8px;white-space:nowrap}
+.b29-controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:13px 0}
+.b29-controls label{display:flex;flex-direction:column;gap:5px;color:#a6c5dc;font-size:11px;font-weight:600}
+.b29-controls select{font-size:13px;min-width:165px;padding:9px 12px;background:#0e2944;color:#f4f9ff;border:1px solid #517998;border-radius:8px}
+.b29-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:13px 0}
+.b29-stat{padding:12px;background:#132b45;border:1px solid #345b79;border-radius:9px}
+.b29-stat strong{font-size:23px;display:block;line-height:1.3;font-variant-numeric:tabular-nums}
+.b29-stat span{font-size:11px;color:#abc4dc;display:block}
+.b29-plot{display:grid;gap:9px;padding:13px;background:#0f233b;border:1px solid #304b66;border-radius:10px}
+.b29-row{display:grid;grid-template-columns:minmax(116px,1.05fr) minmax(85px,1.25fr) minmax(75px,.7fr);gap:11px;align-items:center;padding:11px 0;border-bottom:1px solid #2f4662;min-width:0}
+.b29-row:last-child{border-bottom:0}
+.b29-id{font-size:12px;overflow-wrap:anywhere}.b29-id strong{display:block;color:#f0f6fb}.b29-id small{font-size:10px;color:#a5c1d7}
+.b29-track{height:13px;background:#293e56;border-radius:5px;overflow:hidden}
+.b29-fill{display:block;height:100%;border-radius:5px;background:linear-gradient(90deg,#4b9dd8,#77caf9)}
+.b29-fill.max{background:linear-gradient(90deg,#987ed2,#b5a3ed)}
+.b29-fill.unspecified{background:linear-gradient(90deg,#8c9eaf,#c1cfde)}
+.b29-num{text-align:right;font-size:13px;color:#e4f3fc;font-variant-numeric:tabular-nums}.b29-num small{display:block;font-size:10px;color:#afc6dc}
+.b29-evidence{grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap;align-items:center;line-height:1.5;color:#a6c8df;font-size:11px;overflow-wrap:anywhere}
+.b29-evidence .b29-badge{background:#1e3d5b;border:1px solid #4b7092;border-radius:5px;padding:3px 6px}
+.b29-evidence a{color:#83c9f5}
+.b29-actions{grid-column:1/-1;display:flex;gap:7px;flex-wrap:wrap}
+.b29-actions button,.b29-more{border:1px solid #5a85aa;border-radius:7px;padding:6px 10px;background:#204869;color:#e9f4ff;font-size:11px;cursor:pointer}
+.b29-actions button:hover,.b29-more:hover{background:#29648b}
+.b29-notice{color:#adcadf;font-size:11px;line-height:1.6;margin:9px 0}
+.b29-empty{font-size:13px;color:#b7d4e7;padding:20px 7px;text-align:center}
+@media(max-width:700px){.b29-studio{padding:12px}.b29-row{grid-template-columns:minmax(105px,1fr) minmax(75px,1fr) minmax(65px,.8fr);gap:6px}.b29-stats{gap:5px}.b29-stat{padding:8px}.b29-stat strong{font-size:18px}.b29-num{font-size:11px}.b29-evidence{font-size:10px}}
+@media(max-width:400px){.b29-controls select{width:100%}.b29-row{grid-template-columns:minmax(95px,1fr) minmax(55px,1fr) minmax(57px,.7fr)}}
+
 </style></head><body>
 <header><small>POWER SEMICONDUCTOR INTELLIGENCE</small><h1>◈ PSI Radar</h1><div class="muted">GaN · SiC · IGBT · SJ MOSFET · UD/UG SGT | 글로벌 기술 · 논문 · 경쟁사 동향</div><div id="last" class="mini">데이터 상태 확인 중...</div><div id="ui-release-label" class="ui-release-label">UI 코드: History 적용 · 버전 확인 중</div></header>
 <aside class="personal-tools" aria-label="개인 및 데이터 관리 보조 메뉴">
@@ -830,6 +863,15 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
 <div id="bench-kpi" class="competitor-kpis"></div>
 <div id="bench-quality" class="bench-quality" aria-live="polite"></div>
 <div id="bench-message" class="mini"></div>
+<section id="bench-v29" class="b29-studio" aria-labelledby="bench-v29-title">
+<div class="b29-header"><div><h3 id="bench-v29-title">Datasheet Insight Studio · V2.9</h3><p class="mini">공식 수치와 측정조건 확보 수준을 구분하는 제품 탐색 그래프</p></div><span class="b29-tag">조건 동등성 우선 · 성능 순위 아님</span></div>
+<div class="b29-controls"><label for="bench-v29-metric">확인할 전기적 지표<select id="bench-v29-metric" aria-label="제품 그래프 지표">
+<option value="rds_on">RDS(on) · typ</option><option value="rds_on_max">RDS(on) · max</option><option value="qg">Qg · 게이트 전하</option><option value="qoss">Qoss · 출력 전하</option><option value="eoss">Eoss · 출력 에너지</option><option value="vce_sat">VCE(sat) · IGBT</option><option value="qrr">Qrr · 역회복 전하</option><option value="tsc">TSC · 단락 내량</option></select></label></div>
+<div id="bench-v29-stats" class="b29-stats" aria-live="polite"></div>
+<div id="bench-v29-plot" class="b29-plot" aria-live="polite">공식 제품 데이터를 확인 중입니다.</div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-top:10px"><span class="mini" id="bench-v29-count">자료 확인 중</span><button id="bench-v29-more" class="b29-more" type="button" hidden>전체 제품 표시</button></div>
+<p class="b29-notice">막대 길이는 현재 선택한 <strong>동일 지표의 원시 수치 범위</strong>만 표시합니다. 다른 내압·기술군·집적 구조·typ/max·시험 온도·전압·전류 조건을 섞어 제품 성능 순위로 해석할 수 없습니다. 동일 조건 검증이 확인되지 않으면 정량적 우열이나 개선율을 산출하지 않습니다. 누락은 미확인이며 0이 아닙니다.</p>
+</section>
 <div class="competitor-block fom-panel">
 <h3>제품별 핵심 특성 한눈에 보기</h3>
 <p class="mini">색은 <strong>성능의 좋고 나쁨이 아닌 자료의 확보 상태</strong>입니다. 칸을 선택하면 값과 시험 조건을 볼 수 있습니다.</p>
@@ -2125,6 +2167,59 @@ el("arch-overview").addEventListener("click",e=>{
  if(btn){el("arch-category").value=btn.dataset.cat;renderArchitecture();}
 });
 fetch("architecture.json?nocache="+Date.now()).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{ARCH=d;renderArchitecture()}).catch(()=>el("arch-detail").textContent="구조 지도 로딩 실패: 자동 배포 결과를 확인하세요.");
+
+/* V2.9 product metric distribution — comparison eligibility mirrors validate_benchmark.strictly_comparable */
+let BENCH_V29_SHOW_ALL=false;
+const B29_BAD=["제품 페이지","데이터시트 참조","데이터시트 확인","미상","확인 필요","미확인"];
+function benchmark29PairEligible(a,b,key){
+ if(!a||!b||a.id===b.id||a.category!==b.category||a.voltage?.value!==b.voltage?.value||a.architecture!==b.architecture)return false;
+ const va=a.specs?.[key],vb=b.specs?.[key];
+ if(!va||!vb||va.kind==="unspecified"||va.kind!==vb.kind||va.unit!==vb.unit)return false;
+ if(a.verification!=="datasheet_table_verified"||b.verification!=="datasheet_table_verified")return false;
+ if(!va.test_conditions||!vb.test_conditions||!Object.keys(va.test_conditions).length||!Object.keys(vb.test_conditions).length)return false;
+ const ordered=x=>JSON.stringify(Object.entries(x).sort(([ka],[kb])=>ka.localeCompare(kb)));
+ if(ordered(va.test_conditions)!==ordered(vb.test_conditions))return false;
+ return !B29_BAD.some(word=>String(va.condition||"").includes(word)||String(vb.condition||"").includes(word));
+}
+function renderBenchmark29(rows){
+ const key=el("bench-v29-metric").value;
+ const valid=rows.filter(r=>{const v=r.specs?.[key];return v&&typeof v.value==="number"&&Number.isFinite(v.value)&&v.value>=0&&typeof v.unit==="string"});
+ const full=valid.filter(r=>r.verification==="datasheet_table_verified"&&r.specs[key].test_conditions&&Object.keys(r.specs[key].test_conditions).length&&
+  !B29_BAD.some(word=>String(r.specs[key].condition||"").includes(word)));
+ let comparablePairs=0;
+ for(let i=0;i<valid.length;i++)for(let j=i+1;j<valid.length;j++)if(benchmark29PairEligible(valid[i],valid[j],key))comparablePairs++;
+ el("bench-v29-stats").innerHTML=[["공시값 확보",valid.length+" / "+rows.length],["원문 조건 일부 확인",full.length+"종"],["동등조건 검증 비교쌍",comparablePairs+"쌍"]].map(([label,val])=>
+  '<div class="b29-stat"><span>'+esc(label)+'</span><strong>'+esc(val)+'</strong></div>').join("");
+ const displays=BENCH_V29_SHOW_ALL?valid:valid.slice(0,10);
+ const max=Math.max(1,...valid.map(r=>r.specs[key].value));
+ const safe=url=>/^https:\/\//.test(url||"")?esc(url):"#";
+ el("bench-v29-plot").innerHTML=displays.length?displays.map(r=>{
+  const v=r.specs[key];
+  const percent=(v.value/max*100).toFixed(1);
+  const band=v.kind==="max"?" max":v.kind==="unspecified"?" unspecified":"";
+  const label=r.company+" · "+r.part;
+  const test=v.test_conditions?Object.entries(v.test_conditions).map(([k,x])=>k+"="+x).join(", "):"정형 시험조건 미기록";
+  return '<article class="b29-row"><div class="b29-id"><strong>'+esc(r.part)+'</strong><small>'+esc(r.company)+' · '+esc(r.category)+' · '+esc(r.voltage.value)+'V</small></div>'+
+   '<div class="b29-track" title="'+esc(label+" "+v.value+" "+v.unit)+'"><span class="b29-fill'+band+'" style="width:'+percent+'%"></span></div>'+
+   '<div class="b29-num">'+esc(v.value+" "+v.unit)+'<small>'+esc(v.kind)+'</small></div>'+
+   '<div class="b29-evidence"><span class="b29-badge">'+esc(r.verification==="datasheet_table_verified"?"데이터시트 표 확인":"제조사 제품 페이지")+'</span><span>'+esc(v.condition||"조건 미기록")+'</span><span>'+esc(test)+'</span><a href="'+safe(r.url)+'" target="_blank" rel="noopener noreferrer">원문 확인 ↗</a></div>'+
+   '<div class="b29-actions"><button type="button" data-b29-slot="a" data-b29-id="'+esc(r.id)+'" aria-label="'+esc(label)+' 제품 A로 설정">비교 A로 지정</button><button type="button" data-b29-slot="b" data-b29-id="'+esc(r.id)+'" aria-label="'+esc(label)+' 제품 B로 설정">비교 B로 지정</button></div></article>';
+ }).join(""):'<div class="b29-empty">현재 필터와 지표에 공식적으로 기록된 수치가 없습니다. 값을 추정하거나 0으로 표시하지 않습니다.</div>';
+ el("bench-v29-count").textContent=valid.length+"개 제품의 공시 수치 · "+(BENCH_V29_SHOW_ALL?valid.length:Math.min(10,valid.length))+"개 표시 · 정량 성능 순위 아님";
+ const more=el("bench-v29-more");more.hidden=valid.length<=10;more.textContent=BENCH_V29_SHOW_ALL?"처음 10개만 표시":"나머지 "+(valid.length-10)+"개 더 보기";
+}
+el("bench-v29-metric").addEventListener("change",()=>{BENCH_V29_SHOW_ALL=false;renderBenchmark29(benchmarkOptions());});
+el("bench-v29-more").addEventListener("click",()=>{BENCH_V29_SHOW_ALL=!BENCH_V29_SHOW_ALL;renderBenchmark29(benchmarkOptions());});
+el("bench-v29-plot").addEventListener("click",event=>{
+ const btn=event.target.closest("button[data-b29-slot][data-b29-id]");if(!btn)return;
+ const id=btn.dataset.b29Id,slot=btn.dataset.b29Slot;
+ if(!["a","b"].includes(slot)||!benchmarkOptions().some(r=>r.id===id))return;
+ const self=el("bench-"+slot),other=el(slot==="a"?"bench-b":"bench-a");
+ if(other.value===id)other.value="";
+ self.value=id;compareBench();
+ el("bench-compare-title").scrollIntoView?.({behavior:"smooth",block:"start"});
+});
+
 function renderBenchmark(){
  const rows=benchmarkOptions(),cat=el("bench-category").value;
  const types=new Set(rows.map(x=>x.category));
@@ -2137,6 +2232,7 @@ function renderBenchmark(){
  '<span class="quality-pill"><b>typ/max 미지정 포함 '+reported+'종</b></span>'+
  '<span class="quality-pill">수치 없음(—) = 미확인 · 불량 또는 열세 아님</span>';
  renderFomHeatmap(rows);
+ renderBenchmark29(rows);
 
  el("bench-message").textContent="필터 적용 "+rows.length+"종 · 빈 사양은 미확인, typ과 max는 서로 다른 기준 · 1차 출처는 공식 제조사 제품 페이지";
  el("bench-rows").innerHTML=rows.length?rows.map(r=>
