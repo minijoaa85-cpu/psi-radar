@@ -596,8 +596,11 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
 .history-item .history-when{font-size:11px;color:var(--muted)}
 @media(max-width:700px){.personal-tools .history-quick-access{width:125px}.history-list{grid-template-columns:1fr}.history-head{grid-template-columns:repeat(2,minmax(0,1fr))}.history-downloads a{flex:1 1 175px}main{padding-bottom:calc(160px + env(safe-area-inset-bottom,0px))}}
 @media(max-width:400px){.history-head{grid-template-columns:1fr}}
+
+/* Build identity is separate from data refresh timestamps. */
+.ui-release-label{font-size:11px;color:#91dbff;margin-top:4px}
 </style></head><body>
-<header><small>POWER SEMICONDUCTOR INTELLIGENCE</small><h1>◈ PSI Radar</h1><div class="muted">GaN · SiC · IGBT · SJ MOSFET · UD/UG SGT | 글로벌 기술 · 논문 · 경쟁사 동향</div><div id="last" class="mini">데이터 상태 확인 중...</div></header>
+<header><small>POWER SEMICONDUCTOR INTELLIGENCE</small><h1>◈ PSI Radar</h1><div class="muted">GaN · SiC · IGBT · SJ MOSFET · UD/UG SGT | 글로벌 기술 · 논문 · 경쟁사 동향</div><div id="last" class="mini">데이터 상태 확인 중...</div><div id="ui-release-label" class="ui-release-label">UI 코드: History 적용 · 버전 확인 중</div></header>
 <aside class="personal-tools" aria-label="개인 및 데이터 관리 보조 메뉴">
 <button type="button" id="watch-quick-access" class="watch-quick-access" aria-controls="watchlist" aria-expanded="false" title="나의 관심 자료함 열기"><span aria-hidden="true">☆</span><span>My Watch</span></button>
 <button type="button" id="history-quick-access" class="watch-quick-access history-quick-access" aria-controls="history" aria-expanded="false" title="버전별 업데이트 이력 보기"><span aria-hidden="true">◷</span><span>History</span></button>
@@ -2040,7 +2043,7 @@ function renderVersionHistory(){
 el("history-filter").addEventListener("change",renderVersionHistory);
 fetch("version_history.json?nocache="+Date.now()).then(r=>{if(!r.ok)throw Error("HTTP "+r.status);return r.json()}).then(data=>{
  if(data.schema_version!==1||!Array.isArray(data.entries)||!data.latest_version)throw Error("지원하지 않는 버전 데이터");
- HISTORY_DATA=data;renderVersionHistory();
+ HISTORY_DATA=data;renderVersionHistory();el('ui-release-label').textContent='UI 코드: '+data.latest_version+' · History · 배포 소스 기준';
 }).catch(e=>{el("history-status").textContent="업데이트 이력을 불러오지 못했습니다: "+e.message;el("history-list").textContent="version_history.json을 확인하세요.";});
 
 let lastResearchTab="overview";
