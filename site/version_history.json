@@ -1,0 +1,252 @@
+{
+  "schema_version": 1,
+  "product": "PSI Radar",
+  "latest_version": "V2.7",
+  "updated_on": "2026-11-13",
+  "source_policy": "Version summaries curated from repository README and implementation commits; no unverifiable feature claims.",
+  "entries": [
+    {
+      "version": "V0.3",
+      "title": "학술 논문 수집 확대",
+      "date": "2026-11-12",
+      "summary": "IGBT·SJ·SGT 365일 논문 검색과 DOI 통합, 공식 제조사 링크 추가",
+      "background": "뉴스 중심 모니터링은 장기 기술 연구를 놓치기 쉬웠음",
+      "changes": "IGBT·SJ·SGT 365일 논문 검색과 DOI 통합, 공식 제조사 링크 추가",
+      "value": "심화 연구 주제를 원문 근거와 함께 탐색"
+    },
+    {
+      "version": "V0.3.1",
+      "title": "수집 안정성 개선",
+      "date": "2026-11-12",
+      "summary": "Crossref 호출 축소·429 대응·기존 메타데이터 보존·AI 오류 분류",
+      "background": "학술 검색 API 제한과 응답 오류로 수집 공백이 발생할 수 있었음",
+      "changes": "Crossref 호출 축소·429 대응·기존 메타데이터 보존·AI 오류 분류",
+      "value": "외부 API 장애 중에도 수집 정보의 한계와 상태 확인"
+    },
+    {
+      "version": "V0.4",
+      "title": "관련성·주간 보고서",
+      "date": "2026-11-12",
+      "summary": "기술 관련성 평가와 주차별 보고서·아카이브 추가",
+      "background": "단순 검색 결과만으로는 관련성 평가와 기간별 기록이 어려웠음",
+      "changes": "기술 관련성 평가와 주차별 보고서·아카이브 추가",
+      "value": "중요 자료를 선별하고 주별 출처 기록 보관"
+    },
+    {
+      "version": "V0.5",
+      "title": "Competitor Intelligence",
+      "date": "2026-11-12",
+      "summary": "지역·제조사·기술·자료유형 기반 경쟁사 탐색",
+      "background": "제조사별 뉴스와 기술 활동을 분리해 보기 어려웠음",
+      "changes": "지역·제조사·기술·자료유형 기반 경쟁사 탐색",
+      "value": "경쟁사 언급과 공식 자료를 한 화면에서 검토"
+    },
+    {
+      "version": "V0.6",
+      "title": "공식 제조사 근거 강화",
+      "date": "2026-11-12",
+      "summary": "공식 출처 분리·원문 링크·증거 수준 안내",
+      "background": "일반 뉴스 색인과 제조사 원문이 혼동될 위험이 있었음",
+      "changes": "공식 출처 분리·원문 링크·증거 수준 안내",
+      "value": "출처가 다른 기술 자료를 구분해서 판단"
+    },
+    {
+      "version": "V0.7",
+      "title": "Datasheet Benchmark",
+      "date": "2026-11-12",
+      "summary": "공식 제품 데이터시트 기반 Benchmark 도입",
+      "background": "시장 동향과 실제 제품 스펙이 연결되지 않았음",
+      "changes": "공식 제품 데이터시트 기반 Benchmark 도입",
+      "value": "품번과 원문에 연결된 제품 사양 비교 시작"
+    },
+    {
+      "version": "V0.8",
+      "title": "Benchmark 확장·이력",
+      "date": "2026-11-12",
+      "summary": "등록 제품 확대와 제품 데이터 변경 이력",
+      "background": "제품이 늘면서 기준값과 변경 내역 관리가 필요했음",
+      "changes": "등록 제품 확대와 제품 데이터 변경 이력",
+      "value": "제품 정보 수정 및 검증 근거 추적"
+    },
+    {
+      "version": "V0.9",
+      "title": "글로벌 소자·시험조건 확대",
+      "date": "2026-11-12",
+      "summary": "글로벌 제품 확대와 typ/max·측정 조건 근거 분리",
+      "background": "스펙 단순 수치 비교는 측정조건 차이를 숨김",
+      "changes": "글로벌 제품 확대와 typ/max·측정 조건 근거 분리",
+      "value": "조건이 다른 성능값의 오해 방지"
+    },
+    {
+      "version": "V1.0",
+      "title": "FOM·Architecture 시각화",
+      "date": "2026-11-12",
+      "summary": "FOM 신뢰도 히트맵과 Device/Process Architecture 탐색",
+      "background": "복잡한 데이터시트와 소자 구조를 쉽게 연결할 필요가 있었음",
+      "changes": "FOM 신뢰도 히트맵과 Device/Process Architecture 탐색",
+      "value": "공개 근거와 기술 구조를 시각적으로 연결"
+    },
+    {
+      "version": "V1.1",
+      "title": "초기 사용성 개선",
+      "date": "2026-11-12",
+      "summary": "3단계 탐색 안내와 상세 영역 접기·펼치기",
+      "background": "처음 보는 사용자에게 전문 정보가 과밀했음",
+      "changes": "3단계 탐색 안내와 상세 영역 접기·펼치기",
+      "value": "초보자와 전문가가 동일한 화면 활용"
+    },
+    {
+      "version": "V1.2",
+      "title": "Device Physics 근거 연결",
+      "date": "2026-11-12",
+      "summary": "14개 기술 주제에서 물리 현상→근거→제품 연결",
+      "background": "구조 설명과 관련 논문·제품이 분리되어 있었음",
+      "changes": "14개 기술 주제에서 물리 현상→근거→제품 연결",
+      "value": "기술적 질문에서 공개 원문으로 이동"
+    },
+    {
+      "version": "V1.3",
+      "title": "주차별 기술 동향",
+      "date": "2026-11-12",
+      "summary": "실제 기록 주차의 자료·제조사 언급 차트",
+      "background": "수집 당시 최신 자료만 보면 누적 흐름이 보이지 않았음",
+      "changes": "실제 기록 주차의 자료·제조사 언급 차트",
+      "value": "근거가 있는 주간 시계열 관찰"
+    },
+    {
+      "version": "V1.4",
+      "title": "연구 집중도·공식 발표 분리",
+      "date": "2026-11-12",
+      "summary": "자료 유형별 KPI 및 연구 표본 집중도 표시",
+      "background": "논문·뉴스·제조사 발표의 의미가 달랐음",
+      "changes": "자료 유형별 KPI 및 연구 표본 집중도 표시",
+      "value": "증거 종류와 제한을 구분하여 해석"
+    },
+    {
+      "version": "V1.5",
+      "title": "Technology Briefing",
+      "date": "2026-11-12",
+      "summary": "기술·출처별 최근 30일 Briefing과 근거 수준",
+      "background": "중요한 공개자료를 빠르게 읽을 요약 화면이 필요했음",
+      "changes": "기술·출처별 최근 30일 Briefing과 근거 수준",
+      "value": "주간 읽기 우선순위와 원문 확인"
+    },
+    {
+      "version": "V1.6",
+      "title": "My Watch 개인 필터",
+      "date": "2026-11-12",
+      "summary": "로컬 저장 관심 기술·제조사 맞춤 피드",
+      "background": "사용자 관심 기술·기업이 서로 달랐음",
+      "changes": "로컬 저장 관심 기술·제조사 맞춤 피드",
+      "value": "서버 업로드 없는 개인화 탐색"
+    },
+    {
+      "version": "V1.7",
+      "title": "읽음·전체 선택",
+      "date": "2026-11-12",
+      "summary": "전체 선택/해제 및 읽음·안 읽음 필터",
+      "background": "다량의 관심 자료에서 읽음 상태 관리가 어려웠음",
+      "changes": "전체 선택/해제 및 읽음·안 읽음 필터",
+      "value": "미열람 자료 중심의 재방문"
+    },
+    {
+      "version": "V1.8",
+      "title": "북마크·백업",
+      "date": "2026-11-12",
+      "summary": "중요 자료 보관과 JSON 백업·복원",
+      "background": "30일 창을 벗어난 중요 자료를 보존할 필요가 있었음",
+      "changes": "중요 자료 보관과 JSON 백업·복원",
+      "value": "기기별 개인 자료함 보관 및 이동"
+    },
+    {
+      "version": "V1.8.2",
+      "title": "보조 메뉴 재정리",
+      "date": "2026-11-12",
+      "summary": "My Watch·Data Quality 우측 보조 버튼으로 분리",
+      "background": "개인 기능이 핵심 기술 분석 메뉴를 복잡하게 했음",
+      "changes": "My Watch·Data Quality 우측 보조 버튼으로 분리",
+      "value": "핵심 분석 화면의 집중도 개선"
+    },
+    {
+      "version": "V1.9",
+      "title": "북마크 검색·분류",
+      "date": "2026-11-12",
+      "summary": "검색·기술별 필터·정렬·건수 표시",
+      "background": "보관 자료가 많아지면 재검색이 어려웠음",
+      "changes": "검색·기술별 필터·정렬·건수 표시",
+      "value": "저장 근거를 빠르게 찾아보기"
+    },
+    {
+      "version": "V2.0",
+      "title": "Integrated Intelligence",
+      "date": "2026-11-12",
+      "summary": "기술 주제·연구 근거·공식 제품 원스톱 통합",
+      "background": "기술·논문·경쟁사·제품 메뉴 간 이동이 번거로웠음",
+      "changes": "기술 주제·연구 근거·공식 제품 원스톱 통합",
+      "value": "한 기술군의 근거 흐름을 연속 탐색"
+    },
+    {
+      "version": "V2.1",
+      "title": "분석 여정형 메뉴",
+      "date": "2026-11-12",
+      "summary": "시작→주간→기술→경쟁사·제품 4단계 계층과 펄스 지표",
+      "background": "기능이 늘어나 사용자 정보 탐색 순서가 불명확했음",
+      "changes": "시작→주간→기술→경쟁사·제품 4단계 계층과 펄스 지표",
+      "value": "주간 동향 확인 후 기술 심화 분석"
+    },
+    {
+      "version": "V2.2",
+      "title": "Market & Finance 출시",
+      "date": "2026-11-12",
+      "summary": "4개사 공식 IR 재무·사업부 스냅샷 및 기간 비교",
+      "background": "기술 동향에 비해 재무 모니터링이 비어 있었음",
+      "changes": "4개사 공식 IR 재무·사업부 스냅샷 및 기간 비교",
+      "value": "사업부 범위·회계 기준이 명시된 실적 확인"
+    },
+    {
+      "version": "V2.3",
+      "title": "공식 IR 신규 발표 감지",
+      "date": "2026-11-12",
+      "summary": "일간 공식 IR 링크 관측과 검토 대기열",
+      "background": "신규 실적 공시 후보를 놓치지 않으려 했음",
+      "changes": "일간 공식 IR 링크 관측과 검토 대기열",
+      "value": "검증되지 않은 수치 자동 반영 차단"
+    },
+    {
+      "version": "V2.4",
+      "title": "IR 개인 검토 상태",
+      "date": "2026-11-12",
+      "summary": "미검토·진행·완료·보류와 CSV 내보내기",
+      "background": "공시 후보를 사용자별로 검토 추적하기 어려웠음",
+      "changes": "미검토·진행·완료·보류와 CSV 내보내기",
+      "value": "로컬 작업 상태 관리와 개인 감사 기록"
+    },
+    {
+      "version": "V2.5",
+      "title": "재무 변화 검토·추세",
+      "date": "2026-11-12",
+      "summary": "동일 회사·기간 비교 및 고정 기준본 차이 확인",
+      "background": "기간별 실적 변화와 기존 검증본 수정 여부 확인이 필요했음",
+      "changes": "동일 회사·기간 비교 및 고정 기준본 차이 확인",
+      "value": "수치 변경의 수동 검토 지원"
+    },
+    {
+      "version": "V2.6",
+      "title": "재무 시각화",
+      "date": "2026-11-13",
+      "summary": "기업별 독립 스케일 막대와 사업부 비중 링 차트",
+      "background": "재무정보가 표와 카드 위주라 변화가 잘 안 보였음",
+      "changes": "기업별 독립 스케일 막대와 사업부 비중 링 차트",
+      "value": "실적 변화·비중을 빠르게 읽기"
+    },
+    {
+      "version": "V2.7",
+      "title": "Overview·Weekly 시각화",
+      "date": "2026-11-13",
+      "summary": "Technology Pulse 및 실제 주간 아카이브 차트",
+      "background": "첫 화면·주간 보고서가 문장 중심이었음",
+      "changes": "Technology Pulse 및 실제 주간 아카이브 차트",
+      "value": "수집 분포·주간 현황을 차트 중심으로 탐색"
+    }
+  ]
+}
