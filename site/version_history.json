@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "product": "PSI Radar",
-  "latest_version": "V2.7",
+  "latest_version": "V2.7.1",
   "updated_on": "2026-11-13",
   "source_policy": "Version summaries curated from repository README and implementation commits; no unverifiable feature claims.",
   "entries": [
@@ -247,6 +247,15 @@
       "background": "첫 화면·주간 보고서가 문장 중심이었음",
       "changes": "Technology Pulse 및 실제 주간 아카이브 차트",
       "value": "수집 분포·주간 현황을 차트 중심으로 탐색"
+    },
+    {
+      "version": "V2.7.1",
+      "title": "Version History·릴리스 문서 자동화",
+      "date": "2026-11-13",
+      "summary": "우측 History 메뉴와 단일 JSON 기반 PDF·PPT 재생성 파이프라인 도입",
+      "background": "라이브 화면과 업데이트 시점이 달라 변경 이력 확인이 어려웠음",
+      "changes": "우측 History 메뉴와 단일 JSON 기반 PDF·PPT 재생성 파이프라인 도입",
+      "value": "버전별 변경 내용을 확인하고 공유용 슬라이드로 내려받기"
     }
   ]
 }
