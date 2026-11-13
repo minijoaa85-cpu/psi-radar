@@ -10,8 +10,9 @@ WORKFLOW=(ROOT/".github"/"workflows"/"weekly.yml").read_text(encoding="utf-8")
 def test_history_has_unique_ordered_versions_and_explanations():
     assert HISTORY["schema_version"]==1
     rows=HISTORY["entries"]
-    assert len(rows)>=28
-    assert HISTORY["latest_version"]==rows[-1]["version"]=="V2.7.1"
+    assert len(rows)>=29
+    assert HISTORY["latest_version"]==rows[-1]["version"]
+    assert any(x["version"]=="V2.8" for x in rows)
     assert len({x["version"] for x in rows})==len(rows)
     assert rows[0]["version"]=="V0.3"
     for row in rows:
