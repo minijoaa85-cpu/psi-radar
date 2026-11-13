@@ -1250,8 +1250,8 @@ function compareBench(){
  for(const [key,label] of entries){
   const av=a.specs?.[key],bv=b.specs?.[key];
   if(!av&&!bv)continue;
-  const same=Boolean(av&&bv&&av.kind!=="unspecified"&&av.kind===bv.kind&&av.unit===bv.unit&&a.verification==="datasheet_table_verified"&&b.verification==="datasheet_table_verified"&&av.test_conditions&&bv.test_conditions&&JSON.stringify(av.test_conditions)===JSON.stringify(bv.test_conditions));
-  lines.push('<div class="item"><strong>'+esc(label)+'</strong>'+esc(compactValue(av))+' / '+esc(compactValue(bv))+'<div class="mini">'+(same?'측정 조건 문자열 일치 · 원문 최종 검토 권장':'조건 또는 값 부재 · 정량 우열 비교 불가')+'</div></div>');
+  const same=benchmark29PairEligible(a,b,key);
+  lines.push('<div class="item"><strong>'+esc(label)+'</strong>'+esc(compactValue(av))+' / '+esc(compactValue(bv))+'<div class="mini">'+(same?'데이터시트 표·측정 조건 일치 · 원문 최종 검토 권장':'조건 또는 값 부재 · 정량 우열 비교 불가')+'</div></div>');
  }
  target.innerHTML=info+(lines.length?lines.join(""):'<p class="mini">현재 직접 비교 가능한 공통 항목이 없습니다.</p>')+
  '<p class="mini">제품 페이지에 상세 조건이 생략된 항목은 동일 조건으로 간주하지 않습니다. 값 차이는 공정 우열이나 성능 개선율을 뜻하지 않습니다.</p>';
