@@ -37,12 +37,13 @@ def test_company_mentions_use_limited_original_title_only_and_sources():
     assert "기업 직접 발표 검증이나 명확한 경쟁력 순위가 아닙니다" in HTML
 
 def test_project_history_and_source_persistence():
-    assert VERSIONS["latest_version"]=="V2.8"
-    assert len(VERSIONS["entries"])==29
-    assert VERSIONS["entries"][-1]["version"]=="V2.8"
-    assert VERSIONS["entries"][-1]["background"]
-    assert VERSIONS["entries"][-1]["changes"]
-    assert VERSIONS["entries"][-1]["value"]
+    # Appending a new release must not invalidate historical V2.8 checks.
+    v28=next(x for x in VERSIONS["entries"] if x["version"]=="V2.8")
+    assert len(VERSIONS["entries"])>=29
+    assert VERSIONS["latest_version"]==VERSIONS["entries"][-1]["version"]
+    assert v28["background"]
+    assert v28["changes"]
+    assert v28["value"]
     assert "psi-radar-watch-v1" in HTML
     assert "psi-radar-finance-review-v1" in HTML
     assert "financial_review_diff.json?nocache=" in HTML
