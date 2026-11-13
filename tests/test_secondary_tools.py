@@ -18,7 +18,9 @@ def test_data_quality_is_still_operational_and_has_return():
  assert 'id="health"' in PAGE
  assert 'id="quality-close"' in PAGE
  assert 'showRadarSection(isOpen?lastResearchTab:pageId)' in PAGE
- assert 'if(tab!=="watchlist"&&tab!=="sources")lastResearchTab=tab;' in PAGE
+ assert 'if(tab!=="watchlist"&&tab!=="sources"&&tab!=="history")lastResearchTab=tab;' in PAGE
+ assert 'id="history-quick-access"' in PAGE
+ assert 'id="history-close"' in PAGE
  assert '["quality-quick-access","sources","quality-close"]' in PAGE
  assert 'el(buttonId).setAttribute("aria-expanded",String(active))' in PAGE
 def test_shortcut_is_vertical_on_desktop_and_mobile():
