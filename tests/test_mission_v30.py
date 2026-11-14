@@ -53,10 +53,11 @@ def test_v30_references_real_existing_data_types():
     assert 'DB.records||[]' in HTML
 
 def test_v30_release_history_drives_pdf_and_ppt():
-    assert VERSIONS["latest_version"]=="V3.0"
-    assert VERSIONS["entries"][-1]["version"]=="V3.0"
-    assert len(VERSIONS["entries"])==31
-    assert all(VERSIONS["entries"][-1][key] for key in ("summary","background","changes","value"))
+    # Release history is append-only. Preserve V3.0 validation across later releases.
+    v30=next(entry for entry in VERSIONS["entries"] if entry["version"]=="V3.0")
+    assert len(VERSIONS["entries"])>=31
+    assert VERSIONS["latest_version"]==VERSIONS["entries"][-1]["version"]
+    assert all(v30[key] for key in ("summary","background","changes","value"))
     script=(ROOT/"scripts"/"build_history_slides.py").read_text(encoding="utf-8")
     assert '"version_history.json"' in script
     assert 'version_history.json?nocache=' in HTML
