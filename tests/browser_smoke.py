@@ -55,6 +55,25 @@ def check_page(browser,engine,screen,width,height,url):
         assert page.locator("#mission30-kpis .m30-score").count()==4
         page.locator('#mission30-tabs button[data-m30-tech="SiC"]').click()
         assert page.locator('#mission30-tabs button[data-m30-tech="SiC"]').get_attribute("aria-pressed")=="true"
+        # V3.1 Evidence Desk follows the selected technology and source date.
+        page.locator("#evidence31-metrics .m31-metric").first.wait_for(state="visible",timeout=12000)
+        assert page.locator("#evidence31-metrics .m31-metric").count()==3
+        page.locator("#evidence31-kind").select_option("news")
+        page.locator("#evidence31-window").select_option("30")
+        assert "SiC" in page.locator("#evidence31-meta").inner_text()
+        assert "30일" in page.locator("#evidence31-meta").inner_text()
+        assert "뉴스" in page.locator("#evidence31-meta").inner_text()
+        if page.locator("#evidence31-export").is_disabled():
+            page.locator("#evidence31-kind").select_option("all")
+            page.locator("#evidence31-window").select_option("365")
+        assert page.locator("#evidence31-export").is_enabled()
+        with page.expect_download(timeout=12000) as download_info:
+            page.locator("#evidence31-export").click()
+        assert download_info.value.suggested_filename=="psi-radar-evidence-v31.csv"
+        page.locator("#evidence31-kind").select_option("official")
+        assert page.locator("#evidence31-metrics .m31-metric").count()==3
+        page.locator("#evidence31-kind").select_option("all")
+        page.locator("#evidence31-window").select_option("30")
         page.locator('#mission30 button[data-m30-destination="research"]').click()
         assert page.locator("#research").is_visible()
         assert page.locator("#research-cat").input_value()=="SiC"
