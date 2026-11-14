@@ -1052,14 +1052,14 @@ function renderMission30(){
  const pcMax=Math.max(1,...M30_TECHS.map(t=>allPapers.filter(r=>r.category===t).length));
  const ncMax=Math.max(1,...M30_TECHS.map(t=>allNews.filter(r=>r.category===t).length));
  el("mission30-channels").innerHTML=[["논문",p.length,pcMax,"학술 메타데이터"],["뉴스",n.length,ncMax,"공개 뉴스 색인"]].map(([label,num,max,scope])=>
-  '<div class="m30-channel" title="'+esc(scope)+'"><label>'+esc(label)+'</label><div class="m30-track"><span class="m30-fill" style="width:'+((num/max)*100).toFixed(1)+'%"></span></div><b>'+num+'</b></div>').join("");
+  '<div class="m30-channel" title="'+esc(scope)+'"><label>'+esc(label)+'</label><div class="m30-track"><span class="m30-fill" style="width:'+(M30_READY.records?((num/max)*100).toFixed(1):"0")+'%"></span></div><b>'+(M30_READY.records?num:"—")+'</b></div>').join("");
  const weeks=PULSE27_ARCHIVE||[];
  el("mission30-week").textContent=weeks.length?"저장된 주차 "+weeks.length+"개 · 최근 "+weeks[0].week+" · 주차 전체 발표 "+weeks[0].published_this_week_count+"건 (기술별 주간 건수와 별개)":M30_READY.weekly?"보관된 주간 자료 0개 · 주차별 증감 판단 불가":"주간 아카이브 확인 중 · 누적 자료를 주간 신규로 간주하지 않습니다.";
  const recent=subset.filter(r=>r.url&&/^https:\/\//.test(r.url)).sort((a,b)=>String(b.date||"").localeCompare(String(a.date||""))||(Number(b.score)||0)-(Number(a.score)||0)).slice(0,3);
  el("mission30-evidence").innerHTML=recent.length?recent.map(r=>
   '<article class="m30-evidence-item"><a href="'+esc(r.url)+'" target="_blank" rel="noopener noreferrer">'+esc(r.title_ko||r.title||"원문 제목 확인")+'</a>'+
   '<small>'+esc(r.date||"날짜 미확인")+' · '+esc(r.source||"출처 미확인")+' · '+esc(r.kind==="paper"?"논문 메타데이터":r.kind==="official"?"제조사 공식 분류":"뉴스 제목 후보")+'</small></article>').join(""):
-  '<div class="m30-empty">해당 기술군에 현재 연결 가능한 원문 후보가 없습니다. 수집 공백을 기술 활동 부재로 해석하지 마세요.</div>';
+  '<div class="m30-empty">'+(M30_READY.records?"해당 기술군에 현재 연결 가능한 원문 후보가 없습니다. 수집 공백을 기술 활동 부재로 해석하지 마세요.":"공개자료 수집본을 불러오지 못했거나 아직 로딩 중입니다.")+'</div>';
  el("mission30-research").textContent=asText(M30_READY.records?p.length:null,"편");
  el("mission30-competitors").textContent=asText(totalMentions)+" 제목 언급";
  el("mission30-benchmark").textContent=asText(products?products.length:null,"종");
@@ -1090,7 +1090,7 @@ function render(){
  el("igbt").textContent=all.filter(r=>r.category==="IGBT").length;
  el("papers").textContent=all.filter(r=>r.kind==="paper").length;
  pulse27Overview();
- M30_READY.records=true;renderMission30();
+ renderMission30();
  const empty='<div class="empty">수집된 자료가 없습니다. GitHub Actions의 실행 상태를 확인해 주세요.</div>';
  const feed=(target,items)=>el(target).innerHTML=items.length?items.map(card).join(""):empty;
  const weekStart=new Date(Date.now()-8*86400000).toISOString().slice(0,10);
@@ -2420,5 +2420,5 @@ for(const [buttonId,pageId,closeId] of [["watch-quick-access","watchlist","watch
   el(buttonId).focus({preventScroll:true});
  });
 }
-fetch("data.json?nocache="+Date.now()).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{DB=d;render()}).catch(e=>{el("last").textContent="데이터 로딩 실패: "+e.message;render()});
+fetch("data.json?nocache="+Date.now()).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{DB=d;M30_READY.records=true;render()}).catch(e=>{el("last").textContent="데이터 로딩 실패: "+e.message;render()});
 </script></body></html>
