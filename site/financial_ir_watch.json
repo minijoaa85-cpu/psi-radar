@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "version": "2.3",
-  "checked_at": "2026-11-13T00:07:47+00:00",
+  "checked_at": "2026-11-14T00:00:14+00:00",
   "financials_reviewed_on": "2026-11-12",
   "automatic_metric_updates": false,
   "candidate_count": 1,
@@ -11,7 +11,7 @@
       "title": "Infineon closes FY 2026 with record quarter; expects revenue growth of more than 20 percent and a 5-percentage-point increase in profitability for FY 2027, driven by data centers, power infrastructure, and software-defined vehicles Quarterl",
       "url": "https://www.infineon.com/press-release/2026/infpr202611-025",
       "first_observed_at": "2026-11-13T00:07:47+00:00",
-      "last_observed_at": "2026-11-13T00:07:47+00:00",
+      "last_observed_at": "2026-11-14T00:00:14+00:00",
       "review_status": "already_in_verified_financials",
       "listed_on_official_ir": true,
       "source_publication_date": null
@@ -21,7 +21,7 @@
       "title": "Quarterly results",
       "url": "https://investors.st.com/financial-information/quarterly-results",
       "first_observed_at": "2026-11-13T00:07:47+00:00",
-      "last_observed_at": "2026-11-13T00:07:47+00:00",
+      "last_observed_at": "2026-11-14T00:00:14+00:00",
       "review_status": "human_review_required",
       "listed_on_official_ir": true,
       "source_publication_date": null
@@ -33,21 +33,21 @@
       "status": "ok",
       "observed": 1,
       "landing": "https://www.infineon.com/about/investor/news",
-      "checked_at": "2026-11-13T00:07:47+00:00"
+      "checked_at": "2026-11-14T00:00:14+00:00"
     },
     {
       "company": "st",
       "status": "ok",
       "observed": 1,
       "landing": "https://newsroom.st.com/",
-      "checked_at": "2026-11-13T00:07:47+00:00"
+      "checked_at": "2026-11-14T00:00:14+00:00"
     },
     {
       "company": "onsemi",
       "status": "source_unavailable",
       "observed": 0,
       "landing": "https://investor.onsemi.com/news",
-      "checked_at": "2026-11-13T00:07:47+00:00",
+      "checked_at": "2026-11-14T00:00:14+00:00",
       "note": "403 Client Error: Forbidden for url: https://investor.onsemi.com/"
     },
     {
@@ -55,7 +55,7 @@
       "status": "ok",
       "observed": 0,
       "landing": "https://www.rohm.com/ir",
-      "checked_at": "2026-11-13T00:07:47+00:00"
+      "checked_at": "2026-11-14T00:00:14+00:00"
     }
   ],
   "warning": "공식 IR 목록의 링크 제목을 이용한 신규 실적 후보 탐지입니다. 최초 관측일은 발표일이 아니며, 링크 등록만으로 숫자·공시의 신규성·회사 성과가 검증되지 않습니다. 재무 수치는 수동 검증 후 별도 반영됩니다."
