@@ -47,6 +47,25 @@ def check_page(browser,engine,screen,width,height,url):
         assert sizes["heading"]>=13.5,sizes
         assert sizes["link"]>=12.5,sizes
         assert sizes["overflow"]<=4,f"Horizontal document overflow: {sizes}"
+        # V3.0 Mission Control is the main Overview landing panel.
+        page.locator("#mission30-tabs button").first.wait_for(state="visible",timeout=12000)
+        assert page.locator("#mission30-tabs button").count()==5
+        page.locator("#mission30-kpis .m30-score").first.wait_for(state="visible",timeout=12000)
+        assert page.locator("#mission30-kpis .m30-score").count()==4
+        page.locator('#mission30-tabs button[data-m30-tech="SiC"]').click()
+        assert page.locator('#mission30-tabs button[data-m30-tech="SiC"]').get_attribute("aria-pressed")=="true"
+        page.locator('#mission30 button[data-m30-destination="research"]').click()
+        assert page.locator("#research").is_visible()
+        assert page.locator("#research-cat").input_value()=="SiC"
+        nav.locator('button[data-tab="overview"]').click()
+        page.locator('#mission30 button[data-m30-destination="benchmark"]').click()
+        assert page.locator("#benchmark").is_visible()
+        assert page.locator("#bench-category").input_value()=="SiC"
+        nav.locator('button[data-tab="overview"]').click()
+        page.locator('#mission30 button[data-m30-destination="integrated"]').click()
+        assert page.locator("#integrated").is_visible()
+        page.locator('#intel-categories button[data-intel-category="SiC"]').wait_for(timeout=12000)
+        nav.locator('button[data-tab="overview"]').click()
         nav.locator('button[data-tab="weekly"]').click()
         assert page.locator("#weekly").is_visible()
         nav.locator('button[data-tab="market"]').click()
