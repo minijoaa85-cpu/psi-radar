@@ -22,10 +22,10 @@ def page_data(data):
  e=data["entries"]
  p=[("RELEASE HISTORY","PSI Radar","Power Semiconductor Intelligence · 전체 버전 기록",
      [("플랫폼","공개 근거 기반의 기술·경쟁사·제품·재무 인텔리전스"),("기록 범위",e[0]["version"]+" – "+e[-1]["version"]),("업데이트 일자",data["updated_on"])]),
-    ("EXECUTIVE SUMMARY","개발 전체 요약","V3.0: 공개 근거 → 기술 분석 → 경쟁사 → 제품 → 재무 연결",
-     [("기술·출처","논문·뉴스·제조사 공식 원문 및 근거 수준 분리"),("제품·구조","Benchmark·FOM·Architecture·Device Physics"),("사용자 경험","Briefing·My Watch·탐색형 메뉴"),("재무 근거","공식 IR 4개사·개인 검토·기준본 변경 감시"),("통합 관제","V3.0 Mission Control · 기술군 선택·원문·제품·IR 원클릭 연결")]),
+    ("EXECUTIVE SUMMARY","개발 전체 요약","V3.1: 근거 기반 기술 분석 → 원문 검토 → 제품·재무 연결",
+     [("기술·출처","논문·뉴스·제조사 공식 원문 및 근거 수준 분리"),("제품·구조","Benchmark·FOM·Architecture·Device Physics"),("사용자 경험","Briefing·My Watch·탐색형 메뉴"),("재무 근거","공식 IR 4개사·개인 검토·기준본 변경 감시"),("통합 관제","V3.1 Evidence Desk · 발행일·근거 유형 분리·CSV 조사자료")]),
     ("DEVELOPMENT JOURNEY","개발 단계별 흐름","실제 구현 및 README를 기준으로 묶은 버전 영역",
-     [("V0.x","공개 자료 수집·관련성·제품 근거"),("V1.0–1.4","구조·물리·논문과 연구 동향"),("V1.5–1.9","Briefing·My Watch 개인 자료 관리"),("V2.0–2.7","재무·공식 IR 감시 및 Overview 시각화"),("V2.8–V3.0","근거 분포·제품 비교·통합 Mission Control")])]
+     [("V0.x","공개 자료 수집·관련성·제품 근거"),("V1.0–1.4","구조·물리·논문과 연구 동향"),("V1.5–1.9","Briefing·My Watch 개인 자료 관리"),("V2.0–2.7","재무·공식 IR 감시 및 Overview 시각화"),("V2.8–V3.1","근거 분포·제품 비교·Mission Control·Evidence Desk")])]
  for x in e:
   p.append((x["version"],x["version"]+"  "+x["title"],x["summary"],
     [("WHY · 개발 배경",x["background"]),("WHAT · 핵심 변경",x["changes"]),("VALUE · 사용자 가치",x["value"])]))
