@@ -715,6 +715,39 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
 @media(max-width:850px){.m30-scorecards{grid-template-columns:repeat(2,minmax(0,1fr))}.m30-journey{grid-template-columns:repeat(2,minmax(0,1fr))}.m30-columns{grid-template-columns:1fr}}
 @media(max-width:500px){.m30{padding:12px}.m30-header h2{font-size:20px}.m30-score{padding:9px}.m30-score strong{font-size:23px}.m30-journey{gap:6px}.m30-stage{padding:9px}.m30-stage p{font-size:10px}.m30-tabs button{padding:8px 10px}}
 
+
+/* V3.1 Evidence Desk — publication windows anchored to actual collection timestamp */
+.m31{background:#0f243c;border:1px solid #3b607b;border-radius:12px;padding:16px;margin:14px 0}
+.m31-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:start}
+.m31-head h3{font-size:17px;margin:0 0 5px}
+.m31-head p{font-size:11px;color:#b5d0e5;line-height:1.6;margin:0}
+.m31-pill{font-size:10px;color:#b5eaff;border:1px solid #427ba4;border-radius:6px;padding:6px 9px}
+.m31-controls{display:flex;gap:10px;flex-wrap:wrap;margin:13px 0;align-items:flex-end}
+.m31-controls label{display:flex;flex-direction:column;gap:5px;font-size:11px;color:#b9d2e4}
+.m31-controls select,.m31-controls button{background:#173b5a;border:1px solid #4c7694;border-radius:7px;color:#eff9ff;padding:9px 12px;font-size:12px;min-width:140px}
+.m31-controls button{min-width:auto;cursor:pointer}
+.m31-controls button:disabled{opacity:.5;cursor:default}
+.m31-controls select:focus-visible,.m31-controls button:focus-visible{outline:2px solid #98dfff;outline-offset:2px}
+.m31-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:12px 0}
+.m31-metric{background:#183651;border:1px solid #305c7b;border-radius:9px;padding:10px;min-width:0}
+.m31-metric span{display:block;color:#b9d0df;font-size:11px}
+.m31-metric strong{display:block;color:#f4faff;font-size:22px;margin-top:3px;font-variant-numeric:tabular-nums}
+.m31-chart{display:flex;gap:8px;align-items:flex-end;min-height:120px;overflow-x:auto;padding:10px 4px 7px;border-bottom:1px solid #3b5874}
+.m31-bin{flex:1 0 48px;max-width:110px;display:flex;align-items:center;flex-direction:column;gap:6px;font-size:10px;color:#bcd1e3}
+.m31-bin b{color:#f0faff;font-size:12px;font-variant-numeric:tabular-nums}
+.m31-bin-rail{height:70px;width:24px;background:#25455f;border-radius:5px;overflow:hidden;display:flex;align-items:flex-end}
+.m31-bin-fill{display:block;width:100%;background:linear-gradient(0deg,#3e8ccc,#70c7ef);border-radius:5px 5px 0 0}
+.m31-note{color:#a9c6d8;font-size:11px;line-height:1.65;margin:11px 0}
+.m31-evidence{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:12px 0}
+.m31-card{padding:11px;border-radius:8px;background:#182f49;border:1px solid #355a78;min-width:0}
+.m31-card a{font-size:12px;color:#c4ebff;font-weight:650;text-decoration:none;overflow-wrap:anywhere}
+.m31-card a:hover{text-decoration:underline}
+.m31-card small{display:block;margin-top:6px;color:#a4c0d6;font-size:10px;line-height:1.5}
+.m31-no-data{padding:18px 10px;font-size:12px;color:#c0d4e4;border:1px dashed #385875;border-radius:8px}
+.m31-foot{font-size:11px;color:#b4c9db;line-height:1.6}
+@media(max-width:760px){.m31-evidence{grid-template-columns:1fr}.m31{padding:12px}}
+@media(max-width:420px){.m31-controls label{flex:1 1 125px}.m31-controls select{min-width:0;width:100%}.m31-metric strong{font-size:18px}.m31-metric{padding:7px}}
+
 </style></head><body>
 <header><small>POWER SEMICONDUCTOR INTELLIGENCE</small><h1>◈ PSI Radar</h1><div class="muted">GaN · SiC · IGBT · SJ MOSFET · UD/UG SGT | 글로벌 기술 · 논문 · 경쟁사 동향</div><div id="last" class="mini">데이터 상태 확인 중...</div><div id="ui-release-label" class="ui-release-label">UI 코드: History 적용 · 버전 확인 중</div></header>
 <aside class="personal-tools" aria-label="개인 및 데이터 관리 보조 메뉴">
@@ -729,7 +762,7 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
 <div class="nav-group" role="group" aria-label="경쟁사 및 제품 분석"><span class="nav-group-label">④ 경쟁사·제품</span><div class="nav-links"><button data-tab="competitors">Competitors</button><button data-tab="benchmark">Benchmark</button></div></div>
 </nav>
 <section id="overview"><div class="m30" id="mission30" aria-labelledby="mission30-title">
-<div class="m30-header"><div><span class="m30-label">INTELLIGENCE MISSION CONTROL / V3.0</span><h2 id="mission30-title">Power Semiconductor Intelligence</h2><p>공개 근거 → 기술 이해 → 경쟁사 관찰 → 검증 제품 → 재무 검토까지 연결합니다. 서로 다른 모집단의 수치를 하나의 성능 점수로 합산하지 않습니다.</p></div><span class="m30-version" id="mission30-version">V3.0 · 통합 관제</span></div>
+<div class="m30-header"><div><span class="m30-label">INTELLIGENCE MISSION CONTROL / V3.1</span><h2 id="mission30-title">Power Semiconductor Intelligence</h2><p>공개 근거 → 기술 이해 → 경쟁사 관찰 → 검증 제품 → 재무 검토까지 연결합니다. 서로 다른 모집단의 수치를 하나의 성능 점수로 합산하지 않습니다.</p></div><span class="m30-version" id="mission30-version">V3.1 · 근거 조사 통합</span></div>
 <div class="m30-tabs" id="mission30-tabs" aria-label="통합 분석 기술군 선택"><button type="button" data-m30-tech="GaN" aria-pressed="true">GaN</button><button type="button" data-m30-tech="SiC" aria-pressed="false">SiC</button><button type="button" data-m30-tech="IGBT" aria-pressed="false">IGBT</button><button type="button" data-m30-tech="SJ MOSFET" aria-pressed="false">SJ MOSFET</button><button type="button" data-m30-tech="SGT" aria-pressed="false">SGT</button></div>
 <div class="m30-status" id="mission30-stamp" role="status">출처별 데이터 갱신 시각을 확인 중입니다.</div>
 <div class="m30-scorecards" id="mission30-kpis" aria-live="polite"></div>
@@ -742,6 +775,20 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
 <div class="m30-stage"><h4>04 · 공식 IR</h4><strong id="mission30-finance">확인 중</strong><p>제조사 공식 실적 · 수동 검증 스냅샷</p><button class="m30-open" type="button" data-m30-destination="market">Market & Finance 열기</button></div>
 </div>
 <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="m30-open" type="button" data-m30-destination="integrated" style="width:auto">선택 기술군 통합 분석 →</button><button class="m30-open" type="button" data-m30-destination="weekly" style="width:auto">Weekly Reports 확인 →</button></div>
+<section id="evidence31" class="m31" aria-labelledby="evidence31-title">
+<div class="m31-head"><div><h3 id="evidence31-title">Evidence Desk · 근거 조사 작업대</h3><p>선택 기술군의 실제 발행일·자료 유형을 기준으로 탐색하고 원문 근거를 내보냅니다.</p></div><span class="m31-pill">V3.1 · 출처 중심 분석</span></div>
+<div class="m31-controls">
+<label for="evidence31-window">발행 기간<select id="evidence31-window"><option value="7">최근 7일</option><option value="30" selected>최근 30일</option><option value="365">최근 365일</option></select></label>
+<label for="evidence31-kind">근거 유형<select id="evidence31-kind"><option value="all">전체 유형</option><option value="news">일반 뉴스</option><option value="paper">논문 메타데이터</option><option value="official">제조사 공식 분류</option></select></label>
+<button type="button" id="evidence31-export" disabled>선택 결과 CSV 내보내기</button>
+</div>
+<div id="evidence31-meta" class="m31-note" role="status">수집 시점 확인 중 · 로딩 중입니다.</div>
+<div id="evidence31-metrics" class="m31-metrics" aria-live="polite"></div>
+<div id="evidence31-chart" class="m31-chart" aria-label="실제 발행일에 자료가 관측된 구간별 건수"></div>
+<p class="m31-note" id="evidence31-chart-note">집계 시점이 확인되면 관측된 주차·월만 표시합니다.</p>
+<div class="m31-evidence" id="evidence31-items" aria-live="polite"></div>
+<p class="m31-foot">일반 뉴스와 논문은 수집 범위가 서로 달라 성장률이나 기술 우열로 직접 비교할 수 없습니다. 빈 구간을 0으로 채우지 않으며, 표시되는 건수는 업계 전체 발표량이 아닌 수집 표본입니다. 재사용된 논문 메타데이터는 별도로 표시합니다.</p>
+</section>
 <p class="m30-footer">근거 정책: 논문·뉴스는 수집 표본, 제조사 언급은 제목 텍스트 매칭, 제품 수치는 검증 상태가 다른 공식 스냅샷, 재무 실적은 별도 수동 검증입니다. 분모나 시험조건이 다른 자료를 기업·기술 우열로 해석하지 마세요.</p>
 </div><section class="pulse27" aria-labelledby="pulse27-overview-title">
 <div class="pulse27-head"><div><h2 id="pulse27-overview-title">Technology Pulse · 수집 현황</h2><p>누적 자료의 구성과 이번 주 공개자료를 분리해 보여줍니다</p></div><span id="pulse27-updated" class="pulse27-time">수집 시각 확인 중</span></div>
@@ -1032,6 +1079,84 @@ function pulse27Week(report){
 const M30_TECHS=["GaN","SiC","IGBT","SJ MOSFET","SGT"];
 let M30_SELECTED="GaN";
 const M30_READY={records:false,benchmark:false,financials:false,weekly:false,ir:false};
+
+/* V3.1 rolling publication-date Evidence Desk; never treat missing archives as zeros */
+let E31_VISIBLE=[];
+function e31ISOWeek(day){
+ const d=new Date(day.getTime()),n=(d.getUTCDay()+6)%7;
+ d.setUTCDate(d.getUTCDate()-n+3);
+ const y=d.getUTCFullYear(),first=new Date(Date.UTC(y,0,4));
+ const number=1+Math.round(((d-first)/86400000-3+(first.getUTCDay()+6)%7)/7);
+ return String(y)+"-W"+String(number).padStart(2,"0");
+}
+function e31CSVCell(value){
+ const v=String(value??"");
+ const guarded=/^[=+@\-\t\r\n]/.test(v)?"'"+v:v;
+ return '"'+guarded.replace(/"/g,'""')+'"';
+}
+function renderEvidenceDesk31(){
+ const root=el("evidence31-items");if(!root)return;
+ const all=DB.records||[];
+ const period=Number(el("evidence31-window").value),kind=el("evidence31-kind").value;
+ const base=new Date(DB.generated_at||"");
+ const validDate=M30_READY.records&&Number.isFinite(base.valueOf());
+ const anchor=validDate?Date.UTC(base.getUTCFullYear(),base.getUTCMonth(),base.getUTCDate()):null;
+ const windowLabel=period===7?"일별":period===30?"ISO 주차별":"월별";
+ if(!validDate){
+  E31_VISIBLE=[];el("evidence31-export").disabled=true;
+  el("evidence31-meta").textContent=M30_READY.records?"수집 시각을 확인할 수 없어 날짜 비교를 수행하지 않습니다.":"원문 수집 데이터 로딩 중 또는 연결 실패 · 건수 미확인";
+  el("evidence31-metrics").innerHTML=[["발행일 필터 결과","미확인"],["이전 수집 유지","미확인"],["관측 구간","미확인"]].map(([label,val])=>'<div class="m31-metric"><span>'+esc(label)+'</span><strong>'+esc(val)+'</strong></div>').join("");
+  el("evidence31-chart").innerHTML="";
+  el("evidence31-items").innerHTML='<div class="m31-no-data">원본 데이터가 확인되면 발행일 기준 자료가 표시됩니다.</div>';
+  el("evidence31-chart-note").textContent="자료 미확인 상태를 0건으로 표시하지 않습니다.";
+  return;
+ }
+ const anchorISO=new Date(anchor).toISOString().slice(0,10);
+ const rows=all.filter(r=>{
+  if(r.category!==M30_SELECTED||(kind!=="all"&&r.kind!==kind))return false;
+  const textDate=String(r.date||"");
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(textDate))return false;
+  const ms=Date.parse(textDate);
+  if(!Number.isFinite(ms)||new Date(ms).toISOString().slice(0,10)!==textDate)return false;
+  const age=Math.floor((anchor-ms)/86400000);
+  return age>=0&&age<period;
+ }).sort((a,b)=>String(b.date).localeCompare(String(a.date))||String(a.title||"").localeCompare(String(b.title||"")));
+ E31_VISIBLE=rows;
+ const groups=new Map();
+ for(const r of rows){
+  const d=new Date(Date.parse(r.date));
+  const key=period===7?r.date:period===30?e31ISOWeek(d):r.date.slice(0,7);
+  groups.set(key,(groups.get(key)||0)+1);
+ }
+ const bins=[...groups.entries()].sort(([a],[b])=>a.localeCompare(b));
+ const count=Math.max(1,...bins.map(x=>x[1]));
+ const reused=rows.filter(r=>r.stale_reused).length;
+ el("evidence31-meta").textContent="선택 기술 "+M30_SELECTED+" · "+anchorISO+" 수집 시점 기준 직전 "+period+"일 (발행일) · "+(kind==="all"?"전체 유형":kind==="paper"?"논문 메타데이터":kind==="official"?"공식 분류":"일반 뉴스");
+ el("evidence31-metrics").innerHTML=[["발행일 필터 결과",rows.length+"건"],["이전 수집 유지",reused+"건"],["관측 구간",bins.length+"개"]].map(([label,val])=>'<div class="m31-metric"><span>'+esc(label)+'</span><strong>'+esc(val)+'</strong></div>').join("");
+ el("evidence31-chart").innerHTML=bins.length?bins.map(([label,value])=>
+  '<div class="m31-bin" title="'+esc(label+" 관측 "+value+"건")+'"><b>'+value+'</b><div class="m31-bin-rail"><span class="m31-bin-fill" style="height:'+Math.round(value/count*100)+'%"></span></div><span>'+esc(label)+'</span></div>').join(""):
+  '<div class="m31-no-data">해당 기간에 발행일이 확인된 수집 자료가 없습니다. 업계 발표 부재를 뜻하지 않습니다.</div>';
+ el("evidence31-chart-note").textContent=windowLabel+"로 실제 발행 자료가 있는 구간만 표시 · 관측 구간 "+bins.length+"개 / 수집 시각 "+anchorISO+" · 누락 기간 추정 없음";
+ const filtered=rows.filter(r=>/^https:\/\//.test(r.url||"")).slice(0,8);
+ el("evidence31-items").innerHTML=filtered.length?filtered.map(r=>
+  '<article class="m31-card"><a href="'+esc(r.url)+'" target="_blank" rel="noopener noreferrer">'+esc(r.title_ko||r.title||"원문 제목 확인")+'</a>'+
+  '<small>'+esc(r.date)+' · '+esc(r.source||"출처 미확인")+' · '+(r.kind==="paper"?"논문 메타데이터":r.kind==="official"?"제조사 공식 분류":"뉴스 제목 후보")+
+  (r.stale_reused?" · 이전 수집 유지":"")+'</small></article>').join(""):
+  '<div class="m31-no-data">선택 범위에 연결 가능한 원문 URL이 없습니다. 자료가 없음을 산업 활동 부재로 해석하지 마세요.</div>';
+ el("evidence31-export").disabled=rows.length===0;
+}
+for(const id of ["evidence31-window","evidence31-kind"])el(id).addEventListener("change",renderEvidenceDesk31);
+el("evidence31-export").addEventListener("click",()=>{
+ if(!E31_VISIBLE.length)return;
+ const cols=[["technology","kind","published_date","original_title","source","official_url","stale_reused"]];
+ for(const r of E31_VISIBLE)cols.push([r.category,r.kind,r.date,r.title||"",r.source||"",/^https:\/\//.test(r.url||"")?r.url:"",r.stale_reused?"yes":"no"]);
+ const content="\uFEFF"+cols.map(row=>row.map(e31CSVCell).join(",")).join("\r\n");
+ const blob=new Blob([content],{type:"text/csv;charset=utf-8"});
+ const url=URL.createObjectURL(blob),link=document.createElement("a");
+ link.href=url;link.download="psi-radar-evidence-v31.csv";link.click();
+ setTimeout(()=>URL.revokeObjectURL(url),1000);
+});
+
 function renderMission30(){
  const items=DB.records||[],selection=M30_SELECTED,subset=items.filter(r=>r.category===selection);
  const allPapers=items.filter(r=>r.kind==="paper"),allNews=items.filter(r=>r.kind==="news");
@@ -1066,6 +1191,7 @@ function renderMission30(){
  const pending=M30_READY.ir?(FINANCIAL_IR.candidates||[]).filter(r=>r.review_status==="human_review_required").length:null;
  el("mission30-finance").textContent=(checkedFinance===null?"미확인":checkedFinance+"개사 수동 검증")+
   (pending===null?" · IR 후보 미확인":" · 후보 "+pending+"건");
+ renderEvidenceDesk31();
 }
 el("mission30-tabs").addEventListener("click",event=>{
  const b=event.target.closest("button[data-m30-tech]");if(!b||!M30_TECHS.includes(b.dataset.m30Tech))return;
