@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "product": "PSI Radar",
-  "latest_version": "V2.9",
+  "latest_version": "V3.0",
   "updated_on": "2026-11-14",
   "source_policy": "Version summaries curated from repository README and implementation commits; no unverifiable feature claims.",
   "entries": [
@@ -274,6 +274,15 @@
       "background": "제품 데이터시트 숫자는 시험전압·전류·온도·typ/max·소자 구조가 다르므로 일반 순위 그래프가 기술 우열을 잘못 암시할 위험이 있었음",
       "changes": "제품 Benchmark에 RDS(on)·Qg·Qoss·Eoss·VCE(sat)·Qrr·TSC 지표 선택, 원문값 막대, 출처·시험조건, 확보율과 동일조건 검증쌍을 표시하고 A/B 직접 선택을 추가; 기존 비교 판정도 엄격한 조건 검사와 통일",
       "value": "제품 간 다른 시험조건을 숨기지 않고도 데이터시트 확보 현황과 수치 분포를 탐색하고, 원문 및 A/B 상세 비교로 빠르게 이동"
+    },
+    {
+      "version": "V3.0",
+      "title": "통합 Intelligence Mission Control",
+      "date": "2026-11-14",
+      "summary": "Overview에서 기술·공개 근거·제조사 언급·제품·공식 재무를 출처별로 연결하고 상세 분석으로 원클릭 이동",
+      "background": "V2.9까지 기술·주간·논문·경쟁사·제품·재무 화면이 각각 발전했지만 한 기술군을 조사할 때 다수 메뉴의 데이터와 검증 상태를 따로 확인해야 했음",
+      "changes": "Overview에 Technology Mission Control을 구축하여 5개 기술군 선택, 논문·뉴스 실제 표본과 주간 아카이브, 최근 원문, 제품 카탈로그, 제목 기반 제조사 언급 및 4개사 수동검증 IR 상태를 별도 KPI·패널로 연결; Research·Competitors·Benchmark·Integrated·Weekly·Finance 메뉴에 기술별 원클릭 드릴다운을 추가",
+      "value": "수치의 모집단과 근거 수준을 왜곡하지 않고 한 기술 주제의 공개 신호를 확인한 뒤 해당 원문·제품·재무 상세 페이지로 신속하게 이동"
     }
   ]
 }
