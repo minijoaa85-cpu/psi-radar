@@ -10,6 +10,7 @@ from pathlib import Path
 import json
 from threading import Thread
 import sys
+import traceback
 
 from playwright.sync_api import sync_playwright
 
@@ -61,6 +62,8 @@ def check_page(browser,engine,screen,width,height,url):
         page.locator('#mission30 button[data-m30-destination="benchmark"]').click()
         assert page.locator("#benchmark").is_visible()
         assert page.locator("#bench-category").input_value()=="SiC"
+        # Restore the original unfiltered state for legacy 22-product checks.
+        page.locator("#bench-category").select_option("")
         nav.locator('button[data-tab="overview"]').click()
         page.locator('#mission30 button[data-m30-destination="integrated"]').click()
         assert page.locator("#integrated").is_visible()
@@ -189,7 +192,7 @@ def main():
                     for screen,(width,height) in VIEWPORTS.items():
                         try:check_page(browser,engine,screen,width,height,url)
                         except Exception as exc:
-                            print(f"FAIL {engine} {screen}: {exc}",file=sys.stderr,flush=True)
+                            print(f"FAIL {engine} {screen}: {exc}\n{traceback.format_exc()}",file=sys.stderr,flush=True)
                             failures.append(f"{engine}/{screen}: {exc}")
                 finally:browser.close()
     finally:
