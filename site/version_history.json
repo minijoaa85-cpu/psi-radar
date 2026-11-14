@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "product": "PSI Radar",
-  "latest_version": "V3.0",
+  "latest_version": "V3.1",
   "updated_on": "2026-11-14",
   "source_policy": "Version summaries curated from repository README and implementation commits; no unverifiable feature claims.",
   "entries": [
@@ -283,6 +283,15 @@
       "background": "V2.9까지 기술·주간·논문·경쟁사·제품·재무 화면이 각각 발전했지만 한 기술군을 조사할 때 다수 메뉴의 데이터와 검증 상태를 따로 확인해야 했음",
       "changes": "Overview에 Technology Mission Control을 구축하여 5개 기술군 선택, 논문·뉴스 실제 표본과 주간 아카이브, 최근 원문, 제품 카탈로그, 제목 기반 제조사 언급 및 4개사 수동검증 IR 상태를 별도 KPI·패널로 연결; Research·Competitors·Benchmark·Integrated·Weekly·Finance 메뉴에 기술별 원클릭 드릴다운을 추가",
       "value": "수치의 모집단과 근거 수준을 왜곡하지 않고 한 기술 주제의 공개 신호를 확인한 뒤 해당 원문·제품·재무 상세 페이지로 신속하게 이동"
+    },
+    {
+      "version": "V3.1",
+      "title": "Evidence Desk · 발행일 기반 근거 조사",
+      "date": "2026-11-14",
+      "summary": "Mission Control에 7·30·365일 발행 자료 탐색, 출처별 관측 구간 시각화 및 CSV 근거 내보내기 추가",
+      "background": "통합 화면에서 근거 자료를 직접 열 수는 있었지만 기술별 자료의 관측 시점과 출처 종류, 오래된 메타데이터를 구분하거나 조사 결과를 재현해 공유하기 어려웠음",
+      "changes": "선택 기술에 연결된 Evidence Desk를 구현하여 수집 기준일에서 역산한 7·30·365일 발행 기간, 논문·뉴스·공식 분류 필터, 날짜 유효성 검사, 관측된 일·주·월 구간별 차트, 이전 수집 재사용 표시, 원문 링크 및 CSV 추출을 제공",
+      "value": "빈 기간이나 출처 미확인을 실제 산업 활동 부재로 오해하지 않고, 기술별 공개 근거를 필터링하고 출처 포함 목록으로 검토·공유"
     }
   ]
 }
