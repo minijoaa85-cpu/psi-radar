@@ -1,4 +1,4 @@
-# PSI Radar V2.9 — Power Semiconductor Intelligence Radar
+# PSI Radar V3.0 — Power Semiconductor Intelligence Radar
 
 공개 자료 기반 한국어 전력반도체 주간 기술 모니터링 웹 플랫폼. GaN (40%) > SiC (30%) > IGBT (10%) = UD/UG SGT (10%) = SJ MOSFET (10%).
 
@@ -406,3 +406,13 @@ GitHub Pages는 저장소 Settings → Pages → **Source: GitHub Actions**를 �
 - **새 UX:** 그래프에서 **비교 A로 지정 / 비교 B로 지정**을 누르면 기존 두 제품 비교 드롭다운을 채우고 그 위치로 이동합니다. 최초 10건만 표시하고 버튼으로 전체 표본을 펼칠 수 있습니다. 컴퓨터·모바일 반응형 배치, 접근성용 버튼 이름과 상태 설명을 추가했습니다.
 - **수치 확보 한계:** 현재 기본 스냅샷에서 RDS(on) typ **16종**, Qg **12종**, Eoss **0종**입니다. Eoss 등 아직 공식값이 없으면 `데이터 없음`으로 표시하고 가상의 값이나 추정 FOM을 생성하지 않습니다. 자료의 수집 일자와 제품 등록 상태는 원본 기준을 유지합니다.
 - **배포·기록:** 단일 `site/version_history.json`에 V2.9를 추가했고 우측 History 및 같은 파일로 생성되는 PDF/PPT가 자동 동기화됩니다. pytest·JavaScript·Chromium/Firefox/WebKit의 PC/태블릿/모바일 검사를 성공한 후에만 배포 완료로 판정합니다.
+
+## V3.0 — Unified Intelligence Mission Control (2026-11-14)
+
+- **개발 배경:** V2.8의 Research/Competitors, V2.9의 Datasheet Benchmark, V2.2~2.6의 수동 검증 Market & Finance, V2.7의 Weekly/Overview가 각각 독립적으로 고도화됐지만 한 기술군의 공개 근거부터 제품까지 조사할 때 메뉴를 여러 번 이동해야 했습니다.
+- **Overview 최상단 통합 분석:** `Intelligence Mission Control V3.0`을 기존 Technology Pulse **앞**에 배치했습니다. GaN, SiC, IGBT, SJ MOSFET, SGT 선택 시 **같은 기술군**의 공개자료 표본/논문 메타데이터/일반 뉴스/등록 제조사 제품 스냅샷을 즉시 갱신합니다. 데이터가 로딩되지 않으면 0이라고 가정하지 않고 **미확인**으로 구분합니다.
+- **근거와 기록:** 논문과 뉴스 건수·막대는 서로 다른 검색기간/모집단에서 수집한 실제 기록이며 각각 독립 스케일로 표시합니다. 선택 기술의 원문 후보는 수집본의 발행일·출처를 갖는 실제 항목만 최대 3건 제시합니다. 실제 보관된 Weekly 주차 수와 최신 보고 주차도 표시하되 누적 문헌을 이번 주 신규 발표로 환산하지 않습니다.
+- **연결된 기술 분석 과정:** Research(논문), Competitors(뉴스 **제목**에 실제 등장한 업체명), Benchmark(공식 제품 스냅샷), Market & Finance(4개 기업의 **수동 검증** 실적 및 IR 후보), Integrated, Weekly 버튼을 제공합니다. 기술 선택은 Research/Competitors/Benchmark/Integrated의 기존 필터에도 전달되고, 금융/주간 수치를 억지로 기술군에 할당하지 않습니다.
+- **정확성 우선:** 제조사명은 기사 **제목의 직접 언급만** 세며 공식 회사 발표로 확정하지 않습니다. 제품 수는 데이터시트 항목별 조건 검증 여부와 별개이고, 재무 IR 후보는 신규 실적 확정이 아닙니다. **통합 기술력/시장점유율/성장률 점수를 만들어 순위를 표시하지 않습니다.** 실적·제품·수집 데이터의 기준일자를 별도로 노출합니다.
+- **기존 기능 보존 및 품질:** 4단계 상위 내비게이션, 보조 History/My Watch/Data Quality, V2.9 지표별 제품 비교, 재무 IR 수동 검토, Weekly 보고서 등을 변경하지 않았습니다. 브라우저 로컬 개인 설정을 중앙 서버에 전송하지 않습니다. 새로운 외부 서비스 API를 호출하거나 AI 예산 상한을 늘리지 않습니다.
+- **릴리스 동기화:** `site/version_history.json`의 V3.0 기록으로 대시보드 우측 History, 공유용 PDF와 편집 가능한 PPTX가 동일한 버전 이력을 표현합니다. 배포 시 Python 회귀 테스트, JS 문법 검사, 생성 파일 확인, 실제 Playwright 브라우저 스모크 검사를 수행합니다.
