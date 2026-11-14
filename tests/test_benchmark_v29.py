@@ -46,10 +46,11 @@ def test_condition_paired_only_when_strict_safety_policy_passes():
     assert '원문 최종 검토 권장' in HTML
 
 def test_v29_history_and_pdf_generation_are_same_source():
-    assert HISTORY["latest_version"]=="V2.9"
-    assert HISTORY["entries"][-1]["version"]=="V2.9"
-    assert len(HISTORY["entries"])==30
-    assert all(HISTORY["entries"][-1].get(k) for k in ("summary","background","changes","value"))
+    # Release history is append-only; newer features must preserve V2.9 documentation.
+    v29=next(r for r in HISTORY["entries"] if r["version"]=="V2.9")
+    assert len(HISTORY["entries"])>=30
+    assert HISTORY["latest_version"]==HISTORY["entries"][-1]["version"]
+    assert all(v29.get(k) for k in ("summary","background","changes","value"))
     assert 'version_history.json?nocache=' in HTML
     builder=(ROOT/"scripts"/"build_history_slides.py").read_text(encoding="utf-8")
     assert '"version_history.json"' in builder
