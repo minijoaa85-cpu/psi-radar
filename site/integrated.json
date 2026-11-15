@@ -1,0 +1,1854 @@
+{
+  "schema_version": 1,
+  "version": "2.1",
+  "generated_at": "2026-11-15T23:58:01.896504+00:00",
+  "benchmark_reviewed_on": "2026-11-12",
+  "categories": [
+    {
+      "category": "GaN",
+      "intro": "E-mode HEMT 및 집적형 GaN 전력 스테이지",
+      "physics": [
+        "Dynamic RDS(on)",
+        "Gate reliability",
+        "Qg, Qoss / Eoss",
+        "기생 인덕턴스"
+      ],
+      "watch": [
+        "Gate stack·2DEG 안정성",
+        "Buffer 및 Trapping",
+        "Package 및 구동 통합"
+      ],
+      "topics": [
+        {
+          "id": "gan-dynamic-ron",
+          "name": "Dynamic RDS(on)",
+          "simple": "스위칭 후 온저항이 변하는 현상",
+          "why": "트랩·버퍼 영향으로 도통 손실이 달라질 수 있습니다. 제품의 정적 Ron 값만으로 판단하지 않습니다.",
+          "evidence_count_sample": 3,
+          "evidence": [
+            {
+              "title": "미쓰비시 전기, GaN 기판을 이용한 GaN 트랜지스터 주파수 분산 억제 세계 최초 시연",
+              "date": "2026-11-10",
+              "source": "WebWire",
+              "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9GU0Q3X1NQbHR6ZVNjSHhPVUExdnBQV195RkJMLTJnN1VpM0E0ZGROdXBBSnJrSTlCNHR1Rmh0U2ZfTVo0MlRmSWp3Snd6VkI1VUMwQlc5WHptcENuakNKbTR4TEYtck9t?oc=5",
+              "kind": "news_title_candidate",
+              "confidence": "title_keyword_match"
+            },
+            {
+              "title": "미쓰비시 전기, GaN-on-GaN 트랜지스터가 주파수 분산을 크게 억제한다고 발표했으나 수치는 제공하지 않음 - XenoSpectrum",
+              "date": "2026-11-10",
+              "source": "XenoSpectrum",
+              "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1pX1Z3UG1wTDZMTzAzam8zc2VCNHE5d2xFZ3ZrdkZKdVBaNGFYaWNjeHk4NnFycm11ZHpLWF9CQ3U4UlNCVFJIWjV5TXpMLS1XZVBtb2pwQjV5NjV3cGY2WDA1ZVBUQjB0SE10MHFiQkpydU1yRU1LNmx3UGtCTWM?oc=5",
+              "kind": "news_title_candidate",
+              "confidence": "title_keyword_match"
+            },
+            {
+              "title": "미쓰비시 전기, GaN 기판을 이용한 GaN 트랜지스터 주파수 분산 억제 세계 최초 시연",
+              "date": "2026-11-09",
+              "source": "Yahoo Finance Singapore",
+              "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPZ3J1MmJER2hPQW50TGV6dHIwcHRqZC1tSVBybktUNW5JX0xkdFlHbXdhMlNjR2h6OGRaSzZmQ2c0cHZmN3RkQ19Zei16VXhWRTBGOTdBM2ZFelVxVjRDYlhqNFIzWUkwVEQ0OGJEdER0aWM3aGV6RVRqNDZVX1NsYTROaS03a1V1YVNRamdCazliTDg?oc=5",
+              "kind": "news_title_candidate",
+              "confidence": "title_keyword_match"
+            }
+          ]
+        },
+        {
+          "id": "gan-gate",
+          "name": "Gate Reliability",
+          "simple": "게이트 구동과 장기 안정성",
+          "why": "Threshold 변화와 게이트 누설은 사용 조건에 따라 달라질 수 있습니다.",
+          "evidence_count_sample": 0,
+          "evidence": []
+        },
+        {
+          "id": "gan-switching",
+          "name": "Qg · Qoss · Eoss",
+          "simple": "스위칭과 출력 용량 관련 특성",
+          "why": "동작 전압·구동 조건이 달라지면 비교 결과도 달라집니다.",
+          "evidence_count_sample": 0,
+          "evidence": []
+        }
+      ],
+      "articles": [
+        {
+          "title": "Innoscience, NVIDIA MGX 생태계 관련 AI 서버·800VDC GaN 전원 솔루션 발표",
+          "date": "2026-10-28",
+          "source": "Innoscience Newsroom",
+          "url": "https://www.innoscience.com/news/press-releases/18684",
+          "source_level": "official",
+          "summary": "제조사 설명: Innoscience 공식 발표: OCP 행사에서 AI 서버와 800VDC 전력 아키텍처를 위한 GaN 응용 솔루션을 소개했습니다.",
+          "topic_ids": [],
+          "companies": [
+            "innoscience"
+          ],
+          "change_candidate": true,
+          "evidence_status": "manufacturer_claim"
+        },
+        {
+          "title": "Power Integrations 실적 발표: GaN 성장에 직면한 역풍",
+          "date": "2026-11-15",
+          "source": "TipRanks",
+          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQVlRyV1pNREYwTWItLVVVbS1IaUNreDZCUlRJSHVHNzduMFBvZkMxMlF1Q0syRGtVbTRIbjJIVUxUNFRxYVJoX0VBSlZOQVBocTJSWjlfQXg1eEJTWmY0alhJR1cwU0x1U2xVZVlFeFRYMTRxUXRxZEF5c1FXbVNINDFKUjdGWWFkemFhY1RESHdsM1lMN1UxVDhRRzNmQXpjRjZ5aUhmM3hZMmg1dWxFcw?oc=5",
+          "source_level": "news",
+          "summary": "제목 기준: Power Integrations 실적 발표: GaN 성장에 직면한 역풍",
+          "topic_ids": [],
+          "companies": [],
+          "change_candidate": true,
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "title": "Visteon, SHINRY, Infineon, GaN BDS 기술 기반 단일 스테이지 온보드 충전기 협력 개발",
+          "date": "2026-11-13",
+          "source": "Electronic Engineering Journal",
+          "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQUDc0RGF3SzI1OEVXc2xWcGFsNVlxbzNXd3JlMHdoMjV1aGdSUko2YzRrSXhpUERCQXlkQU9sb09LZUw3Xy0tQVhjUFltQkMwVnlTZmxVWDlvMlFmX3RuSjhfSmo0RlpWYnIyWEtfN0I2V01tcmxnWDY0aTNYRjFPSG9MaXFMSGRTVkRZdS1temdCQVdLRlBoTXhfTUNaMlZuamlCZ2JhMHNlNnRaZDBnRXU2Q296Wi1GMjgzUmEzeFRORkRRNGJWTktvN3p0MlZEc2VpRWdjb1VkYmhaSjE0cXJzRQ?oc=5",
+          "source_level": "news",
+          "summary": "제목 기준: Visteon, SHINRY, Infineon, GaN BDS 기술 기반 단일 스테이지 온보드 충전기 협력 개발",
+          "topic_ids": [],
+          "companies": [
+            "infineon"
+          ],
+          "change_candidate": false,
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "title": "Navitas Semiconductor, Renesas의 새로운 갈륨 나이트라이드 제품 관련 소송 제기",
+          "date": "2026-11-12",
+          "source": "TipRanks",
+          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOUWNlOE9mbG1TQzFKMHJCNXl1RDh4SVlIdUhXMDd3NjlKcHNYVnBlblBTMlNtSTctQU1iNEJBb1VUcmRMcjhKRk1zRW40LThqX0I1bXhVN0xVN0lPbldkLUlILU9CS0ZEYzNZNzk5MDZRMk1lNkgtVmZVX042TDZvbFo0d01wTW5mNXU1U0RsMnE2d1V6NFk2ZG9QeUlaWDBFS3Zvb01OX2RKQTlZald5Tk8tOTVNY3VfalE?oc=5",
+          "source_level": "news",
+          "summary": "제목 기준: Navitas Semiconductor, Renesas의 새로운 갈륨 나이트라이드 제품 관련 소송 제기",
+          "topic_ids": [],
+          "companies": [
+            "navitas"
+          ],
+          "change_candidate": false,
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "title": "Navitas Semiconductor, Renesas GaN 제품 관련 특허 소송 제기 후 주가 5% 하락",
+          "date": "2026-11-12",
+          "source": "Traders Union",
+          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNX3NIM3h6WHU0Wnc0dkVuWkJFUzd6ZTRFcEFwWWU2OW9XdHpqNEV3Qks4azZrbUo2VVRYUnAyM0prUk1Ibzl5NXlEZFp3Wmk0Wk9BTGpCYjd6d0l0azdkcEFOVnFyU2lvSTlTSFlNZXRxY01TN3l1UFZaZ2NBVWhNc2JTU1dNbUpmTGc3eGdtYWVTZmlJeWstX2RBS3Q?oc=5",
+          "source_level": "news",
+          "summary": "제목 기준: Navitas Semiconductor, Renesas GaN 제품 관련 특허 소송 제기 후 주가 5% 하락",
+          "topic_ids": [],
+          "companies": [
+            "navitas"
+          ],
+          "change_candidate": false,
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "title": "미쓰비시 전기, GaN 기판을 이용한 GaN 트랜지스터 주파수 분산 억제 세계 최초 시연",
+          "date": "2026-11-10",
+          "source": "WebWire",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9GU0Q3X1NQbHR6ZVNjSHhPVUExdnBQV195RkJMLTJnN1VpM0E0ZGROdXBBSnJrSTlCNHR1Rmh0U2ZfTVo0MlRmSWp3Snd6VkI1VUMwQlc5WHptcENuakNKbTR4TEYtck9t?oc=5",
+          "source_level": "news",
+          "summary": "제목 기준: 미쓰비시 전기, GaN 기판을 이용한 GaN 트랜지스터 주파수 분산 억제 세계 최초 시연",
+          "topic_ids": [
+            "gan-dynamic-ron"
+          ],
+          "companies": [
+            "mitsubishi"
+          ],
+          "change_candidate": false,
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "title": "미쓰비시 전기, GaN-on-GaN 트랜지스터가 주파수 분산을 크게 억제한다고 발표했으나 수치는 제공하지 않음 - XenoSpectrum",
+          "date": "2026-11-10",
+          "source": "XenoSpectrum",
+          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1pX1Z3UG1wTDZMTzAzam8zc2VCNHE5d2xFZ3ZrdkZKdVBaNGFYaWNjeHk4NnFycm11ZHpLWF9CQ3U4UlNCVFJIWjV5TXpMLS1XZVBtb2pwQjV5NjV3cGY2WDA1ZVBUQjB0SE10MHFiQkpydU1yRU1LNmx3UGtCTWM?oc=5",
+          "source_level": "news",
+          "summary": "제목 기준: 미쓰비시 전기, GaN-on-GaN 트랜지스터가 주파수 분산을 크게 억제한다고 발표했으나 수치는 제공하지 않음 - XenoSpectrum",
+          "topic_ids": [
+            "gan-dynamic-ron"
+          ],
+          "companies": [
+            "mitsubishi"
+          ],
+          "change_candidate": true,
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "title": "미쓰비시 전기, GaN 기판을 이용한 GaN 트랜지스터 주파수 분산 억제 세계 최초 시연",
+          "date": "2026-11-09",
+          "source": "Yahoo Finance Singapore",
+          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPZ3J1MmJER2hPQW50TGV6dHIwcHRqZC1tSVBybktUNW5JX0xkdFlHbXdhMlNjR2h6OGRaSzZmQ2c0cHZmN3RkQ19Zei16VXhWRTBGOTdBM2ZFelVxVjRDYlhqNFIzWUkwVEQ0OGJEdER0aWM3aGV6RVRqNDZVX1NsYTROaS03a1V1YVNRamdCazliTDg?oc=5",
+          "source_level": "news",
+          "summary": "제목 기준: 미쓰비시 전기, GaN 기판을 이용한 GaN 트랜지스터 주파수 분산 억제 세계 최초 시연",
+          "topic_ids": [
+            "gan-dynamic-ron"
+          ],
+          "companies": [
+            "mitsubishi"
+          ],
+          "change_candidate": false,
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "title": "미쓰비시 전기, 전력 소비 절감 위한 세계 최초 GaN 기술 진보 주장",
+          "date": "2026-11-09",
+          "source": "Yahoo Tech",
+          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOU3dFVV84S1lfMTh2LUJ0R3YzS0dFX2hpanB6RnhrWG54bW42SjhHNEthZjBfNUhUc0lGOTBFYUF3NGsybnR6ZVM3clFvMFVQUDVkaTZGLVNzWDlYcGFtWlVnN2pJX3BoQUF6UDAwYVdpczN4OVRQanJ4VldLRlRXbUpiT1JMN1Q4S012ZFZGLVZ6aGxEejkydQ?oc=5",
+          "source_level": "news",
+          "summary": "제목 기준: 미쓰비시 전기, 전력 소비 절감 위한 세계 최초 GaN 기술 진보 주장",
+          "topic_ids": [],
+          "companies": [
+            "mitsubishi"
+          ],
+          "change_candidate": false,
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "title": "Innoscience INN650D080BS 650 V 60 mΩ GaN - TechInsights",
+          "date": "2026-11-05",
+          "source": "TechInsights",
+          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5kazBWSF8xZ1NWSkFIMmZXNkFzTmNDVUJlVmc4bkNTMWdPcDIycVczU2ZUYWFJajhYeWwtNGI3SUw4V19QX19raXlHcmdkX2h1VFJFTGpZQkl4YWE1c1ZNRFhQN1Iwd3R1bFcwQkF0Nm1tc0hFeDFSMExaOXlFSHc?oc=5",
+          "source_level": "news",
+          "summary": "제목 기준: Innoscience INN650D080BS 650 V 60 mΩ GaN - TechInsights",
+          "topic_ids": [],
+          "companies": [
+            "innoscience"
+          ],
+          "change_candidate": false,
+          "evidence_status": "title_not_verified"
+        }
+      ],
+      "article_count_sample": 10,
+      "source_counts_sample": {
+        "official": 1,
+        "research": 0,
+        "news": 9
+      },
+      "products": [
+        {
+          "id": "gan-infineon-igot",
+          "company": "Infineon",
+          "part": "IGOT65R055D2",
+          "structure": "E-mode GaN HEMT",
+          "package": "PG-DSO-20 (top-side cooling)",
+          "voltage": {
+            "value": 650,
+            "unit": "V",
+            "kind": "max",
+            "condition": "VDS max"
+          },
+          "verification": "product_page",
+          "datasheet_revision": null,
+          "architecture": "discrete",
+          "specs": {
+            "rds_on": {
+              "value": 55,
+              "unit": "mΩ",
+              "kind": "typ",
+              "condition": "제품 페이지; VGS 구동은 데이터시트 참조",
+              "test_conditions": {}
+            },
+            "rds_on_max": {
+              "value": 66,
+              "unit": "mΩ",
+              "kind": "max",
+              "condition": "제품 페이지",
+              "test_conditions": {}
+            },
+            "qg": {
+              "value": 4.7,
+              "unit": "nC",
+              "kind": "typ",
+              "condition": "제품 페이지 QG; VGS 구동 조건은 데이터시트 참조",
+              "test_conditions": {}
+            }
+          },
+          "url": "https://www.infineon.com/part/IGOT65R055D2"
+        },
+        {
+          "id": "gan-infineon-igt",
+          "company": "Infineon",
+          "part": "IGT65R055D2",
+          "structure": "E-mode GaN HEMT",
+          "package": "TOLL (bottom-side cooling)",
+          "voltage": {
+            "value": 650,
+            "unit": "V",
+            "kind": "max",
+            "condition": "VDS max"
+          },
+          "verification": "product_page",
+          "datasheet_revision": null,
+          "architecture": "discrete",
+          "specs": {
+            "rds_on": {
+              "value": 55,
+              "unit": "mΩ",
+              "kind": "typ",
+              "condition": "제품 페이지",
+              "test_conditions": {}
+            },
+            "rds_on_max": {
+              "value": 66,
+              "unit": "mΩ",
+              "kind": "max",
+              "condition": "제품 페이지",
+              "test_conditions": {}
+            },
+            "qg": {
+              "value": 4.7,
+              "unit": "nC",
+              "kind": "typ",
+              "condition": "제품 페이지",
+              "test_conditions": {}
+            }
+          },
+          "url": "https://www.infineon.com/part/IGT65R055D2"
+        },
+        {
+          "id": "gan-infineon-iglt",
+          "company": "Infineon",
+          "part": "IGLT65R055D2",
+          "structure": "E-mode GaN HEMT",
+          "package": "TOLT (top-side cooling)",
+          "voltage": {
+            "value": 650,
+            "unit": "V",
+            "kind": "max",
+            "condition": "VDS max"
+          },
+          "verification": "product_page",
+          "datasheet_revision": null,
+          "architecture": "discrete",
+          "specs": {
+            "rds_on": {
+              "value": 55,
+              "unit": "mΩ",
+              "kind": "typ",
+              "condition": "제품 페이지; 상세 VGS/ID 조건 미확인",
+              "test_conditions": {}
+            },
+            "rds_on_max": {
+              "value": 66,
+              "unit": "mΩ",
+              "kind": "max",
+              "condition": "제품 페이지; 상세 VGS/ID 조건 미확인",
+              "test_conditions": {}
+            },
+            "qg": {
+              "value": 4.7,
+              "unit": "nC",
+              "kind": "typ",
+              "condition": "제품 페이지; VGS/VDS 구동 조건 미확인",
+              "test_conditions": {}
+            }
+          },
+          "url": "https://www.infineon.com/part/IGLT65R055D2"
+        },
+        {
+          "id": "gan-st-mastergan6",
+          "company": "STMicroelectronics",
+          "part": "MASTERGAN6",
+          "structure": "Integrated 2× E-mode GaN HEMT + half-bridge gate driver",
+          "package": "GQFN 9×9",
+          "voltage": {
+            "value": 650,
+            "unit": "V",
+            "kind": "rating",
+            "condition": "VDS blocking rating per switch"
+          },
+          "verification": "product_page",
+          "datasheet_revision": null,
+          "architecture": "integrated_half_bridge",
+          "specs": {
+            "rds_on": {
+              "value": 140,
+              "unit": "mΩ",
+              "kind": "typ",
+              "condition": "제품 페이지; integrated switch, 상세 시험 조건 확인 필요",
+              "test_conditions": {}
+            }
+          },
+          "url": "https://www.st.com/en/power-management/mastergan6.html"
+        },
+        {
+          "id": "gan-inno-650d080",
+          "company": "Innoscience",
+          "part": "INN650D080BS",
+          "structure": "E-mode GaN HEMT",
+          "package": "DFN8×8",
+          "voltage": {
+            "value": 650,
+            "unit": "V",
+            "kind": "max",
+            "condition": "VDS"
+          },
+          "verification": "product_page",
+          "datasheet_revision": null,
+          "architecture": "discrete",
+          "specs": {
+            "rds_on": {
+              "value": 60,
+              "unit": "mΩ",
+              "kind": "typ",
+              "condition": "제조사 제품 페이지; 상세 시험 조건 미표기",
+              "test_conditions": {}
+            },
+            "rds_on_max": {
+              "value": 80,
+              "unit": "mΩ",
+              "kind": "max",
+              "condition": "제조사 제품 페이지; 상세 시험 조건 미표기",
+              "test_conditions": {}
+            },
+            "qg": {
+              "value": 6.2,
+              "unit": "nC",
+              "kind": "unspecified",
+              "condition": "공식 제품 페이지 대표값; typ/max 및 VDS/구동 조건 미표기",
+              "test_conditions": {}
+            },
+            "qoss": {
+              "value": 60,
+              "unit": "nC",
+              "kind": "unspecified",
+              "condition": "공식 제품 페이지 대표값; typ/max 및 VDS 조건 미표기",
+              "test_conditions": {}
+            }
+          },
+          "url": "https://www.innoscience.com/products/hv-gan-hemt/501"
+        },
+        {
+          "id": "gan-inno-700tk130",
+          "company": "Innoscience",
+          "part": "INN700TK130E",
+          "structure": "E-mode GaN HEMT",
+          "package": "TO-252",
+          "voltage": {
+            "value": 700,
+            "unit": "V",
+            "kind": "max",
+            "condition": "VDS"
+          },
+          "verification": "product_page",
+          "datasheet_revision": null,
+          "architecture": "discrete",
+          "specs": {
+            "rds_on": {
+              "value": 101,
+              "unit": "mΩ",
+              "kind": "typ",
+              "condition": "제조사 제품 페이지; 상세 시험 조건 미표기",
+              "test_conditions": {}
+            },
+            "rds_on_max": {
+              "value": 130,
+              "unit": "mΩ",
+              "kind": "max",
+              "condition": "제조사 제품 페이지; 상세 시험 조건 미표기",
+              "test_conditions": {}
+            },
+            "qg": {
+              "value": 2.65,
+              "unit": "nC",
+              "kind": "unspecified",
+              "condition": "공식 제품 페이지 대표값; typ/max 및 VDS/구동 조건 미표기",
+              "test_conditions": {}
+            },
+            "qoss": {
+              "value": 25.5,
+              "unit": "nC",
+              "kind": "unspecified",
+              "condition": "공식 제품 페이지 대표값; typ/max 및 VDS 조건 미표기",
+              "test_conditions": {}
+            }
+          },
+          "url": "https://www.innoscience.com/products/hv-gan-hemt/1770"
+        },
+        {
+          "id": "gan-inno-700da190",
+          "company": "Innoscience",
+          "part": "INN700DA190B",
+          "structure": "E-mode GaN HEMT",
+          "package": "DFN5×6",
+          "voltage": {
+            "value": 700,
+            "unit": "V",
+            "kind": "max",
+            "condition": "VDS"
+          },
+          "verification": "product_page",
+          "datasheet_revision": null,
+          "architecture": "discrete",
+          "specs": {
+            "rds_on": {
+              "value": 138,
+              "unit": "mΩ",
+              "kind": "typ",
+              "condition": "제조사 제품 페이지; 상세 시험 조건 미표기",
+              "test_conditions": {}
+            },
+            "rds_on_max": {
+              "value": 190,
+              "unit": "mΩ",
+              "kind": "max",
+              "condition": "제조사 제품 페이지; 상세 시험 조건 미표기",
+              "test_conditions": {}
+            },
+            "qg": {
+              "value": 2.8,
+              "unit": "nC",
+              "kind": "unspecified",
+              "condition": "공식 제품 페이지 대표값; typ/max 및 VDS/구동 조건 미표기",
+              "test_conditions": {}
+            },
+            "qoss": {
+              "value": 24.5,
+              "unit": "nC",
+              "kind": "unspecified",
+              "condition": "공식 제품 페이지 대표값; typ/max 및 VDS 조건 미표기",
+              "test_conditions": {}
+            }
+          },
+          "url": "https://www.innoscience.com/products/hv-gan-hemt/492"
+        },
+        {
+          "id": "gan-inno-900d240",
+          "company": "Innoscience",
+          "part": "INN900D240B",
+          "structure": "E-mode GaN HEMT",
+          "package": "DFN8×8",
+          "voltage": {
+            "value": 900,
+            "unit": "V",
+            "kind": "max",
+            "condition": "VDS"
+          },
+          "verification": "product_page",
+          "datasheet_revision": null,
+          "architecture": "discrete",
+          "specs": {
+            "rds_on": {
+              "value": 170,
+              "unit": "mΩ",
+              "kind": "typ",
+              "condition": "제조사 제품 페이지; 상세 시험 조건 미표기",
+              "test_conditions": {}
+            },
+            "rds_on_max": {
+              "value": 240,
+              "unit": "mΩ",
+              "kind": "max",
+              "condition": "제조사 제품 페이지; 상세 시험 조건 미표기",
+              "test_conditions": {}
+            },
+            "qg": {
+              "value": 2.2,
+              "unit": "nC",
+              "kind": "unspecified",
+              "condition": "공식 제품 페이지 대표값; typ/max 및 VDS/구동 조건 미표기",
+              "test_conditions": {}
+            },
+            "qoss": {
+              "value": 24.5,
+              "unit": "nC",
+              "kind": "unspecified",
+              "condition": "공식 제품 페이지 대표값; typ/max 및 VDS 조건 미표기",
+              "test_conditions": {}
+            }
+          },
+          "url": "https://www.innoscience.com/products/hv-gan-hemt/7627"
+        },
+        {
+          "id": "gan-inno-900d600",
+          "company": "Innoscience",
+          "part": "INN900D600B",
+          "structure": "E-mode GaN HEMT",
+          "package": "DFN8×8",
+          "voltage": {
+            "value": 900,
+            "unit": "V",
+            "kind": "max",
+            "condition": "VDS"
+          },
+          "verification": "product_page",
+          "datasheet_revision": null,
+          "architecture": "discrete",
+          "specs": {
+            "rds_on": {
+              "value": 400,
+              "unit": "mΩ",
+              "kind": "typ",
+              "condition": "제조사 제품 페이지; 상세 시험 조건 미표기",
+              "test_conditions": {}
+            },
+            "rds_on_max": {
+              "value": 600,
+              "unit": "mΩ",
+              "kind": "max",
+              "condition": "제조사 제품 페이지; 상세 시험 조건 미표기",
+              "test_conditions": {}
+            },
+            "qg": {
+              "value": 0.9,
+              "unit": "nC",
+              "kind": "unspecified",
+              "condition": "공식 제품 페이지 대표값; typ/max 및 VDS/구동 조건 미표기",
+              "test_conditions": {}
+            },
+            "qoss": {
+              "value": 10.4,
+              "unit": "nC",
+              "kind": "unspecified",
+              "condition": "공식 제품 페이지 대표값; typ/max 및 VDS 조건 미표기",
+              "test_conditions": {}
+            }
+          },
+          "url": "https://www.innoscience.com/products/hv-gan-hemt/7628"
+        },
+        {
+          "id": "gan-inno-060eb009",
+          "company": "Innoscience",
+          "part": "INN060EB009DAD",
+          "structure": "E-mode GaN HEMT",
+          "package": "En-FCLGA 5×6",
+          "voltage": {
+            "value": 60,
+            "unit": "V",
+            "kind": "max",
+            "condition": "VDS"
+          },
+          "verification": "product_page",
+          "datasheet_revision": null,
+          "architecture": "discrete",
+          "specs": {
+            "rds_on": {
+              "value": 0.6,
+              "unit": "mΩ",
+              "kind": "typ",
+              "condition": "제조사 제품 페이지; 상세 시험 조건 미표기",
+              "test_conditions": {}
+            },
+            "rds_on_max": {
+              "value": 0.9,
+              "unit": "mΩ",
+              "kind": "max",
+              "condition": "제조사 제품 페이지; 상세 시험 조건 미표기",
+              "test_conditions": {}
+            },
+            "qg": {
+              "value": 35,
+              "unit": "nC",
+              "kind": "unspecified",
+              "condition": "공식 제품 페이지 대표값; typ/max 및 VDS/구동 조건 미표기",
+              "test_conditions": {}
+            },
+            "qoss": {
+              "value": 125,
+              "unit": "nC",
+              "kind": "unspecified",
+              "condition": "공식 제품 페이지 대표값; typ/max 및 VDS 조건 미표기",
+              "test_conditions": {}
+            }
+          },
+          "url": "https://www.innoscience.com/products/lv-gan-hemt/17387"
+        },
+        {
+          "id": "gan-inno-100ea035",
+          "company": "Innoscience",
+          "part": "INN100EA035A",
+          "structure": "E-mode GaN HEMT",
+          "package": "En-FCLGA 3.3×3.3",
+          "voltage": {
+            "value": 100,
+            "unit": "V",
+            "kind": "max",
+            "condition": "VDS"
+          },
+          "verification": "product_page",
+          "datasheet_revision": null,
+          "architecture": "discrete",
+          "specs": {
+            "rds_on": {
+              "value": 2.9,
+              "unit": "mΩ",
+              "kind": "typ",
+              "condition": "제조사 제품 페이지; 상세 시험 조건 미표기",
+              "test_conditions": {}
+            },
+            "rds_on_max": {
+              "value": 3.5,
+              "unit": "mΩ",
+              "kind": "max",
+              "condition": "제조사 제품 페이지; 상세 시험 조건 미표기",
+              "test_conditions": {}
+            },
+            "qg": {
+              "value": 7.6,
+              "unit": "nC",
+              "kind": "unspecified",
+              "condition": "공식 제품 페이지 대표값; typ/max 및 VDS/구동 조건 미표기",
+              "test_conditions": {}
+            },
+            "qoss": {
+              "value": 42,
+              "unit": "nC",
+              "kind": "unspecified",
+              "condition": "공식 제품 페이지 대표값; typ/max 및 VDS 조건 미표기",
+              "test_conditions": {}
+            }
+          },
+          "url": "https://www.innoscience.com/products/lv-gan-hemt/516"
+        },
+        {
+          "id": "gan-st-mastergan7",
+          "company": "STMicroelectronics",
+          "part": "MASTERGAN7",
+          "structure": "Half-bridge E-mode GaN + integrated driver",
+          "package": "GQFN",
+          "voltage": {
+            "value": 650,
+            "unit": "V",
+            "kind": "rating",
+            "condition": "VDS per switch"
+          },
+          "verification": "product_page",
+          "datasheet_revision": null,
+          "architecture": "integrated_half_bridge",
+          "specs": {
+            "rds_on": {
+              "value": 270,
+              "unit": "mΩ",
+              "kind": "typ",
+              "condition": "제품 페이지; IDS/Tj/구동 조건은 데이터시트 확인",
+              "test_conditions": {}
+            }
+          },
+          "url": "https://www.st.com/en/power-management/mastergan7.html"
+        }
+      ],
+      "product_count": 12,
+      "companies": [
+        "Infineon",
+        "Innoscience",
+        "STMicroelectronics"
+      ],
+      "competitor_mentions": [
+        {
+          "id": "mitsubishi",
+          "name": "Mitsubishi Electric",
+          "mention_count_sample": 4,
+          "official_count_sample": 0
+        },
+        {
+          "id": "innoscience",
+          "name": "Innoscience",
+          "mention_count_sample": 2,
+          "official_count_sample": 1
+        },
+        {
+          "id": "navitas",
+          "name": "Navitas",
+          "mention_count_sample": 2,
+          "official_count_sample": 0
+        },
+        {
+          "id": "infineon",
+          "name": "Infineon",
+          "mention_count_sample": 1,
+          "official_count_sample": 0
+        }
+      ],
+      "weekly_observations": [
+        {
+          "week": "2026-W46",
+          "complete_week": true,
+          "week_to_date": "2026-11-15",
+          "category_sample_count": 8,
+          "topic_title_matches": 3,
+          "topic_official_matches": 0
+        }
+      ],
+      "datasheet_table_verified_count": 0,
+      "structured_test_conditions_count": 0
+    },
+    {
+      "category": "SiC",
+      "intro": "Trench·Planar SiC MOSFET 구조와 전력 손실",
+      "physics": [
+        "RDS(on) vs Tj",
+        "Gate oxide",
+        "Short-circuit withstand",
+        "Body diode"
+      ],
+      "watch": [
+        "채널 이동도 / JFET",
+        "Oxide 신뢰성",
+        "Trench corner 전계"
+      ],
+      "topics": [
+        {
+          "id": "sic-trench",
+          "name": "Trench / Planar",
+          "simple": "SiC 셀 구조 변화",
+          "why": "채널·JFET·Trench 전계의 균형이 중요합니다.",
+          "evidence_count_sample": 1,
+          "evidence": [
+            {
+              "title": "Electronica: Nexperia, 750V SiC 트렌치 MOSFET 및 TOLL 패키징 추가",
+              "date": "2026-11-12",
+              "source": "Electronics Weekly",
+              "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPZ19wNlM2dnhHVnhLY0NDYmdINEN5eHdvYlRGQ05NM0V2cjFLbGJYcDJ1c3cxeUUwZ0QxR0NpcTFnajZGN1BDYklqRjEtSFZkbXNWbGtGbHJRMmV5UjJDN2lCa1dwTW9xUUZLUFJaeU83US1fSU1TeTVSN1RvSVpiM3FTX0UxYnlUR18zd1NkaTdYMURPWUp4NDdBMGNrYkVCRWNNQTRyeVdLWEk1ZmhUMzJLVzJySXBlcGxDcUlpcEFneUFlM0FRVFdGU2x3TEs3Tl8wV1Rpbw?oc=5",
+              "kind": "news_title_candidate",
+              "confidence": "title_keyword_match"
+            }
+          ]
+        },
+        {
+          "id": "sic-oxide",
+          "name": "Gate Oxide Reliability",
+          "simple": "SiC 게이트 산화막의 내구성",
+          "why": "산화막 전계와 온도·구동 조건에 따른 신뢰성을 함께 확인해야 합니다.",
+          "evidence_count_sample": 0,
+          "evidence": []
+        },
+        {
+          "id": "sic-short",
+          "name": "Short Circuit · Body Diode",
+          "simple": "단락 내량과 다이오드 동작",
+          "why": "단락 시험조건·바디다이오드 전류·열 조건이 비교의 핵심입니다.",
+          "evidence_count_sample": 0,
+          "evidence": []
+        }
+      ],
+      "articles": [
+        {
+          "title": "온세미, AI·전기차·에너지용 4세대 SiC 플랫폼 공개",
+          "date": "2026-11-12",
+          "source": "New Electronics",
+          "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQbmNuc0d0Qzg5OXRIZmJMYTR1WnVtd19QdS1Xd0ItUl9hR3pRdnRPSkFaeGZxcDVHOHZiYmVaRzVIWHY4YWhzWFNPOE5rckI5M1o4TW9aTlliRkc4N1VkR2dPMlY2ejUwWUZkUEkwSG1mOVFpX255N2M2b0dLRWt5MlpQWmNYZHVXQzFPSzE0REdJcWRqM0VVaDd0dlV3RjJlUU5BQnBDTDg2Y3d6WGN6bXRlcG5HbUxDNUxHbTdCSklldzAwOUswQklCNA?oc=5",
+          "source_level": "news",
+          "summary": "제목 기준: 온세미, AI·전기차·에너지용 4세대 SiC 플랫폼 공개",
+          "topic_ids": [],
+          "companies": [
+            "onsemi"
+          ],
+          "change_candidate": true,
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "title": "인피니언, 세계 최초 12인치 SiC 전력 반도체 웨이퍼 공개; 양산 시기는 미공개 - BigGo Finance",
+          "date": "2026-11-11",
+          "source": "BigGo Finance",
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1SS3BoMTZpS3BINHppdG84YUliZmt3MnIxbEwyQlM2aFJGUFF2ZTZRV2g5S1dad1FEbzhnaG5hRUI5UTFvZ3NTdFRsUXBVUHlNV1JjWGZyeUQxdjhqb3ozdG05QWFCQzdxbU5jQ3A5Ung0V2g1UGc?oc=5",
+          "source_level": "news",
+          "summary": "제목 기준: 인피니언, 세계 최초 12인치 SiC 전력 반도체 웨이퍼 공개; 양산 시기는 미공개 - BigGo Finance",
+          "topic_ids": [],
+          "companies": [
+            "infineon"
+          ],
+          "change_candidate": true,
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "title": "onsemi introduces EliteSiC M4 fourth-gen silicon carbide platform, with up to 30% higher power density and 35% lower losses - Semiconductor Today",
+          "date": "2026-11-10",
+          "source": "Semiconductor Today",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNZEEtOTJZUTcyMnlfSFBrY1JPQWdWQ3FXRVhNYUlnT0JPZlBvenRyaTZidzBUbVNqQnhtNklnMXpBQnB4QVFvTzFSaFhlZnZ6UzlMMlpTTFRfSjBLak9wbVZDSnI4VXctc2lSN2lPSmdWQjY0MUx1M1JjYWRxVVJLNw?oc=5",
+          "source_level": "news",
+          "summary": "제목 기준: onsemi introduces EliteSiC M4 fourth-gen silicon carbide platform, with up to 30% higher power density and 35% lower losses - Semiconductor Today",
+          "topic_ids": [],
+          "companies": [
+            "onsemi"
+          ],
+          "change_candidate": true,
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "title": "Wolfspeed (WOLF) Stock May Be Undervalued As New Silicon Carbide Launch Lands - Simply Wall St",
+          "date": "2026-11-10",
+          "source": "Simply Wall St",
+          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOT3NPQWVpaXBFeWJzWVhqakQza1U3X1FtOHh6Ri0tSkhsMDNKbjhUaDF0YkdMazRpN3NSNVdORzc3UVBfNFlYckdSNEdSdXlBVU54VVJyakxCSDVlR2FMSUcycnFnSlRCQUo1SllocWhXN1AwVTBPYVliQjRMZnZJRnpVcUZyME02N2dZSnRUQ2l2VHJOZGVNNTdZMXZKNjd1amxHa2NrTVM3VVd3MWRxUmRieUdKNXZPOC1xblYwblNfQy1sVVJIWVMwdWnSAdIBQVVfeXFMTmJJb1Bmc1piTm44Slg0MV9jZ1RKVUFScGtlbHgyRVZNTld5LS1qYTFXX04xcTJLZm5Va0hiX1ZlOFNPLXdobU5vUGduTmN5dkVEV2xJRWo4b25iMTByZVJ3b2U2MkpWbmlKeE1VV3VOZUZWUFFuTmFJZ2pUYU9XTzVWb3ZOeFVOMEtnWHVwTHNQa0M0UVRqZkNvMURiS2kzTmJHTEc1bUI5VDBWS2xfWWdoLVhqWDVPa1NUdFFlVW1fNTNUbXhYVWVVQzZxTlVEZERB?oc=5",
+          "source_level": "news",
+          "summary": "제목 기준: Wolfspeed (WOLF) Stock May Be Undervalued As New Silicon Carbide Launch Lands - Simply Wall St",
+          "topic_ids": [],
+          "companies": [
+            "wolfspeed"
+          ],
+          "change_candidate": true,
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "title": "Electronica: Nexperia, 750V SiC 트렌치 MOSFET 및 TOLL 패키징 추가",
+          "date": "2026-11-12",
+          "source": "Electronics Weekly",
+          "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPZ19wNlM2dnhHVnhLY0NDYmdINEN5eHdvYlRGQ05NM0V2cjFLbGJYcDJ1c3cxeUUwZ0QxR0NpcTFnajZGN1BDYklqRjEtSFZkbXNWbGtGbHJRMmV5UjJDN2lCa1dwTW9xUUZLUFJaeU83US1fSU1TeTVSN1RvSVpiM3FTX0UxYnlUR18zd1NkaTdYMURPWUp4NDdBMGNrYkVCRWNNQTRyeVdLWEk1ZmhUMzJLVzJySXBlcGxDcUlpcEFneUFlM0FRVFdGU2x3TEs3Tl8wV1Rpbw?oc=5",
+          "source_level": "news",
+          "summary": "제목 기준: Electronica: Nexperia, 750V SiC 트렌치 MOSFET 및 TOLL 패키징 추가",
+          "topic_ids": [
+            "sic-trench"
+          ],
+          "companies": [],
+          "change_candidate": false,
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "title": "Infineon Produces Functional SiC Power Semiconductors on 300 mm Wafers for the First Time - igor´sLAB",
+          "date": "2026-11-11",
+          "source": "igor´sLAB",
+          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNRW5QMEJ5RWVybXRVc29NUkwzZXFRZnhhYmpEbGtvZkhpWHZVOTk1a29XcS1zUWhSbG1ZTWpEMU91UXB1ZzJfM3pwcHlHazFQY0hFd2J5OXZzZXVWMXM3aUYzcDliS3padnJyWUNIUHktX3lkN3ZuR0x3UGM0bkFHcG1aaGppR183Unk3dlpmXzFxcExNLWc?oc=5",
+          "source_level": "news",
+          "summary": "제목 기준: Infineon Produces Functional SiC Power Semiconductors on 300 mm Wafers for the First Time - igor´sLAB",
+          "topic_ids": [],
+          "companies": [
+            "infineon"
+          ],
+          "change_candidate": false,
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "title": "New 300-mm silicon carbide wafers could boost production of EV chips - Evs | Electric Vehicles Nieuws - Head Topics",
+          "date": "2026-11-11",
+          "source": "Head Topics",
+          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNa1pvN2loR0h5RGpnd3pIZzdCSm9sU2gyd0xjUENob2lQT3E2YU9EUFUxaHo4TzREZjlrN2lacnRiYzdCWUdSMjJWV1RxWWg0blhMajNHMmhDTUY3OUIwdE93VlNpOXRZTUtoejJvbXBFNkd0OEdKUTFteFlfWUpfUGpjUmNqbWxNS04tS29RWktNWUQyRE5Ya1Q2Q1NKRVM0?oc=5",
+          "source_level": "news",
+          "summary": "제목 기준: New 300-mm silicon carbide wafers could boost production of EV chips - Evs | Electric Vehicles Nieuws - Head Topics",
+          "topic_ids": [],
+          "companies": [],
+          "change_candidate": false,
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "title": "Why Infineon’s SiC Milestone Matters for Chip Production - Manufacturing Digital",
+          "date": "2026-11-11",
+          "source": "Manufacturing Digital",
+          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOYllOX3F4Wk1Xd2N2NlFsRUlUa0Z4Rnc0SU5QUXc0NHVzMk50Um1JMENqcWpQbjRJNHRWSDYxZXBMNjkyVmJ5dURlZV8xV1I2VTdXNGdtaHc5bEJGYnZfVEZ1WmlyRWZXTVRhNmRqZTlBLVN0em0wOHpGdEM2M2R5d0xfOEJaV0I4ejgyWl9mNmF6Z0pha1JQR0s0WWd6UQ?oc=5",
+          "source_level": "news",
+          "summary": "제목 기준: Why Infineon’s SiC Milestone Matters for Chip Production - Manufacturing Digital",
+          "topic_ids": [],
+          "companies": [
+            "infineon"
+          ],
+          "change_candidate": false,
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "title": "Automotive Tech Forum: The Current State of Sic in EV Design and How It’s Evolving - EE Times",
+          "date": "2026-11-11",
+          "source": "EE Times",
+          "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNM3FqM1JvM2I1SGt6MWlNQktjZWZDR3kzZnVQbWNMMVd1eGY4OFItdm9jNUhwNS1adnBSOHV3M0I4enJRcHlXaFBrMG9HM0lET0NORUs2eGtDTWJHamxtUXpGanNsVkVqczdxbE8tdnNVdTJ5UDVKNDRDdDFGdWkwR3gtZ0lBTlBYVi1Wck5sRmFVaGc2aTJLWlhuVUd3amZCdGp4Ynl2SFo?oc=5",
+          "source_level": "news",
+          "summary": "제목 기준: Automotive Tech Forum: The Current State of Sic in EV Design and How It’s Evolving - EE Times",
+          "topic_ids": [],
+          "companies": [],
+          "change_candidate": false,
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "title": "Infineon processes SiC on 300 mm wafers for the first time - electrive.com",
+          "date": "2026-11-10",
+          "source": "electrive.com",
+          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNblpCQkJvVTE0bXlveE93OVpYdXB3Qk1MVE9IYmJ6MmdxaWMxYzBIcFlBdEFvLUJTb2FHbUJ3RzQ5Rzc3bTIyQU41TXYyQnFRZTZUQkpTaDJSY28wYktIcHNUNnZCcEQwdDNkSW01R2dRWnE0OHhjZldmaEFsd28weG9sT1d5V0RRY0Q3Z0dSZVJybURESk5KYXNqXzE?oc=5",
+          "source_level": "news",
+          "summary": "제목 기준: Infineon processes SiC on 300 mm wafers for the first time - electrive.com",
+          "topic_ids": [],
+          "companies": [
+            "infineon"
+          ],
+          "change_candidate": false,
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "title": "인피니언, 최초 300mm 실리콘 카바이드 전력 소자 개발로 이정표 달성 - New Electronics",
+          "date": "2026-11-10",
+          "source": "New Electronics",
+          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQM1dQTkVUS2duSVNWSVhwRDhGRTdjUjNMeW1LblFRRTQ4RE1UbkROUzI5UGczTHl3V1BLZDNhbjRvOHVsaFh1dHREeVJkcTNISmRYUUdOUlA0ZjQ4Y0cxc2FkMC1qb2xVNlRWNURXWHFia1ZuNkt3eTJnakRQU2lnZXZ3VTRpRWkwVHIxVzBLWHlVNnpJZ2s1UkFqQlpVdUJ3NkI0NmlEWUtVZDNHZlRja3VRRGdXYzdDSDZ0SQ?oc=5",
+          "source_level": "news",
+          "summary": "제목 기준: 인피니언, 최초 300mm 실리콘 카바이드 전력 소자 개발로 이정표 달성 - New Electronics",
+          "topic_ids": [],
+          "companies": [
+            "infineon"
+          ],
+          "change_candidate": false,
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "title": "인피니언, 세계 최초 300밀리미터 전력 실리콘 카바이드(SiC) 웨이퍼 생산 시작 - TechPowerUp",
+          "date": "2026-11-09",
+          "source": "TechPowerUp",
+          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPZFRuWWxNMlJtNnJqVlFlMzc3aU5tMDd0RUF2VTJmajZMRy1uTTdFVVJKN19WdFI3TEo4azE0dzFBT1pVVFItamtKRWM0QVFwbkY3dVh1ZGpLTi1jd2xKQ2duS3hOZ3VNcW5kZTY0ZWJ1SDBCaXlZdjFldWdWMk1IMEJ3UV9tRGswOTFXRGZfeXc5VEk1YVZ0QWZIYkRlc1pyVm9TaEpvZXBKbjVabXg4ZWRHZEJEQ3RTTDRPbTRB0gHDAUFVX3lxTE5jeGpsMmJjNlJhZjlRTnRCQk83U2Jvb1o1ZEpMb3dIeGRJOTI2U0pjeDlsLTNLbmxQNVJyQUZRQWFxUWZnWWc1bXRiSHZQdjhpb0NQcExOSmx0dXJEb25DazhBNng5RFRyYnExZ1luamlPc0FWekdDbkpnX2JDeWdOX2VsenBjMExjMjJkaExDdUV0SWJmbmo0dXJ5a2o2MmhJQXVfc2JJMExEd2VQMWxUbFRCRUloTkV1cFNBdkZBUS1pOA?oc=5",
+          "source_level": "news",
+          "summary": "제목 기준: 인피니언, 세계 최초 300밀리미터 전력 실리콘 카바이드(SiC) 웨이퍼 생산 시작 - TechPowerUp",
+          "topic_ids": [],
+          "companies": [
+            "infineon"
+          ],
+          "change_candidate": false,
+          "evidence_status": "title_not_verified"
+        }
+      ],
+      "article_count_sample": 12,
+      "source_counts_sample": {
+        "official": 0,
+        "research": 0,
+        "news": 12
+      },
+      "products": [
+        {
+          "id": "sic-rohm-4036",
+          "company": "ROHM",
+          "part": "SCT4036KWATL",
+          "structure": "Trench SiC MOSFET",
+          "package": "TO-263-7LA",
+          "voltage": {
+            "value": 1200,
+            "unit": "V",
+            "kind": "rating",
+            "condition": "VDS"
+          },
+          "verification": "product_page",
+          "datasheet_revision": null,
+          "architecture": "discrete",
+          "specs": {
+            "rds_on": {
+              "value": 36,
+              "unit": "mΩ",
+              "kind": "typ",
+              "condition": "제품 페이지; VGS/ID 조건은 개별 데이터시트 참조",
+              "test_conditions": {}
+            }
+          },
+          "url": "https://www.rohm.com/products/sic-power-devices/sic-mosfet/sct4036kwa-product"
+        },
+        {
+          "id": "sic-rohm-2080",
+          "company": "ROHM",
+          "part": "SCT2080KEGC11",
+          "structure": "Planar SiC MOSFET",
+          "package": "TO-247N",
+          "voltage": {
+            "value": 1200,
+            "unit": "V",
+            "kind": "rating",
+            "condition": "VDS"
+          },
+          "verification": "product_page",
+          "datasheet_revision": null,
+          "architecture": "discrete",
+          "specs": {
+            "rds_on": {
+              "value": 80,
+              "unit": "mΩ",
+              "kind": "typ",
+              "condition": "제품 페이지; VGS/ID 조건은 개별 데이터시트 참조",
+              "test_conditions": {}
+            }
+          },
+          "url": "https://www.rohm.com/products/sic-power-devices/sic-mosfet/sct2080ke-product"
+        },
+        {
+          "id": "sic-onsemi-ntc020",
+          "company": "onsemi",
+          "part": "NTC020N120SC1",
+          "structure": "SiC MOSFET bare die",
+          "package": "Bare die",
+          "voltage": {
+            "value": 1200,
+            "unit": "V",
+            "kind": "rating",
+            "condition": "V(BR)DSS"
+          },
+          "verification": "datasheet_table_verified",
+          "datasheet_revision": "Rev 2 · Jan 2023",
+          "architecture": "discrete",
+          "specs": {
+            "rds_on": {
+              "value": 20,
+              "unit": "mΩ",
+              "kind": "typ",
+              "condition": "VGS=20V; ID=60A; Tj=25°C",
+              "test_conditions": {
+                "vgs_v": 20,
+                "id_a": 60,
+                "tj_c": 25
+              }
+            },
+            "rds_on_max": {
+              "value": 28,
+              "unit": "mΩ",
+              "kind": "max",
+              "condition": "VGS=20V; ID 조건은 원문 표 확인",
+              "test_conditions": {}
+            }
+          },
+          "url": "https://www.onsemi.com/download/data-sheet/pdf/ntc020n120sc1-d.pdf"
+        },
+        {
+          "id": "sic-onsemi-nvbg160",
+          "company": "onsemi",
+          "part": "NVBG160N120SC1",
+          "structure": "SiC MOSFET",
+          "package": "D2PAK-7L",
+          "voltage": {
+            "value": 1200,
+            "unit": "V",
+            "kind": "rating",
+            "condition": "V(BR)DSS"
+          },
+          "verification": "product_page",
+          "datasheet_revision": null,
+          "architecture": "discrete",
+          "specs": {
+            "rds_on": {
+              "value": 160,
+              "unit": "mΩ",
+              "kind": "typ",
+              "condition": "제조사 데이터시트 특징란; 상세 ID/Tj 확인 필요",
+              "test_conditions": {}
+            },
+            "rds_on_max": {
+              "value": 224,
+              "unit": "mΩ",
+              "kind": "max",
+              "condition": "VGS=20V; 상세 ID/Tj 확인 필요",
+              "test_conditions": {}
+            },
+            "qg": {
+              "value": 33.8,
+              "unit": "nC",
+              "kind": "typ",
+              "condition": "제조사 데이터시트 특징란; VDS/ID 조건 확인 필요",
+              "test_conditions": {}
+            }
+          },
+          "url": "https://www.onsemi.com/pdf/datasheet/nvbg160n120sc1-d.pdf"
+        }
+      ],
+      "product_count": 4,
+      "companies": [
+        "ROHM",
+        "onsemi"
+      ],
+      "competitor_mentions": [
+        {
+          "id": "infineon",
+          "name": "Infineon",
+          "mention_count_sample": 6,
+          "official_count_sample": 0
+        },
+        {
+          "id": "onsemi",
+          "name": "onsemi",
+          "mention_count_sample": 2,
+          "official_count_sample": 0
+        },
+        {
+          "id": "wolfspeed",
+          "name": "Wolfspeed",
+          "mention_count_sample": 1,
+          "official_count_sample": 0
+        }
+      ],
+      "weekly_observations": [
+        {
+          "week": "2026-W46",
+          "complete_week": true,
+          "week_to_date": "2026-11-15",
+          "category_sample_count": 18,
+          "topic_title_matches": 1,
+          "topic_official_matches": 0
+        }
+      ],
+      "datasheet_table_verified_count": 1,
+      "structured_test_conditions_count": 1
+    },
+    {
+      "category": "IGBT",
+      "intro": "Field-stop·Trench 셀, 양극성 캐리어 손실 특성",
+      "physics": [
+        "VCE(sat) vs Eoff",
+        "SCWT",
+        "Turn-off tail",
+        "FRD"
+      ],
+      "watch": [
+        "Field-stop profile",
+        "Lifetime control",
+        "Trench cell 설계"
+      ],
+      "topics": [
+        {
+          "id": "igbt-loss",
+          "name": "VCE(sat) · Eoff",
+          "simple": "도통 손실과 Turn-off 손실의 균형",
+          "why": "VCE(sat), Eoff는 IC·Tj·VGE·게이트 저항에 따라 달라집니다.",
+          "evidence_count_sample": 0,
+          "evidence": []
+        },
+        {
+          "id": "igbt-field",
+          "name": "Field-stop / Trench",
+          "simple": "셀 및 Field-stop 구조",
+          "why": "공식 구조 표기와 실제 전기적 특성은 구분하여 읽어야 합니다.",
+          "evidence_count_sample": 6,
+          "evidence": [
+            {
+              "title": "얕은 에미터 트렌치 제어 P-컬럼을 갖는 최적화된 협폭 메사 슈퍼정션 트렌치 IGBT",
+              "date": "2026-10-01",
+              "source": "Semiconductor Science and Technology",
+              "url": "https://doi.org/10.1088/1361-6641/aeb327",
+              "kind": "paper_metadata",
+              "confidence": "title_keyword_match"
+            },
+            {
+              "title": "Low Loss and EMI Noise Split-Gate Trench IGBT With Self-Powered Voltage Source",
+              "date": "2026-06-01",
+              "source": "IEEE Electron Device Letters",
+              "url": "https://doi.org/10.1109/led.2026.3683787",
+              "kind": "paper_metadata",
+              "confidence": "title_keyword_match"
+            },
+            {
+              "title": "A Novel Trench IGBT With Shielding Hole Path for Low EMI Noise",
+              "date": "2026-04-01",
+              "source": "IEEE Transactions on Electron Devices",
+              "url": "https://doi.org/10.1109/ted.2026.3669469",
+              "kind": "paper_metadata",
+              "confidence": "title_keyword_match"
+            },
+            {
+              "title": "Numerical Analysis of Hydrogen Implant Process on Performance of Field-Stop-IGBT",
+              "date": "2026-03-01",
+              "source": "IEEE Transactions on Device and Materials Reliability",
+              "url": "https://doi.org/10.1109/tdmr.2026.3651614",
+              "kind": "paper_metadata",
+              "confidence": "title_keyword_match"
+            },
+            {
+              "title": "Improved thermoreflectance imaging of trench IGBT via focus and illumination optimized reconstruction",
+              "date": "2026-01-01",
+              "source": "Microelectronics Reliability",
+              "url": "https://doi.org/10.1016/j.microrel.2025.115952",
+              "kind": "paper_metadata",
+              "confidence": "title_keyword_match"
+            }
+          ]
+        },
+        {
+          "id": "igbt-short",
+          "name": "SCWT · Ruggedness",
+          "simple": "단락·파괴 내량",
+          "why": "제조사별 단락 내량 수치는 VDC·Tj·구동 조건이 맞아야 합니다.",
+          "evidence_count_sample": 6,
+          "evidence": [
+            {
+              "title": "ROHM, 4세대 650V IGBT 출시 및 단락 내량 특성 발표",
+              "date": "2026-08-25",
+              "source": "ROHM Newsroom",
+              "url": "https://www.rohm.com/news-detail?defaultGroupId=false&news-title=2026-08-25_news_igbt",
+              "kind": "manufacturer_announcement",
+              "confidence": "title_keyword_match"
+            },
+            {
+              "title": "Investigations on the degradation of IGBT under repetitive short-circuit tests",
+              "date": "2026-10-31",
+              "source": "Microelectronics Reliability",
+              "url": "https://doi.org/10.1016/j.microrel.2026.116350",
+              "kind": "paper_metadata",
+              "confidence": "title_keyword_match"
+            },
+            {
+              "title": "Dummy trench gate design for enhancing short-circuit capability in 1200V IGBT",
+              "date": "2026-06-01",
+              "source": "IET Conference Proceedings",
+              "url": "https://doi.org/10.1049/icp.2026.1928",
+              "kind": "paper_metadata",
+              "confidence": "title_keyword_match"
+            },
+            {
+              "title": "A novel collector-side injection-enhanced reverse-conducting IGBT integrated Si/SiGe heterojunction diode for increased short-circuit property",
+              "date": "2026-02-19",
+              "source": "Micro and Nanostructures",
+              "url": "https://doi.org/10.1016/j.micrna.2026.208615",
+              "kind": "paper_metadata",
+              "confidence": "title_keyword_match"
+            },
+            {
+              "title": "Active Gate Circuit for Mitigating Gate Voltage Oscillations during Short Circuit of High Power IGBT",
+              "date": "2026-01-01",
+              "source": "IET Power Electronics",
+              "url": "https://doi.org/10.1049/pel2.70352",
+              "kind": "paper_metadata",
+              "confidence": "title_keyword_match"
+            }
+          ]
+        }
+      ],
+      "articles": [
+        {
+          "title": "Loss Characteristics and Optimization of a High-Power IGBT Phase-Shifted Full-Bridge ZVS Primary Inverter for Electric-Vehicle Wireless Charging",
+          "date": "2026-11-10",
+          "source": "Engineering Research Express",
+          "url": "https://doi.org/10.1088/2631-8695/aec06f",
+          "source_level": "research",
+          "summary": "공개 논문 메타데이터를 확인했습니다. 실험 결과와 데이터는 원문에서 검토해야 합니다.",
+          "topic_ids": [],
+          "companies": [],
+          "change_candidate": false,
+          "evidence_status": "metadata_only"
+        },
+        {
+          "title": "Super-Junction Insulated-Gate Bipolar Transistor with a Vertical Channel Arrangement and a Shielded Floating Charge-Carrier Accumulation Layer",
+          "date": "2026-11-07",
+          "source": "Doklady BGUIR",
+          "url": "https://doi.org/10.35596/1729-7648-2026-24-5-24-32",
+          "source_level": "research",
+          "summary": "공개 논문 메타데이터를 확인했습니다. 실험 결과와 데이터는 원문에서 검토해야 합니다.",
+          "topic_ids": [],
+          "companies": [],
+          "change_candidate": false,
+          "evidence_status": "metadata_only"
+        },
+        {
+          "title": "TD-MSEFormer: temporal dependency multi-scale expert former for IGBT remaining useful life prediction",
+          "date": "2026-11-02",
+          "source": "Scientific Reports",
+          "url": "https://doi.org/10.1038/s41598-026-74967-6",
+          "source_level": "research",
+          "summary": "공개 논문 메타데이터를 확인했습니다. 실험 결과와 데이터는 원문에서 검토해야 합니다.",
+          "topic_ids": [],
+          "companies": [],
+          "change_candidate": false,
+          "evidence_status": "metadata_only"
+        },
+        {
+          "title": "Investigations on the degradation of IGBT under repetitive short-circuit tests",
+          "date": "2026-10-31",
+          "source": "Microelectronics Reliability",
+          "url": "https://doi.org/10.1016/j.microrel.2026.116350",
+          "source_level": "research",
+          "summary": "공개 논문 메타데이터를 확인했습니다. 실험 결과와 데이터는 원문에서 검토해야 합니다.",
+          "topic_ids": [
+            "igbt-short"
+          ],
+          "companies": [],
+          "change_candidate": false,
+          "evidence_status": "metadata_only"
+        },
+        {
+          "title": "Research on the Short-Term Overcurrent Failure Mechanism of Press-Pack IGBT Devices Under MMC Conditions",
+          "date": "2026-10-21",
+          "source": "Electronics",
+          "url": "https://doi.org/10.3390/electronics15204873",
+          "source_level": "research",
+          "summary": "공개 논문 메타데이터를 확인했습니다. 실험 결과와 데이터는 원문에서 검토해야 합니다.",
+          "topic_ids": [],
+          "companies": [],
+          "change_candidate": false,
+          "evidence_status": "metadata_only"
+        },
+        {
+          "title": "Insulated Gate Bipolar Transistor Market Size & Share, 2034 - Fortune Business Insights",
+          "date": "2026-10-26",
+          "source": "Fortune Business Insights",
+          "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOMUotbUpQUE11aFZyQUJPLWJWc1lvSlRrdl9RN1czYWRXbUhtVlI0RURHRld1NkFIdHhvOUQ5LWVsZW1NYmRhMVZXMmM1Y3JyeGJTdjZ2aTAzSmVKZnZpY0ZmTmwwMWtjZHpBd3dsSE5xdmxmLTZjMVpDVkVaVTlHUW5wQmlUSHI1ZkE?oc=5",
+          "source_level": "news",
+          "summary": "제목 기준: Insulated Gate Bipolar Transistor Market Size & Share, 2034 - Fortune Business Insights",
+          "topic_ids": [],
+          "companies": [],
+          "change_candidate": false,
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "title": "IGBT Power Modules Geared for Air Conditioners, Heat Pumps, Home Appliances - Electronic Design",
+          "date": "2026-10-23",
+          "source": "Electronic Design",
+          "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPLTB1UXVkTWwzalhwdzRXS2lhc0xVT0RqUmlsemtaeVFSMkZxdHBpNEE4NHNFT1FSVXB3SWJwSEppZ1I4T05nQVZsMkxreHBzN1pqam51RnlWcFl5MUFLVDdMN2xXSldjb09CcFJRa2w1NnYtWS0tN3JyN1FGa0ZnQTRVTV9ZbmF1d1JIM3FwVWQ2NmN0LXI2NlRxNDRwcUp5NEo2QmtITkQyVTZTZ1d1MWQ2T1htaVZBY0NvU0djRmw3TWY3dVhUTXR5WXpaS2pXT0l0b2JSZW02bWdVa0lhSm8tZGdXSDdhZE9oMzVmaFFCUQ?oc=5",
+          "source_level": "news",
+          "summary": "제목 기준: IGBT Power Modules Geared for Air Conditioners, Heat Pumps, Home Appliances - Electronic Design",
+          "topic_ids": [],
+          "companies": [],
+          "change_candidate": false,
+          "evidence_status": "title_not_verified"
+        }
+      ],
+      "article_count_sample": 7,
+      "source_counts_sample": {
+        "official": 0,
+        "research": 5,
+        "news": 2
+      },
+      "products": [
+        {
+          "id": "igbt-rohm-rgax",
+          "company": "ROHM",
+          "part": "RGAX2TS65EHRC11",
+          "structure": "Field-stop trench IGBT with FRD",
+          "package": "TO-247N",
+          "voltage": {
+            "value": 650,
+            "unit": "V",
+            "kind": "rating",
+            "condition": "VCES"
+          },
+          "verification": "product_page",
+          "datasheet_revision": null,
+          "architecture": "discrete",
+          "specs": {
+            "vce_sat": {
+              "value": 1.55,
+              "unit": "V",
+              "kind": "typ",
+              "condition": "제품 페이지; IC/Tj 조건은 개별 데이터시트 확인",
+              "test_conditions": {}
+            }
+          },
+          "url": "https://www.rohm.com/products/igbt/field-stop-trench-igbt/rgax2ts65ehr-product"
+        },
+        {
+          "id": "igbt-rohm-rgw",
+          "company": "ROHM",
+          "part": "RGW50TS65GC11",
+          "structure": "Field-stop trench IGBT",
+          "package": "TO-247N",
+          "voltage": {
+            "value": 650,
+            "unit": "V",
+            "kind": "rating",
+            "condition": "VCES"
+          },
+          "verification": "product_page",
+          "datasheet_revision": null,
+          "architecture": "discrete",
+          "specs": {
+            "vce_sat": {
+              "value": 1.5,
+              "unit": "V",
+              "kind": "typ",
+              "condition": "제품 페이지; IC/Tj 조건은 개별 데이터시트 확인",
+              "test_conditions": {}
+            }
+          },
+          "url": "https://www.rohm.com/products/igbt/field-stop-trench-igbt/rgw50ts65-product"
+        },
+        {
+          "id": "igbt-rohm-rgtv60",
+          "company": "ROHM",
+          "part": "RGTV60TS65GC11",
+          "structure": "Field-stop trench IGBT",
+          "package": "TO-247N",
+          "voltage": {
+            "value": 650,
+            "unit": "V",
+            "kind": "rating",
+            "condition": "VCES"
+          },
+          "verification": "product_page",
+          "datasheet_revision": null,
+          "architecture": "discrete",
+          "specs": {
+            "vce_sat": {
+              "value": 1.5,
+              "unit": "V",
+              "kind": "typ",
+              "condition": "제품 페이지; IC/Tj/VGE 조건은 데이터시트 확인",
+              "test_conditions": {}
+            }
+          },
+          "url": "https://www.rohm.com/products/igbt/field-stop-trench-igbt/rgtv60ts65-product"
+        },
+        {
+          "id": "igbt-rohm-rgws00",
+          "company": "ROHM",
+          "part": "RGWS00TS65DGC13",
+          "structure": "Field-stop trench IGBT with FRD",
+          "package": "TO-247GE",
+          "voltage": {
+            "value": 650,
+            "unit": "V",
+            "kind": "rating",
+            "condition": "VCES"
+          },
+          "verification": "product_page",
+          "datasheet_revision": null,
+          "architecture": "discrete",
+          "specs": {
+            "vce_sat": {
+              "value": 1.6,
+              "unit": "V",
+              "kind": "typ",
+              "condition": "제품 페이지; IC/Tj/VGE 조건은 데이터시트 확인",
+              "test_conditions": {}
+            }
+          },
+          "url": "https://www.rohm.com/products/igbt/field-stop-trench-igbt/rgws00ts65-product"
+        },
+        {
+          "id": "igbt-rohm-rgw60auto",
+          "company": "ROHM",
+          "part": "RGW60TS65HRC11",
+          "structure": "Field-stop trench IGBT, AEC-Q101",
+          "package": "TO-247N",
+          "voltage": {
+            "value": 650,
+            "unit": "V",
+            "kind": "rating",
+            "condition": "VCES"
+          },
+          "verification": "product_page",
+          "datasheet_revision": null,
+          "architecture": "discrete",
+          "specs": {
+            "vce_sat": {
+              "value": 1.5,
+              "unit": "V",
+              "kind": "typ",
+              "condition": "제품 페이지; IC/Tj/VGE 조건은 데이터시트 확인",
+              "test_conditions": {}
+            }
+          },
+          "url": "https://www.rohm.com/products/igbt/field-stop-trench-igbt/rgw60ts65hr-product"
+        }
+      ],
+      "product_count": 5,
+      "companies": [
+        "ROHM"
+      ],
+      "competitor_mentions": [],
+      "weekly_observations": [
+        {
+          "week": "2026-W46",
+          "complete_week": true,
+          "week_to_date": "2026-11-15",
+          "category_sample_count": 1,
+          "topic_title_matches": 0,
+          "topic_official_matches": 0
+        }
+      ],
+      "datasheet_table_verified_count": 0,
+      "structured_test_conditions_count": 0
+    },
+    {
+      "category": "SJ MOSFET",
+      "intro": "Superjunction Pillar Charge Balance 및 Body Diode",
+      "physics": [
+        "P/N pillar balance",
+        "BVDSS / Ron",
+        "Qrr 및 Softness",
+        "EAS"
+      ],
+      "watch": [
+        "Pillar 농도 경사",
+        "Edge termination",
+        "Reverse recovery"
+      ],
+      "topics": [
+        {
+          "id": "sj-pillar",
+          "name": "Pillar Charge Balance",
+          "simple": "P/N 필라 전하 균형",
+          "why": "P/N 농도 불균형은 BVDSS 및 Ron 트레이드오프와 연관됩니다.",
+          "evidence_count_sample": 10,
+          "evidence": [
+            {
+              "title": "ROHM, 방열 성능을 강조한 600V SJ MOSFET 제품군 출시",
+              "date": "2026-07-09",
+              "source": "ROHM Newsroom",
+              "url": "https://www.rohm.com/news-detail?defaultGroupId=false&news-title=2026-07-09_news_super-junction-mosfet",
+              "kind": "manufacturer_announcement",
+              "confidence": "title_keyword_match"
+            },
+            {
+              "title": "Super Junction MOSFET Market Is Going to Boom |• Infineon Technologies • ON Semiconductor • Nexperia - openPR.com",
+              "date": "2026-11-13",
+              "source": "openPR.com",
+              "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNNEdNWWc4ZFBHWnFyNS1mMFlSUGw4M1hoRjJuWjEtRXozamRhYVRQUlJjekdXTE1TSXJRZnRzQzhnMm4tbXd5V0dBMThZZFJUZlJBYkxJR0hpdzNlRWtDSGNIUkJmalQ1RWhPWUw3QmMtdXlQMW9FYjJpaXQwT1FQQm9nSVh3eTN5QXVqX0w2RnRGNzB3?oc=5",
+              "kind": "news_title_candidate",
+              "confidence": "title_keyword_match"
+            },
+            {
+              "title": "Physical Origin and Mitigation of Output-Capacitance Hysteresis in Superjunction Devices",
+              "date": "2026-11-06",
+              "source": "Semiconductor Science and Technology",
+              "url": "https://doi.org/10.1088/1361-6641/aebef5",
+              "kind": "paper_metadata",
+              "confidence": "title_keyword_match"
+            },
+            {
+              "title": "Low-loss superjunction SiC MOSFET with improved breakdown voltage and reverse-recovery performance",
+              "date": "2026-11-01",
+              "source": "Semiconductor Science and Technology",
+              "url": "https://doi.org/10.1088/1361-6641/aeba0c",
+              "kind": "paper_metadata",
+              "confidence": "title_keyword_match"
+            },
+            {
+              "title": "Simulation study of void impact in trench-filling-epitaxy-based 4H-SiC semi-superjunction schottky rectifiers",
+              "date": "2026-09-28",
+              "source": "Power Electronic Devices and Components",
+              "url": "https://doi.org/10.1016/j.pedc.2026.100153",
+              "kind": "paper_metadata",
+              "confidence": "title_keyword_match"
+            }
+          ]
+        },
+        {
+          "id": "sj-recovery",
+          "name": "Qrr · Softness",
+          "simple": "바디다이오드 역회복",
+          "why": "Qrr 수치 외에 전류·dI/dt·Tj·복구 파형의 부드러움을 확인해야 합니다.",
+          "evidence_count_sample": 3,
+          "evidence": [
+            {
+              "title": "Improvement of Reverse Recovery Characteristic by Extra Etching in Source Electrode for Superjunction MOSFET",
+              "date": "2026-09-01",
+              "source": "IEEE Transactions on Electron Devices",
+              "url": "https://doi.org/10.1109/ted.2026.3718884",
+              "kind": "paper_metadata",
+              "confidence": "title_keyword_match"
+            },
+            {
+              "title": "Anomalous Reverse Recovery of Body Diode in 4H-SiC Superjunction DMOSFET",
+              "date": "2026-05-21",
+              "source": "Key Engineering Materials",
+              "url": "https://doi.org/10.4028/p-xxkc5i",
+              "kind": "paper_metadata",
+              "confidence": "title_keyword_match"
+            },
+            {
+              "title": "A Superjunction MOSFET Exploiting Reverse Active BJT to Reduce Reverse Recovery Charge",
+              "date": "2026-03-01",
+              "source": "IEEE Electron Device Letters",
+              "url": "https://doi.org/10.1109/led.2026.3655759",
+              "kind": "paper_metadata",
+              "confidence": "title_keyword_match"
+            }
+          ]
+        },
+        {
+          "id": "sj-breakdown",
+          "name": "Breakdown · Edge",
+          "simple": "항복 전압과 종단 구조",
+          "why": "Wafer Edge와 Pillar Charge Balance의 내압 경향은 구분해 검토합니다.",
+          "evidence_count_sample": 1,
+          "evidence": [
+            {
+              "title": "Low-loss superjunction SiC MOSFET with improved breakdown voltage and reverse-recovery performance",
+              "date": "2026-11-01",
+              "source": "Semiconductor Science and Technology",
+              "url": "https://doi.org/10.1088/1361-6641/aeba0c",
+              "kind": "paper_metadata",
+              "confidence": "title_keyword_match"
+            }
+          ]
+        }
+      ],
+      "articles": [
+        {
+          "title": "Physical Origin and Mitigation of Output-Capacitance Hysteresis in Superjunction Devices",
+          "date": "2026-11-06",
+          "source": "Semiconductor Science and Technology",
+          "url": "https://doi.org/10.1088/1361-6641/aebef5",
+          "source_level": "research",
+          "summary": "공개 논문 메타데이터를 확인했습니다. 실험 결과와 데이터는 원문에서 검토해야 합니다.",
+          "topic_ids": [
+            "sj-pillar"
+          ],
+          "companies": [],
+          "change_candidate": false,
+          "evidence_status": "metadata_only"
+        },
+        {
+          "title": "Low-loss superjunction SiC MOSFET with improved breakdown voltage and reverse-recovery performance",
+          "date": "2026-11-01",
+          "source": "Semiconductor Science and Technology",
+          "url": "https://doi.org/10.1088/1361-6641/aeba0c",
+          "source_level": "research",
+          "summary": "공개 논문 메타데이터를 확인했습니다. 실험 결과와 데이터는 원문에서 검토해야 합니다.",
+          "topic_ids": [
+            "sj-pillar",
+            "sj-breakdown"
+          ],
+          "companies": [],
+          "change_candidate": false,
+          "evidence_status": "metadata_only"
+        },
+        {
+          "title": "Super Junction MOSFET Market Is Going to Boom |• Infineon Technologies • ON Semiconductor • Nexperia - openPR.com",
+          "date": "2026-11-13",
+          "source": "openPR.com",
+          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNNEdNWWc4ZFBHWnFyNS1mMFlSUGw4M1hoRjJuWjEtRXozamRhYVRQUlJjekdXTE1TSXJRZnRzQzhnMm4tbXd5V0dBMThZZFJUZlJBYkxJR0hpdzNlRWtDSGNIUkJmalQ1RWhPWUw3QmMtdXlQMW9FYjJpaXQwT1FQQm9nSVh3eTN5QXVqX0w2RnRGNzB3?oc=5",
+          "source_level": "news",
+          "summary": "제목 기준: Super Junction MOSFET Market Is Going to Boom |• Infineon Technologies • ON Semiconductor • Nexperia - openPR.com",
+          "topic_ids": [
+            "sj-pillar"
+          ],
+          "companies": [
+            "infineon",
+            "onsemi"
+          ],
+          "change_candidate": false,
+          "evidence_status": "title_not_verified"
+        }
+      ],
+      "article_count_sample": 3,
+      "source_counts_sample": {
+        "official": 0,
+        "research": 2,
+        "news": 1
+      },
+      "products": [
+        {
+          "id": "sj-toshiba-095",
+          "company": "Toshiba",
+          "part": "TK095V65Z5",
+          "structure": "Superjunction MOSFET",
+          "package": "DFN 8×8",
+          "voltage": {
+            "value": 650,
+            "unit": "V",
+            "kind": "rating",
+            "condition": "VDSS"
+          },
+          "verification": "product_page",
+          "datasheet_revision": null,
+          "architecture": "discrete",
+          "specs": {
+            "rds_on_max": {
+              "value": 95,
+              "unit": "mΩ",
+              "kind": "max",
+              "condition": "VGS=10V",
+              "test_conditions": {}
+            },
+            "qg": {
+              "value": 50,
+              "unit": "nC",
+              "kind": "typ",
+              "condition": "VGS=10V",
+              "test_conditions": {}
+            },
+            "qrr": {
+              "value": 580,
+              "unit": "nC",
+              "kind": "typ",
+              "condition": "제품 페이지; 역회복 시험 조건은 데이터시트 확인",
+              "test_conditions": {}
+            }
+          },
+          "url": "https://toshiba.semicon-storage.com/ap-en/semiconductor/product/mosfets/400v-900v-mosfets/detail.TK095V65Z5.html"
+        }
+      ],
+      "product_count": 1,
+      "companies": [
+        "Toshiba"
+      ],
+      "competitor_mentions": [
+        {
+          "id": "infineon",
+          "name": "Infineon",
+          "mention_count_sample": 1,
+          "official_count_sample": 0
+        },
+        {
+          "id": "onsemi",
+          "name": "onsemi",
+          "mention_count_sample": 1,
+          "official_count_sample": 0
+        }
+      ],
+      "weekly_observations": [
+        {
+          "week": "2026-W46",
+          "complete_week": true,
+          "week_to_date": "2026-11-15",
+          "category_sample_count": 1,
+          "topic_title_matches": 1,
+          "topic_official_matches": 0
+        }
+      ],
+      "datasheet_table_verified_count": 0,
+      "structured_test_conditions_count": 0
+    },
+    {
+      "category": "SGT",
+      "intro": "Shielded Gate Trench / Field Plate 기반 저압 MOSFET",
+      "physics": [
+        "RDS(on)",
+        "Qgd, Qoss",
+        "Shield electrode bias",
+        "Cell pitch"
+      ],
+      "watch": [
+        "Gate–shield capacitance",
+        "Split gate 구조",
+        "저압 디바이스 FOM"
+      ],
+      "topics": [
+        {
+          "id": "sgt-shield",
+          "name": "Shield Gate / Field Plate",
+          "simple": "Shield 전극과 게이트 분리",
+          "why": "Cell Pitch와 게이트-드레인 결합 성분이 동적 특성에 영향을 줍니다.",
+          "evidence_count_sample": 3,
+          "evidence": [
+            {
+              "title": "Simulation study on a single-event burnout hardened shielded gate trench MOSFET with a P-type buried layer",
+              "date": "2026-09-01",
+              "source": "Microelectronics Journal",
+              "url": "https://doi.org/10.1016/j.mejo.2026.107283",
+              "kind": "paper_metadata",
+              "confidence": "title_keyword_match"
+            },
+            {
+              "title": "High-performance reverse-blocking carrier stored trench bipolar transistor with split gate and collector trenches",
+              "date": "2026-04-01",
+              "source": "Engineering Research Express",
+              "url": "https://doi.org/10.1088/2631-8695/ae5509",
+              "kind": "paper_metadata",
+              "confidence": "title_keyword_match"
+            },
+            {
+              "title": "A split gate double-channel asymmetric SiC trench MOSFET for improved gate oxide reliability and dynamic characteristics",
+              "date": "2025-11-26",
+              "source": "Scientific Reports",
+              "url": "https://doi.org/10.1038/s41598-025-27655-w",
+              "kind": "paper_metadata",
+              "confidence": "title_keyword_match"
+            }
+          ]
+        },
+        {
+          "id": "sgt-charge",
+          "name": "Qgd · Qoss",
+          "simple": "게이트·출력 전하",
+          "why": "저압 MOSFET의 구동 손실과 스위칭 손실을 함께 살펴봅니다.",
+          "evidence_count_sample": 0,
+          "evidence": []
+        }
+      ],
+      "articles": [],
+      "article_count_sample": 0,
+      "source_counts_sample": {
+        "official": 0,
+        "research": 0,
+        "news": 0
+      },
+      "products": [],
+      "product_count": 0,
+      "companies": [],
+      "competitor_mentions": [],
+      "weekly_observations": [
+        {
+          "week": "2026-W46",
+          "complete_week": true,
+          "week_to_date": "2026-11-15",
+          "category_sample_count": 0,
+          "topic_title_matches": 0,
+          "topic_official_matches": 0
+        }
+      ],
+      "datasheet_table_verified_count": 0,
+      "structured_test_conditions_count": 0
+    }
+  ],
+  "method": "Curated manufacturer specs plus category-matched public article metadata and title-keyword topics.",
+  "warning": "자료는 기술군별 공개 메타데이터와 공식 제품 자료를 함께 보여주는 참고용입니다. 논문/기사와 제품 사이의 인과관계, 성능 개선, 기술력 순위는 검증하지 않았습니다. FOM 숫자는 VGS/ID/Tj 및 정격·통계 기준이 동일한 경우에만 전문가가 원문을 확인한 뒤 비교해야 합니다. 자료 0건은 연구 부재를 의미하지 않습니다. 주차별 자료는 실제 보관된 주차만 표시하며, 업체 이름 언급은 기술력 순위 또는 공식 발표 수가 아닙니다."
+}

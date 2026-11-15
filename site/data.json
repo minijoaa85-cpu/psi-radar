@@ -1,29 +1,300 @@
 {
-  "schema_version": 3,
-  "generated_at": "2026-11-11T23:04:06.721295+00:00",
-  "window_start": "2026-11-03",
-  "paper_window_start": "2026-09-27",
-  "focused_paper_window_start": "2025-11-11",
+  "schema_version": 7,
+  "generated_at": "2026-11-15T23:58:01.896504+00:00",
+  "window_start": "2026-11-07",
+  "paper_window_start": "2026-10-01",
+  "focused_paper_window_start": "2025-11-15",
   "mode": "live_metadata",
   "records": [
     {
-      "id": "b8df51856b30",
+      "id": "d31194275fd4",
+      "kind": "news",
+      "category": "GaN",
+      "title": "Power Integrations Earnings Call: GaN Growth Meets Headwinds - TipRanks",
+      "date": "2026-11-15",
+      "source": "TipRanks",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQVlRyV1pNREYwTWItLVVVbS1IaUNreDZCUlRJSHVHNzduMFBvZkMxMlF1Q0syRGtVbTRIbjJIVUxUNFRxYVJoX0VBSlZOQVBocTJSWjlfQXg1eEJTWmY0alhJR1cwU0x1U2xVZVlFeFRYMTRxUXRxZEF5c1FXbVNINDFKUjdGWWFkemFhY1RESHdsM1lMN1UxVDhRRzNmQXpjRjZ5aUhmM3hZMmg1dWxFcw?oc=5",
+      "topics": [
+        "재무·시장"
+      ],
+      "score": 50,
+      "lookback_days": 7,
+      "summary_ko": "제목에서 확인되는 정보: Power Integrations의 실적 발표에서 GaN 기술의 성장이 여러 도전에 직면하고 있음을 알 수 있다.",
+      "summary_status": "AI 제목 기반·원문 미검증",
+      "evidence": "Google News RSS index",
+      "relevance_score": 18,
+      "relevance_level": "낮음",
+      "relevance_topics": [],
+      "relevance_reasons": [
+        "제목·초록에서 공정/소자 물리 키워드 부족"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "GaN"
+      ],
+      "title_ko": "Power Integrations 실적 발표: GaN 성장에 직면한 역풍",
+      "physics_ko": "원문 검토 전에는 Device Physics 분석 불가"
+    },
+    {
+      "id": "062977c360bf",
+      "kind": "news",
+      "category": "SJ MOSFET",
+      "title": "Super Junction MOSFET Market Is Going to Boom |• Infineon Technologies • ON Semiconductor • Nexperia - openPR.com",
+      "date": "2026-11-13",
+      "source": "openPR.com",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNNEdNWWc4ZFBHWnFyNS1mMFlSUGw4M1hoRjJuWjEtRXozamRhYVRQUlJjekdXTE1TSXJRZnRzQzhnMm4tbXd5V0dBMThZZFJUZlJBYkxJR0hpdzNlRWtDSGNIUkJmalQ1RWhPWUw3QmMtdXlQMW9FYjJpaXQwT1FQQm9nSVh3eTN5QXVqX0w2RnRGNzB3?oc=5",
+      "topics": [
+        "재무·시장"
+      ],
+      "score": 30,
+      "lookback_days": 7,
+      "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
+      "summary_status": "제목 기반·검증 전",
+      "evidence": "Google News RSS index",
+      "relevance_score": 44,
+      "relevance_level": "낮음",
+      "relevance_topics": [
+        "Dynamic / Switching",
+        "Device Structure"
+      ],
+      "relevance_reasons": [
+        "Dynamic / Switching",
+        "Device Structure"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [
+        "infineon",
+        "onsemi"
+      ],
+      "company_attribution": "title_mention_only",
+      "company_source_status": {
+        "infineon": "news_index_unverified",
+        "onsemi": "news_index_unverified"
+      },
+      "device_mentions": [
+        "SJ MOSFET"
+      ]
+    },
+    {
+      "id": "405d81070db1",
+      "kind": "news",
+      "category": "GaN",
+      "title": "Visteon, SHINRY and Infineon collaborate on breakthrough single-stage onboard charger with GaN BDS technology - Electronic Engineering Journal",
+      "date": "2026-11-13",
+      "source": "Electronic Engineering Journal",
+      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQUDc0RGF3SzI1OEVXc2xWcGFsNVlxbzNXd3JlMHdoMjV1aGdSUko2YzRrSXhpUERCQXlkQU9sb09LZUw3Xy0tQVhjUFltQkMwVnlTZmxVWDlvMlFmX3RuSjhfSmo0RlpWYnIyWEtfN0I2V01tcmxnWDY0aTNYRjFPSG9MaXFMSGRTVkRZdS1temdCQVdLRlBoTXhfTUNaMlZuamlCZ2JhMHNlNnRaZDBnRXU2Q296Wi1GMjgzUmEzeFRORkRRNGJWTktvN3p0MlZEc2VpRWdjb1VkYmhaSjE0cXJzRQ?oc=5",
+      "topics": [
+        "일반 기술"
+      ],
+      "score": 50,
+      "lookback_days": 7,
+      "summary_ko": "제목에서 확인되는 정보: Visteon, SHINRY, Infineon이 GaN BDS 기술을 활용한 단일 스테이지 온보드 충전기 개발을 위해 협력하고 있다.",
+      "summary_status": "AI 제목 기반·원문 미검증",
+      "evidence": "Google News RSS index",
+      "companies": [
+        "infineon"
+      ],
+      "company_attribution": "title_mention_only",
+      "company_source_status": {
+        "infineon": "news_index_unverified"
+      },
+      "device_mentions": [
+        "GaN"
+      ],
+      "relevance_score": 31,
+      "relevance_level": "낮음",
+      "relevance_topics": [
+        "Dynamic / Switching"
+      ],
+      "relevance_reasons": [
+        "Dynamic / Switching"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "title_ko": "Visteon, SHINRY, Infineon, GaN BDS 기술 기반 단일 스테이지 온보드 충전기 협력 개발",
+      "physics_ko": "원문 검토 전에는 Device Physics 분석 불가"
+    },
+    {
+      "id": "c35fb26cd153",
       "kind": "news",
       "category": "SiC",
-      "title": "Nexperia expands SiC portfolio with 750V trench MOSFETs for high-efficiency power conversion - Semiconductor Today",
-      "date": "2026-11-11",
-      "source": "Semiconductor Today",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOYVJVTnNmUGdyY0dIUkRVZGhLc2c2Z2dJYW5FRHhvcUZLb19qWkdHcFFyWXBhNFdpN2dYOUZXTUtfTmtJMGs1U3dwUVB1dXU2MW9sRGhsSmFUbk1wTUJJUjN0VDgyTkJCNHpqZG8wQmdJZzAtajdrZ1czTXludnJSaExybw?oc=5",
+      "title": "Electronica: Nexperia adds 750V SiC trench MOSFETs and TOLL packaging - Electronics Weekly",
+      "date": "2026-11-12",
+      "source": "Electronics Weekly",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPZ19wNlM2dnhHVnhLY0NDYmdINEN5eHdvYlRGQ05NM0V2cjFLbGJYcDJ1c3cxeUUwZ0QxR0NpcTFnajZGN1BDYklqRjEtSFZkbXNWbGtGbHJRMmV5UjJDN2lCa1dwTW9xUUZLUFJaeU83US1fSU1TeTVSN1RvSVpiM3FTX0UxYnlUR18zd1NkaTdYMURPWUp4NDdBMGNrYkVCRWNNQTRyeVdLWEk1ZmhUMzJLVzJySXBlcGxDcUlpcEFneUFlM0FRVFdGU2x3TEs3Tl8wV1Rpbw?oc=5",
       "topics": [
         "공정·구조"
       ],
       "score": 50,
       "lookback_days": 7,
-      "summary_ko": "제목에서 확인되는 정보: Nexperia가 고효율 전력 변환을 위한 750V 트렌치 MOSFET을 통해 SiC 제품군을 확장했다.",
+      "summary_ko": "제목에서 확인되는 정보: Nexperia가 750V SiC 트렌치 MOSFET과 TOLL 패키징을 새롭게 출시했다.",
       "summary_status": "AI 제목 기반·원문 미검증",
       "evidence": "Google News RSS index",
-      "title_ko": "Nexperia, 고효율 전력 변환용 750V 트렌치 MOSFET으로 SiC 포트폴리오 확장 - Semiconductor Today",
+      "relevance_score": 31,
+      "relevance_level": "낮음",
+      "relevance_topics": [
+        "Device Structure"
+      ],
+      "relevance_reasons": [
+        "Device Structure"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "SiC"
+      ],
+      "title_ko": "Electronica: Nexperia, 750V SiC 트렌치 MOSFET 및 TOLL 패키징 추가",
       "physics_ko": "원문 검토 전에는 Device Physics 분석 불가"
+    },
+    {
+      "id": "2b5e2c66c5c9",
+      "kind": "news",
+      "category": "GaN",
+      "title": "Navitas Semiconductor sues Renesas over new gallium nitride products - TipRanks",
+      "date": "2026-11-12",
+      "source": "TipRanks",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOUWNlOE9mbG1TQzFKMHJCNXl1RDh4SVlIdUhXMDd3NjlKcHNYVnBlblBTMlNtSTctQU1iNEJBb1VUcmRMcjhKRk1zRW40LThqX0I1bXhVN0xVN0lPbldkLUlILU9CS0ZEYzNZNzk5MDZRMk1lNkgtVmZVX042TDZvbFo0d01wTW5mNXU1U0RsMnE2d1V6NFk2ZG9QeUlaWDBFS3Zvb01OX2RKQTlZald5Tk8tOTVNY3VfalE?oc=5",
+      "topics": [
+        "일반 기술"
+      ],
+      "score": 50,
+      "lookback_days": 7,
+      "summary_ko": "제목에서 확인되는 정보: Navitas Semiconductor가 Renesas의 새로운 GaN 제품과 관련하여 소송을 제기했다.",
+      "summary_status": "AI 제목 기반·원문 미검증",
+      "evidence": "Google News RSS index",
+      "relevance_score": 18,
+      "relevance_level": "낮음",
+      "relevance_topics": [],
+      "relevance_reasons": [
+        "제목·초록에서 공정/소자 물리 키워드 부족"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [
+        "navitas"
+      ],
+      "company_attribution": "title_mention_only",
+      "company_source_status": {
+        "navitas": "news_index_unverified"
+      },
+      "device_mentions": [
+        "GaN"
+      ],
+      "title_ko": "Navitas Semiconductor, Renesas의 새로운 갈륨 나이트라이드 제품 관련 소송 제기",
+      "physics_ko": "원문 검토 전에는 Device Physics 분석 불가"
+    },
+    {
+      "id": "a7c49fa2b64b",
+      "kind": "news",
+      "category": "SiC",
+      "title": "onsemi unveils fourth-generation SiC platform targeting AI, EV and energy applications - New Electronics",
+      "date": "2026-11-12",
+      "source": "New Electronics",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQbmNuc0d0Qzg5OXRIZmJMYTR1WnVtd19QdS1Xd0ItUl9hR3pRdnRPSkFaeGZxcDVHOHZiYmVaRzVIWHY4YWhzWFNPOE5rckI5M1o4TW9aTlliRkc4N1VkR2dPMlY2ejUwWUZkUEkwSG1mOVFpX255N2M2b0dLRWt5MlpQWmNYZHVXQzFPSzE0REdJcWRqM0VVaDd0dlV3RjJlUU5BQnBDTDg2Y3d6WGN6bXRlcG5HbUxDNUxHbTdCSklldzAwOUswQklCNA?oc=5",
+      "topics": [
+        "일반 기술"
+      ],
+      "score": 40,
+      "lookback_days": 7,
+      "summary_ko": "제목에서 확인되는 정보: 온세미가 AI, 전기차 및 에너지 응용을 목표로 하는 4세대 SiC 플랫폼을 발표했다.",
+      "summary_status": "AI 제목 기반·원문 미검증",
+      "evidence": "Google News RSS index",
+      "companies": [
+        "onsemi"
+      ],
+      "company_attribution": "title_mention_only",
+      "company_source_status": {
+        "onsemi": "news_index_unverified"
+      },
+      "device_mentions": [
+        "SiC"
+      ],
+      "relevance_score": 18,
+      "relevance_level": "낮음",
+      "relevance_topics": [],
+      "relevance_reasons": [
+        "제목·초록에서 공정/소자 물리 키워드 부족"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "title_ko": "온세미, AI·전기차·에너지용 4세대 SiC 플랫폼 공개",
+      "physics_ko": "원문 검토 전에는 Device Physics 분석 불가"
+    },
+    {
+      "id": "7b63f0dc927e",
+      "kind": "news",
+      "category": "GaN",
+      "title": "Navitas Semiconductor files new patent lawsuit over Renesas GaN products after stock ends session down 5% - Traders Union",
+      "date": "2026-11-12",
+      "source": "Traders Union",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNX3NIM3h6WHU0Wnc0dkVuWkJFUzd6ZTRFcEFwWWU2OW9XdHpqNEV3Qks4azZrbUo2VVRYUnAyM0prUk1Ibzl5NXlEZFp3Wmk0Wk9BTGpCYjd6d0l0azdkcEFOVnFyU2lvSTlTSFlNZXRxY01TN3l1UFZaZ2NBVWhNc2JTU1dNbUpmTGc3eGdtYWVTZmlJeWstX2RBS3Q?oc=5",
+      "topics": [
+        "일반 기술"
+      ],
+      "score": 50,
+      "lookback_days": 7,
+      "summary_ko": "제목에서 확인되는 정보: Navitas Semiconductor가 Renesas의 GaN 제품에 대해 새로운 특허 소송을 제기했으며, 이 소식 후 주가가 5% 하락했다.",
+      "summary_status": "AI 제목 기반·원문 미검증",
+      "evidence": "Google News RSS index",
+      "companies": [
+        "navitas"
+      ],
+      "company_attribution": "title_mention_only",
+      "company_source_status": {
+        "navitas": "news_index_unverified"
+      },
+      "device_mentions": [
+        "GaN"
+      ],
+      "relevance_score": 18,
+      "relevance_level": "낮음",
+      "relevance_topics": [],
+      "relevance_reasons": [
+        "제목·초록에서 공정/소자 물리 키워드 부족"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "title_ko": "Navitas Semiconductor, Renesas GaN 제품 관련 특허 소송 제기 후 주가 5% 하락",
+      "physics_ko": "원문 검토 전에는 Device Physics 분석 불가"
+    },
+    {
+      "id": "3af29a2b96c0",
+      "kind": "news",
+      "category": "SiC",
+      "title": "Infineon Produces Functional SiC Power Semiconductors on 300 mm Wafers for the First Time - igor´sLAB",
+      "date": "2026-11-11",
+      "source": "igor´sLAB",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNRW5QMEJ5RWVybXRVc29NUkwzZXFRZnhhYmpEbGtvZkhpWHZVOTk1a29XcS1zUWhSbG1ZTWpEMU91UXB1ZzJfM3pwcHlHazFQY0hFd2J5OXZzZXVWMXM3aUYzcDliS3padnJyWUNIUHktX3lkN3ZuR0x3UGM0bkFHcG1aaGppR183Unk3dlpmXzFxcExNLWc?oc=5",
+      "topics": [
+        "공정·구조"
+      ],
+      "score": 40,
+      "lookback_days": 7,
+      "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
+      "summary_status": "제목 기반·검증 전",
+      "evidence": "Google News RSS index",
+      "relevance_score": 44,
+      "relevance_level": "낮음",
+      "relevance_topics": [
+        "Dynamic / Switching",
+        "Process / Materials"
+      ],
+      "relevance_reasons": [
+        "Dynamic / Switching",
+        "Process / Materials"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [
+        "infineon"
+      ],
+      "company_attribution": "title_mention_only",
+      "company_source_status": {
+        "infineon": "news_index_unverified"
+      },
+      "device_mentions": [
+        "SiC"
+      ]
     },
     {
       "id": "32b78fd16668",
@@ -41,46 +312,203 @@
       "summary_ko": "제목에서 확인되는 정보: 인피니언이 세계 최초로 12인치 SiC 전력 반도체 웨이퍼를 공개했으나, 양산 시기는 공개하지 않았다.",
       "summary_status": "AI 제목 기반·원문 미검증",
       "evidence": "Google News RSS index",
+      "companies": [
+        "infineon"
+      ],
+      "company_attribution": "title_mention_only",
+      "company_source_status": {
+        "infineon": "news_index_unverified"
+      },
+      "device_mentions": [
+        "SiC"
+      ],
       "title_ko": "인피니언, 세계 최초 12인치 SiC 전력 반도체 웨이퍼 공개; 양산 시기는 미공개 - BigGo Finance",
-      "physics_ko": "원문 검토 전에는 Device Physics 분석 불가"
+      "physics_ko": "원문 검토 전에는 Device Physics 분석 불가",
+      "relevance_score": 44,
+      "relevance_level": "낮음",
+      "relevance_topics": [
+        "Dynamic / Switching",
+        "Process / Materials"
+      ],
+      "relevance_reasons": [
+        "Dynamic / Switching",
+        "Process / Materials"
+      ],
+      "relevance_method": "metadata-rule-v1"
     },
     {
-      "id": "120e31c22621",
+      "id": "539e3d659e2d",
       "kind": "news",
-      "category": "GaN",
-      "title": "Mitsubishi Electric Achieves World’s First Demonstration of Suppression of Frequency Dispersion in GaN Transistors Using GaN Substrates - WebWire",
-      "date": "2026-11-10",
-      "source": "WebWire",
-      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9GU0Q3X1NQbHR6ZVNjSHhPVUExdnBQV195RkJMLTJnN1VpM0E0ZGROdXBBSnJrSTlCNHR1Rmh0U2ZfTVo0MlRmSWp3Snd6VkI1VUMwQlc5WHptcENuakNKbTR4TEYtck9t?oc=5",
+      "category": "SiC",
+      "title": "New 300-mm silicon carbide wafers could boost production of EV chips - Evs | Electric Vehicles Nieuws - Head Topics",
+      "date": "2026-11-11",
+      "source": "Head Topics",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNa1pvN2loR0h5RGpnd3pIZzdCSm9sU2gyd0xjUENob2lQT3E2YU9EUFUxaHo4TzREZjlrN2lacnRiYzdCWUdSMjJWV1RxWWg0blhMajNHMmhDTUY3OUIwdE93VlNpOXRZTUtoejJvbXBFNkd0OEdKUTFteFlfWUpfUGpjUmNqbWxNS04tS29RWktNWUQyRE5Ya1Q2Q1NKRVM0?oc=5",
+      "topics": [
+        "공정·구조"
+      ],
+      "score": 40,
+      "lookback_days": 7,
+      "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
+      "summary_status": "제목 기반·검증 전",
+      "evidence": "Google News RSS index",
+      "relevance_score": 31,
+      "relevance_level": "낮음",
+      "relevance_topics": [
+        "Process / Materials"
+      ],
+      "relevance_reasons": [
+        "Process / Materials"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "SiC"
+      ]
+    },
+    {
+      "id": "c582a65ad15b",
+      "kind": "news",
+      "category": "SiC",
+      "title": "Why Infineon’s SiC Milestone Matters for Chip Production - Manufacturing Digital",
+      "date": "2026-11-11",
+      "source": "Manufacturing Digital",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOYllOX3F4Wk1Xd2N2NlFsRUlUa0Z4Rnc0SU5QUXc0NHVzMk50Um1JMENqcWpQbjRJNHRWSDYxZXBMNjkyVmJ5dURlZV8xV1I2VTdXNGdtaHc5bEJGYnZfVEZ1WmlyRWZXTVRhNmRqZTlBLVN0em0wOHpGdEM2M2R5d0xfOEJaV0I4ejgyWl9mNmF6Z0pha1JQR0s0WWd6UQ?oc=5",
       "topics": [
         "일반 기술"
       ],
-      "score": 50,
+      "score": 40,
       "lookback_days": 7,
-      "summary_ko": "제목에서 확인되는 정보: 미쓰비시 전기가 GaN 기판을 사용하여 GaN 트랜지스터의 주파수 분산 억제에 세계 최초로 성공했다는 내용이다.",
-      "summary_status": "AI 제목 기반·원문 미검증",
+      "summary_ko": "제목만 확보한 공개 뉴스입니다. 기업의 기술·제품 발표 여부는 원문에서 확인해야 합니다.",
+      "summary_status": "뉴스 색인·원문 검증 전",
       "evidence": "Google News RSS index",
-      "title_ko": "미쓰비시 전기, GaN 기판을 이용한 GaN 트랜지스터 주파수 분산 억제 세계 최초 시연",
-      "physics_ko": "원문 검토 전에는 Device Physics 분석 불가"
+      "companies": [
+        "infineon"
+      ],
+      "company_attribution": "title_mention_only",
+      "company_source_status": {
+        "infineon": "news_index_unverified"
+      },
+      "device_mentions": [
+        "SiC"
+      ],
+      "relevance_score": 31,
+      "relevance_level": "낮음",
+      "relevance_topics": [
+        "Dynamic / Switching"
+      ],
+      "relevance_reasons": [
+        "Dynamic / Switching"
+      ],
+      "relevance_method": "metadata-rule-v1"
     },
     {
-      "id": "fe93b2e2fa57",
+      "id": "096567f1c5bf",
       "kind": "news",
-      "category": "GaN",
-      "title": "Mitsubishi Electric Says GaN-on-GaN Transistors Sharply Curb Frequency Dispersion, but Gives No Figures - XenoSpectrum",
-      "date": "2026-11-10",
-      "source": "XenoSpectrum",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1pX1Z3UG1wTDZMTzAzam8zc2VCNHE5d2xFZ3ZrdkZKdVBaNGFYaWNjeHk4NnFycm11ZHpLWF9CQ3U4UlNCVFJIWjV5TXpMLS1XZVBtb2pwQjV5NjV3cGY2WDA1ZVBUQjB0SE10MHFiQkpydU1yRU1LNmx3UGtCTWM?oc=5",
+      "category": "SiC",
+      "title": "Automotive Tech Forum: The Current State of Sic in EV Design and How It’s Evolving - EE Times",
+      "date": "2026-11-11",
+      "source": "EE Times",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNM3FqM1JvM2I1SGt6MWlNQktjZWZDR3kzZnVQbWNMMVd1eGY4OFItdm9jNUhwNS1adnBSOHV3M0I4enJRcHlXaFBrMG9HM0lET0NORUs2eGtDTWJHamxtUXpGanNsVkVqczdxbE8tdnNVdTJ5UDVKNDRDdDFGdWkwR3gtZ0lBTlBYVi1Wck5sRmFVaGc2aTJLWlhuVUd3amZCdGp4Ynl2SFo?oc=5",
       "topics": [
         "일반 기술"
       ],
-      "score": 50,
+      "score": 40,
       "lookback_days": 7,
-      "summary_ko": "제목에서 확인되는 정보: 미쓰비시 전기는 GaN-on-GaN 트랜지스터가 주파수 분산을 크게 줄인다고 발표했으나 구체적인 수치는 제공하지 않았다.",
-      "summary_status": "AI 제목 기반·원문 미검증",
+      "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
+      "summary_status": "제목 기반·검증 전",
       "evidence": "Google News RSS index",
-      "title_ko": "미쓰비시 전기, GaN-on-GaN 트랜지스터가 주파수 분산을 크게 억제한다고 발표했으나 수치는 제공하지 않음 - XenoSpectrum",
-      "physics_ko": "원문 검토 전에는 Device Physics 분석 불가"
+      "relevance_score": 18,
+      "relevance_level": "낮음",
+      "relevance_topics": [],
+      "relevance_reasons": [
+        "제목·초록에서 공정/소자 물리 키워드 부족"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "SiC"
+      ]
+    },
+    {
+      "id": "d345e6aba306",
+      "kind": "paper",
+      "category": "IGBT",
+      "title": "Loss Characteristics and Optimization of a High-Power IGBT Phase-Shifted Full-Bridge ZVS Primary Inverter for Electric-Vehicle Wireless Charging",
+      "date": "2026-11-10",
+      "source": "Engineering Research Express",
+      "url": "https://doi.org/10.1088/2631-8695/aec06f",
+      "doi": "10.1088/2631-8695/aec06f",
+      "topics": [
+        "일반 기술"
+      ],
+      "score": 30,
+      "abstract": "Abstract Buried wireless charging electric-vehicle inverter needs to achieve ZVS in face of adverse factors such as offset of primary inverter, variations of primary and mutual inductance, and variations in loading conditions. In this paper, analysis on the effects of a 10 kW IGBT phase-shifted full-bridge inverter with series-series resonant link on buried electric-vehicle wireless charging will be conducted. The loss model for the IGBT inverter, which integrates IGBT turn-off tail energy dissipation, partial ZVS operations, diode freewheeling, dead-time circulation and material losses of coil, ferrite and shielding materials, can be built based on publicly available datasheet and prototype specifications. Afterward, a segmented floating frequency phase-shift controller is employed to compensate for the drifting of resonant frequency and maintain ZVS operations with L_p-M mismatch. The performance of the proposed approach is evaluated through publicly available parameter simulation, benchmark analysis and controller logic CIL validation. The proposed approach increases the simulated ZVS coverage from 62% to 90%, cuts down the total rated losses by 17.0%, improves the peak efficiency to 94.7% and reduces the predicted maximum junction temperature by about 17°C.",
+      "summary_ko": "공개 초록을 확인해 주요 결론을 검토하세요.",
+      "summary_status": "초록 기반·원문 미검증",
+      "lookback_days": 365,
+      "evidence": "OpenAlex journal metadata",
+      "source_type": "journal",
+      "metadata_provider": "OpenAlex",
+      "relevance_score": 70,
+      "relevance_level": "높음",
+      "relevance_topics": [
+        "Dynamic / Switching",
+        "Data Center / Power Conversion"
+      ],
+      "relevance_reasons": [
+        "Dynamic / Switching",
+        "Data Center / Power Conversion"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
+    },
+    {
+      "id": "375247e3ae11",
+      "kind": "news",
+      "category": "SiC",
+      "title": "Infineon processes SiC on 300 mm wafers for the first time - electrive.com",
+      "date": "2026-11-10",
+      "source": "electrive.com",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNblpCQkJvVTE0bXlveE93OVpYdXB3Qk1MVE9IYmJ6MmdxaWMxYzBIcFlBdEFvLUJTb2FHbUJ3RzQ5Rzc3bTIyQU41TXYyQnFRZTZUQkpTaDJSY28wYktIcHNUNnZCcEQwdDNkSW01R2dRWnE0OHhjZldmaEFsd28weG9sT1d5V0RRY0Q3Z0dSZVJybURESk5KYXNqXzE?oc=5",
+      "topics": [
+        "공정·구조"
+      ],
+      "score": 40,
+      "lookback_days": 7,
+      "summary_ko": "제목만 확보한 공개 뉴스입니다. 기업의 기술·제품 발표 여부는 원문에서 확인해야 합니다.",
+      "summary_status": "뉴스 색인·원문 검증 전",
+      "evidence": "Google News RSS index",
+      "companies": [
+        "infineon"
+      ],
+      "company_attribution": "title_mention_only",
+      "company_source_status": {
+        "infineon": "news_index_unverified"
+      },
+      "device_mentions": [
+        "SiC"
+      ],
+      "relevance_score": 44,
+      "relevance_level": "낮음",
+      "relevance_topics": [
+        "Dynamic / Switching",
+        "Process / Materials"
+      ],
+      "relevance_reasons": [
+        "Dynamic / Switching",
+        "Process / Materials"
+      ],
+      "relevance_method": "metadata-rule-v1"
     },
     {
       "id": "93f7258740dc",
@@ -99,7 +527,98 @@
       "summary_status": "AI 제목 기반·원문 미검증",
       "evidence": "Google News RSS index",
       "title_ko": "인피니언, 최초 300mm 실리콘 카바이드 전력 소자 개발로 이정표 달성 - New Electronics",
-      "physics_ko": "원문 검토 전에는 Device Physics 분석 불가"
+      "physics_ko": "원문 검토 전에는 Device Physics 분석 불가",
+      "relevance_score": 31,
+      "relevance_level": "낮음",
+      "relevance_topics": [
+        "Dynamic / Switching"
+      ],
+      "relevance_reasons": [
+        "Dynamic / Switching"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [
+        "infineon"
+      ],
+      "company_attribution": "title_mention_only",
+      "company_source_status": {
+        "infineon": "news_index_unverified"
+      },
+      "device_mentions": [
+        "SiC"
+      ]
+    },
+    {
+      "id": "120e31c22621",
+      "kind": "news",
+      "category": "GaN",
+      "title": "Mitsubishi Electric Achieves World’s First Demonstration of Suppression of Frequency Dispersion in GaN Transistors Using GaN Substrates - WebWire",
+      "date": "2026-11-10",
+      "source": "WebWire",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9GU0Q3X1NQbHR6ZVNjSHhPVUExdnBQV195RkJMLTJnN1VpM0E0ZGROdXBBSnJrSTlCNHR1Rmh0U2ZfTVo0MlRmSWp3Snd6VkI1VUMwQlc5WHptcENuakNKbTR4TEYtck9t?oc=5",
+      "topics": [
+        "일반 기술"
+      ],
+      "score": 50,
+      "lookback_days": 7,
+      "summary_ko": "제목에서 확인되는 정보: 미쓰비시 전기가 GaN 기판을 사용하여 GaN 트랜지스터의 주파수 분산 억제에 세계 최초로 성공했다는 내용이다.",
+      "summary_status": "AI 제목 기반·원문 미검증",
+      "evidence": "Google News RSS index",
+      "title_ko": "미쓰비시 전기, GaN 기판을 이용한 GaN 트랜지스터 주파수 분산 억제 세계 최초 시연",
+      "physics_ko": "원문 검토 전에는 Device Physics 분석 불가",
+      "relevance_score": 18,
+      "relevance_level": "낮음",
+      "relevance_topics": [],
+      "relevance_reasons": [
+        "제목·초록에서 공정/소자 물리 키워드 부족"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [
+        "mitsubishi"
+      ],
+      "company_attribution": "title_mention_only",
+      "company_source_status": {
+        "mitsubishi": "news_index_unverified"
+      },
+      "device_mentions": [
+        "GaN"
+      ]
+    },
+    {
+      "id": "fe93b2e2fa57",
+      "kind": "news",
+      "category": "GaN",
+      "title": "Mitsubishi Electric Says GaN-on-GaN Transistors Sharply Curb Frequency Dispersion, but Gives No Figures - XenoSpectrum",
+      "date": "2026-11-10",
+      "source": "XenoSpectrum",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1pX1Z3UG1wTDZMTzAzam8zc2VCNHE5d2xFZ3ZrdkZKdVBaNGFYaWNjeHk4NnFycm11ZHpLWF9CQ3U4UlNCVFJIWjV5TXpMLS1XZVBtb2pwQjV5NjV3cGY2WDA1ZVBUQjB0SE10MHFiQkpydU1yRU1LNmx3UGtCTWM?oc=5",
+      "topics": [
+        "일반 기술"
+      ],
+      "score": 50,
+      "lookback_days": 7,
+      "summary_ko": "제목에서 확인되는 정보: 미쓰비시 전기는 GaN-on-GaN 트랜지스터가 주파수 분산을 크게 줄인다고 발표했으나 구체적인 수치는 제공하지 않았다.",
+      "summary_status": "AI 제목 기반·원문 미검증",
+      "evidence": "Google News RSS index",
+      "title_ko": "미쓰비시 전기, GaN-on-GaN 트랜지스터가 주파수 분산을 크게 억제한다고 발표했으나 수치는 제공하지 않음 - XenoSpectrum",
+      "physics_ko": "원문 검토 전에는 Device Physics 분석 불가",
+      "relevance_score": 18,
+      "relevance_level": "낮음",
+      "relevance_topics": [],
+      "relevance_reasons": [
+        "제목·초록에서 공정/소자 물리 키워드 부족"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [
+        "mitsubishi"
+      ],
+      "company_attribution": "title_mention_only",
+      "company_source_status": {
+        "mitsubishi": "news_index_unverified"
+      },
+      "device_mentions": [
+        "GaN"
+      ]
     },
     {
       "id": "0ec53ffb16c4",
@@ -116,26 +635,58 @@
       "lookback_days": 7,
       "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
       "summary_status": "제목 기반·검증 전",
-      "evidence": "Google News RSS index"
+      "evidence": "Google News RSS index",
+      "relevance_score": 18,
+      "relevance_level": "낮음",
+      "relevance_topics": [],
+      "relevance_reasons": [
+        "제목·초록에서 공정/소자 물리 키워드 부족"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [
+        "onsemi"
+      ],
+      "company_attribution": "title_mention_only",
+      "company_source_status": {
+        "onsemi": "news_index_unverified"
+      },
+      "device_mentions": [
+        "SiC"
+      ]
     },
     {
-      "id": "07a72d51f7fa",
+      "id": "9cab19e9247b",
       "kind": "news",
       "category": "SiC",
-      "title": "electronica: Infineon's Seriously SiC 300-mm Wafer on Display - Electronic Design",
-      "date": "2026-11-09",
-      "source": "Electronic Design",
-      "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxQM2JyM0lDLVNyV3hfS3JIUHFuVEhSQmJlZ21vbERtNmptUkNWOUpmdnUxWlZPU0RMM2RsdEQwdXlzb1pCbGF2NUtSdnJWUFBMRGlialNRRloyX3prdGM4Z1lYZGJrNDlHRnVIdTdjb0FZbFRCaWRpMkVUU0oxN2Z5aWVWNDBQUTZfN3I0em5RbjJoMVRwNnpHb0tLS2VTQ2lmWmpULXlxM0JvODFnUTJPckpGaVF3NWNpcXBNRXhzbXBZQzBiemFYWHdiei1qT2NrRjRPMm5TazV1YUxWbjRJQWI5SWMtRUczSjJTcGdn?oc=5",
+      "title": "Wolfspeed (WOLF) Stock May Be Undervalued As New Silicon Carbide Launch Lands - Simply Wall St",
+      "date": "2026-11-10",
+      "source": "Simply Wall St",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOT3NPQWVpaXBFeWJzWVhqakQza1U3X1FtOHh6Ri0tSkhsMDNKbjhUaDF0YkdMazRpN3NSNVdORzc3UVBfNFlYckdSNEdSdXlBVU54VVJyakxCSDVlR2FMSUcycnFnSlRCQUo1SllocWhXN1AwVTBPYVliQjRMZnZJRnpVcUZyME02N2dZSnRUQ2l2VHJOZGVNNTdZMXZKNjd1amxHa2NrTVM3VVd3MWRxUmRieUdKNXZPOC1xblYwblNfQy1sVVJIWVMwdWnSAdIBQVVfeXFMTmJJb1Bmc1piTm44Slg0MV9jZ1RKVUFScGtlbHgyRVZNTld5LS1qYTFXX04xcTJLZm5Va0hiX1ZlOFNPLXdobU5vUGduTmN5dkVEV2xJRWo4b25iMTByZVJ3b2U2MkpWbmlKeE1VV3VOZUZWUFFuTmFJZ2pUYU9XTzVWb3ZOeFVOMEtnWHVwTHNQa0M0UVRqZkNvMURiS2kzTmJHTEc1bUI5VDBWS2xfWWdoLVhqWDVPa1NUdFFlVW1fNTNUbXhYVWVVQzZxTlVEZERB?oc=5",
       "topics": [
-        "공정·구조"
+        "일반 기술"
       ],
       "score": 40,
       "lookback_days": 7,
-      "summary_ko": "제목에서 확인되는 정보: 인피니언이 electronica 전시회에서 SiC 300mm 웨이퍼를 선보였다는 내용이다.",
-      "summary_status": "AI 제목 기반·원문 미검증",
+      "summary_ko": "제목만 확보한 공개 뉴스입니다. 기업의 기술·제품 발표 여부는 원문에서 확인해야 합니다.",
+      "summary_status": "뉴스 색인·원문 검증 전",
       "evidence": "Google News RSS index",
-      "title_ko": "electronica: 인피니언의 진지한 SiC 300mm 웨이퍼 전시 - 전자 설계",
-      "physics_ko": "원문 검토 전에는 Device Physics 분석 불가"
+      "companies": [
+        "wolfspeed"
+      ],
+      "company_attribution": "title_mention_only",
+      "company_source_status": {
+        "wolfspeed": "news_index_unverified"
+      },
+      "device_mentions": [
+        "SiC"
+      ],
+      "relevance_score": 18,
+      "relevance_level": "낮음",
+      "relevance_topics": [],
+      "relevance_reasons": [
+        "제목·초록에서 공정/소자 물리 키워드 부족"
+      ],
+      "relevance_method": "metadata-rule-v1"
     },
     {
       "id": "4a3112e592d3",
@@ -154,25 +705,303 @@
       "summary_status": "AI 제목 기반·원문 미검증",
       "evidence": "Google News RSS index",
       "title_ko": "인피니언, 세계 최초 300밀리미터 전력 실리콘 카바이드(SiC) 웨이퍼 생산 시작 - TechPowerUp",
-      "physics_ko": "원문 검토 전에는 Device Physics 분석 불가"
+      "physics_ko": "원문 검토 전에는 Device Physics 분석 불가",
+      "relevance_score": 44,
+      "relevance_level": "낮음",
+      "relevance_topics": [
+        "Dynamic / Switching",
+        "Process / Materials"
+      ],
+      "relevance_reasons": [
+        "Dynamic / Switching",
+        "Process / Materials"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [
+        "infineon"
+      ],
+      "company_attribution": "title_mention_only",
+      "company_source_status": {
+        "infineon": "news_index_unverified"
+      },
+      "device_mentions": [
+        "SiC"
+      ]
     },
     {
-      "id": "7fa739e79a7e",
+      "id": "a2be4fb3470e",
+      "kind": "news",
+      "category": "SiC",
+      "title": "Infineon presents first functional power devices on 300mm SiC wafers - Semiconductor Today",
+      "date": "2026-11-09",
+      "source": "Semiconductor Today",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQMFRVMkJPT0M4Unhoc2NobGFLNnBadmJwVlpZZGZDOURpRzJJTVFLTFhZM1NBQ2c5TzdvQlVlSk1CaGlJRmVIcWRrWkk0WUV2MDFPTl9PbXBjWENRRlZHY1Q3OUpkaU9TSDZuS1dCZ3VQaHZvbDNGcl9mU1RqNHlETkJGZw?oc=5",
+      "topics": [
+        "공정·구조"
+      ],
+      "score": 40,
+      "lookback_days": 7,
+      "summary_ko": "제목만 확보한 공개 뉴스입니다. 기업의 기술·제품 발표 여부는 원문에서 확인해야 합니다.",
+      "summary_status": "뉴스 색인·원문 검증 전",
+      "evidence": "Google News RSS index",
+      "companies": [
+        "infineon"
+      ],
+      "company_attribution": "title_mention_only",
+      "company_source_status": {
+        "infineon": "news_index_unverified"
+      },
+      "device_mentions": [
+        "SiC"
+      ],
+      "relevance_score": 44,
+      "relevance_level": "낮음",
+      "relevance_topics": [
+        "Dynamic / Switching",
+        "Process / Materials"
+      ],
+      "relevance_reasons": [
+        "Dynamic / Switching",
+        "Process / Materials"
+      ],
+      "relevance_method": "metadata-rule-v1"
+    },
+    {
+      "id": "550e19908774",
+      "kind": "news",
+      "category": "SiC",
+      "title": "Functional Power Semiconductors on 300-mm SiC - All-About-Industries",
+      "date": "2026-11-09",
+      "source": "All-About-Industries",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNX01HbmE5ZHBPR2d0TzI3TWRTdkpycnhjQ1NLclVOSmFUeDdYdDFmeWc3VlM0X1dxdmZKc2M1VS02YU9wQmsyc3VoNHpacjhGTTl5Vms2bmFnS2RwNmVnTkdHNnVXTC1IQnVMLWhMcEF6RzRTblNjQXh5RUlGdTN0LTZEektta2FiSU9fYm5OSUJnTGhEZFlNR244ODZDdExpSGoxNW9ZMkNhc01qTmd2Ml9fS1QwT1VtX3c?oc=5",
+      "topics": [
+        "일반 기술"
+      ],
+      "score": 40,
+      "lookback_days": 7,
+      "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
+      "summary_status": "제목 기반·검증 전",
+      "evidence": "Google News RSS index",
+      "relevance_score": 18,
+      "relevance_level": "낮음",
+      "relevance_topics": [],
+      "relevance_reasons": [
+        "제목·초록에서 공정/소자 물리 키워드 부족"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "SiC"
+      ]
+    },
+    {
+      "id": "587dc0417e43",
+      "kind": "news",
+      "category": "SiC",
+      "title": "onsemi scraps $2 billion SiC expansion in the Czech Republic - Evertiq",
+      "date": "2026-11-09",
+      "source": "Evertiq",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOQ0pON2JKdFpQV1lCLXRkYWdCWjhFZThjX2pWWUIxMW5NOFg0ZWZMVkdCTjZJODlnRExiNWwxZjF3SnhmR3V2cmRMblFZOU1nTi1MWk52OWdadTFPMVo1UXlva1F6UVR2Mk1sWG9oWWVZaHdjX1VRNEwyUDlzV1hNdHJHWjJfanlOclpLby01S0U4TnBYMjJQSWpUcG1PZw?oc=5",
+      "topics": [
+        "일반 기술"
+      ],
+      "score": 40,
+      "lookback_days": 7,
+      "summary_ko": "제목만 확보한 공개 뉴스입니다. 기업의 기술·제품 발표 여부는 원문에서 확인해야 합니다.",
+      "summary_status": "뉴스 색인·원문 검증 전",
+      "evidence": "Google News RSS index",
+      "companies": [
+        "onsemi"
+      ],
+      "company_attribution": "title_mention_only",
+      "company_source_status": {
+        "onsemi": "news_index_unverified"
+      },
+      "device_mentions": [
+        "SiC"
+      ],
+      "relevance_score": 18,
+      "relevance_level": "낮음",
+      "relevance_topics": [],
+      "relevance_reasons": [
+        "제목·초록에서 공정/소자 물리 키워드 부족"
+      ],
+      "relevance_method": "metadata-rule-v1"
+    },
+    {
+      "id": "1129b48b4823",
+      "kind": "news",
+      "category": "SiC",
+      "title": "onsemi, Czech Ministry Agree to End SiC Expansion Project - I-Connect007",
+      "date": "2026-11-09",
+      "source": "I-Connect007",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOclcwQ1NfYzY4ZkJOTmFCbWxteDJZdWZRWHB4YS1PckZ1Ykc4ZFJ2ZHBZeTJnT3ZmY0duMi1DVE1aYzd6QkViWi0yQjhHdG9CVFZOTmRsend0NlRrcV81QnJHSkhXa045d2xzeGF3aDh6TDg5SlhFeHY4SjRKS1A2RVpUSjdwakRnQW1LQTNTV3JtZzVUdTZDU3BXRi1nMTUwMWlXUFVVby1IQQ?oc=5",
+      "topics": [
+        "일반 기술"
+      ],
+      "score": 40,
+      "lookback_days": 7,
+      "summary_ko": "제목만 확보한 공개 뉴스입니다. 기업의 기술·제품 발표 여부는 원문에서 확인해야 합니다.",
+      "summary_status": "뉴스 색인·원문 검증 전",
+      "evidence": "Google News RSS index",
+      "companies": [
+        "onsemi"
+      ],
+      "company_attribution": "title_mention_only",
+      "company_source_status": {
+        "onsemi": "news_index_unverified"
+      },
+      "device_mentions": [
+        "SiC"
+      ],
+      "relevance_score": 18,
+      "relevance_level": "낮음",
+      "relevance_topics": [],
+      "relevance_reasons": [
+        "제목·초록에서 공정/소자 물리 키워드 부족"
+      ],
+      "relevance_method": "metadata-rule-v1"
+    },
+    {
+      "id": "908fe8986b42",
+      "kind": "news",
+      "category": "SiC",
+      "title": "Onsemi terminates the $2 billion silicon carbide expansion project in the Czech Republic - ChemNet News",
+      "date": "2026-11-09",
+      "source": "ChemNet News",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE80UHIyZXFRYXNHd1Y3SGFLWlFQMHl1WXZmTEFqUGpqZEY2UHNDMm5yQURpSnUtRndUcnBhOXZvZWlqdXlYNElmUEJpVklnblMyR2c?oc=5",
+      "topics": [
+        "일반 기술"
+      ],
+      "score": 40,
+      "lookback_days": 7,
+      "summary_ko": "제목만 확보한 공개 뉴스입니다. 기업의 기술·제품 발표 여부는 원문에서 확인해야 합니다.",
+      "summary_status": "뉴스 색인·원문 검증 전",
+      "evidence": "Google News RSS index",
+      "companies": [
+        "onsemi"
+      ],
+      "company_attribution": "title_mention_only",
+      "company_source_status": {
+        "onsemi": "news_index_unverified"
+      },
+      "device_mentions": [
+        "SiC"
+      ],
+      "relevance_score": 18,
+      "relevance_level": "낮음",
+      "relevance_topics": [],
+      "relevance_reasons": [
+        "제목·초록에서 공정/소자 물리 키워드 부족"
+      ],
+      "relevance_method": "metadata-rule-v1"
+    },
+    {
+      "id": "32d4042cf0f5",
+      "kind": "news",
+      "category": "SiC",
+      "title": "Onsemi halts billion-dollar project in Czechia: Planned SiC expansion worth up to two billion dollars canceled - igor´sLAB",
+      "date": "2026-11-09",
+      "source": "igor´sLAB",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOU2pfZHZPb3ZiVExKSl9VRndrOE82U0JxQ0NZRzVEa2xtakxpblFxOTJkUExlNjlXT3ByOVExRm9lYzh2Q3dkc2lJWlp6aVplaFkwUlRON2ZvOGFiaXhMYWxybHBza0dCcTRWMzlWZzVNaEtERjBXMGNzQktEMXRxbjBvdWJRazZfNU02XzFDOA?oc=5",
+      "topics": [
+        "일반 기술"
+      ],
+      "score": 40,
+      "lookback_days": 7,
+      "summary_ko": "제목만 확보한 공개 뉴스입니다. 기업의 기술·제품 발표 여부는 원문에서 확인해야 합니다.",
+      "summary_status": "뉴스 색인·원문 검증 전",
+      "evidence": "Google News RSS index",
+      "companies": [
+        "onsemi"
+      ],
+      "company_attribution": "title_mention_only",
+      "company_source_status": {
+        "onsemi": "news_index_unverified"
+      },
+      "device_mentions": [
+        "SiC"
+      ],
+      "relevance_score": 18,
+      "relevance_level": "낮음",
+      "relevance_topics": [],
+      "relevance_reasons": [
+        "제목·초록에서 공정/소자 물리 키워드 부족"
+      ],
+      "relevance_method": "metadata-rule-v1"
+    },
+    {
+      "id": "22e411b2a060",
       "kind": "news",
       "category": "GaN",
-      "title": "N-polar GaN HEMTs Predicted for High-Power Terahertz Sources - Bioengineer.org",
-      "date": "2026-11-08",
-      "source": "Bioengineer.org",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOWThvZVJKVDdsTmQ1OC1TLXM0TlJ6Mk01UXRrV09UZDhrTUpZbWgwQ3g2MHNQSFM4V1ZRamdLcVp6cHhheXo2eE5lLTd2OUYzeFFBeE1QS0tCcEUwX2NGU3hWZ1FLamtGSVZ2M3h6NHhpcFliNUs4NG1NNF9Pa2JsdkxvQkdhcW1uQ3JmZEF3?oc=5",
+      "title": "Mitsubishi Electric Achieves World’s First Demonstration of Suppression of Frequency Dispersion in GaN Transistors Using GaN Substrates - Yahoo Finance Singapore",
+      "date": "2026-11-09",
+      "source": "Yahoo Finance Singapore",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPZ3J1MmJER2hPQW50TGV6dHIwcHRqZC1tSVBybktUNW5JX0xkdFlHbXdhMlNjR2h6OGRaSzZmQ2c0cHZmN3RkQ19Zei16VXhWRTBGOTdBM2ZFelVxVjRDYlhqNFIzWUkwVEQ0OGJEdER0aWM3aGV6RVRqNDZVX1NsYTROaS03a1V1YVNRamdCazliTDg?oc=5",
       "topics": [
         "일반 기술"
       ],
       "score": 50,
       "lookback_days": 7,
-      "summary_ko": "제목에서 확인되는 정보: N-폴라 GaN HEMT가 고출력 테라헤르츠 소스에 적합할 것으로 예측되고 있다.",
+      "summary_ko": "제목에서 확인되는 정보: 미쓰비시 전기가 GaN 기판을 사용하여 GaN 트랜지스터의 주파수 분산 억제에 세계 최초로 성공했다.",
       "summary_status": "AI 제목 기반·원문 미검증",
       "evidence": "Google News RSS index",
-      "title_ko": "고출력 테라헤르츠 소스를 위한 N-폴라 GaN HEMT 예측 - Bioengineer.org",
+      "companies": [
+        "mitsubishi"
+      ],
+      "company_attribution": "title_mention_only",
+      "company_source_status": {
+        "mitsubishi": "news_index_unverified"
+      },
+      "device_mentions": [
+        "GaN"
+      ],
+      "relevance_score": 18,
+      "relevance_level": "낮음",
+      "relevance_topics": [],
+      "relevance_reasons": [
+        "제목·초록에서 공정/소자 물리 키워드 부족"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "title_ko": "미쓰비시 전기, GaN 기판을 이용한 GaN 트랜지스터 주파수 분산 억제 세계 최초 시연",
+      "physics_ko": "원문 검토 전에는 Device Physics 분석 불가"
+    },
+    {
+      "id": "8c7f7b4f3fe3",
+      "kind": "news",
+      "category": "GaN",
+      "title": "Mitsubishi Electric claims world-first GaN advance to reduce power consumption - Yahoo Tech",
+      "date": "2026-11-09",
+      "source": "Yahoo Tech",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOU3dFVV84S1lfMTh2LUJ0R3YzS0dFX2hpanB6RnhrWG54bW42SjhHNEthZjBfNUhUc0lGOTBFYUF3NGsybnR6ZVM3clFvMFVQUDVkaTZGLVNzWDlYcGFtWlVnN2pJX3BoQUF6UDAwYVdpczN4OVRQanJ4VldLRlRXbUpiT1JMN1Q4S012ZFZGLVZ6aGxEejkydQ?oc=5",
+      "topics": [
+        "일반 기술"
+      ],
+      "score": 50,
+      "lookback_days": 7,
+      "summary_ko": "제목에서 확인되는 정보: 미쓰비시 전기가 전력 소비를 줄이기 위한 세계 최초의 GaN 기술 진보를 발표했다.",
+      "summary_status": "AI 제목 기반·원문 미검증",
+      "evidence": "Google News RSS index",
+      "companies": [
+        "mitsubishi"
+      ],
+      "company_attribution": "title_mention_only",
+      "company_source_status": {
+        "mitsubishi": "news_index_unverified"
+      },
+      "device_mentions": [
+        "GaN"
+      ],
+      "relevance_score": 18,
+      "relevance_level": "낮음",
+      "relevance_topics": [],
+      "relevance_reasons": [
+        "제목·초록에서 공정/소자 물리 키워드 부족"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "title_ko": "미쓰비시 전기, 전력 소비 절감 위한 세계 최초 GaN 기술 진보 주장",
       "physics_ko": "원문 검토 전에는 Device Physics 분석 불가"
     },
     {
@@ -195,7 +1024,26 @@
       "lookback_days": 365,
       "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
-      "metadata_provider": "OpenAlex"
+      "metadata_provider": "OpenAlex",
+      "relevance_score": 83,
+      "relevance_level": "높음",
+      "relevance_topics": [
+        "Dynamic / Switching",
+        "Device Structure",
+        "Reliability"
+      ],
+      "relevance_reasons": [
+        "Dynamic / Switching",
+        "Device Structure",
+        "Reliability"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
     },
     {
       "id": "c20ea9d7d2e7",
@@ -216,121 +1064,59 @@
       "lookback_days": 365,
       "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
-      "metadata_provider": "OpenAlex"
-    },
-    {
-      "id": "404347c4ce55",
-      "kind": "news",
-      "category": "GaN",
-      "title": "Renesas Unveils Industry's First 650V GaN in Dual-Side Cooled 8x8mm Package for Megawatt-Scale AI Data Centers - The National Law Review",
-      "date": "2026-11-05",
-      "source": "The National Law Review",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNUHhKMkx0NUpoa2dheTFEb203eXVzMG1uUUxkRDhyNXlqZ0QwT2JQanFwTVpudTNkOFFlWU9PRFNKZWRWWG52Umd4UDd3QTRVZGp6RFJybDY4cDVFazlNcS0zWUVuT0pfSE0wd3U4ZnBYZk9PbHczcDlfeGRzZ2hua2k1U1dpaEprUXZrSk9Wc2l1MFRrWklzdUVrSmhJVy04cWdXeUdfd1VLSGwzSG1hZw?oc=5",
-      "topics": [
-        "데이터센터"
+      "metadata_provider": "OpenAlex",
+      "relevance_score": 70,
+      "relevance_level": "높음",
+      "relevance_topics": [
+        "Dynamic / Switching",
+        "Device Structure"
       ],
-      "score": 65,
-      "lookback_days": 7,
-      "summary_ko": "제목에서 확인되는 정보: 르네사스가 메가와트급 AI 데이터 센터를 위한 듀얼 사이드 쿨링 8x8mm 패키지 형태의 650V GaN 전력반도체를 업계 최초로 공개했다.",
-      "summary_status": "AI 제목 기반·원문 미검증",
-      "evidence": "Google News RSS index",
-      "title_ko": "르네사스, 메가와트급 AI 데이터 센터용 듀얼 사이드 쿨링 8x8mm 패키지의 업계 최초 650V GaN 공개",
-      "physics_ko": "원문 검토 전에는 Device Physics 분석 불가"
-    },
-    {
-      "id": "426bffa3babe",
-      "kind": "news",
-      "category": "GaN",
-      "title": "GaN Power Devices Market Set for Rapid Growth as AI Data Centers, EVs and Fast Charging Drive Demand - TimesTech",
-      "date": "2026-11-05",
-      "source": "TimesTech",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPZGp5VUNHNUxRRXItOEdJLWIzUHIzRnN5ZEtrVUplYVIzRUZKQ0Y3TGhPeG96bDNaSHRPTVItYURnSkRNVHF3aGFQRFU3ZmZJMUp4Wk5nal9xcWI4ODF3MzVGZV9LU0NUSlpObDdQNlFKRXNYMXEtelZKcUpoaFpPcEkzX0pDOU9SNzBLVm45eGUzWUFuUElscHhaTFFiSUJlVzJOTUVJZWRyNlRyR0VjLS1qQ3ZwN0tRZW1DWGFR?oc=5",
-      "topics": [
-        "데이터센터",
-        "재무·시장"
+      "relevance_reasons": [
+        "Dynamic / Switching",
+        "Device Structure"
       ],
-      "score": 65,
-      "lookback_days": 7,
-      "summary_ko": "제목에서 확인되는 정보: AI 데이터 센터, 전기차 및 고속 충전의 수요 증가가 GaN 전력 소자 시장의 빠른 성장을 견인하고 있다.",
-      "summary_status": "AI 제목 기반·원문 미검증",
-      "evidence": "Google News RSS index",
-      "title_ko": "AI 데이터 센터, 전기차 및 고속 충전 수요 증가로 GaN 전력 소자 시장 급성장 전망 - TimesTech",
-      "physics_ko": "원문 검토 전에는 Device Physics 분석 불가"
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "SJ MOSFET"
+      ]
     },
     {
-      "id": "0ad7b621a7e3",
+      "id": "c15f11fa3c3e",
       "kind": "news",
       "category": "GaN",
-      "title": "Infineon invests €1.1 billion in GaN power chip facility in Europe - ET Datacenters",
+      "title": "Innoscience INN650D080BS 650 V 60 mΩ GaN - TechInsights",
       "date": "2026-11-05",
-      "source": "ET Datacenters",
-      "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPZ1MtaVJpR0dFeHF5dXRaaFBMWVVsWXhqRUNQS2FqUVNHTnl5dGtLWFBLbDFaaGZhSUZnY29zLUVmU3FlZjRtVFVlZ29FdFcxSzEtXzF1VDFTSUJwWjNfRkxNaWhMeFE0LTFwbEIzYzNnZ1ZNQ3FFRGc2LTZQQlhOc1paWVhVQjZvMHhRRVFNWTB5WkwyMFgwR2k3TnF5ZkVkM1RuNGV4b0lEdWZrQ0xaRGNNTlJQODBoVy1zMFo5N19LMFE2SzZDTmNvNlA1cDdiT3ZfSHF3VWJidTRPT19BMkJrYzV4cUxocmxV0gHvAUFVX3lxTE5GQVZQSjc5OWVUMFBhQzdyZUJSSS0yX2ZEVWVlOFRidTFtckZ4YU0zWDktdWdYdjUxcDNNQmJYbUdPNmNGV2Q2MjVvNUlpNVlCc2I2U2p1RDF6M0VWcHdpRkNHMWNtT0JfQ0I0ajdsY3JUSFZPX1BoNVRpMG13UFJVVE92VWdXMFVtdUtTQ29LQkVoM1g3bzBUZUZqWVBWdFo2SUFmQzczTmFzVDVBaDUzc3U4TUlTbE5HUDhqYkxnQ1lBT3ZBaVVMTTdUcVRpSzhmZzc1TDk5WkNTZlZtLTRKNmZGdWV6cXVYSHdnSV9Z?oc=5",
-      "topics": [
-        "데이터센터"
-      ],
-      "score": 50,
-      "lookback_days": 7,
-      "summary_ko": "제목에서 확인되는 정보: 인피니언이 유럽 내 GaN 전력 칩 생산 시설에 11억 유로를 투자한다.",
-      "summary_status": "AI 제목 기반·원문 미검증",
-      "evidence": "Google News RSS index",
-      "title_ko": "인피니언, 유럽에 GaN 전력 칩 생산 시설에 11억 유로 투자 - ET Datacenters",
-      "physics_ko": "원문 검토 전에는 Device Physics 분석 불가"
-    },
-    {
-      "id": "bdc5903cb827",
-      "kind": "news",
-      "category": "GaN",
-      "title": "GaNrich providing 40–1200V GaN power device portfolio - Semiconductor Today",
-      "date": "2026-11-05",
-      "source": "Semiconductor Today",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOZmNaQUNMbWFxdEJzOFRvSC1oemhrVTg4X3ZxNVN1ZU53dzhEQ1VyaUJXM0FOTEpXZDRGVXhfeDN3RjZjdGUzQkdOcWgwNVd0dEdOaXc1NHZqSi1QbDRReV9GMGgzeDdxUVFSQ1FWOGs0Z19tcHI2WTVmSDhnTVEzTWR3?oc=5",
+      "source": "TechInsights",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5kazBWSF8xZ1NWSkFIMmZXNkFzTmNDVUJlVmc4bkNTMWdPcDIycVczU2ZUYWFJajhYeWwtNGI3SUw4V19QX19raXlHcmdkX2h1VFJFTGpZQkl4YWE1c1ZNRFhQN1Iwd3R1bFcwQkF0Nm1tc0hFeDFSMExaOXlFSHc?oc=5",
       "topics": [
         "일반 기술"
       ],
       "score": 50,
-      "lookback_days": 7,
-      "summary_ko": "제목에서 확인되는 정보: GaNrich가 40V에서 1200V 범위의 GaN 전력 소자 포트폴리오를 제공한다.",
+      "lookback_days": 30,
+      "summary_ko": "제목에서 확인되는 정보: Innoscience의 INN650D080BS는 650 V 정격 전압과 60 mΩ RDS(on)를 가진 GaN 전력반도체임을 알 수 있다.",
       "summary_status": "AI 제목 기반·원문 미검증",
       "evidence": "Google News RSS index",
-      "title_ko": "GaNrich, 40–1200V GaN 전력 소자 포트폴리오 제공",
-      "physics_ko": "원문 검토 전에는 Device Physics 분석 불가"
-    },
-    {
-      "id": "2562065b9551",
-      "kind": "news",
-      "category": "GaN",
-      "title": "GaNrich Empowers Global GaN Adoption with expanded 40-1200V GaN Power Device Portfolio - Morningstar",
-      "date": "2026-11-05",
-      "source": "Morningstar",
-      "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPREdDUjBPYl9zTjZ3dUlSYzVtNzRCazZEUHVTMXR3MXRQSTlNdW1VN1BOV1BJMTRSR0JfUWJQdDdEWXpDa1NKQ2s4RlhscDNHRHNRUXVJNlJKcmRUYzVkSXhXTk52c09jS29ZWVo1cDJ1bWxuWTlNbVY3OUdHUEFnaDBBbDVnTmF0WFFSdG1KckpkWm0xSmpUanFabE1yRWZJcXVHN0RXMk1UMk93M2ZTSnl3clY3X0YxcmNFWjlUSXM3S18tcGd0MHIzbzY0ODM5UVJFc0dDX2xUeEtSYUd4dw?oc=5",
-      "topics": [
-        "일반 기술"
+      "companies": [
+        "innoscience"
       ],
-      "score": 50,
-      "lookback_days": 7,
-      "summary_ko": "제목에서 확인되는 정보: GaNrich가 40-1200V 범위의 GaN 전력 소자 포트폴리오를 확장하여 글로벌 GaN 채택을 강화하고 있다.",
-      "summary_status": "AI 제목 기반·원문 미검증",
-      "evidence": "Google News RSS index",
-      "title_ko": "GaNrich, 40-1200V GaN 전력 소자 포트폴리오 확장으로 글로벌 GaN 채택 촉진 - Morningstar",
-      "physics_ko": "원문 검토 전에는 Device Physics 분석 불가"
-    },
-    {
-      "id": "3701fc951a53",
-      "kind": "news",
-      "category": "GaN",
-      "title": "Power Integrations Inc (POWI) Q3 2026 Earnings Call Highlights: GaN-Driven Growth and Margin ... - Yahoo Finance",
-      "date": "2026-11-05",
-      "source": "Yahoo Finance",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPNk9JY2ZKSGRGTWRiTmp0RXRYNVdUQmhyaTFMTU8tbEdJQXJXckhSR0ljcFNLRUszeW9QNW56QjE2NDVJZTdEbGtwam1LT29UR05TdDlEQXMydjh1bEJsM1JoUHBmTUhmQTZWZjZ0U3VRY2dSb3EyeUxQZVVpdUY5Zm14QVFFbEZ4OHNFTVdDV1lrUFB4Q3pHaC1xbw?oc=5",
-      "topics": [
-        "재무·시장"
+      "company_attribution": "title_mention_only",
+      "company_source_status": {
+        "innoscience": "news_index_unverified"
+      },
+      "device_mentions": [
+        "GaN"
       ],
-      "score": 50,
-      "lookback_days": 7,
-      "summary_ko": "제목에서 확인되는 정보: Power Integrations Inc의 2026년 3분기 실적 발표에서 GaN 기술을 통한 성장과 마진에 관한 내용이 다뤄지고 있다.",
-      "summary_status": "AI 제목 기반·원문 미검증",
-      "evidence": "Google News RSS index",
-      "title_ko": "Power Integrations Inc (POWI) 2026년 3분기 실적 발표 주요 내용: GaN 기반 성장 및 마진",
+      "relevance_score": 18,
+      "relevance_level": "낮음",
+      "relevance_topics": [],
+      "relevance_reasons": [
+        "제목·초록에서 공정/소자 물리 키워드 부족"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "title_ko": "Innoscience INN650D080BS 650 V 60 mΩ GaN - TechInsights",
       "physics_ko": "원문 검토 전에는 Device Physics 분석 불가"
     },
     {
@@ -343,16 +1129,31 @@
       "url": "https://doi.org/10.1038/s41598-026-74967-6",
       "doi": "10.1038/s41598-026-74967-6",
       "topics": [
-        "일반 기술"
+        "신뢰성"
       ],
       "score": 30,
-      "abstract": "",
-      "summary_ko": "서지 메타데이터만 확인됐으며 결론은 검증되지 않았습니다.",
-      "summary_status": "서지 기반·결론 미검증",
+      "abstract": "Accurate remaining useful life (RUL) prediction of insulated gate bipolar transistors (IGBTs) is important for ensuring the reliability of power electronic systems. However, IGBT degradation sequences usually exhibit nonlinear evolution, mixed short-term and long-term dependencies, and stage-dependent degradation characteristics, which makes robust RUL prediction challenging. To address these issues, this paper proposes a Temporal Dependency Multi-Scale Expert Former (TD-MSEFormer). Specifically, a Sequential Dependency Calibration Module (SDCM) is introduced to enhance degradation-related temporal dependency representation. A Multi-Scale Temporal Expert Block (MSTEB) is designed to capture degradation patterns at different temporal scales, while a Temporal Dual-Attention (TDA) block further refines local temporal interactions. Extensive experiments on NASA IGBT Aging Dataset demonstrate that the proposed TD-MSEFormer consistently outperforms other methods, achieving the best overall RUL prediction performance with superior accuracy, robust generalization, and stable degradation representation under complex nonlinear aging conditions.",
+      "summary_ko": "공개 초록을 확인해 주요 결론을 검토하세요.",
+      "summary_status": "초록 기반·원문 미검증",
       "lookback_days": 365,
-      "evidence": "Crossref journal metadata",
+      "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
-      "metadata_provider": "Crossref"
+      "metadata_provider": "OpenAlex",
+      "relevance_score": 57,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Reliability"
+      ],
+      "relevance_reasons": [
+        "Reliability"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
     },
     {
       "id": "76b0bfaf7cd5",
@@ -374,7 +1175,27 @@
       "lookback_days": 365,
       "evidence": "Crossref journal metadata",
       "source_type": "journal",
-      "metadata_provider": "Crossref"
+      "metadata_provider": "Crossref",
+      "relevance_score": 83,
+      "relevance_level": "높음",
+      "relevance_topics": [
+        "Device Structure",
+        "Process / Materials",
+        "Reliability"
+      ],
+      "relevance_reasons": [
+        "Device Structure",
+        "Process / Materials",
+        "Reliability"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "SiC",
+        "SJ MOSFET"
+      ]
     },
     {
       "id": "cf3c052e6623",
@@ -395,7 +1216,23 @@
       "lookback_days": 365,
       "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
-      "metadata_provider": "OpenAlex"
+      "metadata_provider": "OpenAlex",
+      "relevance_score": 45,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Dynamic / Switching"
+      ],
+      "relevance_reasons": [
+        "Dynamic / Switching",
+        "초록 없음: 제목만으로 평가"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
     },
     {
       "id": "5db0fcac553f",
@@ -412,7 +1249,90 @@
       "lookback_days": 30,
       "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
       "summary_status": "제목 기반·검증 전",
-      "evidence": "Google News RSS index"
+      "evidence": "Google News RSS index",
+      "relevance_score": 18,
+      "relevance_level": "낮음",
+      "relevance_topics": [],
+      "relevance_reasons": [
+        "제목·초록에서 공정/소자 물리 키워드 부족"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "SiC",
+        "IGBT"
+      ]
+    },
+    {
+      "id": "official-9ef2b66b68f4e269",
+      "kind": "official",
+      "category": "GaN",
+      "title": "Innoscience Advances AI Infrastructure Power as Part of the NVIDIA MGX Ecosystem",
+      "title_ko": "Innoscience, NVIDIA MGX 생태계 관련 AI 서버·800VDC GaN 전원 솔루션 발표",
+      "summary_ko": "Innoscience 공식 발표: OCP 행사에서 AI 서버와 800VDC 전력 아키텍처를 위한 GaN 응용 솔루션을 소개했습니다.",
+      "physics_ko": "E-mode GaN의 Dynamic Ron, Gate Reliability, 고주파 스위칭 성능을 실제 회로 조건에서 비교할 필요가 있습니다.",
+      "date": "2026-10-28",
+      "url": "https://www.innoscience.com/news/press-releases/18684",
+      "source": "Innoscience Newsroom",
+      "summary_status": "제조사 원문에 근거한 한국어 핵심 정보 (독립 검증 아님)",
+      "source_type": "manufacturer_official",
+      "company_attribution": "publisher_official",
+      "company_source_status": {
+        "innoscience": "official_verified_url"
+      },
+      "companies": [
+        "innoscience"
+      ],
+      "device_mentions": [
+        "GaN"
+      ],
+      "topics": [
+        "일반 기술"
+      ],
+      "score": 50,
+      "lookback_days": 365,
+      "evidence": "Verified official manufacturer article URL",
+      "metadata_provider": "curated_official_registry",
+      "relevance_score": 18,
+      "relevance_level": "낮음",
+      "relevance_topics": [],
+      "relevance_reasons": [
+        "제목·초록에서 공정/소자 물리 키워드 부족"
+      ],
+      "relevance_method": "metadata-rule-v1"
+    },
+    {
+      "id": "77a91d5c9b4a",
+      "kind": "news",
+      "category": "IGBT",
+      "title": "Insulated Gate Bipolar Transistor Market Size & Share, 2034 - Fortune Business Insights",
+      "date": "2026-10-26",
+      "source": "Fortune Business Insights",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOMUotbUpQUE11aFZyQUJPLWJWc1lvSlRrdl9RN1czYWRXbUhtVlI0RURHRld1NkFIdHhvOUQ5LWVsZW1NYmRhMVZXMmM1Y3JyeGJTdjZ2aTAzSmVKZnZpY0ZmTmwwMWtjZHpBd3dsSE5xdmxmLTZjMVpDVkVaVTlHUW5wQmlUSHI1ZkE?oc=5",
+      "topics": [
+        "재무·시장"
+      ],
+      "score": 30,
+      "lookback_days": 30,
+      "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
+      "summary_status": "제목 기반·검증 전",
+      "evidence": "Google News RSS index",
+      "relevance_score": 0,
+      "relevance_level": "낮음",
+      "relevance_topics": [],
+      "relevance_reasons": [
+        "제목·초록에서 공정/소자 물리 키워드 부족",
+        "비기술/시장성 콘텐츠 가능성"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
     },
     {
       "id": "9c800d1f49eb",
@@ -429,7 +1349,22 @@
       "lookback_days": 30,
       "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
       "summary_status": "제목 기반·검증 전",
-      "evidence": "Google News RSS index"
+      "evidence": "Google News RSS index",
+      "relevance_score": 31,
+      "relevance_level": "낮음",
+      "relevance_topics": [
+        "Data Center / Power Conversion"
+      ],
+      "relevance_reasons": [
+        "Data Center / Power Conversion"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
     },
     {
       "id": "bf11b3ee4e40",
@@ -450,7 +1385,24 @@
       "lookback_days": 365,
       "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
-      "metadata_provider": "OpenAlex"
+      "metadata_provider": "OpenAlex",
+      "relevance_score": 70,
+      "relevance_level": "높음",
+      "relevance_topics": [
+        "Dynamic / Switching",
+        "Reliability"
+      ],
+      "relevance_reasons": [
+        "Dynamic / Switching",
+        "Reliability"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
     },
     {
       "id": "fd9bf4779a52",
@@ -466,12 +1418,32 @@
       ],
       "score": 48,
       "abstract": "Abstract This paper proposes and investigates a novel narrow mesa (NM) superjunction trench insulated gate bipolar transistor (SJ-TIGBT) featuring a shallow emitter trench-controlled P-column (STCP). The formed NM and STCP structures not only enhance the carrier storage effect and reduce on-state voltage drop ( V CEON ) in the on-state, but also accelerate the extraction of excess holes during turn-off and suppress displacement current during turn-on. Thus, improved performance is achieved for the proposed device. Furthermore, a split gate (SG) is incorporated into the gate trench of the proposed device to shield the negative impact on it of the dummy P-type region, which further reduces the electromagnetic interference noise. Simulation results show that compared with a conventional SJ-TIGBT, the proposed STCP-SJ-TIGBT achieves a 41% lower V CEON at a collector-current density of 200 A cm −2 and a 72.3% lower turn-off loss ( E OFF ) at a V CEON of 1.37 V. The turn-on d I C /d t of the STCP-SJ-TIGBT at the same gate resistance and the reverse recovery d V AK /d t of the freewheeling diode at the same turn-on loss are reduced by 79.1% and 24.4%, respectively. Moreover, introduction of a SG reduces the Miller capacitance of the proposed device by 94.1%, further improving its E ON –d V KA /d t trade-off at negligible cost to V CEON and E OFF .",
-      "summary_ko": "공개 초록을 확인해 주요 결론을 검토하세요.",
-      "summary_status": "초록 기반·원문 미검증",
+      "summary_ko": "본 논문은 얕은 에미터 트렌치 제어 P-컬럼(STCP)을 특징으로 하는 협폭 메사 슈퍼정션 트렌치 IGBT(SJ-TIGBT)를 제안하고 성능을 향상시켰다. 제안된 소자는 기존 대비 41% 낮은 VCEON과 72.3% 감소된 턴오프 손실을 달성했으며, 분할 게이트(SG) 도입으로 밀러 커패시턴스가 94.1% 감소하였다.",
+      "summary_status": "AI 초록 기반·원문 미검증",
       "lookback_days": 365,
       "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
-      "metadata_provider": "OpenAlex"
+      "metadata_provider": "OpenAlex",
+      "relevance_score": 70,
+      "relevance_level": "높음",
+      "relevance_topics": [
+        "Dynamic / Switching",
+        "Device Structure"
+      ],
+      "relevance_reasons": [
+        "Dynamic / Switching",
+        "Device Structure"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT",
+        "SJ MOSFET"
+      ],
+      "title_ko": "얕은 에미터 트렌치 제어 P-컬럼을 갖는 최적화된 협폭 메사 슈퍼정션 트렌치 IGBT",
+      "physics_ko": "NM과 STCP 구조는 캐리어 저장 효과를 증대시키고 턴오프 시 과잉 정공 추출을 가속화하여 전류 손실과 전압 강하를 감소시킨다."
     },
     {
       "id": "89dc5e4613be",
@@ -493,7 +1465,27 @@
       "lookback_days": 365,
       "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
-      "metadata_provider": "OpenAlex"
+      "metadata_provider": "OpenAlex",
+      "relevance_score": 83,
+      "relevance_level": "높음",
+      "relevance_topics": [
+        "Device Structure",
+        "Process / Materials",
+        "Reliability"
+      ],
+      "relevance_reasons": [
+        "Device Structure",
+        "Process / Materials",
+        "Reliability"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "SiC",
+        "SJ MOSFET"
+      ]
     },
     {
       "id": "522aa97b097f",
@@ -514,7 +1506,23 @@
       "lookback_days": 365,
       "evidence": "Crossref journal metadata",
       "source_type": "journal",
-      "metadata_provider": "Crossref"
+      "metadata_provider": "Crossref",
+      "stale_reused": true,
+      "relevance_score": 57,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Data Center / Power Conversion"
+      ],
+      "relevance_reasons": [
+        "Data Center / Power Conversion"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
     },
     {
       "id": "2e851c90fc11",
@@ -535,7 +1543,22 @@
       "lookback_days": 365,
       "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
-      "metadata_provider": "OpenAlex"
+      "metadata_provider": "OpenAlex",
+      "relevance_score": 57,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Device Structure"
+      ],
+      "relevance_reasons": [
+        "Device Structure"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
     },
     {
       "id": "c429d4719add",
@@ -556,28 +1579,22 @@
       "lookback_days": 365,
       "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
-      "metadata_provider": "OpenAlex"
-    },
-    {
-      "id": "3c046d9511a3",
-      "kind": "paper",
-      "category": "SGT",
-      "title": "Simulation study on a single-event burnout hardened shielded gate trench MOSFET with a P-type buried layer",
-      "date": "2026-09-01",
-      "source": "Microelectronics Journal",
-      "url": "https://doi.org/10.1016/j.mejo.2026.107283",
-      "doi": "10.1016/j.mejo.2026.107283",
-      "topics": [
-        "공정·구조"
+      "metadata_provider": "OpenAlex",
+      "relevance_score": 57,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Dynamic / Switching"
       ],
-      "score": 40,
-      "abstract": "",
-      "summary_ko": "서지 메타데이터만 확인됐으며 결론은 검증되지 않았습니다.",
-      "summary_status": "서지 기반·결론 미검증",
-      "lookback_days": 365,
-      "evidence": "Crossref journal metadata",
-      "source_type": "journal",
-      "metadata_provider": "Crossref"
+      "relevance_reasons": [
+        "Dynamic / Switching"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
     },
     {
       "id": "f4e19675847b",
@@ -598,7 +1615,25 @@
       "lookback_days": 365,
       "evidence": "Crossref journal metadata",
       "source_type": "journal",
-      "metadata_provider": "Crossref"
+      "metadata_provider": "Crossref",
+      "relevance_score": 58,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Dynamic / Switching",
+        "Device Structure"
+      ],
+      "relevance_reasons": [
+        "Dynamic / Switching",
+        "Device Structure",
+        "초록 없음: 제목만으로 평가"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "SJ MOSFET"
+      ]
     },
     {
       "id": "9f649ddb512b",
@@ -619,7 +1654,99 @@
       "lookback_days": 365,
       "evidence": "Crossref journal metadata",
       "source_type": "journal",
-      "metadata_provider": "Crossref"
+      "metadata_provider": "Crossref",
+      "relevance_score": 45,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Device Structure"
+      ],
+      "relevance_reasons": [
+        "Device Structure",
+        "초록 없음: 제목만으로 평가"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "SiC",
+        "SJ MOSFET"
+      ]
+    },
+    {
+      "id": "3c046d9511a3",
+      "kind": "paper",
+      "category": "SGT",
+      "title": "Simulation study on a single-event burnout hardened shielded gate trench MOSFET with a P-type buried layer",
+      "date": "2026-09-01",
+      "source": "Microelectronics Journal",
+      "url": "https://doi.org/10.1016/j.mejo.2026.107283",
+      "doi": "10.1016/j.mejo.2026.107283",
+      "topics": [
+        "공정·구조"
+      ],
+      "score": 40,
+      "abstract": "",
+      "summary_ko": "서지 메타데이터만 확인됐으며 결론은 검증되지 않았습니다.",
+      "summary_status": "서지 기반·결론 미검증",
+      "lookback_days": 365,
+      "evidence": "Crossref journal metadata",
+      "source_type": "journal",
+      "metadata_provider": "Crossref",
+      "relevance_score": 45,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Device Structure"
+      ],
+      "relevance_reasons": [
+        "Device Structure",
+        "초록 없음: 제목만으로 평가"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "SGT"
+      ]
+    },
+    {
+      "id": "official-e9717de0c42cce73",
+      "kind": "official",
+      "category": "IGBT",
+      "title": "ROHM Introduces 650V IGBTs Achieving Low Loss Characteristics",
+      "title_ko": "ROHM, 4세대 650V IGBT 출시 및 단락 내량 특성 발표",
+      "summary_ko": "ROHM 공식 발표: 4세대 650V IGBT에서 일부 제품의 VCE(sat) typ. 1.55V 및 Tj=25°C에서 7µs 단락 내량을 공개했습니다. 제품별 사양은 원본 표를 확인해야 합니다.",
+      "physics_ko": "VCE(sat) 저감과 단락 내량의 상충 관계는 캐리어 축적, 구조·공정·Termination 설계와 연결됩니다.",
+      "date": "2026-08-25",
+      "url": "https://www.rohm.com/news-detail?defaultGroupId=false&news-title=2026-08-25_news_igbt",
+      "source": "ROHM Newsroom",
+      "summary_status": "제조사 원문에 근거한 한국어 핵심 정보 (독립 검증 아님)",
+      "source_type": "manufacturer_official",
+      "company_attribution": "publisher_official",
+      "company_source_status": {
+        "rohm": "official_verified_url"
+      },
+      "companies": [
+        "rohm"
+      ],
+      "device_mentions": [
+        "IGBT"
+      ],
+      "topics": [
+        "일반 기술"
+      ],
+      "score": 30,
+      "lookback_days": 365,
+      "evidence": "Verified official manufacturer article URL",
+      "metadata_provider": "curated_official_registry",
+      "relevance_score": 18,
+      "relevance_level": "낮음",
+      "relevance_topics": [],
+      "relevance_reasons": [
+        "제목·초록에서 공정/소자 물리 키워드 부족"
+      ],
+      "relevance_method": "metadata-rule-v1"
     },
     {
       "id": "ac2df0a02130",
@@ -640,7 +1767,24 @@
       "lookback_days": 365,
       "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
-      "metadata_provider": "OpenAlex"
+      "metadata_provider": "OpenAlex",
+      "relevance_score": 70,
+      "relevance_level": "높음",
+      "relevance_topics": [
+        "Reliability",
+        "Data Center / Power Conversion"
+      ],
+      "relevance_reasons": [
+        "Reliability",
+        "Data Center / Power Conversion"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
     },
     {
       "id": "e45e847043f6",
@@ -661,7 +1805,27 @@
       "lookback_days": 365,
       "evidence": "Crossref journal metadata",
       "source_type": "journal",
-      "metadata_provider": "Crossref"
+      "metadata_provider": "Crossref",
+      "relevance_score": 83,
+      "relevance_level": "높음",
+      "relevance_topics": [
+        "Device Structure",
+        "Process / Materials",
+        "Reliability"
+      ],
+      "relevance_reasons": [
+        "Device Structure",
+        "Process / Materials",
+        "Reliability"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "SiC",
+        "SJ MOSFET"
+      ]
     },
     {
       "id": "930007d5290d",
@@ -682,7 +1846,24 @@
       "lookback_days": 365,
       "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
-      "metadata_provider": "OpenAlex"
+      "metadata_provider": "OpenAlex",
+      "relevance_score": 70,
+      "relevance_level": "높음",
+      "relevance_topics": [
+        "Reliability",
+        "Data Center / Power Conversion"
+      ],
+      "relevance_reasons": [
+        "Reliability",
+        "Data Center / Power Conversion"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
     },
     {
       "id": "fb29ae50ae2e",
@@ -703,28 +1884,26 @@
       "lookback_days": 365,
       "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
-      "metadata_provider": "OpenAlex"
-    },
-    {
-      "id": "8b48a371705a",
-      "kind": "paper",
-      "category": "IGBT",
-      "title": "A novel trench-gate SiC IGBT with floating P-buried layers for improved performance",
-      "date": "2026-08-01",
-      "source": "Microelectronics Journal",
-      "url": "https://doi.org/10.1016/j.mejo.2026.107213",
-      "doi": "10.1016/j.mejo.2026.107213",
-      "topics": [
-        "공정·구조"
+      "metadata_provider": "OpenAlex",
+      "relevance_score": 83,
+      "relevance_level": "높음",
+      "relevance_topics": [
+        "Dynamic / Switching",
+        "Device Structure",
+        "Reliability"
       ],
-      "score": 40,
-      "abstract": "",
-      "summary_ko": "서지 메타데이터만 확인됐으며 결론은 검증되지 않았습니다.",
-      "summary_status": "서지 기반·결론 미검증",
-      "lookback_days": 365,
-      "evidence": "Crossref journal metadata",
-      "source_type": "journal",
-      "metadata_provider": "Crossref"
+      "relevance_reasons": [
+        "Dynamic / Switching",
+        "Device Structure",
+        "Reliability"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
     },
     {
       "id": "57bbd248c000",
@@ -745,7 +1924,63 @@
       "lookback_days": 365,
       "evidence": "Crossref journal metadata",
       "source_type": "journal",
-      "metadata_provider": "Crossref"
+      "metadata_provider": "Crossref",
+      "relevance_score": 58,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Device Structure",
+        "Data Center / Power Conversion"
+      ],
+      "relevance_reasons": [
+        "Device Structure",
+        "Data Center / Power Conversion",
+        "초록 없음: 제목만으로 평가"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
+    },
+    {
+      "id": "8b48a371705a",
+      "kind": "paper",
+      "category": "IGBT",
+      "title": "A novel trench-gate SiC IGBT with floating P-buried layers for improved performance",
+      "date": "2026-08-01",
+      "source": "Microelectronics Journal",
+      "url": "https://doi.org/10.1016/j.mejo.2026.107213",
+      "doi": "10.1016/j.mejo.2026.107213",
+      "topics": [
+        "공정·구조"
+      ],
+      "score": 40,
+      "abstract": "",
+      "summary_ko": "서지 메타데이터만 확인됐으며 결론은 검증되지 않았습니다.",
+      "summary_status": "서지 기반·결론 미검증",
+      "lookback_days": 365,
+      "evidence": "Crossref journal metadata",
+      "source_type": "journal",
+      "metadata_provider": "Crossref",
+      "relevance_score": 45,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Device Structure"
+      ],
+      "relevance_reasons": [
+        "Device Structure",
+        "초록 없음: 제목만으로 평가"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "SiC",
+        "IGBT"
+      ]
     },
     {
       "id": "c178529379b2",
@@ -766,7 +2001,25 @@
       "lookback_days": 365,
       "evidence": "Crossref journal metadata",
       "source_type": "journal",
-      "metadata_provider": "Crossref"
+      "metadata_provider": "Crossref",
+      "stale_reused": true,
+      "relevance_score": 45,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Device Structure"
+      ],
+      "relevance_reasons": [
+        "Device Structure",
+        "초록 없음: 제목만으로 평가"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "GaN",
+        "SJ MOSFET"
+      ]
     },
     {
       "id": "4e6f746ad496",
@@ -787,7 +2040,100 @@
       "lookback_days": 365,
       "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
-      "metadata_provider": "OpenAlex"
+      "metadata_provider": "OpenAlex",
+      "relevance_score": 44,
+      "relevance_level": "낮음",
+      "relevance_topics": [],
+      "relevance_reasons": [
+        "제목·초록에서 공정/소자 물리 키워드 부족"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "SiC",
+        "IGBT"
+      ]
+    },
+    {
+      "id": "official-547c895881c8b89d",
+      "kind": "official",
+      "category": "SJ MOSFET",
+      "title": "ROHM Launches 600V Super Junction MOSFETs in Surface-Mount Packages",
+      "title_ko": "ROHM, 방열 성능을 강조한 600V SJ MOSFET 제품군 출시",
+      "summary_ko": "ROHM 공식 발표: 600V Super Junction MOSFET 신제품과 표면실장 패키징·열 성능을 소개했습니다.",
+      "physics_ko": "SJ Pillar Charge Balance와 RDS(on), 열저항 및 패키지 기생 성분을 구분하여 비교해야 합니다.",
+      "date": "2026-07-09",
+      "url": "https://www.rohm.com/news-detail?defaultGroupId=false&news-title=2026-07-09_news_super-junction-mosfet",
+      "source": "ROHM Newsroom",
+      "summary_status": "제조사 원문에 근거한 한국어 핵심 정보 (독립 검증 아님)",
+      "source_type": "manufacturer_official",
+      "company_attribution": "publisher_official",
+      "company_source_status": {
+        "rohm": "official_verified_url"
+      },
+      "companies": [
+        "rohm"
+      ],
+      "device_mentions": [
+        "SJ MOSFET"
+      ],
+      "topics": [
+        "일반 기술"
+      ],
+      "score": 30,
+      "lookback_days": 365,
+      "evidence": "Verified official manufacturer article URL",
+      "metadata_provider": "curated_official_registry",
+      "relevance_score": 31,
+      "relevance_level": "낮음",
+      "relevance_topics": [
+        "Device Structure"
+      ],
+      "relevance_reasons": [
+        "Device Structure"
+      ],
+      "relevance_method": "metadata-rule-v1"
+    },
+    {
+      "id": "official-500b632deffbbfb9",
+      "kind": "official",
+      "category": "GaN",
+      "title": "STMicroelectronics and the infrastructure of Cloud AI",
+      "title_ko": "ST, AI 데이터센터 전력망에서 SiC·GaN 및 800VDC 기술 활용 소개",
+      "summary_ko": "ST 공식 기술 소개: AI 데이터센터의 800VDC 전력 아키텍처와 SiC·GaN 등 전력반도체 적용 방향을 설명합니다.",
+      "physics_ko": "소자 전압 정격과 시스템 배전 전압은 동일하지 않으므로 회로 토폴로지 및 변환 단계별 구분이 필요합니다.",
+      "date": "2026-06-26",
+      "url": "https://newsroom.st.com/media-center/press-item.html/f0022.html",
+      "source": "STMicroelectronics Newsroom",
+      "summary_status": "제조사 원문에 근거한 한국어 핵심 정보 (독립 검증 아님)",
+      "source_type": "manufacturer_official",
+      "company_attribution": "publisher_official",
+      "company_source_status": {
+        "st": "official_verified_url"
+      },
+      "companies": [
+        "st"
+      ],
+      "device_mentions": [
+        "GaN",
+        "SiC"
+      ],
+      "topics": [
+        "일반 기술"
+      ],
+      "score": 50,
+      "lookback_days": 365,
+      "evidence": "Verified official manufacturer article URL",
+      "metadata_provider": "curated_official_registry",
+      "relevance_score": 18,
+      "relevance_level": "낮음",
+      "relevance_topics": [],
+      "relevance_reasons": [
+        "제목·초록에서 공정/소자 물리 키워드 부족"
+      ],
+      "relevance_method": "metadata-rule-v1"
     },
     {
       "id": "3c0c54288ed6",
@@ -808,7 +2154,60 @@
       "lookback_days": 365,
       "evidence": "Crossref journal metadata",
       "source_type": "journal",
-      "metadata_provider": "Crossref"
+      "metadata_provider": "Crossref",
+      "stale_reused": true,
+      "relevance_score": 32,
+      "relevance_level": "낮음",
+      "relevance_topics": [],
+      "relevance_reasons": [
+        "제목·초록에서 공정/소자 물리 키워드 부족",
+        "초록 없음: 제목만으로 평가"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
+    },
+    {
+      "id": "official-141918d10e081341",
+      "kind": "official",
+      "category": "SiC",
+      "title": "ROHM SiC MOSFET Adopted in BBU for AI Servers",
+      "title_ko": "ROHM, AI 서버 BBU에 750V SiC MOSFET 채택 발표",
+      "summary_ko": "ROHM 공식 발표: AI 서버 백업 배터리 장치에 750V SiC MOSFET SCT4013DLL 채택을 발표했으며 800VDC 시스템 응용을 설명합니다.",
+      "physics_ko": "실제 Device VDS 정격은 시스템 버스 전압과 같지 않으며 회로 내 소자 전압 스트레스를 기준으로 평가합니다.",
+      "date": "2026-06-03",
+      "url": "https://www.rohm.com/news-detail?defaultGroupId=false&news-title=2026-06-03_news_sic-mosfet",
+      "source": "ROHM Newsroom",
+      "summary_status": "제조사 원문에 근거한 한국어 핵심 정보 (독립 검증 아님)",
+      "source_type": "manufacturer_official",
+      "company_attribution": "publisher_official",
+      "company_source_status": {
+        "rohm": "official_verified_url"
+      },
+      "companies": [
+        "rohm"
+      ],
+      "device_mentions": [
+        "SiC"
+      ],
+      "topics": [
+        "데이터센터"
+      ],
+      "score": 40,
+      "lookback_days": 365,
+      "evidence": "Verified official manufacturer article URL",
+      "metadata_provider": "curated_official_registry",
+      "relevance_score": 18,
+      "relevance_level": "낮음",
+      "relevance_topics": [],
+      "relevance_reasons": [
+        "제목·초록에서 공정/소자 물리 키워드 부족"
+      ],
+      "relevance_method": "metadata-rule-v1"
     },
     {
       "id": "e70ef012dfe6",
@@ -829,7 +2228,25 @@
       "lookback_days": 365,
       "evidence": "Crossref journal metadata",
       "source_type": "journal",
-      "metadata_provider": "Crossref"
+      "metadata_provider": "Crossref",
+      "relevance_score": 58,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Dynamic / Switching",
+        "Device Structure"
+      ],
+      "relevance_reasons": [
+        "Dynamic / Switching",
+        "Device Structure",
+        "초록 없음: 제목만으로 평가"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
     },
     {
       "id": "0dd979b335b2",
@@ -850,7 +2267,23 @@
       "lookback_days": 365,
       "evidence": "Crossref journal metadata",
       "source_type": "journal",
-      "metadata_provider": "Crossref"
+      "metadata_provider": "Crossref",
+      "relevance_score": 45,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Device Structure"
+      ],
+      "relevance_reasons": [
+        "Device Structure",
+        "초록 없음: 제목만으로 평가"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
     },
     {
       "id": "77073e7498d7",
@@ -871,7 +2304,25 @@
       "lookback_days": 365,
       "evidence": "Crossref journal metadata",
       "source_type": "journal",
-      "metadata_provider": "Crossref"
+      "metadata_provider": "Crossref",
+      "stale_reused": true,
+      "relevance_score": 45,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Device Structure"
+      ],
+      "relevance_reasons": [
+        "Device Structure",
+        "초록 없음: 제목만으로 평가"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "SiC",
+        "SJ MOSFET"
+      ]
     },
     {
       "id": "bf53d8d29367",
@@ -892,7 +2343,60 @@
       "lookback_days": 365,
       "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
-      "metadata_provider": "OpenAlex"
+      "metadata_provider": "OpenAlex",
+      "relevance_score": 57,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Reliability"
+      ],
+      "relevance_reasons": [
+        "Reliability"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
+    },
+    {
+      "id": "official-9a41a39eac92aa24",
+      "kind": "official",
+      "category": "GaN",
+      "title": "STMicroelectronics announces new 700V PowerGaN HEMTs for AI servers and robotics",
+      "title_ko": "ST, AI 서버·로봇용 700V PowerGaN HEMT 제품군 발표",
+      "summary_ko": "ST 공식 발표: 700V E-mode GaN HEMT 7종, 제품별 RDS(on) typ. 53~270mΩ 및 6~29A급 정격을 공개. 패키지와 측정 조건에 따라 비교해야 합니다.",
+      "physics_ko": "고주파 전력 변환에서는 Qg×RDS(on), 스위칭 손실과 게이트 루프 기생 인덕턴스를 함께 평가해야 합니다.",
+      "date": "2026-05-26",
+      "url": "https://newsroom.st.com/media-center/press-item.html/n4776.html",
+      "source": "STMicroelectronics Newsroom",
+      "summary_status": "제조사 원문에 근거한 한국어 핵심 정보 (독립 검증 아님)",
+      "source_type": "manufacturer_official",
+      "company_attribution": "publisher_official",
+      "company_source_status": {
+        "st": "official_verified_url"
+      },
+      "companies": [
+        "st"
+      ],
+      "device_mentions": [
+        "GaN"
+      ],
+      "topics": [
+        "데이터센터"
+      ],
+      "score": 50,
+      "lookback_days": 365,
+      "evidence": "Verified official manufacturer article URL",
+      "metadata_provider": "curated_official_registry",
+      "relevance_score": 18,
+      "relevance_level": "낮음",
+      "relevance_topics": [],
+      "relevance_reasons": [
+        "제목·초록에서 공정/소자 물리 키워드 부족"
+      ],
+      "relevance_method": "metadata-rule-v1"
     },
     {
       "id": "486c677fa593",
@@ -913,7 +2417,22 @@
       "lookback_days": 365,
       "evidence": "Crossref journal metadata",
       "source_type": "journal",
-      "metadata_provider": "Crossref"
+      "metadata_provider": "Crossref",
+      "relevance_score": 57,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Dynamic / Switching"
+      ],
+      "relevance_reasons": [
+        "Dynamic / Switching"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
     },
     {
       "id": "ebdf7b7a858e",
@@ -934,7 +2453,27 @@
       "lookback_days": 365,
       "evidence": "Crossref journal metadata",
       "source_type": "journal",
-      "metadata_provider": "Crossref"
+      "metadata_provider": "Crossref",
+      "relevance_score": 83,
+      "relevance_level": "높음",
+      "relevance_topics": [
+        "Dynamic / Switching",
+        "Device Structure",
+        "Reliability"
+      ],
+      "relevance_reasons": [
+        "Dynamic / Switching",
+        "Device Structure",
+        "Reliability"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "SiC",
+        "SJ MOSFET"
+      ]
     },
     {
       "id": "24e0823de36a",
@@ -953,9 +2492,22 @@
       "summary_ko": "공개 초록을 확인해 주요 결론을 검토하세요.",
       "summary_status": "초록 기반·원문 미검증",
       "lookback_days": 365,
-      "evidence": "Crossref journal metadata",
+      "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
-      "metadata_provider": "Crossref"
+      "metadata_provider": "OpenAlex",
+      "relevance_score": 44,
+      "relevance_level": "낮음",
+      "relevance_topics": [],
+      "relevance_reasons": [
+        "제목·초록에서 공정/소자 물리 키워드 부족"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
     },
     {
       "id": "75b9050215e2",
@@ -974,30 +2526,22 @@
       "summary_ko": "공개 초록을 확인해 주요 결론을 검토하세요.",
       "summary_status": "초록 기반·원문 미검증",
       "lookback_days": 365,
-      "evidence": "Crossref journal metadata",
+      "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
-      "metadata_provider": "Crossref"
-    },
-    {
-      "id": "9074d9354f6e",
-      "kind": "paper",
-      "category": "IGBT",
-      "title": "A novel collector-side injection-enhanced reverse-conducting IGBT integrated Si/SiGe heterojunction diode for increased short-circuit property",
-      "date": "2026-05-01",
-      "source": "Micro and Nanostructures",
-      "url": "https://doi.org/10.1016/j.micrna.2026.208615",
-      "doi": "10.1016/j.micrna.2026.208615",
-      "topics": [
-        "일반 기술"
+      "metadata_provider": "OpenAlex",
+      "relevance_score": 44,
+      "relevance_level": "낮음",
+      "relevance_topics": [],
+      "relevance_reasons": [
+        "제목·초록에서 공정/소자 물리 키워드 부족"
       ],
-      "score": 30,
-      "abstract": "",
-      "summary_ko": "서지 메타데이터만 확인됐으며 결론은 검증되지 않았습니다.",
-      "summary_status": "서지 기반·결론 미검증",
-      "lookback_days": 365,
-      "evidence": "Crossref journal metadata",
-      "source_type": "journal",
-      "metadata_provider": "Crossref"
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
     },
     {
       "id": "3cbcdea66dd8",
@@ -1018,7 +2562,22 @@
       "lookback_days": 365,
       "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
-      "metadata_provider": "OpenAlex"
+      "metadata_provider": "OpenAlex",
+      "relevance_score": 57,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Process / Materials"
+      ],
+      "relevance_reasons": [
+        "Process / Materials"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
     },
     {
       "id": "fe1ae9d27803",
@@ -1039,92 +2598,64 @@
       "lookback_days": 365,
       "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
-      "metadata_provider": "OpenAlex"
-    },
-    {
-      "id": "7530ddb0858e",
-      "kind": "paper",
-      "category": "IGBT",
-      "title": "A Novel Trench IGBT With Shielding Hole Path for Low EMI Noise",
-      "date": "2026-04-01",
-      "source": "IEEE Transactions on Electron Devices",
-      "url": "https://doi.org/10.1109/ted.2026.3669469",
-      "doi": "10.1109/ted.2026.3669469",
-      "topics": [
-        "공정·구조"
+      "metadata_provider": "OpenAlex",
+      "relevance_score": 83,
+      "relevance_level": "높음",
+      "relevance_topics": [
+        "Dynamic / Switching",
+        "Device Structure",
+        "Reliability"
       ],
-      "score": 48,
-      "abstract": "",
-      "summary_ko": "서지 메타데이터만 확인됐으며 결론은 검증되지 않았습니다.",
-      "summary_status": "서지 기반·결론 미검증",
-      "lookback_days": 365,
-      "evidence": "Crossref journal metadata",
-      "source_type": "journal",
-      "metadata_provider": "Crossref"
-    },
-    {
-      "id": "97302fdedd25",
-      "kind": "paper",
-      "category": "SGT",
-      "title": "A novel 1200 V SiC trench MOSFET based on superjunction and shielded gate technologies for reduced power loss",
-      "date": "2026-04-01",
-      "source": "Semiconductor Science and Technology",
-      "url": "https://doi.org/10.1088/1361-6641/ae5aca",
-      "doi": "10.1088/1361-6641/ae5aca",
-      "topics": [
-        "신뢰성",
-        "공정·구조"
+      "relevance_reasons": [
+        "Dynamic / Switching",
+        "Device Structure",
+        "Reliability"
       ],
-      "score": 48,
-      "abstract": "Abstract To address the key challenges of SiC trench MOSFETs (TMOSFETs) in high-voltage and high-frequency applications, such as the trade-off between breakdown voltage ( BV ) and specific on-resistance ( R on,sp ), as well as significant dynamic losses, a novel 1200 V trench SiC MOSFET integrating superjunction (SJ) and shielded gate (SG) technologies (SS-TMOSFET) is proposed. The SJ structure modulates the electric field distribution in the drift region, enabling a substantial reduction in R on,sp while maintaining a high BV . The SG structure minimizes the gate-drain overlap area, significantly reducing gate-drain capacitance ( C GD ) and gate-drain charge ( Q GD ), thereby optimizing dynamic switching characteristics. Based on technology computer aided design (TCAD) simulations, the structural parameters are optimized. Results show that compared with the conventional TMOSFET with a P-type shielding layer (C-TMOSFET), the SS-TMOSFET achieves a 71% reduction in R on,sp , 78% and 70% reduction in C GD and Q GD , respectively, a 16% reduction in switching loss ( E SW ), and a 421% improvement in the figure of merit (FOM = BV 2 R on,sp −1 ) with a BV of 1483 V. This work realizes the coordinated optimization of static and dynamic losses, providing a low-power solution for high-voltage and high-frequency power electronic applications.",
-      "summary_ko": "공개 초록을 확인해 주요 결론을 검토하세요.",
-      "summary_status": "초록 기반·원문 미검증",
-      "lookback_days": 365,
-      "evidence": "Crossref journal metadata",
-      "source_type": "journal",
-      "metadata_provider": "Crossref"
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
     },
     {
-      "id": "e72c4b25204a",
-      "kind": "paper",
-      "category": "IGBT",
-      "title": "A novel P/N-drift reverse-conducting IGBT with P-layer structure at the trench bottom",
-      "date": "2026-04-01",
-      "source": "Microelectronics Journal",
-      "url": "https://doi.org/10.1016/j.mejo.2026.107072",
-      "doi": "10.1016/j.mejo.2026.107072",
+      "id": "official-546e13879821e8d1",
+      "kind": "official",
+      "category": "SiC",
+      "title": "ROHM Develops 5th Generation SiC MOSFETs",
+      "title_ko": "ROHM, 5세대 SiC MOSFET 개발·고온 온저항 개선 발표",
+      "summary_ko": "ROHM 공식 발표: 동일 내압·칩 크기 기준으로 Tj=175°C에서 4세대 대비 온저항 약 30% 감소를 주장합니다. 독립 실측은 아닙니다.",
+      "physics_ko": "셀 구조·채널 및 JFET 저항, Drift 저항의 온도 의존성을 함께 평가해야 합니다.",
+      "date": "2026-04-21",
+      "url": "https://www.rohm.com/news-detail?defaultGroupId=false&news-title=2026-04-21_news_sic-mosfet",
+      "source": "ROHM Newsroom",
+      "summary_status": "제조사 원문에 근거한 한국어 핵심 정보 (독립 검증 아님)",
+      "source_type": "manufacturer_official",
+      "company_attribution": "publisher_official",
+      "company_source_status": {
+        "rohm": "official_verified_url"
+      },
+      "companies": [
+        "rohm"
+      ],
+      "device_mentions": [
+        "SiC"
+      ],
       "topics": [
-        "공정·구조"
+        "일반 기술"
       ],
       "score": 40,
-      "abstract": "",
-      "summary_ko": "서지 메타데이터만 확인됐으며 결론은 검증되지 않았습니다.",
-      "summary_status": "서지 기반·결론 미검증",
       "lookback_days": 365,
-      "evidence": "Crossref journal metadata",
-      "source_type": "journal",
-      "metadata_provider": "Crossref"
-    },
-    {
-      "id": "1a7f0e13d500",
-      "kind": "paper",
-      "category": "IGBT",
-      "title": "Analysis on Irradiation Responses of 4.5-kV-Rated Trench-Gate IGBT Through Multicell Simulation",
-      "date": "2026-04-01",
-      "source": "IEEE Transactions on Nuclear Science",
-      "url": "https://doi.org/10.1109/tns.2026.3673124",
-      "doi": "10.1109/tns.2026.3673124",
-      "topics": [
-        "공정·구조"
+      "evidence": "Verified official manufacturer article URL",
+      "metadata_provider": "curated_official_registry",
+      "relevance_score": 18,
+      "relevance_level": "낮음",
+      "relevance_topics": [],
+      "relevance_reasons": [
+        "제목·초록에서 공정/소자 물리 키워드 부족"
       ],
-      "score": 40,
-      "abstract": "",
-      "summary_ko": "서지 메타데이터만 확인됐으며 결론은 검증되지 않았습니다.",
-      "summary_status": "서지 기반·결론 미검증",
-      "lookback_days": 365,
-      "evidence": "Crossref journal metadata",
-      "source_type": "journal",
-      "metadata_provider": "Crossref"
+      "relevance_method": "metadata-rule-v1"
     },
     {
       "id": "9219609b55df",
@@ -1146,7 +2677,185 @@
       "lookback_days": 365,
       "evidence": "Crossref journal metadata",
       "source_type": "journal",
-      "metadata_provider": "Crossref"
+      "metadata_provider": "Crossref",
+      "stale_reused": true,
+      "relevance_score": 94,
+      "relevance_level": "높음",
+      "relevance_topics": [
+        "Dynamic / Switching",
+        "Device Structure",
+        "Process / Materials",
+        "Reliability"
+      ],
+      "relevance_reasons": [
+        "Dynamic / Switching",
+        "Device Structure",
+        "Process / Materials",
+        "Reliability"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "SGT"
+      ]
+    },
+    {
+      "id": "97302fdedd25",
+      "kind": "paper",
+      "category": "SJ MOSFET",
+      "title": "A novel 1200 V SiC trench MOSFET based on superjunction and shielded gate technologies for reduced power loss",
+      "date": "2026-04-01",
+      "source": "Semiconductor Science and Technology",
+      "url": "https://doi.org/10.1088/1361-6641/ae5aca",
+      "doi": "10.1088/1361-6641/ae5aca",
+      "topics": [
+        "신뢰성",
+        "공정·구조"
+      ],
+      "score": 48,
+      "abstract": "Abstract To address the key challenges of SiC trench MOSFETs (TMOSFETs) in high-voltage and high-frequency applications, such as the trade-off between breakdown voltage ( BV ) and specific on-resistance ( R on,sp ), as well as significant dynamic losses, a novel 1200 V trench SiC MOSFET integrating superjunction (SJ) and shielded gate (SG) technologies (SS-TMOSFET) is proposed. The SJ structure modulates the electric field distribution in the drift region, enabling a substantial reduction in R on,sp while maintaining a high BV . The SG structure minimizes the gate-drain overlap area, significantly reducing gate-drain capacitance ( C GD ) and gate-drain charge ( Q GD ), thereby optimizing dynamic switching characteristics. Based on technology computer aided design (TCAD) simulations, the structural parameters are optimized. Results show that compared with the conventional TMOSFET with a P-type shielding layer (C-TMOSFET), the SS-TMOSFET achieves a 71% reduction in R on,sp , 78% and 70% reduction in C GD and Q GD , respectively, a 16% reduction in switching loss ( E SW ), and a 421% improvement in the figure of merit (FOM = BV 2 R on,sp −1 ) with a BV of 1483 V. This work realizes the coordinated optimization of static and dynamic losses, providing a low-power solution for high-voltage and high-frequency power electronic applications.",
+      "summary_ko": "본 연구에서는 슈퍼정션(SJ)과 실드 게이트(SG) 기술을 통합한 1200V SiC 트렌치 MOSFET(SS-TMOSFET)을 제안하여 RDS(on)과 BVDSS 간의 트레이드오프 문제와 동적 손실을 개선하였다. SS-TMOSFET은 기존 구조 대비 RDS(on) 71%, 게이트-드레인 커패시턴스 및 전하 각각 78%, 70% 감소와 함께 스위칭 손실 16% 감소 및 FOM 421% 향상을 달성하였다.",
+      "summary_status": "AI 초록 기반·원문 미검증",
+      "lookback_days": 365,
+      "evidence": "Crossref journal metadata",
+      "source_type": "journal",
+      "metadata_provider": "Crossref",
+      "relevance_score": 83,
+      "relevance_level": "높음",
+      "relevance_topics": [
+        "Dynamic / Switching",
+        "Device Structure",
+        "Reliability"
+      ],
+      "relevance_reasons": [
+        "Dynamic / Switching",
+        "Device Structure",
+        "Reliability"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "SiC",
+        "SGT",
+        "SJ MOSFET"
+      ],
+      "title_ko": "슈퍼정션 및 실드 게이트 기술을 적용한 1200V SiC 트렌치 MOSFET의 전력 손실 저감",
+      "physics_ko": "슈퍼정션 구조는 드리프트 영역 내 전기장 분포를 조절하여 낮은 RDS(on)과 높은 BVDSS를 동시에 실현하며, 실드 게이트 구조는 게이트-드레인 중첩 면적을 최소화하여 동적 손실을 최적화한다."
+    },
+    {
+      "id": "e72c4b25204a",
+      "kind": "paper",
+      "category": "IGBT",
+      "title": "A novel P/N-drift reverse-conducting IGBT with P-layer structure at the trench bottom",
+      "date": "2026-04-01",
+      "source": "Microelectronics Journal",
+      "url": "https://doi.org/10.1016/j.mejo.2026.107072",
+      "doi": "10.1016/j.mejo.2026.107072",
+      "topics": [
+        "공정·구조"
+      ],
+      "score": 40,
+      "abstract": "",
+      "summary_ko": "서지 메타데이터만 확인됐으며 결론은 검증되지 않았습니다.",
+      "summary_status": "서지 기반·결론 미검증",
+      "lookback_days": 365,
+      "evidence": "Crossref journal metadata",
+      "source_type": "journal",
+      "metadata_provider": "Crossref",
+      "relevance_score": 45,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Device Structure"
+      ],
+      "relevance_reasons": [
+        "Device Structure",
+        "초록 없음: 제목만으로 평가"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
+    },
+    {
+      "id": "7530ddb0858e",
+      "kind": "paper",
+      "category": "IGBT",
+      "title": "A Novel Trench IGBT With Shielding Hole Path for Low EMI Noise",
+      "date": "2026-04-01",
+      "source": "IEEE Transactions on Electron Devices",
+      "url": "https://doi.org/10.1109/ted.2026.3669469",
+      "doi": "10.1109/ted.2026.3669469",
+      "topics": [
+        "공정·구조"
+      ],
+      "score": 48,
+      "abstract": "",
+      "summary_ko": "서지 메타데이터만 확인됐으며 결론은 검증되지 않았습니다.",
+      "summary_status": "서지 기반·결론 미검증",
+      "lookback_days": 365,
+      "evidence": "Crossref journal metadata",
+      "source_type": "journal",
+      "metadata_provider": "Crossref",
+      "relevance_score": 45,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Device Structure"
+      ],
+      "relevance_reasons": [
+        "Device Structure",
+        "초록 없음: 제목만으로 평가"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
+    },
+    {
+      "id": "1a7f0e13d500",
+      "kind": "paper",
+      "category": "IGBT",
+      "title": "Analysis on Irradiation Responses of 4.5-kV-Rated Trench-Gate IGBT Through Multicell Simulation",
+      "date": "2026-04-01",
+      "source": "IEEE Transactions on Nuclear Science",
+      "url": "https://doi.org/10.1109/tns.2026.3673124",
+      "doi": "10.1109/tns.2026.3673124",
+      "topics": [
+        "공정·구조"
+      ],
+      "score": 40,
+      "abstract": "",
+      "summary_ko": "서지 메타데이터만 확인됐으며 결론은 검증되지 않았습니다.",
+      "summary_status": "서지 기반·결론 미검증",
+      "lookback_days": 365,
+      "evidence": "Crossref journal metadata",
+      "source_type": "journal",
+      "metadata_provider": "Crossref",
+      "relevance_score": 45,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Device Structure"
+      ],
+      "relevance_reasons": [
+        "Device Structure",
+        "초록 없음: 제목만으로 평가"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
     },
     {
       "id": "ac457a60f0e4",
@@ -1167,7 +2876,24 @@
       "lookback_days": 365,
       "evidence": "Crossref journal metadata",
       "source_type": "journal",
-      "metadata_provider": "Crossref"
+      "metadata_provider": "Crossref",
+      "stale_reused": true,
+      "relevance_score": 45,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Process / Materials"
+      ],
+      "relevance_reasons": [
+        "Process / Materials",
+        "초록 없음: 제목만으로 평가"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
     },
     {
       "id": "ee35e019db0b",
@@ -1188,7 +2914,20 @@
       "lookback_days": 365,
       "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
-      "metadata_provider": "OpenAlex"
+      "metadata_provider": "OpenAlex",
+      "relevance_score": 44,
+      "relevance_level": "낮음",
+      "relevance_topics": [],
+      "relevance_reasons": [
+        "제목·초록에서 공정/소자 물리 키워드 부족"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
     },
     {
       "id": "98dc860601aa",
@@ -1209,7 +2948,24 @@
       "lookback_days": 365,
       "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
-      "metadata_provider": "OpenAlex"
+      "metadata_provider": "OpenAlex",
+      "relevance_score": 57,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Dynamic / Switching"
+      ],
+      "relevance_reasons": [
+        "Dynamic / Switching"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "GaN",
+        "SiC",
+        "IGBT"
+      ]
     },
     {
       "id": "8b6d00c94515",
@@ -1230,7 +2986,26 @@
       "lookback_days": 365,
       "evidence": "Crossref journal metadata",
       "source_type": "journal",
-      "metadata_provider": "Crossref"
+      "metadata_provider": "Crossref",
+      "stale_reused": true,
+      "relevance_score": 70,
+      "relevance_level": "높음",
+      "relevance_topics": [
+        "Device Structure",
+        "Reliability"
+      ],
+      "relevance_reasons": [
+        "Device Structure",
+        "Reliability"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "GaN",
+        "SJ MOSFET"
+      ]
     },
     {
       "id": "71369da8755d",
@@ -1251,7 +3026,24 @@
       "lookback_days": 365,
       "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
-      "metadata_provider": "OpenAlex"
+      "metadata_provider": "OpenAlex",
+      "relevance_score": 70,
+      "relevance_level": "높음",
+      "relevance_topics": [
+        "Device Structure",
+        "Process / Materials"
+      ],
+      "relevance_reasons": [
+        "Device Structure",
+        "Process / Materials"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
     },
     {
       "id": "bbf1fef18a3f",
@@ -1272,28 +3064,25 @@
       "lookback_days": 365,
       "evidence": "Crossref journal metadata",
       "source_type": "journal",
-      "metadata_provider": "Crossref"
-    },
-    {
-      "id": "41c9a4783836",
-      "kind": "paper",
-      "category": "IGBT",
-      "title": "Accurate loss estimation method in IGBT and MOSFET based inverters",
-      "date": "2026-03-01",
-      "source": "Results in Engineering",
-      "url": "https://doi.org/10.1016/j.rineng.2026.109351",
-      "doi": "10.1016/j.rineng.2026.109351",
-      "topics": [
-        "일반 기술"
+      "metadata_provider": "Crossref",
+      "relevance_score": 58,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Device Structure",
+        "Process / Materials"
       ],
-      "score": 30,
-      "abstract": "",
-      "summary_ko": "서지 메타데이터만 확인됐으며 결론은 검증되지 않았습니다.",
-      "summary_status": "서지 기반·결론 미검증",
-      "lookback_days": 365,
-      "evidence": "Crossref journal metadata",
-      "source_type": "journal",
-      "metadata_provider": "Crossref"
+      "relevance_reasons": [
+        "Device Structure",
+        "Process / Materials",
+        "초록 없음: 제목만으로 평가"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
     },
     {
       "id": "aad9d400f2b5",
@@ -1314,7 +3103,100 @@
       "lookback_days": 365,
       "evidence": "Crossref journal metadata",
       "source_type": "journal",
-      "metadata_provider": "Crossref"
+      "metadata_provider": "Crossref",
+      "relevance_score": 58,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Dynamic / Switching",
+        "Device Structure"
+      ],
+      "relevance_reasons": [
+        "Dynamic / Switching",
+        "Device Structure",
+        "초록 없음: 제목만으로 평가"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "SJ MOSFET"
+      ]
+    },
+    {
+      "id": "41c9a4783836",
+      "kind": "paper",
+      "category": "IGBT",
+      "title": "Accurate loss estimation method in IGBT and MOSFET based inverters",
+      "date": "2026-03-01",
+      "source": "Results in Engineering",
+      "url": "https://doi.org/10.1016/j.rineng.2026.109351",
+      "doi": "10.1016/j.rineng.2026.109351",
+      "topics": [
+        "일반 기술"
+      ],
+      "score": 30,
+      "abstract": "",
+      "summary_ko": "서지 메타데이터만 확인됐으며 결론은 검증되지 않았습니다.",
+      "summary_status": "서지 기반·결론 미검증",
+      "lookback_days": 365,
+      "evidence": "Crossref journal metadata",
+      "source_type": "journal",
+      "metadata_provider": "Crossref",
+      "stale_reused": true,
+      "relevance_score": 45,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Data Center / Power Conversion"
+      ],
+      "relevance_reasons": [
+        "Data Center / Power Conversion",
+        "초록 없음: 제목만으로 평가"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
+    },
+    {
+      "id": "9074d9354f6e",
+      "kind": "paper",
+      "category": "IGBT",
+      "title": "A novel collector-side injection-enhanced reverse-conducting IGBT integrated Si/SiGe heterojunction diode for increased short-circuit property",
+      "date": "2026-02-19",
+      "source": "Micro and Nanostructures",
+      "url": "https://doi.org/10.1016/j.micrna.2026.208615",
+      "doi": "10.1016/j.micrna.2026.208615",
+      "topics": [
+        "일반 기술"
+      ],
+      "score": 30,
+      "abstract": "",
+      "summary_ko": "서지 메타데이터만 확인됐으며 결론은 검증되지 않았습니다.",
+      "summary_status": "서지 기반·결론 미검증",
+      "lookback_days": 365,
+      "evidence": "OpenAlex journal metadata",
+      "source_type": "journal",
+      "metadata_provider": "OpenAlex",
+      "relevance_score": 45,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Dynamic / Switching"
+      ],
+      "relevance_reasons": [
+        "Dynamic / Switching",
+        "초록 없음: 제목만으로 평가"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
     },
     {
       "id": "292be53d2f7c",
@@ -1335,7 +3217,20 @@
       "lookback_days": 365,
       "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
-      "metadata_provider": "OpenAlex"
+      "metadata_provider": "OpenAlex",
+      "relevance_score": 44,
+      "relevance_level": "낮음",
+      "relevance_topics": [],
+      "relevance_reasons": [
+        "제목·초록에서 공정/소자 물리 키워드 부족"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
     },
     {
       "id": "a161751156b6",
@@ -1356,7 +3251,26 @@
       "lookback_days": 365,
       "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
-      "metadata_provider": "OpenAlex"
+      "metadata_provider": "OpenAlex",
+      "relevance_score": 83,
+      "relevance_level": "높음",
+      "relevance_topics": [
+        "Dynamic / Switching",
+        "Process / Materials",
+        "Reliability"
+      ],
+      "relevance_reasons": [
+        "Dynamic / Switching",
+        "Process / Materials",
+        "Reliability"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
     },
     {
       "id": "d1f269b8b5b8",
@@ -1378,28 +3292,27 @@
       "lookback_days": 365,
       "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
-      "metadata_provider": "OpenAlex"
-    },
-    {
-      "id": "5ed94cebc246",
-      "kind": "paper",
-      "category": "IGBT",
-      "title": "Experimental Evaluation on 1200 V Trench-FS CS-SemiSJ-IGBT With 45 μ m Multi-Epi SJ-Pillar",
-      "date": "2026-02-01",
-      "source": "IEEE Transactions on Electron Devices",
-      "url": "https://doi.org/10.1109/ted.2025.3642853",
-      "doi": "10.1109/ted.2025.3642853",
-      "topics": [
-        "공정·구조"
+      "metadata_provider": "OpenAlex",
+      "relevance_score": 83,
+      "relevance_level": "높음",
+      "relevance_topics": [
+        "Device Structure",
+        "Process / Materials",
+        "Reliability"
       ],
-      "score": 48,
-      "abstract": "",
-      "summary_ko": "서지 메타데이터만 확인됐으며 결론은 검증되지 않았습니다.",
-      "summary_status": "서지 기반·결론 미검증",
-      "lookback_days": 365,
-      "evidence": "Crossref journal metadata",
-      "source_type": "journal",
-      "metadata_provider": "Crossref"
+      "relevance_reasons": [
+        "Device Structure",
+        "Process / Materials",
+        "Reliability"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "GaN",
+        "SJ MOSFET"
+      ]
     },
     {
       "id": "ba4ebca0923f",
@@ -1420,49 +3333,61 @@
       "lookback_days": 365,
       "evidence": "Crossref journal metadata",
       "source_type": "journal",
-      "metadata_provider": "Crossref"
+      "metadata_provider": "Crossref",
+      "relevance_score": 45,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Device Structure"
+      ],
+      "relevance_reasons": [
+        "Device Structure",
+        "초록 없음: 제목만으로 평가"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT",
+        "SJ MOSFET"
+      ]
     },
     {
-      "id": "589e5e36a025",
+      "id": "5ed94cebc246",
       "kind": "paper",
       "category": "IGBT",
-      "title": "Dynamic Si IGBT Model With Accurate Ringing Considering Time-Varying Bulk Resistance and Reverse Recovery Conductance",
+      "title": "Experimental Evaluation on 1200 V Trench-FS CS-SemiSJ-IGBT With 45 μ m Multi-Epi SJ-Pillar",
       "date": "2026-02-01",
-      "source": "IEEE Transactions on Power Electronics",
-      "url": "https://doi.org/10.1109/tpel.2025.3611288",
-      "doi": "10.1109/tpel.2025.3611288",
+      "source": "IEEE Transactions on Electron Devices",
+      "url": "https://doi.org/10.1109/ted.2025.3642853",
+      "doi": "10.1109/ted.2025.3642853",
       "topics": [
-        "일반 기술"
+        "공정·구조"
       ],
-      "score": 38,
+      "score": 48,
       "abstract": "",
       "summary_ko": "서지 메타데이터만 확인됐으며 결론은 검증되지 않았습니다.",
       "summary_status": "서지 기반·결론 미검증",
       "lookback_days": 365,
       "evidence": "Crossref journal metadata",
       "source_type": "journal",
-      "metadata_provider": "Crossref"
-    },
-    {
-      "id": "3c13a00ed31f",
-      "kind": "paper",
-      "category": "IGBT",
-      "title": "IGBT health status estimation using aging trajectory similarity with sparse monitoring data",
-      "date": "2026-02-01",
-      "source": "Measurement",
-      "url": "https://doi.org/10.1016/j.measurement.2025.119805",
-      "doi": "10.1016/j.measurement.2025.119805",
-      "topics": [
-        "일반 기술"
+      "metadata_provider": "Crossref",
+      "relevance_score": 45,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Device Structure"
       ],
-      "score": 30,
-      "abstract": "",
-      "summary_ko": "서지 메타데이터만 확인됐으며 결론은 검증되지 않았습니다.",
-      "summary_status": "서지 기반·결론 미검증",
-      "lookback_days": 365,
-      "evidence": "Crossref journal metadata",
-      "source_type": "journal",
-      "metadata_provider": "Crossref"
+      "relevance_reasons": [
+        "Device Structure",
+        "초록 없음: 제목만으로 평가"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
     },
     {
       "id": "d8b3af4efb12",
@@ -1483,7 +3408,98 @@
       "lookback_days": 365,
       "evidence": "Crossref journal metadata",
       "source_type": "journal",
-      "metadata_provider": "Crossref"
+      "metadata_provider": "Crossref",
+      "relevance_score": 45,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Device Structure"
+      ],
+      "relevance_reasons": [
+        "Device Structure",
+        "초록 없음: 제목만으로 평가"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "SiC",
+        "SJ MOSFET"
+      ]
+    },
+    {
+      "id": "589e5e36a025",
+      "kind": "paper",
+      "category": "IGBT",
+      "title": "Dynamic Si IGBT Model With Accurate Ringing Considering Time-Varying Bulk Resistance and Reverse Recovery Conductance",
+      "date": "2026-02-01",
+      "source": "IEEE Transactions on Power Electronics",
+      "url": "https://doi.org/10.1109/tpel.2025.3611288",
+      "doi": "10.1109/tpel.2025.3611288",
+      "topics": [
+        "일반 기술"
+      ],
+      "score": 38,
+      "abstract": "",
+      "summary_ko": "서지 메타데이터만 확인됐으며 결론은 검증되지 않았습니다.",
+      "summary_status": "서지 기반·결론 미검증",
+      "lookback_days": 365,
+      "evidence": "Crossref journal metadata",
+      "source_type": "journal",
+      "metadata_provider": "Crossref",
+      "stale_reused": true,
+      "relevance_score": 45,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Dynamic / Switching"
+      ],
+      "relevance_reasons": [
+        "Dynamic / Switching",
+        "초록 없음: 제목만으로 평가"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
+    },
+    {
+      "id": "3c13a00ed31f",
+      "kind": "paper",
+      "category": "IGBT",
+      "title": "IGBT health status estimation using aging trajectory similarity with sparse monitoring data",
+      "date": "2026-02-01",
+      "source": "Measurement",
+      "url": "https://doi.org/10.1016/j.measurement.2025.119805",
+      "doi": "10.1016/j.measurement.2025.119805",
+      "topics": [
+        "일반 기술"
+      ],
+      "score": 30,
+      "abstract": "",
+      "summary_ko": "서지 메타데이터만 확인됐으며 결론은 검증되지 않았습니다.",
+      "summary_status": "서지 기반·결론 미검증",
+      "lookback_days": 365,
+      "evidence": "Crossref journal metadata",
+      "source_type": "journal",
+      "metadata_provider": "Crossref",
+      "stale_reused": true,
+      "relevance_score": 32,
+      "relevance_level": "낮음",
+      "relevance_topics": [],
+      "relevance_reasons": [
+        "제목·초록에서 공정/소자 물리 키워드 부족",
+        "초록 없음: 제목만으로 평가"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
     },
     {
       "id": "f1f6b3d690f7",
@@ -1504,7 +3520,21 @@
       "lookback_days": 365,
       "evidence": "Crossref journal metadata",
       "source_type": "journal",
-      "metadata_provider": "Crossref"
+      "metadata_provider": "Crossref",
+      "relevance_score": 32,
+      "relevance_level": "낮음",
+      "relevance_topics": [],
+      "relevance_reasons": [
+        "제목·초록에서 공정/소자 물리 키워드 부족",
+        "초록 없음: 제목만으로 평가"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
     },
     {
       "id": "9f40a9262318",
@@ -1525,175 +3555,22 @@
       "lookback_days": 365,
       "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
-      "metadata_provider": "OpenAlex"
-    },
-    {
-      "id": "d8a1ccb33079",
-      "kind": "paper",
-      "category": "IGBT",
-      "title": "Improved thermoreflectance imaging of trench IGBT via focus and illumination optimized reconstruction",
-      "date": "2026-01-01",
-      "source": "Microelectronics Reliability",
-      "url": "https://doi.org/10.1016/j.microrel.2025.115952",
-      "doi": "10.1016/j.microrel.2025.115952",
-      "topics": [
-        "공정·구조"
+      "metadata_provider": "OpenAlex",
+      "relevance_score": 57,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Reliability"
       ],
-      "score": 48,
-      "abstract": "",
-      "summary_ko": "서지 메타데이터만 확인됐으며 결론은 검증되지 않았습니다.",
-      "summary_status": "서지 기반·결론 미검증",
-      "lookback_days": 365,
-      "evidence": "Crossref journal metadata",
-      "source_type": "journal",
-      "metadata_provider": "Crossref"
-    },
-    {
-      "id": "016bc9a7e8e9",
-      "kind": "paper",
-      "category": "IGBT",
-      "title": "A Large‐Current High‐Reliability IGBT Driver IC With ADC for Miller Plateau Sample",
-      "date": "2026-01-01",
-      "source": "IET Power Electronics",
-      "url": "https://doi.org/10.1049/pel2.70301",
-      "doi": "10.1049/pel2.70301",
-      "topics": [
-        "신뢰성"
+      "relevance_reasons": [
+        "Reliability"
       ],
-      "score": 40,
-      "abstract": "ABSTRACT This paper presents a high‐reliability large‐current active gate driver integrated chip for IGBTs. As the IGBT switching frequencies and edge rates increase, the issues caused by parasitic elements such as overshoot, oscillation and EMI in IGBT drivers become increasingly severe. As the IGBT switching frequencies and edge rates increase, the issues caused by parasitic elements such as overshoot, oscillation, and EMI in the IGBT driver become increasingly severe. To address the issues, this paper proposes a segmented drive control scheme based on the detection of the slope of the IGBT gate voltage and the Miller plateau values. The circuit integrates an internal ADC for voltage sampling, a slope detection module, feedback control and a large‐current driver. Moreover, it can adaptively adjust the segmentation process according to different IGBTs and inductance loads. Reliability is improved via integrated multi‐fault detection and protection schemes. Specifically, for short‐circuit protection, an adaptive strategy merging two‐level turn‐off with soft shutdown is designed. This approach ensures efficient fault mitigation while maintaining device safety. Test results show that the current rising slope is reduced by 10% and the voltage overshoot is reduced by 76.9% during the switching process compared with the traditional scheme. A variety of fault detection and corresponding fault handling techniques can ensure the safety and reliability of the entire system.",
-      "summary_ko": "공개 초록을 확인해 주요 결론을 검토하세요.",
-      "summary_status": "초록 기반·원문 미검증",
-      "lookback_days": 365,
-      "evidence": "OpenAlex journal metadata",
-      "source_type": "journal",
-      "metadata_provider": "OpenAlex"
-    },
-    {
-      "id": "4af8199f030d",
-      "kind": "paper",
-      "category": "IGBT",
-      "title": "IGBT-PhysNet: Physics Constrained Neural Network for Generalized IGBT Output Characterization Modeling",
-      "date": "2026-01-01",
-      "source": "IEEE Transactions on Electron Devices",
-      "url": "https://doi.org/10.1109/ted.2025.3633214",
-      "doi": "10.1109/ted.2025.3633214",
-      "topics": [
-        "일반 기술"
-      ],
-      "score": 38,
-      "abstract": "",
-      "summary_ko": "서지 메타데이터만 확인됐으며 결론은 검증되지 않았습니다.",
-      "summary_status": "서지 기반·결론 미검증",
-      "lookback_days": 365,
-      "evidence": "Crossref journal metadata",
-      "source_type": "journal",
-      "metadata_provider": "Crossref"
-    },
-    {
-      "id": "d6ec0c141c4a",
-      "kind": "paper",
-      "category": "IGBT",
-      "title": "Second-Generation Back-Gate-Controlled IGBT (BC-IGBT) for 4.5kV-Class Voltage Range",
-      "date": "2026-01-01",
-      "source": "IEEE Transactions on Electron Devices",
-      "url": "https://doi.org/10.1109/ted.2025.3636114",
-      "doi": "10.1109/ted.2025.3636114",
-      "topics": [
-        "일반 기술"
-      ],
-      "score": 38,
-      "abstract": "",
-      "summary_ko": "서지 메타데이터만 확인됐으며 결론은 검증되지 않았습니다.",
-      "summary_status": "서지 기반·결론 미검증",
-      "lookback_days": 365,
-      "evidence": "Crossref journal metadata",
-      "source_type": "journal",
-      "metadata_provider": "Crossref"
-    },
-    {
-      "id": "f00b02cac5b6",
-      "kind": "paper",
-      "category": "IGBT",
-      "title": "Online IGBT Short-Circuit Fault Diagnosis in Modular Multilevel Converter Based on DWT and RBFNN",
-      "date": "2026-01-01",
-      "source": "IEEE Access",
-      "url": "https://doi.org/10.1109/access.2026.3662514",
-      "doi": "10.1109/access.2026.3662514",
-      "topics": [
-        "신뢰성"
-      ],
-      "score": 38,
-      "abstract": "Modular Multilevel Converters (MMCs) are widely adopted in high-power applications such as renewable energy integration and HVDC transmission, owing to their modularity and efficiency. Nevertheless, their complex architecture makes them susceptible to critical failures, particularly IGBT short-circuit faults, which can severely compromise system reliability. This paper presents a hybrid fault diagnosis approach that combines Discrete Wavelet Transform (DWT) and Radial Basis Function Neural Networks (RBFNN) for online detection and localization of IGBT short-circuit faults in MMCs. Capacitor voltage signals are decomposed using DWT, and the Root Mean Square (RMS) values of detail coefficients are extracted as features. These features are then processed by an RBFNN to accurately identify fault type and location. Simulation results demonstrate that the proposed method achieves fast, reliable, and accurate fault diagnosis, thereby enhancing the operational safety and stability of MMC-based systems.",
-      "summary_ko": "공개 초록을 확인해 주요 결론을 검토하세요.",
-      "summary_status": "초록 기반·원문 미검증",
-      "lookback_days": 365,
-      "evidence": "OpenAlex journal metadata",
-      "source_type": "journal",
-      "metadata_provider": "OpenAlex"
-    },
-    {
-      "id": "a084f3a7ce72",
-      "kind": "paper",
-      "category": "SJ MOSFET",
-      "title": "High-Efficiency Superjunction AlGaN/GaN CAVET With Integrated Source Reverse Path for Enhanced Reverse Conduction and Switching Performance",
-      "date": "2026-01-01",
-      "source": "IEEE Access",
-      "url": "https://doi.org/10.1109/access.2026.3742176",
-      "doi": "10.1109/access.2026.3742176",
-      "topics": [
-        "일반 기술"
-      ],
-      "score": 38,
-      "abstract": "",
-      "summary_ko": "서지 메타데이터만 확인됐으며 결론은 검증되지 않았습니다.",
-      "summary_status": "서지 기반·결론 미검증",
-      "lookback_days": 365,
-      "evidence": "Crossref journal metadata",
-      "source_type": "journal",
-      "metadata_provider": "Crossref"
-    },
-    {
-      "id": "522744dc5fa9",
-      "kind": "paper",
-      "category": "IGBT",
-      "title": "A Five‐Level Active Neutral‐Point‐Clamped Auxiliary Inverter Based on Reverse Blocking IGBT in Metro Applications",
-      "date": "2026-01-01",
-      "source": "IET Electric Power Applications",
-      "url": "https://doi.org/10.1049/elp2.70142",
-      "doi": "10.1049/elp2.70142",
-      "topics": [
-        "신뢰성"
-      ],
-      "score": 30,
-      "abstract": "ABSTRACT In recent decades, multi‐level inverter such as a five‐level inverter has gained much attention for its high equivalent switching frequency and low voltage stress. This paper proposes a novel five‐level active‐neutral‐point‐clamped converter utilising reverse blocking IGBT (RB‐IGBT), targeting auxiliary power supply in high‐speed train and metro system. Compared to the conventional five‐level inverters, the proposed inverter configuration exhibits lower conduction loss. Unlike the five‐level topologies of previous inverters, only two switches are on the current paths in the designed inverter, leading to the reduced conduction loss. Meanwhile, an optimised state machine‐based modulation strategy was proposed, which can implement reliable current commutation among adjacent states and maintain flying capacitor voltage balance within multiple carrier cycles. Furthermore, a detailed comparative analysis of loss breakdown and voltage stress characteristics in five‐level inverters were presented. Finally, a 27 kVA experimental prototype was built to verify the validity and feasibility of the proposed topology and modulation strategy.",
-      "summary_ko": "공개 초록을 확인해 주요 결론을 검토하세요.",
-      "summary_status": "초록 기반·원문 미검증",
-      "lookback_days": 365,
-      "evidence": "Crossref journal metadata",
-      "source_type": "journal",
-      "metadata_provider": "Crossref"
-    },
-    {
-      "id": "47a6aefdc77a",
-      "kind": "paper",
-      "category": "IGBT",
-      "title": "PWM Dead Times in Automotive Traction Inverters using IGBT, SiC MOSFET, or Si/SiC Fusion Switch Power Modules",
-      "date": "2026-01-01",
-      "source": "IET Power Electronics",
-      "url": "https://doi.org/10.1049/pel2.70185",
-      "doi": "10.1049/pel2.70185",
-      "topics": [
-        "일반 기술"
-      ],
-      "score": 30,
-      "abstract": "ABSTRACT This article features a comprehensive methodology for analyzing and optimizing PWM dead time in automotive traction inverters, applicable to a wide range of power devices, including Si IGBT/Diodes, SiC MOSFETs, and Si/SiC Fusion switches. The proposed methodology enables a systematic comparison of dead time characteristics, focusing on part‐to‐part tolerances and operating point‐dependent influence factors. Three traction inverter systems, each in the 200–300 kW class at 470 V, were built up utilizing Si IGBT/Diode, SiC MOSFET, and Si/SiC Fusion switches from the latest automotive‐released technology. The impact of PWM dead times on power losses was experimentally investigated for all three inverter systems, supporting the analytical model. Key findings from the experimental data include: (1) PWM dead times can account for more than 10% of the total inverter power losses in high current density SiC MOSFET inverter designs operating at typical automotive switching frequencies of 10 kHz; (2) Optimizing PWM dead times in Si/SiC Fusion power modules leads to up to a 5% reduction in total inverter power losses and improved current sharing, resulting in lower thermal stress—This was evaluated using thermal infrared measurements from the Si/SiC Fusion inverter prototype; 3) Optimized PWM dead times can reduce total harmonic distortion at light load conditions by up to 2%–3% for IGBT/Diode and up to 4%–5% for SiC MOSFET and Si/SiC Fusion inverter systems; (4) A sensitivity study in addition revealed that Si/SiC Fusion switches exhibit the most stable dead time settings under parameter variations. The benefit of optimized versus conventional 2 PWM dead times would result in an annual energy saving of approximately 6 GWh per 1 million vehicles. This highlights the signif",
-      "summary_ko": "공개 초록을 확인해 주요 결론을 검토하세요.",
-      "summary_status": "초록 기반·원문 미검증",
-      "lookback_days": 365,
-      "evidence": "OpenAlex journal metadata",
-      "source_type": "journal",
-      "metadata_provider": "OpenAlex"
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
     },
     {
       "id": "d3a425f8b7a5",
@@ -1714,7 +3591,323 @@
       "lookback_days": 365,
       "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
-      "metadata_provider": "OpenAlex"
+      "metadata_provider": "OpenAlex",
+      "relevance_score": 83,
+      "relevance_level": "높음",
+      "relevance_topics": [
+        "Dynamic / Switching",
+        "Reliability",
+        "Data Center / Power Conversion"
+      ],
+      "relevance_reasons": [
+        "Dynamic / Switching",
+        "Reliability",
+        "Data Center / Power Conversion"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
+    },
+    {
+      "id": "f00b02cac5b6",
+      "kind": "paper",
+      "category": "IGBT",
+      "title": "Online IGBT Short-Circuit Fault Diagnosis in Modular Multilevel Converter Based on DWT and RBFNN",
+      "date": "2026-01-01",
+      "source": "IEEE Access",
+      "url": "https://doi.org/10.1109/access.2026.3662514",
+      "doi": "10.1109/access.2026.3662514",
+      "topics": [
+        "신뢰성"
+      ],
+      "score": 38,
+      "abstract": "Modular Multilevel Converters (MMCs) are widely adopted in high-power applications such as renewable energy integration and HVDC transmission, owing to their modularity and efficiency. Nevertheless, their complex architecture makes them susceptible to critical failures, particularly IGBT short-circuit faults, which can severely compromise system reliability. This paper presents a hybrid fault diagnosis approach that combines Discrete Wavelet Transform (DWT) and Radial Basis Function Neural Networks (RBFNN) for online detection and localization of IGBT short-circuit faults in MMCs. Capacitor voltage signals are decomposed using DWT, and the Root Mean Square (RMS) values of detail coefficients are extracted as features. These features are then processed by an RBFNN to accurately identify fault type and location. Simulation results demonstrate that the proposed method achieves fast, reliable, and accurate fault diagnosis, thereby enhancing the operational safety and stability of MMC-based systems.",
+      "summary_ko": "공개 초록을 확인해 주요 결론을 검토하세요.",
+      "summary_status": "초록 기반·원문 미검증",
+      "lookback_days": 365,
+      "evidence": "OpenAlex journal metadata",
+      "source_type": "journal",
+      "metadata_provider": "OpenAlex",
+      "relevance_score": 70,
+      "relevance_level": "높음",
+      "relevance_topics": [
+        "Dynamic / Switching",
+        "Reliability"
+      ],
+      "relevance_reasons": [
+        "Dynamic / Switching",
+        "Reliability"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
+    },
+    {
+      "id": "522744dc5fa9",
+      "kind": "paper",
+      "category": "IGBT",
+      "title": "A Five‐Level Active Neutral‐Point‐Clamped Auxiliary Inverter Based on Reverse Blocking IGBT in Metro Applications",
+      "date": "2026-01-01",
+      "source": "IET Electric Power Applications",
+      "url": "https://doi.org/10.1049/elp2.70142",
+      "doi": "10.1049/elp2.70142",
+      "topics": [
+        "신뢰성"
+      ],
+      "score": 30,
+      "abstract": "ABSTRACT In recent decades, multi‐level inverter such as a five‐level inverter has gained much attention for its high equivalent switching frequency and low voltage stress. This paper proposes a novel five‐level active‐neutral‐point‐clamped converter utilising reverse blocking IGBT (RB‐IGBT), targeting auxiliary power supply in high‐speed train and metro system. Compared to the conventional five‐level inverters, the proposed inverter configuration exhibits lower conduction loss. Unlike the five‐level topologies of previous inverters, only two switches are on the current paths in the designed inverter, leading to the reduced conduction loss. Meanwhile, an optimised state machine‐based modulation strategy was proposed, which can implement reliable current commutation among adjacent states and maintain flying capacitor voltage balance within multiple carrier cycles. Furthermore, a detailed comparative analysis of loss breakdown and voltage stress characteristics in five‐level inverters were presented. Finally, a 27 kVA experimental prototype was built to verify the validity and feasibility of the proposed topology and modulation strategy.",
+      "summary_ko": "공개 초록을 확인해 주요 결론을 검토하세요.",
+      "summary_status": "초록 기반·원문 미검증",
+      "lookback_days": 365,
+      "evidence": "Crossref journal metadata",
+      "source_type": "journal",
+      "metadata_provider": "Crossref",
+      "stale_reused": true,
+      "relevance_score": 70,
+      "relevance_level": "높음",
+      "relevance_topics": [
+        "Reliability",
+        "Data Center / Power Conversion"
+      ],
+      "relevance_reasons": [
+        "Reliability",
+        "Data Center / Power Conversion"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
+    },
+    {
+      "id": "47a6aefdc77a",
+      "kind": "paper",
+      "category": "IGBT",
+      "title": "PWM Dead Times in Automotive Traction Inverters using IGBT, SiC MOSFET, or Si/SiC Fusion Switch Power Modules",
+      "date": "2026-01-01",
+      "source": "IET Power Electronics",
+      "url": "https://doi.org/10.1049/pel2.70185",
+      "doi": "10.1049/pel2.70185",
+      "topics": [
+        "일반 기술"
+      ],
+      "score": 30,
+      "abstract": "ABSTRACT This article features a comprehensive methodology for analyzing and optimizing PWM dead time in automotive traction inverters, applicable to a wide range of power devices, including Si IGBT/Diodes, SiC MOSFETs, and Si/SiC Fusion switches. The proposed methodology enables a systematic comparison of dead time characteristics, focusing on part‐to‐part tolerances and operating point‐dependent influence factors. Three traction inverter systems, each in the 200–300 kW class at 470 V, were built up utilizing Si IGBT/Diode, SiC MOSFET, and Si/SiC Fusion switches from the latest automotive‐released technology. The impact of PWM dead times on power losses was experimentally investigated for all three inverter systems, supporting the analytical model. Key findings from the experimental data include: (1) PWM dead times can account for more than 10% of the total inverter power losses in high current density SiC MOSFET inverter designs operating at typical automotive switching frequencies of 10 kHz; (2) Optimizing PWM dead times in Si/SiC Fusion power modules leads to up to a 5% reduction in total inverter power losses and improved current sharing, resulting in lower thermal stress—This was evaluated using thermal infrared measurements from the Si/SiC Fusion inverter prototype; 3) Optimized PWM dead times can reduce total harmonic distortion at light load conditions by up to 2%–3% for IGBT/Diode and up to 4%–5% for SiC MOSFET and Si/SiC Fusion inverter systems; (4) A sensitivity study in addition revealed that Si/SiC Fusion switches exhibit the most stable dead time settings under parameter variations. The benefit of optimized versus conventional 2 PWM dead times would result in an annual energy saving of approximately 6 GWh per 1 million vehicles. This highlights the signif",
+      "summary_ko": "공개 초록을 확인해 주요 결론을 검토하세요.",
+      "summary_status": "초록 기반·원문 미검증",
+      "lookback_days": 365,
+      "evidence": "OpenAlex journal metadata",
+      "source_type": "journal",
+      "metadata_provider": "OpenAlex",
+      "relevance_score": 57,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Data Center / Power Conversion"
+      ],
+      "relevance_reasons": [
+        "Data Center / Power Conversion"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "SiC",
+        "IGBT"
+      ]
+    },
+    {
+      "id": "016bc9a7e8e9",
+      "kind": "paper",
+      "category": "IGBT",
+      "title": "A Large‐Current High‐Reliability IGBT Driver IC With ADC for Miller Plateau Sample",
+      "date": "2026-01-01",
+      "source": "IET Power Electronics",
+      "url": "https://doi.org/10.1049/pel2.70301",
+      "doi": "10.1049/pel2.70301",
+      "topics": [
+        "신뢰성"
+      ],
+      "score": 40,
+      "abstract": "ABSTRACT This paper presents a high‐reliability large‐current active gate driver integrated chip for IGBTs. As the IGBT switching frequencies and edge rates increase, the issues caused by parasitic elements such as overshoot, oscillation and EMI in IGBT drivers become increasingly severe. As the IGBT switching frequencies and edge rates increase, the issues caused by parasitic elements such as overshoot, oscillation, and EMI in the IGBT driver become increasingly severe. To address the issues, this paper proposes a segmented drive control scheme based on the detection of the slope of the IGBT gate voltage and the Miller plateau values. The circuit integrates an internal ADC for voltage sampling, a slope detection module, feedback control and a large‐current driver. Moreover, it can adaptively adjust the segmentation process according to different IGBTs and inductance loads. Reliability is improved via integrated multi‐fault detection and protection schemes. Specifically, for short‐circuit protection, an adaptive strategy merging two‐level turn‐off with soft shutdown is designed. This approach ensures efficient fault mitigation while maintaining device safety. Test results show that the current rising slope is reduced by 10% and the voltage overshoot is reduced by 76.9% during the switching process compared with the traditional scheme. A variety of fault detection and corresponding fault handling techniques can ensure the safety and reliability of the entire system.",
+      "summary_ko": "공개 초록을 확인해 주요 결론을 검토하세요.",
+      "summary_status": "초록 기반·원문 미검증",
+      "lookback_days": 365,
+      "evidence": "OpenAlex journal metadata",
+      "source_type": "journal",
+      "metadata_provider": "OpenAlex",
+      "relevance_score": 57,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Reliability"
+      ],
+      "relevance_reasons": [
+        "Reliability"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
+    },
+    {
+      "id": "d8a1ccb33079",
+      "kind": "paper",
+      "category": "IGBT",
+      "title": "Improved thermoreflectance imaging of trench IGBT via focus and illumination optimized reconstruction",
+      "date": "2026-01-01",
+      "source": "Microelectronics Reliability",
+      "url": "https://doi.org/10.1016/j.microrel.2025.115952",
+      "doi": "10.1016/j.microrel.2025.115952",
+      "topics": [
+        "공정·구조"
+      ],
+      "score": 48,
+      "abstract": "",
+      "summary_ko": "서지 메타데이터만 확인됐으며 결론은 검증되지 않았습니다.",
+      "summary_status": "서지 기반·결론 미검증",
+      "lookback_days": 365,
+      "evidence": "Crossref journal metadata",
+      "source_type": "journal",
+      "metadata_provider": "Crossref",
+      "relevance_score": 45,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Device Structure"
+      ],
+      "relevance_reasons": [
+        "Device Structure",
+        "초록 없음: 제목만으로 평가"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
+    },
+    {
+      "id": "a084f3a7ce72",
+      "kind": "paper",
+      "category": "SJ MOSFET",
+      "title": "High-Efficiency Superjunction AlGaN/GaN CAVET With Integrated Source Reverse Path for Enhanced Reverse Conduction and Switching Performance",
+      "date": "2026-01-01",
+      "source": "IEEE Access",
+      "url": "https://doi.org/10.1109/access.2026.3742176",
+      "doi": "10.1109/access.2026.3742176",
+      "topics": [
+        "일반 기술"
+      ],
+      "score": 38,
+      "abstract": "",
+      "summary_ko": "서지 메타데이터만 확인됐으며 결론은 검증되지 않았습니다.",
+      "summary_status": "서지 기반·결론 미검증",
+      "lookback_days": 365,
+      "evidence": "Crossref journal metadata",
+      "source_type": "journal",
+      "metadata_provider": "Crossref",
+      "relevance_score": 45,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Device Structure"
+      ],
+      "relevance_reasons": [
+        "Device Structure",
+        "초록 없음: 제목만으로 평가"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "GaN",
+        "SJ MOSFET"
+      ]
+    },
+    {
+      "id": "4af8199f030d",
+      "kind": "paper",
+      "category": "IGBT",
+      "title": "IGBT-PhysNet: Physics Constrained Neural Network for Generalized IGBT Output Characterization Modeling",
+      "date": "2026-01-01",
+      "source": "IEEE Transactions on Electron Devices",
+      "url": "https://doi.org/10.1109/ted.2025.3633214",
+      "doi": "10.1109/ted.2025.3633214",
+      "topics": [
+        "일반 기술"
+      ],
+      "score": 38,
+      "abstract": "",
+      "summary_ko": "서지 메타데이터만 확인됐으며 결론은 검증되지 않았습니다.",
+      "summary_status": "서지 기반·결론 미검증",
+      "lookback_days": 365,
+      "evidence": "Crossref journal metadata",
+      "source_type": "journal",
+      "metadata_provider": "Crossref",
+      "stale_reused": true,
+      "relevance_score": 32,
+      "relevance_level": "낮음",
+      "relevance_topics": [],
+      "relevance_reasons": [
+        "제목·초록에서 공정/소자 물리 키워드 부족",
+        "초록 없음: 제목만으로 평가"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
+    },
+    {
+      "id": "d6ec0c141c4a",
+      "kind": "paper",
+      "category": "IGBT",
+      "title": "Second-Generation Back-Gate-Controlled IGBT (BC-IGBT) for 4.5kV-Class Voltage Range",
+      "date": "2026-01-01",
+      "source": "IEEE Transactions on Electron Devices",
+      "url": "https://doi.org/10.1109/ted.2025.3636114",
+      "doi": "10.1109/ted.2025.3636114",
+      "topics": [
+        "일반 기술"
+      ],
+      "score": 38,
+      "abstract": "",
+      "summary_ko": "서지 메타데이터만 확인됐으며 결론은 검증되지 않았습니다.",
+      "summary_status": "서지 기반·결론 미검증",
+      "lookback_days": 365,
+      "evidence": "Crossref journal metadata",
+      "source_type": "journal",
+      "metadata_provider": "Crossref",
+      "stale_reused": true,
+      "relevance_score": 32,
+      "relevance_level": "낮음",
+      "relevance_topics": [],
+      "relevance_reasons": [
+        "제목·초록에서 공정/소자 물리 키워드 부족",
+        "초록 없음: 제목만으로 평가"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
     },
     {
       "id": "8bc51d299fc5",
@@ -1735,7 +3928,21 @@
       "lookback_days": 365,
       "evidence": "Crossref journal metadata",
       "source_type": "journal",
-      "metadata_provider": "Crossref"
+      "metadata_provider": "Crossref",
+      "stale_reused": true,
+      "relevance_score": 44,
+      "relevance_level": "낮음",
+      "relevance_topics": [],
+      "relevance_reasons": [
+        "제목·초록에서 공정/소자 물리 키워드 부족"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
     },
     {
       "id": "6b148a2eac3a",
@@ -1756,7 +3963,22 @@
       "lookback_days": 365,
       "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
-      "metadata_provider": "OpenAlex"
+      "metadata_provider": "OpenAlex",
+      "relevance_score": 57,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Reliability"
+      ],
+      "relevance_reasons": [
+        "Reliability"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
     },
     {
       "id": "255f775eb922",
@@ -1778,7 +4000,27 @@
       "lookback_days": 365,
       "evidence": "Crossref journal metadata",
       "source_type": "journal",
-      "metadata_provider": "Crossref"
+      "metadata_provider": "Crossref",
+      "relevance_score": 83,
+      "relevance_level": "높음",
+      "relevance_topics": [
+        "Device Structure",
+        "Process / Materials",
+        "Reliability"
+      ],
+      "relevance_reasons": [
+        "Device Structure",
+        "Process / Materials",
+        "Reliability"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "SiC",
+        "SJ MOSFET"
+      ]
     },
     {
       "id": "42a1b891c822",
@@ -1800,7 +4042,27 @@
       "lookback_days": 365,
       "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
-      "metadata_provider": "OpenAlex"
+      "metadata_provider": "OpenAlex",
+      "relevance_score": 83,
+      "relevance_level": "높음",
+      "relevance_topics": [
+        "Device Structure",
+        "Process / Materials",
+        "Reliability"
+      ],
+      "relevance_reasons": [
+        "Device Structure",
+        "Process / Materials",
+        "Reliability"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "SiC",
+        "SJ MOSFET"
+      ]
     },
     {
       "id": "320547552433",
@@ -1821,7 +4083,24 @@
       "lookback_days": 365,
       "evidence": "Crossref journal metadata",
       "source_type": "journal",
-      "metadata_provider": "Crossref"
+      "metadata_provider": "Crossref",
+      "relevance_score": 70,
+      "relevance_level": "높음",
+      "relevance_topics": [
+        "Dynamic / Switching",
+        "Device Structure"
+      ],
+      "relevance_reasons": [
+        "Dynamic / Switching",
+        "Device Structure"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "SJ MOSFET"
+      ]
     },
     {
       "id": "171f2e011d6b",
@@ -1842,91 +4121,24 @@
       "lookback_days": 365,
       "evidence": "Crossref journal metadata",
       "source_type": "journal",
-      "metadata_provider": "Crossref"
-    },
-    {
-      "id": "e6527cec905f",
-      "kind": "paper",
-      "category": "IGBT",
-      "title": "Experimental Study on 650-V Trench-FS CS-SJ-IGBT Based on 45-μm Multi-Epi SJ-Pillar",
-      "date": "2025-12-01",
-      "source": "IEEE Transactions on Electron Devices",
-      "url": "https://doi.org/10.1109/ted.2025.3618520",
-      "doi": "10.1109/ted.2025.3618520",
-      "topics": [
-        "공정·구조"
+      "metadata_provider": "Crossref",
+      "relevance_score": 70,
+      "relevance_level": "높음",
+      "relevance_topics": [
+        "Dynamic / Switching",
+        "Device Structure"
       ],
-      "score": 48,
-      "abstract": "",
-      "summary_ko": "서지 메타데이터만 확인됐으며 결론은 검증되지 않았습니다.",
-      "summary_status": "서지 기반·결론 미검증",
-      "lookback_days": 365,
-      "evidence": "Crossref journal metadata",
-      "source_type": "journal",
-      "metadata_provider": "Crossref"
-    },
-    {
-      "id": "63b295de36ae",
-      "kind": "paper",
-      "category": "IGBT",
-      "title": "SiC trench IGBT with n-barrier layer to enhance conductivity modulation",
-      "date": "2025-12-01",
-      "source": "Microelectronics Journal",
-      "url": "https://doi.org/10.1016/j.mejo.2025.106919",
-      "doi": "10.1016/j.mejo.2025.106919",
-      "topics": [
-        "공정·구조"
+      "relevance_reasons": [
+        "Dynamic / Switching",
+        "Device Structure"
       ],
-      "score": 40,
-      "abstract": "",
-      "summary_ko": "서지 메타데이터만 확인됐으며 결론은 검증되지 않았습니다.",
-      "summary_status": "서지 기반·결론 미검증",
-      "lookback_days": 365,
-      "evidence": "Crossref journal metadata",
-      "source_type": "journal",
-      "metadata_provider": "Crossref"
-    },
-    {
-      "id": "659479493e28",
-      "kind": "paper",
-      "category": "IGBT",
-      "title": "A Practical IGBT Junction Temperature Monitoring Method Based on IGBT Equivalent Turn-Off Time",
-      "date": "2025-12-01",
-      "source": "IEEE Transactions on Electron Devices",
-      "url": "https://doi.org/10.1109/ted.2025.3624713",
-      "doi": "10.1109/ted.2025.3624713",
-      "topics": [
-        "일반 기술"
-      ],
-      "score": 38,
-      "abstract": "",
-      "summary_ko": "서지 메타데이터만 확인됐으며 결론은 검증되지 않았습니다.",
-      "summary_status": "서지 기반·결론 미검증",
-      "lookback_days": 365,
-      "evidence": "Crossref journal metadata",
-      "source_type": "journal",
-      "metadata_provider": "Crossref"
-    },
-    {
-      "id": "ab55a4ef29bd",
-      "kind": "paper",
-      "category": "IGBT",
-      "title": "Switching Characteristics of Hybrid Multi-Parallel Connected Si IGBT / SiC MOSFET",
-      "date": "2025-12-01",
-      "source": "IEEJ Transactions on Fundamentals and Materials",
-      "url": "https://doi.org/10.1541/ieejfms.145.380",
-      "doi": "10.1541/ieejfms.145.380",
-      "topics": [
-        "일반 기술"
-      ],
-      "score": 30,
-      "abstract": "",
-      "summary_ko": "서지 메타데이터만 확인됐으며 결론은 검증되지 않았습니다.",
-      "summary_status": "서지 기반·결론 미검증",
-      "lookback_days": 365,
-      "evidence": "Crossref journal metadata",
-      "source_type": "journal",
-      "metadata_provider": "Crossref"
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "SJ MOSFET"
+      ]
     },
     {
       "id": "cf93e40771fa",
@@ -1947,7 +4159,136 @@
       "lookback_days": 365,
       "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
-      "metadata_provider": "OpenAlex"
+      "metadata_provider": "OpenAlex",
+      "relevance_score": 70,
+      "relevance_level": "높음",
+      "relevance_topics": [
+        "Dynamic / Switching",
+        "Reliability"
+      ],
+      "relevance_reasons": [
+        "Dynamic / Switching",
+        "Reliability"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
+    },
+    {
+      "id": "63b295de36ae",
+      "kind": "paper",
+      "category": "IGBT",
+      "title": "SiC trench IGBT with n-barrier layer to enhance conductivity modulation",
+      "date": "2025-12-01",
+      "source": "Microelectronics Journal",
+      "url": "https://doi.org/10.1016/j.mejo.2025.106919",
+      "doi": "10.1016/j.mejo.2025.106919",
+      "topics": [
+        "공정·구조"
+      ],
+      "score": 40,
+      "abstract": "",
+      "summary_ko": "서지 메타데이터만 확인됐으며 결론은 검증되지 않았습니다.",
+      "summary_status": "서지 기반·결론 미검증",
+      "lookback_days": 365,
+      "evidence": "Crossref journal metadata",
+      "source_type": "journal",
+      "metadata_provider": "Crossref",
+      "relevance_score": 45,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Device Structure"
+      ],
+      "relevance_reasons": [
+        "Device Structure",
+        "초록 없음: 제목만으로 평가"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "SiC",
+        "IGBT"
+      ]
+    },
+    {
+      "id": "e6527cec905f",
+      "kind": "paper",
+      "category": "IGBT",
+      "title": "Experimental Study on 650-V Trench-FS CS-SJ-IGBT Based on 45-μm Multi-Epi SJ-Pillar",
+      "date": "2025-12-01",
+      "source": "IEEE Transactions on Electron Devices",
+      "url": "https://doi.org/10.1109/ted.2025.3618520",
+      "doi": "10.1109/ted.2025.3618520",
+      "topics": [
+        "공정·구조"
+      ],
+      "score": 48,
+      "abstract": "",
+      "summary_ko": "서지 메타데이터만 확인됐으며 결론은 검증되지 않았습니다.",
+      "summary_status": "서지 기반·결론 미검증",
+      "lookback_days": 365,
+      "evidence": "Crossref journal metadata",
+      "source_type": "journal",
+      "metadata_provider": "Crossref",
+      "relevance_score": 45,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Device Structure"
+      ],
+      "relevance_reasons": [
+        "Device Structure",
+        "초록 없음: 제목만으로 평가"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
+    },
+    {
+      "id": "659479493e28",
+      "kind": "paper",
+      "category": "IGBT",
+      "title": "A Practical IGBT Junction Temperature Monitoring Method Based on IGBT Equivalent Turn-Off Time",
+      "date": "2025-12-01",
+      "source": "IEEE Transactions on Electron Devices",
+      "url": "https://doi.org/10.1109/ted.2025.3624713",
+      "doi": "10.1109/ted.2025.3624713",
+      "topics": [
+        "일반 기술"
+      ],
+      "score": 38,
+      "abstract": "",
+      "summary_ko": "서지 메타데이터만 확인됐으며 결론은 검증되지 않았습니다.",
+      "summary_status": "서지 기반·결론 미검증",
+      "lookback_days": 365,
+      "evidence": "Crossref journal metadata",
+      "source_type": "journal",
+      "metadata_provider": "Crossref",
+      "relevance_score": 45,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Dynamic / Switching"
+      ],
+      "relevance_reasons": [
+        "Dynamic / Switching",
+        "초록 없음: 제목만으로 평가"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
     },
     {
       "id": "b61dfcf719fd",
@@ -1968,7 +4309,23 @@
       "lookback_days": 365,
       "evidence": "Crossref journal metadata",
       "source_type": "journal",
-      "metadata_provider": "Crossref"
+      "metadata_provider": "Crossref",
+      "relevance_score": 45,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Device Structure"
+      ],
+      "relevance_reasons": [
+        "Device Structure",
+        "초록 없음: 제목만으로 평가"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "SJ MOSFET"
+      ]
     },
     {
       "id": "ff5d33007370",
@@ -1989,7 +4346,61 @@
       "lookback_days": 365,
       "evidence": "Crossref journal metadata",
       "source_type": "journal",
-      "metadata_provider": "Crossref"
+      "metadata_provider": "Crossref",
+      "stale_reused": true,
+      "relevance_score": 45,
+      "relevance_level": "보통",
+      "relevance_topics": [
+        "Device Structure"
+      ],
+      "relevance_reasons": [
+        "Device Structure",
+        "초록 없음: 제목만으로 평가"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "SJ MOSFET"
+      ]
+    },
+    {
+      "id": "ab55a4ef29bd",
+      "kind": "paper",
+      "category": "IGBT",
+      "title": "Switching Characteristics of Hybrid Multi-Parallel Connected Si IGBT / SiC MOSFET",
+      "date": "2025-12-01",
+      "source": "IEEJ Transactions on Fundamentals and Materials",
+      "url": "https://doi.org/10.1541/ieejfms.145.380",
+      "doi": "10.1541/ieejfms.145.380",
+      "topics": [
+        "일반 기술"
+      ],
+      "score": 30,
+      "abstract": "",
+      "summary_ko": "서지 메타데이터만 확인됐으며 결론은 검증되지 않았습니다.",
+      "summary_status": "서지 기반·결론 미검증",
+      "lookback_days": 365,
+      "evidence": "Crossref journal metadata",
+      "source_type": "journal",
+      "metadata_provider": "Crossref",
+      "stale_reused": true,
+      "relevance_score": 32,
+      "relevance_level": "낮음",
+      "relevance_topics": [],
+      "relevance_reasons": [
+        "제목·초록에서 공정/소자 물리 키워드 부족",
+        "초록 없음: 제목만으로 평가"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "SiC",
+        "IGBT"
+      ]
     },
     {
       "id": "7a72ee21ed37",
@@ -2011,55 +4422,299 @@
       "lookback_days": 365,
       "evidence": "Crossref journal metadata",
       "source_type": "journal",
-      "metadata_provider": "Crossref"
-    },
-    {
-      "id": "4123209c86c4",
-      "kind": "paper",
-      "category": "SJ MOSFET",
-      "title": "A novel SiC superjunction trench MOSFET with integrated heterojunction diode for reduced power loss and saturation current",
-      "date": "2025-11-11",
-      "source": "Semiconductor Science and Technology",
-      "url": "https://doi.org/10.1088/1361-6641/ae140d",
-      "doi": "10.1088/1361-6641/ae140d",
-      "topics": [
-        "신뢰성",
-        "공정·구조"
+      "metadata_provider": "Crossref",
+      "relevance_score": 71,
+      "relevance_level": "높음",
+      "relevance_topics": [
+        "Device Structure",
+        "Process / Materials",
+        "Reliability"
       ],
-      "score": 48,
-      "abstract": "Abstract A novel silicon carbide (SiC) superjunction trench metal-oxide-semiconductor field-effect transistor (SJ TMOS) with integrated heterojunction diode (HJD-SJ TMOS) is proposed and characterized to effectively reduce power loss and saturation current ( I dsat ). The integration of the poly-silicon HJD beneath the gate trench not only improves the performance of the body diode but also deceases the gate–drain capacitance ( C gd ), thereby significantly reducing the power loss of the HJD-SJ TMOS. Moreover, the poly-silicon and P+ shield layer connected to it further enhance the junction field-effect transistor (JFET) effect below the MOS channel, which efficiently reduces I dsat . Simulation results show that compared to the conventional SiC SJ TMOS, the proposed device exhibits a 50.0% and 25.8% reduction of the conduction voltage drop and reverse recovery charge for the body diode, respectively. Moreover, the gate-drain charge ( Q gd ) is reduced by 96.0%, which contributes to a 91.2% reduction in switching loss. Furthermore, compared to the conventional one, I dsat is also reduced by 71.7%, which brings a significant increase of short-circuit withstand time for the proposed device. Although the specific on-resistance ( R on,sp ) for the proposed device shows a 15.7% increase, the better shielding effect provided by the P+ shield layer significantly improves the Baliga figure of merit with increased breakdown voltage.",
-      "summary_ko": "공개 초록을 확인해 주요 결론을 검토하세요.",
-      "summary_status": "초록 기반·원문 미검증",
-      "lookback_days": 365,
-      "evidence": "Crossref journal metadata",
-      "source_type": "journal",
-      "metadata_provider": "Crossref"
+      "relevance_reasons": [
+        "Device Structure",
+        "Process / Materials",
+        "Reliability",
+        "초록 없음: 제목만으로 평가"
+      ],
+      "relevance_method": "metadata-rule-v1",
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "SiC",
+        "SGT"
+      ]
     }
   ],
+  "competitor_stats": {
+    "infineon": {
+      "id": "infineon",
+      "name": "Infineon",
+      "region": "Europe",
+      "tier": "core",
+      "items": 9,
+      "news": 9,
+      "papers": 0,
+      "official": 0,
+      "by_device": {
+        "GaN": 1,
+        "SiC": 7,
+        "IGBT": 0,
+        "SGT": 0,
+        "SJ MOSFET": 1
+      },
+      "last_date": "2026-11-13"
+    },
+    "st": {
+      "id": "st",
+      "name": "STMicroelectronics",
+      "region": "Europe",
+      "tier": "core",
+      "items": 2,
+      "news": 0,
+      "papers": 0,
+      "official": 2,
+      "by_device": {
+        "GaN": 2,
+        "SiC": 1,
+        "IGBT": 0,
+        "SGT": 0,
+        "SJ MOSFET": 0
+      },
+      "last_date": "2026-06-26"
+    },
+    "onsemi": {
+      "id": "onsemi",
+      "name": "onsemi",
+      "region": "US",
+      "tier": "core",
+      "items": 7,
+      "news": 7,
+      "papers": 0,
+      "official": 0,
+      "by_device": {
+        "GaN": 0,
+        "SiC": 6,
+        "IGBT": 0,
+        "SGT": 0,
+        "SJ MOSFET": 1
+      },
+      "last_date": "2026-11-13"
+    },
+    "rohm": {
+      "id": "rohm",
+      "name": "ROHM",
+      "region": "Japan",
+      "tier": "core",
+      "items": 4,
+      "news": 0,
+      "papers": 0,
+      "official": 4,
+      "by_device": {
+        "GaN": 0,
+        "SiC": 2,
+        "IGBT": 1,
+        "SGT": 0,
+        "SJ MOSFET": 1
+      },
+      "last_date": "2026-08-25"
+    },
+    "mitsubishi": {
+      "id": "mitsubishi",
+      "name": "Mitsubishi Electric",
+      "region": "Japan",
+      "tier": "priority",
+      "items": 4,
+      "news": 4,
+      "papers": 0,
+      "official": 0,
+      "by_device": {
+        "GaN": 4,
+        "SiC": 0,
+        "IGBT": 0,
+        "SGT": 0,
+        "SJ MOSFET": 0
+      },
+      "last_date": "2026-11-10"
+    },
+    "fuji": {
+      "id": "fuji",
+      "name": "Fuji Electric",
+      "region": "Japan",
+      "tier": "priority",
+      "items": 0,
+      "news": 0,
+      "papers": 0,
+      "official": 0,
+      "by_device": {
+        "GaN": 0,
+        "SiC": 0,
+        "IGBT": 0,
+        "SGT": 0,
+        "SJ MOSFET": 0
+      },
+      "last_date": ""
+    },
+    "toshiba": {
+      "id": "toshiba",
+      "name": "Toshiba",
+      "region": "Japan",
+      "tier": "priority",
+      "items": 0,
+      "news": 0,
+      "papers": 0,
+      "official": 0,
+      "by_device": {
+        "GaN": 0,
+        "SiC": 0,
+        "IGBT": 0,
+        "SGT": 0,
+        "SJ MOSFET": 0
+      },
+      "last_date": ""
+    },
+    "innoscience": {
+      "id": "innoscience",
+      "name": "Innoscience",
+      "region": "China",
+      "tier": "priority",
+      "items": 2,
+      "news": 1,
+      "papers": 0,
+      "official": 1,
+      "by_device": {
+        "GaN": 2,
+        "SiC": 0,
+        "IGBT": 0,
+        "SGT": 0,
+        "SJ MOSFET": 0
+      },
+      "last_date": "2026-11-05"
+    },
+    "sanan": {
+      "id": "sanan",
+      "name": "Sanan",
+      "region": "China",
+      "tier": "priority",
+      "items": 0,
+      "news": 0,
+      "papers": 0,
+      "official": 0,
+      "by_device": {
+        "GaN": 0,
+        "SiC": 0,
+        "IGBT": 0,
+        "SGT": 0,
+        "SJ MOSFET": 0
+      },
+      "last_date": ""
+    },
+    "crmicro": {
+      "id": "crmicro",
+      "name": "CR Micro",
+      "region": "China",
+      "tier": "priority",
+      "items": 0,
+      "news": 0,
+      "papers": 0,
+      "official": 0,
+      "by_device": {
+        "GaN": 0,
+        "SiC": 0,
+        "IGBT": 0,
+        "SGT": 0,
+        "SJ MOSFET": 0
+      },
+      "last_date": ""
+    },
+    "basicsemi": {
+      "id": "basicsemi",
+      "name": "BASiC Semiconductor",
+      "region": "China",
+      "tier": "priority",
+      "items": 0,
+      "news": 0,
+      "papers": 0,
+      "official": 0,
+      "by_device": {
+        "GaN": 0,
+        "SiC": 0,
+        "IGBT": 0,
+        "SGT": 0,
+        "SJ MOSFET": 0
+      },
+      "last_date": ""
+    },
+    "navitas": {
+      "id": "navitas",
+      "name": "Navitas",
+      "region": "US",
+      "tier": "priority",
+      "items": 2,
+      "news": 2,
+      "papers": 0,
+      "official": 0,
+      "by_device": {
+        "GaN": 2,
+        "SiC": 0,
+        "IGBT": 0,
+        "SGT": 0,
+        "SJ MOSFET": 0
+      },
+      "last_date": "2026-11-12"
+    },
+    "epc": {
+      "id": "epc",
+      "name": "EPC",
+      "region": "US",
+      "tier": "priority",
+      "items": 0,
+      "news": 0,
+      "papers": 0,
+      "official": 0,
+      "by_device": {
+        "GaN": 0,
+        "SiC": 0,
+        "IGBT": 0,
+        "SGT": 0,
+        "SJ MOSFET": 0
+      },
+      "last_date": ""
+    },
+    "wolfspeed": {
+      "id": "wolfspeed",
+      "name": "Wolfspeed",
+      "region": "US",
+      "tier": "priority",
+      "items": 1,
+      "news": 1,
+      "papers": 0,
+      "official": 0,
+      "by_device": {
+        "GaN": 0,
+        "SiC": 1,
+        "IGBT": 0,
+        "SGT": 0,
+        "SJ MOSFET": 0
+      },
+      "last_date": "2026-11-10"
+    }
+  },
   "counts": {
-    "GaN": 9,
-    "SiC": 7,
-    "IGBT": 57,
-    "SGT": 4,
-    "SJ MOSFET": 21
+    "GaN": 12,
+    "SiC": 21,
+    "IGBT": 60,
+    "SJ MOSFET": 23,
+    "SGT": 3
   },
   "errors": [
-    "paper SJ MOSFET: HTTPError: 429 Client Error: Too Many Requests for url: https://api.crossref.org/works?query.bibliographic=supe",
-    "Crossref IGBT HTTPError: 429 Client Error: Too Many Requests for url: https://api.crossref.org/",
-    "AI API request failed",
-    "AI API request failed",
-    "AI API request failed",
-    "AI API request failed",
-    "AI API request failed",
-    "AI API request failed",
-    "AI API request failed",
-    "AI API request failed",
-    "AI API request failed"
+    "AI summary failure: Invalid/short JSON"
   ],
   "sources": [
     "Crossref",
     "OpenAlex",
-    "Google News RSS"
+    "Google News RSS",
+    "Verified Manufacturer Official Articles"
   ],
   "financials": [],
   "product_specs": [],
@@ -2068,20 +4723,17 @@
     "enabled": true,
     "model": "gpt-4.1-mini",
     "calls": 12,
-    "cache_hits": 11,
-    "input_tokens": 9883,
-    "output_tokens": 2840,
-    "estimated_cost_usd": 0.008497,
+    "successes": 11,
+    "failures": 1,
+    "failure_reasons": {
+      "Invalid/short JSON": 1
+    },
+    "cache_hits": 12,
+    "input_tokens": 4503,
+    "output_tokens": 1844,
+    "estimated_cost_usd": 0.004752,
     "errors": [
-      "AI API request failed",
-      "AI API request failed",
-      "AI API request failed",
-      "AI API request failed",
-      "AI API request failed",
-      "AI API request failed",
-      "AI API request failed",
-      "AI API request failed",
-      "AI API request failed"
+      "AI summary failure: Invalid/short JSON"
     ],
     "limits": {
       "max_calls": 12,

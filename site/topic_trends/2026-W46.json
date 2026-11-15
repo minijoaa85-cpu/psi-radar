@@ -1,0 +1,291 @@
+{
+  "schema_version": 2,
+  "week": "2026-W46",
+  "week_start": "2026-11-09",
+  "week_to_date": "2026-11-15",
+  "complete_week": true,
+  "generated_at": "2026-11-15T23:58:01.896504+00:00",
+  "coverage": "saved_collection_publication_date_snapshot",
+  "counting_unit": "distinct_source_urls",
+  "topics": [
+    {
+      "topic_id": "gan-dynamic-ron",
+      "category": "GaN",
+      "name": "Dynamic RDS(on)",
+      "count": 3,
+      "source_kinds": {
+        "news_title_candidate": 3
+      },
+      "category_sample_count": 8,
+      "topic_share_of_sample_pct": 37.5,
+      "research_sample_count": 0,
+      "research_topic_count": 0,
+      "research_share_of_sample_pct": null,
+      "new_official_announcements": [],
+      "research_evidence": [],
+      "company_mentions": {
+        "mitsubishi": 3
+      },
+      "evidence": [
+        {
+          "id": "fe93b2e2fa57",
+          "title": "미쓰비시 전기, GaN-on-GaN 트랜지스터가 주파수 분산을 크게 억제한다고 발표했으나 수치는 제공하지 않음 - XenoSpectrum",
+          "date": "2026-11-10",
+          "kind": "news_title_candidate",
+          "source": "XenoSpectrum",
+          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1pX1Z3UG1wTDZMTzAzam8zc2VCNHE5d2xFZ3ZrdkZKdVBaNGFYaWNjeHk4NnFycm11ZHpLWF9CQ3U4UlNCVFJIWjV5TXpMLS1XZVBtb2pwQjV5NjV3cGY2WDA1ZVBUQjB0SE10MHFiQkpydU1yRU1LNmx3UGtCTWM?oc=5"
+        },
+        {
+          "id": "120e31c22621",
+          "title": "미쓰비시 전기, GaN 기판을 이용한 GaN 트랜지스터 주파수 분산 억제 세계 최초 시연",
+          "date": "2026-11-10",
+          "kind": "news_title_candidate",
+          "source": "WebWire",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9GU0Q3X1NQbHR6ZVNjSHhPVUExdnBQV195RkJMLTJnN1VpM0E0ZGROdXBBSnJrSTlCNHR1Rmh0U2ZfTVo0MlRmSWp3Snd6VkI1VUMwQlc5WHptcENuakNKbTR4TEYtck9t?oc=5"
+        },
+        {
+          "id": "22e411b2a060",
+          "title": "미쓰비시 전기, GaN 기판을 이용한 GaN 트랜지스터 주파수 분산 억제 세계 최초 시연",
+          "date": "2026-11-09",
+          "kind": "news_title_candidate",
+          "source": "Yahoo Finance Singapore",
+          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPZ3J1MmJER2hPQW50TGV6dHIwcHRqZC1tSVBybktUNW5JX0xkdFlHbXdhMlNjR2h6OGRaSzZmQ2c0cHZmN3RkQ19Zei16VXhWRTBGOTdBM2ZFelVxVjRDYlhqNFIzWUkwVEQ0OGJEdER0aWM3aGV6RVRqNDZVX1NsYTROaS03a1V1YVNRamdCazliTDg?oc=5"
+        }
+      ]
+    },
+    {
+      "topic_id": "gan-gate",
+      "category": "GaN",
+      "name": "Gate Reliability",
+      "count": 0,
+      "source_kinds": {},
+      "category_sample_count": 8,
+      "topic_share_of_sample_pct": 0.0,
+      "research_sample_count": 0,
+      "research_topic_count": 0,
+      "research_share_of_sample_pct": null,
+      "new_official_announcements": [],
+      "research_evidence": [],
+      "company_mentions": {},
+      "evidence": []
+    },
+    {
+      "topic_id": "gan-switching",
+      "category": "GaN",
+      "name": "Qg · Qoss · Eoss",
+      "count": 0,
+      "source_kinds": {},
+      "category_sample_count": 8,
+      "topic_share_of_sample_pct": 0.0,
+      "research_sample_count": 0,
+      "research_topic_count": 0,
+      "research_share_of_sample_pct": null,
+      "new_official_announcements": [],
+      "research_evidence": [],
+      "company_mentions": {},
+      "evidence": []
+    },
+    {
+      "topic_id": "sic-trench",
+      "category": "SiC",
+      "name": "Trench / Planar",
+      "count": 1,
+      "source_kinds": {
+        "news_title_candidate": 1
+      },
+      "category_sample_count": 18,
+      "topic_share_of_sample_pct": 5.6,
+      "research_sample_count": 0,
+      "research_topic_count": 0,
+      "research_share_of_sample_pct": null,
+      "new_official_announcements": [],
+      "research_evidence": [],
+      "company_mentions": {},
+      "evidence": [
+        {
+          "id": "c35fb26cd153",
+          "title": "Electronica: Nexperia, 750V SiC 트렌치 MOSFET 및 TOLL 패키징 추가",
+          "date": "2026-11-12",
+          "kind": "news_title_candidate",
+          "source": "Electronics Weekly",
+          "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPZ19wNlM2dnhHVnhLY0NDYmdINEN5eHdvYlRGQ05NM0V2cjFLbGJYcDJ1c3cxeUUwZ0QxR0NpcTFnajZGN1BDYklqRjEtSFZkbXNWbGtGbHJRMmV5UjJDN2lCa1dwTW9xUUZLUFJaeU83US1fSU1TeTVSN1RvSVpiM3FTX0UxYnlUR18zd1NkaTdYMURPWUp4NDdBMGNrYkVCRWNNQTRyeVdLWEk1ZmhUMzJLVzJySXBlcGxDcUlpcEFneUFlM0FRVFdGU2x3TEs3Tl8wV1Rpbw?oc=5"
+        }
+      ]
+    },
+    {
+      "topic_id": "sic-oxide",
+      "category": "SiC",
+      "name": "Gate Oxide Reliability",
+      "count": 0,
+      "source_kinds": {},
+      "category_sample_count": 18,
+      "topic_share_of_sample_pct": 0.0,
+      "research_sample_count": 0,
+      "research_topic_count": 0,
+      "research_share_of_sample_pct": null,
+      "new_official_announcements": [],
+      "research_evidence": [],
+      "company_mentions": {},
+      "evidence": []
+    },
+    {
+      "topic_id": "sic-short",
+      "category": "SiC",
+      "name": "Short Circuit · Body Diode",
+      "count": 0,
+      "source_kinds": {},
+      "category_sample_count": 18,
+      "topic_share_of_sample_pct": 0.0,
+      "research_sample_count": 0,
+      "research_topic_count": 0,
+      "research_share_of_sample_pct": null,
+      "new_official_announcements": [],
+      "research_evidence": [],
+      "company_mentions": {},
+      "evidence": []
+    },
+    {
+      "topic_id": "igbt-loss",
+      "category": "IGBT",
+      "name": "VCE(sat) · Eoff",
+      "count": 0,
+      "source_kinds": {},
+      "category_sample_count": 1,
+      "topic_share_of_sample_pct": null,
+      "research_sample_count": 1,
+      "research_topic_count": 0,
+      "research_share_of_sample_pct": null,
+      "new_official_announcements": [],
+      "research_evidence": [],
+      "company_mentions": {},
+      "evidence": []
+    },
+    {
+      "topic_id": "igbt-field",
+      "category": "IGBT",
+      "name": "Field-stop / Trench",
+      "count": 0,
+      "source_kinds": {},
+      "category_sample_count": 1,
+      "topic_share_of_sample_pct": null,
+      "research_sample_count": 1,
+      "research_topic_count": 0,
+      "research_share_of_sample_pct": null,
+      "new_official_announcements": [],
+      "research_evidence": [],
+      "company_mentions": {},
+      "evidence": []
+    },
+    {
+      "topic_id": "igbt-short",
+      "category": "IGBT",
+      "name": "SCWT · Ruggedness",
+      "count": 0,
+      "source_kinds": {},
+      "category_sample_count": 1,
+      "topic_share_of_sample_pct": null,
+      "research_sample_count": 1,
+      "research_topic_count": 0,
+      "research_share_of_sample_pct": null,
+      "new_official_announcements": [],
+      "research_evidence": [],
+      "company_mentions": {},
+      "evidence": []
+    },
+    {
+      "topic_id": "sj-pillar",
+      "category": "SJ MOSFET",
+      "name": "Pillar Charge Balance",
+      "count": 1,
+      "source_kinds": {
+        "news_title_candidate": 1
+      },
+      "category_sample_count": 1,
+      "topic_share_of_sample_pct": null,
+      "research_sample_count": 0,
+      "research_topic_count": 0,
+      "research_share_of_sample_pct": null,
+      "new_official_announcements": [],
+      "research_evidence": [],
+      "company_mentions": {
+        "infineon": 1,
+        "onsemi": 1
+      },
+      "evidence": [
+        {
+          "id": "062977c360bf",
+          "title": "Super Junction MOSFET Market Is Going to Boom |• Infineon Technologies • ON Semiconductor • Nexperia - openPR.com",
+          "date": "2026-11-13",
+          "kind": "news_title_candidate",
+          "source": "openPR.com",
+          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNNEdNWWc4ZFBHWnFyNS1mMFlSUGw4M1hoRjJuWjEtRXozamRhYVRQUlJjekdXTE1TSXJRZnRzQzhnMm4tbXd5V0dBMThZZFJUZlJBYkxJR0hpdzNlRWtDSGNIUkJmalQ1RWhPWUw3QmMtdXlQMW9FYjJpaXQwT1FQQm9nSVh3eTN5QXVqX0w2RnRGNzB3?oc=5"
+        }
+      ]
+    },
+    {
+      "topic_id": "sj-recovery",
+      "category": "SJ MOSFET",
+      "name": "Qrr · Softness",
+      "count": 0,
+      "source_kinds": {},
+      "category_sample_count": 1,
+      "topic_share_of_sample_pct": null,
+      "research_sample_count": 0,
+      "research_topic_count": 0,
+      "research_share_of_sample_pct": null,
+      "new_official_announcements": [],
+      "research_evidence": [],
+      "company_mentions": {},
+      "evidence": []
+    },
+    {
+      "topic_id": "sj-breakdown",
+      "category": "SJ MOSFET",
+      "name": "Breakdown · Edge",
+      "count": 0,
+      "source_kinds": {},
+      "category_sample_count": 1,
+      "topic_share_of_sample_pct": null,
+      "research_sample_count": 0,
+      "research_topic_count": 0,
+      "research_share_of_sample_pct": null,
+      "new_official_announcements": [],
+      "research_evidence": [],
+      "company_mentions": {},
+      "evidence": []
+    },
+    {
+      "topic_id": "sgt-shield",
+      "category": "SGT",
+      "name": "Shield Gate / Field Plate",
+      "count": 0,
+      "source_kinds": {},
+      "category_sample_count": 0,
+      "topic_share_of_sample_pct": null,
+      "research_sample_count": 0,
+      "research_topic_count": 0,
+      "research_share_of_sample_pct": null,
+      "new_official_announcements": [],
+      "research_evidence": [],
+      "company_mentions": {},
+      "evidence": []
+    },
+    {
+      "topic_id": "sgt-charge",
+      "category": "SGT",
+      "name": "Qgd · Qoss",
+      "count": 0,
+      "source_kinds": {},
+      "category_sample_count": 0,
+      "topic_share_of_sample_pct": null,
+      "research_sample_count": 0,
+      "research_topic_count": 0,
+      "research_share_of_sample_pct": null,
+      "new_official_announcements": [],
+      "research_evidence": [],
+      "company_mentions": {},
+      "evidence": []
+    }
+  ],
+  "warning": "현재 주차에 발행일이 속하는 수집 표본만 집계합니다. 과거 주차 0건을 자동 생성하지 않으며, 기사 검색·재수집 범위가 달라질 수 있어 절대적인 업계 성장률이 아닙니다. 기업 집계는 제목에서 확인된 기업명 언급 횟수입니다. 연구 집중도는 동일 주차·동일 기술군의 수집 논문 표본에서 제목이 일치한 비율일 뿐 업계 전체 연구 집중도가 아닙니다. 표본이 5건 미만일 때 백분율을 표시하지 않습니다."
+}

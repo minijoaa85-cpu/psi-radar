@@ -1,0 +1,1073 @@
+{
+  "schema_version": 1,
+  "source_generated_at": "2026-11-15T23:58:01.896504+00:00",
+  "benchmark_reviewed_on": "2026-11-12",
+  "topics": [
+    {
+      "id": "gan-dynamic-ron",
+      "category": "GaN",
+      "name": "Dynamic RDS(on)",
+      "simple": "스위칭 후 온저항이 변하는 현상",
+      "why": "트랩·버퍼 영향으로 도통 손실이 달라질 수 있습니다. 제품의 정적 Ron 값만으로 판단하지 않습니다.",
+      "article_candidates": [
+        {
+          "id": "120e31c22621",
+          "title": "미쓰비시 전기, GaN 기판을 이용한 GaN 트랜지스터 주파수 분산 억제 세계 최초 시연",
+          "date": "2026-11-10",
+          "kind": "news_title_candidate",
+          "publisher": "WebWire",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9GU0Q3X1NQbHR6ZVNjSHhPVUExdnBQV195RkJMLTJnN1VpM0E0ZGROdXBBSnJrSTlCNHR1Rmh0U2ZfTVo0MlRmSWp3Snd6VkI1VUMwQlc5WHptcENuakNKbTR4TEYtck9t?oc=5",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "frequency dispersion",
+            "주파수 분산"
+          ]
+        },
+        {
+          "id": "fe93b2e2fa57",
+          "title": "미쓰비시 전기, GaN-on-GaN 트랜지스터가 주파수 분산을 크게 억제한다고 발표했으나 수치는 제공하지 않음 - XenoSpectrum",
+          "date": "2026-11-10",
+          "kind": "news_title_candidate",
+          "publisher": "XenoSpectrum",
+          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1pX1Z3UG1wTDZMTzAzam8zc2VCNHE5d2xFZ3ZrdkZKdVBaNGFYaWNjeHk4NnFycm11ZHpLWF9CQ3U4UlNCVFJIWjV5TXpMLS1XZVBtb2pwQjV5NjV3cGY2WDA1ZVBUQjB0SE10MHFiQkpydU1yRU1LNmx3UGtCTWM?oc=5",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "frequency dispersion",
+            "주파수 분산"
+          ]
+        },
+        {
+          "id": "22e411b2a060",
+          "title": "미쓰비시 전기, GaN 기판을 이용한 GaN 트랜지스터 주파수 분산 억제 세계 최초 시연",
+          "date": "2026-11-09",
+          "kind": "news_title_candidate",
+          "publisher": "Yahoo Finance Singapore",
+          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPZ3J1MmJER2hPQW50TGV6dHIwcHRqZC1tSVBybktUNW5JX0xkdFlHbXdhMlNjR2h6OGRaSzZmQ2c0cHZmN3RkQ19Zei16VXhWRTBGOTdBM2ZFelVxVjRDYlhqNFIzWUkwVEQ0OGJEdER0aWM3aGV6RVRqNDZVX1NsYTROaS03a1V1YVNRamdCazliTDg?oc=5",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "frequency dispersion",
+            "주파수 분산"
+          ]
+        }
+      ],
+      "products": [
+        {
+          "id": "gan-inno-900d600",
+          "part": "INN900D600B",
+          "company": "Innoscience",
+          "url": "https://www.innoscience.com/products/hv-gan-hemt/7628",
+          "metrics_available": [
+            "rds_on",
+            "qoss"
+          ],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "gan-inno-900d240",
+          "part": "INN900D240B",
+          "company": "Innoscience",
+          "url": "https://www.innoscience.com/products/hv-gan-hemt/7627",
+          "metrics_available": [
+            "rds_on",
+            "qoss"
+          ],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "gan-inno-700tk130",
+          "part": "INN700TK130E",
+          "company": "Innoscience",
+          "url": "https://www.innoscience.com/products/hv-gan-hemt/1770",
+          "metrics_available": [
+            "rds_on",
+            "qoss"
+          ],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "gan-inno-700da190",
+          "part": "INN700DA190B",
+          "company": "Innoscience",
+          "url": "https://www.innoscience.com/products/hv-gan-hemt/492",
+          "metrics_available": [
+            "rds_on",
+            "qoss"
+          ],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "gan-inno-650d080",
+          "part": "INN650D080BS",
+          "company": "Innoscience",
+          "url": "https://www.innoscience.com/products/hv-gan-hemt/501",
+          "metrics_available": [
+            "rds_on",
+            "qoss"
+          ],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "gan-inno-100ea035",
+          "part": "INN100EA035A",
+          "company": "Innoscience",
+          "url": "https://www.innoscience.com/products/lv-gan-hemt/516",
+          "metrics_available": [
+            "rds_on",
+            "qoss"
+          ],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "gan-inno-060eb009",
+          "part": "INN060EB009DAD",
+          "company": "Innoscience",
+          "url": "https://www.innoscience.com/products/lv-gan-hemt/17387",
+          "metrics_available": [
+            "rds_on",
+            "qoss"
+          ],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "gan-st-mastergan7",
+          "part": "MASTERGAN7",
+          "company": "STMicroelectronics",
+          "url": "https://www.st.com/en/power-management/mastergan7.html",
+          "metrics_available": [
+            "rds_on"
+          ],
+          "relationship": "same_technology_reference_only"
+        }
+      ]
+    },
+    {
+      "id": "gan-gate",
+      "category": "GaN",
+      "name": "Gate Reliability",
+      "simple": "게이트 구동과 장기 안정성",
+      "why": "Threshold 변화와 게이트 누설은 사용 조건에 따라 달라질 수 있습니다.",
+      "article_candidates": [],
+      "products": [
+        {
+          "id": "gan-st-mastergan7",
+          "part": "MASTERGAN7",
+          "company": "STMicroelectronics",
+          "url": "https://www.st.com/en/power-management/mastergan7.html",
+          "metrics_available": [],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "gan-st-mastergan6",
+          "part": "MASTERGAN6",
+          "company": "STMicroelectronics",
+          "url": "https://www.st.com/en/power-management/mastergan6.html",
+          "metrics_available": [],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "gan-inno-900d600",
+          "part": "INN900D600B",
+          "company": "Innoscience",
+          "url": "https://www.innoscience.com/products/hv-gan-hemt/7628",
+          "metrics_available": [],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "gan-inno-900d240",
+          "part": "INN900D240B",
+          "company": "Innoscience",
+          "url": "https://www.innoscience.com/products/hv-gan-hemt/7627",
+          "metrics_available": [],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "gan-inno-700tk130",
+          "part": "INN700TK130E",
+          "company": "Innoscience",
+          "url": "https://www.innoscience.com/products/hv-gan-hemt/1770",
+          "metrics_available": [],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "gan-inno-700da190",
+          "part": "INN700DA190B",
+          "company": "Innoscience",
+          "url": "https://www.innoscience.com/products/hv-gan-hemt/492",
+          "metrics_available": [],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "gan-inno-650d080",
+          "part": "INN650D080BS",
+          "company": "Innoscience",
+          "url": "https://www.innoscience.com/products/hv-gan-hemt/501",
+          "metrics_available": [],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "gan-inno-100ea035",
+          "part": "INN100EA035A",
+          "company": "Innoscience",
+          "url": "https://www.innoscience.com/products/lv-gan-hemt/516",
+          "metrics_available": [],
+          "relationship": "same_technology_reference_only"
+        }
+      ]
+    },
+    {
+      "id": "gan-switching",
+      "category": "GaN",
+      "name": "Qg · Qoss · Eoss",
+      "simple": "스위칭과 출력 용량 관련 특성",
+      "why": "동작 전압·구동 조건이 달라지면 비교 결과도 달라집니다.",
+      "article_candidates": [],
+      "products": [
+        {
+          "id": "gan-inno-900d600",
+          "part": "INN900D600B",
+          "company": "Innoscience",
+          "url": "https://www.innoscience.com/products/hv-gan-hemt/7628",
+          "metrics_available": [
+            "qg",
+            "qoss"
+          ],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "gan-inno-900d240",
+          "part": "INN900D240B",
+          "company": "Innoscience",
+          "url": "https://www.innoscience.com/products/hv-gan-hemt/7627",
+          "metrics_available": [
+            "qg",
+            "qoss"
+          ],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "gan-inno-700tk130",
+          "part": "INN700TK130E",
+          "company": "Innoscience",
+          "url": "https://www.innoscience.com/products/hv-gan-hemt/1770",
+          "metrics_available": [
+            "qg",
+            "qoss"
+          ],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "gan-inno-700da190",
+          "part": "INN700DA190B",
+          "company": "Innoscience",
+          "url": "https://www.innoscience.com/products/hv-gan-hemt/492",
+          "metrics_available": [
+            "qg",
+            "qoss"
+          ],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "gan-inno-650d080",
+          "part": "INN650D080BS",
+          "company": "Innoscience",
+          "url": "https://www.innoscience.com/products/hv-gan-hemt/501",
+          "metrics_available": [
+            "qg",
+            "qoss"
+          ],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "gan-inno-100ea035",
+          "part": "INN100EA035A",
+          "company": "Innoscience",
+          "url": "https://www.innoscience.com/products/lv-gan-hemt/516",
+          "metrics_available": [
+            "qg",
+            "qoss"
+          ],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "gan-inno-060eb009",
+          "part": "INN060EB009DAD",
+          "company": "Innoscience",
+          "url": "https://www.innoscience.com/products/lv-gan-hemt/17387",
+          "metrics_available": [
+            "qg",
+            "qoss"
+          ],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "gan-infineon-igt",
+          "part": "IGT65R055D2",
+          "company": "Infineon",
+          "url": "https://www.infineon.com/part/IGT65R055D2",
+          "metrics_available": [
+            "qg"
+          ],
+          "relationship": "same_technology_reference_only"
+        }
+      ]
+    },
+    {
+      "id": "sic-trench",
+      "category": "SiC",
+      "name": "Trench / Planar",
+      "simple": "SiC 셀 구조 변화",
+      "why": "채널·JFET·Trench 전계의 균형이 중요합니다.",
+      "article_candidates": [
+        {
+          "id": "c35fb26cd153",
+          "title": "Electronica: Nexperia, 750V SiC 트렌치 MOSFET 및 TOLL 패키징 추가",
+          "date": "2026-11-12",
+          "kind": "news_title_candidate",
+          "publisher": "Electronics Weekly",
+          "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPZ19wNlM2dnhHVnhLY0NDYmdINEN5eHdvYlRGQ05NM0V2cjFLbGJYcDJ1c3cxeUUwZ0QxR0NpcTFnajZGN1BDYklqRjEtSFZkbXNWbGtGbHJRMmV5UjJDN2lCa1dwTW9xUUZLUFJaeU83US1fSU1TeTVSN1RvSVpiM3FTX0UxYnlUR18zd1NkaTdYMURPWUp4NDdBMGNrYkVCRWNNQTRyeVdLWEk1ZmhUMzJLVzJySXBlcGxDcUlpcEFneUFlM0FRVFdGU2x3TEs3Tl8wV1Rpbw?oc=5",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "sic trench",
+            "트렌치"
+          ]
+        }
+      ],
+      "products": [
+        {
+          "id": "sic-rohm-4036",
+          "part": "SCT4036KWATL",
+          "company": "ROHM",
+          "url": "https://www.rohm.com/products/sic-power-devices/sic-mosfet/sct4036kwa-product",
+          "metrics_available": [
+            "rds_on"
+          ],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "sic-rohm-2080",
+          "part": "SCT2080KEGC11",
+          "company": "ROHM",
+          "url": "https://www.rohm.com/products/sic-power-devices/sic-mosfet/sct2080ke-product",
+          "metrics_available": [
+            "rds_on"
+          ],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "sic-onsemi-nvbg160",
+          "part": "NVBG160N120SC1",
+          "company": "onsemi",
+          "url": "https://www.onsemi.com/pdf/datasheet/nvbg160n120sc1-d.pdf",
+          "metrics_available": [
+            "rds_on"
+          ],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "sic-onsemi-ntc020",
+          "part": "NTC020N120SC1",
+          "company": "onsemi",
+          "url": "https://www.onsemi.com/download/data-sheet/pdf/ntc020n120sc1-d.pdf",
+          "metrics_available": [
+            "rds_on"
+          ],
+          "relationship": "same_technology_reference_only"
+        }
+      ]
+    },
+    {
+      "id": "sic-oxide",
+      "category": "SiC",
+      "name": "Gate Oxide Reliability",
+      "simple": "SiC 게이트 산화막의 내구성",
+      "why": "산화막 전계와 온도·구동 조건에 따른 신뢰성을 함께 확인해야 합니다.",
+      "article_candidates": [],
+      "products": [
+        {
+          "id": "sic-rohm-4036",
+          "part": "SCT4036KWATL",
+          "company": "ROHM",
+          "url": "https://www.rohm.com/products/sic-power-devices/sic-mosfet/sct4036kwa-product",
+          "metrics_available": [],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "sic-rohm-2080",
+          "part": "SCT2080KEGC11",
+          "company": "ROHM",
+          "url": "https://www.rohm.com/products/sic-power-devices/sic-mosfet/sct2080ke-product",
+          "metrics_available": [],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "sic-onsemi-nvbg160",
+          "part": "NVBG160N120SC1",
+          "company": "onsemi",
+          "url": "https://www.onsemi.com/pdf/datasheet/nvbg160n120sc1-d.pdf",
+          "metrics_available": [],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "sic-onsemi-ntc020",
+          "part": "NTC020N120SC1",
+          "company": "onsemi",
+          "url": "https://www.onsemi.com/download/data-sheet/pdf/ntc020n120sc1-d.pdf",
+          "metrics_available": [],
+          "relationship": "same_technology_reference_only"
+        }
+      ]
+    },
+    {
+      "id": "sic-short",
+      "category": "SiC",
+      "name": "Short Circuit · Body Diode",
+      "simple": "단락 내량과 다이오드 동작",
+      "why": "단락 시험조건·바디다이오드 전류·열 조건이 비교의 핵심입니다.",
+      "article_candidates": [],
+      "products": [
+        {
+          "id": "sic-rohm-4036",
+          "part": "SCT4036KWATL",
+          "company": "ROHM",
+          "url": "https://www.rohm.com/products/sic-power-devices/sic-mosfet/sct4036kwa-product",
+          "metrics_available": [],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "sic-rohm-2080",
+          "part": "SCT2080KEGC11",
+          "company": "ROHM",
+          "url": "https://www.rohm.com/products/sic-power-devices/sic-mosfet/sct2080ke-product",
+          "metrics_available": [],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "sic-onsemi-nvbg160",
+          "part": "NVBG160N120SC1",
+          "company": "onsemi",
+          "url": "https://www.onsemi.com/pdf/datasheet/nvbg160n120sc1-d.pdf",
+          "metrics_available": [],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "sic-onsemi-ntc020",
+          "part": "NTC020N120SC1",
+          "company": "onsemi",
+          "url": "https://www.onsemi.com/download/data-sheet/pdf/ntc020n120sc1-d.pdf",
+          "metrics_available": [],
+          "relationship": "same_technology_reference_only"
+        }
+      ]
+    },
+    {
+      "id": "igbt-loss",
+      "category": "IGBT",
+      "name": "VCE(sat) · Eoff",
+      "simple": "도통 손실과 Turn-off 손실의 균형",
+      "why": "VCE(sat), Eoff는 IC·Tj·VGE·게이트 저항에 따라 달라집니다.",
+      "article_candidates": [],
+      "products": [
+        {
+          "id": "igbt-rohm-rgws00",
+          "part": "RGWS00TS65DGC13",
+          "company": "ROHM",
+          "url": "https://www.rohm.com/products/igbt/field-stop-trench-igbt/rgws00ts65-product",
+          "metrics_available": [
+            "vce_sat"
+          ],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "igbt-rohm-rgw60auto",
+          "part": "RGW60TS65HRC11",
+          "company": "ROHM",
+          "url": "https://www.rohm.com/products/igbt/field-stop-trench-igbt/rgw60ts65hr-product",
+          "metrics_available": [
+            "vce_sat"
+          ],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "igbt-rohm-rgw",
+          "part": "RGW50TS65GC11",
+          "company": "ROHM",
+          "url": "https://www.rohm.com/products/igbt/field-stop-trench-igbt/rgw50ts65-product",
+          "metrics_available": [
+            "vce_sat"
+          ],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "igbt-rohm-rgtv60",
+          "part": "RGTV60TS65GC11",
+          "company": "ROHM",
+          "url": "https://www.rohm.com/products/igbt/field-stop-trench-igbt/rgtv60ts65-product",
+          "metrics_available": [
+            "vce_sat"
+          ],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "igbt-rohm-rgax",
+          "part": "RGAX2TS65EHRC11",
+          "company": "ROHM",
+          "url": "https://www.rohm.com/products/igbt/field-stop-trench-igbt/rgax2ts65ehr-product",
+          "metrics_available": [
+            "vce_sat"
+          ],
+          "relationship": "same_technology_reference_only"
+        }
+      ]
+    },
+    {
+      "id": "igbt-field",
+      "category": "IGBT",
+      "name": "Field-stop / Trench",
+      "simple": "셀 및 Field-stop 구조",
+      "why": "공식 구조 표기와 실제 전기적 특성은 구분하여 읽어야 합니다.",
+      "article_candidates": [
+        {
+          "id": "fd9bf4779a52",
+          "title": "얕은 에미터 트렌치 제어 P-컬럼을 갖는 최적화된 협폭 메사 슈퍼정션 트렌치 IGBT",
+          "date": "2026-10-01",
+          "kind": "paper_metadata",
+          "publisher": "Semiconductor Science and Technology",
+          "url": "https://doi.org/10.1088/1361-6641/aeb327",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "트렌치 igbt"
+          ]
+        },
+        {
+          "id": "0dd979b335b2",
+          "title": "Low Loss and EMI Noise Split-Gate Trench IGBT With Self-Powered Voltage Source",
+          "date": "2026-06-01",
+          "kind": "paper_metadata",
+          "publisher": "IEEE Electron Device Letters",
+          "url": "https://doi.org/10.1109/led.2026.3683787",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "trench igbt"
+          ]
+        },
+        {
+          "id": "7530ddb0858e",
+          "title": "A Novel Trench IGBT With Shielding Hole Path for Low EMI Noise",
+          "date": "2026-04-01",
+          "kind": "paper_metadata",
+          "publisher": "IEEE Transactions on Electron Devices",
+          "url": "https://doi.org/10.1109/ted.2026.3669469",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "trench igbt"
+          ]
+        },
+        {
+          "id": "bbf1fef18a3f",
+          "title": "Numerical Analysis of Hydrogen Implant Process on Performance of Field-Stop-IGBT",
+          "date": "2026-03-01",
+          "kind": "paper_metadata",
+          "publisher": "IEEE Transactions on Device and Materials Reliability",
+          "url": "https://doi.org/10.1109/tdmr.2026.3651614",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "field-stop"
+          ]
+        },
+        {
+          "id": "d8a1ccb33079",
+          "title": "Improved thermoreflectance imaging of trench IGBT via focus and illumination optimized reconstruction",
+          "date": "2026-01-01",
+          "kind": "paper_metadata",
+          "publisher": "Microelectronics Reliability",
+          "url": "https://doi.org/10.1016/j.microrel.2025.115952",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "trench igbt"
+          ]
+        },
+        {
+          "id": "63b295de36ae",
+          "title": "SiC trench IGBT with n-barrier layer to enhance conductivity modulation",
+          "date": "2025-12-01",
+          "kind": "paper_metadata",
+          "publisher": "Microelectronics Journal",
+          "url": "https://doi.org/10.1016/j.mejo.2025.106919",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "trench igbt"
+          ]
+        }
+      ],
+      "products": [
+        {
+          "id": "igbt-rohm-rgws00",
+          "part": "RGWS00TS65DGC13",
+          "company": "ROHM",
+          "url": "https://www.rohm.com/products/igbt/field-stop-trench-igbt/rgws00ts65-product",
+          "metrics_available": [
+            "vce_sat"
+          ],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "igbt-rohm-rgw60auto",
+          "part": "RGW60TS65HRC11",
+          "company": "ROHM",
+          "url": "https://www.rohm.com/products/igbt/field-stop-trench-igbt/rgw60ts65hr-product",
+          "metrics_available": [
+            "vce_sat"
+          ],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "igbt-rohm-rgw",
+          "part": "RGW50TS65GC11",
+          "company": "ROHM",
+          "url": "https://www.rohm.com/products/igbt/field-stop-trench-igbt/rgw50ts65-product",
+          "metrics_available": [
+            "vce_sat"
+          ],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "igbt-rohm-rgtv60",
+          "part": "RGTV60TS65GC11",
+          "company": "ROHM",
+          "url": "https://www.rohm.com/products/igbt/field-stop-trench-igbt/rgtv60ts65-product",
+          "metrics_available": [
+            "vce_sat"
+          ],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "igbt-rohm-rgax",
+          "part": "RGAX2TS65EHRC11",
+          "company": "ROHM",
+          "url": "https://www.rohm.com/products/igbt/field-stop-trench-igbt/rgax2ts65ehr-product",
+          "metrics_available": [
+            "vce_sat"
+          ],
+          "relationship": "same_technology_reference_only"
+        }
+      ]
+    },
+    {
+      "id": "igbt-short",
+      "category": "IGBT",
+      "name": "SCWT · Ruggedness",
+      "simple": "단락·파괴 내량",
+      "why": "제조사별 단락 내량 수치는 VDC·Tj·구동 조건이 맞아야 합니다.",
+      "article_candidates": [
+        {
+          "id": "official-e9717de0c42cce73",
+          "title": "ROHM, 4세대 650V IGBT 출시 및 단락 내량 특성 발표",
+          "date": "2026-08-25",
+          "kind": "manufacturer_announcement",
+          "publisher": "ROHM Newsroom",
+          "url": "https://www.rohm.com/news-detail?defaultGroupId=false&news-title=2026-08-25_news_igbt",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "단락 내량"
+          ]
+        },
+        {
+          "id": "cf3c052e6623",
+          "title": "Investigations on the degradation of IGBT under repetitive short-circuit tests",
+          "date": "2026-10-31",
+          "kind": "paper_metadata",
+          "publisher": "Microelectronics Reliability",
+          "url": "https://doi.org/10.1016/j.microrel.2026.116350",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "short-circuit"
+          ]
+        },
+        {
+          "id": "e70ef012dfe6",
+          "title": "Dummy trench gate design for enhancing short-circuit capability in 1200V IGBT",
+          "date": "2026-06-01",
+          "kind": "paper_metadata",
+          "publisher": "IET Conference Proceedings",
+          "url": "https://doi.org/10.1049/icp.2026.1928",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "short-circuit"
+          ]
+        },
+        {
+          "id": "9074d9354f6e",
+          "title": "A novel collector-side injection-enhanced reverse-conducting IGBT integrated Si/SiGe heterojunction diode for increased short-circuit property",
+          "date": "2026-02-19",
+          "kind": "paper_metadata",
+          "publisher": "Micro and Nanostructures",
+          "url": "https://doi.org/10.1016/j.micrna.2026.208615",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "short-circuit"
+          ]
+        },
+        {
+          "id": "d3a425f8b7a5",
+          "title": "Active Gate Circuit for Mitigating Gate Voltage Oscillations during Short Circuit of High Power IGBT",
+          "date": "2026-01-01",
+          "kind": "paper_metadata",
+          "publisher": "IET Power Electronics",
+          "url": "https://doi.org/10.1049/pel2.70352",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "short circuit"
+          ]
+        },
+        {
+          "id": "f00b02cac5b6",
+          "title": "Online IGBT Short-Circuit Fault Diagnosis in Modular Multilevel Converter Based on DWT and RBFNN",
+          "date": "2026-01-01",
+          "kind": "paper_metadata",
+          "publisher": "IEEE Access",
+          "url": "https://doi.org/10.1109/access.2026.3662514",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "short-circuit"
+          ]
+        }
+      ],
+      "products": [
+        {
+          "id": "igbt-rohm-rgtv60",
+          "part": "RGTV60TS65GC11",
+          "company": "ROHM",
+          "url": "https://www.rohm.com/products/igbt/field-stop-trench-igbt/rgtv60ts65-product",
+          "metrics_available": [
+            "tsc"
+          ],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "igbt-rohm-rgax",
+          "part": "RGAX2TS65EHRC11",
+          "company": "ROHM",
+          "url": "https://www.rohm.com/products/igbt/field-stop-trench-igbt/rgax2ts65ehr-product",
+          "metrics_available": [
+            "tsc"
+          ],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "igbt-rohm-rgws00",
+          "part": "RGWS00TS65DGC13",
+          "company": "ROHM",
+          "url": "https://www.rohm.com/products/igbt/field-stop-trench-igbt/rgws00ts65-product",
+          "metrics_available": [],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "igbt-rohm-rgw60auto",
+          "part": "RGW60TS65HRC11",
+          "company": "ROHM",
+          "url": "https://www.rohm.com/products/igbt/field-stop-trench-igbt/rgw60ts65hr-product",
+          "metrics_available": [],
+          "relationship": "same_technology_reference_only"
+        },
+        {
+          "id": "igbt-rohm-rgw",
+          "part": "RGW50TS65GC11",
+          "company": "ROHM",
+          "url": "https://www.rohm.com/products/igbt/field-stop-trench-igbt/rgw50ts65-product",
+          "metrics_available": [],
+          "relationship": "same_technology_reference_only"
+        }
+      ]
+    },
+    {
+      "id": "sj-pillar",
+      "category": "SJ MOSFET",
+      "name": "Pillar Charge Balance",
+      "simple": "P/N 필라 전하 균형",
+      "why": "P/N 농도 불균형은 BVDSS 및 Ron 트레이드오프와 연관됩니다.",
+      "article_candidates": [
+        {
+          "id": "official-547c895881c8b89d",
+          "title": "ROHM, 방열 성능을 강조한 600V SJ MOSFET 제품군 출시",
+          "date": "2026-07-09",
+          "kind": "manufacturer_announcement",
+          "publisher": "ROHM Newsroom",
+          "url": "https://www.rohm.com/news-detail?defaultGroupId=false&news-title=2026-07-09_news_super-junction-mosfet",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "super junction"
+          ]
+        },
+        {
+          "id": "062977c360bf",
+          "title": "Super Junction MOSFET Market Is Going to Boom |• Infineon Technologies • ON Semiconductor • Nexperia - openPR.com",
+          "date": "2026-11-13",
+          "kind": "news_title_candidate",
+          "publisher": "openPR.com",
+          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNNEdNWWc4ZFBHWnFyNS1mMFlSUGw4M1hoRjJuWjEtRXozamRhYVRQUlJjekdXTE1TSXJRZnRzQzhnMm4tbXd5V0dBMThZZFJUZlJBYkxJR0hpdzNlRWtDSGNIUkJmalQ1RWhPWUw3QmMtdXlQMW9FYjJpaXQwT1FQQm9nSVh3eTN5QXVqX0w2RnRGNzB3?oc=5",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "super junction"
+          ]
+        },
+        {
+          "id": "c20ea9d7d2e7",
+          "title": "Physical Origin and Mitigation of Output-Capacitance Hysteresis in Superjunction Devices",
+          "date": "2026-11-06",
+          "kind": "paper_metadata",
+          "publisher": "Semiconductor Science and Technology",
+          "url": "https://doi.org/10.1088/1361-6641/aebef5",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "superjunction"
+          ]
+        },
+        {
+          "id": "76b0bfaf7cd5",
+          "title": "Low-loss superjunction SiC MOSFET with improved breakdown voltage and reverse-recovery performance",
+          "date": "2026-11-01",
+          "kind": "paper_metadata",
+          "publisher": "Semiconductor Science and Technology",
+          "url": "https://doi.org/10.1088/1361-6641/aeba0c",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "superjunction"
+          ]
+        },
+        {
+          "id": "89dc5e4613be",
+          "title": "Simulation study of void impact in trench-filling-epitaxy-based 4H-SiC semi-superjunction schottky rectifiers",
+          "date": "2026-09-28",
+          "kind": "paper_metadata",
+          "publisher": "Power Electronic Devices and Components",
+          "url": "https://doi.org/10.1016/j.pedc.2026.100153",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "superjunction"
+          ]
+        },
+        {
+          "id": "f4e19675847b",
+          "title": "Improvement of Reverse Recovery Characteristic by Extra Etching in Source Electrode for Superjunction MOSFET",
+          "date": "2026-09-01",
+          "kind": "paper_metadata",
+          "publisher": "IEEE Transactions on Electron Devices",
+          "url": "https://doi.org/10.1109/ted.2026.3718884",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "superjunction"
+          ]
+        },
+        {
+          "id": "9f649ddb512b",
+          "title": "4H–SiC superjunction MOSFET with N-PolySi/N–SiC heterojunction for low reverse conduction voltage",
+          "date": "2026-09-01",
+          "kind": "paper_metadata",
+          "publisher": "Micro and Nanostructures",
+          "url": "https://doi.org/10.1016/j.micrna.2026.208758",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "superjunction"
+          ]
+        },
+        {
+          "id": "e45e847043f6",
+          "title": "Simulation study of a split-gate superjunction SiC MOSFET with a p-type shielding layer",
+          "date": "2026-08-21",
+          "kind": "paper_metadata",
+          "publisher": "Japanese Journal of Applied Physics",
+          "url": "https://doi.org/10.35848/1347-4065/ae9661",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "superjunction"
+          ]
+        },
+        {
+          "id": "c178529379b2",
+          "title": "High-Voltage GaN Polarization Superjunction HEMT Resisting Dynamic On-Resistance Degradation Through the 2DHG Shielding of the Surface Charge Trapping",
+          "date": "2026-08-01",
+          "kind": "paper_metadata",
+          "publisher": "IEEE Electron Device Letters",
+          "url": "https://doi.org/10.1109/led.2026.3698956",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "superjunction"
+          ]
+        },
+        {
+          "id": "77073e7498d7",
+          "title": "Optimum Design of Asymmetric 4H-SiC Superjunction Devices for Wide Charge Imbalance Tolerance",
+          "date": "2026-06-01",
+          "kind": "paper_metadata",
+          "publisher": "IEEE Transactions on Electron Devices",
+          "url": "https://doi.org/10.1109/ted.2026.3675183",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "charge imbalance",
+            "superjunction"
+          ]
+        }
+      ],
+      "products": [
+        {
+          "id": "sj-toshiba-095",
+          "part": "TK095V65Z5",
+          "company": "Toshiba",
+          "url": "https://toshiba.semicon-storage.com/ap-en/semiconductor/product/mosfets/400v-900v-mosfets/detail.TK095V65Z5.html",
+          "metrics_available": [
+            "rds_on_max"
+          ],
+          "relationship": "same_technology_reference_only"
+        }
+      ]
+    },
+    {
+      "id": "sj-recovery",
+      "category": "SJ MOSFET",
+      "name": "Qrr · Softness",
+      "simple": "바디다이오드 역회복",
+      "why": "Qrr 수치 외에 전류·dI/dt·Tj·복구 파형의 부드러움을 확인해야 합니다.",
+      "article_candidates": [
+        {
+          "id": "f4e19675847b",
+          "title": "Improvement of Reverse Recovery Characteristic by Extra Etching in Source Electrode for Superjunction MOSFET",
+          "date": "2026-09-01",
+          "kind": "paper_metadata",
+          "publisher": "IEEE Transactions on Electron Devices",
+          "url": "https://doi.org/10.1109/ted.2026.3718884",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "reverse recovery"
+          ]
+        },
+        {
+          "id": "ebdf7b7a858e",
+          "title": "Anomalous Reverse Recovery of Body Diode in 4H-SiC Superjunction DMOSFET",
+          "date": "2026-05-21",
+          "kind": "paper_metadata",
+          "publisher": "Key Engineering Materials",
+          "url": "https://doi.org/10.4028/p-xxkc5i",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "reverse recovery",
+            "body diode"
+          ]
+        },
+        {
+          "id": "aad9d400f2b5",
+          "title": "A Superjunction MOSFET Exploiting Reverse Active BJT to Reduce Reverse Recovery Charge",
+          "date": "2026-03-01",
+          "kind": "paper_metadata",
+          "publisher": "IEEE Electron Device Letters",
+          "url": "https://doi.org/10.1109/led.2026.3655759",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "reverse recovery"
+          ]
+        }
+      ],
+      "products": [
+        {
+          "id": "sj-toshiba-095",
+          "part": "TK095V65Z5",
+          "company": "Toshiba",
+          "url": "https://toshiba.semicon-storage.com/ap-en/semiconductor/product/mosfets/400v-900v-mosfets/detail.TK095V65Z5.html",
+          "metrics_available": [
+            "qrr"
+          ],
+          "relationship": "same_technology_reference_only"
+        }
+      ]
+    },
+    {
+      "id": "sj-breakdown",
+      "category": "SJ MOSFET",
+      "name": "Breakdown · Edge",
+      "simple": "항복 전압과 종단 구조",
+      "why": "Wafer Edge와 Pillar Charge Balance의 내압 경향은 구분해 검토합니다.",
+      "article_candidates": [
+        {
+          "id": "76b0bfaf7cd5",
+          "title": "Low-loss superjunction SiC MOSFET with improved breakdown voltage and reverse-recovery performance",
+          "date": "2026-11-01",
+          "kind": "paper_metadata",
+          "publisher": "Semiconductor Science and Technology",
+          "url": "https://doi.org/10.1088/1361-6641/aeba0c",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "breakdown voltage"
+          ]
+        }
+      ],
+      "products": [
+        {
+          "id": "sj-toshiba-095",
+          "part": "TK095V65Z5",
+          "company": "Toshiba",
+          "url": "https://toshiba.semicon-storage.com/ap-en/semiconductor/product/mosfets/400v-900v-mosfets/detail.TK095V65Z5.html",
+          "metrics_available": [
+            "rds_on_max"
+          ],
+          "relationship": "same_technology_reference_only"
+        }
+      ]
+    },
+    {
+      "id": "sgt-shield",
+      "category": "SGT",
+      "name": "Shield Gate / Field Plate",
+      "simple": "Shield 전극과 게이트 분리",
+      "why": "Cell Pitch와 게이트-드레인 결합 성분이 동적 특성에 영향을 줍니다.",
+      "article_candidates": [
+        {
+          "id": "3c046d9511a3",
+          "title": "Simulation study on a single-event burnout hardened shielded gate trench MOSFET with a P-type buried layer",
+          "date": "2026-09-01",
+          "kind": "paper_metadata",
+          "publisher": "Microelectronics Journal",
+          "url": "https://doi.org/10.1016/j.mejo.2026.107283",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "shielded gate"
+          ]
+        },
+        {
+          "id": "9219609b55df",
+          "title": "High-performance reverse-blocking carrier stored trench bipolar transistor with split gate and collector trenches",
+          "date": "2026-04-01",
+          "kind": "paper_metadata",
+          "publisher": "Engineering Research Express",
+          "url": "https://doi.org/10.1088/2631-8695/ae5509",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "split gate"
+          ]
+        },
+        {
+          "id": "7a72ee21ed37",
+          "title": "A split gate double-channel asymmetric SiC trench MOSFET for improved gate oxide reliability and dynamic characteristics",
+          "date": "2025-11-26",
+          "kind": "paper_metadata",
+          "publisher": "Scientific Reports",
+          "url": "https://doi.org/10.1038/s41598-025-27655-w",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "split gate"
+          ]
+        }
+      ],
+      "products": []
+    },
+    {
+      "id": "sgt-charge",
+      "category": "SGT",
+      "name": "Qgd · Qoss",
+      "simple": "게이트·출력 전하",
+      "why": "저압 MOSFET의 구동 손실과 스위칭 손실을 함께 살펴봅니다.",
+      "article_candidates": [],
+      "products": []
+    }
+  ],
+  "method": "Category-constrained literal title keyword match; products are same-technology references only.",
+  "warning": "기사·논문은 제목 기반 후보입니다. 논문의 실험 결과 또는 제조사 제품과의 인과관계를 검증하지 않았습니다. 결과가 0건이면 수집범위에서 관련 제목을 찾지 못한 것입니다."
+}

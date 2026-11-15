@@ -1,0 +1,779 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-15T23:58:01.896504+00:00",
+  "lookback_days": 30,
+  "categories": [
+    {
+      "category": "GaN",
+      "count": 10,
+      "by_source": {
+        "official": 1,
+        "research": 0,
+        "news": 9
+      },
+      "new_announcement_title_candidates": 3,
+      "items": [
+        {
+          "id": "official-9ef2b66b68f4e269",
+          "category": "GaN",
+          "title": "Innoscience, NVIDIA MGX 생태계 관련 AI 서버·800VDC GaN 전원 솔루션 발표",
+          "date": "2026-10-28",
+          "source": "Innoscience Newsroom",
+          "url": "https://www.innoscience.com/news/press-releases/18684",
+          "source_level": "official",
+          "evidence_label": "제조사 공식 원문",
+          "change_candidate": true,
+          "change_caution": "신제품·변화 관련 표현이 제목에 있음. 신규성·성과는 원문 검토 전 미확인.",
+          "summary": "제조사 설명: Innoscience 공식 발표: OCP 행사에서 AI 서버와 800VDC 전력 아키텍처를 위한 GaN 응용 솔루션을 소개했습니다.",
+          "topic_ids": [],
+          "companies": [
+            "innoscience"
+          ],
+          "reading_priority": 312,
+          "priority_basis": "공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
+          "evidence_status": "manufacturer_claim"
+        },
+        {
+          "id": "d31194275fd4",
+          "category": "GaN",
+          "title": "Power Integrations 실적 발표: GaN 성장에 직면한 역풍",
+          "date": "2026-11-15",
+          "source": "TipRanks",
+          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQVlRyV1pNREYwTWItLVVVbS1IaUNreDZCUlRJSHVHNzduMFBvZkMxMlF1Q0syRGtVbTRIbjJIVUxUNFRxYVJoX0VBSlZOQVBocTJSWjlfQXg1eEJTWmY0alhJR1cwU0x1U2xVZVlFeFRYMTRxUXRxZEF5c1FXbVNINDFKUjdGWWFkemFhY1RESHdsM1lMN1UxVDhRRzNmQXpjRjZ5aUhmM3hZMmg1dWxFcw?oc=5",
+          "source_level": "news",
+          "evidence_label": "기사 제목·원문 미검증",
+          "change_candidate": true,
+          "change_caution": "신제품·변화 관련 표현이 제목에 있음. 신규성·성과는 원문 검토 전 미확인.",
+          "summary": "제목 기준: Power Integrations 실적 발표: GaN 성장에 직면한 역풍",
+          "topic_ids": [],
+          "companies": [],
+          "reading_priority": 130,
+          "priority_basis": "공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "id": "405d81070db1",
+          "category": "GaN",
+          "title": "Visteon, SHINRY, Infineon, GaN BDS 기술 기반 단일 스테이지 온보드 충전기 협력 개발",
+          "date": "2026-11-13",
+          "source": "Electronic Engineering Journal",
+          "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQUDc0RGF3SzI1OEVXc2xWcGFsNVlxbzNXd3JlMHdoMjV1aGdSUko2YzRrSXhpUERCQXlkQU9sb09LZUw3Xy0tQVhjUFltQkMwVnlTZmxVWDlvMlFmX3RuSjhfSmo0RlpWYnIyWEtfN0I2V01tcmxnWDY0aTNYRjFPSG9MaXFMSGRTVkRZdS1temdCQVdLRlBoTXhfTUNaMlZuamlCZ2JhMHNlNnRaZDBnRXU2Q296Wi1GMjgzUmEzeFRORkRRNGJWTktvN3p0MlZEc2VpRWdjb1VkYmhaSjE0cXJzRQ?oc=5",
+          "source_level": "news",
+          "evidence_label": "기사 제목·원문 미검증",
+          "change_candidate": false,
+          "change_caution": null,
+          "summary": "제목 기준: Visteon, SHINRY, Infineon, GaN BDS 기술 기반 단일 스테이지 온보드 충전기 협력 개발",
+          "topic_ids": [],
+          "companies": [
+            "infineon"
+          ],
+          "reading_priority": 128,
+          "priority_basis": "공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "id": "2b5e2c66c5c9",
+          "category": "GaN",
+          "title": "Navitas Semiconductor, Renesas의 새로운 갈륨 나이트라이드 제품 관련 소송 제기",
+          "date": "2026-11-12",
+          "source": "TipRanks",
+          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOUWNlOE9mbG1TQzFKMHJCNXl1RDh4SVlIdUhXMDd3NjlKcHNYVnBlblBTMlNtSTctQU1iNEJBb1VUcmRMcjhKRk1zRW40LThqX0I1bXhVN0xVN0lPbldkLUlILU9CS0ZEYzNZNzk5MDZRMk1lNkgtVmZVX042TDZvbFo0d01wTW5mNXU1U0RsMnE2d1V6NFk2ZG9QeUlaWDBFS3Zvb01OX2RKQTlZald5Tk8tOTVNY3VfalE?oc=5",
+          "source_level": "news",
+          "evidence_label": "기사 제목·원문 미검증",
+          "change_candidate": false,
+          "change_caution": null,
+          "summary": "제목 기준: Navitas Semiconductor, Renesas의 새로운 갈륨 나이트라이드 제품 관련 소송 제기",
+          "topic_ids": [],
+          "companies": [
+            "navitas"
+          ],
+          "reading_priority": 127,
+          "priority_basis": "공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "id": "7b63f0dc927e",
+          "category": "GaN",
+          "title": "Navitas Semiconductor, Renesas GaN 제품 관련 특허 소송 제기 후 주가 5% 하락",
+          "date": "2026-11-12",
+          "source": "Traders Union",
+          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNX3NIM3h6WHU0Wnc0dkVuWkJFUzd6ZTRFcEFwWWU2OW9XdHpqNEV3Qks4azZrbUo2VVRYUnAyM0prUk1Ibzl5NXlEZFp3Wmk0Wk9BTGpCYjd6d0l0azdkcEFOVnFyU2lvSTlTSFlNZXRxY01TN3l1UFZaZ2NBVWhNc2JTU1dNbUpmTGc3eGdtYWVTZmlJeWstX2RBS3Q?oc=5",
+          "source_level": "news",
+          "evidence_label": "기사 제목·원문 미검증",
+          "change_candidate": false,
+          "change_caution": null,
+          "summary": "제목 기준: Navitas Semiconductor, Renesas GaN 제품 관련 특허 소송 제기 후 주가 5% 하락",
+          "topic_ids": [],
+          "companies": [
+            "navitas"
+          ],
+          "reading_priority": 127,
+          "priority_basis": "공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "id": "120e31c22621",
+          "category": "GaN",
+          "title": "미쓰비시 전기, GaN 기판을 이용한 GaN 트랜지스터 주파수 분산 억제 세계 최초 시연",
+          "date": "2026-11-10",
+          "source": "WebWire",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9GU0Q3X1NQbHR6ZVNjSHhPVUExdnBQV195RkJMLTJnN1VpM0E0ZGROdXBBSnJrSTlCNHR1Rmh0U2ZfTVo0MlRmSWp3Snd6VkI1VUMwQlc5WHptcENuakNKbTR4TEYtck9t?oc=5",
+          "source_level": "news",
+          "evidence_label": "기사 제목·원문 미검증",
+          "change_candidate": false,
+          "change_caution": null,
+          "summary": "제목 기준: 미쓰비시 전기, GaN 기판을 이용한 GaN 트랜지스터 주파수 분산 억제 세계 최초 시연",
+          "topic_ids": [
+            "gan-dynamic-ron"
+          ],
+          "companies": [
+            "mitsubishi"
+          ],
+          "reading_priority": 125,
+          "priority_basis": "공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "id": "fe93b2e2fa57",
+          "category": "GaN",
+          "title": "미쓰비시 전기, GaN-on-GaN 트랜지스터가 주파수 분산을 크게 억제한다고 발표했으나 수치는 제공하지 않음 - XenoSpectrum",
+          "date": "2026-11-10",
+          "source": "XenoSpectrum",
+          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1pX1Z3UG1wTDZMTzAzam8zc2VCNHE5d2xFZ3ZrdkZKdVBaNGFYaWNjeHk4NnFycm11ZHpLWF9CQ3U4UlNCVFJIWjV5TXpMLS1XZVBtb2pwQjV5NjV3cGY2WDA1ZVBUQjB0SE10MHFiQkpydU1yRU1LNmx3UGtCTWM?oc=5",
+          "source_level": "news",
+          "evidence_label": "기사 제목·원문 미검증",
+          "change_candidate": true,
+          "change_caution": "신제품·변화 관련 표현이 제목에 있음. 신규성·성과는 원문 검토 전 미확인.",
+          "summary": "제목 기준: 미쓰비시 전기, GaN-on-GaN 트랜지스터가 주파수 분산을 크게 억제한다고 발표했으나 수치는 제공하지 않음 - XenoSpectrum",
+          "topic_ids": [
+            "gan-dynamic-ron"
+          ],
+          "companies": [
+            "mitsubishi"
+          ],
+          "reading_priority": 125,
+          "priority_basis": "공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "id": "22e411b2a060",
+          "category": "GaN",
+          "title": "미쓰비시 전기, GaN 기판을 이용한 GaN 트랜지스터 주파수 분산 억제 세계 최초 시연",
+          "date": "2026-11-09",
+          "source": "Yahoo Finance Singapore",
+          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPZ3J1MmJER2hPQW50TGV6dHIwcHRqZC1tSVBybktUNW5JX0xkdFlHbXdhMlNjR2h6OGRaSzZmQ2c0cHZmN3RkQ19Zei16VXhWRTBGOTdBM2ZFelVxVjRDYlhqNFIzWUkwVEQ0OGJEdER0aWM3aGV6RVRqNDZVX1NsYTROaS03a1V1YVNRamdCazliTDg?oc=5",
+          "source_level": "news",
+          "evidence_label": "기사 제목·원문 미검증",
+          "change_candidate": false,
+          "change_caution": null,
+          "summary": "제목 기준: 미쓰비시 전기, GaN 기판을 이용한 GaN 트랜지스터 주파수 분산 억제 세계 최초 시연",
+          "topic_ids": [
+            "gan-dynamic-ron"
+          ],
+          "companies": [
+            "mitsubishi"
+          ],
+          "reading_priority": 124,
+          "priority_basis": "공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "id": "8c7f7b4f3fe3",
+          "category": "GaN",
+          "title": "미쓰비시 전기, 전력 소비 절감 위한 세계 최초 GaN 기술 진보 주장",
+          "date": "2026-11-09",
+          "source": "Yahoo Tech",
+          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOU3dFVV84S1lfMTh2LUJ0R3YzS0dFX2hpanB6RnhrWG54bW42SjhHNEthZjBfNUhUc0lGOTBFYUF3NGsybnR6ZVM3clFvMFVQUDVkaTZGLVNzWDlYcGFtWlVnN2pJX3BoQUF6UDAwYVdpczN4OVRQanJ4VldLRlRXbUpiT1JMN1Q4S012ZFZGLVZ6aGxEejkydQ?oc=5",
+          "source_level": "news",
+          "evidence_label": "기사 제목·원문 미검증",
+          "change_candidate": false,
+          "change_caution": null,
+          "summary": "제목 기준: 미쓰비시 전기, 전력 소비 절감 위한 세계 최초 GaN 기술 진보 주장",
+          "topic_ids": [],
+          "companies": [
+            "mitsubishi"
+          ],
+          "reading_priority": 124,
+          "priority_basis": "공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "id": "c15f11fa3c3e",
+          "category": "GaN",
+          "title": "Innoscience INN650D080BS 650 V 60 mΩ GaN - TechInsights",
+          "date": "2026-11-05",
+          "source": "TechInsights",
+          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5kazBWSF8xZ1NWSkFIMmZXNkFzTmNDVUJlVmc4bkNTMWdPcDIycVczU2ZUYWFJajhYeWwtNGI3SUw4V19QX19raXlHcmdkX2h1VFJFTGpZQkl4YWE1c1ZNRFhQN1Iwd3R1bFcwQkF0Nm1tc0hFeDFSMExaOXlFSHc?oc=5",
+          "source_level": "news",
+          "evidence_label": "기사 제목·원문 미검증",
+          "change_candidate": false,
+          "change_caution": null,
+          "summary": "제목 기준: Innoscience INN650D080BS 650 V 60 mΩ GaN - TechInsights",
+          "topic_ids": [],
+          "companies": [
+            "innoscience"
+          ],
+          "reading_priority": 120,
+          "priority_basis": "공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
+          "evidence_status": "title_not_verified"
+        }
+      ]
+    },
+    {
+      "category": "SiC",
+      "count": 16,
+      "by_source": {
+        "official": 0,
+        "research": 0,
+        "news": 16
+      },
+      "new_announcement_title_candidates": 4,
+      "items": [
+        {
+          "id": "a7c49fa2b64b",
+          "category": "SiC",
+          "title": "온세미, AI·전기차·에너지용 4세대 SiC 플랫폼 공개",
+          "date": "2026-11-12",
+          "source": "New Electronics",
+          "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQbmNuc0d0Qzg5OXRIZmJMYTR1WnVtd19QdS1Xd0ItUl9hR3pRdnRPSkFaeGZxcDVHOHZiYmVaRzVIWHY4YWhzWFNPOE5rckI5M1o4TW9aTlliRkc4N1VkR2dPMlY2ejUwWUZkUEkwSG1mOVFpX255N2M2b0dLRWt5MlpQWmNYZHVXQzFPSzE0REdJcWRqM0VVaDd0dlV3RjJlUU5BQnBDTDg2Y3d6WGN6bXRlcG5HbUxDNUxHbTdCSklldzAwOUswQklCNA?oc=5",
+          "source_level": "news",
+          "evidence_label": "기사 제목·원문 미검증",
+          "change_candidate": true,
+          "change_caution": "신제품·변화 관련 표현이 제목에 있음. 신규성·성과는 원문 검토 전 미확인.",
+          "summary": "제목 기준: 온세미, AI·전기차·에너지용 4세대 SiC 플랫폼 공개",
+          "topic_ids": [],
+          "companies": [
+            "onsemi"
+          ],
+          "reading_priority": 132,
+          "priority_basis": "공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "id": "32b78fd16668",
+          "category": "SiC",
+          "title": "인피니언, 세계 최초 12인치 SiC 전력 반도체 웨이퍼 공개; 양산 시기는 미공개 - BigGo Finance",
+          "date": "2026-11-11",
+          "source": "BigGo Finance",
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1SS3BoMTZpS3BINHppdG84YUliZmt3MnIxbEwyQlM2aFJGUFF2ZTZRV2g5S1dad1FEbzhnaG5hRUI5UTFvZ3NTdFRsUXBVUHlNV1JjWGZyeUQxdjhqb3ozdG05QWFCQzdxbU5jQ3A5Ung0V2g1UGc?oc=5",
+          "source_level": "news",
+          "evidence_label": "기사 제목·원문 미검증",
+          "change_candidate": true,
+          "change_caution": "신제품·변화 관련 표현이 제목에 있음. 신규성·성과는 원문 검토 전 미확인.",
+          "summary": "제목 기준: 인피니언, 세계 최초 12인치 SiC 전력 반도체 웨이퍼 공개; 양산 시기는 미공개 - BigGo Finance",
+          "topic_ids": [],
+          "companies": [
+            "infineon"
+          ],
+          "reading_priority": 131,
+          "priority_basis": "공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "id": "0ec53ffb16c4",
+          "category": "SiC",
+          "title": "onsemi introduces EliteSiC M4 fourth-gen silicon carbide platform, with up to 30% higher power density and 35% lower losses - Semiconductor Today",
+          "date": "2026-11-10",
+          "source": "Semiconductor Today",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNZEEtOTJZUTcyMnlfSFBrY1JPQWdWQ3FXRVhNYUlnT0JPZlBvenRyaTZidzBUbVNqQnhtNklnMXpBQnB4QVFvTzFSaFhlZnZ6UzlMMlpTTFRfSjBLak9wbVZDSnI4VXctc2lSN2lPSmdWQjY0MUx1M1JjYWRxVVJLNw?oc=5",
+          "source_level": "news",
+          "evidence_label": "기사 제목·원문 미검증",
+          "change_candidate": true,
+          "change_caution": "신제품·변화 관련 표현이 제목에 있음. 신규성·성과는 원문 검토 전 미확인.",
+          "summary": "제목 기준: onsemi introduces EliteSiC M4 fourth-gen silicon carbide platform, with up to 30% higher power density and 35% lower losses - Semiconductor Today",
+          "topic_ids": [],
+          "companies": [
+            "onsemi"
+          ],
+          "reading_priority": 130,
+          "priority_basis": "공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "id": "9cab19e9247b",
+          "category": "SiC",
+          "title": "Wolfspeed (WOLF) Stock May Be Undervalued As New Silicon Carbide Launch Lands - Simply Wall St",
+          "date": "2026-11-10",
+          "source": "Simply Wall St",
+          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOT3NPQWVpaXBFeWJzWVhqakQza1U3X1FtOHh6Ri0tSkhsMDNKbjhUaDF0YkdMazRpN3NSNVdORzc3UVBfNFlYckdSNEdSdXlBVU54VVJyakxCSDVlR2FMSUcycnFnSlRCQUo1SllocWhXN1AwVTBPYVliQjRMZnZJRnpVcUZyME02N2dZSnRUQ2l2VHJOZGVNNTdZMXZKNjd1amxHa2NrTVM3VVd3MWRxUmRieUdKNXZPOC1xblYwblNfQy1sVVJIWVMwdWnSAdIBQVVfeXFMTmJJb1Bmc1piTm44Slg0MV9jZ1RKVUFScGtlbHgyRVZNTld5LS1qYTFXX04xcTJLZm5Va0hiX1ZlOFNPLXdobU5vUGduTmN5dkVEV2xJRWo4b25iMTByZVJ3b2U2MkpWbmlKeE1VV3VOZUZWUFFuTmFJZ2pUYU9XTzVWb3ZOeFVOMEtnWHVwTHNQa0M0UVRqZkNvMURiS2kzTmJHTEc1bUI5VDBWS2xfWWdoLVhqWDVPa1NUdFFlVW1fNTNUbXhYVWVVQzZxTlVEZERB?oc=5",
+          "source_level": "news",
+          "evidence_label": "기사 제목·원문 미검증",
+          "change_candidate": true,
+          "change_caution": "신제품·변화 관련 표현이 제목에 있음. 신규성·성과는 원문 검토 전 미확인.",
+          "summary": "제목 기준: Wolfspeed (WOLF) Stock May Be Undervalued As New Silicon Carbide Launch Lands - Simply Wall St",
+          "topic_ids": [],
+          "companies": [
+            "wolfspeed"
+          ],
+          "reading_priority": 130,
+          "priority_basis": "공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "id": "c35fb26cd153",
+          "category": "SiC",
+          "title": "Electronica: Nexperia, 750V SiC 트렌치 MOSFET 및 TOLL 패키징 추가",
+          "date": "2026-11-12",
+          "source": "Electronics Weekly",
+          "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPZ19wNlM2dnhHVnhLY0NDYmdINEN5eHdvYlRGQ05NM0V2cjFLbGJYcDJ1c3cxeUUwZ0QxR0NpcTFnajZGN1BDYklqRjEtSFZkbXNWbGtGbHJRMmV5UjJDN2lCa1dwTW9xUUZLUFJaeU83US1fSU1TeTVSN1RvSVpiM3FTX0UxYnlUR18zd1NkaTdYMURPWUp4NDdBMGNrYkVCRWNNQTRyeVdLWEk1ZmhUMzJLVzJySXBlcGxDcUlpcEFneUFlM0FRVFdGU2x3TEs3Tl8wV1Rpbw?oc=5",
+          "source_level": "news",
+          "evidence_label": "기사 제목·원문 미검증",
+          "change_candidate": false,
+          "change_caution": null,
+          "summary": "제목 기준: Electronica: Nexperia, 750V SiC 트렌치 MOSFET 및 TOLL 패키징 추가",
+          "topic_ids": [
+            "sic-trench"
+          ],
+          "companies": [],
+          "reading_priority": 127,
+          "priority_basis": "공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "id": "3af29a2b96c0",
+          "category": "SiC",
+          "title": "Infineon Produces Functional SiC Power Semiconductors on 300 mm Wafers for the First Time - igor´sLAB",
+          "date": "2026-11-11",
+          "source": "igor´sLAB",
+          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNRW5QMEJ5RWVybXRVc29NUkwzZXFRZnhhYmpEbGtvZkhpWHZVOTk1a29XcS1zUWhSbG1ZTWpEMU91UXB1ZzJfM3pwcHlHazFQY0hFd2J5OXZzZXVWMXM3aUYzcDliS3padnJyWUNIUHktX3lkN3ZuR0x3UGM0bkFHcG1aaGppR183Unk3dlpmXzFxcExNLWc?oc=5",
+          "source_level": "news",
+          "evidence_label": "기사 제목·원문 미검증",
+          "change_candidate": false,
+          "change_caution": null,
+          "summary": "제목 기준: Infineon Produces Functional SiC Power Semiconductors on 300 mm Wafers for the First Time - igor´sLAB",
+          "topic_ids": [],
+          "companies": [
+            "infineon"
+          ],
+          "reading_priority": 126,
+          "priority_basis": "공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "id": "539e3d659e2d",
+          "category": "SiC",
+          "title": "New 300-mm silicon carbide wafers could boost production of EV chips - Evs | Electric Vehicles Nieuws - Head Topics",
+          "date": "2026-11-11",
+          "source": "Head Topics",
+          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNa1pvN2loR0h5RGpnd3pIZzdCSm9sU2gyd0xjUENob2lQT3E2YU9EUFUxaHo4TzREZjlrN2lacnRiYzdCWUdSMjJWV1RxWWg0blhMajNHMmhDTUY3OUIwdE93VlNpOXRZTUtoejJvbXBFNkd0OEdKUTFteFlfWUpfUGpjUmNqbWxNS04tS29RWktNWUQyRE5Ya1Q2Q1NKRVM0?oc=5",
+          "source_level": "news",
+          "evidence_label": "기사 제목·원문 미검증",
+          "change_candidate": false,
+          "change_caution": null,
+          "summary": "제목 기준: New 300-mm silicon carbide wafers could boost production of EV chips - Evs | Electric Vehicles Nieuws - Head Topics",
+          "topic_ids": [],
+          "companies": [],
+          "reading_priority": 126,
+          "priority_basis": "공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "id": "c582a65ad15b",
+          "category": "SiC",
+          "title": "Why Infineon’s SiC Milestone Matters for Chip Production - Manufacturing Digital",
+          "date": "2026-11-11",
+          "source": "Manufacturing Digital",
+          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOYllOX3F4Wk1Xd2N2NlFsRUlUa0Z4Rnc0SU5QUXc0NHVzMk50Um1JMENqcWpQbjRJNHRWSDYxZXBMNjkyVmJ5dURlZV8xV1I2VTdXNGdtaHc5bEJGYnZfVEZ1WmlyRWZXTVRhNmRqZTlBLVN0em0wOHpGdEM2M2R5d0xfOEJaV0I4ejgyWl9mNmF6Z0pha1JQR0s0WWd6UQ?oc=5",
+          "source_level": "news",
+          "evidence_label": "기사 제목·원문 미검증",
+          "change_candidate": false,
+          "change_caution": null,
+          "summary": "제목 기준: Why Infineon’s SiC Milestone Matters for Chip Production - Manufacturing Digital",
+          "topic_ids": [],
+          "companies": [
+            "infineon"
+          ],
+          "reading_priority": 126,
+          "priority_basis": "공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "id": "096567f1c5bf",
+          "category": "SiC",
+          "title": "Automotive Tech Forum: The Current State of Sic in EV Design and How It’s Evolving - EE Times",
+          "date": "2026-11-11",
+          "source": "EE Times",
+          "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNM3FqM1JvM2I1SGt6MWlNQktjZWZDR3kzZnVQbWNMMVd1eGY4OFItdm9jNUhwNS1adnBSOHV3M0I4enJRcHlXaFBrMG9HM0lET0NORUs2eGtDTWJHamxtUXpGanNsVkVqczdxbE8tdnNVdTJ5UDVKNDRDdDFGdWkwR3gtZ0lBTlBYVi1Wck5sRmFVaGc2aTJLWlhuVUd3amZCdGp4Ynl2SFo?oc=5",
+          "source_level": "news",
+          "evidence_label": "기사 제목·원문 미검증",
+          "change_candidate": false,
+          "change_caution": null,
+          "summary": "제목 기준: Automotive Tech Forum: The Current State of Sic in EV Design and How It’s Evolving - EE Times",
+          "topic_ids": [],
+          "companies": [],
+          "reading_priority": 126,
+          "priority_basis": "공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "id": "375247e3ae11",
+          "category": "SiC",
+          "title": "Infineon processes SiC on 300 mm wafers for the first time - electrive.com",
+          "date": "2026-11-10",
+          "source": "electrive.com",
+          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNblpCQkJvVTE0bXlveE93OVpYdXB3Qk1MVE9IYmJ6MmdxaWMxYzBIcFlBdEFvLUJTb2FHbUJ3RzQ5Rzc3bTIyQU41TXYyQnFRZTZUQkpTaDJSY28wYktIcHNUNnZCcEQwdDNkSW01R2dRWnE0OHhjZldmaEFsd28weG9sT1d5V0RRY0Q3Z0dSZVJybURESk5KYXNqXzE?oc=5",
+          "source_level": "news",
+          "evidence_label": "기사 제목·원문 미검증",
+          "change_candidate": false,
+          "change_caution": null,
+          "summary": "제목 기준: Infineon processes SiC on 300 mm wafers for the first time - electrive.com",
+          "topic_ids": [],
+          "companies": [
+            "infineon"
+          ],
+          "reading_priority": 125,
+          "priority_basis": "공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "id": "93f7258740dc",
+          "category": "SiC",
+          "title": "인피니언, 최초 300mm 실리콘 카바이드 전력 소자 개발로 이정표 달성 - New Electronics",
+          "date": "2026-11-10",
+          "source": "New Electronics",
+          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQM1dQTkVUS2duSVNWSVhwRDhGRTdjUjNMeW1LblFRRTQ4RE1UbkROUzI5UGczTHl3V1BLZDNhbjRvOHVsaFh1dHREeVJkcTNISmRYUUdOUlA0ZjQ4Y0cxc2FkMC1qb2xVNlRWNURXWHFia1ZuNkt3eTJnakRQU2lnZXZ3VTRpRWkwVHIxVzBLWHlVNnpJZ2s1UkFqQlpVdUJ3NkI0NmlEWUtVZDNHZlRja3VRRGdXYzdDSDZ0SQ?oc=5",
+          "source_level": "news",
+          "evidence_label": "기사 제목·원문 미검증",
+          "change_candidate": false,
+          "change_caution": null,
+          "summary": "제목 기준: 인피니언, 최초 300mm 실리콘 카바이드 전력 소자 개발로 이정표 달성 - New Electronics",
+          "topic_ids": [],
+          "companies": [
+            "infineon"
+          ],
+          "reading_priority": 125,
+          "priority_basis": "공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "id": "4a3112e592d3",
+          "category": "SiC",
+          "title": "인피니언, 세계 최초 300밀리미터 전력 실리콘 카바이드(SiC) 웨이퍼 생산 시작 - TechPowerUp",
+          "date": "2026-11-09",
+          "source": "TechPowerUp",
+          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPZFRuWWxNMlJtNnJqVlFlMzc3aU5tMDd0RUF2VTJmajZMRy1uTTdFVVJKN19WdFI3TEo4azE0dzFBT1pVVFItamtKRWM0QVFwbkY3dVh1ZGpLTi1jd2xKQ2duS3hOZ3VNcW5kZTY0ZWJ1SDBCaXlZdjFldWdWMk1IMEJ3UV9tRGswOTFXRGZfeXc5VEk1YVZ0QWZIYkRlc1pyVm9TaEpvZXBKbjVabXg4ZWRHZEJEQ3RTTDRPbTRB0gHDAUFVX3lxTE5jeGpsMmJjNlJhZjlRTnRCQk83U2Jvb1o1ZEpMb3dIeGRJOTI2U0pjeDlsLTNLbmxQNVJyQUZRQWFxUWZnWWc1bXRiSHZQdjhpb0NQcExOSmx0dXJEb25DazhBNng5RFRyYnExZ1luamlPc0FWekdDbkpnX2JDeWdOX2VsenBjMExjMjJkaExDdUV0SWJmbmo0dXJ5a2o2MmhJQXVfc2JJMExEd2VQMWxUbFRCRUloTkV1cFNBdkZBUS1pOA?oc=5",
+          "source_level": "news",
+          "evidence_label": "기사 제목·원문 미검증",
+          "change_candidate": false,
+          "change_caution": null,
+          "summary": "제목 기준: 인피니언, 세계 최초 300밀리미터 전력 실리콘 카바이드(SiC) 웨이퍼 생산 시작 - TechPowerUp",
+          "topic_ids": [],
+          "companies": [
+            "infineon"
+          ],
+          "reading_priority": 124,
+          "priority_basis": "공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "id": "a2be4fb3470e",
+          "category": "SiC",
+          "title": "Infineon presents first functional power devices on 300mm SiC wafers - Semiconductor Today",
+          "date": "2026-11-09",
+          "source": "Semiconductor Today",
+          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQMFRVMkJPT0M4Unhoc2NobGFLNnBadmJwVlpZZGZDOURpRzJJTVFLTFhZM1NBQ2c5TzdvQlVlSk1CaGlJRmVIcWRrWkk0WUV2MDFPTl9PbXBjWENRRlZHY1Q3OUpkaU9TSDZuS1dCZ3VQaHZvbDNGcl9mU1RqNHlETkJGZw?oc=5",
+          "source_level": "news",
+          "evidence_label": "기사 제목·원문 미검증",
+          "change_candidate": false,
+          "change_caution": null,
+          "summary": "제목 기준: Infineon presents first functional power devices on 300mm SiC wafers - Semiconductor Today",
+          "topic_ids": [],
+          "companies": [
+            "infineon"
+          ],
+          "reading_priority": 124,
+          "priority_basis": "공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "id": "550e19908774",
+          "category": "SiC",
+          "title": "Functional Power Semiconductors on 300-mm SiC - All-About-Industries",
+          "date": "2026-11-09",
+          "source": "All-About-Industries",
+          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNX01HbmE5ZHBPR2d0TzI3TWRTdkpycnhjQ1NLclVOSmFUeDdYdDFmeWc3VlM0X1dxdmZKc2M1VS02YU9wQmsyc3VoNHpacjhGTTl5Vms2bmFnS2RwNmVnTkdHNnVXTC1IQnVMLWhMcEF6RzRTblNjQXh5RUlGdTN0LTZEektta2FiSU9fYm5OSUJnTGhEZFlNR244ODZDdExpSGoxNW9ZMkNhc01qTmd2Ml9fS1QwT1VtX3c?oc=5",
+          "source_level": "news",
+          "evidence_label": "기사 제목·원문 미검증",
+          "change_candidate": false,
+          "change_caution": null,
+          "summary": "제목 기준: Functional Power Semiconductors on 300-mm SiC - All-About-Industries",
+          "topic_ids": [],
+          "companies": [],
+          "reading_priority": 124,
+          "priority_basis": "공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "id": "587dc0417e43",
+          "category": "SiC",
+          "title": "onsemi scraps $2 billion SiC expansion in the Czech Republic - Evertiq",
+          "date": "2026-11-09",
+          "source": "Evertiq",
+          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOQ0pON2JKdFpQV1lCLXRkYWdCWjhFZThjX2pWWUIxMW5NOFg0ZWZMVkdCTjZJODlnRExiNWwxZjF3SnhmR3V2cmRMblFZOU1nTi1MWk52OWdadTFPMVo1UXlva1F6UVR2Mk1sWG9oWWVZaHdjX1VRNEwyUDlzV1hNdHJHWjJfanlOclpLby01S0U4TnBYMjJQSWpUcG1PZw?oc=5",
+          "source_level": "news",
+          "evidence_label": "기사 제목·원문 미검증",
+          "change_candidate": false,
+          "change_caution": null,
+          "summary": "제목 기준: onsemi scraps $2 billion SiC expansion in the Czech Republic - Evertiq",
+          "topic_ids": [],
+          "companies": [
+            "onsemi"
+          ],
+          "reading_priority": 124,
+          "priority_basis": "공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "id": "1129b48b4823",
+          "category": "SiC",
+          "title": "onsemi, Czech Ministry Agree to End SiC Expansion Project - I-Connect007",
+          "date": "2026-11-09",
+          "source": "I-Connect007",
+          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOclcwQ1NfYzY4ZkJOTmFCbWxteDJZdWZRWHB4YS1PckZ1Ykc4ZFJ2ZHBZeTJnT3ZmY0duMi1DVE1aYzd6QkViWi0yQjhHdG9CVFZOTmRsend0NlRrcV81QnJHSkhXa045d2xzeGF3aDh6TDg5SlhFeHY4SjRKS1A2RVpUSjdwakRnQW1LQTNTV3JtZzVUdTZDU3BXRi1nMTUwMWlXUFVVby1IQQ?oc=5",
+          "source_level": "news",
+          "evidence_label": "기사 제목·원문 미검증",
+          "change_candidate": false,
+          "change_caution": null,
+          "summary": "제목 기준: onsemi, Czech Ministry Agree to End SiC Expansion Project - I-Connect007",
+          "topic_ids": [],
+          "companies": [
+            "onsemi"
+          ],
+          "reading_priority": 124,
+          "priority_basis": "공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
+          "evidence_status": "title_not_verified"
+        }
+      ]
+    },
+    {
+      "category": "IGBT",
+      "count": 7,
+      "by_source": {
+        "official": 0,
+        "research": 5,
+        "news": 2
+      },
+      "new_announcement_title_candidates": 0,
+      "items": [
+        {
+          "id": "d345e6aba306",
+          "category": "IGBT",
+          "title": "Loss Characteristics and Optimization of a High-Power IGBT Phase-Shifted Full-Bridge ZVS Primary Inverter for Electric-Vehicle Wireless Charging",
+          "date": "2026-11-10",
+          "source": "Engineering Research Express",
+          "url": "https://doi.org/10.1088/2631-8695/aec06f",
+          "source_level": "research",
+          "evidence_label": "학술 논문 메타데이터",
+          "change_candidate": false,
+          "change_caution": null,
+          "summary": "공개 논문 메타데이터를 확인했습니다. 실험 결과와 데이터는 원문에서 검토해야 합니다.",
+          "topic_ids": [],
+          "companies": [],
+          "reading_priority": 225,
+          "priority_basis": "공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
+          "evidence_status": "metadata_only"
+        },
+        {
+          "id": "289a1a8f4321",
+          "category": "IGBT",
+          "title": "Super-Junction Insulated-Gate Bipolar Transistor with a Vertical Channel Arrangement and a Shielded Floating Charge-Carrier Accumulation Layer",
+          "date": "2026-11-07",
+          "source": "Doklady BGUIR",
+          "url": "https://doi.org/10.35596/1729-7648-2026-24-5-24-32",
+          "source_level": "research",
+          "evidence_label": "학술 논문 메타데이터",
+          "change_candidate": false,
+          "change_caution": null,
+          "summary": "공개 논문 메타데이터를 확인했습니다. 실험 결과와 데이터는 원문에서 검토해야 합니다.",
+          "topic_ids": [],
+          "companies": [],
+          "reading_priority": 222,
+          "priority_basis": "공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
+          "evidence_status": "metadata_only"
+        },
+        {
+          "id": "755183338548",
+          "category": "IGBT",
+          "title": "TD-MSEFormer: temporal dependency multi-scale expert former for IGBT remaining useful life prediction",
+          "date": "2026-11-02",
+          "source": "Scientific Reports",
+          "url": "https://doi.org/10.1038/s41598-026-74967-6",
+          "source_level": "research",
+          "evidence_label": "학술 논문 메타데이터",
+          "change_candidate": false,
+          "change_caution": null,
+          "summary": "공개 논문 메타데이터를 확인했습니다. 실험 결과와 데이터는 원문에서 검토해야 합니다.",
+          "topic_ids": [],
+          "companies": [],
+          "reading_priority": 217,
+          "priority_basis": "공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
+          "evidence_status": "metadata_only"
+        },
+        {
+          "id": "cf3c052e6623",
+          "category": "IGBT",
+          "title": "Investigations on the degradation of IGBT under repetitive short-circuit tests",
+          "date": "2026-10-31",
+          "source": "Microelectronics Reliability",
+          "url": "https://doi.org/10.1016/j.microrel.2026.116350",
+          "source_level": "research",
+          "evidence_label": "학술 논문 메타데이터",
+          "change_candidate": false,
+          "change_caution": null,
+          "summary": "공개 논문 메타데이터를 확인했습니다. 실험 결과와 데이터는 원문에서 검토해야 합니다.",
+          "topic_ids": [
+            "igbt-short"
+          ],
+          "companies": [],
+          "reading_priority": 215,
+          "priority_basis": "공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
+          "evidence_status": "metadata_only"
+        },
+        {
+          "id": "bf11b3ee4e40",
+          "category": "IGBT",
+          "title": "Research on the Short-Term Overcurrent Failure Mechanism of Press-Pack IGBT Devices Under MMC Conditions",
+          "date": "2026-10-21",
+          "source": "Electronics",
+          "url": "https://doi.org/10.3390/electronics15204873",
+          "source_level": "research",
+          "evidence_label": "학술 논문 메타데이터",
+          "change_candidate": false,
+          "change_caution": null,
+          "summary": "공개 논문 메타데이터를 확인했습니다. 실험 결과와 데이터는 원문에서 검토해야 합니다.",
+          "topic_ids": [],
+          "companies": [],
+          "reading_priority": 205,
+          "priority_basis": "공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
+          "evidence_status": "metadata_only"
+        },
+        {
+          "id": "77a91d5c9b4a",
+          "category": "IGBT",
+          "title": "Insulated Gate Bipolar Transistor Market Size & Share, 2034 - Fortune Business Insights",
+          "date": "2026-10-26",
+          "source": "Fortune Business Insights",
+          "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOMUotbUpQUE11aFZyQUJPLWJWc1lvSlRrdl9RN1czYWRXbUhtVlI0RURHRld1NkFIdHhvOUQ5LWVsZW1NYmRhMVZXMmM1Y3JyeGJTdjZ2aTAzSmVKZnZpY0ZmTmwwMWtjZHpBd3dsSE5xdmxmLTZjMVpDVkVaVTlHUW5wQmlUSHI1ZkE?oc=5",
+          "source_level": "news",
+          "evidence_label": "기사 제목·원문 미검증",
+          "change_candidate": false,
+          "change_caution": null,
+          "summary": "제목 기준: Insulated Gate Bipolar Transistor Market Size & Share, 2034 - Fortune Business Insights",
+          "topic_ids": [],
+          "companies": [],
+          "reading_priority": 110,
+          "priority_basis": "공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "id": "9c800d1f49eb",
+          "category": "IGBT",
+          "title": "IGBT Power Modules Geared for Air Conditioners, Heat Pumps, Home Appliances - Electronic Design",
+          "date": "2026-10-23",
+          "source": "Electronic Design",
+          "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPLTB1UXVkTWwzalhwdzRXS2lhc0xVT0RqUmlsemtaeVFSMkZxdHBpNEE4NHNFT1FSVXB3SWJwSEppZ1I4T05nQVZsMkxreHBzN1pqam51RnlWcFl5MUFLVDdMN2xXSldjb09CcFJRa2w1NnYtWS0tN3JyN1FGa0ZnQTRVTV9ZbmF1d1JIM3FwVWQ2NmN0LXI2NlRxNDRwcUp5NEo2QmtITkQyVTZTZ1d1MWQ2T1htaVZBY0NvU0djRmw3TWY3dVhUTXR5WXpaS2pXT0l0b2JSZW02bWdVa0lhSm8tZGdXSDdhZE9oMzVmaFFCUQ?oc=5",
+          "source_level": "news",
+          "evidence_label": "기사 제목·원문 미검증",
+          "change_candidate": false,
+          "change_caution": null,
+          "summary": "제목 기준: IGBT Power Modules Geared for Air Conditioners, Heat Pumps, Home Appliances - Electronic Design",
+          "topic_ids": [],
+          "companies": [],
+          "reading_priority": 107,
+          "priority_basis": "공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
+          "evidence_status": "title_not_verified"
+        }
+      ]
+    },
+    {
+      "category": "SJ MOSFET",
+      "count": 3,
+      "by_source": {
+        "official": 0,
+        "research": 2,
+        "news": 1
+      },
+      "new_announcement_title_candidates": 0,
+      "items": [
+        {
+          "id": "c20ea9d7d2e7",
+          "category": "SJ MOSFET",
+          "title": "Physical Origin and Mitigation of Output-Capacitance Hysteresis in Superjunction Devices",
+          "date": "2026-11-06",
+          "source": "Semiconductor Science and Technology",
+          "url": "https://doi.org/10.1088/1361-6641/aebef5",
+          "source_level": "research",
+          "evidence_label": "학술 논문 메타데이터",
+          "change_candidate": false,
+          "change_caution": null,
+          "summary": "공개 논문 메타데이터를 확인했습니다. 실험 결과와 데이터는 원문에서 검토해야 합니다.",
+          "topic_ids": [
+            "sj-pillar"
+          ],
+          "companies": [],
+          "reading_priority": 221,
+          "priority_basis": "공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
+          "evidence_status": "metadata_only"
+        },
+        {
+          "id": "76b0bfaf7cd5",
+          "category": "SJ MOSFET",
+          "title": "Low-loss superjunction SiC MOSFET with improved breakdown voltage and reverse-recovery performance",
+          "date": "2026-11-01",
+          "source": "Semiconductor Science and Technology",
+          "url": "https://doi.org/10.1088/1361-6641/aeba0c",
+          "source_level": "research",
+          "evidence_label": "학술 논문 메타데이터",
+          "change_candidate": false,
+          "change_caution": null,
+          "summary": "공개 논문 메타데이터를 확인했습니다. 실험 결과와 데이터는 원문에서 검토해야 합니다.",
+          "topic_ids": [
+            "sj-pillar",
+            "sj-breakdown"
+          ],
+          "companies": [],
+          "reading_priority": 216,
+          "priority_basis": "공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
+          "evidence_status": "metadata_only"
+        },
+        {
+          "id": "062977c360bf",
+          "category": "SJ MOSFET",
+          "title": "Super Junction MOSFET Market Is Going to Boom |• Infineon Technologies • ON Semiconductor • Nexperia - openPR.com",
+          "date": "2026-11-13",
+          "source": "openPR.com",
+          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNNEdNWWc4ZFBHWnFyNS1mMFlSUGw4M1hoRjJuWjEtRXozamRhYVRQUlJjekdXTE1TSXJRZnRzQzhnMm4tbXd5V0dBMThZZFJUZlJBYkxJR0hpdzNlRWtDSGNIUkJmalQ1RWhPWUw3QmMtdXlQMW9FYjJpaXQwT1FQQm9nSVh3eTN5QXVqX0w2RnRGNzB3?oc=5",
+          "source_level": "news",
+          "evidence_label": "기사 제목·원문 미검증",
+          "change_candidate": false,
+          "change_caution": null,
+          "summary": "제목 기준: Super Junction MOSFET Market Is Going to Boom |• Infineon Technologies • ON Semiconductor • Nexperia - openPR.com",
+          "topic_ids": [
+            "sj-pillar"
+          ],
+          "companies": [
+            "infineon",
+            "onsemi"
+          ],
+          "reading_priority": 128,
+          "priority_basis": "공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
+          "evidence_status": "title_not_verified"
+        }
+      ]
+    },
+    {
+      "category": "SGT",
+      "count": 0,
+      "by_source": {
+        "official": 0,
+        "research": 0,
+        "news": 0
+      },
+      "new_announcement_title_candidates": 0,
+      "items": []
+    }
+  ],
+  "method": "Windowed and deduplicated source metadata. Reading order is provenance > recency > change words in title.",
+  "warning": "중요도는 읽기 순서일 뿐 기술 성과나 경쟁력 평가가 아닙니다. 제목의 신규 발표 표현은 실제 최초 발표·양산·성능 향상의 검증이 아닙니다. 공식 발표는 제조사의 주장, 논문은 메타데이터, 일반 뉴스는 제목 기반 정보로 구분합니다.",
+  "source_limit": "수집된 공공 원문 링크·메타데이터 범위이며 전체 산업의 완전한 발표 목록이 아닙니다."
+}

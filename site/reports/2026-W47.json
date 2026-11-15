@@ -1,0 +1,538 @@
+{
+  "schema_version": 1,
+  "week": "2026-W47",
+  "week_start": "2026-11-16",
+  "generated_at": "2026-11-15T23:58:01.896504+00:00",
+  "baseline": false,
+  "new_items_count": 0,
+  "published_this_week_count": 0,
+  "research_reference_count": 81,
+  "total_collection_count": 119,
+  "by_category": {
+    "GaN": 0,
+    "SiC": 0,
+    "IGBT": 0,
+    "SJ MOSFET": 0,
+    "SGT": 0
+  },
+  "company_mentions": {
+    "infineon": 0,
+    "st": 0,
+    "onsemi": 0,
+    "rohm": 0,
+    "mitsubishi": 0,
+    "fuji": 0,
+    "toshiba": 0,
+    "innoscience": 0,
+    "sanan": 0,
+    "crmicro": 0,
+    "basicsemi": 0,
+    "navitas": 0,
+    "epc": 0,
+    "wolfspeed": 0
+  },
+  "new_items": [],
+  "weekly_items": [],
+  "research_highlights": [
+    {
+      "id": "9219609b55df",
+      "kind": "paper",
+      "category": "SGT",
+      "title": "High-performance reverse-blocking carrier stored trench bipolar transistor with split gate and collector trenches",
+      "summary_ko": "공개 초록을 확인해 주요 결론을 검토하세요.",
+      "summary_status": "초록 기반·원문 미검증",
+      "date": "2026-04-01",
+      "source": "Engineering Research Express",
+      "url": "https://doi.org/10.1088/2631-8695/ae5509",
+      "doi": "10.1088/2631-8695/ae5509",
+      "relevance_score": 94,
+      "relevance_level": "높음",
+      "relevance_reasons": [
+        "Dynamic / Switching",
+        "Device Structure",
+        "Process / Materials",
+        "Reliability"
+      ],
+      "relevance_topics": [
+        "Dynamic / Switching",
+        "Device Structure",
+        "Process / Materials",
+        "Reliability"
+      ],
+      "stale_reused": true,
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "SGT"
+      ]
+    },
+    {
+      "id": "289a1a8f4321",
+      "kind": "paper",
+      "category": "IGBT",
+      "title": "Super-Junction Insulated-Gate Bipolar Transistor with a Vertical Channel Arrangement and a Shielded Floating Charge-Carrier Accumulation Layer",
+      "summary_ko": "공개 초록을 확인해 주요 결론을 검토하세요.",
+      "summary_status": "초록 기반·원문 미검증",
+      "date": "2026-11-07",
+      "source": "Doklady BGUIR",
+      "url": "https://doi.org/10.35596/1729-7648-2026-24-5-24-32",
+      "doi": "10.35596/1729-7648-2026-24-5-24-32",
+      "relevance_score": 83,
+      "relevance_level": "높음",
+      "relevance_reasons": [
+        "Dynamic / Switching",
+        "Device Structure",
+        "Reliability"
+      ],
+      "relevance_topics": [
+        "Dynamic / Switching",
+        "Device Structure",
+        "Reliability"
+      ],
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
+    },
+    {
+      "id": "76b0bfaf7cd5",
+      "kind": "paper",
+      "category": "SJ MOSFET",
+      "title": "Low-loss superjunction SiC MOSFET with improved breakdown voltage and reverse-recovery performance",
+      "summary_ko": "공개 초록을 확인해 주요 결론을 검토하세요.",
+      "summary_status": "초록 기반·원문 미검증",
+      "date": "2026-11-01",
+      "source": "Semiconductor Science and Technology",
+      "url": "https://doi.org/10.1088/1361-6641/aeba0c",
+      "doi": "10.1088/1361-6641/aeba0c",
+      "relevance_score": 83,
+      "relevance_level": "높음",
+      "relevance_reasons": [
+        "Device Structure",
+        "Process / Materials",
+        "Reliability"
+      ],
+      "relevance_topics": [
+        "Device Structure",
+        "Process / Materials",
+        "Reliability"
+      ],
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "SiC",
+        "SJ MOSFET"
+      ]
+    },
+    {
+      "id": "89dc5e4613be",
+      "kind": "paper",
+      "category": "SJ MOSFET",
+      "title": "Simulation study of void impact in trench-filling-epitaxy-based 4H-SiC semi-superjunction schottky rectifiers",
+      "summary_ko": "공개 초록을 확인해 주요 결론을 검토하세요.",
+      "summary_status": "초록 기반·원문 미검증",
+      "date": "2026-09-28",
+      "source": "Power Electronic Devices and Components",
+      "url": "https://doi.org/10.1016/j.pedc.2026.100153",
+      "doi": "10.1016/j.pedc.2026.100153",
+      "relevance_score": 83,
+      "relevance_level": "높음",
+      "relevance_reasons": [
+        "Device Structure",
+        "Process / Materials",
+        "Reliability"
+      ],
+      "relevance_topics": [
+        "Device Structure",
+        "Process / Materials",
+        "Reliability"
+      ],
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "SiC",
+        "SJ MOSFET"
+      ]
+    },
+    {
+      "id": "e45e847043f6",
+      "kind": "paper",
+      "category": "SJ MOSFET",
+      "title": "Simulation study of a split-gate superjunction SiC MOSFET with a p-type shielding layer",
+      "summary_ko": "공개 초록을 확인해 주요 결론을 검토하세요.",
+      "summary_status": "초록 기반·원문 미검증",
+      "date": "2026-08-21",
+      "source": "Japanese Journal of Applied Physics",
+      "url": "https://doi.org/10.35848/1347-4065/ae9661",
+      "doi": "10.35848/1347-4065/ae9661",
+      "relevance_score": 83,
+      "relevance_level": "높음",
+      "relevance_reasons": [
+        "Device Structure",
+        "Process / Materials",
+        "Reliability"
+      ],
+      "relevance_topics": [
+        "Device Structure",
+        "Process / Materials",
+        "Reliability"
+      ],
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "SiC",
+        "SJ MOSFET"
+      ]
+    },
+    {
+      "id": "fb29ae50ae2e",
+      "kind": "paper",
+      "category": "IGBT",
+      "title": "Investigation of Continuous Turn-Off Characteristics of IGBT Devices Under Overload Conditions",
+      "summary_ko": "공개 초록을 확인해 주요 결론을 검토하세요.",
+      "summary_status": "초록 기반·원문 미검증",
+      "date": "2026-08-11",
+      "source": "Electronics",
+      "url": "https://doi.org/10.3390/electronics15163550",
+      "doi": "10.3390/electronics15163550",
+      "relevance_score": 83,
+      "relevance_level": "높음",
+      "relevance_reasons": [
+        "Dynamic / Switching",
+        "Device Structure",
+        "Reliability"
+      ],
+      "relevance_topics": [
+        "Dynamic / Switching",
+        "Device Structure",
+        "Reliability"
+      ],
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
+    },
+    {
+      "id": "ebdf7b7a858e",
+      "kind": "paper",
+      "category": "SJ MOSFET",
+      "title": "Anomalous Reverse Recovery of Body Diode in 4H-SiC Superjunction DMOSFET",
+      "summary_ko": "공개 초록을 확인해 주요 결론을 검토하세요.",
+      "summary_status": "초록 기반·원문 미검증",
+      "date": "2026-05-21",
+      "source": "Key Engineering Materials",
+      "url": "https://doi.org/10.4028/p-xxkc5i",
+      "doi": "10.4028/p-xxkc5i",
+      "relevance_score": 83,
+      "relevance_level": "높음",
+      "relevance_reasons": [
+        "Dynamic / Switching",
+        "Device Structure",
+        "Reliability"
+      ],
+      "relevance_topics": [
+        "Dynamic / Switching",
+        "Device Structure",
+        "Reliability"
+      ],
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "SiC",
+        "SJ MOSFET"
+      ]
+    },
+    {
+      "id": "fe1ae9d27803",
+      "kind": "paper",
+      "category": "IGBT",
+      "title": "Full-Area 3D Simulation and Experimental Analysis of IGBT Failure in UIS Due to Current Filamentation",
+      "summary_ko": "공개 초록을 확인해 주요 결론을 검토하세요.",
+      "summary_status": "초록 기반·원문 미검증",
+      "date": "2026-04-22",
+      "source": "Electronics",
+      "url": "https://doi.org/10.3390/electronics15091770",
+      "doi": "10.3390/electronics15091770",
+      "relevance_score": 83,
+      "relevance_level": "높음",
+      "relevance_reasons": [
+        "Dynamic / Switching",
+        "Device Structure",
+        "Reliability"
+      ],
+      "relevance_topics": [
+        "Dynamic / Switching",
+        "Device Structure",
+        "Reliability"
+      ],
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
+    },
+    {
+      "id": "97302fdedd25",
+      "kind": "paper",
+      "category": "SJ MOSFET",
+      "title": "A novel 1200 V SiC trench MOSFET based on superjunction and shielded gate technologies for reduced power loss",
+      "title_ko": "슈퍼정션 및 실드 게이트 기술을 적용한 1200V SiC 트렌치 MOSFET의 전력 손실 저감",
+      "summary_ko": "본 연구에서는 슈퍼정션(SJ)과 실드 게이트(SG) 기술을 통합한 1200V SiC 트렌치 MOSFET(SS-TMOSFET)을 제안하여 RDS(on)과 BVDSS 간의 트레이드오프 문제와 동적 손실을 개선하였다. SS-TMOSFET은 기존 구조 대비 RDS(on) 71%, 게이트-드레인 커패시턴스 및 전하 각각 78%, 70% 감소와 함께 스위칭 손실 16% 감소 및 FOM 421% 향상을 달성하였다.",
+      "summary_status": "AI 초록 기반·원문 미검증",
+      "date": "2026-04-01",
+      "source": "Semiconductor Science and Technology",
+      "url": "https://doi.org/10.1088/1361-6641/ae5aca",
+      "doi": "10.1088/1361-6641/ae5aca",
+      "relevance_score": 83,
+      "relevance_level": "높음",
+      "relevance_reasons": [
+        "Dynamic / Switching",
+        "Device Structure",
+        "Reliability"
+      ],
+      "relevance_topics": [
+        "Dynamic / Switching",
+        "Device Structure",
+        "Reliability"
+      ],
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "SiC",
+        "SGT",
+        "SJ MOSFET"
+      ]
+    },
+    {
+      "id": "a161751156b6",
+      "kind": "paper",
+      "category": "IGBT",
+      "title": "Analysis and Adaptive Separation of IGBT Switching Noise in PD Monitoring of Flexible HVDC Valves: An Evolutionary Perspective",
+      "summary_ko": "공개 초록을 확인해 주요 결론을 검토하세요.",
+      "summary_status": "초록 기반·원문 미검증",
+      "date": "2026-02-10",
+      "source": "Electronics",
+      "url": "https://doi.org/10.3390/electronics15040751",
+      "doi": "10.3390/electronics15040751",
+      "relevance_score": 83,
+      "relevance_level": "높음",
+      "relevance_reasons": [
+        "Dynamic / Switching",
+        "Process / Materials",
+        "Reliability"
+      ],
+      "relevance_topics": [
+        "Dynamic / Switching",
+        "Process / Materials",
+        "Reliability"
+      ],
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
+    },
+    {
+      "id": "d1f269b8b5b8",
+      "kind": "paper",
+      "category": "SJ MOSFET",
+      "title": "kV-class lateral NiOx/GaN superjunction diode via ammonia molecular beam epitaxy (NH3-MBE)",
+      "summary_ko": "공개 초록을 확인해 주요 결론을 검토하세요.",
+      "summary_status": "초록 기반·원문 미검증",
+      "date": "2026-02-02",
+      "source": "APL Electronic Devices",
+      "url": "https://doi.org/10.1063/5.0311105",
+      "doi": "10.1063/5.0311105",
+      "relevance_score": 83,
+      "relevance_level": "높음",
+      "relevance_reasons": [
+        "Device Structure",
+        "Process / Materials",
+        "Reliability"
+      ],
+      "relevance_topics": [
+        "Device Structure",
+        "Process / Materials",
+        "Reliability"
+      ],
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "GaN",
+        "SJ MOSFET"
+      ]
+    },
+    {
+      "id": "d3a425f8b7a5",
+      "kind": "paper",
+      "category": "IGBT",
+      "title": "Active Gate Circuit for Mitigating Gate Voltage Oscillations during Short Circuit of High Power IGBT",
+      "summary_ko": "공개 초록을 확인해 주요 결론을 검토하세요.",
+      "summary_status": "초록 기반·원문 미검증",
+      "date": "2026-01-01",
+      "source": "IET Power Electronics",
+      "url": "https://doi.org/10.1049/pel2.70352",
+      "doi": "10.1049/pel2.70352",
+      "relevance_score": 83,
+      "relevance_level": "높음",
+      "relevance_reasons": [
+        "Dynamic / Switching",
+        "Reliability",
+        "Data Center / Power Conversion"
+      ],
+      "relevance_topics": [
+        "Dynamic / Switching",
+        "Reliability",
+        "Data Center / Power Conversion"
+      ],
+      "companies": [],
+      "company_attribution": "not_attributed",
+      "company_source_status": {},
+      "device_mentions": [
+        "IGBT"
+      ]
+    }
+  ],
+  "all_ids": [
+    "016bc9a7e8e9",
+    "062977c360bf",
+    "096567f1c5bf",
+    "0dd979b335b2",
+    "0ec53ffb16c4",
+    "1129b48b4823",
+    "120e31c22621",
+    "171f2e011d6b",
+    "1a7f0e13d500",
+    "22e411b2a060",
+    "24e0823de36a",
+    "255f775eb922",
+    "289a1a8f4321",
+    "292be53d2f7c",
+    "2b5e2c66c5c9",
+    "2e851c90fc11",
+    "320547552433",
+    "32b78fd16668",
+    "32d4042cf0f5",
+    "375247e3ae11",
+    "3af29a2b96c0",
+    "3c046d9511a3",
+    "3c0c54288ed6",
+    "3c13a00ed31f",
+    "3cbcdea66dd8",
+    "405d81070db1",
+    "41c9a4783836",
+    "42a1b891c822",
+    "47a6aefdc77a",
+    "486c677fa593",
+    "4a3112e592d3",
+    "4af8199f030d",
+    "4e6f746ad496",
+    "522744dc5fa9",
+    "522aa97b097f",
+    "539e3d659e2d",
+    "550e19908774",
+    "57bbd248c000",
+    "587dc0417e43",
+    "589e5e36a025",
+    "5db0fcac553f",
+    "5ed94cebc246",
+    "63b295de36ae",
+    "659479493e28",
+    "6b148a2eac3a",
+    "71369da8755d",
+    "7530ddb0858e",
+    "755183338548",
+    "75b9050215e2",
+    "76b0bfaf7cd5",
+    "77073e7498d7",
+    "77a91d5c9b4a",
+    "7a72ee21ed37",
+    "7b63f0dc927e",
+    "89dc5e4613be",
+    "8b48a371705a",
+    "8b6d00c94515",
+    "8bc51d299fc5",
+    "8c7f7b4f3fe3",
+    "9074d9354f6e",
+    "908fe8986b42",
+    "9219609b55df",
+    "930007d5290d",
+    "93f7258740dc",
+    "97302fdedd25",
+    "98dc860601aa",
+    "9c800d1f49eb",
+    "9cab19e9247b",
+    "9f40a9262318",
+    "9f649ddb512b",
+    "a084f3a7ce72",
+    "a161751156b6",
+    "a2be4fb3470e",
+    "a7c49fa2b64b",
+    "aad9d400f2b5",
+    "ab55a4ef29bd",
+    "ac2df0a02130",
+    "ac457a60f0e4",
+    "b61dfcf719fd",
+    "ba4ebca0923f",
+    "bbf1fef18a3f",
+    "bf11b3ee4e40",
+    "bf53d8d29367",
+    "c15f11fa3c3e",
+    "c178529379b2",
+    "c20ea9d7d2e7",
+    "c35fb26cd153",
+    "c429d4719add",
+    "c582a65ad15b",
+    "cf3c052e6623",
+    "cf93e40771fa",
+    "d1f269b8b5b8",
+    "d31194275fd4",
+    "d345e6aba306",
+    "d3a425f8b7a5",
+    "d6ec0c141c4a",
+    "d8a1ccb33079",
+    "d8b3af4efb12",
+    "e45e847043f6",
+    "e6527cec905f",
+    "e70ef012dfe6",
+    "e72c4b25204a",
+    "ebdf7b7a858e",
+    "ee35e019db0b",
+    "f00b02cac5b6",
+    "f1f6b3d690f7",
+    "f4e19675847b",
+    "fb29ae50ae2e",
+    "fd9bf4779a52",
+    "fe1ae9d27803",
+    "fe93b2e2fa57",
+    "ff5d33007370",
+    "official-141918d10e081341",
+    "official-500b632deffbbfb9",
+    "official-546e13879821e8d1",
+    "official-547c895881c8b89d",
+    "official-9a41a39eac92aa24",
+    "official-9ef2b66b68f4e269",
+    "official-e9717de0c42cce73"
+  ],
+  "collection_errors": 1,
+  "ai_usage": {
+    "calls": 12,
+    "successes": 11,
+    "failures": 1,
+    "estimated_cost_usd": 0.004752
+  },
+  "notice": "자동 수집 메타데이터·AI 요약은 원문 검증 전입니다. 학술지 참고자료는 이번 주 신규 발표와 별개입니다."
+}
