@@ -63,7 +63,7 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: gpt-4.1-mini
-          PSI_AI_MAX_CALLS: ${{ github.event_name == 'push' && '0' || '12' }}
+          PSI_AI_MAX_CALLS: ${{ github.event_name == 'push' && !contains(github.event.head_commit.message, '[refresh-weekly]') && '0' || '12' }}
           PSI_AI_INPUT_TOKEN_BUDGET: "12000"
           PSI_AI_OUTPUT_TOKEN_BUDGET: "3600"
           PSI_AI_MAX_ESTIMATED_USD: "0.02"
@@ -79,12 +79,23 @@ jobs:
       - name: Generate weekly archive and report index
         run: python -m scripts.weekly_report
       - name: Persist latest successful data
-        if: github.event_name != 'push'
+        # The refresh-weekly marker is for a one-time recovery of a failed
+        # scheduled run; normal code pushes do not persist weekly data.
+        if: github.event_name != 'push' || contains(github.event.head_commit.message, '[refresh-weekly]')
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add site/data.json site/reports/ site/benchmark_history/ site/topic_map.json site/topic_trends/ site/briefing.json site/integrated.json site/financial_ir_watch.json
-          git diff --cached --quiet || (git commit -m 'data: update weekly metadata' && git pull --rebase origin main && git push)
+          git status --short
+          if ! git diff --cached --quiet; then
+            git commit -m 'data: update weekly metadata'
+            # Push does not require a clean worktree.  Rebase only when remote
+            # main has moved, preserving generated unstaged files via autostash.
+            if ! git push origin HEAD:main; then
+              git -c rebase.autoStash=true pull --rebase origin main
+              git push origin HEAD:main
+            fi
+          fi
       - uses: actions/configure-pages@v5
         with:
           enablement: true
