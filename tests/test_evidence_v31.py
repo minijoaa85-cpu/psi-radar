@@ -54,8 +54,8 @@ def test_csv_formula_injection_guard_and_no_external_storage():
     assert 'r.stale_reused?"yes":"no"' in HTML
 
 def test_release_history_append_only_and_shared_presentation():
-    assert HISTORY["latest_version"]=="V3.1"
-    assert HISTORY["entries"][-1]["version"]=="V3.1"
-    assert len(HISTORY["entries"])==32
-    assert all(HISTORY["entries"][-1].get(k) for k in ("summary","background","changes","value"))
+    v31=next(x for x in HISTORY["entries"] if x["version"]=="V3.1")
+    assert HISTORY["latest_version"]==HISTORY["entries"][-1]["version"]
+    assert len(HISTORY["entries"])>=32
+    assert all(v31.get(k) for k in ("summary","background","changes","value"))
     assert '"version_history.json"' in (ROOT/"scripts"/"build_history_slides.py").read_text(encoding="utf-8")
