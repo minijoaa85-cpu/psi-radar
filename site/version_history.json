@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "product": "PSI Radar",
-  "latest_version": "V3.1",
-  "updated_on": "2026-11-14",
+  "latest_version": "V3.2",
+  "updated_on": "2026-11-16",
   "source_policy": "Version summaries curated from repository README and implementation commits; no unverifiable feature claims.",
   "entries": [
     {
@@ -292,6 +292,15 @@
       "background": "통합 화면에서 근거 자료를 직접 열 수는 있었지만 기술별 자료의 관측 시점과 출처 종류, 오래된 메타데이터를 구분하거나 조사 결과를 재현해 공유하기 어려웠음",
       "changes": "선택 기술에 연결된 Evidence Desk를 구현하여 수집 기준일에서 역산한 7·30·365일 발행 기간, 논문·뉴스·공식 분류 필터, 날짜 유효성 검사, 관측된 일·주·월 구간별 차트, 이전 수집 재사용 표시, 원문 링크 및 CSV 추출을 제공",
       "value": "빈 기간이나 출처 미확인을 실제 산업 활동 부재로 오해하지 않고, 기술별 공개 근거를 필터링하고 출처 포함 목록으로 검토·공유"
+    },
+    {
+      "version": "V3.2",
+      "title": "Weekly Evidence Review · 주차별 근거 비교",
+      "date": "2026-11-16",
+      "summary": "저장된 주간 보고서 2개를 기술별 관측 건수·원문 근거로 비교하고 검토용 Markdown을 생성",
+      "background": "W46과 W47처럼 수집 기준 시각이 다른 주차를 같은 완성도인 것처럼 비교하면 기술 추세를 잘못 판단할 수 있고, 조사 결과를 공유할 문서도 부족했음",
+      "changes": "Weekly Reports에 별도 비교 기준 주차 선택, 보고서 스키마·파일 검증, 수집 시각에 따른 진행 중 주차 안내, 기술별 동일 정의의 원자료 건수 병렬 막대, 주차별 실제 원문 링크, Markdown 보고서 복사·다운로드를 구현",
+      "value": "완료되지 않은 주차는 증감률 계산 없이 명확히 구분하면서 공식 근거 검토를 위한 추적 가능한 주간 보고서 초안을 생성"
     }
   ]
 }
