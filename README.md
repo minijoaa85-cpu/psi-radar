@@ -1,4 +1,4 @@
-# PSI Radar V3.1 — Power Semiconductor Intelligence Radar
+# PSI Radar V3.2 — Power Semiconductor Intelligence Radar
 
 공개 자료 기반 한국어 전력반도체 주간 기술 모니터링 웹 플랫폼. GaN (40%) > SiC (30%) > IGBT (10%) = UD/UG SGT (10%) = SJ MOSFET (10%).
 
@@ -426,3 +426,12 @@ GitHub Pages는 저장소 Settings → Pages → **Source: GitHub Actions**를 �
 - **직접 원문 및 CSV:** 링크가 실제 `https://`로 연결되는 상위 최대 8건을 발행일 내림차순으로 표시합니다. CSV 내보내기는 선택 필터 내 모든 유효한 발행일 레코드를 `technology,kind,published_date,original_title,source,official_url,stale_reused` 컬럼으로 저장합니다. BOM UTF-8, CSV 인용부호, 수식 시작 문자 무력화로 스프레드시트 위험을 낮춥니다. 서버 전송이나 공유 개인 상태 저장은 없습니다.
 - **수집 범위 주의:** 제조사 공식 분류가 0건이거나 7일 내 자료가 없어도 **해당 기업·기술에서 새로운 일이 전혀 없었다**는 결론은 아닙니다. 뉴스/논문은 수집창 및 검색범위가 다르므로 막대 높이를 산업 기술 우열이나 점유율로 해석하지 않습니다.
 - **기존 기능과 릴리스 유지:** V3.0의 4개 메뉴 그룹, My Watch·History·Data Quality, 기존 비교·재무 워크플로를 그대로 유지합니다. History `site/version_history.json`에 V3.1을 추가했으며 배포 시 전체 PDF·PPT가 **36장**으로 자동 생성됩니다. 별도 API/AI 비용을 증가시키지 않습니다.
+
+## V3.2 — Weekly Evidence Review & 조사 보고서 (2026-11-16)
+
+- **배경:** V3.1 Evidence Desk는 수집일/발행일·자료유형별 분석은 가능했지만, 실제 축적된 `reports/*.json`의 서로 다른 주차를 나란히 검토하고 원문이 연결된 조사 문서를 저장하는 작업이 분리되어 있었습니다. 특히 **2026-W47은 월요일 오전 생성된 진행 중 주차**이므로 전주와 단순 증감률로 비교하면 기술 동향을 왜곡할 수 있습니다.
+- **주간 비교 UI:** `② 주간 동향 → Weekly Reports`의 기존 주간 차트 아래에 **Weekly Evidence Review · V3.2**를 추가합니다. 선택 주차는 기존 `weekly-select`와 동기화되고, 기준 주차는 **실제로 보관된 다른 주차**만 선택할 수 있습니다. 현재 두 보고서는 2026-W46 및 2026-W47이며 다음 주차가 쌓이면 자동으로 선택 목록에 편입됩니다.
+- **집계 타당성:** 비교한 각 JSON 보고서에서 `week`·`week_start`·`by_category`·`weekly_items`의 스키마와, 기술군별 합계가 `published_this_week_count`와 같은지 확인합니다. 실수 또는 누락 건수를 0으로 대체하거나 임의 기준 주차를 생성하지 않습니다. 원문 URL은 https 링크만 외부로 연결하며 제목과 AI 요약은 미검증 상태를 함께 표시합니다.
+- **시각화:** GaN·SiC·IGBT·SJ MOSFET·SGT의 **두 보고서에 실제 보관된 발행일 기준 공개자료 건수**를 같은 축의 병렬 막대와 주차별 카드로 제공합니다. `generated_at`가 해당 주차 끝보다 앞서면 **주차 진행 중/기준일 미확인**으로 표시하고 성장률·기술 순위 대신 **원시 표본 건수**만 노출합니다. 학술 논문 12개월 참고자료는 주간 발표 건수와 합산하지 않습니다.
+- **근거 추적 및 재사용 보고서:** 선택 주와 기준 주 보고서에 `weekly_items`로 남은 자료의 원문 링크·발행일·출처·원문 검증 상태를 보여 줍니다. **근거 요약 복사** 및 UTF-8 BOM이 포함된 **Markdown 조사 보고서 다운로드** 기능이 있으며, 표본 비교·수집 시각·주의 사항·최대 10개의 주차별 근거 원문을 담습니다. 외부 API 호출 없이 브라우저에서 생성합니다.
+- **기존 기능 및 릴리스:** V3.1 Evidence Desk·제품 Benchmark·4개사 수동 검증 재무·우측 My Watch/History/Data Quality·4단계 메뉴 모두 유지합니다. `site/version_history.json`에 V3.2 추가로 **33개 버전**, 동일 JSON에서 생성하는 PDF/PPT **37장**을 동기화합니다. 주간 수집·저장 자동화의 수치 및 AI 예산 한도는 변경하지 않습니다.
