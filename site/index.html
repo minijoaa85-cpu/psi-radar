@@ -1504,7 +1504,8 @@ function w32SetCurrent(report){
 el("weekly-review32-base").addEventListener("change",w32SelectBase);
 el("weekly-review32-copy").addEventListener("click",()=>{
  if(!W32_REPORT_TEXT)return;
- navigator.clipboard?.writeText(W32_REPORT_TEXT).then(()=>{el("weekly-review32-status").textContent="근거 보고서 텍스트를 복사했습니다. 원문 검증 후 사용하세요.";}).catch(()=>{el("weekly-review32-status").textContent="복사가 차단되었습니다. Markdown 파일을 다운로드하세요.";});
+ if(!navigator.clipboard?.writeText){el("weekly-review32-status").textContent="현재 브라우저에서 클립보드 복사를 지원하지 않습니다. Markdown 파일을 다운로드하세요.";return;}
+ navigator.clipboard.writeText(W32_REPORT_TEXT).then(()=>{el("weekly-review32-status").textContent="근거 보고서 텍스트를 복사했습니다. 원문 검증 후 사용하세요.";}).catch(()=>{el("weekly-review32-status").textContent="복사가 차단되었습니다. Markdown 파일을 다운로드하세요.";});
 });
 el("weekly-review32-download").addEventListener("click",()=>{
  if(!W32_REPORT_TEXT)return;
