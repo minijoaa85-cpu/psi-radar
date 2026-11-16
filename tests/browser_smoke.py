@@ -90,6 +90,22 @@ def check_page(browser,engine,screen,width,height,url):
         nav.locator('button[data-tab="overview"]').click()
         nav.locator('button[data-tab="weekly"]').click()
         assert page.locator("#weekly").is_visible()
+        # V3.2: compare two actually archived reports with their timestamp coverage.
+        page.locator("#weekly-review32-metrics .w32-card").first.wait_for(state="visible",timeout=12000)
+        assert page.locator("#weekly-review32-metrics .w32-card").count()==2
+        assert page.locator("#weekly-review32-bars .w32-bar-row").count()==5
+        assert page.locator("#weekly-review32-base option").count()>=1
+        assert "주차 진행 중" in page.locator("#weekly-review32-status").inner_text()
+        assert page.locator("#weekly-review32-download").is_enabled()
+        with page.expect_download(timeout=12000) as download_info:
+            page.locator("#weekly-review32-download").click()
+        assert download_info.value.suggested_filename=="psi-radar-weekly-evidence-v32.md"
+        # Switching selected week preserves the other real report as baseline.
+        page.locator("#weekly-select").select_option("reports/2026-W46.json")
+        assert "2026-W46" in page.locator("#weekly-review32-status").inner_text()
+        page.locator("#weekly-review32-metrics .w32-card").first.wait_for(state="visible",timeout=12000)
+        page.locator("#weekly-select").select_option("reports/2026-W47.json")
+        page.locator("#weekly-review32-metrics .w32-card").first.wait_for(state="visible",timeout=12000)
         nav.locator('button[data-tab="market"]').click()
         assert page.locator("#market").is_visible()
         # V2.6 shows visual summaries first; full cards are intentionally collapsed.
