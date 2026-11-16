@@ -748,6 +748,44 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
 @media(max-width:760px){.m31-evidence{grid-template-columns:1fr}.m31{padding:12px}}
 @media(max-width:420px){.m31-controls label{flex:1 1 125px}.m31-controls select{min-width:0;width:100%}.m31-metric strong{font-size:18px}.m31-metric{padding:7px}}
 
+
+/* V3.2 — weekly evidence comparison, only stored and date-stamped snapshots */
+.w32{border:1px solid #416886;border-radius:15px;background:linear-gradient(145deg,#122d49,#0d2038);padding:16px;margin:14px 0}
+.w32-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.w32-head h3{font-size:18px;margin:0 0 5px}
+.w32-head p{font-size:12px;color:#bad0df;line-height:1.6;margin:0}
+.w32-flag{padding:6px 9px;color:#b9e7ff;border:1px solid #497e9f;border-radius:7px;font-size:11px}
+.w32-controls{display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;margin:13px 0}
+.w32-controls label{font-size:11px;color:#bad4e6;display:flex;flex-direction:column;gap:5px}
+.w32-controls select{min-width:155px;background:#173a55;color:#eaf6ff;border:1px solid #527c9b;padding:9px 11px;border-radius:7px}
+.w32-controls button{background:#245477;border:1px solid #5d91b3;color:#effaff;font-size:12px;padding:9px 11px;border-radius:7px;cursor:pointer}
+.w32-controls button:disabled{opacity:.5;cursor:default}
+.w32-controls button:focus-visible,.w32-controls select:focus-visible{outline:2px solid #a0ddff;outline-offset:2px}
+.w32-status{font-size:12px;line-height:1.65;color:#d2e5f2;margin:12px 0}
+.w32-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.w32-card{background:#132b45;border:1px solid #385b7b;border-radius:10px;padding:12px}
+.w32-card span{font-size:11px;color:#a8c8df;display:block}
+.w32-card strong{font-size:22px;display:block;margin:5px 0}
+.w32-card small{font-size:11px;color:#b9cce0;line-height:1.5}
+.w32-bars{display:grid;gap:9px;margin:15px 0;padding:13px;border:1px solid #32516c;border-radius:9px;background:#0f233b}
+.w32-bar-row{display:grid;grid-template-columns:110px minmax(0,1fr) minmax(0,1fr);align-items:center;gap:9px}
+.w32-bar-row>strong{font-size:12px}
+.w32-bar-cell{display:flex;align-items:center;gap:5px;min-width:0}
+.w32-bar-cell b{font-size:11px;min-width:20px;text-align:right}
+.w32-track{height:14px;flex:1;background:#273f58;border-radius:5px;overflow:hidden}
+.w32-fill{display:block;height:100%;background:#569fea;border-radius:5px}
+.w32-fill.previous{background:#47bea9}
+.w32-legend{display:flex;flex-wrap:wrap;gap:16px;color:#aecaee;font-size:11px;margin:10px 0}
+.w32-legend span:before{content:"";display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:6px;background:#569fea}
+.w32-legend span:last-child:before{background:#47bea9}
+.w32-sources{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.w32-source-col{background:#122941;padding:12px;border:1px solid #345474;border-radius:9px;min-width:0}
+.w32-source-col h4{margin:0 0 7px;font-size:14px}
+.w32-source-col a{color:#a4e3ff;text-decoration:none;font-size:12px;line-height:1.55;overflow-wrap:anywhere}
+.w32-source-col p{margin:5px 0 9px}
+.w32-source-col small{font-size:10px;color:#b4cadc;line-height:1.4}
+.w32-hint{font-size:11px;color:#b3cadb;line-height:1.7;margin:10px 0 0}
+@media(max-width:720px){.w32{padding:12px}.w32-grid,.w32-sources{grid-template-columns:1fr}.w32-bar-row{grid-template-columns:80px minmax(0,1fr) minmax(0,1fr);gap:5px}.w32-card strong{font-size:18px}}
 </style></head><body>
 <header><small>POWER SEMICONDUCTOR INTELLIGENCE</small><h1>◈ PSI Radar</h1><div class="muted">GaN · SiC · IGBT · SJ MOSFET · UD/UG SGT | 글로벌 기술 · 논문 · 경쟁사 동향</div><div id="last" class="mini">데이터 상태 확인 중...</div><div id="ui-release-label" class="ui-release-label">UI 코드: History 적용 · 버전 확인 중</div></header>
 <aside class="personal-tools" aria-label="개인 및 데이터 관리 보조 메뉴">
@@ -849,7 +887,18 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
  </div><div class="filters"><select id="research-cat" aria-label="논문 기술 선택"><option value="">전체 논문</option><option>GaN</option><option>SiC</option><option>IGBT</option><option>SJ MOSFET</option><option>SGT</option></select></div><select id="research-relevance" aria-label="기술 관련성 수준"><option value="0">전체 관련성</option><option value="70">높음 70점 이상</option><option value="45">보통 45점 이상</option></select><p class="mini">관련성은 제목·초록 기술 키워드 기반의 자동 추정값입니다. 전문가 검증 결과가 아닙니다.</p><div id="research-counts" class="mini"></div><div id="research-feed" class="feed"></div></article></section>
 <section id="weekly" class="hidden"><article class="panel"><h2>주간 보고서 아카이브</h2><p class="muted">매주 공개 자료를 누적 보관합니다. 동일 주차에 다시 실행하면 해당 주 보고서를 갱신합니다. 첫 주차는 비교 기준(Baseline)입니다.</p><div class="filters"><select id="weekly-select" aria-label="보고서 주차 선택"><option value="">보고서 로딩 중</option></select></div><div class="pulse27" aria-labelledby="pulse27-weekly-title"><div class="pulse27-head"><div><h2 id="pulse27-weekly-title">Weekly Intelligence · 발표 동향</h2><p>실제 보관된 보고서만 시각화합니다. 이전 이력이 없으면 비교할 수 없습니다.</p></div><span id="pulse27-weekly-updated" class="pulse27-time">주간 보고서 확인 중</span></div>
 <div class="pulse27-grid"><div class="pulse27-box"><h3>선택 주차 기술별 신규 발표 자료</h3><div class="pulse27-bars" id="pulse27-weekly-bars"></div><p class="pulse27-note">공식 발표·뉴스·논문을 수집한 표본입니다. 기술 분야 전체의 실제 발표량을 뜻하지 않습니다.</p></div>
-<div class="pulse27-box"><h3>보관된 주차 추이</h3><div class="pulse27-archive" id="pulse27-weekly-history"></div><p id="pulse27-weekly-message" class="pulse27-hint"></p></div></div><div id="pulse27-weekly-kpis" class="pulse27-summary"></div></div><div id="weekly-details" class="feed"><div class="empty">주간 보고서 파일을 확인 중입니다.</div></div></article></section>
+<div class="pulse27-box"><h3>보관된 주차 추이</h3><div class="pulse27-archive" id="pulse27-weekly-history"></div><p id="pulse27-weekly-message" class="pulse27-hint"></p></div></div><div id="pulse27-weekly-kpis" class="pulse27-summary"></div></div><div class="w32" id="weekly-review32" aria-labelledby="weekly-review32-title">
+<div class="w32-head"><div><h3 id="weekly-review32-title">Weekly Evidence Review · V3.2</h3><p>실제 보관된 두 주차의 공개자료 표본을 비교하고, 기술 검토용 근거 보고서를 생성합니다.</p></div><span class="w32-flag">검증되지 않은 성장률 미표시</span></div>
+<div class="w32-controls"><label for="weekly-review32-base">비교 기준 주차<select id="weekly-review32-base" aria-label="비교 기준 주차"><option value="">주간 이력 확인 중</option></select></label>
+<button type="button" id="weekly-review32-copy" disabled>근거 요약 복사</button>
+<button type="button" id="weekly-review32-download" disabled>Markdown 보고서 다운로드</button></div>
+<p class="w32-status" id="weekly-review32-status" role="status">주간 보고서 2개를 확인 중입니다.</p>
+<div class="w32-grid" id="weekly-review32-metrics" aria-live="polite"></div>
+<div class="w32-legend" id="weekly-review32-legend"></div>
+<div class="w32-bars" id="weekly-review32-bars" aria-label="선택 주차별 기술군 공개자료 관측 건수 비교"></div>
+<div class="w32-sources" id="weekly-review32-sources"></div>
+<p class="w32-hint">동일한 집계 정의의 실제 보고서만 비교합니다. **이번 주가 진행 중인 경우** 주간 완료치가 아니므로 증감률이나 기술 순위를 산출하지 않습니다. 원문과 AI 제목 요약은 별도 검증이 필요합니다.</p>
+</div><div id="weekly-details" class="feed"><div class="empty">주간 보고서 파일을 확인 중입니다.</div></div></article></section>
 <section id="competitors" class="hidden"><article class="panel">
 <h2>Competitor Intelligence · 기업별 기술 동향</h2>
 <p class="competitor-intro">Infineon · ST · onsemi · ROHM 및 일본·중국 업체 | 자료 건수는 시장점유율이 아니며, 뉴스 색인과 제조사 공식 발표를 구분합니다.</p>
@@ -1340,7 +1389,132 @@ function weeklyCards(items){
  const rows=items||[];
  return rows.length?rows.map(card).join(""):'<div class="empty">선택한 조건의 신규 자료가 없습니다.</div>';
 }
+
+/* V3.2 archived-week comparison: raw reported samples, no fabricated trend percentages */
+const W32_TECHS=["GaN","SiC","IGBT","SJ MOSFET","SGT"];
+let W32_CURRENT=null,W32_BASE=null,W32_SEQ=0,W32_REPORT_TEXT="";
+const W32_CACHE=new Map();
+function w32Valid(report){
+ return report&&/^\d{4}-W\d{2}$/.test(report.week||"")&&/^\d{4}-\d{2}-\d{2}$/.test(report.week_start||"")&&
+ Number.isSafeInteger(report.published_this_week_count)&&report.published_this_week_count>=0&&
+ report.by_category&&W32_TECHS.every(k=>Number.isSafeInteger(report.by_category[k])&&report.by_category[k]>=0)&&
+ W32_TECHS.reduce((sum,k)=>sum+report.by_category[k],0)===report.published_this_week_count&&
+ Array.isArray(report.weekly_items);
+}
+function w32Coverage(report){
+ const t=Date.parse(report.week_start+"T00:00:00+09:00"),end=t+7*86400000,generated=Date.parse(report.generated_at||"");
+ return Number.isFinite(t)&&Number.isFinite(generated)&&generated>=t&&generated>=end?"주차 완료 후 생성":"주차 진행 중/기준일 미확인";
+}
+function w32SourceRow(r){
+ const good=/^https:\/\//.test(r.url||"");
+ return '<p>'+(good?'<a target="_blank" rel="noopener noreferrer" href="'+esc(r.url)+'">'+esc(r.title_ko||r.title||"제목 확인")+'</a>':esc(r.title_ko||r.title||"제목 확인"))+
+ '<small>'+esc(r.date||"날짜 미확인")+' · '+esc(r.source||"출처 미확인")+' · '+esc(r.summary_status||"원문 미검증")+'</small></p>';
+}
+function w32AsMarkdown(current,base){
+ const status1=w32Coverage(current),status0=w32Coverage(base);
+ const lines=["# PSI Radar V3.2 — 주간 근거 비교","",
+ "**자료 출처:** PSI Radar 저장된 주차별 보고서(자동 수집 메타데이터, 원문 미검증)","",
+ "비교: "+current.week+" ("+current.week_start+") / "+base.week+" ("+base.week_start+")",
+ "생성 시각: "+(current.generated_at||"미확인")+" / "+(base.generated_at||"미확인"),
+ "집계 상태: "+current.week+" "+status1+" / "+base.week+" "+status0,
+ "",
+ "## 실제 수집 표본 비교","",
+ "| 기술 | "+current.week+" | "+base.week+" |","|---|---:|---:|"];
+ for(const k of W32_TECHS)lines.push("| "+k+" | "+current.by_category[k]+" | "+base.by_category[k]+" |");
+ lines.push("","선택 주 발표 표본: "+current.published_this_week_count+"건 / 기준 주 발표 표본: "+base.published_this_week_count+"건",
+ "비교 주차별 보관 보고서의 발행일 집계입니다. 수집 공백·진행 중인 주차를 0% 성장이나 기술 활동 부재로 해석하지 않습니다.",
+ "논문 12개월 참고자료 수와 해당 주간 발표 수를 합산하지 않습니다.","");
+ for(const [title,report] of [["선택 주차",current],["비교 기준 주차",base]]){
+  lines.push("## "+title+" · "+report.week);
+  const items=report.weekly_items.slice(0,10);
+  if(!items.length)lines.push("- 현재 저장된 보고서의 해당 주 발표 자료가 없습니다. (집계 시점에 따른 제한)");
+  for(const r of items){
+   const title=String(r.title||"제목 확인").replace(/[\r\n]+/g," ");
+   const url=/^https:\/\//.test(r.url||"")?r.url:"";
+   lines.push("- "+(url?"["+title.replace(/[\[\]]/g,"")+"]("+url+")":title)+" — "+(r.date||"날짜 미확인")+" / "+(r.source||"출처 미확인")+" / "+(r.summary_status||"원문 미검증"));
+  }
+  lines.push("");
+ }
+ lines.push("## 검토 시 유의사항","- 제목 및 AI 요약은 원문 검증 전입니다.","- 최신 주차의 수집 시각·검색 범위가 다를 수 있어 단순 비교를 기술 성장률로 해석하지 않습니다.","- 원문 링크에서 시험조건·제조사 공식 근거를 재확인하세요.");
+ return lines.join("\n");
+}
+function w32Reset(message){
+ W32_BASE=null;W32_REPORT_TEXT="";
+ el("weekly-review32-status").textContent=message;
+ el("weekly-review32-metrics").innerHTML="";
+ el("weekly-review32-bars").innerHTML="";
+ el("weekly-review32-legend").innerHTML="";
+ el("weekly-review32-sources").innerHTML="";
+ el("weekly-review32-copy").disabled=true;
+ el("weekly-review32-download").disabled=true;
+}
+function w32Render(){
+ const current=W32_CURRENT,base=W32_BASE;
+ if(!w32Valid(current)||!w32Valid(base)||current.week===base.week){
+  w32Reset("서로 다른 두 주차의 유효한 보고서가 확보되지 않아 비교할 수 없습니다.");
+  return;
+ }
+ const status=w32Coverage(current),baselineStatus=w32Coverage(base);
+ el("weekly-review32-status").textContent=current.week+" "+status+" / "+base.week+" "+baselineStatus+
+  " · 주차별 관측 건수 비교 (증감률·성능 순위 아님)";
+ el("weekly-review32-metrics").innerHTML=[[current.week,current.published_this_week_count,current.generated_at,status],[base.week,base.published_this_week_count,base.generated_at,baselineStatus]].map(([week,value,time,coverage])=>
+  '<div class="w32-card"><span>'+esc(week)+' · 해당 주 발행 표본</span><strong>'+value+'건</strong><small>'+esc(coverage)+' · 수집 '+esc(time||"미확인")+'</small></div>').join("");
+ el("weekly-review32-legend").innerHTML='<span>'+esc(current.week)+' 선택 주차</span><span>'+esc(base.week)+' 기준 주차</span>';
+ const max=Math.max(1,...W32_TECHS.flatMap(k=>[current.by_category[k],base.by_category[k]]));
+ el("weekly-review32-bars").innerHTML=W32_TECHS.map(k=>{
+  const a=current.by_category[k],b=base.by_category[k];
+  return '<div class="w32-bar-row"><strong>'+esc(k)+'</strong>'+
+   '<div class="w32-bar-cell"><div class="w32-track"><span class="w32-fill" style="width:'+(a/max*100).toFixed(1)+'%"></span></div><b>'+a+'</b></div>'+
+   '<div class="w32-bar-cell"><div class="w32-track"><span class="w32-fill previous" style="width:'+(b/max*100).toFixed(1)+'%"></span></div><b>'+b+'</b></div></div>';
+ }).join("");
+ el("weekly-review32-sources").innerHTML=[[current.week,current],[base.week,base]].map(([label,report])=>
+  '<div class="w32-source-col"><h4>'+esc(label)+' · 공개자료 원문</h4>'+
+  (report.weekly_items.length?report.weekly_items.slice(0,4).map(w32SourceRow).join(""):'<p class="w32-hint">저장된 해당 주 발표 자료가 없습니다. 검색/발행 시점 범위를 확인하세요.</p>')+'</div>').join("");
+ W32_REPORT_TEXT=w32AsMarkdown(current,base);
+ el("weekly-review32-copy").disabled=false;el("weekly-review32-download").disabled=false;
+}
+function w32SelectBase(){
+ const file=el("weekly-review32-base").value;
+ const current=el("weekly-select").value;
+ if(!/^reports\/\d{4}-W\d{2}\.json$/.test(file)||file===current){w32Reset("선택 주차와 다른 보관 보고서를 지정하세요.");return;}
+ const seq=++W32_SEQ;
+ const use=W32_CACHE.get(file);
+ const handle=report=>{
+  if(seq!==W32_SEQ)return;
+  if(!w32Valid(report)||file!=="reports/"+report.week+".json")throw Error("보고서의 검증된 주차와 파일이 일치하지 않습니다");
+  W32_BASE=report;w32Render();
+ };
+ if(use){handle(use);return;}
+ w32Reset("기준 주차의 실제 보관 보고서를 불러오는 중입니다.");
+ fetch(file+"?nocache="+Date.now()).then(r=>{if(!r.ok)throw Error("HTTP "+r.status);return r.json()})
+  .then(report=>{W32_CACHE.set(file,report);handle(report)})
+  .catch(e=>{if(seq===W32_SEQ)w32Reset("기준 주차를 불러오지 못했습니다: "+e.message);});
+}
+function w32SetCurrent(report){
+ W32_CURRENT=report;const select=el("weekly-review32-base");
+ const current=el("weekly-select").value;
+ const items=PULSE27_ARCHIVE.filter(x=>x.file!==current);
+ const preferred=select.value&&items.some(x=>x.file===select.value)?select.value:(items[0]?.file||"");
+ select.innerHTML=items.length?items.map(x=>'<option value="'+esc(x.file)+'">'+esc(x.week)+'</option>').join(""):'<option value="">비교 가능한 이전 보고서 없음</option>';
+ select.value=preferred;
+ if(!w32Valid(report)){w32Reset("선택 주차 보고서가 유효하지 않아 비교를 수행하지 않습니다.");return;}
+ if(!preferred){w32Reset("실제로 보관된 다른 주차가 없습니다. 신규 보고서가 축적되면 비교할 수 있습니다.");return;}
+ w32SelectBase();
+}
+el("weekly-review32-base").addEventListener("change",w32SelectBase);
+el("weekly-review32-copy").addEventListener("click",()=>{
+ if(!W32_REPORT_TEXT)return;
+ navigator.clipboard?.writeText(W32_REPORT_TEXT).then(()=>{el("weekly-review32-status").textContent="근거 보고서 텍스트를 복사했습니다. 원문 검증 후 사용하세요.";}).catch(()=>{el("weekly-review32-status").textContent="복사가 차단되었습니다. Markdown 파일을 다운로드하세요.";});
+});
+el("weekly-review32-download").addEventListener("click",()=>{
+ if(!W32_REPORT_TEXT)return;
+ const blob=new Blob(["\uFEFF"+W32_REPORT_TEXT],{type:"text/markdown;charset=utf-8"});
+ const url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="psi-radar-weekly-evidence-v32.md";a.click();
+ setTimeout(()=>URL.revokeObjectURL(url),1000);
+});
+
 function displayWeek(report){
+ w32SetCurrent(report);
  pulse27Week(report);
  const target=el("weekly-details");
  const baseline=report.baseline?"비교 기준 주차 (이전 주차 자료 없음)":"직전 주차 대비 신규 ID 기준";
@@ -1356,7 +1530,7 @@ function loadWeekly(){
   PULSE27_ARCHIVE=items.filter(r=>/^\d{4}-W\d{2}$/.test(r.week||"")&&/^reports\/\d{4}-W\d{2}\.json$/.test(r.file||""));
   M30_READY.weekly=true;renderMission30();
   pulse27History();
-  if(!items.length){el("weekly-details").textContent="보관된 보고서가 없습니다.";return;}
+  if(!items.length){el("weekly-details").textContent="보관된 보고서가 없습니다.";w32Reset("보관된 주간 보고서가 없어 비교할 수 없습니다.");return;}
   for(const entry of items){
    const option=document.createElement("option");option.value=entry.file;
    option.textContent=entry.week+" ("+entry.week_start+") · "+entry.published_this_week_count+"건";
