@@ -11,6 +11,7 @@ from pptx.enum.shapes import MSO_SHAPE
 from reportlab.pdfgen import canvas
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
+from reportlab.pdfbase.cidfonts import UnicodeCIDFont
 from reportlab.lib.colors import HexColor
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -32,10 +33,22 @@ def page_data(data):
  p.append(("NEXT RELEASE RULE","차기 버전 관리 규칙","Single source of truth: site/version_history.json",
     [("01","새 버전의 한 줄 요약과 배경·개선·가치를 기록"),("02","우측 History 패널이 동일한 기록을 표시"),("03","배포 CI에서 PPTX와 PDF를 함께 재생성"),("04","테스트 및 라이브 배포 확인 후 공개")]))
  return p
-def font_file():
- for p in ("/usr/share/fonts/truetype/nanum/NanumGothic.ttf","/usr/share/fonts/truetype/nanum/NanumBarunGothic.ttf"):
-  if Path(p).exists():return p
- raise RuntimeError("Korean font missing; install fonts-nanum")
+def register_pdf_font():
+ """Prefer an embedded Korean TrueType font; never require apt on CI runners.
+
+ ReportLab's built-in Adobe-Korea1 CID fallback keeps Korean text searchable
+ even on fresh GitHub runners without Nanum fonts. PDF viewers may substitute
+ a local CJK font for the CID face.
+ """
+ for p in ("/usr/share/fonts/truetype/nanum/NanumGothic.ttf",
+           "/usr/share/fonts/truetype/nanum/NanumBarunGothic.ttf",
+           "/usr/share/fonts/truetype/unfonts-core/UnDotum.ttf"):
+  if Path(p).is_file():
+   pdfmetrics.registerFont(TTFont("PSIKorean",p))
+   return "PSIKorean"
+ pdfmetrics.registerFont(UnicodeCIDFont("HYGothic-Medium"))
+ print("NOTICE: no embeddable Korean TTF installed; using ReportLab Adobe-Korea1 CID fallback")
+ return "HYGothic-Medium"
 def ppt_text(sl,s,x,y,w,h,size=16,color=WHITE,bold=False):
  t=sl.shapes.add_textbox(Inches(x),Inches(y),Inches(w),Inches(h)).text_frame
  t.clear();t.word_wrap=True
@@ -60,18 +73,18 @@ def ppt(pages,path):
   ppt_text(sl,f"Github README + implementation records  |  {i+1:02d} / {len(pages):02d}",.68,7.02,12,.27,10,MUTED)
  prs.save(path)
 def pdf(pages,path):
- pdfmetrics.registerFont(TTFont("Nanum",font_file()))
+ font=register_pdf_font()
  c=canvas.Canvas(str(path),pagesize=(960,540));c.setTitle("PSI Radar Version History")
  def words(s,maxw,size):
   lines=[];line=""
   for word in str(s).split(" "):
    probe=(line+" "+word).strip()
-   if pdfmetrics.stringWidth(probe,"Nanum",size)>maxw and line:lines.append(line);line=word
+   if pdfmetrics.stringWidth(probe,font,size)>maxw and line:lines.append(line);line=word
    else:line=probe
   if line:lines.append(line)
   return lines
  def write(s,x,y,size,color,maxw=850,maxlines=3):
-  c.setFillColor(HexColor(color));c.setFont("Nanum",size)
+  c.setFillColor(HexColor(color));c.setFont(font,size)
   for j,line in enumerate(words(s,maxw,size)[:maxlines]):c.drawString(x,540-y-j*(size*1.45),line)
  for i,(tag,title,sub,blocks) in enumerate(pages):
   c.setFillColor(HexColor(BG));c.rect(0,0,960,540,fill=1,stroke=0)
