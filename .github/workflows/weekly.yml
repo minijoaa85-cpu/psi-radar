@@ -63,6 +63,7 @@ jobs:
         if: github.event_name != 'push'
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
         run: python -m scripts.collect
       - name: AI translation and summary (budget controlled)
         if: github.event_name != 'push'
