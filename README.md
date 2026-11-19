@@ -1,4 +1,4 @@
-# PSI Radar V3.2 — Power Semiconductor Intelligence Radar
+# PSI Radar V3.3 — Power Semiconductor Intelligence Radar
 
 공개 자료 기반 한국어 전력반도체 주간 기술 모니터링 웹 플랫폼. GaN (40%) > SiC (30%) > IGBT (10%) = UD/UG SGT (10%) = SJ MOSFET (10%).
 
@@ -435,3 +435,15 @@ GitHub Pages는 저장소 Settings → Pages → **Source: GitHub Actions**를 �
 - **시각화:** GaN·SiC·IGBT·SJ MOSFET·SGT의 **두 보고서에 실제 보관된 발행일 기준 공개자료 건수**를 같은 축의 병렬 막대와 주차별 카드로 제공합니다. `generated_at`가 해당 주차 끝보다 앞서면 **주차 진행 중/기준일 미확인**으로 표시하고 성장률·기술 순위 대신 **원시 표본 건수**만 노출합니다. 학술 논문 12개월 참고자료는 주간 발표 건수와 합산하지 않습니다.
 - **근거 추적 및 재사용 보고서:** 선택 주와 기준 주 보고서에 `weekly_items`로 남은 자료의 원문 링크·발행일·출처·원문 검증 상태를 보여 줍니다. **근거 요약 복사** 및 UTF-8 BOM이 포함된 **Markdown 조사 보고서 다운로드** 기능이 있으며, 표본 비교·수집 시각·주의 사항·최대 10개의 주차별 근거 원문을 담습니다. 외부 API 호출 없이 브라우저에서 생성합니다.
 - **기존 기능 및 릴리스:** V3.1 Evidence Desk·제품 Benchmark·4개사 수동 검증 재무·우측 My Watch/History/Data Quality·4단계 메뉴 모두 유지합니다. `site/version_history.json`에 V3.2 추가로 **33개 버전**, 동일 JSON에서 생성하는 PDF/PPT **37장**을 동기화합니다. 주간 수집·저장 자동화의 수치 및 AI 예산 한도는 변경하지 않습니다.
+
+## V3.3 — Trust & Intelligence Foundation / 데이터 신뢰성 (2026-11-19)
+
+**목적:** 수집 파일의 무결성과 과학적 사실 검증을 혼동하지 않고, GitHub Pages에 보이는 자료를 저장소와 동일하게 유지합니다.
+
+- **코드 배포와 주간 수집 분리:** `push`는 저장된 `site/data.json`, `reports/`, Benchmark·공식 IR 스냅샷을 그대로 배포합니다. 이때 새 뉴스를 가져오거나 소스 데이터를 임의로 변경하지 않습니다. 월요일 06:00 KST 예약 실행 및 `workflow_dispatch`만 자료 수집·선택적 AI 보강·주간 보고서 갱신을 수행합니다. 기존 AI 호출 예산 상한은 12회/토큰·비용 한도를 유지합니다.
+- **수집 후 게시 전 fail-closed 무결성 검사:** `python -m scripts.snapshot_quality --write`로 `source_health.json`을 만들고 `--check`로 정확한 파일 해시와 구조를 재검사합니다. 중복 ID, 지원되지 않는 기술·자료유형, 제목·출처·HTTPS 링크 누락, 부적절한 발행일, 주간 보고서 파일·ISO 주차·생성시각·기술별 건수 불일치, 최신 보고서와 원본 수집본 수량 불일치는 **배포 실패**로 차단합니다. 출처 API 장애나 낮은 검증 커버리지는 경고로 분리합니다.
+- **게시된 데이터의 재현성:** 신규 수집 실행은 `site/data.json`과 파생 리포트, `source_health.json`을 커밋·푸시한 뒤 `HEAD == origin/main` 및 `git diff --exit-code HEAD -- site/...`을 검사합니다. 코드 push는 커밋된 자료만 사용합니다. PDF/PPT 발표자료는 동일 릴리스 JSON으로 계속 생성합니다.
+- **신뢰성 UI:** Overview 상단 `Data Trust V3.3` 및 우측 `Data Quality`에서 구조 검사 결과, 제조사 직접 발표/논문 서지 정보/뉴스 색인 건수, 실제 보고 데이터 SHA-256 앞자리, 데이터시트 표 검증 현황 및 경고를 확인할 수 있습니다. 공개 자료의 **독립 과학 검증 또는 제품 성능 인증을 보장하는 화면이 아닙니다**.
+- **분리된 판단:** 기존 `metadata-rule-v1`의 기술 관련성 점수는 논문·기사 제목/초록의 키워드 정합성 추정치일 뿐 출처 신뢰도와 무관합니다. 제조사 원문은 제조사의 공식 주장, DOI 논문 자료는 서지 정보, 뉴스 RSS는 제목 색인으로 표시합니다. 논문 결론·수치의 독립 검증, 실험 재현, 업계 기술 경쟁력 점수는 추가 검토가 필요합니다.
+- **테스트:** 신규 `tests/test_snapshot_quality_v33.py`가 실제 수집 파일 검사와 손상된 ID/주차 인덱스 차단, 분기별 빌드 경로, UI 출처 표기를 확인합니다. Chromium·Firefox·WebKit 12개 뷰포트에 출처 검증 리포트 로딩·일치 확인을 추가했습니다.
+- **버전 이력:** `site/version_history.json`에 V3.3을 기록하여 **총 34개 버전, PDF/PPT 38장**을 동일한 소스로 생성합니다.

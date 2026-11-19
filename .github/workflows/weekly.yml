@@ -34,12 +34,16 @@ jobs:
       - name: Validate official financial disclosures
         run: python -m scripts.validate_financials
       - name: Build finance V2.5 within-company trends and review-only diff
+        if: github.event_name != 'push'
         run: python -m scripts.financial_review_diff
       - name: Monitor official IR release links (no automatic monetary updates)
+        if: github.event_name != 'push'
         run: python -m scripts.financial_ir_watch
       - name: Build benchmark change history
+        if: github.event_name != 'push'
         run: python -m scripts.benchmark_history
       - name: Build device architecture overview
+        if: github.event_name != 'push'
         run: python -m scripts.architecture
       - name: Generate synchronized History slides and PDF
         run: |
@@ -56,36 +60,49 @@ jobs:
           python -c "from pathlib import Path; s=Path('site/index.html').read_text(); Path('/tmp/psi-ui.js').write_text(s.split('<script>',1)[1].split('</script>',1)[0])"
           node --check /tmp/psi-ui.js
       - name: Collect public research metadata
+        if: github.event_name != 'push'
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: python -m scripts.collect
       - name: AI translation and summary (budget controlled)
+        if: github.event_name != 'push'
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: gpt-4.1-mini
-          PSI_AI_MAX_CALLS: ${{ github.event_name == 'push' && !contains(github.event.head_commit.message, '[refresh-weekly]') && '0' || '12' }}
+          PSI_AI_MAX_CALLS: "12"
           PSI_AI_INPUT_TOKEN_BUDGET: "12000"
           PSI_AI_OUTPUT_TOKEN_BUDGET: "3600"
           PSI_AI_MAX_ESTIMATED_USD: "0.02"
         run: python scripts/ai_enrich.py
       - name: Generate topic-to-evidence index
+        if: github.event_name != 'push'
         run: python -m scripts.tech_topics
       - name: Generate weekly topic trend snapshots
+        if: github.event_name != 'push'
         run: python -m scripts.topic_trends
       - name: Generate priority technology briefing
+        if: github.event_name != 'push'
         run: python -m scripts.briefing
       - name: Build integrated intelligence view
+        if: github.event_name != 'push'
         run: python -m scripts.integrated
       - name: Generate weekly archive and report index
+        if: github.event_name != 'push'
         run: python -m scripts.weekly_report
+      - name: Validate exact post-collection snapshot and emit source evidence report
+        run: |
+          python -m scripts.snapshot_quality --write
+          python -m scripts.snapshot_quality --check
+      - name: Validate generated snapshot with targeted regression tests
+        run: python -m pytest -q tests/test_snapshot_quality_v33.py
       - name: Persist latest successful data
-        # The refresh-weekly marker is for a one-time recovery of a failed
-        # scheduled run; normal code pushes do not persist weekly data.
-        if: github.event_name != 'push' || contains(github.event.head_commit.message, '[refresh-weekly]')
+        # Only scheduled or manually dispatched collection runs may write data.
+        # Code pushes deploy the existing committed snapshot unchanged.
+        if: github.event_name != 'push'
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add site/data.json site/reports/ site/benchmark_history/ site/topic_map.json site/topic_trends/ site/briefing.json site/integrated.json site/financial_ir_watch.json
+          git add site/data.json site/reports/ site/benchmark_history/ site/topic_map.json site/topic_trends/ site/briefing.json site/integrated.json site/financial_ir_watch.json site/financial_review_diff.json site/architecture.json site/source_health.json
           git status --short
           if ! git diff --cached --quiet; then
             git commit -m 'data: update weekly metadata'
@@ -96,6 +113,12 @@ jobs:
               git push origin HEAD:main
             fi
           fi
+      - name: Verify published source assets match the committed main snapshot
+        run: |
+          python -m scripts.snapshot_quality --check
+          git diff --exit-code HEAD -- site/data.json site/reports site/benchmark.json site/financials.json site/topic_map.json site/topic_trends site/briefing.json site/integrated.json site/financial_ir_watch.json site/financial_review_diff.json site/architecture.json
+          git fetch origin main
+          test "$(git rev-parse HEAD)" = "$(git rev-parse origin/main)"
       - uses: actions/configure-pages@v5
         with:
           enablement: true

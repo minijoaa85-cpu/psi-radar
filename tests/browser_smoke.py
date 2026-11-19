@@ -48,6 +48,17 @@ def check_page(browser,engine,screen,width,height,url):
         assert sizes["heading"]>=13.5,sizes
         assert sizes["link"]>=12.5,sizes
         assert sizes["overflow"]<=4,f"Horizontal document overflow: {sizes}"
+        # V3.3 published provenance must agree with the same static data snapshot.
+        page.wait_for_function("() => (document.querySelector('#trust33-status')?.textContent||'').includes('구조 검증 통과')",timeout=12000)
+        assert page.locator("#trust33-details .tr33-grid > div").count()==4
+        assert "독립적인 사실 검증을 의미하지 않습니다" in page.locator("#trust33-details").inner_text()
+        quality=page.request.get(url.replace("/index.html","/source_health.json"))
+        assert quality.status==200
+        health=quality.json()
+        assert health["structural_integrity"]=="passed"
+        assert health["scientific_verification"]=="not_independently_verified"
+        assert health["records"]>0
+
         # V3.0 Mission Control is the main Overview landing panel.
         page.locator("#mission30-tabs button").first.wait_for(state="visible",timeout=12000)
         assert page.locator("#mission30-tabs button").count()==5

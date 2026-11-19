@@ -38,6 +38,10 @@ jobs:
           python -m scripts.tech_topics
           python -m scripts.briefing
           python -m scripts.integrated
+      - name: Verify the committed static snapshot and build its provenance report
+        run: |
+          python -m scripts.snapshot_quality --write
+          python -m scripts.snapshot_quality --check
       - name: Generate PDF and PPT history artifacts for UI download tests
         run: |
           pip install python-pptx reportlab

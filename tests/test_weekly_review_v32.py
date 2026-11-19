@@ -54,10 +54,10 @@ def test_saved_reports_are_real_and_partial_before_week_end():
     assert w47["published_this_week_count"]==0
 
 def test_v32_append_only_history_and_presentation_generator():
-    assert HISTORY["latest_version"]=="V3.2"
-    assert HISTORY["entries"][-1]["version"]=="V3.2"
-    assert len(HISTORY["entries"])==33
-    assert all(HISTORY["entries"][-1].get(k) for k in ("summary","background","changes","value"))
+    v32=next(x for x in HISTORY["entries"] if x["version"]=="V3.2")
+    assert HISTORY["latest_version"]==HISTORY["entries"][-1]["version"]
+    assert len(HISTORY["entries"])>=33
+    assert all(v32.get(k) for k in ("summary","background","changes","value"))
     build=(ROOT/"scripts"/"build_history_slides.py").read_text(encoding="utf-8")
     assert '"version_history.json"' in build
     assert "pdf(" in build and "ppt(" in build

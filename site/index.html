@@ -786,6 +786,20 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
 .w32-source-col small{font-size:10px;color:#b4cadc;line-height:1.4}
 .w32-hint{font-size:11px;color:#b3cadb;line-height:1.7;margin:10px 0 0}
 @media(max-width:720px){.w32{padding:12px}.w32-grid,.w32-sources{grid-template-columns:1fr}.w32-bar-row{grid-template-columns:80px minmax(0,1fr) minmax(0,1fr);gap:5px}.w32-card strong{font-size:18px}}
+
+/* V3.3 provenance and validation: structural integrity != scientific verification */
+.tr33{border:1px solid #54708b;background:linear-gradient(140deg,#152f49,#102238);border-radius:13px;padding:16px;margin:0 0 15px}
+.tr33-head{display:flex;justify-content:space-between;align-items:start;gap:10px;flex-wrap:wrap}
+.tr33-head h3{font-size:17px;margin:0 0 4px}.tr33-head p,.tr33-note{font-size:11px;color:#bfcee0;line-height:1.65;margin:0}
+.tr33-status{font-size:12px;border:1px solid #547b93;border-radius:8px;padding:6px 10px;color:#d5ecfc}
+.tr33-status.tr33-warn{color:#ffdc94;border-color:#a38245}.tr33-status.tr33-error{color:#ffc3c3;border-color:#a65c5c}
+.tr33-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:12px 0}
+.tr33-grid>div{background:#102940;border:1px solid #375470;border-radius:8px;padding:10px}
+.tr33-grid strong{display:block;font-size:20px;color:#edf7ff;line-height:1.3}
+.tr33-grid span{display:block;font-size:10px;color:#aac3d8;margin-top:3px}
+.tr33-meta{font-size:11px;color:#bbd2e5;line-height:1.7;margin-top:9px;overflow-wrap:anywhere}
+.tr33-warning{font-size:11px;color:#f5d498;line-height:1.7;padding:8px;background:#353122;border:1px solid #695734;border-radius:8px;margin-top:8px}
+@media(max-width:720px){.tr33-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.tr33{padding:12px}}
 </style></head><body>
 <header><small>POWER SEMICONDUCTOR INTELLIGENCE</small><h1>◈ PSI Radar</h1><div class="muted">GaN · SiC · IGBT · SJ MOSFET · UD/UG SGT | 글로벌 기술 · 논문 · 경쟁사 동향</div><div id="last" class="mini">데이터 상태 확인 중...</div><div id="ui-release-label" class="ui-release-label">UI 코드: History 적용 · 버전 확인 중</div></header>
 <aside class="personal-tools" aria-label="개인 및 데이터 관리 보조 메뉴">
@@ -799,7 +813,9 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
 <div class="nav-group" role="group" aria-label="기술 분석"><span class="nav-group-label">③ 기술 분석</span><div class="nav-links"><button data-tab="integrated">Integrated 2.0</button><button data-tab="technology">Technology</button><button data-tab="research">Research</button><button data-tab="architecture">Architecture</button></div></div>
 <div class="nav-group" role="group" aria-label="경쟁사 및 제품 분석"><span class="nav-group-label">④ 경쟁사·제품</span><div class="nav-links"><button data-tab="competitors">Competitors</button><button data-tab="benchmark">Benchmark</button></div></div>
 </nav>
-<section id="overview"><div class="m30" id="mission30" aria-labelledby="mission30-title">
+<section id="overview"><div class="tr33" id="trust33" aria-labelledby="trust33-title">
+<div class="tr33-head"><div><h3 id="trust33-title">Data Trust · 데이터 신뢰성 V3.3</h3><p>게시 데이터의 파일 무결성·원문 근거 수준·자동 수집 경고를 별개로 확인합니다.</p></div><span class="tr33-status" id="trust33-status" role="status">검증 보고서 확인 중</span></div>
+<div id="trust33-details" aria-live="polite"><p class="tr33-note">검증 보고서를 확인하기 전에는 데이터의 일치성을 보증하지 않습니다.</p></div></div><div class="m30" id="mission30" aria-labelledby="mission30-title">
 <div class="m30-header"><div><span class="m30-label">INTELLIGENCE MISSION CONTROL / V3.1</span><h2 id="mission30-title">Power Semiconductor Intelligence</h2><p>공개 근거 → 기술 이해 → 경쟁사 관찰 → 검증 제품 → 재무 검토까지 연결합니다. 서로 다른 모집단의 수치를 하나의 성능 점수로 합산하지 않습니다.</p></div><span class="m30-version" id="mission30-version">V3.1 · 근거 조사 통합</span></div>
 <div class="m30-tabs" id="mission30-tabs" aria-label="통합 분석 기술군 선택"><button type="button" data-m30-tech="GaN" aria-pressed="true">GaN</button><button type="button" data-m30-tech="SiC" aria-pressed="false">SiC</button><button type="button" data-m30-tech="IGBT" aria-pressed="false">IGBT</button><button type="button" data-m30-tech="SJ MOSFET" aria-pressed="false">SJ MOSFET</button><button type="button" data-m30-tech="SGT" aria-pressed="false">SGT</button></div>
 <div class="m30-status" id="mission30-stamp" role="status">출처별 데이터 갱신 시각을 확인 중입니다.</div>
@@ -1088,7 +1104,7 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
 <div id="history-list" class="history-list" aria-live="polite"></div>
 <p class="mini">히스토리는 GitHub README와 실제 구현 기록을 근거로 작성합니다. 향후 개발부터 버전 이력 파일과 PDF/PPT가 같은 데이터로 생성됩니다.</p>
 </article></section>
-<section id="sources" class="hidden"><article class="panel"><div class="watch-section-heading"><h2>Source & Data Quality</h2><button type="button" id="quality-close" aria-label="Data Quality 닫고 이전 분석 화면으로 돌아가기">분석 화면으로 돌아가기 ×</button></div><div id="health"></div><p class="muted">공개 뉴스 RSS와 Crossref 서지 정보 기반입니다. Google News 검색 링크는 원 출판사 홈페이지가 아닐 수 있습니다. AI 요약은 선택적이며 자료의 근거 범위가 표시됩니다.</p></article></section>
+<section id="sources" class="hidden"><article class="panel"><div class="watch-section-heading"><h2>Source & Data Quality</h2><button type="button" id="quality-close" aria-label="Data Quality 닫고 이전 분석 화면으로 돌아가기">분석 화면으로 돌아가기 ×</button></div><div id="trust33-quality"></div><div id="health"></div><p class="muted">공개 뉴스 RSS와 Crossref 서지 정보 기반입니다. Google News 검색 링크는 원 출판사 홈페이지가 아닐 수 있습니다. AI 요약은 선택적이며 자료의 근거 범위가 표시됩니다.</p></article></section>
 <footer class="foot">PSI Radar · 공개 정보만 사용 · 모든 자료의 날짜·출처·원문 링크 확인 · 내부 공정 데이터는 업로드하지 마세요.</footer></main>
 <script>
 let DB={records:[],errors:[]};const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));const el=id=>document.getElementById(id);
@@ -1257,6 +1273,36 @@ el("mission30").addEventListener("click",event=>{
  showRadarSection(page);
 });
 
+
+/* V3.3: evidence-level disclosure is independent from keyword-based relevance. */
+let TRUST33=null,TRUST33_ERROR=null;
+function trust33View(){
+ const loaded=M30_READY.records,raw=TRUST33;
+ const consistent=Boolean(loaded&&raw&&raw.snapshot_generated_at===DB.generated_at&&raw.records===(DB.records||[]).length);
+ const valid=consistent&&raw.structural_integrity==="passed"&&raw.validation_status!=="failed";
+ const warnings=raw?.warnings||[],errors=raw?.errors||[];
+ const status=valid?(warnings.length?"구조 검증 통과 · 주의사항 있음":"구조 검증 통과"):
+  loaded&&raw?"수집본과 검증 보고서 불일치":TRUST33_ERROR?"검증 리포트 로딩 실패":"검증 보고서 확인 중";
+ const klass=valid?(warnings.length?"tr33-warn":""):(loaded&&raw||TRUST33_ERROR?"tr33-error":"");
+ const kinds=raw?.source_evidence_tiers||{};
+ const metrics=[["게시 자료",loaded?(DB.records||[]).length+"건":"미확인"],
+ ["제조사 직접 발표",valid?(kinds.manufacturer_statement||0)+"건":"미확인"],
+ ["학술 서지 메타데이터",valid?(kinds.journal_metadata||0)+"건":"미확인"],
+ ["뉴스 제목 색인",valid?(kinds.news_index||0)+"건":"미확인"]];
+ const html='<div class="tr33-grid">'+metrics.map(([k,v])=>'<div><strong>'+esc(v)+'</strong><span>'+esc(k)+'</span></div>').join("")+'</div>'+
+ '<div class="tr33-meta">구조 검증 '+esc(raw?.structural_integrity||"미확인")+' · 수집 기준 '+esc(raw?.snapshot_generated_at||DB.generated_at||"미확인")+
+ ' · 게시 자료 SHA-256 '+esc(raw?.files_sha256?.["data.json"]?.slice(0,16)||"미확인")+'…'+
+ ' · 데이터시트 수치·시험조건 검증 '+esc(valid?((raw.benchmark?.datasheet_table_verified||0)+"/"+(raw.benchmark?.products||0)):"미확인")+
+ ' · 기존 메타데이터 재사용 '+esc(valid?raw.reused_metadata:"미확인")+'건</div>'+
+ '<p class="tr33-note">※ 구조 검증은 저장된 파일 간 일치성 검사이며, 논문 결론·제조사 주장·뉴스·AI 요약의 독립적인 사실 검증을 의미하지 않습니다. 현재 기술 관련성 점수는 키워드 기반이며 출처 신뢰도 점수가 아닙니다.</p>'+
+ (warnings.length?'<div class="tr33-warning">확인 필요 '+warnings.length+'건: '+warnings.slice(0,4).map(esc).join(" · ")+'</div>':"")+
+ (errors.length?'<div class="tr33-warning">무결성 오류: '+errors.slice(0,3).map(esc).join(" · ")+'</div>':"")+
+ (TRUST33_ERROR?'<div class="tr33-warning">'+esc(TRUST33_ERROR)+'</div>':"");
+ const badge=el("trust33-status");if(badge){badge.className="tr33-status "+klass;badge.textContent=status;}
+ if(el("trust33-details"))el("trust33-details").innerHTML=html;
+ if(el("trust33-quality"))el("trust33-quality").innerHTML='<article class="tr33" aria-label="데이터 검증과 근거 수준"><h3>게시 파일·출처 검증 상태</h3><p class="tr33-note">'+esc(status)+'</p>'+html+'</article>';
+}
+
 function render(){
  const all=DB.records||[];
  el("total").textContent=all.length;
@@ -1266,6 +1312,7 @@ function render(){
  el("papers").textContent=all.filter(r=>r.kind==="paper").length;
  pulse27Overview();
  renderMission30();
+ trust33View();
  const empty='<div class="empty">수집된 자료가 없습니다. GitHub Actions의 실행 상태를 확인해 주세요.</div>';
  const feed=(target,items)=>el(target).innerHTML=items.length?items.map(card).join(""):empty;
  const weekStart=new Date(Date.now()-8*86400000).toISOString().slice(0,10);
@@ -2722,4 +2769,5 @@ for(const [buttonId,pageId,closeId] of [["watch-quick-access","watchlist","watch
  });
 }
 fetch("data.json?nocache="+Date.now()).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{DB=d;M30_READY.records=true;render()}).catch(e=>{el("last").textContent="데이터 로딩 실패: "+e.message;render()});
+fetch("source_health.json?nocache="+Date.now()).then(r=>{if(!r.ok)throw Error("HTTP "+r.status);return r.json()}).then(report=>{TRUST33=report;TRUST33_ERROR=null;trust33View();}).catch(err=>{TRUST33_ERROR="source_health.json 검증 보고서 접근 실패: "+err.message;trust33View();});
 </script></body></html>
