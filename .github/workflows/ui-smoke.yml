@@ -51,8 +51,6 @@ jobs:
       - name: Generate PDF and PPT history artifacts for UI download tests
         run: |
           pip install python-pptx reportlab
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq fonts-nanum
           python -m scripts.build_history_slides
           test -s site/docs/psi-radar-version-history.pdf
           test -s site/docs/psi-radar-version-history.pptx
