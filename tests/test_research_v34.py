@@ -76,7 +76,7 @@ def test_legacy_snapshot_is_not_mislabeled_as_queried():
     for marker in ('id="coverage34"','id="coverage34-grid"',
                    'id="coverage34-stamp"','function renderCoverage34()',
                    '이전 수집본 · 상태 미기록','검색 성공 · 일치 문헌 0',
-                   '수집 API 사용 불가','renderCoverage34();'):
+                   '검색 API 사용 불가','renderCoverage34();'):
         assert marker in HTML
 
 def test_v34_release_history_shared_pdf_ppt():
