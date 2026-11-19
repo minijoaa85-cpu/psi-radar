@@ -48,8 +48,6 @@ jobs:
       - name: Generate synchronized History slides and PDF
         run: |
           python -m pip install python-pptx reportlab
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq fonts-nanum
           python -m scripts.build_history_slides
       - name: Verify history artifacts exist
         run: |
