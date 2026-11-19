@@ -29,15 +29,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Build the same static data assets as Pages deployment
+      - name: Validate the same committed static data assets as Pages deployment
         run: |
           pip install -r requirements.txt
+          python -m scripts.validate_benchmark
           python -m scripts.validate_financials
-          python -m scripts.financial_ir_watch
-          python -m scripts.architecture
-          python -m scripts.tech_topics
-          python -m scripts.briefing
-          python -m scripts.integrated
+          # Do NOT regenerate external IR observations or derived technology files.
+          # On a code push, Pages deploys the committed snapshots unchanged.
+          git diff --exit-code HEAD -- site/data.json site/reports site/benchmark.json site/financials.json site/financial_ir_watch.json site/integrated.json site/briefing.json site/topic_map.json
       - name: Verify the committed static snapshot and build its provenance report
         run: |
           python -m scripts.snapshot_quality --write
