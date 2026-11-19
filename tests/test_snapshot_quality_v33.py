@@ -35,6 +35,16 @@ def test_corrupt_metadata_and_archive_are_rejected(tmp_path):
     errors=verify(site)["errors"]
     assert any("duplicate" in e for e in errors)
     records["records"][1]["id"]="an_unduplicated_test_id"
+    records["counts"]["GaN"] += 1
+    (site/"data.json").write_text(json.dumps(records,ensure_ascii=False),encoding="utf-8")
+    assert any("counts differ" in e for e in verify(site)["errors"])
+    records["counts"]["GaN"] -= 1
+    official=next(row for row in records["records"] if row["kind"]=="official")
+    original_url=official["url"]
+    official["url"]="https://unverified.example.net/claimed-press-release"
+    (site/"data.json").write_text(json.dumps(records,ensure_ascii=False),encoding="utf-8")
+    assert any("official URL domain" in e for e in verify(site)["errors"])
+    official["url"]=original_url
     (site/"data.json").write_text(json.dumps(records,ensure_ascii=False),encoding="utf-8")
     weekly=json.loads((site/"reports"/"index.json").read_text(encoding="utf-8"))
     weekly["generated_at"]="2020-01-01T00:00:00+00:00"

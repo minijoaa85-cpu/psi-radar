@@ -85,6 +85,13 @@ def verify(site: Path = SITE):
             evidence["manufacturer_statement"] += 1
             if r.get("source_type") != "manufacturer_official":
                 errors.append(f"official source attribution unsupported at record {position}")
+            from scripts.competitors import COMPANIES
+            owners = r.get("companies") or []
+            owner = owners[0] if isinstance(owners, list) and len(owners) == 1 else None
+            domains = COMPANIES.get(owner, {}).get("domains", ())
+            hostname = (u.hostname or "").lower()
+            if not domains or not any(hostname == domain or hostname.endswith("." + domain) for domain in domains):
+                errors.append(f"official URL domain is not registered to its manufacturer at record {position}")
         elif kind == "paper":
             evidence["journal_metadata"] += 1
         else:
@@ -95,6 +102,12 @@ def verify(site: Path = SITE):
 
     if sum(evidence.values()) != len(records):
         errors.append("record type counts do not sum to dataset size")
+    # Counts displayed by the frontend must describe the published, capped
+    # record array, not the larger pre-publication provider response.
+    published_counts = dataset.get("counts")
+    expected_counts = {tech: sum(category_counts[tech].values()) for tech in CATEGORIES}
+    if published_counts != expected_counts:
+        errors.append("data.json counts differ from the published records array")
 
     entries = index.get("reports")
     if not isinstance(entries, list) or not entries:
