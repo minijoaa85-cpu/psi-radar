@@ -31,7 +31,13 @@ def build_digest(data,when,prior=None):
  newest=[r for r in data.get("records",[]) if r.get("date") and start<=r["date"]<=when.astimezone(KST).date().isoformat() and not r.get("stale_reused")]
  seen=set(str(x) for x in (prior or {}).get("all_ids",[]))
  first=prior is None
- selected=sorted(newest,key=lambda r:(int(r.get("relevance_score") or 0),int(r.get("score") or 0)),reverse=True)
+ # V3.4: product/industry monitoring signals and physics-paper relevance are
+ # ranked within their own source types, never merged into source credibility.
+ def signal_priority(row):
+  if row.get("kind")=="paper":
+   return int(row.get("technical_relevance_score",row.get("relevance_score",0)) or 0)
+  return int(row.get("monitoring_priority_score",row.get("relevance_score",0)) or 0)
+ selected=sorted(newest,key=lambda r:(signal_priority(r),int(r.get("score") or 0)),reverse=True)
  fresh=[r for r in selected if r.get("id") not in seen]
  research=sorted([r for r in data.get("records",[]) if r.get("kind")=="paper"],key=lambda r:(int(r.get("relevance_score") or 0),r.get("date") or ""),reverse=True)
  return {"schema_version":1,"week":wid,"week_start":start,"generated_at":data.get("generated_at"),"baseline":first,

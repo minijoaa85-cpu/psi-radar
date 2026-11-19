@@ -98,14 +98,18 @@ def main():
     errors.append(f"Crossref {cat} HTTP {code}")
    except Exception as e:errors.append(f"paper {cat}: {type(e).__name__}")
  # Focused academic research uses broader 12-month lookback, explicitly marked in records.
+ research_coverage={}
  try:
   from scripts.research import collect_focused
-  focused,research_errors,research_stats=collect_focused(session,now)
+  focused,research_errors,research_stats,research_coverage=collect_focused(session,now,include_coverage=True)
   rows.extend(focused)
   errors.extend(research_errors)
   print("Focused journal candidates:",json.dumps(research_stats,ensure_ascii=False))
  except Exception as exc:
   errors.append("Focused research unavailable: "+type(exc).__name__+": "+str(exc)[:100])
+  research_coverage={cat:{"window_days":365,"attempted":0,"successful":0,
+      "failed":0,"skipped":0,"accepted_candidates":0,"search_state":"unavailable",
+      "providers":{}} for cat in TECH}
  # Company-specific news discovery supplements general searches; failures are non-fatal.
  from scripts.competitors import collect_competitors,tag_records,summarize_companies
  extra,company_errors=collect_competitors(session)
@@ -145,10 +149,30 @@ def main():
  tag_records(rows)
  rows.sort(key=lambda x:(x.get("date") or "",x.get("relevance_score") or 0),reverse=True)
  if not rows:raise RuntimeError("No metadata collected; retain last successful data. "+str(errors))
- payload={"schema_version":7,"generated_at":now.isoformat(),"window_start":start,"paper_window_start":paper_start,"focused_paper_window_start":(now-dt.timedelta(days=365)).date().isoformat(),"mode":"live_metadata","records":rows[:220],"competitor_stats":summarize_companies(rows[:220]),"counts":{c:sum(r["category"]==c for r in rows[:220]) for c in TECH},"errors":errors,"sources":["Crossref","OpenAlex","Google News RSS","Verified Manufacturer Official Articles"],"financials":[],"product_specs":[],"notice":"서지·뉴스 메타데이터 기반. 원문 검토 전의 결론이나 금융 실적을 확정하지 않습니다."}
+ published=rows[:220]
+ # Do not conflate successful query / zero matching papers with API failure.
+ # The final published count is after de-duplication, retention and page cap.
+ for cat in TECH:
+  state=research_coverage.get(cat,{"window_days":365,"attempted":0,"successful":0,
+                                  "failed":1,"skipped":0,"accepted_candidates":0,
+                                  "search_state":"unavailable","providers":{}})
+  total=sum(r["category"]==cat and r["kind"]=="paper" for r in published)
+  reused=sum(r["category"]==cat and r["kind"]=="paper" and r.get("stale_reused") for r in published)
+  fresh=total-reused
+  state["published_papers"]=total
+  state["fresh_papers"]=fresh
+  state["reused_papers"]=reused
+  state["result_state"]=("unavailable" if not state.get("successful") else
+     "partial_results" if state.get("failed") or state.get("skipped") else
+     "searched_with_results" if fresh else "searched_zero_matches")
+  research_coverage[cat]=state
+ payload={"schema_version":7,"generated_at":now.isoformat(),"window_start":start,"paper_window_start":paper_start,"focused_paper_window_start":(now-dt.timedelta(days=365)).date().isoformat(),"mode":"live_metadata","records":published,"research_coverage":research_coverage,
+ "relevance_method":"metadata-rule-v2","competitor_stats":summarize_companies(published),
+ "counts":{c:sum(r["category"]==c for r in published) for c in TECH},"errors":errors,"sources":["Crossref","OpenAlex","Google News RSS","Verified Manufacturer Official Articles"],"financials":[],"product_specs":[],"notice":"서지·뉴스 메타데이터 기반. 원문 검토 전의 결론이나 금융 실적을 확정하지 않습니다."}
  OUT.parent.mkdir(parents=True,exist_ok=True)
  OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2),encoding="utf-8")
- print("Collected",len(rows),"records, errors:",len(errors),"previous papers retained:",reused)
+ print("Collected",len(rows),"records, errors:",len(errors),"previous papers retained:",sum(r.get("stale_reused",False) for r in published))
+ print("Academic coverage:",json.dumps(research_coverage,ensure_ascii=False))
  print("Competitor mentions:",json.dumps({k:v["items"] for k,v in payload["competitor_stats"].items() if v["items"]},ensure_ascii=False))
  print("Category counts:",json.dumps(payload["counts"],ensure_ascii=False))
  print("Paper category counts:",json.dumps({cat:sum(x["category"]==cat and x["kind"]=="paper" for x in rows) for cat in TECH},ensure_ascii=False))

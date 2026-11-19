@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "product": "PSI Radar",
-  "latest_version": "V3.3",
+  "latest_version": "V3.4",
   "updated_on": "2026-11-19",
   "source_policy": "Version summaries curated from repository README and implementation commits; no unverifiable feature claims.",
   "entries": [
@@ -310,6 +310,15 @@
       "background": "코드 수정 시 새로 수집한 데이터를 저장하지 않는 경우 저장소와 실제 Pages 게시 데이터가 어긋날 수 있었으며, 기술 관련성 점수가 출처 신뢰성과 혼동될 우려가 있었음",
       "changes": "일반 push는 저장된 데이터만 배포하도록 변경; 정기/수동 수집 시 새 데이터의 레코드·날짜·HTTPS·주차별 합계·해시를 검증한 뒤 GitHub에 저장·동일 메인 커밋 확인 후 배포. Data Trust와 Data Quality 패널에서 제조사 주장·논문 서지·뉴스 색인 근거등급, 수집 오류 및 검증 한계를 독립적으로 표시",
       "value": "수집 파일과 주간 보고서의 일관성 문제를 자동 차단하고, 엔지니어가 원문 신뢰도와 물리적 관련성의 차이 및 미검증 영역을 쉽게 확인"
+    },
+    {
+      "version": "V3.4",
+      "title": "GaN·SiC 학술 커버리지 및 기술 관련성 분리",
+      "date": "2026-11-19",
+      "summary": "GaN·SiC 12개월 집중 논문 검색과 출처별 API 성공·공백 진단, Device Physics·제품/시장 신호 독립 평가",
+      "background": "기존 IGBT·SJ·SGT만 12개월 Crossref/OpenAlex 집중 검색하였고 GaN·SiC는 45일 중심이어서 논문 공백이 발생. 뉴스 제품 발표까지 물리 키워드 단일 점수로 낮게 평가되어 중요 동향 식별이 어려웠음",
+      "changes": "5개 기술군 전체에 12개월 집중 검색·제한된 쿼리·중복 제거·분야별 표본 제한을 적용; API 시도·성공·실패·Rate-limit·실제 게시 논문과 이전 자료 재사용을 구분. 관련성 metadata-rule-v2에 물리 키워드 점수와 제품·양산·시장 동향 신호를 분리하고, Research Coverage Monitor에 검색 미기록·성공 0건·API 오류를 명확히 표시",
+      "value": "검색이 안 된 상황을 논문이 없다는 결론으로 오해하지 않고 GaN·SiC 학술 정보를 더 넓게 발견하며, 실제 공정·소자 물리와 제품·시장 동향을 별도 관점에서 탐색"
     }
   ]
 }

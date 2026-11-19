@@ -1,4 +1,4 @@
-# PSI Radar V3.3 — Power Semiconductor Intelligence Radar
+# PSI Radar V3.4 — Power Semiconductor Intelligence Radar
 
 공개 자료 기반 한국어 전력반도체 주간 기술 모니터링 웹 플랫폼. GaN (40%) > SiC (30%) > IGBT (10%) = UD/UG SGT (10%) = SJ MOSFET (10%).
 
@@ -447,3 +447,14 @@ GitHub Pages는 저장소 Settings → Pages → **Source: GitHub Actions**를 �
 - **분리된 판단:** 기존 `metadata-rule-v1`의 기술 관련성 점수는 논문·기사 제목/초록의 키워드 정합성 추정치일 뿐 출처 신뢰도와 무관합니다. 제조사 원문은 제조사의 공식 주장, DOI 논문 자료는 서지 정보, 뉴스 RSS는 제목 색인으로 표시합니다. 논문 결론·수치의 독립 검증, 실험 재현, 업계 기술 경쟁력 점수는 추가 검토가 필요합니다.
 - **테스트:** 신규 `tests/test_snapshot_quality_v33.py`가 실제 수집 파일 검사와 손상된 ID/주차 인덱스 차단, 분기별 빌드 경로, UI 출처 표기를 확인합니다. Chromium·Firefox·WebKit 12개 뷰포트에 출처 검증 리포트 로딩·일치 확인을 추가했습니다.
 - **버전 이력:** `site/version_history.json`에 V3.3을 기록하여 **총 34개 버전, PDF/PPT 38장**을 동일한 소스로 생성합니다.
+
+## V3.4 — GaN·SiC Academic Coverage & Relevance Separation (2026-11-19)
+
+- **핵심 변경:** GaN·SiC 문헌 수집 공백 개선을 위해 기존 Crossref 45일 검색 외에 **가장 최근 365일** 동안의 Crossref·OpenAlex 집중 논문 검색을 추가합니다. IGBT·SJ MOSFET·SGT에도 기존 365일 검색을 유지합니다. GaN은 Dynamic RDS(on)·P-Gate Vth·Buffer Trapping, SiC는 Gate Oxide Reliability·Trench Channel Mobility·Bipolar Degradation을 예시 검색어로 사용합니다. 검색어에 포함된 물리적 사실이 검증됐다는 뜻은 아닙니다.
+- **API 상태와 '0건' 분리:** `collect_focused(..., include_coverage=True)`는 기술군별 검색 시도·성공·HTTP 실패·Rate Limit·대체 OpenAlex 요청·수집 후보 건수를 기록합니다. `data.json.research_coverage`에는 실제 게시 논문 수, 현재 회차 신규 확보와 이전 자료 재사용 수를 구별합니다. **성공한 검색 결과 0건과 검색 공급자 사용 불가를 혼동하지 않습니다.** 검색 API가 복구되지 않으면 화면에 경고를 표시하며 0개 논문을 임의로 채우지 않습니다.
+- **과도한 집중 완화:** 기술군별 학술 검색 후보를 DOI/제목 중복 제거 후 최대 24편으로 제한합니다. 논문 출처와 초록 확보 여부를 확인해 정렬하되, 독립 측정 검증이나 피인용 지수 대신 임의 랭킹을 만들지 않습니다. 이 설정은 주간 수집의 API 호출량을 다소 증가시키지만 OpenAI 요약 예산(12회/토큰·비용 상한)은 변경하지 않습니다.
+- **관련성 V2:** 새 주간/수동 수집본부터 `metadata-rule-v2`를 적용합니다. *Device Physics 관련성*은 기술·구조·공정·신뢰성 키워드로 판단하고, *제품 출시·상용화/시장 신호*는 `monitoring_signal`과 `monitoring_priority_score`로 별도 표시합니다. 자료 유형(제조사 발표/논문 서지/일반 뉴스 색인)은 `evidence_tier`로 구분하며 **관련성·출처 확실성·기술적 성능을 하나의 점수로 합산하지 않습니다.** 주간 요약에서는 비학술 자료는 동향 신호로, 학술 자료는 기술 관련도로 정렬하고 원문 검토 전임을 유지합니다.
+- **Research UI:** `③ 기술·연구 → Research`에 `Academic Coverage Monitor V3.4`를 추가했습니다. GaN·SiC를 포함한 다섯 기술군의 현재 논문 확보 수, 검색 성공/실패, 재사용 자료 수를 확인할 수 있습니다. **V3.3으로 이미 게시된 119건에는 검색 API 진단값이 없으므로 '이전 수집본 · 상태 미기록'이라고 정확히 표기합니다.** 새로운 수집이 성공하기 전에는 GaN/SiC 논문 건수가 늘었다고 주장하지 않습니다.
+- **수집 후 Fail-closed 품질 검사:** V3.3 `snapshot_quality.py`에서 `research_coverage`가 포함된 경우 기술군별 카운터 합계·표시된 논문 건수·fresh/reused 구분·방법 버전의 일치 여부를 검사합니다. API 실패/부분 수집/커버리지 공백은 독립적으로 경고하여 기술 경쟁력과 혼동하지 않습니다. 기존 수집본은 하위호환되며 재수집 전까지 상태 미확인으로 처리합니다.
+- **외부 서비스 참고:** Crossref API와 OpenAlex API는 메타데이터 수집에 사용됩니다. OpenAlex API의 이용 제한·키 정책은 변경될 수 있으며 `OPENALEX_API_KEY` 환경변수가 있으면 요청에 사용합니다. 장기 운영 시 개인 API 키 등록과 한도 확인이 권장되지만 소프트웨어에 키를 하드코딩하지 않습니다.
+- **릴리스/품질:** `site/version_history.json`에 V3.4 추가. 기존 History·PDF/PPT 공유 다운로드·브라우저 대응을 유지하며 **35개 버전/39장**을 배포 시 자동 생성합니다. 새 학술 검색은 실제 예약 실행 또는 수동 실행에서만 수행되고, 단순 GitHub 코드 Push는 V3.3 원칙에 따라 기존 검증 스냅샷만 배포합니다.

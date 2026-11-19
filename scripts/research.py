@@ -1,4 +1,4 @@
-"""Additional focused journal discovery for IGBT, shielded-gate and SJ MOSFET.
+"""Focused journal discovery for GaN, SiC, IGBT, shielded-gate and SJ MOSFET.
 Uses publication metadata only; never claims to read paywalled full text.
 """
 from __future__ import annotations
@@ -8,9 +8,11 @@ import json
 import os
 import time
 import requests
-from scripts.collect import clean, relevant, classify_topics, score
+from scripts.collect import clean, relevant, classify_topics, score, unique
 
 QUERIES={
+ "GaN": ["GaN HEMT dynamic on-resistance reliability", "gallium nitride power transistor buffer trapping", "GaN p-gate HEMT threshold voltage instability"],
+ "SiC": ["SiC MOSFET gate oxide reliability", "silicon carbide trench MOSFET channel mobility", "SiC MOSFET bipolar degradation dislocation"],
  "IGBT": ["IGBT trench field stop", "reverse conducting IGBT", "IGBT short circuit reliability"],
  "SJ MOSFET": ["superjunction MOSFET reverse recovery", "superjunction MOSFET charge balance", "super junction power MOSFET"],
  "SGT": ["shielded gate trench MOSFET", "split gate trench power MOSFET", "shielded gate MOSFET"],
@@ -86,28 +88,58 @@ def openalex_search(session,q,cat,start,today):
   abstract=" ".join(w for _,w in sorted(words))[:1800]
   out.append(make_record(cat,title,date,source,url,doi,abstract,"OpenAlex"))
  return out
-def collect_focused(session,now=None,days=365):
- """One Crossref query per technology, OpenAlex for breadth; circuit-break after HTTP 429."""
+def collect_focused(session,now=None,days=365,include_coverage=False):
+ """Bounded journal search across five technologies, with explicit API availability.
+
+ The legacy (records, errors, counts) return shape remains unchanged.
+ include_coverage=True returns a fourth mapping for audit and the UI.
+ A successful query with zero matches differs from a failed provider.
+ """
  now=now or dt.datetime.now(dt.timezone.utc)
  earliest=(now-dt.timedelta(days=days)).date().isoformat();today=now.date().isoformat()
- results=[];errors=[];stats={};crossref_limited=False
+ results=[];errors=[];stats={};coverage={};crossref_limited=False
  for cat,queries in QUERIES.items():
   prior=len(results)
+  attempted=0;successful=0;failed=0;skipped=0
+  provider_stats={"Crossref":{"attempted":0,"succeeded":0,"failed":0,"skipped":0},
+                  "OpenAlex":{"attempted":0,"succeeded":0,"failed":0,"skipped":0}}
+  if crossref_limited:
+   provider_stats["Crossref"]["skipped"]+=1;skipped+=1
   if not crossref_limited:
+   attempted+=1;provider_stats["Crossref"]["attempted"]+=1
    try:
     results.extend(crossref_search(session,queries[0],cat,earliest,today))
+    successful+=1;provider_stats["Crossref"]["succeeded"]+=1
    except requests.HTTPError as exc:
+    failed+=1;provider_stats["Crossref"]["failed"]+=1
     code=getattr(getattr(exc,"response",None),"status_code",None)
     if code==429:
      crossref_limited=True
      errors.append("Crossref rate limited (429); further Crossref queries skipped for this run, OpenAlex fallback remains active")
     else:errors.append(f"Crossref {cat} HTTP {code or 'error'}")
-   except Exception as exc:errors.append(f"Crossref {cat} {type(exc).__name__}")
+   except Exception as exc:
+    failed+=1;provider_stats["Crossref"]["failed"]+=1
+    errors.append(f"Crossref {cat} {type(exc).__name__}")
   for q in queries:
-   try:results.extend(openalex_search(session,q,cat,earliest,today))
+   attempted+=1;provider_stats["OpenAlex"]["attempted"]+=1
+   try:
+    results.extend(openalex_search(session,q,cat,earliest,today))
+    successful+=1;provider_stats["OpenAlex"]["succeeded"]+=1
    except requests.HTTPError as exc:
+    failed+=1;provider_stats["OpenAlex"]["failed"]+=1
     code=getattr(getattr(exc,"response",None),"status_code",None)
     errors.append(f"OpenAlex {cat} HTTP {code or 'error'}")
-   except Exception as exc:errors.append(f"OpenAlex {cat} {type(exc).__name__}")
-  stats[cat]=len(results)-prior
- return results,errors,stats
+   except Exception as exc:
+    failed+=1;provider_stats["OpenAlex"]["failed"]+=1
+    errors.append(f"OpenAlex {cat} {type(exc).__name__}")
+  # Keep focused sampling balanced; Crossref/DOI/abstract evidence wins ties.
+  scoped=unique(results[prior:])
+  scoped.sort(key=lambda row:(bool(row.get("doi")),bool(row.get("abstract")),row.get("date") or ""),reverse=True)
+  scoped=scoped[:24]
+  results[prior:]=scoped
+  stats[cat]=len(scoped)
+  state=("unavailable" if successful==0 else "partial" if failed or skipped else "searched")
+  coverage[cat]={"window_days":days,"attempted":attempted,"successful":successful,
+                 "failed":failed,"skipped":skipped,"accepted_candidates":len(scoped),
+                 "search_state":state,"providers":provider_stats}
+ return (results,errors,stats,coverage) if include_coverage else (results,errors,stats)

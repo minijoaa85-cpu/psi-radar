@@ -35,7 +35,7 @@ def test_collection_failure_is_nonfatal():
  fake=Mock()
  fake.get.side_effect=ConnectionError("unavailable")
  rows,errs,stats=collect_focused(fake,NOW)
- assert not rows and errs and set(stats)=={"IGBT","SGT","SJ MOSFET"}
+ assert not rows and errs and set(stats)=={"GaN","SiC","IGBT","SGT","SJ MOSFET"}
 
 def test_crossref_429_backoff_once_then_success(monkeypatch):
  from scripts import research
@@ -66,4 +66,4 @@ def test_crossref_circuit_breaker_does_not_repeat_429(monkeypatch):
  rows,errors,stats=research.collect_focused(fake,NOW)
  assert rows==[] and len([x for x in errors if "Crossref" in x])==1
  assert len([x for x in fake.get.call_args_list if "crossref" in x.args[0]])==2
- assert set(stats)=={"IGBT","SGT","SJ MOSFET"}
+ assert set(stats)=={"GaN","SiC","IGBT","SGT","SJ MOSFET"}

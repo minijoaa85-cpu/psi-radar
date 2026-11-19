@@ -10,7 +10,7 @@ def test_relevance_explainable():
  a,b=relevance(detailed),relevance(generic)
  assert a["relevance_score"]>b["relevance_score"]
  assert "Reliability" in a["relevance_topics"]
- assert a["relevance_method"]=="metadata-rule-v1"
+ assert a["relevance_method"]=="metadata-rule-v2"
 def test_equal_technical_relevance_for_equal_priority_categories():
  row={"kind":"paper","title":"Trench MOSFET gate oxide reliability","abstract":"electric field","doi":"10.1/a"}
  assert relevance(dict(row,category="IGBT"))["relevance_score"]==relevance(dict(row,category="SGT"))["relevance_score"]==relevance(dict(row,category="SJ MOSFET"))["relevance_score"]

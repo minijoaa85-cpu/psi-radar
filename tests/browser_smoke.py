@@ -148,6 +148,15 @@ def check_page(browser,engine,screen,width,height,url):
         # V2.8 source-type evidence chart reacts to the existing research filter.
         nav.locator('button[data-tab="research"]').click()
         assert page.locator("#research").is_visible()
+        # V3.4: search status and actual paper counts must not be conflated.
+        page.locator("#coverage34-grid .c34-card").first.wait_for(state="visible",timeout=12000)
+        assert page.locator("#coverage34-grid .c34-card").count()==5
+        assert "GaN" in page.locator("#coverage34-grid .c34-card").first.inner_text()
+        record=json.loads((SITE/"data.json").read_text(encoding="utf-8"))
+        if "research_coverage" not in record:
+            assert "검색 이력 미기록" in page.locator("#coverage34-grid").inner_text()
+        else:
+            assert "12개월" in page.locator("#coverage34-stamp").inner_text()
         page.locator("#evidence28-matrix .e28-tech").first.wait_for(state="visible",timeout=12000)
         assert page.locator("#evidence28-matrix .e28-tech").count()==5
         assert page.locator("#evidence28-kpis .e28-card").count()==3

@@ -109,6 +109,46 @@ def verify(site: Path = SITE):
     if published_counts != expected_counts:
         errors.append("data.json counts differ from the published records array")
 
+    # The new 12-month academic search reports what was attempted and
+    # whether a zero is genuine or provider/API availability is unknown.
+    coverage = dataset.get("research_coverage")
+    if coverage is not None:
+        if not isinstance(coverage, dict) or set(coverage) != set(CATEGORIES):
+            errors.append("research coverage must include exactly the five technology groups")
+        else:
+            for tech in CATEGORIES:
+                cov = coverage[tech]
+                if not isinstance(cov, dict):
+                    errors.append(f"research coverage malformed: {tech}")
+                    continue
+                fields = ("attempted", "successful", "failed", "skipped",
+                          "accepted_candidates", "fresh_papers", "reused_papers",
+                          "published_papers")
+                if any(type(cov.get(k)) is not int or cov[k] < 0 for k in fields):
+                    errors.append(f"research coverage counters malformed: {tech}")
+                    continue
+                if cov["successful"] + cov["failed"] != cov["attempted"]:
+                    errors.append(f"research coverage queries do not reconcile: {tech}")
+                if cov["published_papers"] != category_counts[tech]["paper"]:
+                    errors.append(f"research coverage paper count mismatch: {tech}")
+                if cov["fresh_papers"] + cov["reused_papers"] != cov["published_papers"]:
+                    errors.append(f"research coverage fresh/reused mismatch: {tech}")
+                if cov["search_state"] not in ("searched", "partial", "unavailable"):
+                    errors.append(f"research coverage status invalid: {tech}")
+                if cov["successful"] == 0:
+                    warnings.append(f"{tech}: 12-month research provider unavailable; zero is unverified")
+                elif cov["published_papers"] == 0:
+                    warnings.append(f"{tech}: 12-month search successful, no matching papers in published sample")
+                if cov["failed"] or cov["skipped"]:
+                    warnings.append(f"{tech}: research provider partial failure or rate limit")
+    else:
+        warnings.append("research query outcomes unavailable for pre-V3.4 snapshot")
+    if dataset.get("relevance_method") == "metadata-rule-v2":
+        if any(r.get("relevance_method") != "metadata-rule-v2" for r in records):
+            errors.append("mixed relevance v1/v2 methods in collected dataset")
+        if any(r.get("monitoring_method") != "title-signal-v1" for r in records):
+            errors.append("monitoring signal classification not present on all records")
+
     entries = index.get("reports")
     if not isinstance(entries, list) or not entries:
         errors.append("weekly index contains no archive entries")
@@ -183,7 +223,8 @@ def verify(site: Path = SITE):
         "validation_status": "failed" if errors else ("passed_with_warnings" if warnings else "passed"),
         "structural_integrity": "failed" if errors else "passed",
         "scientific_verification": "not_independently_verified",
-        "technical_relevance_method": "metadata-rule-v1 (keyword heuristic; not source credibility)",
+        "technical_relevance_method": dataset.get("relevance_method", "metadata-rule-v1") + " (keyword heuristic; not source credibility)",
+        "research_coverage": coverage if coverage is not None else {},
         "records": len(records),
         "counts_by_kind": {k: evidence[v] for k, v in (
             ("official", "manufacturer_statement"), ("paper", "journal_metadata"), ("news", "news_index"))},
