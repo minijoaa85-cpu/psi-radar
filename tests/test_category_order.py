@@ -15,7 +15,7 @@ ORDER=("GaN","SiC","IGBT","SJ MOSFET","SGT")
 def test_server_and_collection_category_order():
  assert CATS==BRIEF_CATS==TOPIC_CATS==WEEKLY_CATS==ORDER
  assert tuple(TECH)==tuple(KEYS)==ORDER
- assert tuple(QUERIES)==ORDER[2:]
+ assert tuple(QUERIES)==ORDER
 def test_topic_groups_have_sj_before_sgt():
  order=list(dict.fromkeys(t["category"] for t in TOPICS))
  assert order==list(ORDER)

@@ -154,7 +154,7 @@ def check_page(browser,engine,screen,width,height,url):
         assert "GaN" in page.locator("#coverage34-grid .c34-card").first.inner_text()
         record=json.loads((SITE/"data.json").read_text(encoding="utf-8"))
         if "research_coverage" not in record:
-            assert "검색 이력 미기록" in page.locator("#coverage34-grid").inner_text()
+            assert "이전 수집본 · 상태 미기록" in page.locator("#coverage34-grid").inner_text()
         else:
             assert "12개월" in page.locator("#coverage34-stamp").inner_text()
         page.locator("#evidence28-matrix .e28-tech").first.wait_for(state="visible",timeout=12000)

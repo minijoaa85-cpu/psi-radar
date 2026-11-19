@@ -75,7 +75,7 @@ def test_legacy_snapshot_is_not_mislabeled_as_queried():
     assert 'research query outcomes unavailable for pre-V3.4 snapshot' in QUALITY
     for marker in ('id="coverage34"','id="coverage34-grid"',
                    'id="coverage34-stamp"','function renderCoverage34()',
-                   '검색 이력 미기록','검색 성공 · 일치 문헌 0',
+                   '이전 수집본 · 상태 미기록','검색 성공 · 일치 문헌 0',
                    '수집 API 사용 불가','renderCoverage34();'):
         assert marker in HTML
 
