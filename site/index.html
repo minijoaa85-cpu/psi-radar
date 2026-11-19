@@ -1275,14 +1275,15 @@ el("mission30").addEventListener("click",event=>{
 
 
 /* V3.3: evidence-level disclosure is independent from keyword-based relevance. */
-let TRUST33=null,TRUST33_ERROR=null;
+let TRUST33=null,TRUST33_ERROR=null,TRUST33_DIGEST=null;
 function trust33View(){
  const loaded=M30_READY.records,raw=TRUST33;
  const consistent=Boolean(loaded&&raw&&raw.snapshot_generated_at===DB.generated_at&&raw.records===(DB.records||[]).length);
- const valid=consistent&&raw.structural_integrity==="passed"&&raw.scientific_verification==="not_independently_verified"&&raw.validation_status!=="failed";
+ const digestMatches=Boolean(TRUST33_DIGEST&&raw?.files_sha256?.["data.json"]===TRUST33_DIGEST);
+ const valid=consistent&&digestMatches&&raw.structural_integrity==="passed"&&raw.scientific_verification==="not_independently_verified"&&raw.validation_status!=="failed";
  const warnings=raw?.warnings||[],errors=raw?.errors||[];
  const status=valid?(warnings.length?"구조 검증 통과 · 주의사항 있음":"구조 검증 통과"):
-  loaded&&raw?"수집본과 검증 보고서 불일치":TRUST33_ERROR?"검증 리포트 로딩 실패":"검증 보고서 확인 중";
+  loaded&&raw?(TRUST33_DIGEST?"게시 파일 해시·검증 보고서 불일치":"브라우저 해시 검증 미지원"):TRUST33_ERROR?"검증 리포트 로딩 실패":"검증 보고서 확인 중";
  const klass=valid?(warnings.length?"tr33-warn":""):(loaded&&raw||TRUST33_ERROR?"tr33-error":"");
  const kinds=raw?.source_evidence_tiers||{};
  const metrics=[["게시 자료",loaded?(DB.records||[]).length+"건":"미확인"],
@@ -2768,6 +2769,14 @@ for(const [buttonId,pageId,closeId] of [["watch-quick-access","watchlist","watch
   el(buttonId).focus({preventScroll:true});
  });
 }
-fetch("data.json?nocache="+Date.now()).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{DB=d;M30_READY.records=true;render()}).catch(e=>{el("last").textContent="데이터 로딩 실패: "+e.message;render()});
+fetch("data.json?nocache="+Date.now()).then(async r=>{
+ if(!r.ok)throw Error(r.status);
+ const bytes=await r.arrayBuffer();
+ if(globalThis.crypto?.subtle?.digest){
+  const digest=await crypto.subtle.digest("SHA-256",bytes);
+  TRUST33_DIGEST=Array.from(new Uint8Array(digest),x=>x.toString(16).padStart(2,"0")).join("");
+ }
+ return JSON.parse(new TextDecoder("utf-8").decode(bytes));
+}).then(d=>{DB=d;M30_READY.records=true;render()}).catch(e=>{el("last").textContent="데이터 로딩 실패: "+e.message;render()});
 fetch("source_health.json?nocache="+Date.now()).then(r=>{if(!r.ok)throw Error("HTTP "+r.status);return r.json()}).then(report=>{TRUST33=report;TRUST33_ERROR=null;trust33View();}).catch(err=>{TRUST33_ERROR="source_health.json 검증 보고서 접근 실패: "+err.message;trust33View();});
 </script></body></html>
