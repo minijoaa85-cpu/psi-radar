@@ -1279,7 +1279,7 @@ let TRUST33=null,TRUST33_ERROR=null;
 function trust33View(){
  const loaded=M30_READY.records,raw=TRUST33;
  const consistent=Boolean(loaded&&raw&&raw.snapshot_generated_at===DB.generated_at&&raw.records===(DB.records||[]).length);
- const valid=consistent&&raw.structural_integrity==="passed"&&raw.validation_status!=="failed";
+ const valid=consistent&&raw.structural_integrity==="passed"&&raw.scientific_verification==="not_independently_verified"&&raw.validation_status!=="failed";
  const warnings=raw?.warnings||[],errors=raw?.errors||[];
  const status=valid?(warnings.length?"구조 검증 통과 · 주의사항 있음":"구조 검증 통과"):
   loaded&&raw?"수집본과 검증 보고서 불일치":TRUST33_ERROR?"검증 리포트 로딩 실패":"검증 보고서 확인 중";
