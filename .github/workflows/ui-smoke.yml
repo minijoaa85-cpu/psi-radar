@@ -5,6 +5,13 @@ on:
     branches: [main]
     paths:
       - site/index.html
+      - site/data.json
+      - 'site/reports/**'
+      - site/benchmark.json
+      - site/version_history.json
+      - scripts/snapshot_quality.py
+      - scripts/collect.py
+      - tests/test_snapshot_quality_v33.py
       - site/integrated.json
       - site/financials.json
       - scripts/validate_financials.py
