@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "product": "PSI Radar",
-  "latest_version": "V3.5",
+  "latest_version": "V3.6",
   "updated_on": "2026-11-23",
   "source_policy": "Version summaries curated from repository README and implementation commits; no unverifiable feature claims.",
   "entries": [
@@ -328,6 +328,15 @@
       "background": "수집·논문·제품 그래프는 풍부하지만 Process Integration 출신 기술 의사결정자가 어떤 발표를 우선 검토하고 무엇을 원문에서 확인해야 하는지 첫 화면에 드러나지 않았음",
       "changes": "Overview에 공식 발표·논문 서지·뉴스 후보를 각각 구분하는 Executive Brief 패널 추가. 브리핑 데이터와 수집본 생성 시각이 다르면 표시를 보류하고, 기술군별 읽기 후보 및 원문 링크·발행일·출처·신규성 미확인을 노출. Device Physics 점검 질문과 기술별 Briefing 이동 버튼을 연동",
       "value": "경영진이 공개자료 주요 후보 5개를 2분 안에 살펴보고 원문·소자 물리·신뢰성·제품 비교로 후속 검토를 연결하되, 검증하지 않은 기술 성능 개선이나 양산 실적을 단정하지 않음"
+    },
+    {
+      "version": "V3.6",
+      "title": "기술군별 Research Coverage 신뢰성",
+      "date": "2026-11-23",
+      "summary": "학술 검색 성공·실패와 신규/재사용 게시 논문 메타데이터를 구분하는 수집 상태 카드",
+      "background": "과거 재사용 자료가 신규 연구 발견처럼 오해되고 API 장애 중 0건이 사실상 데이터 부재로 보일 수 있었음",
+      "changes": "GaN·SiC·IGBT·SJ MOSFET·SGT 별 365일 검색 응답, 게시 표본, 신규/재사용 건수를 원본 수집 검증 스냅샷과 일치할 때만 표시",
+      "value": "엔지니어가 수집 공백과 데이터 신선도를 분리 판단하고 과장된 기술 트렌드 해석을 방지"
     }
   ]
 }
