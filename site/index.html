@@ -814,6 +814,30 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
 .c34-legend{font-size:11px;color:#b5d1e3;line-height:1.7;margin-top:10px}
 @media(max-width:900px){.c34-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:530px){.c34-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.c34-card{padding:9px}}
+
+/* V3.5 source-grounded executive two-minute brief */
+.ex35{padding:18px;margin:0 0 16px;border:1px solid #466c8d;border-radius:15px;background:linear-gradient(145deg,#183b58,#10263f 75%)}
+.ex35-head{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px}
+.ex35-head h2{font-size:20px;margin:4px 0 7px;color:#f1fbff}
+.ex35-head p{font-size:12px;color:#b9d3e6;max-width:690px;line-height:1.6;margin:0}
+.ex35-kicker{font-size:10px;letter-spacing:1.3px;font-weight:700;color:#8bddff}
+.ex35-status{font-size:11px;color:#bed4e5;border:1px solid #486d88;background:#162f49;padding:9px 11px;border-radius:8px;margin:13px 0;line-height:1.55}
+.ex35-kpis{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.ex35-kpis span{font-size:11px;border-radius:7px;background:#214762;color:#d9edf9;padding:6px 9px}
+.ex35-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0}
+.ex35-card{border:1px solid #41627f;background:#122c46;border-radius:11px;padding:13px;min-width:0}
+.ex35-card h3{font-size:13px;margin:0 0 8px;color:#9bdbfa}
+.ex35-card a{font-size:13px;font-weight:700;color:#effaff;line-height:1.45;overflow-wrap:anywhere;text-decoration:none}
+.ex35-card a:hover{text-decoration:underline}
+.ex35-sub{font-size:10px;color:#b2cadf;margin-top:8px;line-height:1.6;overflow-wrap:anywhere}
+.ex35-question{border-top:1px solid #3c5d7a;padding-top:9px;margin-top:10px;font-size:11px;color:#d8ecf6;line-height:1.55}
+.ex35-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px}
+.ex35-actions button{border-radius:7px;border:1px solid #5286a9;background:#204d70;color:#f0faff;padding:7px 10px;font-size:11px;cursor:pointer}
+.ex35-actions button:focus-visible{outline:2px solid #9fddff;outline-offset:2px}
+.ex35-note{font-size:11px;color:#bdd1e4;line-height:1.7}
+.ex35-empty{padding:15px;border:1px dashed #54718a;border-radius:8px;font-size:12px;color:#bbd2e4}
+@media(max-width:760px){.ex35{padding:12px}.ex35-cards{grid-template-columns:1fr}.ex35-head h2{font-size:18px}}
+
 </style></head><body>
 <header><small>POWER SEMICONDUCTOR INTELLIGENCE</small><h1>◈ PSI Radar</h1><div class="muted">GaN · SiC · IGBT · SJ MOSFET · UD/UG SGT | 글로벌 기술 · 논문 · 경쟁사 동향</div><div id="last" class="mini">데이터 상태 확인 중...</div><div id="ui-release-label" class="ui-release-label">UI 코드: History 적용 · 버전 확인 중</div></header>
 <aside class="personal-tools" aria-label="개인 및 데이터 관리 보조 메뉴">
@@ -829,7 +853,14 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
 </nav>
 <section id="overview"><div class="tr33" id="trust33" aria-labelledby="trust33-title">
 <div class="tr33-head"><div><h3 id="trust33-title">Data Trust · 데이터 신뢰성 V3.3</h3><p>게시 데이터의 파일 무결성·원문 근거 수준·자동 수집 경고를 별개로 확인합니다.</p></div><span class="tr33-status" id="trust33-status" role="status">검증 보고서 확인 중</span></div>
-<div id="trust33-details" aria-live="polite"><p class="tr33-note">검증 보고서를 확인하기 전에는 데이터의 일치성을 보증하지 않습니다.</p></div></div><div class="m30" id="mission30" aria-labelledby="mission30-title">
+<div id="trust33-details" aria-live="polite"><p class="tr33-note">검증 보고서를 확인하기 전에는 데이터의 일치성을 보증하지 않습니다.</p></div></div><section class="ex35" id="exec35" aria-labelledby="exec35-title">
+<div class="ex35-head"><div><span class="ex35-kicker">EXECUTIVE INTELLIGENCE / V3.5</span><h2 id="exec35-title">2분 기술·경쟁사 브리핑</h2><p>수집된 공개자료에서 기술군별 검토 후보를 한 건씩 보여줍니다. 출시·양산·성능·신규성의 사실 검증 결과가 아니며 실제 원문과 측정조건 확인이 필요합니다.</p></div>
+<div class="ex35-kpis" id="exec35-kpis" aria-live="polite"></div></div>
+<div id="exec35-status" class="ex35-status" role="status">수집 기준일과 브리핑 파일의 일치 여부 확인 중</div>
+<div id="exec35-cards" class="ex35-cards" aria-live="polite"><div class="ex35-empty">기술 브리핑 자료를 불러오는 중입니다.</div></div>
+<div class="ex35-actions"><button type="button" id="exec35-open">전체 근거 브리핑 보기</button></div>
+<p class="ex35-note">선정 기준: 기술군 GaN → SiC → IGBT → SJ MOSFET → SGT 순서로 각 분야의 보관된 공식 발표·논문·뉴스 중 우선 열람 후보를 한 건씩 제시합니다. 빈 기술군은 비어 있다고 표시합니다. 이 목록은 기술 우위의 순위나 이번 주 신규 발표 검증이 아닙니다.</p>
+</section><div class="m30" id="mission30" aria-labelledby="mission30-title">
 <div class="m30-header"><div><span class="m30-label">INTELLIGENCE MISSION CONTROL / V3.4</span><h2 id="mission30-title">Power Semiconductor Intelligence</h2><p>공개 근거 → 기술 이해 → 경쟁사 관찰 → 검증 제품 → 재무 검토까지 연결합니다. 서로 다른 모집단의 수치를 하나의 성능 점수로 합산하지 않습니다.</p></div><span class="m30-version" id="mission30-version">V3.4 · 학술 커버리지 확장</span></div>
 <div class="m30-tabs" id="mission30-tabs" aria-label="통합 분석 기술군 선택"><button type="button" data-m30-tech="GaN" aria-pressed="true">GaN</button><button type="button" data-m30-tech="SiC" aria-pressed="false">SiC</button><button type="button" data-m30-tech="IGBT" aria-pressed="false">IGBT</button><button type="button" data-m30-tech="SJ MOSFET" aria-pressed="false">SJ MOSFET</button><button type="button" data-m30-tech="SGT" aria-pressed="false">SGT</button></div>
 <div class="m30-status" id="mission30-stamp" role="status">출처별 데이터 갱신 시각을 확인 중입니다.</div>
@@ -1322,6 +1353,78 @@ function trust33View(){
  if(el("trust33-quality"))el("trust33-quality").innerHTML='<article class="tr33" aria-label="데이터 검증과 근거 수준"><h3>게시 파일·출처 검증 상태</h3><p class="tr33-note">'+esc(status)+'</p>'+html+'</article>';
 }
 
+
+/* V3.5: executive reading queue, not an AI-generated assertion or performance ranking */
+const EX35_ORDER=["GaN","SiC","IGBT","SJ MOSFET","SGT"];
+const EX35_QUESTIONS={
+ "GaN":"검토 질문: Dynamic RDS(on)·Vth 안정성·Buffer/Gate trapping 및 측정조건 관련성이 있는가?",
+ "SiC":"검토 질문: Trench 전계 집중·Gate Oxide 신뢰성·RDS(on) 및 결함 영향이 입증됐는가?",
+ "IGBT":"검토 질문: VCE(sat)·Eoff·단락 내량 및 Trench/Field Stop 구조에 미치는 영향이 있는가?",
+ "SJ MOSFET":"검토 질문: Pillar Charge Balance·BVDSS·Qrr/Softness 및 공정 윈도우 변화가 있는가?",
+ "SGT":"검토 질문: Shield 전극 구조·Qg/Qgd·RDS(on) 및 신뢰성의 시험조건은 무엇인가?"
+};
+function renderExecutive35(){
+ const section=el("exec35");if(!section)return;
+ const cards=el("exec35-cards"),status=el("exec35-status"),kpis=el("exec35-kpis");
+ const recordsReady=Boolean(M30_READY.records&&DB.generated_at);
+ const briefingReady=Boolean(BRIEFING.generated_at&&Array.isArray(BRIEFING.categories));
+ if(!recordsReady||!briefingReady){
+  status.textContent="데이터 또는 브리핑 파일 확인 중 · 자료가 없어도 업계 활동 0건으로 판단하지 않습니다.";
+  kpis.innerHTML="";
+  cards.innerHTML='<div class="ex35-empty">브리핑 데이터 기준을 확인 중입니다.</div>';
+  return;
+ }
+ if(BRIEFING.generated_at!==DB.generated_at){
+  status.textContent="출처 불일치: 데이터 수집본과 기술 브리핑 생성 시각이 다릅니다. 검토 목록을 표시하지 않습니다.";
+  kpis.innerHTML="";
+  cards.innerHTML='<div class="ex35-empty">신규 수집과 파생 브리핑의 기준일이 일치하지 않아 표시를 보류합니다.</div>';
+  return;
+ }
+ const rows=(BRIEFING.categories||[]).flatMap(cat=>cat.items||[]);
+ const candidates=rows.filter(r=>EX35_ORDER.includes(r.category)&&/^https:\/\//.test(r.url||"")&&/^\d{4}-\d{2}-\d{2}$/.test(r.date||""));
+ const tier={official:3,research:2,news:1};
+ const byTech=new Map();
+ for(const tech of EX35_ORDER){
+  const sorted=candidates.filter(r=>r.category===tech).sort((a,b)=>
+   (Number(Boolean(b.change_candidate))-Number(Boolean(a.change_candidate)))||
+   (tier[b.source_level]||0)-(tier[a.source_level]||0)||
+   (Number(b.reading_priority)||0)-(Number(a.reading_priority)||0)||
+   String(b.date||"").localeCompare(String(a.date||"")));
+  byTech.set(tech,sorted[0]||null);
+ }
+ const count=[...byTech.values()].filter(Boolean).length;
+ const official=[...byTech.values()].filter(r=>r?.source_level==="official").length;
+ kpis.innerHTML='<span>검토 후보 '+count+'/5개 분야</span><span>제조사 원문 '+official+'건</span>';
+ status.textContent="공개자료 수집 "+DB.generated_at+" · 브리핑 기준일 일치 · 분야별 1개 열람 후보 · 독립 검증 미수행";
+ cards.innerHTML=EX35_ORDER.map(tech=>{
+  const row=byTech.get(tech);
+  if(!row)return '<article class="ex35-card"><h3>'+esc(tech)+'</h3><div class="ex35-empty">현재 보관된 30일 자료에서 연결할 후보가 없습니다.</div></article>';
+  const evidence=row.source_level==="official"?"제조사 공식 주장(독립 검증 전)":row.source_level==="research"?"논문 서지 자료(본문 검증 전)":"뉴스 제목 후보(원문 검증 전)";
+  const change=row.change_candidate?"제목에 발표·출시 관련 표현 포함 · 실제 신규성 미확인":"변화 표현 검출 안 됨 · 중요도 미판정";
+  return '<article class="ex35-card"><h3>'+esc(tech)+'</h3><a href="'+esc(row.url)+'" target="_blank" rel="noopener noreferrer">'+esc(row.title||"제목 미확인")+'</a>'+
+   '<div class="ex35-sub">'+esc(row.date||"날짜 미확인")+' · '+esc(row.source||"출처 미확인")+' · '+esc(evidence)+'</div>'+
+   '<div class="ex35-sub">'+esc(change)+'</div>'+
+   '<div class="ex35-question">'+esc(EX35_QUESTIONS[tech])+'<div class="ex35-sub">위 검토 질문은 일반적인 엔지니어링 확인 항목이며 해당 원문에서 검증된 결론은 아닙니다.</div></div>'+
+   '<div class="ex35-actions"><button type="button" data-ex35-tech="'+esc(tech)+'">해당 기술 자료 검토</button></div></article>';
+ }).join("");
+}
+el("exec35").addEventListener("click",event=>{
+ const b=event.target.closest("button[data-ex35-tech]");
+ if(!b||!EX35_ORDER.includes(b.dataset.ex35Tech))return;
+ el("brief-category").value=b.dataset.ex35Tech;
+ el("brief-type").value="";
+ el("brief-change").checked=false;
+ renderBriefing();
+ showRadarSection("briefing");
+});
+el("exec35-open").addEventListener("click",()=>{
+ el("brief-category").value="";
+ el("brief-type").value="";
+ el("brief-change").checked=false;
+ renderBriefing();
+ showRadarSection("briefing");
+});
+
 function render(){
  const all=DB.records||[];
  el("total").textContent=all.length;
@@ -1332,6 +1435,7 @@ function render(){
  pulse27Overview();
  renderMission30();
  trust33View();
+ renderExecutive35();
  const empty='<div class="empty">수집된 자료가 없습니다. GitHub Actions의 실행 상태를 확인해 주세요.</div>';
  const feed=(target,items)=>el(target).innerHTML=items.length?items.map(card).join(""):empty;
  const weekStart=new Date(Date.now()-8*86400000).toISOString().slice(0,10);
@@ -2574,6 +2678,7 @@ fetch("integrated.json?nocache="+Date.now()).then(r=>{if(!r.ok)throw Error(r.sta
 });
 let BRIEFING={categories:[]};
 function renderBriefing(){
+ renderExecutive35();
  const category=el("brief-category").value,type=el("brief-type").value,changes=el("brief-change").checked;
  let items=(BRIEFING.categories||[]).flatMap(cat=>cat.items||[]);
  items=items.filter(r=>(!category||r.category===category)&&(!type||r.source_level===type)&&(!changes||r.change_candidate));
