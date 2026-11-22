@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "version": "2.1",
-  "generated_at": "2026-11-22T21:14:19.751134+00:00",
+  "generated_at": "2026-11-22T21:32:26.105696+00:00",
   "benchmark_reviewed_on": "2026-11-12",
   "categories": [
     {
@@ -132,7 +132,7 @@
           "evidence_status": "metadata_only"
         },
         {
-          "title": "Physics-based gate stack optimization of p-GaN/AlGaN/GaN HEMTs for balanced threshold voltage and on-resistance",
+          "title": "p-GaN/AlGaN/GaN HEMT의 문턱전압과 온저항 균형을 위한 게이트 스택 최적화",
           "date": "2026-11-01",
           "source": "Semiconductor Science and Technology",
           "url": "https://doi.org/10.1088/1361-6641/aebef3",
@@ -206,12 +206,12 @@
           "evidence_status": "title_not_verified"
         },
         {
-          "title": "ROHM Develops TP-PFC Controller IC for GaN High-Frequency Switching - TimesTech",
+          "title": "로옴, GaN 고주파 스위칭용 TP-PFC 컨트롤러 IC 개발",
           "date": "2026-11-19",
           "source": "TimesTech",
           "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQZ1dyTDM1ejR3ZVczeXN0bTg1cU16ekgzNHdNYkR1NE9uUmlPZWdMYkVpemZ2ZGhxaGxLT0JENGhSWEhvZ09CWlhXVmYyLWxYZklmVnliRUUzR1VPaWFqSTczNkc0SVAtRGV4RW9VMWtVV09mUnFlRXhGSXRjLVRlekxtbGppRThEcE5FR3Fta3Nacjg?oc=5",
           "source_level": "news",
-          "summary": "제목 기준: ROHM Develops TP-PFC Controller IC for GaN High-Frequency Switching - TimesTech",
+          "summary": "제목 기준: 로옴, GaN 고주파 스위칭용 TP-PFC 컨트롤러 IC 개발",
           "topic_ids": [],
           "companies": [
             "rohm"
@@ -807,7 +807,7 @@
           "evidence_count_sample": 2,
           "evidence": [
             {
-              "title": "A dual-channel trench SiC MOSFET with a p-PolySi/n-SiC heterojunction tunneling channel realizing low R on,sp and V r_on",
+              "title": "p-PolySi/n-SiC 이종접합 터널링 채널을 갖는 듀얼 채널 트렌치 SiC MOSFET의 저 R_on,sp 및 낮은 V_r_on 구현",
               "date": "2026-08-01",
               "source": "Semiconductor Science and Technology",
               "url": "https://doi.org/10.1088/1361-6641/ae98ab",
@@ -922,12 +922,12 @@
           "evidence_status": "title_not_verified"
         },
         {
-          "title": "Infineon launches HybridPACK HD SiC power module for electric truck and bus inverters - Charged EVs",
+          "title": "인피니언, 전기 트럭 및 버스 인버터용 HybridPACK HD SiC 파워 모듈 출시",
           "date": "2026-11-19",
           "source": "Charged EVs",
           "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPZzB3cktMRjNqX1BoY2ltckVhVGgtb3N1TkNMajRzdzlINzZHQmRTV0s4ajkyNVNyNEstZ3M4VHNoaDVOSVNHUXByeXVpc0lEZkRTQ2VHYlhvZkV4WEhpMWctbFdfNDZyQW9vZGF0NGVQdDZwRjk4NHhNQWpxVTRxT3pVam5YLWtPRzlyQTRFa3d4dHVFRmZHY0hwRmM5d3c3M0dKSHUwbk95Y2FiMHc5bTJ5cGUtMENHRmc?oc=5",
           "source_level": "news",
-          "summary": "제목 기준: Infineon launches HybridPACK HD SiC power module for electric truck and bus inverters - Charged EVs",
+          "summary": "제목 기준: 인피니언, 전기 트럭 및 버스 인버터용 HybridPACK HD SiC 파워 모듈 출시",
           "topic_ids": [],
           "companies": [
             "infineon"
@@ -956,20 +956,6 @@
           "summary": "제목 기준: [Communication Outlook] LG U+ Wins 4 LG U+ Communication Awards · Top 10 Members of the Korean ITU · ETRI Develops SiC Power Semiconductor for Space · 'NAS Forest' Held - 뉴스웍스",
           "topic_ids": [],
           "companies": [],
-          "change_candidate": false,
-          "evidence_status": "title_not_verified"
-        },
-        {
-          "title": "Infineon's Silicon Carbide Milestone and EV Charger Tie-Up Meet a Cautious Wall Street - ad-hoc-news.de",
-          "date": "2026-11-18",
-          "source": "ad-hoc-news.de",
-          "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxPMnJCdnNUcGl2UnRmMmg0Um9BNld2R1BpM3duTHlBRWJKRjhPd2xyYWRNVUNSS2FxbWQ2aVRFMGpQV1k2aU81a0xLTGloVllUNjlqQzJhdTY1eXRrdFF4ZGFTVEZLNWJhQzJlRENyT1JPSk1BRWc0Skk2OW5WN1VNdkxJS2oyNFhzbWw4blB1Q3RJX3JUaGE4dGNDMkdZSHl4Vkc5dW5GajlxbHgtRFBSLV9YVXVvS0NzRFJEWlI1cmh1MEVXbVA5cUpRanluVVl6SXFscTAyMXNRdUZ1RVNZdHk3TmdZeUQ4TmhzcG9iZw?oc=5",
-          "source_level": "news",
-          "summary": "제목 기준: Infineon's Silicon Carbide Milestone and EV Charger Tie-Up Meet a Cautious Wall Street - ad-hoc-news.de",
-          "topic_ids": [],
-          "companies": [
-            "infineon"
-          ],
           "change_candidate": false,
           "evidence_status": "title_not_verified"
         },
@@ -1036,11 +1022,11 @@
           "evidence_status": "title_not_verified"
         }
       ],
-      "article_count_sample": 12,
+      "article_count_sample": 11,
       "source_counts_sample": {
         "official": 0,
         "research": 2,
-        "news": 10
+        "news": 9
       },
       "products": [
         {
@@ -1182,7 +1168,7 @@
         {
           "id": "infineon",
           "name": "Infineon",
-          "mention_count_sample": 3,
+          "mention_count_sample": 2,
           "official_count_sample": 0
         },
         {
@@ -1205,7 +1191,7 @@
           "week": "2026-W47",
           "complete_week": true,
           "week_to_date": "2026-11-22",
-          "category_sample_count": 11,
+          "category_sample_count": 10,
           "topic_title_matches": 0,
           "topic_official_matches": 0
         }
@@ -1612,7 +1598,7 @@
               "confidence": "title_keyword_match"
             },
             {
-              "title": "Simulation study of void impact in trench-filling-epitaxy-based 4H-SiC semi-superjunction schottky rectifiers",
+              "title": "트렌치 충전 에피택시 기반 4H-SiC Semi-SuperJunction 쇼트키 정류기의 보이드 영향 시뮬레이션 연구",
               "date": "2026-09-28",
               "source": "Power Electronic Devices and Components",
               "url": "https://doi.org/10.1016/j.pedc.2026.100153",

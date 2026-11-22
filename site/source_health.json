@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "snapshot_generated_at": "2026-11-22T21:14:19.751134+00:00",
+  "snapshot_generated_at": "2026-11-22T21:32:26.105696+00:00",
   "validation_status": "passed_with_warnings",
   "structural_integrity": "passed",
   "scientific_verification": "not_independently_verified",
@@ -142,21 +142,21 @@
       "result_state": "searched_with_results"
     }
   },
-  "records": 158,
+  "records": 157,
   "counts_by_kind": {
     "official": 7,
     "paper": 128,
-    "news": 23
+    "news": 22
   },
   "source_evidence_tiers": {
     "manufacturer_statement": 7,
     "journal_metadata": 128,
-    "news_index": 23
+    "news_index": 22
   },
   "relevance": {
     "높음": 25,
     "보통": 90,
-    "낮음": 43,
+    "낮음": 42,
     "미분류": 0
   },
   "category_counts": {
@@ -166,7 +166,7 @@
       "official": 3
     },
     "SiC": {
-      "news": 10,
+      "news": 9,
       "paper": 24,
       "official": 2
     },
@@ -197,13 +197,13 @@
     "2026-W46"
   ],
   "files_sha256": {
-    "data.json": "fb342347e073a5d1cc63e0c01c9753cca67a39075bce19f8099a96b1da4cd7f3",
-    "reports/index.json": "a0393372a5ebbaf99fe4b5df6958c0442c66229e7a414b867add12e491d3fcfa",
+    "data.json": "a9888095043ac94b541ba0ce1df021c784e6f101588334559f33e388c23ca222",
+    "reports/index.json": "8e27c1c3b98d181b981807c7b95ba8b83aab0ca74dc5700396a40f73387d4533",
     "benchmark.json": "3172e6ec3fe49961f694380957e5435b0ea26a7cea53aee03b482eee2d24ce4f",
     "financials.json": "8bb8a588b0375f02beda3e4783fb2d10adcd5497201296b41a49f2c0b36d44b7"
   },
   "archives_sha256": {
-    "reports/2026-W48.json": "8e90c7228c7cbadfb990c18bc1d57944d7a9ad7d2f279a35ff797599b3873607",
+    "reports/2026-W48.json": "5229e352720ecfef3c0fad70bf7e07986340f72e8dd7c541300489e7e29288b3",
     "reports/2026-W47.json": "bc44d7581e2aa922b183b960fa4762de55ee29051bf4a674cd259a1ed2005419",
     "reports/2026-W46.json": "5b7dae1590cbde6d16104d583a39854f9e3a5b5503e4bb28adf30b77c7469e8d"
   },
@@ -211,7 +211,7 @@
     "collection/AI warnings reported: 3",
     "benchmark: 1/22 datasheet-table verified",
     "38 paper metadata items reused from prior successful collection",
-    "news technical-keyword relevance low: 20 items; not a credibility rating"
+    "news technical-keyword relevance low: 19 items; not a credibility rating"
   ],
   "errors": [],
   "interpretation": "Integrity checks verify published metadata consistency only; manufacturer statements, journal metadata, news-index titles and AI summaries are not independently validated scientific claims."

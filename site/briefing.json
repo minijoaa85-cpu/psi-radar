@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-22T21:14:19.751134+00:00",
+  "generated_at": "2026-11-22T21:32:26.105696+00:00",
   "lookback_days": 30,
   "categories": [
     {
@@ -92,7 +92,7 @@
         {
           "id": "61aa55dac433",
           "category": "GaN",
-          "title": "Physics-based gate stack optimization of p-GaN/AlGaN/GaN HEMTs for balanced threshold voltage and on-resistance",
+          "title": "p-GaN/AlGaN/GaN HEMT의 문턱전압과 온저항 균형을 위한 게이트 스택 최적화",
           "date": "2026-11-01",
           "source": "Semiconductor Science and Technology",
           "url": "https://doi.org/10.1088/1361-6641/aebef3",
@@ -202,7 +202,7 @@
         {
           "id": "b69a3b108ac5",
           "category": "GaN",
-          "title": "ROHM Develops TP-PFC Controller IC for GaN High-Frequency Switching - TimesTech",
+          "title": "로옴, GaN 고주파 스위칭용 TP-PFC 컨트롤러 IC 개발",
           "date": "2026-11-19",
           "source": "TimesTech",
           "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQZ1dyTDM1ejR3ZVczeXN0bTg1cU16ekgzNHdNYkR1NE9uUmlPZWdMYkVpemZ2ZGhxaGxLT0JENGhSWEhvZ09CWlhXVmYyLWxYZklmVnliRUUzR1VPaWFqSTczNkc0SVAtRGV4RW9VMWtVV09mUnFlRXhGSXRjLVRlekxtbGppRThEcE5FR3Fta3Nacjg?oc=5",
@@ -210,7 +210,7 @@
           "evidence_label": "기사 제목·원문 미검증",
           "change_candidate": false,
           "change_caution": null,
-          "summary": "제목 기준: ROHM Develops TP-PFC Controller IC for GaN High-Frequency Switching - TimesTech",
+          "summary": "제목 기준: 로옴, GaN 고주파 스위칭용 TP-PFC 컨트롤러 IC 개발",
           "topic_ids": [],
           "companies": [
             "rohm"
@@ -321,11 +321,11 @@
     },
     {
       "category": "SiC",
-      "count": 12,
+      "count": 11,
       "by_source": {
         "official": 0,
         "research": 2,
-        "news": 10
+        "news": 9
       },
       "new_announcement_title_candidates": 3,
       "items": [
@@ -388,7 +388,7 @@
         {
           "id": "672e64e89fd1",
           "category": "SiC",
-          "title": "Infineon launches HybridPACK HD SiC power module for electric truck and bus inverters - Charged EVs",
+          "title": "인피니언, 전기 트럭 및 버스 인버터용 HybridPACK HD SiC 파워 모듈 출시",
           "date": "2026-11-19",
           "source": "Charged EVs",
           "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPZzB3cktMRjNqX1BoY2ltckVhVGgtb3N1TkNMajRzdzlINzZHQmRTV0s4ajkyNVNyNEstZ3M4VHNoaDVOSVNHUXByeXVpc0lEZkRTQ2VHYlhvZkV4WEhpMWctbFdfNDZyQW9vZGF0NGVQdDZwRjk4NHhNQWpxVTRxT3pVam5YLWtPRzlyQTRFa3d4dHVFRmZHY0hwRmM5d3c3M0dKSHUwbk95Y2FiMHc5bTJ5cGUtMENHRmc?oc=5",
@@ -396,7 +396,7 @@
           "evidence_label": "기사 제목·원문 미검증",
           "change_candidate": true,
           "change_caution": "신제품·변화 관련 표현이 제목에 있음. 신규성·성과는 원문 검토 전 미확인.",
-          "summary": "제목 기준: Infineon launches HybridPACK HD SiC power module for electric truck and bus inverters - Charged EVs",
+          "summary": "제목 기준: 인피니언, 전기 트럭 및 버스 인버터용 HybridPACK HD SiC 파워 모듈 출시",
           "topic_ids": [],
           "companies": [
             "infineon"
@@ -438,26 +438,6 @@
           "topic_ids": [],
           "companies": [],
           "reading_priority": 128,
-          "priority_basis": "공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
-          "evidence_status": "title_not_verified"
-        },
-        {
-          "id": "ef3ac3b3737d",
-          "category": "SiC",
-          "title": "Infineon's Silicon Carbide Milestone and EV Charger Tie-Up Meet a Cautious Wall Street - ad-hoc-news.de",
-          "date": "2026-11-18",
-          "source": "ad-hoc-news.de",
-          "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxPMnJCdnNUcGl2UnRmMmg0Um9BNld2R1BpM3duTHlBRWJKRjhPd2xyYWRNVUNSS2FxbWQ2aVRFMGpQV1k2aU81a0xLTGloVllUNjlqQzJhdTY1eXRrdFF4ZGFTVEZLNWJhQzJlRENyT1JPSk1BRWc0Skk2OW5WN1VNdkxJS2oyNFhzbWw4blB1Q3RJX3JUaGE4dGNDMkdZSHl4Vkc5dW5GajlxbHgtRFBSLV9YVXVvS0NzRFJEWlI1cmh1MEVXbVA5cUpRanluVVl6SXFscTAyMXNRdUZ1RVNZdHk3TmdZeUQ4TmhzcG9iZw?oc=5",
-          "source_level": "news",
-          "evidence_label": "기사 제목·원문 미검증",
-          "change_candidate": false,
-          "change_caution": null,
-          "summary": "제목 기준: Infineon's Silicon Carbide Milestone and EV Charger Tie-Up Meet a Cautious Wall Street - ad-hoc-news.de",
-          "topic_ids": [],
-          "companies": [
-            "infineon"
-          ],
-          "reading_priority": 126,
           "priority_basis": "공식 출처/논문 메타데이터/뉴스 유형, 발행일, 제목 표현을 고려한 열람 순서",
           "evidence_status": "title_not_verified"
         },

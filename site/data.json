@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-11-22T21:14:19.751134+00:00",
+  "generated_at": "2026-11-22T21:32:26.105696+00:00",
   "window_start": "2026-11-14",
   "paper_window_start": "2026-10-08",
   "focused_paper_window_start": "2025-11-22",
@@ -104,6 +104,8 @@
       "device_mentions": [
         "SiC"
       ],
+      "title_ko": "온세미, 새로운 SiC 플랫폼 EliteSiC M4 출시",
+      "physics_ko": "원문 검토 전에는 Device Physics 분석 불가",
       "relevance_score": 16,
       "relevance_level": "낮음",
       "technical_relevance_score": 16,
@@ -116,9 +118,7 @@
       "monitoring_signal": "일반 메타데이터",
       "monitoring_priority_score": 40,
       "monitoring_method": "title-signal-v1",
-      "evidence_tier": "뉴스 제목 색인(원문 미검증)",
-      "title_ko": "온세미, 새로운 SiC 플랫폼 EliteSiC M4 출시",
-      "physics_ko": "원문 검토 전에는 Device Physics 분석 불가"
+      "evidence_tier": "뉴스 제목 색인(원문 미검증)"
     },
     {
       "id": "672e64e89fd1",
@@ -133,8 +133,8 @@
       ],
       "score": 40,
       "lookback_days": 7,
-      "summary_ko": "제목만 확보한 공개 뉴스입니다. 기업의 기술·제품 발표 여부는 원문에서 확인해야 합니다.",
-      "summary_status": "뉴스 색인·원문 검증 전",
+      "summary_ko": "제목에서 확인되는 정보: 인피니언이 전기 트럭과 버스 인버터용 HybridPACK HD SiC 파워 모듈을 출시했다.",
+      "summary_status": "AI 제목 기반·원문 미검증",
       "evidence": "Google News RSS index",
       "companies": [
         "infineon"
@@ -160,7 +160,9 @@
       "monitoring_signal": "제품·양산 발표 후보",
       "monitoring_priority_score": 82,
       "monitoring_method": "title-signal-v1",
-      "evidence_tier": "뉴스 제목 색인(원문 미검증)"
+      "evidence_tier": "뉴스 제목 색인(원문 미검증)",
+      "title_ko": "인피니언, 전기 트럭 및 버스 인버터용 HybridPACK HD SiC 파워 모듈 출시",
+      "physics_ko": "원문 검토 전에는 Device Physics 분석 불가"
     },
     {
       "id": "db48951a7919",
@@ -218,6 +220,48 @@
       "summary_ko": "제목에서 확인되는 정보: 로옴이 GaN 기반 고주파 스위칭용 TP-PFC 컨트롤러 IC를 개발했다.",
       "summary_status": "AI 제목 기반·원문 미검증",
       "evidence": "Google News RSS index",
+      "title_ko": "로옴, GaN 고주파 스위칭용 TP-PFC 컨트롤러 IC 개발",
+      "physics_ko": "원문 검토 전에는 Device Physics 분석 불가",
+      "relevance_score": 16,
+      "relevance_level": "낮음",
+      "technical_relevance_score": 16,
+      "technical_relevance_level": "낮음",
+      "relevance_topics": [],
+      "relevance_reasons": [
+        "제목·초록에서 소자·공정 물리 키워드 부족"
+      ],
+      "relevance_method": "metadata-rule-v2",
+      "monitoring_signal": "일반 메타데이터",
+      "monitoring_priority_score": 15,
+      "monitoring_method": "title-signal-v1",
+      "evidence_tier": "뉴스 제목 색인(원문 미검증)",
+      "companies": [
+        "rohm"
+      ],
+      "company_attribution": "title_mention_only",
+      "company_source_status": {
+        "rohm": "news_index_unverified"
+      },
+      "device_mentions": [
+        "GaN"
+      ]
+    },
+    {
+      "id": "b69a3b108ac5",
+      "kind": "news",
+      "category": "GaN",
+      "title": "ROHM Develops TP-PFC Controller IC for GaN High-Frequency Switching - TimesTech",
+      "date": "2026-11-19",
+      "source": "TimesTech",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQZ1dyTDM1ejR3ZVczeXN0bTg1cU16ekgzNHdNYkR1NE9uUmlPZWdMYkVpemZ2ZGhxaGxLT0JENGhSWEhvZ09CWlhXVmYyLWxYZklmVnliRUUzR1VPaWFqSTczNkc0SVAtRGV4RW9VMWtVV09mUnFlRXhGSXRjLVRlekxtbGppRThEcE5FR3Fta3Nacjg?oc=5",
+      "topics": [
+        "일반 기술"
+      ],
+      "score": 50,
+      "lookback_days": 7,
+      "summary_ko": "제목에서 확인되는 정보: 로옴이 GaN 기반 고주파 스위칭에 적합한 TP-PFC 컨트롤러 IC를 개발했다.",
+      "summary_status": "AI 제목 기반·원문 미검증",
+      "evidence": "Google News RSS index",
       "relevance_score": 16,
       "relevance_level": "낮음",
       "technical_relevance_score": 16,
@@ -243,46 +287,6 @@
       ],
       "title_ko": "로옴, GaN 고주파 스위칭용 TP-PFC 컨트롤러 IC 개발",
       "physics_ko": "원문 검토 전에는 Device Physics 분석 불가"
-    },
-    {
-      "id": "b69a3b108ac5",
-      "kind": "news",
-      "category": "GaN",
-      "title": "ROHM Develops TP-PFC Controller IC for GaN High-Frequency Switching - TimesTech",
-      "date": "2026-11-19",
-      "source": "TimesTech",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQZ1dyTDM1ejR3ZVczeXN0bTg1cU16ekgzNHdNYkR1NE9uUmlPZWdMYkVpemZ2ZGhxaGxLT0JENGhSWEhvZ09CWlhXVmYyLWxYZklmVnliRUUzR1VPaWFqSTczNkc0SVAtRGV4RW9VMWtVV09mUnFlRXhGSXRjLVRlekxtbGppRThEcE5FR3Fta3Nacjg?oc=5",
-      "topics": [
-        "일반 기술"
-      ],
-      "score": 50,
-      "lookback_days": 7,
-      "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
-      "summary_status": "제목 기반·검증 전",
-      "evidence": "Google News RSS index",
-      "relevance_score": 16,
-      "relevance_level": "낮음",
-      "technical_relevance_score": 16,
-      "technical_relevance_level": "낮음",
-      "relevance_topics": [],
-      "relevance_reasons": [
-        "제목·초록에서 소자·공정 물리 키워드 부족"
-      ],
-      "relevance_method": "metadata-rule-v2",
-      "monitoring_signal": "일반 메타데이터",
-      "monitoring_priority_score": 15,
-      "monitoring_method": "title-signal-v1",
-      "evidence_tier": "뉴스 제목 색인(원문 미검증)",
-      "companies": [
-        "rohm"
-      ],
-      "company_attribution": "title_mention_only",
-      "company_source_status": {
-        "rohm": "news_index_unverified"
-      },
-      "device_mentions": [
-        "GaN"
-      ]
     },
     {
       "id": "7309bf4e0a9a",
@@ -394,46 +398,6 @@
       "company_source_status": {},
       "device_mentions": [
         "GaN"
-      ]
-    },
-    {
-      "id": "ef3ac3b3737d",
-      "kind": "news",
-      "category": "SiC",
-      "title": "Infineon's Silicon Carbide Milestone and EV Charger Tie-Up Meet a Cautious Wall Street - ad-hoc-news.de",
-      "date": "2026-11-18",
-      "source": "ad-hoc-news.de",
-      "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxPMnJCdnNUcGl2UnRmMmg0Um9BNld2R1BpM3duTHlBRWJKRjhPd2xyYWRNVUNSS2FxbWQ2aVRFMGpQV1k2aU81a0xLTGloVllUNjlqQzJhdTY1eXRrdFF4ZGFTVEZLNWJhQzJlRENyT1JPSk1BRWc0Skk2OW5WN1VNdkxJS2oyNFhzbWw4blB1Q3RJX3JUaGE4dGNDMkdZSHl4Vkc5dW5GajlxbHgtRFBSLV9YVXVvS0NzRFJEWlI1cmh1MEVXbVA5cUpRanluVVl6SXFscTAyMXNRdUZ1RVNZdHk3TmdZeUQ4TmhzcG9iZw?oc=5",
-      "topics": [
-        "일반 기술"
-      ],
-      "score": 40,
-      "lookback_days": 7,
-      "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
-      "summary_status": "제목 기반·검증 전",
-      "evidence": "Google News RSS index",
-      "relevance_score": 40,
-      "relevance_level": "낮음",
-      "technical_relevance_score": 40,
-      "technical_relevance_level": "낮음",
-      "relevance_topics": [],
-      "relevance_reasons": [
-        "제목·초록에서 소자·공정 물리 키워드 부족"
-      ],
-      "relevance_method": "metadata-rule-v2",
-      "monitoring_signal": "일반 메타데이터",
-      "monitoring_priority_score": 45,
-      "monitoring_method": "title-signal-v1",
-      "evidence_tier": "뉴스 제목 색인(원문 미검증)",
-      "companies": [
-        "infineon"
-      ],
-      "company_attribution": "title_mention_only",
-      "company_source_status": {
-        "infineon": "news_index_unverified"
-      },
-      "device_mentions": [
-        "SiC"
       ]
     },
     {
@@ -704,19 +668,9 @@
       ],
       "score": 40,
       "lookback_days": 7,
-      "summary_ko": "제목만 확보한 공개 뉴스입니다. 기업의 기술·제품 발표 여부는 원문에서 확인해야 합니다.",
-      "summary_status": "뉴스 색인·원문 검증 전",
+      "summary_ko": "공개 뉴스 색인에서 확인했습니다. 제목과 원문을 검토해 기술적 의미를 판단하세요.",
+      "summary_status": "제목 기반·검증 전",
       "evidence": "Google News RSS index",
-      "companies": [
-        "infineon"
-      ],
-      "company_attribution": "title_mention_only",
-      "company_source_status": {
-        "infineon": "news_index_unverified"
-      },
-      "device_mentions": [
-        "SiC"
-      ],
       "relevance_score": 27,
       "relevance_level": "낮음",
       "technical_relevance_score": 27,
@@ -731,7 +685,17 @@
       "monitoring_signal": "일반 메타데이터",
       "monitoring_priority_score": 23,
       "monitoring_method": "title-signal-v1",
-      "evidence_tier": "뉴스 제목 색인(원문 미검증)"
+      "evidence_tier": "뉴스 제목 색인(원문 미검증)",
+      "companies": [
+        "infineon"
+      ],
+      "company_attribution": "title_mention_only",
+      "company_source_status": {
+        "infineon": "news_index_unverified"
+      },
+      "device_mentions": [
+        "SiC"
+      ]
     },
     {
       "id": "b79d1d70d15e",
@@ -831,6 +795,8 @@
       "device_mentions": [
         "GaN"
       ],
+      "title_ko": "Visteon SHINRY 인피니언 GaN 온보드 충전기 솔루션 - Fuel Cells Works",
+      "physics_ko": "원문 검토 전에는 Device Physics 분석 불가",
       "relevance_score": 16,
       "relevance_level": "낮음",
       "technical_relevance_score": 16,
@@ -843,9 +809,7 @@
       "monitoring_signal": "일반 메타데이터",
       "monitoring_priority_score": 15,
       "monitoring_method": "title-signal-v1",
-      "evidence_tier": "뉴스 제목 색인(원문 미검증)",
-      "title_ko": "Visteon SHINRY 인피니언 GaN 온보드 충전기 솔루션 - Fuel Cells Works",
-      "physics_ko": "원문 검토 전에는 Device Physics 분석 불가"
+      "evidence_tier": "뉴스 제목 색인(원문 미검증)"
     },
     {
       "id": "d345e6aba306",
@@ -917,6 +881,8 @@
       "device_mentions": [
         "GaN"
       ],
+      "title_ko": "미쓰비시 전기, GaN 기판을 이용한 GaN 트랜지스터 주파수 분산 억제 세계 최초 시연",
+      "physics_ko": "원문 검토 전에는 Device Physics 분석 불가",
       "relevance_score": 51,
       "relevance_level": "보통",
       "technical_relevance_score": 51,
@@ -931,9 +897,7 @@
       "monitoring_signal": "소자·공정 연구 후보",
       "monitoring_priority_score": 53,
       "monitoring_method": "title-signal-v1",
-      "evidence_tier": "뉴스 제목 색인(원문 미검증)",
-      "title_ko": "미쓰비시 전기, GaN 기판을 이용한 GaN 트랜지스터 주파수 분산 억제 세계 최초 시연",
-      "physics_ko": "원문 검토 전에는 Device Physics 분석 불가"
+      "evidence_tier": "뉴스 제목 색인(원문 미검증)"
     },
     {
       "id": "289a1a8f4321",
@@ -1002,6 +966,8 @@
       "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
       "metadata_provider": "OpenAlex",
+      "title_ko": "다이오드 내장 p-GaN 게이트 HEMT를 통한 문턱전압 설계",
+      "physics_ko": "내장된 다이오드 구조가 게이트 스택 내 전기적 포텐셜을 조절하여 문턱전압과 동적 특성을 개선한다.",
       "relevance_score": 70,
       "relevance_level": "높음",
       "technical_relevance_score": 70,
@@ -1026,9 +992,7 @@
       "company_source_status": {},
       "device_mentions": [
         "GaN"
-      ],
-      "title_ko": "다이오드 내장 p-GaN 게이트 HEMT를 통한 문턱전압 설계",
-      "physics_ko": "내장된 다이오드 구조가 게이트 스택 내 전기적 포텐셜을 조절하여 문턱전압과 동적 특성을 개선한다."
+      ]
     },
     {
       "id": "c15f11fa3c3e",
@@ -1306,8 +1270,8 @@
       ],
       "score": 58,
       "abstract": "In this article, the gate-stack design space of p-GaN/AlGaN/GaN HEMTs (high electron mobility transistors) is explored to achieve a balanced threshold voltage ( V T ) and on-resistance ( R on ). Physics-based analytical models for V T and R on are validated against experimental data and subsequently employed for a 10,000-point design-space exploration encompassing variations in p-GaN doping concentration, Schottky built-in potential, AlGaN thickness, and Al mole fraction. While a high V T is essential for robust enhancement-mode operation and adequate gate-noise immunity, a low R on is required to minimize conduction losses. The study reveals the inherent trade-off between V T and R on , and identifies an optimum gate-stack design region that balances these competing requirements. Based on the explored design space, practical design guidelines are established to maintain V T within the range of 1.7–2.2 V while achieving the lowest possible R on under process-induced variations of gate-stack parameters.",
-      "summary_ko": "공개 초록을 확인해 주요 결론을 검토하세요.",
-      "summary_status": "초록 기반·원문 미검증",
+      "summary_ko": "본 연구에서는 p-GaN/AlGaN/GaN HEMT의 문턱전압(VT)과 온저항(Ron)을 균형 있게 달성하기 위한 게이트 스택 설계 공간을 물리 기반 모델로 탐색하였다. VT와 Ron 간의 본질적인 트레이드오프를 규명하고, 1.7~2.2V 범위 내에서 VT를 유지하면서 최소 Ron을 달성할 수 있는 최적 설계 가이드라인을 제시한다.",
+      "summary_status": "AI 초록 기반·원문 미검증",
       "lookback_days": 365,
       "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
@@ -1332,7 +1296,9 @@
       "company_source_status": {},
       "device_mentions": [
         "GaN"
-      ]
+      ],
+      "title_ko": "p-GaN/AlGaN/GaN HEMT의 문턱전압과 온저항 균형을 위한 게이트 스택 최적화",
+      "physics_ko": "게이트 스택의 도핑 농도, Schottky 내장 전위, AlGaN 두께 및 Al 몰 분율 변화가 VT와 Ron의 상호 트레이드오프를 결정한다."
     },
     {
       "id": "cb7ac6f49add",
@@ -1484,6 +1450,8 @@
       "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
       "metadata_provider": "OpenAlex",
+      "title_ko": "수동 신뢰성을 넘어: GaN HEMT의 반복 전자 풍력 재생 기술",
+      "physics_ko": "EWF는 Gate Oxide 손상 없이 결함을 이동시켜 RDS(on) 및 Dynamic Ron 특성의 열화를 회복시키는 nonequilibrium 메커니즘이다.",
       "relevance_score": 68,
       "relevance_level": "보통",
       "technical_relevance_score": 68,
@@ -1506,9 +1474,7 @@
       "company_source_status": {},
       "device_mentions": [
         "GaN"
-      ],
-      "title_ko": "수동 신뢰성을 넘어: GaN HEMT의 반복 전자 풍력 재생 기술",
-      "physics_ko": "EWF는 Gate Oxide 손상 없이 결함을 이동시켜 RDS(on) 및 Dynamic Ron 특성의 열화를 회복시키는 nonequilibrium 메커니즘이다."
+      ]
     },
     {
       "id": "f7277d101478",
@@ -1524,8 +1490,8 @@
       ],
       "score": 58,
       "abstract": "SiC MOSFETs offer significant advantages over their silicon counterparts, including higher breakdown voltage, faster switching speed, and better thermal conductivity, making them well-suited for high-frequency, high-voltage, and high-temperature applications in power electronics. Nevertheless, the long-term reliability of SiC MOSFETs remains a major challenge, as device failures can lead to system-level malfunctions, unplanned outages, and elevated safety risks, particularly in mission-critical applications. To assess their reliability under typical converter stresses, a hybrid-active neutral point clamped (H-ANPC) inverter is used. The H-ANPC inverter efficiently balances switching losses and thermal stress, providing higher efficiency and better thermal management, making it ideal for high-power applications requiring robust, long-term reliability. This article proposed an active gate voltage control (AGVC) technique, which is used to develop a scheme for optimizing gate voltage to improve the reliability and lifetime of SiC MOSFETs within the H-ANPC inverter. To determine the lifetime models of SiC MOSFETs in the H-ANPC inverter, two accelerated tests (ATs), the inverter-like accelerated test (IAT), and the time-dependent dielectric breakdown (TDDB) test are applied. Although the IAT-based lifetime model indicates SiC MOSFET reliability, gate voltage variations make it crucial to assess impacts on gate oxide degradation by the TDDB-based lifetime model. The article includes detailed explanations of the experimental setups for IAT, TDDB, and the H-ANPC inverter, along with an analysis of the results and lifetime modeling. Also, the AGVC scheme (AGVCS) is tested within the IAT framework, and results are provided. Together, these insights highlight strategies for enhanc",
-      "summary_ko": "공개 초록을 확인해 주요 결론을 검토하세요.",
-      "summary_status": "초록 기반·원문 미검증",
+      "summary_ko": "SiC MOSFET은 높은 BVDSS와 빠른 스위칭 속도, 우수한 열전도성을 제공하지만 장기 신뢰성 문제가 존재한다. 본 연구에서는 H-ANPC 인버터에서 AGVC 기법을 적용해 게이트 전압을 최적화하여 SiC MOSFET의 수명과 신뢰성을 개선하는 방법을 제안하고, IAT 및 TDDB 가속 시험을 통해 수명 모델을 도출하였다.",
+      "summary_status": "AI 초록 기반·원문 미검증",
       "lookback_days": 365,
       "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
@@ -1556,7 +1522,9 @@
       "company_source_status": {},
       "device_mentions": [
         "SiC"
-      ]
+      ],
+      "title_ko": "SiC MOSFET의 게이트 전압 최적화를 통한 H-ANPC 인버터 수명 및 신뢰성 향상",
+      "physics_ko": "게이트 산화막(Gate Oxide) 열화와 관련된 TDDB 시험을 통해 게이트 전압 변화가 SiC MOSFET의 신뢰성에 미치는 영향을 분석하였다."
     },
     {
       "id": "bf11b3ee4e40",
@@ -1796,8 +1764,8 @@
       ],
       "score": 40,
       "abstract": "This paper establishes an experiment-informed defect-aware TCAD- Response Surface (RS) framework to investigate how trench-filling voids affect the conduction-breakdown trade-off and doping window of 4H-SiC Semi-SuperJunction (SSJ) Schottky rectifiers. Two practical design routes are compared: a void-free route using wide, tilted trenches and a void-included route using narrow, near-vertical trenches. Realistic void configurations derived from experiments are embedded into TCAD for both p-type trench-filling (PTF) and n-type trench-filling (NTF) architectures across varied trench angles and widths. Results show that voids consistently reduce breakdown voltage (BV) while broadening the refill doping window. However, PTF and NTF structures exhibit different void tolerance for varied geometries. In PTF devices, BV degradation is severe in narrow trenches, reaching 146 V, 137 V and 254 V at 2°, 5° and 8°, respectively, but is much smaller in wide trenches, with losses of 15 V at 2° and 12 V at 5°, while void-free refill is achieved at 8°. In NTF devices, where the void lies inside the N-pillar, narrow trenches suffer stronger degradation, with BV losses of 204 and 177 V and R on,sp increases of 25% and 22% at 2° and 5°, respectively. Wide-trench NTF devices still show BV losses of 156 V and 9 V, with 9% and 4% R on,sp penalties. TCAD-RS-based re-optimization is used and shows that narrow PTF structures favor near-vertical sidewalls, whereas wide PTF structures should prioritize void-free filling. NTF structures should always pursue void-free refill through wide, tilted trench designs.",
-      "summary_ko": "공개 초록을 확인해 주요 결론을 검토하세요.",
-      "summary_status": "초록 기반·원문 미검증",
+      "summary_ko": "본 연구는 TCAD-Response Surface 프레임워크를 통해 트렌치 충전 보이드가 4H-SiC SSJ 쇼트키 정류기의 전도-파괴 전압 트레이드오프와 도핑 윈도우에 미치는 영향을 분석하였다. 결과적으로 보이드는 파괴 전압을 감소시키는 반면 도핑 윈도우는 확장시키며, PTF와 NTF 구조는 보이드에 대한 내성이 서로 다르게 나타났다.",
+      "summary_status": "AI 초록 기반·원문 미검증",
       "lookback_days": 365,
       "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
@@ -1827,7 +1795,9 @@
       "device_mentions": [
         "SiC",
         "SJ MOSFET"
-      ]
+      ],
+      "title_ko": "트렌치 충전 에피택시 기반 4H-SiC Semi-SuperJunction 쇼트키 정류기의 보이드 영향 시뮬레이션 연구",
+      "physics_ko": "보이드 존재는 트렌치 각도와 폭에 따라 BVDSS와 RDS(on) 특성에 영향을 미치며, PTF는 좁은 트렌치에서, NTF는 넓은 트렌치에서 보이드에 더 민감하다."
     },
     {
       "id": "2e93564ef63e",
@@ -1850,6 +1820,8 @@
       "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
       "metadata_provider": "OpenAlex",
+      "title_ko": "GaN 전력반도체의 결함 공학을 통한 캐리어 이동도 및 고전력 소자 신뢰성 향상",
+      "physics_ko": "질소 및 갈륨 공공, 탄소·산소 불순물, 전위 및 계면 트랩이 쿨롱 산란과 캐리어 포획을 유발하여 Dynamic Ron, 누설, 문턱 전압 불안정성을 초래한다.",
       "relevance_score": 79,
       "relevance_level": "높음",
       "technical_relevance_score": 79,
@@ -1874,9 +1846,7 @@
       "company_source_status": {},
       "device_mentions": [
         "GaN"
-      ],
-      "title_ko": "GaN 전력반도체의 결함 공학을 통한 캐리어 이동도 및 고전력 소자 신뢰성 향상",
-      "physics_ko": "질소 및 갈륨 공공, 탄소·산소 불순물, 전위 및 계면 트랩이 쿨롱 산란과 캐리어 포획을 유발하여 Dynamic Ron, 누설, 문턱 전압 불안정성을 초래한다."
+      ]
     },
     {
       "id": "7e009cc0677a",
@@ -2029,6 +1999,8 @@
       "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
       "metadata_provider": "OpenAlex",
+      "title_ko": "순차적 전기 스트레스 하에서 Depletion-Mode GaN HEMT의 트랩 동역학 및 장기 신뢰성",
+      "physics_ko": "게이트 바이어스 크기와 누적된 스트레스 이력이 트랩에 의한 전하 포획과 방출을 통해 VTH와 RDS의 장기 변화를 결정한다.",
       "relevance_score": 68,
       "relevance_level": "보통",
       "technical_relevance_score": 68,
@@ -2051,9 +2023,7 @@
       "company_source_status": {},
       "device_mentions": [
         "GaN"
-      ],
-      "title_ko": "순차적 전기 스트레스 하에서 Depletion-Mode GaN HEMT의 트랩 동역학 및 장기 신뢰성",
-      "physics_ko": "게이트 바이어스 크기와 누적된 스트레스 이력이 트랩에 의한 전하 포획과 방출을 통해 VTH와 RDS의 장기 변화를 결정한다."
+      ]
     },
     {
       "id": "2e851c90fc11",
@@ -2153,8 +2123,8 @@
       ],
       "score": 58,
       "abstract": "In this Letter, the gate transport mechanism and the positive bias temperature instability in an E-mode GaN high electron mobility transistor (HEMT) with a p-i-n junction gate are investigated. The fabricated device demonstrates remarkable normally off characteristics with a high threshold voltage of 2.8 V at room temperature. Comprehensive electrical characterization identifies Poole–Frenkel emission as the dominant gate conduction mechanism, with potential barrier heights of 0.45 and 0.47 eV extracted from temperature-dependent gate leakage. Capacitance-based deep-level transient spectroscopy reveals two distinct trap states in the p-GaN layer located at 0.54 and 0.88 eV above the valence band, respectively. The positive bias temperature instability characteristics and their underlying mechanisms are also analyzed. This study reveals the material–electrical correlation mechanism in p-i-n junction gate HEMTs, providing a theoretical foundation for the further design of highly reliable p-GaN HEMTs.",
-      "summary_ko": "공개 초록을 확인해 주요 결론을 검토하세요.",
-      "summary_status": "초록 기반·원문 미검증",
+      "summary_ko": "본 연구에서는 p-i-n 접합 게이트를 적용한 E-mode GaN HEMT의 게이트 수송 메커니즘과 양성 바이어스 온도 불안정성(PBTI)을 조사하였다. 제작된 소자는 상온에서 2.8 V의 높은 임계 전압을 가지는 우수한 노멀리 오프 특성을 보였으며, Poole–Frenkel 방출이 주요 게이트 전도 메커니즘임을 확인하였다.",
+      "summary_status": "AI 초록 기반·원문 미검증",
       "lookback_days": 365,
       "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
@@ -2181,7 +2151,9 @@
       "company_source_status": {},
       "device_mentions": [
         "GaN"
-      ]
+      ],
+      "title_ko": "p-i-n 접합 게이트를 갖는 E-mode GaN HEMT의 게이트 수송 메커니즘 및 PBTI 연구",
+      "physics_ko": "온도 의존 게이트 누설 전류 분석을 통해 0.45 및 0.47 eV의 장벽 높이가 추출되었고, p-GaN 층 내 두 개의 트랩 상태가 정전용량 기반 심층 레벨 과도 분광법으로 확인되었다."
     },
     {
       "id": "f09744534d74",
@@ -2465,8 +2437,8 @@
       ],
       "score": 58,
       "abstract": "Tuning Mg doping is commonly used to manipulate the threshold voltage${V}_{\\text {TH}}$of p-GaN gate HEMTs. However, as impurities in nature, Mg dopants might cause instabilities. In this work, by comparatively investigating four samples with Mg doping concentrations from$1.5\\times 10^{{19}}$cm${}^{-{3}}$to$1.2\\times 10^{{20}}$cm${}^{-{3}}$, we found that: 1) either excessively high or low Mg doping concentration will adversely affect${V}_{\\text {TH}}$, 2) lower concentration of ionized holes near the Schottky junction leads to a wider depletion region in p-GaN under forward gate bias and a reduced gate leakage current, 3) severe Mg diffusion simultaneously reduces theon-state current andoff-state leakage current, 4) dynamicon-resistance degradation of devices is significantly modulated by the ionization of Mg diffused into the AlGaN/GaN, and 5) notably, although the doping concentration of$6\\times 10^{{19}}$cm${}^{-{3}}$induces prominent self-compensation effects near the Schottky junction, it forms a doping level of$\\sim 2\\times 10^{{19}}$cm${}^{-{3}}$at the p-GaN/AlGaN heterojunction via diffusion, which occasionally achieves the maximum${V}_{\\text {TH}}$. The above findings have systematically analyzed the effects of Mg doping concentration on the key electrical properties and reliability of the devices and have contributed to an in-depth understanding of the operating mechanism of p-GaN gate HEMTs.",
-      "summary_ko": "공개 초록을 확인해 주요 결론을 검토하세요.",
-      "summary_status": "초록 기반·원문 미검증",
+      "summary_ko": "Mg 도핑 농도는 p-GaN 게이트 HEMT의 문턱전압(V_TH)에 큰 영향을 미치며, 너무 높거나 낮은 농도는 성능 저하를 초래한다. 또한 Mg 확산은 온 상태 전류와 오프 상태 누설 전류를 동시에 감소시키고, 동적 R_on 열화를 조절한다.",
+      "summary_status": "AI 초록 기반·원문 미검증",
       "lookback_days": 365,
       "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
@@ -2493,7 +2465,9 @@
       "company_source_status": {},
       "device_mentions": [
         "GaN"
-      ]
+      ],
+      "title_ko": "CMOS 호환 공정으로 제작된 p-GaN 게이트 HEMT의 Mg 도핑 영향",
+      "physics_ko": "Mg 도핑 농도와 확산은 p-GaN/AlGaN 이종접합부의 전하 이온화와 소수 캐리어 분포를 변화시켜 디바이스의 전기적 특성과 신뢰성에 영향을 준다."
     },
     {
       "id": "8e8690e4fe64",
@@ -2509,8 +2483,8 @@
       ],
       "score": 58,
       "abstract": "While positive bias temperature instability (PBTI)-induced threshold voltage (V${}_{\\text {th}}\\text {)}$instability is a major bottleneck in gallium nitride (GaN) power electronics, the role of gate current remains poorly understood and is often confounded by temperature effects. In this work, the role of gate current in threshold voltage instability is investigated using short-term PBTI stress to isolate the positive shift component before the counteracting component becomes pronounced. The positive shift decreases with increasing gate current, even at the same temperature. Moreover, nearly identical positive shifts are observed at different temperatures when the gate current is comparable. These results suggest that the positive shift is not determined by temperature alone but is associated with gate current. C–V and recovery analyses suggest that this current-dependent positive shift is associated with electron trapping. Arrhenius analysis of the secondary recovery transient of the positive shift yields an activation energy of 174 meV, suggesting trap states associated with the p-GaN/AlGaN interface.",
-      "summary_ko": "공개 초록을 확인해 주요 결론을 검토하세요.",
-      "summary_status": "초록 기반·원문 미검증",
+      "summary_ko": "본 연구에서는 GaN 전력 소자의 PBTI에 의한 임계 전압(Vth) 불안정성에서 게이트 전류의 역할을 단기 PBTI 스트레스를 통해 분석하였다. 게이트 전류가 증가할수록 양(+) 임계 전압 이동이 감소하며, 온도보다 게이트 전류가 임계 전압 이동에 더 큰 영향을 미치는 것으로 나타났다.",
+      "summary_status": "AI 초록 기반·원문 미검증",
       "lookback_days": 365,
       "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
@@ -2537,7 +2511,9 @@
       "company_source_status": {},
       "device_mentions": [
         "GaN"
-      ]
+      ],
+      "title_ko": "Schottky p-GaN 게이트 HEMT의 PBTI 스트레스 하에서 게이트 전류 지배 양(+) 임계 전압 이동",
+      "physics_ko": "게이트 전류 의존적 양(+) 임계 전압 이동은 p-GaN/AlGaN 계면에 위치한 전자 트랩 상태와 관련되어 있다."
     },
     {
       "id": "official-e9717de0c42cce73",
@@ -2873,8 +2849,8 @@
       ],
       "score": 58,
       "abstract": "This paper proposes a novel enhancement-mode gallium nitride high electron mobility transistor (GaN HEMT), featuring a step-graded doping p-GaN buried layer (TPBL-HEMT), to significantly enhance its short-circuit (SC) capability. The buried layer architecture, comprising a highly-doped source anchor, a moderately-doped main shielding region, and a lightly-doped soft termination, effectively decouples SC current suppression from electric field shaping. TCAD simulation results validate that the source anchor effectively clamps the SC current, while the soft termination modulates the drain-side electric field, thereby reducing its peak. The optimized device achieves a great SC withstand time of 1.58 µ s under a 400 V bus voltage, which is 246% longer than that of the traditional device conventional HEMT. This work presents a highly promising engineering solution for designing robust and reliable GaN power devices.",
-      "summary_ko": "공개 초록을 확인해 주요 결론을 검토하세요.",
-      "summary_status": "초록 기반·원문 미검증",
+      "summary_ko": "본 논문은 계단식 도핑 p-GaN 매립층(TPBL)을 적용한 E-mode GaN HEMT를 제안하여 단락(SC) 내구성을 크게 향상시켰다. TCAD 시뮬레이션 결과, 소스 앵커가 SC 전류를 효과적으로 억제하고, 소프트 터미네이션이 드레인 측 전기장을 조절하여 피크 전기장을 감소시킴을 확인하였다.",
+      "summary_status": "AI 초록 기반·원문 미검증",
       "lookback_days": 365,
       "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
@@ -2901,7 +2877,9 @@
       "company_source_status": {},
       "device_mentions": [
         "GaN"
-      ]
+      ],
+      "title_ko": "계단식 도핑 p-GaN 매립층을 적용한 GaN HEMT의 향상된 단락 내구성 시뮬레이션",
+      "physics_ko": "계단식 도핑 p-GaN 매립층 구조는 SC 전류 억제와 전기장 형성을 효과적으로 분리하여 장치의 단락 내구성을 크게 향상시킨다."
     },
     {
       "id": "7e52f45c629b",
@@ -2917,8 +2895,8 @@
       ],
       "score": 58,
       "abstract": "A novel trench 4 H-SiC MOSFET integrating an n + -PolySi/p-PolySi/n-SiC sidewall heterojunction tunneling channel , named HTC-MOS, is proposed and investigated by calibrated TCAD simulation. In the proposed HTC-MOS, one channel is realized by n + -PolySi/p-PolySi/n-SiC. Under positive gate bias, the p-PolySi interface is inverted into an electron inversion layer and the n-SiC interface accumulates a large amount of electrons, which forms an n + -PolySi/n + -SiC interface enabling significant tunneling current across the heterojunction. This tunneling-induced current path and the traditional SiC inversion channel form a dual-channel conduction path that lowers the overall channel resistance. In the reverse free-wheeling state, the p-PolySi/n-SiC heterojunction ensures lower reverse on-state voltage drop ( V R_on ) and reverse recovery charge ( Q rr ) owing to unipolar conduction. Simulation results show that the 1.2 kV rated HTC-MOS achieves an R on,sp of 1.46 mΩ·cm 2 , reduced by 24.0% compared with that of a conventional device ( R on,sp = 1.92 mΩ·cm 2 ). The V R_on is reduced from 2.96 V – 1.82 V, representing a 38.5% reduction. Q rr is reduced by 25.7%, which contributes to a 7.5% reduction in turn-on power loss.",
-      "summary_ko": "공개 초록을 확인해 주요 결론을 검토하세요.",
-      "summary_status": "초록 기반·원문 미검증",
+      "summary_ko": "본 연구에서는 n+-PolySi/p-PolySi/n-SiC 측벽 이종접합 터널링 채널을 통합한 새로운 트렌치 4H-SiC MOSFET(HTC-MOS)을 TCAD 시뮬레이션으로 제안하였다. HTC-MOS는 듀얼 채널 전도 경로를 통해 R_on,sp를 24.0% 감소시키고, V_r_on과 Q_rr을 각각 38.5%, 25.7% 줄여 전력 손실을 효과적으로 감소시켰다.",
+      "summary_status": "AI 초록 기반·원문 미검증",
       "lookback_days": 365,
       "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
@@ -2945,7 +2923,9 @@
       "company_source_status": {},
       "device_mentions": [
         "SiC"
-      ]
+      ],
+      "title_ko": "p-PolySi/n-SiC 이종접합 터널링 채널을 갖는 듀얼 채널 트렌치 SiC MOSFET의 저 R_on,sp 및 낮은 V_r_on 구현",
+      "physics_ko": "p-PolySi/n-SiC 이종접합에서 터널링 전류가 발생하여 기존 SiC 반전 채널과 함께 듀얼 채널 전도 경로를 형성함으로써 채널 저항을 감소시킨다."
     },
     {
       "id": "57bbd248c000",
@@ -3189,6 +3169,8 @@
       "evidence": "OpenAlex journal metadata",
       "source_type": "journal",
       "metadata_provider": "OpenAlex",
+      "title_ko": "다양한 게이트 바이어스 조건에서 1200V 비대칭 트렌치 SiC MOSFET의 단일 및 반복 서지 신뢰성",
+      "physics_ko": "게이트 산화막과 SiC 계면 결함 밀도는 낮은 VGS에서 증가하여 단일 및 반복 서지 스트레스 중 파라미터 열화를 가속화한다.",
       "relevance_score": 86,
       "relevance_level": "높음",
       "technical_relevance_score": 86,
@@ -3215,9 +3197,7 @@
       "company_source_status": {},
       "device_mentions": [
         "SiC"
-      ],
-      "title_ko": "다양한 게이트 바이어스 조건에서 1200V 비대칭 트렌치 SiC MOSFET의 단일 및 반복 서지 신뢰성",
-      "physics_ko": "게이트 산화막과 SiC 계면 결함 밀도는 낮은 VGS에서 증가하여 단일 및 반복 서지 스트레스 중 파라미터 열화를 가속화한다."
+      ]
     },
     {
       "id": "official-547c895881c8b89d",
@@ -6370,6 +6350,8 @@
       "evidence": "Crossref journal metadata",
       "source_type": "journal",
       "metadata_provider": "Crossref",
+      "title_ko": "1.2 kV 4H-SiC Charge Sheet Superjunction Trench MOSFET의 모델링, 공정 설계 및 실용성",
+      "physics_ko": "CSSJ 기반 드리프트 레이어는 전하 불균형을 고려하면서도 Gate Oxide 파괴를 완화하는 구조적 설계로 높은 BVDSS와 낮은 Dynamic Ron을 동시에 실현한다.",
       "relevance_score": 79,
       "relevance_level": "높음",
       "technical_relevance_score": 79,
@@ -6395,9 +6377,7 @@
       "device_mentions": [
         "SiC",
         "SJ MOSFET"
-      ],
-      "title_ko": "1.2 kV 4H-SiC Charge Sheet Superjunction Trench MOSFET의 모델링, 공정 설계 및 실용성",
-      "physics_ko": "CSSJ 기반 드리프트 레이어는 전하 불균형을 고려하면서도 Gate Oxide 파괴를 완화하는 구조적 설계로 높은 BVDSS와 낮은 Dynamic Ron을 동시에 실현한다."
+      ]
     },
     {
       "id": "42a1b891c822",
@@ -7033,13 +7013,13 @@
       "name": "Infineon",
       "region": "Europe",
       "tier": "core",
-      "items": 4,
-      "news": 4,
+      "items": 3,
+      "news": 3,
       "papers": 0,
       "official": 0,
       "by_device": {
         "GaN": 1,
-        "SiC": 3,
+        "SiC": 2,
         "IGBT": 0,
         "SGT": 0,
         "SJ MOSFET": 0
@@ -7283,7 +7263,7 @@
   },
   "counts": {
     "GaN": 37,
-    "SiC": 36,
+    "SiC": 35,
     "IGBT": 61,
     "SJ MOSFET": 21,
     "SGT": 3
@@ -7311,10 +7291,10 @@
     "failure_reasons": {
       "Invalid/short JSON": 2
     },
-    "cache_hits": 10,
-    "input_tokens": 5956,
-    "output_tokens": 2617,
-    "estimated_cost_usd": 0.00657,
+    "cache_hits": 20,
+    "input_tokens": 6457,
+    "output_tokens": 2856,
+    "estimated_cost_usd": 0.007152,
     "errors": [
       "AI summary failure: Invalid/short JSON",
       "AI summary failure: Invalid/short JSON"

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "source_generated_at": "2026-11-22T21:14:19.751134+00:00",
+  "source_generated_at": "2026-11-22T21:32:26.105696+00:00",
   "benchmark_reviewed_on": "2026-11-12",
   "topics": [
     {
@@ -331,14 +331,15 @@
       "article_candidates": [
         {
           "id": "7e52f45c629b",
-          "title": "A dual-channel trench SiC MOSFET with a p-PolySi/n-SiC heterojunction tunneling channel realizing low R on,sp and V r_on",
+          "title": "p-PolySi/n-SiC 이종접합 터널링 채널을 갖는 듀얼 채널 트렌치 SiC MOSFET의 저 R_on,sp 및 낮은 V_r_on 구현",
           "date": "2026-08-01",
           "kind": "paper_metadata",
           "publisher": "Semiconductor Science and Technology",
           "url": "https://doi.org/10.1088/1361-6641/ae98ab",
           "confidence": "title_keyword_match",
           "matched_terms": [
-            "trench sic"
+            "trench sic",
+            "트렌치"
           ]
         },
         {
@@ -897,7 +898,7 @@
         },
         {
           "id": "89dc5e4613be",
-          "title": "Simulation study of void impact in trench-filling-epitaxy-based 4H-SiC semi-superjunction schottky rectifiers",
+          "title": "트렌치 충전 에피택시 기반 4H-SiC Semi-SuperJunction 쇼트키 정류기의 보이드 영향 시뮬레이션 연구",
           "date": "2026-09-28",
           "kind": "paper_metadata",
           "publisher": "Power Electronic Devices and Components",

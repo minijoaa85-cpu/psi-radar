@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-22T21:14:19.751134+00:00",
+  "generated_at": "2026-11-22T21:32:26.105696+00:00",
   "reports": [
     {
       "week": "2026-W48",
       "week_start": "2026-11-23",
-      "generated_at": "2026-11-22T21:14:19.751134+00:00",
+      "generated_at": "2026-11-22T21:32:26.105696+00:00",
       "new_items_count": 0,
       "published_this_week_count": 0,
       "research_reference_count": 128,
