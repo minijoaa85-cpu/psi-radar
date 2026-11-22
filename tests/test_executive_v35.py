@@ -38,8 +38,8 @@ def test_recommendations_are_questions_not_unverified_facts():
     assert 'if(!row)return' in HTML
 
 def test_history_and_slides_are_synchronized():
-    assert HISTORY["latest_version"]=="V3.5"
-    assert len(HISTORY["entries"])==36
-    assert HISTORY["entries"][-1]["version"]=="V3.5"
+    assert HISTORY["latest_version"]=="V3.6"
+    assert len(HISTORY["entries"])==37
+    assert HISTORY["entries"][-1]["version"]=="V3.6"
     assert all(HISTORY["entries"][-1][key] for key in ("summary","background","changes","value"))
     assert "V3.5" in (ROOT/"scripts"/"build_history_slides.py").read_text(encoding="utf-8")
