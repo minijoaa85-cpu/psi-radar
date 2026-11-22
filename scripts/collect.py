@@ -50,6 +50,13 @@ def unique(rows):
   key=(r.get("doi") or re.sub("[^a-z0-9]","",r["title"].lower())).lower()
   if key not in seen:seen.add(key);out.append(r)
  return out
+def count_reused_papers(records, category):
+ """Count reused papers safely; legacy metadata may use null or omit the flag."""
+ return sum(1 for record in records
+            if record.get("category")==category
+            and record.get("kind")=="paper"
+            and bool(record.get("stale_reused")))
+
 def news(session,query,category,days=7):
  u="https://news.google.com/rss/search?q="+quote(query+" when:"+str(days)+"d",safe="")+"&hl=en-US&gl=US&ceid=US:en"
  r=session.get(u,timeout=20);r.raise_for_status()
@@ -157,7 +164,7 @@ def main():
                                   "failed":1,"skipped":0,"accepted_candidates":0,
                                   "search_state":"unavailable","providers":{}})
   total=sum(r["category"]==cat and r["kind"]=="paper" for r in published)
-  reused=sum(r["category"]==cat and r["kind"]=="paper" and r.get("stale_reused") for r in published)
+  reused=count_reused_papers(published,cat)
   fresh=total-reused
   state["published_papers"]=total
   state["fresh_papers"]=fresh
@@ -171,7 +178,7 @@ def main():
  "counts":{c:sum(r["category"]==c for r in published) for c in TECH},"errors":errors,"sources":["Crossref","OpenAlex","Google News RSS","Verified Manufacturer Official Articles"],"financials":[],"product_specs":[],"notice":"서지·뉴스 메타데이터 기반. 원문 검토 전의 결론이나 금융 실적을 확정하지 않습니다."}
  OUT.parent.mkdir(parents=True,exist_ok=True)
  OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2),encoding="utf-8")
- print("Collected",len(rows),"records, errors:",len(errors),"previous papers retained:",sum(r.get("stale_reused",False) for r in published))
+ print("Collected",len(rows),"records, errors:",len(errors),"previous papers retained:",sum(1 for r in published if r.get("stale_reused")))
  print("Academic coverage:",json.dumps(research_coverage,ensure_ascii=False))
  print("Competitor mentions:",json.dumps({k:v["items"] for k,v in payload["competitor_stats"].items() if v["items"]},ensure_ascii=False))
  print("Category counts:",json.dumps(payload["counts"],ensure_ascii=False))
