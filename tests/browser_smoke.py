@@ -58,6 +58,15 @@ def check_page(browser,engine,screen,width,height,url):
         assert health["structural_integrity"]=="passed"
         assert health["scientific_verification"]=="not_independently_verified"
         assert health["records"]>0
+        # V3.5 executive queue must be source-synchronized and safely navigable.
+        page.locator("#exec35-cards .ex35-card").first.wait_for(state="visible",timeout=12000)
+        assert page.locator("#exec35-cards .ex35-card").count()==5
+        assert "기준일 일치" in page.locator("#exec35-status").inner_text()
+        assert "원문 검증 전" in page.locator("#exec35-cards").inner_text() or "독립 검증 전" in page.locator("#exec35-cards").inner_text()
+        page.locator('#exec35 [data-ex35-tech="GaN"]').click()
+        assert page.locator("#briefing").is_visible()
+        assert page.locator("#brief-category").input_value()=="GaN"
+        nav.locator('button[data-tab="overview"]').click()
 
         # V3.0 Mission Control is the main Overview landing panel.
         page.locator("#mission30-tabs button").first.wait_for(state="visible",timeout=12000)

@@ -1,4 +1,4 @@
-# PSI Radar V3.4 — Power Semiconductor Intelligence Radar
+# PSI Radar V3.5 — Power Semiconductor Intelligence Radar
 
 공개 자료 기반 한국어 전력반도체 주간 기술 모니터링 웹 플랫폼. GaN (40%) > SiC (30%) > IGBT (10%) = UD/UG SGT (10%) = SJ MOSFET (10%).
 
@@ -458,3 +458,13 @@ GitHub Pages는 저장소 Settings → Pages → **Source: GitHub Actions**를 �
 - **수집 후 Fail-closed 품질 검사:** V3.3 `snapshot_quality.py`에서 `research_coverage`가 포함된 경우 기술군별 카운터 합계·표시된 논문 건수·fresh/reused 구분·방법 버전의 일치 여부를 검사합니다. API 실패/부분 수집/커버리지 공백은 독립적으로 경고하여 기술 경쟁력과 혼동하지 않습니다. 기존 수집본은 하위호환되며 재수집 전까지 상태 미확인으로 처리합니다.
 - **외부 서비스 참고:** Crossref API와 OpenAlex API는 메타데이터 수집에 사용됩니다. OpenAlex API의 이용 제한·키 정책은 변경될 수 있으며 `OPENALEX_API_KEY` 환경변수가 있으면 요청에 사용합니다. 장기 운영 시 개인 API 키 등록과 한도 확인이 권장되지만 소프트웨어에 키를 하드코딩하지 않습니다.
 - **릴리스/품질:** `site/version_history.json`에 V3.4 추가. 기존 History·PDF/PPT 공유 다운로드·브라우저 대응을 유지하며 **35개 버전/39장**을 배포 시 자동 생성합니다. 새 학술 검색은 실제 예약 실행 또는 수동 실행에서만 수행되고, 단순 GitHub 코드 Push는 V3.3 원칙에 따라 기존 검증 스냅샷만 배포합니다.
+
+## V3.5 — Executive Intelligence Brief (2026-11-23)
+
+- **목적:** V3.4의 서지·시장 모니터링 신호를 기술 의사결정자의 첫 화면으로 연결하는 **2분 검토 작업대**입니다. 개별 기사 제목이나 AI 문구를 검증된 공정 성능·양산 성과로 간주하지 않습니다.
+- **Overview 최상단:** 기존 Data Trust 아래, Intelligence Mission Control 위에 `Executive Intelligence Brief V3.5`를 배치합니다. GaN·SiC·IGBT·SJ MOSFET·SGT 순서대로 `site/briefing.json`에 **실제로 저장된 출처 연결 후보를 각 1개 이하** 표시합니다. 그 기술에 자료가 없으면 빈 상태를 표시합니다.
+- **검증된 출처 우선 읽기 큐:** 이미 생성한 브리핑의 `change_candidate`, `source_level`, `reading_priority`, 발행일을 이용해 기술군 내부 우선 열람 후보를 선정합니다. 공식 발표는 제조사 주장, 학술 항목은 서지 메타데이터, 뉴스는 검증 전 제목 후보라는 경고를 별도 제공합니다. 후보 선정은 기술·기업 경쟁력 순위가 아닙니다.
+- **Process Integration 검토 질문:** 5개 기술군별로 Dynamic RDS(on)/Vth, SiC gate oxide, IGBT VCE(sat)/Eoff, SJ Charge Balance/Qrr, SGT Shield/Qgd 등을 살펴볼 검토 질문을 제공합니다. **어떤 원문의 실제 측정 결과에 대한 결론이 아니라 일반적인 후속 점검 항목**입니다.
+- **데이터 정합성:** `site/data.json.generated_at`과 `site/briefing.json.generated_at`이 다르면 Brief를 표시하지 않고 원본/파생본 일치 여부를 확인하도록 안내합니다. 현재 원본 119건은 신규 수집 성공 전까지 유지합니다.
+- **탐색 연동:** 각 후보의 실제 https 원문 링크, 기술별 Briefing 이동, 전체 원문 브리핑 보기 기능을 추가했습니다. 기존 V3.4 수집, V3.3 무결성 검사, 4개 메뉴 그룹, Benchmark·공식 IR·History는 유지합니다.
+- **검증:** 출처 일치, 5개 분야 후보, 원문 검증 상태와 후속 질문, 동적 기술별 이동을 단위·Playwright UI 검사에 추가합니다. V3.5를 `site/version_history.json`에 기록하여 **36개 버전, PDF/PPT 40장**을 자동 생성합니다.

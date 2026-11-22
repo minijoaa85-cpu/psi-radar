@@ -80,8 +80,8 @@ def test_legacy_snapshot_is_not_mislabeled_as_queried():
         assert marker in HTML
 
 def test_v34_release_history_shared_pdf_ppt():
-    assert HISTORY["latest_version"]=="V3.4"
-    assert len(HISTORY["entries"])==35
-    assert HISTORY["entries"][-1]["version"]=="V3.4"
-    assert all(HISTORY["entries"][-1].get(k) for k in ("summary","background","changes","value"))
+    v34=next(x for x in HISTORY["entries"] if x["version"]=="V3.4")
+    assert len(HISTORY["entries"])>=35
+    assert HISTORY["latest_version"]==HISTORY["entries"][-1]["version"]
+    assert all(v34.get(k) for k in ("summary","background","changes","value"))
     assert '"version_history.json"' in (ROOT/"scripts"/"build_history_slides.py").read_text(encoding="utf-8")

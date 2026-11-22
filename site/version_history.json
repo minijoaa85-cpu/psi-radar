@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "product": "PSI Radar",
-  "latest_version": "V3.4",
-  "updated_on": "2026-11-19",
+  "latest_version": "V3.5",
+  "updated_on": "2026-11-23",
   "source_policy": "Version summaries curated from repository README and implementation commits; no unverifiable feature claims.",
   "entries": [
     {
@@ -319,6 +319,15 @@
       "background": "기존 IGBT·SJ·SGT만 12개월 Crossref/OpenAlex 집중 검색하였고 GaN·SiC는 45일 중심이어서 논문 공백이 발생. 뉴스 제품 발표까지 물리 키워드 단일 점수로 낮게 평가되어 중요 동향 식별이 어려웠음",
       "changes": "5개 기술군 전체에 12개월 집중 검색·제한된 쿼리·중복 제거·분야별 표본 제한을 적용; API 시도·성공·실패·Rate-limit·실제 게시 논문과 이전 자료 재사용을 구분. 관련성 metadata-rule-v2에 물리 키워드 점수와 제품·양산·시장 동향 신호를 분리하고, Research Coverage Monitor에 검색 미기록·성공 0건·API 오류를 명확히 표시",
       "value": "검색이 안 된 상황을 논문이 없다는 결론으로 오해하지 않고 GaN·SiC 학술 정보를 더 넓게 발견하며, 실제 공정·소자 물리와 제품·시장 동향을 별도 관점에서 탐색"
+    },
+    {
+      "version": "V3.5",
+      "title": "Executive Intelligence Brief · 2분 기술 의사결정 큐",
+      "date": "2026-11-23",
+      "summary": "Overview에 GaN·SiC·IGBT·SJ·SGT 기술군별 1개씩 출처 연결형 2분 브리핑과 물리 검증 질문을 추가",
+      "background": "수집·논문·제품 그래프는 풍부하지만 Process Integration 출신 기술 의사결정자가 어떤 발표를 우선 검토하고 무엇을 원문에서 확인해야 하는지 첫 화면에 드러나지 않았음",
+      "changes": "Overview에 공식 발표·논문 서지·뉴스 후보를 각각 구분하는 Executive Brief 패널 추가. 브리핑 데이터와 수집본 생성 시각이 다르면 표시를 보류하고, 기술군별 읽기 후보 및 원문 링크·발행일·출처·신규성 미확인을 노출. Device Physics 점검 질문과 기술별 Briefing 이동 버튼을 연동",
+      "value": "경영진이 공개자료 주요 후보 5개를 2분 안에 살펴보고 원문·소자 물리·신뢰성·제품 비교로 후속 검토를 연결하되, 검증하지 않은 기술 성능 개선이나 양산 실적을 단정하지 않음"
     }
   ]
 }
