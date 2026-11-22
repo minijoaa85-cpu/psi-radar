@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "version": "2.1",
-  "generated_at": "2026-11-15T23:58:01.896504+00:00",
+  "generated_at": "2026-11-22T21:14:19.751134+00:00",
   "benchmark_reviewed_on": "2026-11-12",
   "categories": [
     {
@@ -28,26 +28,26 @@
           "evidence": [
             {
               "title": "미쓰비시 전기, GaN 기판을 이용한 GaN 트랜지스터 주파수 분산 억제 세계 최초 시연",
-              "date": "2026-11-10",
-              "source": "WebWire",
-              "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9GU0Q3X1NQbHR6ZVNjSHhPVUExdnBQV195RkJMLTJnN1VpM0E0ZGROdXBBSnJrSTlCNHR1Rmh0U2ZfTVo0MlRmSWp3Snd6VkI1VUMwQlc5WHptcENuakNKbTR4TEYtck9t?oc=5",
+              "date": "2026-11-08",
+              "source": "Yahoo Finance",
+              "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQSFVIeUpoNG1BS1daNDlVQ0VPVW10N25FZTNDdW5KZkpvVGc1eFNlWk10M3BmMUx0MURxZldFQUJUUlp4ZTdBRE1udHREb1l2VXpRRjFpSXE5OWZwLVpPMG0wb2dJdVRrVERlR2JfWTJnZm51SHhNVUt4WVhFY1NudG5FR3ZLak4xcGNzbWZiUnRYdEFrWHR6M2V6M2hUb2h3V2FN?oc=5",
               "kind": "news_title_candidate",
               "confidence": "title_keyword_match"
             },
             {
-              "title": "미쓰비시 전기, GaN-on-GaN 트랜지스터가 주파수 분산을 크게 억제한다고 발표했으나 수치는 제공하지 않음 - XenoSpectrum",
-              "date": "2026-11-10",
-              "source": "XenoSpectrum",
-              "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1pX1Z3UG1wTDZMTzAzam8zc2VCNHE5d2xFZ3ZrdkZKdVBaNGFYaWNjeHk4NnFycm11ZHpLWF9CQ3U4UlNCVFJIWjV5TXpMLS1XZVBtb2pwQjV5NjV3cGY2WDA1ZVBUQjB0SE10MHFiQkpydU1yRU1LNmx3UGtCTWM?oc=5",
-              "kind": "news_title_candidate",
+              "title": "Polarization engineered AlPN barriers for suppression of current collapse in p-GaN gate GaN HEMTs",
+              "date": "2026-09-01",
+              "source": "Materials Today Communications",
+              "url": "https://doi.org/10.1016/j.mtcomm.2026.116188",
+              "kind": "paper_metadata",
               "confidence": "title_keyword_match"
             },
             {
-              "title": "미쓰비시 전기, GaN 기판을 이용한 GaN 트랜지스터 주파수 분산 억제 세계 최초 시연",
-              "date": "2026-11-09",
-              "source": "Yahoo Finance Singapore",
-              "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPZ3J1MmJER2hPQW50TGV6dHIwcHRqZC1tSVBybktUNW5JX0xkdFlHbXdhMlNjR2h6OGRaSzZmQ2c0cHZmN3RkQ19Zei16VXhWRTBGOTdBM2ZFelVxVjRDYlhqNFIzWUkwVEQ0OGJEdER0aWM3aGV6RVRqNDZVX1NsYTROaS03a1V1YVNRamdCazliTDg?oc=5",
-              "kind": "news_title_candidate",
+              "title": "Physics and improvement of dynamic RON in GaN power HEMTs: A comprehensive review",
+              "date": "2026-06-20",
+              "source": "Micro and Nanostructures",
+              "url": "https://doi.org/10.1016/j.micrna.2026.208811",
+              "kind": "paper_metadata",
               "confidence": "title_keyword_match"
             }
           ]
@@ -57,8 +57,17 @@
           "name": "Gate Reliability",
           "simple": "게이트 구동과 장기 안정성",
           "why": "Threshold 변화와 게이트 누설은 사용 조건에 따라 달라질 수 있습니다.",
-          "evidence_count_sample": 0,
-          "evidence": []
+          "evidence_count_sample": 1,
+          "evidence": [
+            {
+              "title": "Threshold voltage instability in Schottky p-GaN gate HEMTs under dynamic gate stress",
+              "date": "2026-11-04",
+              "source": "Microelectronic Engineering",
+              "url": "https://doi.org/10.1016/j.mee.2026.112518",
+              "kind": "paper_metadata",
+              "confidence": "title_keyword_match"
+            }
+          ]
         },
         {
           "id": "gan-switching",
@@ -85,141 +94,151 @@
           "evidence_status": "manufacturer_claim"
         },
         {
-          "title": "Power Integrations 실적 발표: GaN 성장에 직면한 역풍",
-          "date": "2026-11-15",
-          "source": "TipRanks",
-          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQVlRyV1pNREYwTWItLVVVbS1IaUNreDZCUlRJSHVHNzduMFBvZkMxMlF1Q0syRGtVbTRIbjJIVUxUNFRxYVJoX0VBSlZOQVBocTJSWjlfQXg1eEJTWmY0alhJR1cwU0x1U2xVZVlFeFRYMTRxUXRxZEF5c1FXbVNINDFKUjdGWWFkemFhY1RESHdsM1lMN1UxVDhRRzNmQXpjRjZ5aUhmM3hZMmg1dWxFcw?oc=5",
+          "title": "다이오드 내장 p-GaN 게이트 HEMT를 통한 문턱전압 설계",
+          "date": "2026-11-06",
+          "source": "Semiconductor Science and Technology",
+          "url": "https://doi.org/10.1088/1361-6641/aebef4",
+          "source_level": "research",
+          "summary": "공개 논문 메타데이터를 확인했습니다. 실험 결과와 데이터는 원문에서 검토해야 합니다.",
+          "topic_ids": [],
+          "companies": [],
+          "change_candidate": false,
+          "evidence_status": "metadata_only"
+        },
+        {
+          "title": "Negative Activation Energy Under Dynamic Stress of 650 V E-mode GaN HEMTs",
+          "date": "2026-11-04",
+          "source": "Microelectronic Engineering",
+          "url": "https://doi.org/10.1016/j.mee.2026.112534",
+          "source_level": "research",
+          "summary": "공개 논문 메타데이터를 확인했습니다. 실험 결과와 데이터는 원문에서 검토해야 합니다.",
+          "topic_ids": [],
+          "companies": [],
+          "change_candidate": false,
+          "evidence_status": "metadata_only"
+        },
+        {
+          "title": "Threshold voltage instability in Schottky p-GaN gate HEMTs under dynamic gate stress",
+          "date": "2026-11-04",
+          "source": "Microelectronic Engineering",
+          "url": "https://doi.org/10.1016/j.mee.2026.112518",
+          "source_level": "research",
+          "summary": "공개 논문 메타데이터를 확인했습니다. 실험 결과와 데이터는 원문에서 검토해야 합니다.",
+          "topic_ids": [
+            "gan-gate"
+          ],
+          "companies": [],
+          "change_candidate": false,
+          "evidence_status": "metadata_only"
+        },
+        {
+          "title": "Physics-based gate stack optimization of p-GaN/AlGaN/GaN HEMTs for balanced threshold voltage and on-resistance",
+          "date": "2026-11-01",
+          "source": "Semiconductor Science and Technology",
+          "url": "https://doi.org/10.1088/1361-6641/aebef3",
+          "source_level": "research",
+          "summary": "공개 논문 메타데이터를 확인했습니다. 실험 결과와 데이터는 원문에서 검토해야 합니다.",
+          "topic_ids": [],
+          "companies": [],
+          "change_candidate": false,
+          "evidence_status": "metadata_only"
+        },
+        {
+          "title": "Mitigating the effect of traps in p-GaN HEMTs through field plate and doping optimization",
+          "date": "2026-10-31",
+          "source": "Scientific Reports",
+          "url": "https://doi.org/10.1038/s41598-026-75935-w",
+          "source_level": "research",
+          "summary": "공개 논문 메타데이터를 확인했습니다. 실험 결과와 데이터는 원문에서 검토해야 합니다.",
+          "topic_ids": [],
+          "companies": [],
+          "change_candidate": false,
+          "evidence_status": "metadata_only"
+        },
+        {
+          "title": "수동 신뢰성을 넘어: GaN HEMT의 반복 전자 풍력 재생 기술",
+          "date": "2026-10-23",
+          "source": "ACS Applied Electronic Materials",
+          "url": "https://doi.org/10.1021/acsaelm.6c01391",
+          "source_level": "research",
+          "summary": "공개 논문 메타데이터를 확인했습니다. 실험 결과와 데이터는 원문에서 검토해야 합니다.",
+          "topic_ids": [],
+          "companies": [],
+          "change_candidate": false,
+          "evidence_status": "metadata_only"
+        },
+        {
+          "title": "Advanced Energy Introduces GaN-Based 100 W USB PD3.0 Adapter for Type BF Medical and Industrial Applications - Electronic Engineering Journal",
+          "date": "2026-11-20",
+          "source": "Electronic Engineering Journal",
+          "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQYWtzWkViWFJ3Y2I2Q3NPeXhCTFpFbmpSb09aYW5EcUJsNU5xSFJvSVE4RUVHUmRpY2NfaEE3S01wd3dpa3YxMEVBRDhHMzNZNmxhWEJ5WFJVZzA0NldyVjFTalU2RmRIR0JXQkQ2bHR5MU5GYlZJXzZNd1ZiS19kQmdnQWxJdEhRQm0telZObXNTVHVlTDhONGNNdTFQSm5tY1RsQlZGQldBWEtqc3pRVTBLNXlSS2RZdWllV1FJcXdndE5NdGw4U3poVXNYLW9hT08wVk9SY3kzc3dYeHh5SzRsTQ?oc=5",
           "source_level": "news",
-          "summary": "제목 기준: Power Integrations 실적 발표: GaN 성장에 직면한 역풍",
+          "summary": "제목 기준: Advanced Energy Introduces GaN-Based 100 W USB PD3.0 Adapter for Type BF Medical and Industrial Applications - Electronic Engineering Journal",
           "topic_ids": [],
           "companies": [],
           "change_candidate": true,
           "evidence_status": "title_not_verified"
         },
         {
-          "title": "Visteon, SHINRY, Infineon, GaN BDS 기술 기반 단일 스테이지 온보드 충전기 협력 개발",
-          "date": "2026-11-13",
-          "source": "Electronic Engineering Journal",
-          "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQUDc0RGF3SzI1OEVXc2xWcGFsNVlxbzNXd3JlMHdoMjV1aGdSUko2YzRrSXhpUERCQXlkQU9sb09LZUw3Xy0tQVhjUFltQkMwVnlTZmxVWDlvMlFmX3RuSjhfSmo0RlpWYnIyWEtfN0I2V01tcmxnWDY0aTNYRjFPSG9MaXFMSGRTVkRZdS1temdCQVdLRlBoTXhfTUNaMlZuamlCZ2JhMHNlNnRaZDBnRXU2Q296Wi1GMjgzUmEzeFRORkRRNGJWTktvN3p0MlZEc2VpRWdjb1VkYmhaSjE0cXJzRQ?oc=5",
+          "title": "EPC Space Expands Radiation-Tolerant GaN HEMT Portfolio with Plastic QFN and Hermetic Packaging Options - The Tennessean",
+          "date": "2026-11-18",
+          "source": "The Tennessean",
+          "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQLVNNYnNUV2kyUUNyUlJZV3J0NzNaeURydGRYalhJMzV4U000Z3FHck1GbjljbWR6ZGVCei1KeU41NS1aazNxdFNmWGY2ZEdwN2wybWRCaWc4SDhyRkplVy1fM1pHMmRoMnNaOGczMURqUnVFdHF1THNIUFRDQTBrR2xiRWRISko4YTk0cG5YV1dWUk1UWk5LSV9wd2pZclVYQ0dkdDdaeVc0RklPYXVkVHlzSXhDeDRNcnRWYVJHWmQ2NlNId25fdXZlTlp0NjI1bF9iUVV0YVZvdjdtNVFoOGk1MWx1bWR1RTd5UDR0Yw?oc=5",
           "source_level": "news",
-          "summary": "제목 기준: Visteon, SHINRY, Infineon, GaN BDS 기술 기반 단일 스테이지 온보드 충전기 협력 개발",
+          "summary": "제목 기준: EPC Space Expands Radiation-Tolerant GaN HEMT Portfolio with Plastic QFN and Hermetic Packaging Options - The Tennessean",
           "topic_ids": [],
-          "companies": [
-            "infineon"
-          ],
-          "change_candidate": false,
-          "evidence_status": "title_not_verified"
-        },
-        {
-          "title": "Navitas Semiconductor, Renesas의 새로운 갈륨 나이트라이드 제품 관련 소송 제기",
-          "date": "2026-11-12",
-          "source": "TipRanks",
-          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOUWNlOE9mbG1TQzFKMHJCNXl1RDh4SVlIdUhXMDd3NjlKcHNYVnBlblBTMlNtSTctQU1iNEJBb1VUcmRMcjhKRk1zRW40LThqX0I1bXhVN0xVN0lPbldkLUlILU9CS0ZEYzNZNzk5MDZRMk1lNkgtVmZVX042TDZvbFo0d01wTW5mNXU1U0RsMnE2d1V6NFk2ZG9QeUlaWDBFS3Zvb01OX2RKQTlZald5Tk8tOTVNY3VfalE?oc=5",
-          "source_level": "news",
-          "summary": "제목 기준: Navitas Semiconductor, Renesas의 새로운 갈륨 나이트라이드 제품 관련 소송 제기",
-          "topic_ids": [],
-          "companies": [
-            "navitas"
-          ],
-          "change_candidate": false,
-          "evidence_status": "title_not_verified"
-        },
-        {
-          "title": "Navitas Semiconductor, Renesas GaN 제품 관련 특허 소송 제기 후 주가 5% 하락",
-          "date": "2026-11-12",
-          "source": "Traders Union",
-          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNX3NIM3h6WHU0Wnc0dkVuWkJFUzd6ZTRFcEFwWWU2OW9XdHpqNEV3Qks4azZrbUo2VVRYUnAyM0prUk1Ibzl5NXlEZFp3Wmk0Wk9BTGpCYjd6d0l0azdkcEFOVnFyU2lvSTlTSFlNZXRxY01TN3l1UFZaZ2NBVWhNc2JTU1dNbUpmTGc3eGdtYWVTZmlJeWstX2RBS3Q?oc=5",
-          "source_level": "news",
-          "summary": "제목 기준: Navitas Semiconductor, Renesas GaN 제품 관련 특허 소송 제기 후 주가 5% 하락",
-          "topic_ids": [],
-          "companies": [
-            "navitas"
-          ],
-          "change_candidate": false,
-          "evidence_status": "title_not_verified"
-        },
-        {
-          "title": "미쓰비시 전기, GaN 기판을 이용한 GaN 트랜지스터 주파수 분산 억제 세계 최초 시연",
-          "date": "2026-11-10",
-          "source": "WebWire",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9GU0Q3X1NQbHR6ZVNjSHhPVUExdnBQV195RkJMLTJnN1VpM0E0ZGROdXBBSnJrSTlCNHR1Rmh0U2ZfTVo0MlRmSWp3Snd6VkI1VUMwQlc5WHptcENuakNKbTR4TEYtck9t?oc=5",
-          "source_level": "news",
-          "summary": "제목 기준: 미쓰비시 전기, GaN 기판을 이용한 GaN 트랜지스터 주파수 분산 억제 세계 최초 시연",
-          "topic_ids": [
-            "gan-dynamic-ron"
-          ],
-          "companies": [
-            "mitsubishi"
-          ],
-          "change_candidate": false,
-          "evidence_status": "title_not_verified"
-        },
-        {
-          "title": "미쓰비시 전기, GaN-on-GaN 트랜지스터가 주파수 분산을 크게 억제한다고 발표했으나 수치는 제공하지 않음 - XenoSpectrum",
-          "date": "2026-11-10",
-          "source": "XenoSpectrum",
-          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1pX1Z3UG1wTDZMTzAzam8zc2VCNHE5d2xFZ3ZrdkZKdVBaNGFYaWNjeHk4NnFycm11ZHpLWF9CQ3U4UlNCVFJIWjV5TXpMLS1XZVBtb2pwQjV5NjV3cGY2WDA1ZVBUQjB0SE10MHFiQkpydU1yRU1LNmx3UGtCTWM?oc=5",
-          "source_level": "news",
-          "summary": "제목 기준: 미쓰비시 전기, GaN-on-GaN 트랜지스터가 주파수 분산을 크게 억제한다고 발표했으나 수치는 제공하지 않음 - XenoSpectrum",
-          "topic_ids": [
-            "gan-dynamic-ron"
-          ],
-          "companies": [
-            "mitsubishi"
-          ],
+          "companies": [],
           "change_candidate": true,
           "evidence_status": "title_not_verified"
         },
         {
-          "title": "미쓰비시 전기, GaN 기판을 이용한 GaN 트랜지스터 주파수 분산 억제 세계 최초 시연",
-          "date": "2026-11-09",
-          "source": "Yahoo Finance Singapore",
-          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPZ3J1MmJER2hPQW50TGV6dHIwcHRqZC1tSVBybktUNW5JX0xkdFlHbXdhMlNjR2h6OGRaSzZmQ2c0cHZmN3RkQ19Zei16VXhWRTBGOTdBM2ZFelVxVjRDYlhqNFIzWUkwVEQ0OGJEdER0aWM3aGV6RVRqNDZVX1NsYTROaS03a1V1YVNRamdCazliTDg?oc=5",
+          "title": "로옴, GaN 고주파 스위칭용 TP-PFC 컨트롤러 IC 개발",
+          "date": "2026-11-19",
+          "source": "GlobeNewswire",
+          "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPUWlZelBnTnhSbGpiTVFJcC1RZ1lNNWd4Qkh4UnZLQVhvTEFHYllSS3FTQTFCV2Q3ekI2UTNneVR2akdHb2VWM2tmaTRBV2lnLUZIWXV5MUJpYW80LWUzUUc2NVlzXzh5NVlfSWctXzhDcVVROHNXcUhzd3FyZ2ZSNEpwci1YZHBfd3ZIUnVpMy1vVEJ6WGR1bUtLWFh2VmtmUExQTVFnaTFwbWY1WDFySWd0bFpQSzB1aDhsbzhXcmVLQ1JjMGRWV242SEFMel9ERFI5bjRB?oc=5",
           "source_level": "news",
-          "summary": "제목 기준: 미쓰비시 전기, GaN 기판을 이용한 GaN 트랜지스터 주파수 분산 억제 세계 최초 시연",
-          "topic_ids": [
-            "gan-dynamic-ron"
-          ],
+          "summary": "제목 기준: 로옴, GaN 고주파 스위칭용 TP-PFC 컨트롤러 IC 개발",
+          "topic_ids": [],
           "companies": [
-            "mitsubishi"
+            "rohm"
           ],
           "change_candidate": false,
           "evidence_status": "title_not_verified"
         },
         {
-          "title": "미쓰비시 전기, 전력 소비 절감 위한 세계 최초 GaN 기술 진보 주장",
-          "date": "2026-11-09",
-          "source": "Yahoo Tech",
-          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOU3dFVV84S1lfMTh2LUJ0R3YzS0dFX2hpanB6RnhrWG54bW42SjhHNEthZjBfNUhUc0lGOTBFYUF3NGsybnR6ZVM3clFvMFVQUDVkaTZGLVNzWDlYcGFtWlVnN2pJX3BoQUF6UDAwYVdpczN4OVRQanJ4VldLRlRXbUpiT1JMN1Q4S012ZFZGLVZ6aGxEejkydQ?oc=5",
+          "title": "ROHM Develops TP-PFC Controller IC for GaN High-Frequency Switching - TimesTech",
+          "date": "2026-11-19",
+          "source": "TimesTech",
+          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQZ1dyTDM1ejR3ZVczeXN0bTg1cU16ekgzNHdNYkR1NE9uUmlPZWdMYkVpemZ2ZGhxaGxLT0JENGhSWEhvZ09CWlhXVmYyLWxYZklmVnliRUUzR1VPaWFqSTczNkc0SVAtRGV4RW9VMWtVV09mUnFlRXhGSXRjLVRlekxtbGppRThEcE5FR3Fta3Nacjg?oc=5",
           "source_level": "news",
-          "summary": "제목 기준: 미쓰비시 전기, 전력 소비 절감 위한 세계 최초 GaN 기술 진보 주장",
+          "summary": "제목 기준: ROHM Develops TP-PFC Controller IC for GaN High-Frequency Switching - TimesTech",
           "topic_ids": [],
           "companies": [
-            "mitsubishi"
+            "rohm"
           ],
           "change_candidate": false,
           "evidence_status": "title_not_verified"
         },
         {
-          "title": "Innoscience INN650D080BS 650 V 60 mΩ GaN - TechInsights",
-          "date": "2026-11-05",
-          "source": "TechInsights",
-          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5kazBWSF8xZ1NWSkFIMmZXNkFzTmNDVUJlVmc4bkNTMWdPcDIycVczU2ZUYWFJajhYeWwtNGI3SUw4V19QX19raXlHcmdkX2h1VFJFTGpZQkl4YWE1c1ZNRFhQN1Iwd3R1bFcwQkF0Nm1tc0hFeDFSMExaOXlFSHc?oc=5",
+          "title": "ROHM Develops TP-PFC Controller IC for GaN High-Frequency Switching - Yahoo Finance",
+          "date": "2026-11-19",
+          "source": "Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQMlJvR01MVU9PUGJ2UVF5SnpLd0pBcTQzRkVldXQ1SWJtT2drMTZ2Rm5ORm5tMEtad2lRTXBEOWJsVDdQbEZyV0NILWVkQmcxb0VCUmUzRFJ2WFBad09VZkxFbE1Oc2cxTC1rNGtTcjJnZlhxTnNJYlVqbUt0M3VRaFZqTTQ2UWFGb0FNNWdqUmFsc1JiUkFF?oc=5",
           "source_level": "news",
-          "summary": "제목 기준: Innoscience INN650D080BS 650 V 60 mΩ GaN - TechInsights",
+          "summary": "제목 기준: ROHM Develops TP-PFC Controller IC for GaN High-Frequency Switching - Yahoo Finance",
           "topic_ids": [],
           "companies": [
-            "innoscience"
+            "rohm"
           ],
           "change_candidate": false,
           "evidence_status": "title_not_verified"
         }
       ],
-      "article_count_sample": 10,
+      "article_count_sample": 12,
       "source_counts_sample": {
         "official": 1,
-        "research": 0,
-        "news": 9
+        "research": 6,
+        "news": 5
       },
       "products": [
         {
@@ -732,28 +751,16 @@
       ],
       "competitor_mentions": [
         {
-          "id": "mitsubishi",
-          "name": "Mitsubishi Electric",
-          "mention_count_sample": 4,
+          "id": "rohm",
+          "name": "ROHM",
+          "mention_count_sample": 3,
           "official_count_sample": 0
         },
         {
           "id": "innoscience",
           "name": "Innoscience",
-          "mention_count_sample": 2,
-          "official_count_sample": 1
-        },
-        {
-          "id": "navitas",
-          "name": "Navitas",
-          "mention_count_sample": 2,
-          "official_count_sample": 0
-        },
-        {
-          "id": "infineon",
-          "name": "Infineon",
           "mention_count_sample": 1,
-          "official_count_sample": 0
+          "official_count_sample": 1
         }
       ],
       "weekly_observations": [
@@ -763,6 +770,14 @@
           "week_to_date": "2026-11-15",
           "category_sample_count": 8,
           "topic_title_matches": 3,
+          "topic_official_matches": 0
+        },
+        {
+          "week": "2026-W47",
+          "complete_week": true,
+          "week_to_date": "2026-11-22",
+          "category_sample_count": 8,
+          "topic_title_matches": 0,
           "topic_official_matches": 0
         }
       ],
@@ -789,14 +804,22 @@
           "name": "Trench / Planar",
           "simple": "SiC 셀 구조 변화",
           "why": "채널·JFET·Trench 전계의 균형이 중요합니다.",
-          "evidence_count_sample": 1,
+          "evidence_count_sample": 2,
           "evidence": [
             {
-              "title": "Electronica: Nexperia, 750V SiC 트렌치 MOSFET 및 TOLL 패키징 추가",
-              "date": "2026-11-12",
-              "source": "Electronics Weekly",
-              "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPZ19wNlM2dnhHVnhLY0NDYmdINEN5eHdvYlRGQ05NM0V2cjFLbGJYcDJ1c3cxeUUwZ0QxR0NpcTFnajZGN1BDYklqRjEtSFZkbXNWbGtGbHJRMmV5UjJDN2lCa1dwTW9xUUZLUFJaeU83US1fSU1TeTVSN1RvSVpiM3FTX0UxYnlUR18zd1NkaTdYMURPWUp4NDdBMGNrYkVCRWNNQTRyeVdLWEk1ZmhUMzJLVzJySXBlcGxDcUlpcEFneUFlM0FRVFdGU2x3TEs3Tl8wV1Rpbw?oc=5",
-              "kind": "news_title_candidate",
+              "title": "A dual-channel trench SiC MOSFET with a p-PolySi/n-SiC heterojunction tunneling channel realizing low R on,sp and V r_on",
+              "date": "2026-08-01",
+              "source": "Semiconductor Science and Technology",
+              "url": "https://doi.org/10.1088/1361-6641/ae98ab",
+              "kind": "paper_metadata",
+              "confidence": "title_keyword_match"
+            },
+            {
+              "title": "다양한 게이트 바이어스 조건에서 1200V 비대칭 트렌치 SiC MOSFET의 단일 및 반복 서지 신뢰성",
+              "date": "2026-07-10",
+              "source": "Micromachines",
+              "url": "https://doi.org/10.3390/mi17070823",
+              "kind": "paper_metadata",
               "confidence": "title_keyword_match"
             }
           ]
@@ -806,8 +829,49 @@
           "name": "Gate Oxide Reliability",
           "simple": "SiC 게이트 산화막의 내구성",
           "why": "산화막 전계와 온도·구동 조건에 따른 신뢰성을 함께 확인해야 합니다.",
-          "evidence_count_sample": 0,
-          "evidence": []
+          "evidence_count_sample": 5,
+          "evidence": [
+            {
+              "title": "Gate oxide damage and synergistic effect on the breakdown voltage under reverse bias stress for SiC MOSFET",
+              "date": "2026-04-01",
+              "source": "Journal of Semiconductors",
+              "url": "https://doi.org/10.1088/1674-4926/25110026",
+              "kind": "paper_metadata",
+              "confidence": "title_keyword_match"
+            },
+            {
+              "title": "Impact of Gate Oxide Thickness on the Failure Mechanisms of AC Bias Temperature Instability in SiC MOSFETs",
+              "date": "2026-03-18",
+              "source": "Electronics",
+              "url": "https://doi.org/10.3390/electronics15061266",
+              "kind": "paper_metadata",
+              "confidence": "title_keyword_match"
+            },
+            {
+              "title": "Temperature-Dependent Gate Oxide Degradation and Interface-Trap Mechanisms in Planar SiC MOSFETs Under Dynamic Gate Stress",
+              "date": "2026-03-04",
+              "source": "IEEE Transactions on Electron Devices",
+              "url": "https://doi.org/10.1109/ted.2026.3665857",
+              "kind": "paper_metadata",
+              "confidence": "title_keyword_match"
+            },
+            {
+              "title": "Analysis of gate oxide instability of SiC MOSFETs under ultra-high gate voltage pulse stress",
+              "date": "2026-01-12",
+              "source": "Nanotechnology",
+              "url": "https://doi.org/10.1088/1361-6528/ae2f68",
+              "kind": "paper_metadata",
+              "confidence": "title_keyword_match"
+            },
+            {
+              "title": "Online Detection of SiC MOSFET Gate Oxide Degradation by Drain‐Source Voltage Surge in Inverter",
+              "date": "2026-01-01",
+              "source": "IET Power Electronics",
+              "url": "https://doi.org/10.1049/pel2.70211",
+              "kind": "paper_metadata",
+              "confidence": "title_keyword_match"
+            }
+          ]
         },
         {
           "id": "sic-short",
@@ -820,134 +884,88 @@
       ],
       "articles": [
         {
-          "title": "온세미, AI·전기차·에너지용 4세대 SiC 플랫폼 공개",
-          "date": "2026-11-12",
-          "source": "New Electronics",
-          "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQbmNuc0d0Qzg5OXRIZmJMYTR1WnVtd19QdS1Xd0ItUl9hR3pRdnRPSkFaeGZxcDVHOHZiYmVaRzVIWHY4YWhzWFNPOE5rckI5M1o4TW9aTlliRkc4N1VkR2dPMlY2ejUwWUZkUEkwSG1mOVFpX255N2M2b0dLRWt5MlpQWmNYZHVXQzFPSzE0REdJcWRqM0VVaDd0dlV3RjJlUU5BQnBDTDg2Y3d6WGN6bXRlcG5HbUxDNUxHbTdCSklldzAwOUswQklCNA?oc=5",
-          "source_level": "news",
-          "summary": "제목 기준: 온세미, AI·전기차·에너지용 4세대 SiC 플랫폼 공개",
-          "topic_ids": [],
-          "companies": [
-            "onsemi"
-          ],
-          "change_candidate": true,
-          "evidence_status": "title_not_verified"
-        },
-        {
-          "title": "인피니언, 세계 최초 12인치 SiC 전력 반도체 웨이퍼 공개; 양산 시기는 미공개 - BigGo Finance",
-          "date": "2026-11-11",
-          "source": "BigGo Finance",
-          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1SS3BoMTZpS3BINHppdG84YUliZmt3MnIxbEwyQlM2aFJGUFF2ZTZRV2g5S1dad1FEbzhnaG5hRUI5UTFvZ3NTdFRsUXBVUHlNV1JjWGZyeUQxdjhqb3ozdG05QWFCQzdxbU5jQ3A5Ung0V2g1UGc?oc=5",
-          "source_level": "news",
-          "summary": "제목 기준: 인피니언, 세계 최초 12인치 SiC 전력 반도체 웨이퍼 공개; 양산 시기는 미공개 - BigGo Finance",
-          "topic_ids": [],
-          "companies": [
-            "infineon"
-          ],
-          "change_candidate": true,
-          "evidence_status": "title_not_verified"
-        },
-        {
-          "title": "onsemi introduces EliteSiC M4 fourth-gen silicon carbide platform, with up to 30% higher power density and 35% lower losses - Semiconductor Today",
-          "date": "2026-11-10",
-          "source": "Semiconductor Today",
-          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNZEEtOTJZUTcyMnlfSFBrY1JPQWdWQ3FXRVhNYUlnT0JPZlBvenRyaTZidzBUbVNqQnhtNklnMXpBQnB4QVFvTzFSaFhlZnZ6UzlMMlpTTFRfSjBLak9wbVZDSnI4VXctc2lSN2lPSmdWQjY0MUx1M1JjYWRxVVJLNw?oc=5",
-          "source_level": "news",
-          "summary": "제목 기준: onsemi introduces EliteSiC M4 fourth-gen silicon carbide platform, with up to 30% higher power density and 35% lower losses - Semiconductor Today",
-          "topic_ids": [],
-          "companies": [
-            "onsemi"
-          ],
-          "change_candidate": true,
-          "evidence_status": "title_not_verified"
-        },
-        {
-          "title": "Wolfspeed (WOLF) Stock May Be Undervalued As New Silicon Carbide Launch Lands - Simply Wall St",
-          "date": "2026-11-10",
-          "source": "Simply Wall St",
-          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOT3NPQWVpaXBFeWJzWVhqakQza1U3X1FtOHh6Ri0tSkhsMDNKbjhUaDF0YkdMazRpN3NSNVdORzc3UVBfNFlYckdSNEdSdXlBVU54VVJyakxCSDVlR2FMSUcycnFnSlRCQUo1SllocWhXN1AwVTBPYVliQjRMZnZJRnpVcUZyME02N2dZSnRUQ2l2VHJOZGVNNTdZMXZKNjd1amxHa2NrTVM3VVd3MWRxUmRieUdKNXZPOC1xblYwblNfQy1sVVJIWVMwdWnSAdIBQVVfeXFMTmJJb1Bmc1piTm44Slg0MV9jZ1RKVUFScGtlbHgyRVZNTld5LS1qYTFXX04xcTJLZm5Va0hiX1ZlOFNPLXdobU5vUGduTmN5dkVEV2xJRWo4b25iMTByZVJ3b2U2MkpWbmlKeE1VV3VOZUZWUFFuTmFJZ2pUYU9XTzVWb3ZOeFVOMEtnWHVwTHNQa0M0UVRqZkNvMURiS2kzTmJHTEc1bUI5VDBWS2xfWWdoLVhqWDVPa1NUdFFlVW1fNTNUbXhYVWVVQzZxTlVEZERB?oc=5",
-          "source_level": "news",
-          "summary": "제목 기준: Wolfspeed (WOLF) Stock May Be Undervalued As New Silicon Carbide Launch Lands - Simply Wall St",
-          "topic_ids": [],
-          "companies": [
-            "wolfspeed"
-          ],
-          "change_candidate": true,
-          "evidence_status": "title_not_verified"
-        },
-        {
-          "title": "Electronica: Nexperia, 750V SiC 트렌치 MOSFET 및 TOLL 패키징 추가",
-          "date": "2026-11-12",
-          "source": "Electronics Weekly",
-          "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPZ19wNlM2dnhHVnhLY0NDYmdINEN5eHdvYlRGQ05NM0V2cjFLbGJYcDJ1c3cxeUUwZ0QxR0NpcTFnajZGN1BDYklqRjEtSFZkbXNWbGtGbHJRMmV5UjJDN2lCa1dwTW9xUUZLUFJaeU83US1fSU1TeTVSN1RvSVpiM3FTX0UxYnlUR18zd1NkaTdYMURPWUp4NDdBMGNrYkVCRWNNQTRyeVdLWEk1ZmhUMzJLVzJySXBlcGxDcUlpcEFneUFlM0FRVFdGU2x3TEs3Tl8wV1Rpbw?oc=5",
-          "source_level": "news",
-          "summary": "제목 기준: Electronica: Nexperia, 750V SiC 트렌치 MOSFET 및 TOLL 패키징 추가",
-          "topic_ids": [
-            "sic-trench"
-          ],
-          "companies": [],
-          "change_candidate": false,
-          "evidence_status": "title_not_verified"
-        },
-        {
-          "title": "Infineon Produces Functional SiC Power Semiconductors on 300 mm Wafers for the First Time - igor´sLAB",
-          "date": "2026-11-11",
-          "source": "igor´sLAB",
-          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNRW5QMEJ5RWVybXRVc29NUkwzZXFRZnhhYmpEbGtvZkhpWHZVOTk1a29XcS1zUWhSbG1ZTWpEMU91UXB1ZzJfM3pwcHlHazFQY0hFd2J5OXZzZXVWMXM3aUYzcDliS3padnJyWUNIUHktX3lkN3ZuR0x3UGM0bkFHcG1aaGppR183Unk3dlpmXzFxcExNLWc?oc=5",
-          "source_level": "news",
-          "summary": "제목 기준: Infineon Produces Functional SiC Power Semiconductors on 300 mm Wafers for the First Time - igor´sLAB",
-          "topic_ids": [],
-          "companies": [
-            "infineon"
-          ],
-          "change_candidate": false,
-          "evidence_status": "title_not_verified"
-        },
-        {
-          "title": "New 300-mm silicon carbide wafers could boost production of EV chips - Evs | Electric Vehicles Nieuws - Head Topics",
-          "date": "2026-11-11",
-          "source": "Head Topics",
-          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNa1pvN2loR0h5RGpnd3pIZzdCSm9sU2gyd0xjUENob2lQT3E2YU9EUFUxaHo4TzREZjlrN2lacnRiYzdCWUdSMjJWV1RxWWg0blhMajNHMmhDTUY3OUIwdE93VlNpOXRZTUtoejJvbXBFNkd0OEdKUTFteFlfWUpfUGpjUmNqbWxNS04tS29RWktNWUQyRE5Ya1Q2Q1NKRVM0?oc=5",
-          "source_level": "news",
-          "summary": "제목 기준: New 300-mm silicon carbide wafers could boost production of EV chips - Evs | Electric Vehicles Nieuws - Head Topics",
+          "title": "Radio-frequency reflectometry in silicon carbide large-area transistors",
+          "date": "2026-11-19",
+          "source": "Quantum Science and Technology",
+          "url": "https://doi.org/10.1088/2058-9565/aec479",
+          "source_level": "research",
+          "summary": "공개 논문 메타데이터를 확인했습니다. 실험 결과와 데이터는 원문에서 검토해야 합니다.",
           "topic_ids": [],
           "companies": [],
           "change_candidate": false,
-          "evidence_status": "title_not_verified"
+          "evidence_status": "metadata_only"
         },
         {
-          "title": "Why Infineon’s SiC Milestone Matters for Chip Production - Manufacturing Digital",
-          "date": "2026-11-11",
-          "source": "Manufacturing Digital",
-          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOYllOX3F4Wk1Xd2N2NlFsRUlUa0Z4Rnc0SU5QUXc0NHVzMk50Um1JMENqcWpQbjRJNHRWSDYxZXBMNjkyVmJ5dURlZV8xV1I2VTdXNGdtaHc5bEJGYnZfVEZ1WmlyRWZXTVRhNmRqZTlBLVN0em0wOHpGdEM2M2R5d0xfOEJaV0I4ejgyWl9mNmF6Z0pha1JQR0s0WWd6UQ?oc=5",
-          "source_level": "news",
-          "summary": "제목 기준: Why Infineon’s SiC Milestone Matters for Chip Production - Manufacturing Digital",
-          "topic_ids": [],
-          "companies": [
-            "infineon"
-          ],
-          "change_candidate": false,
-          "evidence_status": "title_not_verified"
-        },
-        {
-          "title": "Automotive Tech Forum: The Current State of Sic in EV Design and How It’s Evolving - EE Times",
-          "date": "2026-11-11",
-          "source": "EE Times",
-          "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNM3FqM1JvM2I1SGt6MWlNQktjZWZDR3kzZnVQbWNMMVd1eGY4OFItdm9jNUhwNS1adnBSOHV3M0I4enJRcHlXaFBrMG9HM0lET0NORUs2eGtDTWJHamxtUXpGanNsVkVqczdxbE8tdnNVdTJ5UDVKNDRDdDFGdWkwR3gtZ0lBTlBYVi1Wck5sRmFVaGc2aTJLWlhuVUd3amZCdGp4Ynl2SFo?oc=5",
-          "source_level": "news",
-          "summary": "제목 기준: Automotive Tech Forum: The Current State of Sic in EV Design and How It’s Evolving - EE Times",
+          "title": "Low-loss superjunction SiC MOSFET with improved breakdown voltage and reverse-recovery performance",
+          "date": "2026-11-01",
+          "source": "Semiconductor Science and Technology",
+          "url": "https://doi.org/10.1088/1361-6641/aeba0c",
+          "source_level": "research",
+          "summary": "공개 논문 메타데이터를 확인했습니다. 실험 결과와 데이터는 원문에서 검토해야 합니다.",
           "topic_ids": [],
           "companies": [],
           "change_candidate": false,
-          "evidence_status": "title_not_verified"
+          "evidence_status": "metadata_only"
         },
         {
-          "title": "Infineon processes SiC on 300 mm wafers for the first time - electrive.com",
-          "date": "2026-11-10",
+          "title": "온세미, 새로운 SiC 플랫폼 EliteSiC M4 출시",
+          "date": "2026-11-20",
           "source": "electrive.com",
-          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNblpCQkJvVTE0bXlveE93OVpYdXB3Qk1MVE9IYmJ6MmdxaWMxYzBIcFlBdEFvLUJTb2FHbUJ3RzQ5Rzc3bTIyQU41TXYyQnFRZTZUQkpTaDJSY28wYktIcHNUNnZCcEQwdDNkSW01R2dRWnE0OHhjZldmaEFsd28weG9sT1d5V0RRY0Q3Z0dSZVJybURESk5KYXNqXzE?oc=5",
+          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQSTZfRzg1YW1zLVljSmJ3cDNhN0FuS1RiWTNVamlsaXBNZW1jdkdlUEU5WFFkRUpuRF9hM1JXZkllcUJpQmZnSmFaWDNDWnY5czFMZWFWdS1zSmUtb1FPYjlxd0RXbklPVWNWenp0V2NCdkc5X1QzVHA3X2FlSkFsd0QwcHplN3Q4cG52VA?oc=5",
           "source_level": "news",
-          "summary": "제목 기준: Infineon processes SiC on 300 mm wafers for the first time - electrive.com",
+          "summary": "제목 기준: 온세미, 새로운 SiC 플랫폼 EliteSiC M4 출시",
+          "topic_ids": [],
+          "companies": [
+            "onsemi"
+          ],
+          "change_candidate": true,
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "title": "Infineon launches HybridPACK HD SiC power module for electric truck and bus inverters - Charged EVs",
+          "date": "2026-11-19",
+          "source": "Charged EVs",
+          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPZzB3cktMRjNqX1BoY2ltckVhVGgtb3N1TkNMajRzdzlINzZHQmRTV0s4ajkyNVNyNEstZ3M4VHNoaDVOSVNHUXByeXVpc0lEZkRTQ2VHYlhvZkV4WEhpMWctbFdfNDZyQW9vZGF0NGVQdDZwRjk4NHhNQWpxVTRxT3pVam5YLWtPRzlyQTRFa3d4dHVFRmZHY0hwRmM5d3c3M0dKSHUwbk95Y2FiMHc5bTJ5cGUtMENHRmc?oc=5",
+          "source_level": "news",
+          "summary": "제목 기준: Infineon launches HybridPACK HD SiC power module for electric truck and bus inverters - Charged EVs",
+          "topic_ids": [],
+          "companies": [
+            "infineon"
+          ],
+          "change_candidate": true,
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "title": "Murata introduces MGJ2T2 isolated DC-DC converters for SiC gate drives - Charged EVs",
+          "date": "2026-11-19",
+          "source": "Charged EVs",
+          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPN2FLZGxOT25xc3c5RzQ4ekVTMzM0cXozVU05Z3dFdlRHXzhpS181MjFSbmpGVi1zLXltclJOQXNBWjdKYkc0cTJVQlRuMjV0eWhwZWlIMkp2eGpRSGw4Rk1STlQyOHB3RG9zVFdBUEtCTHFySkw1eVZ1SHpPQXZBRmFwUjhrOThsVlFVMmVxZmE2OXBsMjd4TGNTczM5eF92MHFEblNB?oc=5",
+          "source_level": "news",
+          "summary": "제목 기준: Murata introduces MGJ2T2 isolated DC-DC converters for SiC gate drives - Charged EVs",
+          "topic_ids": [],
+          "companies": [],
+          "change_candidate": true,
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "title": "[Communication Outlook] LG U+ Wins 4 LG U+ Communication Awards · Top 10 Members of the Korean ITU · ETRI Develops SiC Power Semiconductor for Space · 'NAS Forest' Held - 뉴스웍스",
+          "date": "2026-11-20",
+          "source": "뉴스웍스",
+          "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE92ZXBEUE1nT21KWDZTTGZDVVBQSV9pYUZ2U0J5TFptTjVVR2RuckgyVDFsblp6STNmRXhhb1VYWkNCVU5adk5kNGYwdmhxZzJYME9kZThraWZ2YjdHcXVXa3piYmVVNmdQbGZySA?oc=5",
+          "source_level": "news",
+          "summary": "제목 기준: [Communication Outlook] LG U+ Wins 4 LG U+ Communication Awards · Top 10 Members of the Korean ITU · ETRI Develops SiC Power Semiconductor for Space · 'NAS Forest' Held - 뉴스웍스",
+          "topic_ids": [],
+          "companies": [],
+          "change_candidate": false,
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "title": "Infineon's Silicon Carbide Milestone and EV Charger Tie-Up Meet a Cautious Wall Street - ad-hoc-news.de",
+          "date": "2026-11-18",
+          "source": "ad-hoc-news.de",
+          "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxPMnJCdnNUcGl2UnRmMmg0Um9BNld2R1BpM3duTHlBRWJKRjhPd2xyYWRNVUNSS2FxbWQ2aVRFMGpQV1k2aU81a0xLTGloVllUNjlqQzJhdTY1eXRrdFF4ZGFTVEZLNWJhQzJlRENyT1JPSk1BRWc0Skk2OW5WN1VNdkxJS2oyNFhzbWw4blB1Q3RJX3JUaGE4dGNDMkdZSHl4Vkc5dW5GajlxbHgtRFBSLV9YVXVvS0NzRFJEWlI1cmh1MEVXbVA5cUpRanluVVl6SXFscTAyMXNRdUZ1RVNZdHk3TmdZeUQ4TmhzcG9iZw?oc=5",
+          "source_level": "news",
+          "summary": "제목 기준: Infineon's Silicon Carbide Milestone and EV Charger Tie-Up Meet a Cautious Wall Street - ad-hoc-news.de",
           "topic_ids": [],
           "companies": [
             "infineon"
@@ -956,30 +974,64 @@
           "evidence_status": "title_not_verified"
         },
         {
-          "title": "인피니언, 최초 300mm 실리콘 카바이드 전력 소자 개발로 이정표 달성 - New Electronics",
-          "date": "2026-11-10",
+          "title": "South Korea's ETRI Localizes 650V SiC Power Semiconductors for Satellites, Completing Radiation and Packaging Validation - BigGo Finance",
+          "date": "2026-11-17",
+          "source": "BigGo Finance",
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBOUUhSU3JaOWVzSWFlcjV5bEhqbDNma2pnbGJPZnZRUG5ZYmRTclE3amhGY2tXbEdZaUJjaWU5VVpHUElNN1ZzVVpPUFVodVBvVnJRRU10QWRvQV82NzdxT2x1azJ2NDZhaENGSlU4YjN2dUtzN2c?oc=5",
+          "source_level": "news",
+          "summary": "제목 기준: South Korea's ETRI Localizes 650V SiC Power Semiconductors for Satellites, Completing Radiation and Packaging Validation - BigGo Finance",
+          "topic_ids": [],
+          "companies": [],
+          "change_candidate": false,
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "title": "Physics-Based Baseline Model Tracks IGBT Junction Temperature Across Extreme Operating Currents - Bioengineer.org",
+          "date": "2026-11-17",
+          "source": "Bioengineer.org",
+          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNYU1Oa2pWYVJ4QVVQajY4eFJlZjVaeFh0QXMyR0I3QjRTWmpRMkJkR1k4aGhKbl9rYkxsSzVfZ1VzQ3JIMzFKcThycWNpVV9oSGNRaFJ2UExFR19lNnNuNnEwekhnWUhZdTZnZFBfaTVZSXh1OFM0UF9mc3pmOVFYM0F4RGd3UlExT0ZiM0xxVEVKWjdPMGY3Wm5aSGFkemE5UGVUMk9vUU5zQ1dhV2tscFJXQmJtV1l3cWgyWQ?oc=5",
+          "source_level": "news",
+          "summary": "제목 기준: Physics-Based Baseline Model Tracks IGBT Junction Temperature Across Extreme Operating Currents - Bioengineer.org",
+          "topic_ids": [],
+          "companies": [],
+          "change_candidate": false,
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "title": "Infineon achieves 300-millimeter power SiC wafer milestone - Electronic Products & Technology",
+          "date": "2026-11-16",
+          "source": "Electronic Products & Technology",
+          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQcmo5TnlKQVg5REdKQkpzTWdwOVpsdEdDS1hmbDJfdUo2RGFsM0ZGYTZtZUtfV2k4aUNJYmtiRWNQMGwtUm1OeldPN0FPN284NzJFSXZfbUR4Z3o4WUJleWgyeW1ZdjY1eFpYZ3dsTTc2TUNwb3hicjlpOWMwSmdpSjBxVkc?oc=5",
+          "source_level": "news",
+          "summary": "제목 기준: Infineon achieves 300-millimeter power SiC wafer milestone - Electronic Products & Technology",
+          "topic_ids": [],
+          "companies": [
+            "infineon"
+          ],
+          "change_candidate": false,
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "title": "Isolated dc-dc converters support HV SiC applications - Electronics Weekly",
+          "date": "2026-11-16",
+          "source": "Electronics Weekly",
+          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPb1pIa3JCTEVJUDdFVVV2bW95TEV1YzlpeU1vb29jN2l3TmdZaDJnUjhSS2oxRm5DaTJweG5iaGg1TzRVRlBXbERpQzZnUzBoSTBZcUVJUTRiWGpiUEFDck95RnVCeVNIQ0JsYldUb3lCZVNFTEQtNDl6eEl6Vjc1WUFELWc0Snp6dUhvQ0FMazJDNTRqemMxLWJYV1BDUUUxUDNBRjJQM0JvRzZDcDBR?oc=5",
+          "source_level": "news",
+          "summary": "제목 기준: Isolated dc-dc converters support HV SiC applications - Electronics Weekly",
+          "topic_ids": [],
+          "companies": [],
+          "change_candidate": false,
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "title": "Murata’s latest isolated DC-DC converters suitable for high-voltage SiC gate drive applications - New Electronics",
+          "date": "2026-11-16",
           "source": "New Electronics",
-          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQM1dQTkVUS2duSVNWSVhwRDhGRTdjUjNMeW1LblFRRTQ4RE1UbkROUzI5UGczTHl3V1BLZDNhbjRvOHVsaFh1dHREeVJkcTNISmRYUUdOUlA0ZjQ4Y0cxc2FkMC1qb2xVNlRWNURXWHFia1ZuNkt3eTJnakRQU2lnZXZ3VTRpRWkwVHIxVzBLWHlVNnpJZ2s1UkFqQlpVdUJ3NkI0NmlEWUtVZDNHZlRja3VRRGdXYzdDSDZ0SQ?oc=5",
+          "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNcGxqT1BtZGJlSjJLa2VGV1dZLWp3WldVSWljVVFrVHlCd1B6TWhSMVhibWVCZjl1VDdqZzhISkNOcFhpWmlFVlhHTW52amk3Q3c0TndlUmhXSU9WODFXc0cwdHhpbXE4OVhXaGQ2Ni1VNEU4N2FOMnE1U29UZjUxWkdGSmdiN1B6N1VpWkZhSTBHc05QQWV1MTFMcVRQSnlfMURlUVc0UTZabnp1SkxCbTA3dlNIcnVhS1BPVWRud1Q2RmJMS0QtZV8yOWFrN1ZXdkp3QU01UERwZGdRbVZkTDRsMHlHOGp1?oc=5",
           "source_level": "news",
-          "summary": "제목 기준: 인피니언, 최초 300mm 실리콘 카바이드 전력 소자 개발로 이정표 달성 - New Electronics",
+          "summary": "제목 기준: Murata’s latest isolated DC-DC converters suitable for high-voltage SiC gate drive applications - New Electronics",
           "topic_ids": [],
-          "companies": [
-            "infineon"
-          ],
-          "change_candidate": false,
-          "evidence_status": "title_not_verified"
-        },
-        {
-          "title": "인피니언, 세계 최초 300밀리미터 전력 실리콘 카바이드(SiC) 웨이퍼 생산 시작 - TechPowerUp",
-          "date": "2026-11-09",
-          "source": "TechPowerUp",
-          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPZFRuWWxNMlJtNnJqVlFlMzc3aU5tMDd0RUF2VTJmajZMRy1uTTdFVVJKN19WdFI3TEo4azE0dzFBT1pVVFItamtKRWM0QVFwbkY3dVh1ZGpLTi1jd2xKQ2duS3hOZ3VNcW5kZTY0ZWJ1SDBCaXlZdjFldWdWMk1IMEJ3UV9tRGswOTFXRGZfeXc5VEk1YVZ0QWZIYkRlc1pyVm9TaEpvZXBKbjVabXg4ZWRHZEJEQ3RTTDRPbTRB0gHDAUFVX3lxTE5jeGpsMmJjNlJhZjlRTnRCQk83U2Jvb1o1ZEpMb3dIeGRJOTI2U0pjeDlsLTNLbmxQNVJyQUZRQWFxUWZnWWc1bXRiSHZQdjhpb0NQcExOSmx0dXJEb25DazhBNng5RFRyYnExZ1luamlPc0FWekdDbkpnX2JDeWdOX2VsenBjMExjMjJkaExDdUV0SWJmbmo0dXJ5a2o2MmhJQXVfc2JJMExEd2VQMWxUbFRCRUloTkV1cFNBdkZBUS1pOA?oc=5",
-          "source_level": "news",
-          "summary": "제목 기준: 인피니언, 세계 최초 300밀리미터 전력 실리콘 카바이드(SiC) 웨이퍼 생산 시작 - TechPowerUp",
-          "topic_ids": [],
-          "companies": [
-            "infineon"
-          ],
+          "companies": [],
           "change_candidate": false,
           "evidence_status": "title_not_verified"
         }
@@ -987,8 +1039,8 @@
       "article_count_sample": 12,
       "source_counts_sample": {
         "official": 0,
-        "research": 0,
-        "news": 12
+        "research": 2,
+        "news": 10
       },
       "products": [
         {
@@ -1130,18 +1182,12 @@
         {
           "id": "infineon",
           "name": "Infineon",
-          "mention_count_sample": 6,
+          "mention_count_sample": 3,
           "official_count_sample": 0
         },
         {
           "id": "onsemi",
           "name": "onsemi",
-          "mention_count_sample": 2,
-          "official_count_sample": 0
-        },
-        {
-          "id": "wolfspeed",
-          "name": "Wolfspeed",
           "mention_count_sample": 1,
           "official_count_sample": 0
         }
@@ -1153,6 +1199,14 @@
           "week_to_date": "2026-11-15",
           "category_sample_count": 18,
           "topic_title_matches": 1,
+          "topic_official_matches": 0
+        },
+        {
+          "week": "2026-W47",
+          "complete_week": true,
+          "week_to_date": "2026-11-22",
+          "category_sample_count": 11,
+          "topic_title_matches": 0,
           "topic_official_matches": 0
         }
       ],
@@ -1319,61 +1373,47 @@
           "evidence_status": "metadata_only"
         },
         {
-          "title": "Investigations on the degradation of IGBT under repetitive short-circuit tests",
-          "date": "2026-10-31",
-          "source": "Microelectronics Reliability",
-          "url": "https://doi.org/10.1016/j.microrel.2026.116350",
-          "source_level": "research",
-          "summary": "공개 논문 메타데이터를 확인했습니다. 실험 결과와 데이터는 원문에서 검토해야 합니다.",
-          "topic_ids": [
-            "igbt-short"
-          ],
-          "companies": [],
-          "change_candidate": false,
-          "evidence_status": "metadata_only"
-        },
-        {
-          "title": "Research on the Short-Term Overcurrent Failure Mechanism of Press-Pack IGBT Devices Under MMC Conditions",
-          "date": "2026-10-21",
-          "source": "Electronics",
-          "url": "https://doi.org/10.3390/electronics15204873",
-          "source_level": "research",
-          "summary": "공개 논문 메타데이터를 확인했습니다. 실험 결과와 데이터는 원문에서 검토해야 합니다.",
-          "topic_ids": [],
-          "companies": [],
-          "change_candidate": false,
-          "evidence_status": "metadata_only"
-        },
-        {
-          "title": "Insulated Gate Bipolar Transistor Market Size & Share, 2034 - Fortune Business Insights",
-          "date": "2026-10-26",
-          "source": "Fortune Business Insights",
-          "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOMUotbUpQUE11aFZyQUJPLWJWc1lvSlRrdl9RN1czYWRXbUhtVlI0RURHRld1NkFIdHhvOUQ5LWVsZW1NYmRhMVZXMmM1Y3JyeGJTdjZ2aTAzSmVKZnZpY0ZmTmwwMWtjZHpBd3dsSE5xdmxmLTZjMVpDVkVaVTlHUW5wQmlUSHI1ZkE?oc=5",
+          "title": "Silicon Insulated Gate Bipolar Transistor (IGBT) Market Report Analyzes Market Trends, Segments, and Business Strategies - EIN News",
+          "date": "2026-11-18",
+          "source": "EIN News",
+          "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQakZEU2Q3RllJNFoxUFVDeVhWNzdkclJnSHZtdFFxSzZ6VTZfVUZBZTFkVVJfUW1RWTVieHJ2X3NCTVpXclVraU9PeEx2YkJlR2hyQkQwTUpGZE1HWHNIWExYc2VSd1hSdGhOY2V4TmwyVVZHZk5wQlhSdmlya242RHpKZHktZHkzbm1jdndDMTFzMTVuTDlFUDdvVlB1QVJQN1lraDFuOVctdHMzSzZ6X2F0cHlKeXEyT21xcWQ3a0xtSTdCWmlCTnhqT0RFLUVjMHpiWmdEbkNDUUU4UURuNTdlTmFKU2gwTXpJWDd2Yw?oc=5",
           "source_level": "news",
-          "summary": "제목 기준: Insulated Gate Bipolar Transistor Market Size & Share, 2034 - Fortune Business Insights",
+          "summary": "제목 기준: Silicon Insulated Gate Bipolar Transistor (IGBT) Market Report Analyzes Market Trends, Segments, and Business Strategies - EIN News",
           "topic_ids": [],
           "companies": [],
           "change_candidate": false,
           "evidence_status": "title_not_verified"
         },
         {
-          "title": "IGBT Power Modules Geared for Air Conditioners, Heat Pumps, Home Appliances - Electronic Design",
-          "date": "2026-10-23",
-          "source": "Electronic Design",
-          "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPLTB1UXVkTWwzalhwdzRXS2lhc0xVT0RqUmlsemtaeVFSMkZxdHBpNEE4NHNFT1FSVXB3SWJwSEppZ1I4T05nQVZsMkxreHBzN1pqam51RnlWcFl5MUFLVDdMN2xXSldjb09CcFJRa2w1NnYtWS0tN3JyN1FGa0ZnQTRVTV9ZbmF1d1JIM3FwVWQ2NmN0LXI2NlRxNDRwcUp5NEo2QmtITkQyVTZTZ1d1MWQ2T1htaVZBY0NvU0djRmw3TWY3dVhUTXR5WXpaS2pXT0l0b2JSZW02bWdVa0lhSm8tZGdXSDdhZE9oMzVmaFFCUQ?oc=5",
+          "title": "The Press-Pack Insulated Gate Bipolar Transistor (IGBT) Market Expected to Grow Steadily at an 11.1% CAGR Until 2030 - EIN Presswire",
+          "date": "2026-11-17",
+          "source": "EIN Presswire",
+          "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNRVlzUllYbEQ1aXZBenV6ckdWalVfYTNwOUNFb3hlSzRPdE1LSWcwOHFCNTNFVFZYMDBJd1NrdWR5Ul8zdWwwNEhiOC0tai05dlZFWWxwUm1xcEJ0b1RxdGNGSG5rbE05eC1MSlZQM1JPc1M1elZ1MVpZUUtELWhhSERNLVAtb0pJd1k4RzNPTkUyMDdDVlhheVNObG1uNV9PcnppZzlNUkl2eGVIU3Y5cGdDb1RPVDg0M2RCdUl1ZlJfLTVpM2hsZDlnOWxycnlTQ2lzQlpTNlJDWUZMNE1FaDNZb1Z4bW82dElGbmswN2tiUQ?oc=5",
           "source_level": "news",
-          "summary": "제목 기준: IGBT Power Modules Geared for Air Conditioners, Heat Pumps, Home Appliances - Electronic Design",
+          "summary": "제목 기준: The Press-Pack Insulated Gate Bipolar Transistor (IGBT) Market Expected to Grow Steadily at an 11.1% CAGR Until 2030 - EIN Presswire",
+          "topic_ids": [],
+          "companies": [],
+          "change_candidate": false,
+          "evidence_status": "title_not_verified"
+        },
+        {
+          "title": "Hirect receives a letter of acceptance for ~₹133.38 Crore Order from Chittaranjan Locomotive Works for IGBT-Based Propulsion Systems - EquityBulls",
+          "date": "2026-11-16",
+          "source": "EquityBulls",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQbE9iekFlR1I2TU5WOUpabVBTVzQxSlUyakowd0RkMzRRUkNXWC1uREZQRlN3Wkc5R21HbGJSUms0TUlyaUVIeG9EYmZPNnNpX0J5UTI2akFFWS02bW1qU0FrODQtcy1rZGJydXBzS0xZUmxPR01YbC1aeHJ6OU9kMTJLejU4NUdjTWZfcVk2QmNtaXpiV1g0?oc=5",
+          "source_level": "news",
+          "summary": "제목 기준: Hirect receives a letter of acceptance for ~₹133.38 Crore Order from Chittaranjan Locomotive Works for IGBT-Based Propulsion Systems - EquityBulls",
           "topic_ids": [],
           "companies": [],
           "change_candidate": false,
           "evidence_status": "title_not_verified"
         }
       ],
-      "article_count_sample": 7,
+      "article_count_sample": 6,
       "source_counts_sample": {
         "official": 0,
-        "research": 5,
-        "news": 2
+        "research": 3,
+        "news": 3
       },
       "products": [
         {
@@ -1520,6 +1560,14 @@
           "category_sample_count": 1,
           "topic_title_matches": 0,
           "topic_official_matches": 0
+        },
+        {
+          "week": "2026-W47",
+          "complete_week": true,
+          "week_to_date": "2026-11-22",
+          "category_sample_count": 3,
+          "topic_title_matches": 0,
+          "topic_official_matches": 0
         }
       ],
       "datasheet_table_verified_count": 0,
@@ -1556,26 +1604,10 @@
               "confidence": "title_keyword_match"
             },
             {
-              "title": "Super Junction MOSFET Market Is Going to Boom |• Infineon Technologies • ON Semiconductor • Nexperia - openPR.com",
-              "date": "2026-11-13",
-              "source": "openPR.com",
-              "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNNEdNWWc4ZFBHWnFyNS1mMFlSUGw4M1hoRjJuWjEtRXozamRhYVRQUlJjekdXTE1TSXJRZnRzQzhnMm4tbXd5V0dBMThZZFJUZlJBYkxJR0hpdzNlRWtDSGNIUkJmalQ1RWhPWUw3QmMtdXlQMW9FYjJpaXQwT1FQQm9nSVh3eTN5QXVqX0w2RnRGNzB3?oc=5",
-              "kind": "news_title_candidate",
-              "confidence": "title_keyword_match"
-            },
-            {
-              "title": "Physical Origin and Mitigation of Output-Capacitance Hysteresis in Superjunction Devices",
-              "date": "2026-11-06",
-              "source": "Semiconductor Science and Technology",
-              "url": "https://doi.org/10.1088/1361-6641/aebef5",
-              "kind": "paper_metadata",
-              "confidence": "title_keyword_match"
-            },
-            {
-              "title": "Low-loss superjunction SiC MOSFET with improved breakdown voltage and reverse-recovery performance",
+              "title": "Physical origin and mitigation of output-capacitance hysteresis in superjunction devices",
               "date": "2026-11-01",
               "source": "Semiconductor Science and Technology",
-              "url": "https://doi.org/10.1088/1361-6641/aeba0c",
+              "url": "https://doi.org/10.1088/1361-6641/aebef5",
               "kind": "paper_metadata",
               "confidence": "title_keyword_match"
             },
@@ -1584,6 +1616,22 @@
               "date": "2026-09-28",
               "source": "Power Electronic Devices and Components",
               "url": "https://doi.org/10.1016/j.pedc.2026.100153",
+              "kind": "paper_metadata",
+              "confidence": "title_keyword_match"
+            },
+            {
+              "title": "Improvement of Reverse Recovery Characteristic by Extra Etching in Source Electrode for Superjunction MOSFET",
+              "date": "2026-09-01",
+              "source": "IEEE Transactions on Electron Devices",
+              "url": "https://doi.org/10.1109/ted.2026.3718884",
+              "kind": "paper_metadata",
+              "confidence": "title_keyword_match"
+            },
+            {
+              "title": "4H–SiC superjunction MOSFET with N-PolySi/N–SiC heterojunction for low reverse conduction voltage",
+              "date": "2026-09-01",
+              "source": "Micro and Nanostructures",
+              "url": "https://doi.org/10.1016/j.micrna.2026.208758",
               "kind": "paper_metadata",
               "confidence": "title_keyword_match"
             }
@@ -1627,23 +1675,14 @@
           "name": "Breakdown · Edge",
           "simple": "항복 전압과 종단 구조",
           "why": "Wafer Edge와 Pillar Charge Balance의 내압 경향은 구분해 검토합니다.",
-          "evidence_count_sample": 1,
-          "evidence": [
-            {
-              "title": "Low-loss superjunction SiC MOSFET with improved breakdown voltage and reverse-recovery performance",
-              "date": "2026-11-01",
-              "source": "Semiconductor Science and Technology",
-              "url": "https://doi.org/10.1088/1361-6641/aeba0c",
-              "kind": "paper_metadata",
-              "confidence": "title_keyword_match"
-            }
-          ]
+          "evidence_count_sample": 0,
+          "evidence": []
         }
       ],
       "articles": [
         {
-          "title": "Physical Origin and Mitigation of Output-Capacitance Hysteresis in Superjunction Devices",
-          "date": "2026-11-06",
+          "title": "Physical origin and mitigation of output-capacitance hysteresis in superjunction devices",
+          "date": "2026-11-01",
           "source": "Semiconductor Science and Technology",
           "url": "https://doi.org/10.1088/1361-6641/aebef5",
           "source_level": "research",
@@ -1654,45 +1693,13 @@
           "companies": [],
           "change_candidate": false,
           "evidence_status": "metadata_only"
-        },
-        {
-          "title": "Low-loss superjunction SiC MOSFET with improved breakdown voltage and reverse-recovery performance",
-          "date": "2026-11-01",
-          "source": "Semiconductor Science and Technology",
-          "url": "https://doi.org/10.1088/1361-6641/aeba0c",
-          "source_level": "research",
-          "summary": "공개 논문 메타데이터를 확인했습니다. 실험 결과와 데이터는 원문에서 검토해야 합니다.",
-          "topic_ids": [
-            "sj-pillar",
-            "sj-breakdown"
-          ],
-          "companies": [],
-          "change_candidate": false,
-          "evidence_status": "metadata_only"
-        },
-        {
-          "title": "Super Junction MOSFET Market Is Going to Boom |• Infineon Technologies • ON Semiconductor • Nexperia - openPR.com",
-          "date": "2026-11-13",
-          "source": "openPR.com",
-          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNNEdNWWc4ZFBHWnFyNS1mMFlSUGw4M1hoRjJuWjEtRXozamRhYVRQUlJjekdXTE1TSXJRZnRzQzhnMm4tbXd5V0dBMThZZFJUZlJBYkxJR0hpdzNlRWtDSGNIUkJmalQ1RWhPWUw3QmMtdXlQMW9FYjJpaXQwT1FQQm9nSVh3eTN5QXVqX0w2RnRGNzB3?oc=5",
-          "source_level": "news",
-          "summary": "제목 기준: Super Junction MOSFET Market Is Going to Boom |• Infineon Technologies • ON Semiconductor • Nexperia - openPR.com",
-          "topic_ids": [
-            "sj-pillar"
-          ],
-          "companies": [
-            "infineon",
-            "onsemi"
-          ],
-          "change_candidate": false,
-          "evidence_status": "title_not_verified"
         }
       ],
-      "article_count_sample": 3,
+      "article_count_sample": 1,
       "source_counts_sample": {
         "official": 0,
-        "research": 2,
-        "news": 1
+        "research": 1,
+        "news": 0
       },
       "products": [
         {
@@ -1740,20 +1747,7 @@
       "companies": [
         "Toshiba"
       ],
-      "competitor_mentions": [
-        {
-          "id": "infineon",
-          "name": "Infineon",
-          "mention_count_sample": 1,
-          "official_count_sample": 0
-        },
-        {
-          "id": "onsemi",
-          "name": "onsemi",
-          "mention_count_sample": 1,
-          "official_count_sample": 0
-        }
-      ],
+      "competitor_mentions": [],
       "weekly_observations": [
         {
           "week": "2026-W46",
@@ -1761,6 +1755,14 @@
           "week_to_date": "2026-11-15",
           "category_sample_count": 1,
           "topic_title_matches": 1,
+          "topic_official_matches": 0
+        },
+        {
+          "week": "2026-W47",
+          "complete_week": true,
+          "week_to_date": "2026-11-22",
+          "category_sample_count": 0,
+          "topic_title_matches": 0,
           "topic_official_matches": 0
         }
       ],
@@ -1840,6 +1842,14 @@
           "week": "2026-W46",
           "complete_week": true,
           "week_to_date": "2026-11-15",
+          "category_sample_count": 0,
+          "topic_title_matches": 0,
+          "topic_official_matches": 0
+        },
+        {
+          "week": "2026-W47",
+          "complete_week": true,
+          "week_to_date": "2026-11-22",
           "category_sample_count": 0,
           "topic_title_matches": 0,
           "topic_official_matches": 0

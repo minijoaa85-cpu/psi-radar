@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "source_generated_at": "2026-11-15T23:58:01.896504+00:00",
+  "source_generated_at": "2026-11-22T21:14:19.751134+00:00",
   "benchmark_reviewed_on": "2026-11-12",
   "topics": [
     {
@@ -11,12 +11,12 @@
       "why": "트랩·버퍼 영향으로 도통 손실이 달라질 수 있습니다. 제품의 정적 Ron 값만으로 판단하지 않습니다.",
       "article_candidates": [
         {
-          "id": "120e31c22621",
+          "id": "f4c33ed5652c",
           "title": "미쓰비시 전기, GaN 기판을 이용한 GaN 트랜지스터 주파수 분산 억제 세계 최초 시연",
-          "date": "2026-11-10",
+          "date": "2026-11-08",
           "kind": "news_title_candidate",
-          "publisher": "WebWire",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9GU0Q3X1NQbHR6ZVNjSHhPVUExdnBQV195RkJMLTJnN1VpM0E0ZGROdXBBSnJrSTlCNHR1Rmh0U2ZfTVo0MlRmSWp3Snd6VkI1VUMwQlc5WHptcENuakNKbTR4TEYtck9t?oc=5",
+          "publisher": "Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQSFVIeUpoNG1BS1daNDlVQ0VPVW10N25FZTNDdW5KZkpvVGc1eFNlWk10M3BmMUx0MURxZldFQUJUUlp4ZTdBRE1udHREb1l2VXpRRjFpSXE5OWZwLVpPMG0wb2dJdVRrVERlR2JfWTJnZm51SHhNVUt4WVhFY1NudG5FR3ZLak4xcGNzbWZiUnRYdEFrWHR6M2V6M2hUb2h3V2FN?oc=5",
           "confidence": "title_keyword_match",
           "matched_terms": [
             "frequency dispersion",
@@ -24,29 +24,27 @@
           ]
         },
         {
-          "id": "fe93b2e2fa57",
-          "title": "미쓰비시 전기, GaN-on-GaN 트랜지스터가 주파수 분산을 크게 억제한다고 발표했으나 수치는 제공하지 않음 - XenoSpectrum",
-          "date": "2026-11-10",
-          "kind": "news_title_candidate",
-          "publisher": "XenoSpectrum",
-          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1pX1Z3UG1wTDZMTzAzam8zc2VCNHE5d2xFZ3ZrdkZKdVBaNGFYaWNjeHk4NnFycm11ZHpLWF9CQ3U4UlNCVFJIWjV5TXpMLS1XZVBtb2pwQjV5NjV3cGY2WDA1ZVBUQjB0SE10MHFiQkpydU1yRU1LNmx3UGtCTWM?oc=5",
+          "id": "f09744534d74",
+          "title": "Polarization engineered AlPN barriers for suppression of current collapse in p-GaN gate GaN HEMTs",
+          "date": "2026-09-01",
+          "kind": "paper_metadata",
+          "publisher": "Materials Today Communications",
+          "url": "https://doi.org/10.1016/j.mtcomm.2026.116188",
           "confidence": "title_keyword_match",
           "matched_terms": [
-            "frequency dispersion",
-            "주파수 분산"
+            "current collapse"
           ]
         },
         {
-          "id": "22e411b2a060",
-          "title": "미쓰비시 전기, GaN 기판을 이용한 GaN 트랜지스터 주파수 분산 억제 세계 최초 시연",
-          "date": "2026-11-09",
-          "kind": "news_title_candidate",
-          "publisher": "Yahoo Finance Singapore",
-          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPZ3J1MmJER2hPQW50TGV6dHIwcHRqZC1tSVBybktUNW5JX0xkdFlHbXdhMlNjR2h6OGRaSzZmQ2c0cHZmN3RkQ19Zei16VXhWRTBGOTdBM2ZFelVxVjRDYlhqNFIzWUkwVEQ0OGJEdER0aWM3aGV6RVRqNDZVX1NsYTROaS03a1V1YVNRamdCazliTDg?oc=5",
+          "id": "9d719f4ecce6",
+          "title": "Physics and improvement of dynamic RON in GaN power HEMTs: A comprehensive review",
+          "date": "2026-06-20",
+          "kind": "paper_metadata",
+          "publisher": "Micro and Nanostructures",
+          "url": "https://doi.org/10.1016/j.micrna.2026.208811",
           "confidence": "title_keyword_match",
           "matched_terms": [
-            "frequency dispersion",
-            "주파수 분산"
+            "dynamic ron"
           ]
         }
       ],
@@ -146,7 +144,20 @@
       "name": "Gate Reliability",
       "simple": "게이트 구동과 장기 안정성",
       "why": "Threshold 변화와 게이트 누설은 사용 조건에 따라 달라질 수 있습니다.",
-      "article_candidates": [],
+      "article_candidates": [
+        {
+          "id": "16e73d04c7ce",
+          "title": "Threshold voltage instability in Schottky p-GaN gate HEMTs under dynamic gate stress",
+          "date": "2026-11-04",
+          "kind": "paper_metadata",
+          "publisher": "Microelectronic Engineering",
+          "url": "https://doi.org/10.1016/j.mee.2026.112518",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "gate stress"
+          ]
+        }
+      ],
       "products": [
         {
           "id": "gan-st-mastergan7",
@@ -319,15 +330,27 @@
       "why": "채널·JFET·Trench 전계의 균형이 중요합니다.",
       "article_candidates": [
         {
-          "id": "c35fb26cd153",
-          "title": "Electronica: Nexperia, 750V SiC 트렌치 MOSFET 및 TOLL 패키징 추가",
-          "date": "2026-11-12",
-          "kind": "news_title_candidate",
-          "publisher": "Electronics Weekly",
-          "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPZ19wNlM2dnhHVnhLY0NDYmdINEN5eHdvYlRGQ05NM0V2cjFLbGJYcDJ1c3cxeUUwZ0QxR0NpcTFnajZGN1BDYklqRjEtSFZkbXNWbGtGbHJRMmV5UjJDN2lCa1dwTW9xUUZLUFJaeU83US1fSU1TeTVSN1RvSVpiM3FTX0UxYnlUR18zd1NkaTdYMURPWUp4NDdBMGNrYkVCRWNNQTRyeVdLWEk1ZmhUMzJLVzJySXBlcGxDcUlpcEFneUFlM0FRVFdGU2x3TEs3Tl8wV1Rpbw?oc=5",
+          "id": "7e52f45c629b",
+          "title": "A dual-channel trench SiC MOSFET with a p-PolySi/n-SiC heterojunction tunneling channel realizing low R on,sp and V r_on",
+          "date": "2026-08-01",
+          "kind": "paper_metadata",
+          "publisher": "Semiconductor Science and Technology",
+          "url": "https://doi.org/10.1088/1361-6641/ae98ab",
           "confidence": "title_keyword_match",
           "matched_terms": [
-            "sic trench",
+            "trench sic"
+          ]
+        },
+        {
+          "id": "9f96163821da",
+          "title": "다양한 게이트 바이어스 조건에서 1200V 비대칭 트렌치 SiC MOSFET의 단일 및 반복 서지 신뢰성",
+          "date": "2026-07-10",
+          "kind": "paper_metadata",
+          "publisher": "Micromachines",
+          "url": "https://doi.org/10.3390/mi17070823",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "trench sic",
             "트렌치"
           ]
         }
@@ -381,7 +404,69 @@
       "name": "Gate Oxide Reliability",
       "simple": "SiC 게이트 산화막의 내구성",
       "why": "산화막 전계와 온도·구동 조건에 따른 신뢰성을 함께 확인해야 합니다.",
-      "article_candidates": [],
+      "article_candidates": [
+        {
+          "id": "3570bbc5d7c0",
+          "title": "Gate oxide damage and synergistic effect on the breakdown voltage under reverse bias stress for SiC MOSFET",
+          "date": "2026-04-01",
+          "kind": "paper_metadata",
+          "publisher": "Journal of Semiconductors",
+          "url": "https://doi.org/10.1088/1674-4926/25110026",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "gate oxide"
+          ]
+        },
+        {
+          "id": "529bf4644339",
+          "title": "Impact of Gate Oxide Thickness on the Failure Mechanisms of AC Bias Temperature Instability in SiC MOSFETs",
+          "date": "2026-03-18",
+          "kind": "paper_metadata",
+          "publisher": "Electronics",
+          "url": "https://doi.org/10.3390/electronics15061266",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "gate oxide",
+            "bias temperature instability"
+          ]
+        },
+        {
+          "id": "963049c22b07",
+          "title": "Temperature-Dependent Gate Oxide Degradation and Interface-Trap Mechanisms in Planar SiC MOSFETs Under Dynamic Gate Stress",
+          "date": "2026-03-04",
+          "kind": "paper_metadata",
+          "publisher": "IEEE Transactions on Electron Devices",
+          "url": "https://doi.org/10.1109/ted.2026.3665857",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "gate oxide"
+          ]
+        },
+        {
+          "id": "442ff5f80ebe",
+          "title": "Analysis of gate oxide instability of SiC MOSFETs under ultra-high gate voltage pulse stress",
+          "date": "2026-01-12",
+          "kind": "paper_metadata",
+          "publisher": "Nanotechnology",
+          "url": "https://doi.org/10.1088/1361-6528/ae2f68",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "gate oxide"
+          ]
+        },
+        {
+          "id": "b3b81a6888ce",
+          "title": "Online Detection of SiC MOSFET Gate Oxide Degradation by Drain‐Source Voltage Surge in Inverter",
+          "date": "2026-01-01",
+          "kind": "paper_metadata",
+          "publisher": "IET Power Electronics",
+          "url": "https://doi.org/10.1049/pel2.70211",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "gate oxide"
+          ]
+        }
+      ],
       "products": [
         {
           "id": "sic-rohm-4036",
@@ -799,36 +884,12 @@
           ]
         },
         {
-          "id": "062977c360bf",
-          "title": "Super Junction MOSFET Market Is Going to Boom |• Infineon Technologies • ON Semiconductor • Nexperia - openPR.com",
-          "date": "2026-11-13",
-          "kind": "news_title_candidate",
-          "publisher": "openPR.com",
-          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNNEdNWWc4ZFBHWnFyNS1mMFlSUGw4M1hoRjJuWjEtRXozamRhYVRQUlJjekdXTE1TSXJRZnRzQzhnMm4tbXd5V0dBMThZZFJUZlJBYkxJR0hpdzNlRWtDSGNIUkJmalQ1RWhPWUw3QmMtdXlQMW9FYjJpaXQwT1FQQm9nSVh3eTN5QXVqX0w2RnRGNzB3?oc=5",
-          "confidence": "title_keyword_match",
-          "matched_terms": [
-            "super junction"
-          ]
-        },
-        {
           "id": "c20ea9d7d2e7",
-          "title": "Physical Origin and Mitigation of Output-Capacitance Hysteresis in Superjunction Devices",
-          "date": "2026-11-06",
-          "kind": "paper_metadata",
-          "publisher": "Semiconductor Science and Technology",
-          "url": "https://doi.org/10.1088/1361-6641/aebef5",
-          "confidence": "title_keyword_match",
-          "matched_terms": [
-            "superjunction"
-          ]
-        },
-        {
-          "id": "76b0bfaf7cd5",
-          "title": "Low-loss superjunction SiC MOSFET with improved breakdown voltage and reverse-recovery performance",
+          "title": "Physical origin and mitigation of output-capacitance hysteresis in superjunction devices",
           "date": "2026-11-01",
           "kind": "paper_metadata",
           "publisher": "Semiconductor Science and Technology",
-          "url": "https://doi.org/10.1088/1361-6641/aeba0c",
+          "url": "https://doi.org/10.1088/1361-6641/aebef5",
           "confidence": "title_keyword_match",
           "matched_terms": [
             "superjunction"
@@ -904,6 +965,30 @@
           "confidence": "title_keyword_match",
           "matched_terms": [
             "charge imbalance",
+            "superjunction"
+          ]
+        },
+        {
+          "id": "ebdf7b7a858e",
+          "title": "Anomalous Reverse Recovery of Body Diode in 4H-SiC Superjunction DMOSFET",
+          "date": "2026-05-21",
+          "kind": "paper_metadata",
+          "publisher": "Key Engineering Materials",
+          "url": "https://doi.org/10.4028/p-xxkc5i",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
+            "superjunction"
+          ]
+        },
+        {
+          "id": "97302fdedd25",
+          "title": "슈퍼정션 및 실드 게이트 기술을 적용한 1200V SiC 트렌치 MOSFET의 전력 손실 저감",
+          "date": "2026-04-01",
+          "kind": "paper_metadata",
+          "publisher": "Semiconductor Science and Technology",
+          "url": "https://doi.org/10.1088/1361-6641/ae5aca",
+          "confidence": "title_keyword_match",
+          "matched_terms": [
             "superjunction"
           ]
         }
@@ -985,20 +1070,7 @@
       "name": "Breakdown · Edge",
       "simple": "항복 전압과 종단 구조",
       "why": "Wafer Edge와 Pillar Charge Balance의 내압 경향은 구분해 검토합니다.",
-      "article_candidates": [
-        {
-          "id": "76b0bfaf7cd5",
-          "title": "Low-loss superjunction SiC MOSFET with improved breakdown voltage and reverse-recovery performance",
-          "date": "2026-11-01",
-          "kind": "paper_metadata",
-          "publisher": "Semiconductor Science and Technology",
-          "url": "https://doi.org/10.1088/1361-6641/aeba0c",
-          "confidence": "title_keyword_match",
-          "matched_terms": [
-            "breakdown voltage"
-          ]
-        }
-      ],
+      "article_candidates": [],
       "products": [
         {
           "id": "sj-toshiba-095",
