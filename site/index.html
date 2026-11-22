@@ -838,6 +838,19 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
 .ex35-empty{padding:15px;border:1px dashed #54718a;border-radius:8px;font-size:12px;color:#bbd2e4}
 @media(max-width:760px){.ex35{padding:12px}.ex35-cards{grid-template-columns:1fr}.ex35-head h2{font-size:18px}}
 
+
+/* V3.6 source collection coverage; counts are metadata, not technical achievement */
+.c36{border:1px solid #345674;border-radius:13px;background:#10263b;padding:16px;margin-bottom:16px}
+.c36 h2{font-size:18px;margin:4px 0}
+.c36 p{font-size:12px;color:#b7c9da;margin:0}
+#coverage36-status{font-size:12px;color:#cddce9;margin:10px 0}
+.c36-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px}
+.c36-card{border:1px solid #355774;border-radius:9px;padding:10px;background:#142e47;min-width:0}
+.c36-card strong{display:block;font-size:15px;color:#e6f3ff}
+.c36-card span{display:block;font-size:11px;color:#bbd2e4;margin-top:4px}
+.c36-card .c36-warn{color:#f9c68a}
+@media(max-width:850px){.c36-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:540px){.c36-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style></head><body>
 <header><small>POWER SEMICONDUCTOR INTELLIGENCE</small><h1>◈ PSI Radar</h1><div class="muted">GaN · SiC · IGBT · SJ MOSFET · UD/UG SGT | 글로벌 기술 · 논문 · 경쟁사 동향</div><div id="last" class="mini">데이터 상태 확인 중...</div><div id="ui-release-label" class="ui-release-label">UI 코드: History 적용 · 버전 확인 중</div></header>
 <aside class="personal-tools" aria-label="개인 및 데이터 관리 보조 메뉴">
@@ -853,7 +866,7 @@ main,main>section,.panel,.two>*,.grid>*,.tiles>*,.filters,.brief-card{
 </nav>
 <section id="overview"><div class="tr33" id="trust33" aria-labelledby="trust33-title">
 <div class="tr33-head"><div><h3 id="trust33-title">Data Trust · 데이터 신뢰성 V3.3</h3><p>게시 데이터의 파일 무결성·원문 근거 수준·자동 수집 경고를 별개로 확인합니다.</p></div><span class="tr33-status" id="trust33-status" role="status">검증 보고서 확인 중</span></div>
-<div id="trust33-details" aria-live="polite"><p class="tr33-note">검증 보고서를 확인하기 전에는 데이터의 일치성을 보증하지 않습니다.</p></div></div><section class="ex35" id="exec35" aria-labelledby="exec35-title">
+<div id="trust33-details" aria-live="polite"><p class="tr33-note">검증 보고서를 확인하기 전에는 데이터의 일치성을 보증하지 않습니다.</p></div></div><section class="c36" id="coverage36" aria-labelledby="coverage36-title"><div class="c36-heading"><div><span class="ex35-kicker">RESEARCH COLLECTION HEALTH / V3.6</span><h2 id="coverage36-title">기술군별 수집 상태와 재사용 자료</h2><p>검색 API의 성공 여부와 실제 게시된 논문 메타데이터를 구분합니다. 성공한 검색도 학술적 완전성이나 소자 성능의 검증은 아닙니다.</p></div></div><div id="coverage36-status" role="status">수집 상태 확인 중</div><div id="coverage36-grid" class="c36-grid" aria-live="polite"></div></section><section class="ex35" id="exec35" aria-labelledby="exec35-title">
 <div class="ex35-head"><div><span class="ex35-kicker">EXECUTIVE INTELLIGENCE / V3.5</span><h2 id="exec35-title">2분 기술·경쟁사 브리핑</h2><p>수집된 공개자료에서 기술군별 검토 후보를 한 건씩 보여줍니다. 출시·양산·성능·신규성의 사실 검증 결과가 아니며 실제 원문과 측정조건 확인이 필요합니다.</p></div>
 <div class="ex35-kpis" id="exec35-kpis" aria-live="polite"></div></div>
 <div id="exec35-status" class="ex35-status" role="status">수집 기준일과 브리핑 파일의 일치 여부 확인 중</div>
@@ -2922,6 +2935,46 @@ fetch("data.json?nocache="+Date.now()).then(async r=>{
   TRUST33_DIGEST=Array.from(new Uint8Array(digest),x=>x.toString(16).padStart(2,"0")).join("");
  }
  return JSON.parse(new TextDecoder("utf-8").decode(bytes));
-}).then(d=>{DB=d;M30_READY.records=true;render()}).catch(e=>{el("last").textContent="데이터 로딩 실패: "+e.message;render()});
-fetch("source_health.json?nocache="+Date.now()).then(r=>{if(!r.ok)throw Error("HTTP "+r.status);return r.json()}).then(report=>{TRUST33=report;TRUST33_ERROR=null;trust33View();}).catch(err=>{TRUST33_ERROR="source_health.json 검증 보고서 접근 실패: "+err.message;trust33View();});
+}).then(d=>{DB=d;M30_READY.records=true;render();renderCoverage36()}).catch(e=>{el("last").textContent="데이터 로딩 실패: "+e.message;render()});
+fetch("source_health.json?nocache="+Date.now()).then(r=>{if(!r.ok)throw Error("HTTP "+r.status);return r.json()}).then(report=>{TRUST33=report;TRUST33_ERROR=null;trust33View();renderCoverage36();}).catch(err=>{TRUST33_ERROR="source_health.json 검증 보고서 접근 실패: "+err.message;trust33View();});
+
+const C36_ORDER=["GaN","SiC","IGBT","SJ MOSFET","SGT"];
+function renderCoverage36(){
+ const grid=el("coverage36-grid"),status=el("coverage36-status");
+ if(!grid||!status)return;
+ if(!TRUST33||!DB.generated_at){
+  status.textContent="데이터와 수집 검증 보고서를 모두 확인한 후 표시합니다.";
+  grid.replaceChildren();return;
+ }
+ if(TRUST33.snapshot_generated_at!==DB.generated_at||TRUST33.structural_integrity!=="passed"){
+  status.textContent="기준일 불일치 또는 무결성 검증 실패 · 수집 상태 표시 보류";
+  grid.replaceChildren();return;
+ }
+ const coverage=TRUST33.research_coverage||{};
+ status.textContent="게시 자료 기준 · 연구 검색 365일 · 검색 성공은 논문 내용 검증이 아닙니다.";
+ grid.replaceChildren();
+ for(const tech of C36_ORDER){
+  const c=coverage[tech],card=document.createElement("article");
+  card.className="c36-card";
+  const title=document.createElement("strong");title.textContent=tech;card.append(title);
+  const line=(value,warn=false)=>{const node=document.createElement("span");node.textContent=value;if(warn)node.className="c36-warn";card.append(node)};
+  if(!c||typeof c!=="object"){line("검색 상태 미확인",true)}
+  else{
+   const ok=Number.isInteger(c.successful)?c.successful:0;
+   const all=Number.isInteger(c.attempted)?c.attempted:0;
+   const failed=Number.isInteger(c.failed)?c.failed:0;
+   const skipped=Number.isInteger(c.skipped)?c.skipped:0;
+   const published=Number.isInteger(c.published_papers)?c.published_papers:0;
+   const fresh=Number.isInteger(c.fresh_papers)?c.fresh_papers:0;
+   const reused=Number.isInteger(c.reused_papers)?c.reused_papers:0;
+   line("검색 응답 "+ok+"/"+all+(failed||skipped?" · 실패/제외 "+(failed+skipped):""),ok===0||failed>0||skipped>0);
+   line("게시 논문 "+published+"건 · 신규 "+fresh+"건");
+   line("이전 수집 재사용 "+reused+"건",reused>0);
+   if(ok===0)line("검색 미확인 — 0건으로 해석 금지",true);
+   else if(published===0)line("검색 성공, 게시 표본 0건");
+  }
+  grid.append(card);
+ }
+}
+
 </script></body></html>
